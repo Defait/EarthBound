@@ -1,0 +1,820 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>World Viewer</title>
+<style>
+:root {
+  color-scheme: light;
+  --page: #f9f9f7; --surface-1: #fcfcfb; --surface-2: #f0efec; --border: rgba(11,11,11,0.10);
+  --ink: #0b0b0b; --ink-2: #52514e; --muted: #898781; --grid: #e1e0d9; --axis: #c3c2b7;
+  --accent: #2a78d6; --accent-ink: #ffffff; --hover: rgba(11,11,11,0.05);
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948;
+  --checker-a: #e7e6e1; --checker-b: #dcdbd5; --void: #fcfcfb; --marker: #e34948;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --page: #0d0d0d; --surface-1: #1a1a19; --surface-2: #232322; --border: rgba(255,255,255,0.10);
+    --ink: #ffffff; --ink-2: #c3c2b7; --muted: #898781; --grid: #2c2c2a; --axis: #383835;
+    --accent: #3987e5; --accent-ink: #ffffff; --hover: rgba(255,255,255,0.06);
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767;
+    --checker-a: #262625; --checker-b: #1f1f1e; --void: #111110; --marker: #e66767;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0d0d0d; --surface-1: #1a1a19; --surface-2: #232322; --border: rgba(255,255,255,0.10);
+  --ink: #ffffff; --ink-2: #c3c2b7; --muted: #898781; --grid: #2c2c2a; --axis: #383835;
+  --accent: #3987e5; --accent-ink: #ffffff; --hover: rgba(255,255,255,0.06);
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767;
+  --checker-a: #262625; --checker-b: #1f1f1e; --void: #111110; --marker: #e66767;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+.check { display: flex; gap: 8px; align-items: flex-start; }
+.check input { margin: 2px 0 0; }
+html, body { height: 100%; margin: 0; }
+body { background: var(--page); color: var(--ink); font: 13px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; }
+button, input, select { font: inherit; color: inherit; }
+.num { font-variant-numeric: tabular-nums; }
+
+#shell { display: grid; grid-template-rows: auto 1fr; grid-template-columns: 340px 1fr; height: 100vh; }
+header { grid-column: 1 / -1; display: flex; align-items: center; gap: 16px; padding: 8px 16px; border-bottom: 1px solid var(--border); background: var(--surface-1); }
+header h1 { font-size: 15px; margin: 0; font-weight: 600; }
+#meta { color: var(--ink-2); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.btn { background: var(--surface-2); border: 1px solid var(--border); border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+.btn:hover { background: var(--hover); }
+.btn[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: transparent; }
+.seg { display: inline-flex; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+.seg button { border: 0; background: var(--surface-2); padding: 4px 10px; cursor: pointer; }
+.seg button + button { border-left: 1px solid var(--border); }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+
+aside { border-right: 1px solid var(--border); background: var(--surface-1); display: flex; flex-direction: column; min-height: 0; }
+.side-top { padding: 10px 12px; display: flex; flex-direction: column; gap: 8px; border-bottom: 1px solid var(--border); }
+#search { width: 100%; padding: 5px 8px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface-2); }
+.row-wrap { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.hint { color: var(--muted); font-size: 12px; }
+#list { overflow-y: auto; flex: 1; min-height: 0; }
+.blk { display: grid; grid-template-columns: 18px 14px 1fr auto 26px; gap: 8px; align-items: center; padding: 3px 12px; cursor: default; }
+.blk:hover { background: var(--hover); }
+.blk .sw { width: 14px; height: 14px; border-radius: 3px; box-shadow: inset 0 0 0 1px var(--border); }
+.blk .nm { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.blk .ns { color: var(--muted); }
+.blk .ct { color: var(--ink-2); }
+.blk .eye { border: 0; background: none; cursor: pointer; padding: 2px; color: var(--ink-2); border-radius: 4px; display: grid; place-items: center; }
+.blk .eye:hover { background: var(--hover); }
+.blk.dim .nm { opacity: .6; }
+.blk.hidden .nm { opacity: .35; text-decoration: line-through; }
+.blk .ser { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 6px; vertical-align: -1px; }
+
+main { display: flex; flex-direction: column; min-width: 0; min-height: 0; }
+nav { display: flex; gap: 2px; padding: 8px 12px 0; border-bottom: 1px solid var(--border); background: var(--surface-1); }
+nav button { border: 0; background: none; padding: 6px 12px; border-bottom: 2px solid transparent; cursor: pointer; color: var(--ink-2); }
+nav button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); font-weight: 600; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding: 8px 12px; border-bottom: 1px solid var(--border); background: var(--surface-1); min-height: 45px; }
+.toolbar label { display: inline-flex; gap: 6px; align-items: center; color: var(--ink-2); }
+.toolbar input[type=number] { width: 80px; padding: 3px 6px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface-2); }
+.toolbar input[type=range] { width: 220px; }
+.toolbar select { padding: 3px 6px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface-2); }
+.view { flex: 1; min-height: 0; display: none; flex-direction: column; }
+.view.active { display: flex; }
+.stage { position: relative; flex: 1; min-height: 0; background: var(--void); }
+.stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; cursor: crosshair; touch-action: none; }
+.status { padding: 4px 12px; border-top: 1px solid var(--border); background: var(--surface-1); color: var(--ink-2); min-height: 26px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.empty { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); text-align: center; padding: 24px; pointer-events: none; }
+
+#tip { position: fixed; pointer-events: none; z-index: 10; background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; box-shadow: 0 4px 16px rgba(0,0,0,.18); display: none; max-width: 360px; }
+#tip .t { font-weight: 600; margin-bottom: 2px; }
+#tip .r { display: flex; gap: 8px; align-items: center; justify-content: space-between; }
+#tip .k { display: flex; gap: 6px; align-items: center; }
+#tip .d { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+
+#chartwrap { flex: 1; min-height: 0; position: relative; background: var(--surface-1); }
+#chart { position: absolute; inset: 0; width: 100%; height: 100%; }
+#legend { display: flex; flex-wrap: wrap; gap: 12px; }
+#legend span { display: inline-flex; gap: 6px; align-items: center; color: var(--ink-2); }
+#legend i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+#tablewrap { max-height: 34%; overflow: auto; border-top: 1px solid var(--border); background: var(--surface-1); }
+table { border-collapse: collapse; width: 100%; }
+th, td { text-align: right; padding: 4px 12px; border-bottom: 1px solid var(--grid); white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; }
+th { color: var(--ink-2); font-weight: 600; position: sticky; top: 0; background: var(--surface-1); }
+.scale { display: inline-flex; align-items: center; gap: 6px; color: var(--ink-2); }
+.scale .bar { width: 140px; height: 10px; border-radius: 3px; box-shadow: inset 0 0 0 1px var(--border); }
+.scale .zero { width: 14px; height: 10px; border-radius: 2px; background: var(--surface-2); box-shadow: inset 0 0 0 1px var(--border); }
+.scale .miss { width: 14px; height: 10px; border-radius: 2px; background: repeating-linear-gradient(45deg, var(--checker-a) 0 3px, var(--checker-b) 3px 6px); box-shadow: inset 0 0 0 1px var(--border); }
+
+#loading { position: fixed; inset: 0; display: grid; place-items: center; background: var(--page); z-index: 20; }
+#loading .box { width: 360px; text-align: center; }
+#loading .track { height: 6px; background: var(--surface-2); border-radius: 3px; overflow: hidden; margin-top: 10px; }
+#loading .fill { height: 100%; width: 0; background: var(--accent); transition: width .2s; }
+#loading pre { text-align: left; white-space: pre-wrap; color: var(--s8); font-size: 12px; }
+</style>
+</head>
+<body>
+<div id="loading"><div class="box"><div id="loadmsg">Scanning world…</div><div class="track"><div class="fill" id="loadfill"></div></div><pre id="loaderr"></pre></div></div>
+
+<div id="shell">
+  <header>
+    <h1>World Viewer</h1>
+    <div id="meta"></div>
+    <button class="btn" id="rescan" title="Re-read the save (run /save-all in game first)">Rescan</button>
+    <button class="btn" id="theme" title="Toggle light/dark">Theme</button>
+  </header>
+
+  <aside>
+    <div class="side-top">
+      <input id="search" type="search" placeholder="Filter blocks…  (e.g. copper, granite)" autocomplete="off">
+      <div class="seg" id="cats">
+        <button data-cat="all" aria-pressed="true">All</button>
+        <button data-cat="ore">Ores</button>
+        <button data-cat="rock">Rock</button>
+        <button data-cat="fluid">Fluids</button>
+        <button data-cat="other">Other</button>
+      </div>
+      <label class="check"><input type="checkbox" id="group"> Group TFC ores by mineral (all grades &amp; host rocks)</label>
+      <div class="row-wrap">
+        <span class="hint">Slice visibility:</span>
+        <button class="btn" id="v-all">Show all</button>
+        <button class="btn" id="v-dimrock">Dim rock</button>
+        <button class="btn" id="v-ores">Ores only</button>
+      </div>
+      <div class="hint">Tick blocks to plot them (up to 8). The eye cycles shown → dimmed → hidden in slices.</div>
+    </div>
+    <div id="list" role="list"></div>
+  </aside>
+
+  <main>
+    <nav role="tablist">
+      <button role="tab" data-view="map" aria-selected="true">Map</button>
+      <button role="tab" data-view="slice" aria-selected="false">Slice</button>
+      <button role="tab" data-view="dist" aria-selected="false">Y distribution</button>
+      <button role="tab" data-view="heat" aria-selected="false">Heatmap</button>
+    </nav>
+
+    <section class="view active" id="view-map">
+      <div class="toolbar">
+        <div class="seg" id="mapmode">
+          <button data-mode="surface" aria-pressed="true">Surface</button>
+          <button data-mode="height" aria-pressed="false">Height</button>
+        </div>
+        <span class="hint">Scroll to zoom, drag to pan, double-click to fit. Click to pick a point for slicing.</span>
+        <span class="scale" id="heightscale" hidden><span id="hlo" class="num"></span><span class="bar" id="hbar"></span><span id="hhi" class="num"></span></span>
+      </div>
+      <div class="stage"><canvas id="c-map"></canvas></div>
+      <div class="status num" id="st-map">&nbsp;</div>
+    </section>
+
+    <section class="view" id="view-slice">
+      <div class="toolbar">
+        <div class="seg" id="axis">
+          <button data-axis="y" aria-pressed="true" title="Horizontal cut at a Y level">Horizontal (Y)</button>
+          <button data-axis="x" aria-pressed="false" title="Vertical cut along north–south at a fixed X">Vertical N–S (X)</button>
+          <button data-axis="z" aria-pressed="false" title="Vertical cut along east–west at a fixed Z">Vertical E–W (Z)</button>
+        </div>
+        <label><span id="poslabel">Y</span> <input type="number" id="pos"></label>
+        <input type="range" id="posr" aria-label="Slice position">
+        <button class="btn" data-step="-16" title="Shift+↓">−16</button>
+        <button class="btn" data-step="-1" title="↓">−1</button>
+        <button class="btn" data-step="1" title="↑">+1</button>
+        <button class="btn" data-step="16" title="Shift+↑">+16</button>
+      </div>
+      <div class="stage"><canvas id="c-slice"></canvas></div>
+      <div class="status num" id="st-slice">&nbsp;</div>
+    </section>
+
+    <section class="view" id="view-dist">
+      <div class="toolbar">
+        <div class="seg" id="distmode">
+          <button data-mode="count" aria-pressed="true">Block count</button>
+          <button data-mode="share" aria-pressed="false" title="Each block as % of its own total, so rare and common blocks share one axis">% of each block's total</button>
+        </div>
+        <label><input type="checkbox" id="smooth"> Smooth (5-level average)</label>
+        <label><input type="checkbox" id="fullh"> Full world height</label>
+        <div id="legend"></div>
+      </div>
+      <div id="chartwrap"><svg id="chart" role="img" aria-label="Block count by Y level"></svg><div class="empty" id="dist-empty">Tick blocks in the list to plot how they are distributed by Y level.<br>Tip: choose “Ores” and turn on grouping by mineral.</div></div>
+      <div id="tablewrap"><table id="disttable"></table></div>
+    </section>
+
+    <section class="view" id="view-heat">
+      <div class="toolbar">
+        <label>Block <select id="heatent"></select></label>
+        <label>Y from <input type="number" id="ylo"></label>
+        <label>to <input type="number" id="yhi"></label>
+        <span class="hint">(rounded to 16-block sections)</span>
+        <div class="seg" id="heatscale">
+          <button data-scale="linear" aria-pressed="true">Linear</button>
+          <button data-scale="sqrt" aria-pressed="false">√ scale</button>
+        </div>
+        <span class="scale"><span class="zero"></span> none <span class="num" id="hm-lo">1</span><span class="bar" id="hm-bar"></span><span class="num" id="hm-hi"></span><span class="miss"></span> not generated</span>
+      </div>
+      <div class="stage"><canvas id="c-heat"></canvas><div class="empty" id="heat-empty">Tick a block in the list to map where it is concentrated, chunk by chunk.</div></div>
+      <div class="status num" id="st-heat">&nbsp;</div>
+    </section>
+  </main>
+</div>
+<div id="tip"></div>
+
+<script>
+"use strict";
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const MISSING = 0xFFFF;
+const MAX_SERIES = 8;
+const fmt = n => n.toLocaleString();
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const hexRGB = h => [parseInt(h.slice(1, 3), 16), parseInt(h.slice(3, 5), 16), parseInt(h.slice(5, 7), 16)];
+const RAMP = ['#cde2fb','#b7d3f6','#9ec5f4','#86b6ef','#6da7ec','#5598e7','#3987e5','#2a78d6','#256abf','#1c5cab','#184f95','#104281','#0d366b'];
+const isDark = () => css('color-scheme') === 'dark';
+function rampColor(t) {           // t in [0,1] -> [r,g,b]; low values recede toward the surface
+  const ramp = isDark() ? [...RAMP].reverse() : RAMP;
+  const x = Math.max(0, Math.min(1, t)) * (ramp.length - 1), i = Math.min(ramp.length - 2, Math.floor(x)), f = x - i;
+  const a = hexRGB(ramp[i]), b = hexRGB(ramp[i + 1]);
+  return [0, 1, 2].map(k => Math.round(a[k] + (b[k] - a[k]) * f));
+}
+function rampCSS() { const r = isDark() ? [...RAMP].reverse() : RAMP; return `linear-gradient(90deg, ${r.join(',')})`; }
+
+// ------------------------------------------------------------------ state
+const S = {
+  info: null, blocks: [], rgb: null, vis: null,   // vis per block id: 0 shown, 1 dimmed, 2 hidden
+  ents: [], entByKey: new Map(), group: false, cat: 'all', text: '',
+  selected: [], slot: new Map(),                   // entity key -> series slot (stable while selected)
+  view: 'map', point: null,
+  slice: { axis: 'y', pos: 0, data: null, hdr: null },
+  map: { mode: 'surface', data: null },
+  heat: { scale: 'linear', data: null, ent: null },
+  ycache: new Map(),
+};
+
+async function getJSON(url) { const r = await fetch(url); const j = await r.json(); if (!r.ok) throw new Error(j.error || r.status); return j; }
+async function getBin(url) {
+  const r = await fetch(url);
+  if (!r.ok) throw new Error((await r.json()).error || r.status);
+  const buf = await r.arrayBuffer();
+  const hl = new DataView(buf).getUint32(0, true);
+  return { hdr: JSON.parse(new TextDecoder().decode(new Uint8Array(buf, 4, hl))), buf, off: 4 + hl };
+}
+
+// ------------------------------------------------------------------ tooltip
+const tip = $('#tip');
+function showTip(x, y, html) {
+  tip.innerHTML = html; tip.style.display = 'block';
+  const r = tip.getBoundingClientRect();
+  let tx = x + 14, ty = y + 14;
+  if (tx + r.width > innerWidth - 8) tx = x - r.width - 14;
+  if (ty + r.height > innerHeight - 8) ty = y - r.height - 14;
+  tip.style.left = tx + 'px'; tip.style.top = ty + 'px';
+}
+function hideTip() { tip.style.display = 'none'; }
+const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const blockHTML = id => { const b = S.blocks[id]; return `<span class="k"><span class="d" style="background:${b.color};border-radius:3px"></span>${esc(b.name)}</span>`; };
+
+// ------------------------------------------------------------------ pan/zoom viewport over a cell image
+class Viewport {
+  constructor(canvas, { overlay, onHover, onClick, onLeave } = {}) {
+    Object.assign(this, { c: canvas, ctx: canvas.getContext('2d'), img: null, w: 0, h: 0, scale: 1, ox: 0, oy: 0, overlay, onHover, onClick, onLeave });
+    let down = null;
+    canvas.addEventListener('pointerdown', e => { down = { x: e.clientX, y: e.clientY, ox: this.ox, oy: this.oy, moved: false }; canvas.setPointerCapture(e.pointerId); });
+    canvas.addEventListener('pointermove', e => {
+      const p = this.local(e);
+      if (down) {
+        const dx = e.clientX - down.x, dy = e.clientY - down.y;
+        if (Math.abs(dx) + Math.abs(dy) > 3) down.moved = true;
+        if (down.moved) { this.ox = down.ox + dx; this.oy = down.oy + dy; this.draw(); hideTip(); return; }
+      }
+      const [cx, cy] = this.toCell(p.x, p.y);
+      this.onHover?.(Math.floor(cx), Math.floor(cy), e);
+    });
+    canvas.addEventListener('pointerup', e => {
+      if (down && !down.moved) { const p = this.local(e); const [cx, cy] = this.toCell(p.x, p.y); this.onClick?.(Math.floor(cx), Math.floor(cy), e); }
+      down = null;
+    });
+    canvas.addEventListener('pointerleave', () => { hideTip(); this.onLeave?.(); });
+    canvas.addEventListener('dblclick', () => { this.fit(); this.draw(); });
+    canvas.addEventListener('wheel', e => {
+      e.preventDefault();
+      const p = this.local(e), k = Math.exp(-e.deltaY * 0.0015);
+      const ns = Math.max(0.02, Math.min(80, this.scale * k));
+      this.ox = p.x - (p.x - this.ox) * ns / this.scale; this.oy = p.y - (p.y - this.oy) * ns / this.scale; this.scale = ns;
+      this.draw();
+    }, { passive: false });
+    new ResizeObserver(() => this.resize()).observe(canvas);
+  }
+  local(e) { const r = this.c.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; }
+  toCell(x, y) { return [(x - this.ox) / this.scale, (y - this.oy) / this.scale]; }
+  toScreen(cx, cy) { return [cx * this.scale + this.ox, cy * this.scale + this.oy]; }
+  resize() {
+    const dpr = devicePixelRatio || 1, W = this.c.clientWidth, H = this.c.clientHeight;
+    if (!W || !H) return;
+    const first = !this.c.width || this.c.width === 300;
+    this.c.width = Math.round(W * dpr); this.c.height = Math.round(H * dpr);
+    if (first && this.img) this.fit();
+    this.draw();
+  }
+  setImage(img, w, h, keepView) {
+    const changed = w !== this.w || h !== this.h;
+    this.img = img; this.w = w; this.h = h;
+    if (!keepView || changed) this.fit();
+    this.draw();
+  }
+  fit() {
+    const W = this.c.clientWidth, H = this.c.clientHeight;
+    if (!W || !H || !this.w) return;
+    this.scale = Math.min(W / this.w, H / this.h) * 0.96;
+    this.ox = (W - this.w * this.scale) / 2; this.oy = (H - this.h * this.scale) / 2;
+  }
+  draw() {
+    const ctx = this.ctx, dpr = devicePixelRatio || 1;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, this.c.clientWidth, this.c.clientHeight);
+    if (!this.img) return;
+    ctx.imageSmoothingEnabled = false;
+    ctx.drawImage(this.img, this.ox, this.oy, this.w * this.scale, this.h * this.scale);
+    this.overlay?.(ctx, this);
+  }
+}
+function makeCanvas(w, h) { const c = document.createElement('canvas'); c.width = w; c.height = h; return c; }
+function checker(x, y, a, b) { return ((x >> 3) + (y >> 3)) & 1 ? a : b; }
+
+// ------------------------------------------------------------------ entities (single blocks, or grouped TFC ores)
+function oreGroup(name) {
+  const m = name.match(/^tfc:ore\/(?:(?:poor|normal|rich)_)?([a-z_]+)\/[a-z_]+$/);
+  return m ? { key: 'g:' + m[1], label: `tfc:ore/${m[1]} (all grades & rocks)` } : null;
+}
+function buildEntities() {
+  const ents = [], byKey = new Map();
+  for (const b of S.blocks) {
+    if (b.air) continue;
+    const g = S.group ? oreGroup(b.name) : null;
+    const key = g ? g.key : 'b:' + b.id;
+    let e = byKey.get(key);
+    if (!e) { e = { key, label: g ? g.label : b.name, ids: [], total: 0, ore: b.ore, rock: b.rock, fluid: b.fluid }; byKey.set(key, e); ents.push(e); }
+    e.ids.push(b.id); e.total += b.total;
+  }
+  for (const e of ents) {
+    const main = e.ids.reduce((a, i) => S.blocks[i].total > S.blocks[a].total ? i : a, e.ids[0]);
+    e.color = S.blocks[main].color;
+  }
+  ents.sort((a, b) => b.total - a.total);
+  // carry the selection across regrouping where the same blocks are still represented
+  const oldSel = S.selected.map(k => S.entByKey.get(k)).filter(Boolean);
+  S.ents = ents; S.entByKey = byKey;
+  const newSel = [];
+  for (const old of oldSel) for (const e of ents) if (e.ids.some(i => old.ids.includes(i)) && !newSel.includes(e.key)) newSel.push(e.key);
+  S.selected = newSel.slice(0, MAX_SERIES);
+  S.slot = new Map(S.selected.map((k, i) => [k, i]));
+}
+function entVis(e) { const v = e.ids.map(i => S.vis[i]); return v.every(x => x === v[0]) ? v[0] : 0; }
+
+// ------------------------------------------------------------------ sidebar list
+const EYE = [
+  '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 8s2.5-5 7-5 7 5 7 5-2.5 5-7 5-7-5-7-5z"/><circle cx="8" cy="8" r="2"/></svg>',
+  '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" opacity=".55"><path d="M1 8s2.5-5 7-5 7 5 7 5-2.5 5-7 5-7-5-7-5z"/><circle cx="8" cy="8" r="2"/></svg>',
+  '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 2l12 12M6.5 3.2A6.7 6.7 0 0 1 8 3c4.5 0 7 5 7 5a12 12 0 0 1-2 2.6M4 4.6C2.1 5.9 1 8 1 8s2.5 5 7 5a6.6 6.6 0 0 0 3.3-.9"/></svg>',
+];
+const VIS_LABEL = ['shown', 'dimmed', 'hidden'];
+function seriesColor(key) { const s = S.slot.get(key); return s === undefined ? null : `var(--s${s + 1})`; }
+function renderList() {
+  const t = S.text.toLowerCase();
+  const rows = S.ents.filter(e => {
+    if (t && !e.label.toLowerCase().includes(t)) return false;
+    if (S.cat === 'ore') return e.ore;
+    if (S.cat === 'rock') return e.rock;
+    if (S.cat === 'fluid') return e.fluid;
+    if (S.cat === 'other') return !e.ore && !e.rock && !e.fluid;
+    return true;
+  });
+  $('#list').innerHTML = rows.map(e => {
+    const [ns, ...rest] = e.label.split(':'), v = entVis(e), sc = seriesColor(e.key);
+    return `<div class="blk ${['', 'dim', 'hidden'][v]}" role="listitem" data-key="${e.key}" title="${esc(e.label)}${e.ids.length > 1 ? ' — ' + e.ids.length + ' block ids' : ''}">
+      <input type="checkbox" class="sel" ${S.selected.includes(e.key) ? 'checked' : ''} aria-label="Plot ${esc(e.label)}">
+      <span class="sw" style="background:${e.color}"></span>
+      <span class="nm">${sc ? `<span class="ser" style="background:${sc}"></span>` : ''}<span class="ns">${esc(ns)}:</span>${esc(rest.join(':'))}</span>
+      <span class="ct num">${fmt(e.total)}</span>
+      <button class="eye" aria-label="${esc(e.label)} is ${VIS_LABEL[v]} in slices; click to change">${EYE[v]}</button>
+    </div>`;
+  }).join('') || '<div class="hint" style="padding:12px">No blocks match.</div>';
+}
+$('#list').addEventListener('click', e => {
+  const row = e.target.closest('.blk'); if (!row) return;
+  const ent = S.entByKey.get(row.dataset.key);
+  if (e.target.closest('.eye')) {
+    const nv = (entVis(ent) + 1) % 3;
+    for (const i of ent.ids) S.vis[i] = nv;
+    renderList(); refreshSliceImage();
+  } else if (e.target.classList.contains('sel')) {
+    toggleSelect(ent.key, e.target.checked);
+  }
+});
+function toggleSelect(key, on) {
+  if (on && !S.selected.includes(key)) {
+    if (S.selected.length >= MAX_SERIES) { flash(`Up to ${MAX_SERIES} blocks can be plotted at once — untick one first.`); renderList(); return; }
+    S.selected.push(key);
+    const used = new Set(S.slot.values());
+    let s = 0; while (used.has(s)) s++;
+    S.slot.set(key, s);
+  } else if (!on) {
+    S.selected = S.selected.filter(k => k !== key); S.slot.delete(key);
+  }
+  renderList(); renderHeatChoices(); if (S.view === 'dist') renderDist(); if (S.view === 'heat') loadHeat();
+}
+function flash(msg) { const el = $('#st-' + (S.view === 'dist' ? 'map' : S.view)) || $('#st-map'); el.textContent = msg; }
+$('#search').addEventListener('input', e => { S.text = e.target.value; renderList(); });
+$('#cats').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; S.cat = b.dataset.cat; $$('#cats button').forEach(x => x.setAttribute('aria-pressed', x === b)); renderList(); });
+$('#group').addEventListener('change', e => { S.group = e.target.checked; buildEntities(); renderList(); renderHeatChoices(); if (S.view === 'dist') renderDist(); if (S.view === 'heat') loadHeat(); });
+$('#v-all').onclick = () => { S.blocks.forEach(b => S.vis[b.id] = 0); renderList(); refreshSliceImage(); };
+$('#v-dimrock').onclick = () => { S.blocks.forEach(b => S.vis[b.id] = b.rock ? 1 : 0); renderList(); refreshSliceImage(); };
+$('#v-ores').onclick = () => { S.blocks.forEach(b => S.vis[b.id] = b.ore ? 0 : 2); renderList(); refreshSliceImage(); };
+
+// ------------------------------------------------------------------ tabs
+$$('nav button').forEach(b => b.addEventListener('click', () => setView(b.dataset.view)));
+function setView(v) {
+  S.view = v;
+  $$('nav button').forEach(b => b.setAttribute('aria-selected', b.dataset.view === v));
+  $$('.view').forEach(s => s.classList.toggle('active', s.id === 'view-' + v));
+  hideTip();
+  if (v === 'map') mapVP.resize();
+  if (v === 'slice') { sliceVP.resize(); if (!S.slice.data) loadSlice(); }
+  if (v === 'dist') renderDist();
+  if (v === 'heat') { heatVP.resize(); loadHeat(); }
+}
+
+// ------------------------------------------------------------------ map
+const mapVP = new Viewport($('#c-map'), {
+  overlay(ctx, vp) {
+    const d = S.map.data; if (!d || !S.point) return;
+    const [sx, sy] = vp.toScreen((S.point.x - d.hdr.x0) / d.hdr.step + 0.5, (S.point.z - d.hdr.z0) / d.hdr.step + 0.5);
+    ctx.strokeStyle = css('--marker'); ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.arc(sx, sy, 7, 0, Math.PI * 2); ctx.moveTo(sx - 12, sy); ctx.lineTo(sx - 4, sy); ctx.moveTo(sx + 4, sy); ctx.lineTo(sx + 12, sy);
+    ctx.moveTo(sx, sy - 12); ctx.lineTo(sx, sy - 4); ctx.moveTo(sx, sy + 4); ctx.lineTo(sx, sy + 12); ctx.stroke();
+  },
+  onHover(cx, cy, e) {
+    const d = S.map.data; if (!d) return;
+    const { w, h, x0, z0, step } = d.hdr;
+    if (cx < 0 || cy < 0 || cx >= w || cy >= h) { hideTip(); $('#st-map').textContent = ' '; return; }
+    const id = d.ids[cy * w + cx], x = x0 + cx * step, z = z0 + cy * step;
+    if (id === MISSING) { hideTip(); $('#st-map').textContent = `x ${x}, z ${z} · not generated`; return; }
+    const y = d.ys[cy * w + cx];
+    $('#st-map').textContent = `x ${x}, z ${z} · surface y ${y} · ${S.blocks[id].name}`;
+    showTip(e.clientX, e.clientY, `${blockHTML(id)}<div class="num" style="color:var(--ink-2)">x ${x}, z ${z} · y ${y}</div>`);
+  },
+  onClick(cx, cy) {
+    const d = S.map.data; if (!d) return;
+    const { w, h, x0, z0, step } = d.hdr;
+    if (cx < 0 || cy < 0 || cx >= w || cy >= h) return;
+    S.point = { x: x0 + cx * step, z: z0 + cy * step, y: d.ys[cy * w + cx] };
+    S.slice.data = null;
+    if (S.slice.axis === 'x') S.slice.pos = S.point.x;
+    else if (S.slice.axis === 'z') S.slice.pos = S.point.z;
+    mapVP.draw();
+    $('#st-map').textContent = `Picked x ${S.point.x}, z ${S.point.z} (surface y ${S.point.y}). Open the Slice tab to cut through it.`;
+  },
+});
+async function loadMap() {
+  const [cx0, cz0, cx1, cz1] = S.info.cbox;
+  const span = Math.max(cx1 - cx0 + 1, cz1 - cz0 + 1) * 16;
+  const step = Math.max(1, Math.ceil(span / 4096));
+  const r = await getBin(`/api/surface?step=${step}`);
+  const n = r.hdr.w * r.hdr.h;
+  S.map.data = { hdr: r.hdr, ids: new Uint16Array(r.buf, r.off, n), ys: new Int16Array(r.buf, r.off + n * 2, n) };
+  renderMap();
+}
+function renderMap(keepView) {
+  const d = S.map.data; if (!d) return;
+  const { w, h } = d.hdr, img = new ImageData(w, h), px = img.data;
+  const ca = hexRGB(css('--checker-a')), cb = hexRGB(css('--checker-b'));
+  let ymn = 1e9, ymx = -1e9;
+  for (let i = 0; i < w * h; i++) if (d.ids[i] !== MISSING) { ymn = Math.min(ymn, d.ys[i]); ymx = Math.max(ymx, d.ys[i]); }
+  const height = S.map.mode === 'height';
+  for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
+    const i = y * w + x, o = i * 4, id = d.ids[i];
+    if (id === MISSING) { const c = checker(x, y, ca, cb); px[o] = c[0]; px[o + 1] = c[1]; px[o + 2] = c[2]; px[o + 3] = 255; continue; }
+    let r, g, b;
+    if (height) [r, g, b] = rampColor((d.ys[i] - ymn) / Math.max(1, ymx - ymn));
+    else {
+      r = S.rgb[id * 3]; g = S.rgb[id * 3 + 1]; b = S.rgb[id * 3 + 2];
+      // hillshade from the north-west so terrain reads as relief
+      const yl = x > 0 && d.ids[i - 1] !== MISSING ? d.ys[i - 1] : d.ys[i];
+      const yu = y > 0 && d.ids[i - w] !== MISSING ? d.ys[i - w] : d.ys[i];
+      const f = 1 + Math.max(-0.35, Math.min(0.35, ((d.ys[i] - yl) + (d.ys[i] - yu)) * 0.06));
+      r *= f; g *= f; b *= f;
+    }
+    px[o] = r; px[o + 1] = g; px[o + 2] = b; px[o + 3] = 255;
+  }
+  const c = makeCanvas(w, h); c.getContext('2d').putImageData(img, 0, 0);
+  mapVP.setImage(c, w, h, keepView);
+  $('#heightscale').hidden = !height;
+  if (height) { $('#hlo').textContent = 'y ' + ymn; $('#hhi').textContent = 'y ' + ymx; $('#hbar').style.background = rampCSS(); }
+}
+$('#mapmode').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; S.map.mode = b.dataset.mode; $$('#mapmode button').forEach(x => x.setAttribute('aria-pressed', x === b)); renderMap(true); });
+
+// ------------------------------------------------------------------ slice
+function sliceBounds() {
+  const [cx0, cz0, cx1, cz1] = S.info.cbox;
+  return { x0: cx0 * 16, x1: (cx1 + 1) * 16, z0: cz0 * 16, z1: (cz1 + 1) * 16, ymin: S.info.ymin, ymax: S.info.ymin + S.info.height - 1 };
+}
+function clampWindow(lo, hi, center, max) {
+  if (hi - lo <= max) return [lo, hi];
+  let a = Math.round(center - max / 2); a = Math.max(lo, Math.min(hi - max, a));
+  return [a, a + max];
+}
+function syncSliceControls() {
+  const B = sliceBounds(), ax = S.slice.axis;
+  const [lo, hi] = ax === 'y' ? [B.ymin, B.ymax] : ax === 'x' ? [B.x0, B.x1 - 1] : [B.z0, B.z1 - 1];
+  S.slice.pos = Math.max(lo, Math.min(hi, S.slice.pos));
+  $('#poslabel').textContent = ax.toUpperCase();
+  for (const el of [$('#pos'), $('#posr')]) { el.min = lo; el.max = hi; el.value = S.slice.pos; }
+}
+let sliceReq = 0;
+async function loadSlice() {
+  if (!S.info) return;
+  syncSliceControls();
+  const B = sliceBounds(), ax = S.slice.axis, pos = S.slice.pos;
+  const cx = S.point ? S.point.x : (B.x0 + B.x1) / 2, cz = S.point ? S.point.z : (B.z0 + B.z1) / 2;
+  let url;
+  if (ax === 'y') {
+    const [a0, a1] = clampWindow(B.x0, B.x1, cx, 2048), [b0, b1] = clampWindow(B.z0, B.z1, cz, 2048);
+    url = `/api/slice?axis=y&pos=${pos}&a0=${a0}&a1=${a1}&b0=${b0}&b1=${b1}`;
+  } else {
+    const [a0, a1] = ax === 'x' ? clampWindow(B.z0, B.z1, cz, 4096) : clampWindow(B.x0, B.x1, cx, 4096);
+    url = `/api/slice?axis=${ax}&pos=${pos}&a0=${a0}&a1=${a1}`;
+  }
+  const req = ++sliceReq;
+  $('#st-slice').textContent = 'Loading…';
+  try {
+    const r = await getBin(url);
+    if (req !== sliceReq) return;
+    const keep = S.slice.hdr && S.slice.hdr.axis === r.hdr.axis && S.slice.hdr.w === r.hdr.w && S.slice.hdr.h === r.hdr.h;
+    S.slice.hdr = r.hdr; S.slice.data = new Uint16Array(r.buf, r.off, r.hdr.w * r.hdr.h);
+    refreshSliceImage(keep);
+    $('#st-slice').textContent = describeSlice();
+  } catch (err) { $('#st-slice').textContent = 'Error: ' + err.message; }
+}
+function describeSlice() {
+  const h = S.slice.hdr; if (!h) return '';
+  if (h.axis === 'y') return `Horizontal slice at y ${h.pos} · x ${h.a0}…${h.a0 + h.w - 1}, z ${h.b0}…${h.b0 + h.h - 1} · north is up`;
+  return h.axis === 'x' ? `Vertical slice at x ${h.pos}, looking west · z ${h.a0}…${h.a0 + h.w - 1} (north on the left)`
+                        : `Vertical slice at z ${h.pos}, looking north · x ${h.a0}…${h.a0 + h.w - 1} (west on the left)`;
+}
+function refreshSliceImage(keepView = true) {
+  const d = S.slice.data, h = S.slice.hdr; if (!d) return;
+  const img = new ImageData(h.w, h.h), px = img.data;
+  const ca = hexRGB(css('--checker-a')), cb = hexRGB(css('--checker-b'));
+  for (let y = 0; y < h.h; y++) for (let x = 0; x < h.w; x++) {
+    const i = y * h.w + x, o = i * 4, id = d[i];
+    if (id === MISSING) { const c = checker(x, y, ca, cb); px[o] = c[0]; px[o + 1] = c[1]; px[o + 2] = c[2]; px[o + 3] = 255; continue; }
+    const v = S.blocks[id].air ? 2 : S.vis[id];
+    if (v === 2) continue;   // transparent: the stage background shows through
+    px[o] = S.rgb[id * 3]; px[o + 1] = S.rgb[id * 3 + 1]; px[o + 2] = S.rgb[id * 3 + 2]; px[o + 3] = v === 1 ? 45 : 255;
+  }
+  const c = makeCanvas(h.w, h.h); c.getContext('2d').putImageData(img, 0, 0);
+  sliceVP.setImage(c, h.w, h.h, keepView);
+}
+const sliceVP = new Viewport($('#c-slice'), {
+  overlay(ctx, vp) {
+    const h = S.slice.hdr; if (!h || h.axis === 'y') return;
+    // Y-level guides every 64 blocks, labelled at the left edge of the view
+    ctx.font = '11px system-ui, sans-serif'; ctx.textBaseline = 'middle';
+    for (let y = Math.ceil((h.ytop - h.h + 1) / 64) * 64; y <= h.ytop; y += 64) {
+      const [, sy] = vp.toScreen(0, h.ytop - y + 0.5);
+      ctx.strokeStyle = css('--axis'); ctx.lineWidth = 1; ctx.setLineDash([4, 4]);
+      ctx.beginPath(); ctx.moveTo(0, sy); ctx.lineTo(vp.c.clientWidth, sy); ctx.stroke(); ctx.setLineDash([]);
+      ctx.fillStyle = css('--ink-2'); ctx.fillText('y ' + y, 6, sy - 8);
+    }
+  },
+  onHover(cx, cy, e) {
+    const h = S.slice.hdr, d = S.slice.data; if (!h) return;
+    if (cx < 0 || cy < 0 || cx >= h.w || cy >= h.h) { hideTip(); $('#st-slice').textContent = describeSlice(); return; }
+    const id = d[cy * h.w + cx];
+    let x, y, z;
+    if (h.axis === 'y') { x = h.a0 + cx; z = h.b0 + cy; y = h.pos; }
+    else if (h.axis === 'x') { x = h.pos; z = h.a0 + cx; y = h.ytop - cy; }
+    else { z = h.pos; x = h.a0 + cx; y = h.ytop - cy; }
+    const where = `x ${x}, y ${y}, z ${z}`;
+    if (id === MISSING) { hideTip(); $('#st-slice').textContent = where + ' · not generated'; return; }
+    $('#st-slice').textContent = `${where} · ${S.blocks[id].name}`;
+    showTip(e.clientX, e.clientY, `${blockHTML(id)}<div class="num" style="color:var(--ink-2)">${where}</div>`);
+  },
+});
+function setSlicePos(p) { S.slice.pos = Math.round(p); syncSliceControls(); loadSlice(); }
+$('#axis').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  S.slice.axis = b.dataset.axis; $$('#axis button').forEach(x => x.setAttribute('aria-pressed', x === b));
+  const B = sliceBounds();
+  S.slice.pos = b.dataset.axis === 'y' ? (S.point ? S.point.y - 8 : 0)
+              : b.dataset.axis === 'x' ? (S.point ? S.point.x : (B.x0 + B.x1) >> 1) : (S.point ? S.point.z : (B.z0 + B.z1) >> 1);
+  loadSlice();
+});
+$('#pos').addEventListener('change', e => setSlicePos(+e.target.value));
+$('#posr').addEventListener('input', e => { S.slice.pos = +e.target.value; $('#pos').value = e.target.value; });
+$('#posr').addEventListener('change', e => setSlicePos(+e.target.value));
+$$('[data-step]').forEach(b => b.addEventListener('click', () => setSlicePos(S.slice.pos + +b.dataset.step)));
+addEventListener('keydown', e => {
+  if (S.view !== 'slice' || e.target.matches('input, select')) return;
+  const step = e.shiftKey ? 16 : 1;
+  if (e.key === 'ArrowUp' || e.key === 'PageUp') { e.preventDefault(); setSlicePos(S.slice.pos + step); }
+  if (e.key === 'ArrowDown' || e.key === 'PageDown') { e.preventDefault(); setSlicePos(S.slice.pos - step); }
+});
+
+// ------------------------------------------------------------------ Y distribution (depth profile: Y up the side, count along the bottom)
+async function ensureY(ids) {
+  const need = ids.filter(i => !S.ycache.has(i));
+  if (need.length) {
+    const r = await getJSON(`/api/ydist?ids=${need.join(',')}`);
+    for (const [i, arr] of Object.entries(r.series)) S.ycache.set(+i, arr);
+  }
+}
+function niceTicks(max, n = 5) {
+  if (max <= 0) return [0];
+  const raw = max / n, mag = 10 ** Math.floor(Math.log10(raw)), step = [1, 2, 2.5, 5, 10].map(m => m * mag).find(s => s >= raw);
+  const out = [0];
+  while (out[out.length - 1] < max - step * 1e-9) out.push(+(out.length * step).toPrecision(12));
+  return out;   // last tick is the first one at or above max, so marks never pass the axis
+}
+const fmtTick = (v, share) => share ? (v * 100).toFixed(v * 100 < 1 ? 2 : v * 100 < 10 ? 1 : 0) + '%' : v >= 1e6 ? (v / 1e6).toFixed(v % 1e6 ? 1 : 0) + 'M' : v >= 1e3 ? (v / 1e3).toFixed(v % 1e3 ? 1 : 0) + 'k' : String(v);
+let distReq = 0;
+async function renderDist() {
+  const ents = S.selected.map(k => S.entByKey.get(k)).filter(Boolean);
+  const svg = $('#chart');
+  $('#dist-empty').style.display = ents.length ? 'none' : 'grid';
+  $('#legend').innerHTML = ents.length >= 2 ? ents.map(e => `<span><i style="background:${seriesColor(e.key)}"></i>${esc(e.label)}</span>`).join('') : '';
+  if (!ents.length) { svg.innerHTML = ''; $('#disttable').innerHTML = ''; return; }
+  const req = ++distReq;
+  await ensureY(ents.flatMap(e => e.ids));
+  if (req !== distReq) return;
+  const ymin = S.info.ymin, H = S.info.height, share = $('#distmode [aria-pressed=true]').dataset.mode === 'share';
+  const series = ents.map(e => {
+    const raw = new Float64Array(H);
+    for (const i of e.ids) S.ycache.get(i).forEach((v, k) => raw[k] += v);
+    const total = raw.reduce((a, b) => a + b, 0);
+    let vals = raw;
+    if ($('#smooth').checked) { vals = raw.map((_, k) => { let s = 0, n = 0; for (let j = k - 2; j <= k + 2; j++) if (j >= 0 && j < H) { s += raw[j]; n++; } return s / n; }); }
+    if (share && total) vals = vals.map(v => v / total);
+    return { e, raw, vals, total };
+  });
+  // crop to where the selection actually occurs (unless full height requested)
+  let lo = 0, hi = H - 1;
+  if (!$('#fullh').checked) {
+    lo = H; hi = -1;
+    for (const s of series) s.raw.forEach((v, k) => { if (v > 0) { lo = Math.min(lo, k); hi = Math.max(hi, k); } });
+    if (hi < 0) { lo = 0; hi = H - 1; } else { lo = Math.max(0, lo - 8); hi = Math.min(H - 1, hi + 8); }
+  }
+  const W = svg.clientWidth, Hh = svg.clientHeight, m = { l: 56, r: 24, t: 16, b: 34 };
+  const vmax = Math.max(...series.map(s => Math.max(...s.vals.slice(lo, hi + 1)))) || 1;
+  const ticks = niceTicks(vmax), xmax = ticks[ticks.length - 1] || 1;
+  const X = v => m.l + (v / xmax) * (W - m.l - m.r);
+  const Y = k => m.t + (1 - (k - lo) / Math.max(1, hi - lo)) * (Hh - m.t - m.b);
+  let g = '';
+  for (const t of ticks) g += `<line x1="${X(t)}" x2="${X(t)}" y1="${m.t}" y2="${Hh - m.b}" stroke="var(--grid)"/><text x="${X(t)}" y="${Hh - m.b + 16}" text-anchor="middle" fill="var(--muted)" class="num" font-size="11">${fmtTick(t, share)}</text>`;
+  const yStep = (hi - lo) > 200 ? 32 : (hi - lo) > 80 ? 16 : 8;
+  for (let y = Math.ceil((ymin + lo) / yStep) * yStep; y <= ymin + hi; y += yStep) {
+    const sy = Y(y - ymin);
+    g += `<line x1="${m.l}" x2="${W - m.r}" y1="${sy}" y2="${sy}" stroke="var(--grid)"/><text x="${m.l - 8}" y="${sy + 4}" text-anchor="end" fill="var(--muted)" class="num" font-size="11">${y}</text>`;
+  }
+  g += `<line x1="${m.l}" x2="${m.l}" y1="${m.t}" y2="${Hh - m.b}" stroke="var(--axis)"/>`;
+  g += `<text x="${(m.l + W - m.r) / 2}" y="${Hh - 6}" text-anchor="middle" fill="var(--ink-2)" font-size="11">${share ? "Share of the block's total at each Y" : 'Blocks at each Y level (all generated chunks)'}</text>`;
+  g += `<text transform="translate(14 ${(m.t + Hh - m.b) / 2}) rotate(-90)" text-anchor="middle" fill="var(--ink-2)" font-size="11">Y level</text>`;
+  for (const s of series) {
+    let d = '';
+    for (let k = lo; k <= hi; k++) d += (k === lo ? 'M' : 'L') + X(s.vals[k]).toFixed(1) + ',' + Y(k).toFixed(1);
+    g += `<path d="${d}" fill="none" stroke="${seriesColor(s.e.key)}" stroke-width="2" stroke-linejoin="round"/>`;
+  }
+  if (series.length <= 4) {     // direct labels at each series' peak, nudged apart so they never overlap
+    const labels = series.map(s => {
+      let pk = lo; for (let k = lo; k <= hi; k++) if (s.vals[k] > s.vals[pk]) pk = k;
+      return { s, pk, px: X(s.vals[pk]), py: Y(pk), ly: Y(pk) - 6 };
+    }).sort((a, b) => a.ly - b.ly);
+    for (let i = 1; i < labels.length; i++) labels[i].ly = Math.max(labels[i].ly, labels[i - 1].ly + 15);
+    const over = labels.length ? labels[labels.length - 1].ly - (Hh - m.b - 4) : 0;
+    if (over > 0) labels.forEach(l => l.ly -= over);
+    for (const l of labels) {
+      const anchor = l.px > (m.l + W - m.r) / 2 ? 'end' : 'start';
+      g += `<circle cx="${l.px}" cy="${l.py}" r="4" fill="${seriesColor(l.s.e.key)}" stroke="var(--surface-1)" stroke-width="2"/>`;
+      g += `<text x="${l.px + (anchor === 'end' ? -8 : 8)}" y="${l.ly}" text-anchor="${anchor}" fill="var(--ink)" font-size="11" paint-order="stroke" stroke="var(--surface-1)" stroke-width="3">${esc(shortName(l.s.e.label))} · peak y ${ymin + l.pk}</text>`;
+    }
+  }
+  g += `<g id="xh" visibility="hidden"><line id="xhl" x1="${m.l}" x2="${W - m.r}" stroke="var(--ink-2)" stroke-dasharray="3 3"/></g><rect id="hit" x="${m.l}" y="${m.t}" width="${W - m.l - m.r}" height="${Hh - m.t - m.b}" fill="transparent"/>`;
+  svg.innerHTML = g;
+  const hit = svg.querySelector('#hit');
+  hit.addEventListener('pointermove', ev => {
+    const r = svg.getBoundingClientRect(), py = ev.clientY - r.top;
+    const k = Math.round(lo + (1 - (py - m.t) / (Hh - m.t - m.b)) * (hi - lo));
+    if (k < lo || k > hi) return;
+    svg.querySelector('#xh').setAttribute('visibility', 'visible');
+    const l = svg.querySelector('#xhl'); l.setAttribute('y1', Y(k)); l.setAttribute('y2', Y(k));
+    const rows = series.map(s => ({ s, v: s.vals[k], raw: s.raw[k] })).sort((a, b) => b.v - a.v);
+    showTip(ev.clientX, ev.clientY, `<div class="t num">y ${ymin + k}</div>` + rows.map(o =>
+      `<div class="r"><span class="k"><span class="d" style="background:${seriesColor(o.s.e.key)}"></span>${esc(shortName(o.s.e.label))}</span><span class="num">${share ? fmtTick(o.v, true) + ' · ' : ''}${fmt(Math.round(o.raw))}</span></div>`).join(''));
+  });
+  hit.addEventListener('pointerleave', () => { svg.querySelector('#xh').setAttribute('visibility', 'hidden'); hideTip(); });
+  // table view: totals, peak, and the Y band holding the middle 90%
+  const pct = (raw, total, p) => { let acc = 0; for (let k = 0; k < H; k++) { acc += raw[k]; if (acc >= total * p) return ymin + k; } return ymin + H - 1; };
+  $('#disttable').innerHTML = `<thead><tr><th>Block</th><th>Total</th><th>Peak Y</th><th>Middle 90% between</th><th>Lowest–highest Y</th></tr></thead><tbody>` +
+    series.map(s => {
+      let pk = 0, first = -1, last = -1;
+      s.raw.forEach((v, k) => { if (v > s.raw[pk]) pk = k; if (v > 0) { if (first < 0) first = k; last = k; } });
+      return `<tr><td><span class="ser" style="display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;background:${seriesColor(s.e.key)}"></span>${esc(s.e.label)}</td><td class="num">${fmt(s.total)}</td>` +
+        (s.total ? `<td class="num">${ymin + pk}</td><td class="num">y ${pct(s.raw, s.total, 0.05)} … ${pct(s.raw, s.total, 0.95)}</td><td class="num">y ${ymin + first} … ${ymin + last}</td>` : '<td colspan="3">not present</td>') + '</tr>';
+    }).join('') + '</tbody>';
+}
+const shortName = l => l.replace(/^tfc:ore\//, '').replace(/ \(all grades & rocks\)$/, ' (all)');
+$('#distmode').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; $$('#distmode button').forEach(x => x.setAttribute('aria-pressed', x === b)); renderDist(); });
+$('#smooth').addEventListener('change', renderDist);
+$('#fullh').addEventListener('change', renderDist);
+new ResizeObserver(() => { if (S.view === 'dist' && S.info) renderDist(); }).observe($('#chartwrap'));
+
+// ------------------------------------------------------------------ heatmap
+function renderHeatChoices() {
+  const sel = $('#heatent'), ents = S.selected.map(k => S.entByKey.get(k)).filter(Boolean);
+  if (!ents.find(e => e.key === S.heat.ent)) S.heat.ent = ents[0]?.key || null;
+  sel.innerHTML = ents.map(e => `<option value="${e.key}" ${e.key === S.heat.ent ? 'selected' : ''}>${esc(e.label)}</option>`).join('');
+  sel.disabled = !ents.length;
+}
+$('#heatent').addEventListener('change', e => { S.heat.ent = e.target.value; loadHeat(); });
+$('#ylo').addEventListener('change', loadHeat); $('#yhi').addEventListener('change', loadHeat);
+$('#heatscale').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; S.heat.scale = b.dataset.scale; $$('#heatscale button').forEach(x => x.setAttribute('aria-pressed', x === b)); renderHeat(true); });
+let heatReq = 0;
+async function loadHeat() {
+  renderHeatChoices();
+  const ent = S.entByKey.get(S.heat.ent);
+  $('#heat-empty').style.display = ent ? 'none' : 'grid';
+  if (!ent) { heatVP.setImage(null, 0, 0); S.heat.data = null; return; }
+  let q = `/api/heatmap?ids=${ent.ids.join(',')}`;
+  if ($('#ylo').value !== '') q += `&ylo=${+$('#ylo').value}`;
+  if ($('#yhi').value !== '') q += `&yhi=${+$('#yhi').value}`;
+  const req = ++heatReq;
+  try {
+    const r = await getJSON(q);
+    if (req !== heatReq) return;
+    S.heat.data = { ...r, ent };
+    renderHeat(true);
+  } catch (err) { $('#st-heat').textContent = 'Error: ' + err.message; }
+}
+function renderHeat(keepView) {
+  const d = S.heat.data; if (!d) return;
+  const img = new ImageData(d.w, d.h), px = img.data, max = Math.max(1, ...d.values);
+  const ca = hexRGB(css('--checker-a')), cb = hexRGB(css('--checker-b')), none = hexRGB(css('--surface-2'));
+  const f = S.heat.scale === 'sqrt' ? v => Math.sqrt(v / max) : v => v / max;
+  d.values.forEach((v, i) => {
+    const o = i * 4, x = i % d.w, y = (i / d.w) | 0;
+    const c = v < 0 ? ((x + y) & 1 ? ca : cb) : v === 0 ? none : rampColor(f(v));
+    px[o] = c[0]; px[o + 1] = c[1]; px[o + 2] = c[2]; px[o + 3] = 255;
+  });
+  const c = makeCanvas(d.w, d.h); c.getContext('2d').putImageData(img, 0, 0);
+  heatVP.setImage(c, d.w, d.h, keepView);
+  $('#hm-hi').textContent = fmt(Math.max(0, ...d.values)) + ' per chunk';
+  $('#hm-bar').style.background = rampCSS();
+  const total = d.values.reduce((a, v) => a + Math.max(0, v), 0), withAny = d.values.filter(v => v > 0).length, gen = d.values.filter(v => v >= 0).length;
+  $('#st-heat').textContent = `${d.ent.label}: ${fmt(total)} blocks in ${fmt(withAny)} of ${fmt(gen)} generated chunks`;
+}
+const heatVP = new Viewport($('#c-heat'), {
+  onHover(cx, cy, e) {
+    const d = S.heat.data; if (!d) return;
+    if (cx < 0 || cy < 0 || cx >= d.w || cy >= d.h) { hideTip(); return; }
+    const v = d.values[cy * d.w + cx], ccx = d.cx0 + cx, ccz = d.cz0 + cy;
+    showTip(e.clientX, e.clientY, `<div class="t num">chunk ${ccx}, ${ccz}</div><div class="num" style="color:var(--ink-2)">x ${ccx * 16}…${ccx * 16 + 15}, z ${ccz * 16}…${ccz * 16 + 15}</div><div class="num">${v < 0 ? 'not generated' : fmt(v) + ' blocks'}</div>`);
+  },
+});
+
+// ------------------------------------------------------------------ boot
+$('#theme').onclick = () => {
+  const root = document.documentElement, dark = isDark();
+  root.dataset.theme = dark ? 'light' : 'dark';
+  renderMap(true); refreshSliceImage(); renderHeat(true); if (S.view === 'dist') renderDist();
+};
+$('#rescan').onclick = async () => { await fetch('/api/rescan'); boot(); };
+async function boot() {
+  $('#loading').style.display = 'grid'; $('#loaderr').textContent = '';
+  for (;;) {
+    const st = await getJSON('/api/status');
+    if (st.error) { $('#loadmsg').textContent = 'Scan failed'; $('#loaderr').textContent = st.error; return; }
+    const [done, total] = st.progress;
+    $('#loadfill').style.width = total ? (100 * done / total) + '%' : '0';
+    $('#loadmsg').textContent = total ? `Scanning world… ${done} of ${total} region files` : 'Scanning world…';
+    if (st.ready) break;
+    await new Promise(r => setTimeout(r, 400));
+  }
+  S.info = await getJSON('/api/info');
+  S.blocks = S.info.blocks;
+  S.rgb = new Uint8Array(S.blocks.length * 3);
+  S.blocks.forEach(b => S.rgb.set(hexRGB(b.color), b.id * 3));
+  if (!S.vis || S.vis.length !== S.blocks.length) S.vis = new Uint8Array(S.blocks.length);
+  S.ycache.clear(); S.slice.data = null;
+  const i = S.info, [cx0, cz0, cx1, cz1] = i.cbox;
+  $('#meta').textContent = `${i.world} · ${i.dim} · ${i.version || '?'} · ${fmt(i.chunks)} generated chunks (${fmt(i.partial)} partial, ignored) · x ${cx0 * 16}…${cx1 * 16 + 15}, z ${cz0 * 16}…${cz1 * 16 + 15} · y ${i.ymin}…${i.ymin + i.height - 1} · scanned in ${i.scanSeconds}s`;
+  if (!S.slice.pos) S.slice.pos = 0;
+  buildEntities(); renderList(); renderHeatChoices();
+  $('#loading').style.display = 'none';
+  await loadMap();
+  if (S.view === 'slice') loadSlice();
+  if (S.view === 'dist') renderDist();
+  if (S.view === 'heat') loadHeat();
+}
+boot().catch(err => { $('#loadmsg').textContent = 'Could not load'; $('#loaderr').textContent = String(err); });
+</script>
+</body>
+</html>

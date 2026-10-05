@@ -18,3 +18,8 @@ kubejs/**/jsconfig.json
 kubejs/package.json
 kubejs/config/probe-settings.json
 kubejs/export/
+
+# Dev tooling environment and caches
+tools/.venv/
+tools/**/.cache/
+__pycache__/
