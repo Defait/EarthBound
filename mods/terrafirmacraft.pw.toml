@@ -1,0 +1,13 @@
+name = "TerraFirmaCraft"
+filename = "TerraFirmaCraft-NeoForge-1.21.1-4.2.11.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/JaCEZUhg/versions/Cvw1rnGv/TerraFirmaCraft-NeoForge-1.21.1-4.2.11.jar"
+hash-format = "sha512"
+hash = "4066d738cba71c74f1a4d41d18494f9f757a549fba0acaa3b818f16bc6a6452c2bebb0729674458026c6820e17bfd8b32a69b99f150202223b1c9828fa8e7124"
+
+[update]
+[update.modrinth]
+mod-id = "JaCEZUhg"
+version = "Cvw1rnGv"

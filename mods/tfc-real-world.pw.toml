@@ -1,0 +1,13 @@
+name = "TFC: Real World"
+filename = "TFC-Real-World-NeoForge-1.21.1-4.2.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/347cQKLJ/versions/SmEE1gHn/TFC-Real-World-NeoForge-1.21.1-4.2.0.jar"
+hash-format = "sha512"
+hash = "45a1312104e5c54f0345fb3adbc428ca4cd9bbaa7ae79a61ecf941e21f455dc6e1287f0baeb0c02da1796aeb85538826389c5fc559f0117c23f1d1ebd40085e9"
+
+[update]
+[update.modrinth]
+mod-id = "347cQKLJ"
+version = "SmEE1gHn"

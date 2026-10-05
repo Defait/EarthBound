@@ -1,0 +1,20 @@
+# Exported packs (packwiz modrinth export / curseforge export)
+*.mrpack
+/*.zip
+
+# Local packwiz binaries / installer
+packwiz.exe
+packwiz-installer*.jar
+
+# OS / editor junk
+Thumbs.db
+desktop.ini
+.DS_Store
+.idea/
+.vscode/
+
+# ProbeJS-generated editor files (regenerated per instance with /probejs dump)
+kubejs/**/jsconfig.json
+kubejs/package.json
+kubejs/config/probe-settings.json
+kubejs/export/

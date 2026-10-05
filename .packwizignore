@@ -1,0 +1,18 @@
+# Repo-only files that shouldn't be distributed in the pack
+# (.git, .gitignore, .gitattributes, *.zip, *.mrpack are ignored by default)
+/README.md
+/LICENSE*
+/CLAUDE.md
+packwiz-installer*.jar
+/.claude/
+/.github/
+/.idea/
+/.vscode/
+Thumbs.db
+desktop.ini
+
+# ProbeJS-generated editor files (regenerated per instance with /probejs dump)
+kubejs/**/jsconfig.json
+kubejs/package.json
+kubejs/config/probe-settings.json
+kubejs/export/
