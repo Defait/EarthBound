@@ -6,7 +6,8 @@ Usage (from the repo root):
 Steps: install/refresh NeoForge for the pack's loader version, sync the pack's
 server-side files with packwiz-installer, start the server on a new world,
 wait for it to finish loading (or crash), run /reload once to exercise
-script reloading, stop it, and report. Exits 1 on a crash, a KubeJS script
+script reloading, stop it, and report. tools/smoke_checks.js runs extra checks on
+the server (e.g. that recipe-viewer mixins apply). Exits 1 on a crash, a KubeJS script
 error, or an error that isn't on tools/known_issues.json.
 """
 import argparse
@@ -41,7 +42,7 @@ def main():
     if not args.no_sync:
         srv.sync_pack()
     srv.set_extra_mods([])
-    srv.set_dev_scripts({})
+    srv.set_dev_scripts({"smoke_checks.js": os.path.join(os.path.dirname(os.path.abspath(__file__)), "smoke_checks.js")})
     if not args.keep_world:
         shutil.rmtree(srv.path(WORLD), ignore_errors=True)
     srv.write_properties(WORLD, args.seed)
