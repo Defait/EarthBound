@@ -176,6 +176,70 @@
     {
       "pattern": "^spark: Timed out waiting for world statistics",
       "note": "spark gathers world statistics in the background; the short-lived test server stops before it finishes"
+    },
+    {
+      "pattern": "^net\\.minecraft\\.client\\.resources\\.model\\.ModelBakery: Unable to load model: 'woodencog:item/metal/",
+      "note": "Woodencog registers 'unfinished' metal tool items (intermediates of its automated smithing) without shipping their models; they render as missing-model items"
+    },
+    {
+      "pattern": "^net\\.minecraft\\.client\\.sounds\\.SoundManager: File design_decor:sounds/large_chain/",
+      "note": "Design n Decor's large chain sound events point at sound files it doesn't ship; the chain is silent"
+    },
+    {
+      "pattern": "^net\\.minecraft\\.client\\.resources\\.model\\.BlockStateModelLoader: Exception loading blockstate definition: 'dndecor:blockstates/text_plate\\.json' missing model for variant",
+      "note": "Design n Decor's text plate blockstate lacks its waterlogged variants; only a waterlogged text plate would render as a missing model"
+    },
+    {
+      "pattern": "^net\\.minecraft\\.server\\.packs\\.PathPackResources: Invalid path createdeco:textures/block/palettes/decals/BLANK_decal_dont_use\\.png",
+      "note": "Create Deco ships an unused placeholder texture with capital letters in its name; ignored"
+    },
+    {
+      "pattern": "^mezz\\.jei\\.library\\.load\\.registration\\.SubtypeRegistration: An interpreter is already registered for this: create:(flowing_)?potion",
+      "note": "Create registers a JEI subtype interpreter for its potion fluid that another plugin already registered; the first one is used"
+    },
+    {
+      "pattern": "^EMI: \\[JEMI\\] Exception thrown setting JEI crafting recipe",
+      "note": "one Create Factory Logistics recipe display asks JEI for a Mekanism chemical ingredient type; that single recipe doesn't show in EMI"
+    },
+    {
+      "pattern": "^mixin: (Error loading class: (com/portingdeadmods/cable_facades/|com/direwolf\\d+/justdirethings/|mekanism/|blusunrize/immersiveengineering/|net/minecraft/client/gui/screens/controls/KeyBindsList\\$KeyEntry)|@Mixin target net\\.minecraft\\.client\\.gui\\.screens\\.controls\\.KeyBindsList\\$KeyEntry was not found railways)",
+      "note": "client compat mixins for mods not in the pack (Mekanism, Immersive Engineering, Cable Facades, Just Dire Things), and Steam 'n' Rails' keybind-list mixin, whose target class has another name on 1.21.1 (its keybind conflict display only)"
+    },
+    {
+      "pattern": "^Sodium: Force-disabling mixin 'features\\.render\\.world\\.sky\\.",
+      "note": "Iris and TFC ask Sodium to leave sky rendering to them, as intended"
+    },
+    {
+      "pattern": "^Iris: \\[Iris Update Check\\] This version doesn't have an update index",
+      "note": "the Iris beta has no update feed; informational"
+    },
+    {
+      "pattern": "^mixin: @Inject\\(@At\\(\\\"INVOKE\\\"\\)\\) Shift\\.BY=\\d+ on create_connected\\.mixins\\.json:sequencedgearshift\\.",
+      "note": "Create Connected's sequenced gearshift screen mixin uses a large shift offset; Mixin warns, it still applies"
+    },
+    {
+      "pattern": "^net\\.minecraft\\.client\\.renderer\\.texture\\.SpriteLoader: Texture railways:block/semaphore_lamp_red with size",
+      "note": "a Steam 'n' Rails texture size limits mipmapping; cosmetic"
+    },
+    {
+      "pattern": "^net\\.minecraft\\.client\\.resources\\.model\\.ModelManager: Missing textures in model (create_connected:fan_\\w+_catalyst|create_power_loader:(andesite|brass)_chunk_loader)",
+      "note": "Create Connected's fan catalysts for mods not in the pack (Twilight Forest, Create: Nuclear...), and Power Loader's chunk loader item models, which reference an undefined 'axis' texture (the shaft looks wrong in the inventory; the placed block is fine)"
+    },
+    {
+      "pattern": "^ModernFix: (Time from main menu to in-game was|Total time to load game and open world was)",
+      "note": "ModernFix's load-time report, logged as a warning; informational"
+    },
+    {
+      "pattern": "^Sodium-VertexConsumerTracker: Class dev\\.emi\\.emi\\.screen\\.StackBatcher",
+      "note": "EMI's item batching doesn't use Sodium's fast vertex path; a small cost in the EMI panel only"
+    },
+    {
+      "pattern": "^Sodium-Workarounds: (Sodium has applied one or more workarounds|This is not necessarily an issue)",
+      "note": "Sodium works around NVIDIA's threaded optimisation driver setting; informational"
+    },
+    {
+      "pattern": "^net\\.minecraft\\.server\\.MinecraftServer: Can't keep up! Is the server overloaded\\?",
+      "note": "a few of these while new terrain generates (after /startat or flying far) are normal; many in a row would be a real lag problem"
     }
   ]
 }
