@@ -1,0 +1,111 @@
+#TFC: Real World Configuration
+[map_settings]
+	#
+	#Map profile ID. Profiles are loaded from config/tfc_real_world/profiles/
+	map_profile = "DEFAULT:FULL_EQUAL_EARTH"
+
+[spawn_settings]
+	#
+	#Spawn location mode: GEOGRAPHIC (use longitude/latitude), RANDOM (from seed), or CLASSIC (use coordinates)
+	#Allowed Values: GEOGRAPHIC, RANDOM, CLASSIC
+	spawn_mode = "GEOGRAPHIC"
+	#
+	#Geographic longitude for the center position around which the spawn position is chosen (used in GEOGRAPHIC mode)
+	# Default: 12.51133
+	# Range: -360.0 ~ 360.0
+	spawn_center_longitude = 12.51133
+	#
+	#Geographic latitude for the center position around which the spawn position is chosen (used in GEOGRAPHIC mode)
+	# Default: 41.89193
+	# Range: -90.0 ~ 90.0
+	spawn_center_latitude = 41.89193
+
+[tfc_spawn_settings]
+	#
+	#TFC option. The center X position around which the spawn position is chosen (used in CLASSIC mode)
+	# Default: 489
+	# Range: -100000 ~ 100000
+	spawn_center_x = 489
+	#
+	#TFC option. The center Z position around which the spawn position is chosen (used in CLASSIC mode)
+	# Default: -12259
+	# Range: -100000 ~ 100000
+	spawn_center_z = -12259
+	#
+	#TFC option. The maximum distance from the spawn center the spawn position will be chosen
+	# Default: 256
+	# Range: 256 ~ 100000
+	spawn_distance = 256
+
+[biome_modifications]
+	#
+	#Remove volcanic features from Canyons and Doline Canyons biomes
+	canyons_not_volcanic = true
+
+[world_generation]
+	#
+	#TFC option. If the bottom of the world is a single layer of flat bedrock, or random like vanilla
+	flat_bedrock = false
+	#
+	#TFC option. If the world should generate only a few continents, leaving a vast ocean beyond
+	finite_continents = false
+	#
+	#TFC option. Determines the nature of continents. Smaller values create smaller continents and more islands, larger values create larger, blobbier continents
+	# Default: 0.5
+	# Range: 0.0 ~ 1.0
+	continentalness = 0.5
+	#
+	#TFC option. Affects how much grass generates in the world. Higher values indicate more grass coverage
+	# Default: 0.5
+	# Range: 0.0 ~ 1.0
+	grass_density = 0.5
+	#
+	#TFC option. A number representing the temperature for an entire world, where -1.0 is polar and 1.0 is tropical
+	# Default: 0.0
+	# Range: -1.0 ~ 1.0
+	temperature_constant = 0.0
+	#
+	#TFC option. A number representing the rainfall for an entire world, where -1.0 is arid and 1.0 is tropical
+	# Default: 0.0
+	# Range: -1.0 ~ 1.0
+	rainfall_constant = 0.0
+	#
+	#TFC option. The distance between two temperature extremes, in blocks
+	# Default: 20000
+	# Range: 256 ~ 100000
+	temperature_scale = 20000
+	#
+	#TFC option. The distance between two rainfall extremes, in blocks
+	# Default: 20000
+	# Range: 256 ~ 100000
+	rainfall_scale = 20000
+
+[generation_modes]
+	#
+	#Horizontal map radius in blocks
+	# Default: 40000
+	# Range: 256 ~ 100000
+	horizontal_scale = 100000
+	#
+	#Vertical map radius in blocks
+	# Default: 20000
+	# Range: 256 ~ 100000
+	vertical_scale = 50000
+	#
+	#Generate continents from map or procedurally
+	continent_from_map = true
+	#
+	#Place the lakes of the continent map (needs continents from map) or generate lakes procedurally
+	lakes_from_map = true
+	#
+	#Generate relief, plate boundaries and volcanism from tectonics map or procedurally
+	tectonics_from_map = true
+	#
+	#Place hotspot volcanoes where the tectonics map has them (needs tectonics from map) or procedurally
+	volcanoes_from_map = true
+	#
+	#Place the real rivers of the profile (needs continents from map) or generate rivers procedurally
+	rivers_from_map = true
+	#
+	#Read climate parameters (temperature, rainfall, rainfall variance) from the climate maps or generate them procedurally
+	climate_from_map = true
