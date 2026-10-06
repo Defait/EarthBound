@@ -124,6 +124,18 @@
     {
       "pattern": "^mezz\\.jei\\.library\\.plugins\\.vanilla\\.ingredients\\.ItemStackListFactory: Item Group has no display items .*KubeJS",
       "note": "KubeJS's creative tab is empty because the pack adds no items"
+    },
+    {
+      "pattern": "^mixin: Method overwrite conflict for (getTemperature|removeIf) in modernfix-modernfix\\.mixins\\.json:.* previously written by net\\.caffeinemc\\.mods\\.lithium\\.",
+      "note": "ModernFix and Lithium ship the same fix (biome temperature cache, chunk ticket removal); Lithium's copy applies and ModernFix skips its own"
+    },
+    {
+      "pattern": "^mixin: Static binding violation: PRIVATE @Overwrite method \\w+ in modernfix-modernfix\\.mixins\\.json:perf\\.tag_id_caching\\.",
+      "note": "ModernFix's tag id cache overwrites a public method with a private one; Mixin keeps it public, which is what ModernFix expects"
+    },
+    {
+      "pattern": "^ModernFix: (Initial datapack load|Dedicated server|Game) took [\\d.]+ s",
+      "note": "ModernFix's load-time report, logged as a warning; informational"
     }
   ]
 }
