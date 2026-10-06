@@ -98,10 +98,6 @@
       "note": "optional client-side compat (most likely Sable's and EMI's) touching client classes on a dedicated server; caught, the server carries on. Revisit if a server crash names these classes"
     },
     {
-      "pattern": "^net\\.dries007\\.tfc\\.util\\.MetalItem: Item minecraft:iron_ingot was inferred to match multiple metals (wrought_iron and iron|iron and wrought_iron), using former",
-      "note": "Almost Unified maps iron onto TFC wrought iron, so vanilla iron ingots match two TFC metals; which one TFC picks varies, but vanilla iron ingots barely occur (unified outputs are TFC wrought iron)"
-    },
-    {
       "pattern": "^net\\.minecraft\\.world\\.item\\.crafting\\.RecipeManager: Skipping recipe \\S+, not a json object",
       "note": "recipes switched off by a false condition: vanilla ones TFC disables, and TFC's 5-8 clay ball recipes the pack disables (logged once a KubeJS recipe script is present)"
     },
@@ -136,6 +132,54 @@
     {
       "pattern": "^ModernFix: (Initial datapack load|Dedicated server|Game) took [\\d.]+ s",
       "note": "ModernFix's load-time report, logged as a warning; informational"
+    },
+    {
+      "pattern": "^net\\.minecraft\\.world\\.level\\.storage\\.loot\\.LootDataType: Couldn't parse element ResourceKey\\[minecraft:root / minecraft:loot_table\\]:(dndecor|railways|create_connected|create_factory_logistics):blocks/\\S+ - Unknown registry key in ResourceKey\\[minecraft:root / minecraft:item\\]",
+      "note": "loot tables for compat blocks that only register with mods not in the pack (Design n Decor's and Create Connected's Dye Depot colours, Steam 'n' Rails tracks for other mods' woods, Factory Logistics' Mekanism gauge)"
+    },
+    {
+      "pattern": "^mixin: Discarding @Unique public method \\w+ in copycats-(neoforge|common)\\.mixins\\.json:",
+      "note": "Copycats+ mixes methods into its own copycat classes that already define them; Mixin keeps the class's own"
+    },
+    {
+      "pattern": "^net\\.minecraft\\.world\\.item\\.crafting\\.RecipeManager: (Error parsing|Parsing error loading) recipe (woodencog:(cutting/(stair|slab)/\\w*(loam|silt)\\w*_brick_\\w+|welding/red_?steel_\\w+|milling/quartz)|createdeco:placard|create_factory_logistics:(barrel_packager|factory_chemical_gauge))",
+      "note": "addon recipes written for other versions or absent mods (Woodencog's TFC mud-brick cutting, red steel diving gear and quartz milling; Create Deco's placard; Factory Logistics' barrel and Mekanism recipes); only those recipes are missing"
+    },
+    {
+      "pattern": "^KubeJS Server: \\w+\\.java#\\d+: Failed to parse recipe '(woodencog|createdeco|create_factory_logistics):[^']*'.* Falling back to vanilla",
+      "note": "KubeJS re-reading addon recipes it can't parse (the ones above, and Woodencog's lye alabaster bricks); vanilla's parse is used"
+    },
+    {
+      "pattern": "^dev\\.ryanhcode\\.sable\\.Sable: Failed to apply tag physics properties\\. Unknown block: copycats:copycat_catwalk",
+      "note": "Sable ships physics properties for a Copycats+ block this Copycats+ version doesn't have"
+    },
+    {
+      "pattern": "^mixin: (Error loading class: (me/jellysquid/mods/lithium/common/ai/pathing/PathNodeDefaults|xfacthd/framedblocks/)|@Mixin target xfacthd\\.framedblocks\\.)",
+      "note": "optional compat mixins for mods not in the pack (Copycats+ for Radium, Big Cannons for FramedBlocks)"
+    },
+    {
+      "pattern": "^net\\.minecraft\\.server\\.packs\\.PathPackResources: Non \\[a-z0-9_.-\\] character in namespace LICENSE in pack",
+      "note": "a mod jar ships a LICENSE file in its data folder; ignored"
+    },
+    {
+      "pattern": "^(net\\.minecraft\\.tags\\.TagLoader|KubeJS): Couldn't load tag (woodencog:unburnable|tfc:unfired_pottery) as it is missing following references",
+      "note": "Woodencog tags its fireclay crucible, which this Woodencog version doesn't register"
+    },
+    {
+      "pattern": "^net\\.minecraft\\.core\\.MappedRegistry: Not all defined tags for registry ResourceKey\\[minecraft:root / minecraft:item\\] are present in data pack: tfc:unfired_pottery$",
+      "note": "follows from the Woodencog crucible tag above"
+    },
+    {
+      "pattern": "^net\\.neoforged\\.neoforge\\.registries\\.DataMapLoader: Found data map file for non-existent data map type 'create_dragons_plus:",
+      "note": "an addon ships fan-catalyst data for Create: Dragons Plus, which isn't in the pack"
+    },
+    {
+      "pattern": "^net\\.dries007\\.tfc\\.util\\.MetalItem: Item (minecraft:iron_ingot|tfc:metal/ingot/wrought_iron) was inferred to match multiple metals",
+      "note": "TFC picks ingot-pile textures from c:ingots/* tags, and iron ingots are in both c:ingots/iron and c:ingots/wrought_iron; config/tfc-server.toml excludes c:ingots/iron, but the server's first data load runs before server configs are read (it applies from the next reload, and on clients)"
+    },
+    {
+      "pattern": "^b34tingh34rt\\.sable_tfc_currents\\.SableTfcCurrents: Unable to apply TFC water currents to Sable sublevels",
+      "note": "Sable TFC Currents touches a client class, so it can't hook in on a dedicated server; it works in single-player"
     }
   ]
 }

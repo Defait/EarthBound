@@ -213,7 +213,8 @@ class Progression:
         return nodes, kiln
 
     def _heat_slot(self, r):
-        temp = r["params"].get("temperature")
+        names = (self.cfg.get("heat") or {}).get("temperature_params", ["temperature"])
+        temp = next((r["params"][k] for k in names if isinstance(r["params"].get(k), (int, float))), None)
         heat_types = {t for dev, _, _ in self.heat_nodes for t in dev.get("types", [])}
         if r["type"] not in heat_types or not isinstance(temp, (int, float)):
             return None

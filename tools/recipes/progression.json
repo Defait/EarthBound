@@ -187,14 +187,17 @@
       "@create_power"
     ],
     "create:mixing": {
+      "_comment": "Woodencog makes a basin on a TFC charcoal forge a Create heat source: 750 °C and up is 'heated' (any forge fuel), 2000 °C 'superheated' (a forge with bellows).",
       "param": "heat_requirement",
       "tiers": {
         "none": [],
         "heated": [
-          "create:blaze_burner"
+          "create:blaze_burner",
+          "world:heat/charcoal_forge/*"
         ],
         "superheated": [
-          "create:blaze_burner"
+          "create:blaze_burner",
+          "world:heat/charcoal_forge/bellows"
         ]
       },
       "default": "none",
@@ -202,6 +205,29 @@
         "create:mechanical_mixer",
         "create:basin",
         "@create_power"
+      ]
+    },
+    "woodencog:heated_mixing": [
+      "create:mechanical_mixer",
+      "create:basin",
+      "@create_power"
+    ],
+    "woodencog:heated_compacting": [
+      "create:mechanical_press",
+      "create:basin",
+      "@create_power"
+    ],
+    "woodencog:heated_pressing": [
+      "create:mechanical_press",
+      "@create_power"
+    ],
+    "createbigcannons:melting": {
+      "param": "heat_requirement",
+      "same_as": "create:mixing",
+      "default": "none",
+      "also": [
+        "create:basin",
+        "createbigcannons:basin_foundry_lid"
       ]
     },
     "create:crushing": [
@@ -370,7 +396,11 @@
     }
   ],
   "heat": {
-    "_comment": "Heating recipes need a device hot enough for the recipe. A device's ceiling is the hottest fuel it can burn (TFC fuel data, read from the jars). A bellows lifts the charcoal forge's ceiling; the boost isn't modeled, so forge + bellows counts as any temperature. The pit kiln reaches tfc-server.toml's pitKilnTemperature and only fires unfired pottery.",
+    "_comment": "Heating recipes need a device hot enough for the recipe. A device's ceiling is the hottest fuel it can burn (TFC fuel data, read from the jars). A bellows lifts the charcoal forge's ceiling; the boost isn't modeled, so forge + bellows counts as any temperature. The pit kiln reaches tfc-server.toml's pitKilnTemperature and only fires unfired pottery. Woodencog's heated basin recipes (temperature in heat_requirement) take their heat from a charcoal forge under the basin; its heated pressing works on items heated in a forge.",
+    "temperature_params": [
+      "temperature",
+      "heat_requirement"
+    ],
     "devices": [
       {
         "id": "firepit",
@@ -387,7 +417,10 @@
         "fuel": "#i:tfc:forge_fuel",
         "bellows": "tfc:bellows",
         "types": [
-          "tfc:heating"
+          "tfc:heating",
+          "woodencog:heated_mixing",
+          "woodencog:heated_compacting",
+          "woodencog:heated_pressing"
         ]
       }
     ],

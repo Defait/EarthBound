@@ -1,0 +1,13 @@
+name = "WoodenCog"
+filename = "woodencog-1.2.19-1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/Dh6v8Snj/versions/iX6qLxlr/woodencog-1.2.19-1.21.1.jar"
+hash-format = "sha512"
+hash = "a855fa5fe909f520ba08f936e932acb20109d353e7381c09312a9475e1962011c42578b92107f7fe5f01af7b130901ae650f5b60ccaacf47f25258ccfad48e24"
+
+[update]
+[update.modrinth]
+mod-id = "Dh6v8Snj"
+version = "iX6qLxlr"
