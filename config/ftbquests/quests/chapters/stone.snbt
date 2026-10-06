@@ -14,6 +14,8 @@
 		{
 			dependencies: [
 				"4CCDA49060A81CA3"
+				"203136B9BD051792"
+				"2BA6F65143A5B353"
 			]
 			icon: {
 				count: 1
@@ -22,16 +24,37 @@
 			id: "713241BB5FF5A95F"
 			tasks: [
 				{
-					id: "548DFA020F0CC5C2"
-					type: "checkmark"
+					count: 1
+					id: "35BD3DB25E4C46CC"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(tfc:stone/axe/igneous_extrusive)item(tfc:stone/axe/igneous_intrusive)item(tfc:stone/axe/metamorphic)item(tfc:stone/axe/sedimentary)item(tfc:obsidian_axe))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "3A8DCFF92C55D69C"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(tfc:stone/knife/igneous_extrusive)item(tfc:stone/knife/igneous_intrusive)item(tfc:stone/knife/metamorphic)item(tfc:stone/knife/sedimentary)item(tfc:obsidian_knife))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
 				}
 			]
-			x: 0.0d
+			x: 4.0d
 			y: 0.0d
 		}
 		{
 			dependencies: [
 				"713241BB5FF5A95F"
+				"4639037DE458ADC1"
 			]
 			icon: {
 				count: 1
@@ -40,16 +63,30 @@
 			id: "4B98A0DD1B3B274A"
 			tasks: [
 				{
-					id: "05C84FAD17812130"
-					type: "checkmark"
+					count: 1
+					id: "06EB538C2C9BC01B"
+					item: {
+						count: 1
+						id: "tfc:firestarter"
+					}
+					type: "item"
+				}
+				{
+					id: "4C33E6BB4B632538"
+					observe_type: 0
+					timer: 0
+					to_observe: "tfc:firepit"
+					type: "observation"
 				}
 			]
-			x: 2.0d
-			y: 0.0d
+			x: 8.0d
+			y: -1.75d
 		}
 		{
 			dependencies: [
 				"4B98A0DD1B3B274A"
+				"7A1B344475D8B5C7"
+				"2D1FE248FD5327A1"
 			]
 			icon: {
 				count: 1
@@ -67,8 +104,31 @@
 					type: "item"
 				}
 			]
-			x: 4.0d
-			y: 0.0d
+			x: 10.0d
+			y: 0.875d
+		}
+		{
+			dependencies: [
+				"4B98A0DD1B3B274A"
+			]
+			icon: {
+				count: 1
+				id: "minecraft:charcoal"
+			}
+			id: "5411253EA7898A26"
+			tasks: [
+				{
+					count: 1
+					id: "4AE5EC60E9DDC05D"
+					item: {
+						count: 1
+						id: "minecraft:charcoal"
+					}
+					type: "item"
+				}
+			]
+			x: 10.0d
+			y: -4.375d
 		}
 		{
 			dependencies: [
@@ -91,8 +151,8 @@
 					type: "item"
 				}
 			]
-			x: 6.0d
-			y: 0.0d
+			x: 12.0d
+			y: -0.875d
 		}
 		{
 			dependencies: [
@@ -114,8 +174,1569 @@
 					type: "item"
 				}
 			]
+			x: 14.0d
+			y: -2.625d
+		}
+		{
+			dependencies: [
+				"4CCDA49060A81CA3"
+			]
+			id: "36949F536D7AB789"
+			tasks: [
+				{
+					count: 4
+					id: "0505307F0F40C1D1"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(tfc:rock_knapping)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: -7.0d
+		}
+		{
+			dependencies: [
+				"4CCDA49060A81CA3"
+			]
+			icon: {
+				count: 1
+				id: "createdeco:decal_fluid"
+			}
+			id: "1952386A42CCD531"
+			shape: "circle"
+			tasks: [
+				{
+					id: "6AA7B0A406C14142"
+					type: "checkmark"
+				}
+			]
+			x: 0.0d
+			y: -5.25d
+		}
+		{
+			dependencies: [
+				"4CCDA49060A81CA3"
+			]
+			hide_dependency_lines: true
+			id: "2BA6F65143A5B353"
+			tasks: [
+				{
+					count: 2
+					id: "44516CD72F8952EB"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:rods/wooden)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: -3.5d
+		}
+		{
+			dependencies: [
+				"36949F536D7AB789"
+			]
+			icon: {
+				count: 1
+				id: "tfc:stone/axe_head/igneous_extrusive"
+			}
+			id: "203136B9BD051792"
+			tasks: [
+				{
+					count: 1
+					id: "1686A93E6831EE8B"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(tfc:stone/axe_head/igneous_extrusive)item(tfc:stone/axe_head/igneous_intrusive)item(tfc:stone/axe_head/metamorphic)item(tfc:stone/axe_head/sedimentary)item(tfc:obsidian_axe_head))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "2A91E8703EF54B6C"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(tfc:stone/knife_head/igneous_extrusive)item(tfc:stone/knife_head/igneous_intrusive)item(tfc:stone/knife_head/metamorphic)item(tfc:stone/knife_head/sedimentary)item(tfc:obsidian_knife_head))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 2.0d
+			y: -5.25d
+		}
+		{
+			dependencies: [
+				"36949F536D7AB789"
+				"2BA6F65143A5B353"
+			]
+			icon: {
+				count: 1
+				id: "tfc:stone/hammer/igneous_extrusive"
+			}
+			id: "10448D4511718EED"
+			optional: true
+			shape: "heart"
+			tasks: [
+				{
+					count: 1
+					id: "525DD5317191B076"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(tfc:stone/hammer/igneous_extrusive)item(tfc:stone/hammer/igneous_intrusive)item(tfc:stone/hammer/metamorphic)item(tfc:stone/hammer/sedimentary)item(tfc:obsidian_hammer))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "48D181D19678773C"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(tfc:stone/shovel/igneous_extrusive)item(tfc:stone/shovel/igneous_intrusive)item(tfc:stone/shovel/metamorphic)item(tfc:stone/shovel/sedimentary)item(tfc:obsidian_shovel))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "3D0744B5BF3D6561"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(tfc:stone/axe/igneous_extrusive)item(tfc:stone/axe/igneous_intrusive)item(tfc:stone/axe/metamorphic)item(tfc:stone/axe/sedimentary)item(tfc:obsidian_axe))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "2B39FFACC9C8541D"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(tfc:stone/hoe/igneous_extrusive)item(tfc:stone/hoe/igneous_intrusive)item(tfc:stone/hoe/metamorphic)item(tfc:stone/hoe/sedimentary)item(tfc:obsidian_hoe))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "60AD6751582F56C2"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(tfc:stone/knife/igneous_extrusive)item(tfc:stone/knife/igneous_intrusive)item(tfc:stone/knife/metamorphic)item(tfc:stone/knife/sedimentary)item(tfc:obsidian_knife))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "26CB443CA8D9A70F"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(tfc:stone/javelin/igneous_extrusive)item(tfc:stone/javelin/igneous_intrusive)item(tfc:stone/javelin/metamorphic)item(tfc:stone/javelin/sedimentary)item(tfc:obsidian_javelin))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 2.0d
+			y: -3.5d
+		}
+		{
+			dependencies: [
+				"713241BB5FF5A95F"
+			]
+			id: "4639037DE458ADC1"
+			tasks: [
+				{
+					count: 10
+					id: "2C5CA140C6C7F5B1"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(minecraft:logs)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: -1.75d
+		}
+		{
+			dependencies: [
+				"713241BB5FF5A95F"
+			]
+			icon: {
+				count: 1
+				id: "tfc:straw"
+			}
+			id: "06941934630BB12E"
+			tasks: [
+				{
+					count: 8
+					id: "28F68FC7DD4A3FB1"
+					item: {
+						count: 1
+						id: "tfc:straw"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"4CCDA49060A81CA3"
+			]
+			id: "5292CA411DA7DB85"
+			tasks: [
+				{
+					count: 1
+					id: "40F91B7DD788818B"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:foods)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: -1.75d
+		}
+		{
+			dependencies: [
+				"4B98A0DD1B3B274A"
+				"5292CA411DA7DB85"
+			]
+			id: "138251FC5C8DD73E"
+			tasks: [
+				{
+					count: 1
+					id: "0C1AF3836739CA74"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:foods/raw_meat)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "030784623732322E"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:foods/cooked_meat)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 10.0d
+			y: -2.625d
+		}
+		{
+			dependencies: [
+				"4B98A0DD1B3B274A"
+				"138251FC5C8DD73E"
+				"2D1FE248FD5327A1"
+			]
+			icon: {
+				count: 1
+				id: "tfc:ceramic/pot"
+			}
+			id: "4FD6437348156D90"
+			tasks: [
+				{
+					count: 1
+					id: "77F7AF4E04405D15"
+					item: {
+						count: 1
+						id: "tfc:ceramic/pot"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "70681BEC3C6FFD14"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(tfc:food/grain_soup)item(tfc:food/fruit_soup)item(tfc:food/vegetables_soup)item(tfc:food/protein_soup)item(tfc:food/dairy_soup))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 12.0d
+			y: -2.625d
+		}
+		{
+			dependencies: [
+				"5292CA411DA7DB85"
+			]
+			icon: {
+				count: 1
+				id: "minecraft:apple"
+			}
+			id: "5F4E5DDB4D7DEC95"
+			shape: "circle"
+			size: 1.5d
+			tasks: [
+				{
+					id: "4D06A34605F3EFD2"
+					type: "checkmark"
+				}
+			]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"4FD6437348156D90"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "tfc:food/barley_bread_sandwich"
+			}
+			id: "647BCE4EB43D841B"
+			optional: true
+			shape: "heart"
+			tasks: [
+				{
+					count: 1
+					id: "10A8AD1B48F3F4D4"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:foods/salad)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "0DC0A33CF84DAAA4"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(tfc:food/barley_bread_sandwich)item(tfc:food/maize_bread_sandwich)item(tfc:food/oat_bread_sandwich)item(tfc:food/rye_bread_sandwich)item(tfc:food/rice_bread_sandwich)item(tfc:food/wheat_bread_sandwich))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "54ABD191601C5C47"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(tfc:food/barley_bread_jam_sandwich)item(tfc:food/maize_bread_jam_sandwich)item(tfc:food/oat_bread_jam_sandwich)item(tfc:food/rye_bread_jam_sandwich)item(tfc:food/rice_bread_jam_sandwich)item(tfc:food/wheat_bread_jam_sandwich))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 14.0d
+			y: -4.375d
+		}
+		{
+			dependencies: [
+				"1952386A42CCD531"
+			]
+			icon: {
+				count: 1
+				id: "minecraft:potion"
+			}
+			id: "65E8217B302CD07C"
+			shape: "circle"
+			size: 1.5d
+			tasks: [
+				{
+					id: "3C5989238FBD6F99"
+					type: "checkmark"
+				}
+			]
+			x: 2.0d
+			y: -1.75d
+		}
+		{
+			dependencies: [
+				"7A1B344475D8B5C7"
+				"2D1FE248FD5327A1"
+				"1952386A42CCD531"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "tfc:ceramic/jug"
+			}
+			id: "20AB26816E6BDB6B"
+			optional: true
+			tasks: [
+				{
+					count: 1
+					id: "4FDE2BBAE7582D41"
+					item: {
+						count: 1
+						id: "tfc:ceramic/jug"
+					}
+					type: "item"
+				}
+			]
+			x: 10.0d
+			y: -0.875d
+		}
+		{
+			dependencies: [
+				"1952386A42CCD531"
+				"25B7ECAFDADE0A45"
+			]
+			icon: {
+				count: 1
+				id: "tfc:wooden_bucket"
+			}
+			id: "4A3D52DC9A46F608"
+			shape: "circle"
+			tasks: [
+				{
+					count: 1
+					id: "6A56075AF2470224"
+					item: {
+						count: 1
+						id: "tfc:wooden_bucket"
+					}
+					type: "item"
+				}
+			]
+			x: 18.0d
+			y: -3.5d
+		}
+		{
+			dependencies: [
+				"4CCDA49060A81CA3"
+			]
+			id: "1E1EE320E78FF5A1"
+			shape: "none"
+			tasks: [
+				{
+					id: "38C77CDF39F6D7F9"
+					type: "checkmark"
+				}
+			]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"4CCDA49060A81CA3"
+			]
+			hide_dependency_lines: true
+			id: "52FC4E64963DC8F0"
+			shape: "diamond"
+			tasks: [
+				{
+					id: "3B7B5B8D2C19D299"
+					observe_type: 1
+					timer: 0
+					to_observe: "#tfc:clays"
+					type: "observation"
+				}
+				{
+					id: "4CD3CF254F3067AA"
+					observe_type: 1
+					optional_task: true
+					timer: 0
+					to_observe: "#tfc:clay_indicators"
+					type: "observation"
+				}
+			]
+			x: 0.0d
+			y: 1.75d
+		}
+		{
+			dependencies: [
+				"52FC4E64963DC8F0"
+			]
+			icon: {
+				count: 1
+				id: "minecraft:clay_ball"
+			}
+			id: "2D1FE248FD5327A1"
+			tasks: [
+				{
+					count: 5
+					id: "495B44307B783F92"
+					item: {
+						count: 1
+						id: "minecraft:clay_ball"
+					}
+					type: "item"
+				}
+			]
+			x: 2.0d
+			y: 1.75d
+		}
+		{
+			dependencies: [
+				"4639037DE458ADC1"
+				"06941934630BB12E"
+			]
+			id: "7A1B344475D8B5C7"
+			size: 2.0d
+			tasks: [
+				{
+					id: "1B89313E8D791B07"
+					observe_type: 0
+					timer: 0
+					to_observe: "tfc:pit_kiln"
+					type: "observation"
+				}
+			]
 			x: 8.0d
 			y: 0.0d
+		}
+		{
+			dependencies: [
+				"7A1B344475D8B5C7"
+				"2D1FE248FD5327A1"
+			]
+			icon: {
+				count: 1
+				id: "tfc:ceramic/saw_blade_mold"
+			}
+			id: "619EF631682EDD43"
+			tasks: [
+				{
+					count: 1
+					id: "20E13E61D27D4C26"
+					item: {
+						count: 1
+						id: "tfc:ceramic/saw_blade_mold"
+					}
+					type: "item"
+				}
+			]
+			x: 10.0d
+			y: 2.625d
+		}
+		{
+			dependencies: [
+				"7A1B344475D8B5C7"
+				"2D1FE248FD5327A1"
+			]
+			icon: {
+				count: 1
+				id: "tfc:ceramic/jug"
+			}
+			id: "7A9A9812D7E48A40"
+			optional: true
+			shape: "heart"
+			tasks: [
+				{
+					count: 1
+					id: "25BE1C355B6E5C51"
+					item: {
+						count: 1
+						id: "tfc:ceramic/jug"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "7B4FA6E1B0F2F90B"
+					item: {
+						count: 1
+						id: "tfc:ceramic_blowpipe"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "3D3062074502D0F2"
+					item: {
+						count: 1
+						id: "minecraft:flower_pot"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "5221C08E19B1599C"
+					item: {
+						count: 1
+						id: "tfc:ceramic/bowl"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "2498CB0953D13D3A"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(tfc:fired_vessels)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "3D91E259279586D6"
+					item: {
+						count: 1
+						id: "tfc:ceramic/large_vessel"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "21B69E90D039B94C"
+					item: {
+						count: 1
+						id: "tfc:ceramic/pot"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "77F5A65111EF1FFC"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(tfc:fired_molds)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "23DFDC19A6DE4D75"
+					item: {
+						count: 1
+						id: "tfc:ceramic/spindle_head"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "0641DF601489F335"
+					item: {
+						count: 1
+						id: "tfc:pan/empty"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "3B0CE92451D7013E"
+					item: {
+						count: 1
+						id: "minecraft:brick"
+					}
+					type: "item"
+				}
+			]
+			x: 10.0d
+			y: 4.375d
+		}
+		{
+			dependencies: [
+				"4CCDA49060A81CA3"
+			]
+			hide_dependency_lines: true
+			id: "22B7A03791E961C1"
+			tasks: [
+				{
+					count: 1
+					id: "62CD4EBB898A7C8D"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(tfc:small_ore_pieces)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"22B7A03791E961C1"
+				"07C81F40FBB9407D"
+				"619EF631682EDD43"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "tfc:metal/saw/copper"
+			}
+			id: "193640A1B80EB4C3"
+			min_required_dependencies: 2
+			tasks: [
+				{
+					count: 1
+					id: "238AF4809270FE75"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(tfc:metal/saw/copper)item(tfc:metal/saw/bismuth_bronze)item(tfc:metal/saw/bronze)item(tfc:metal/saw/black_bronze))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 12.0d
+			y: 2.625d
+		}
+		{
+			dependencies: [
+				"193640A1B80EB4C3"
+			]
+			id: "1D7F91FACA33E551"
+			tasks: [
+				{
+					count: 16
+					id: "5049C897305E0267"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(tfc:lumber)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					count: 4
+					id: "74CBA9BBE00C7AE8"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(minecraft:planks)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 14.0d
+			y: 2.625d
+		}
+		{
+			dependencies: [
+				"1D7F91FACA33E551"
+			]
+			id: "25B7ECAFDADE0A45"
+			shape: "octagon"
+			size: 3.0d
+			tasks: [
+				{
+					count: 1
+					id: "1749B936607D5546"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(tfc:workbenches)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 16.0d
+			y: 0.875d
+		}
+		{
+			dependencies: [
+				"25B7ECAFDADE0A45"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "tfc:wood/crate/acacia"
+			}
+			id: "1B850FA897BE6912"
+			tasks: [
+				{
+					count: 1
+					id: "489E3BAA79DAF7CA"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:chests/wooden)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "162FA025D535DA41"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(tfc:wood/crate/acacia)item(tfc:wood/crate/ash)item(tfc:wood/crate/aspen)item(tfc:wood/crate/birch)item(tfc:wood/crate/blackwood)item(tfc:wood/crate/chestnut)item(tfc:wood/crate/douglas_fir)item(tfc:wood/crate/hickory)item(tfc:wood/crate/kapok)item(tfc:wood/crate/mangrove)item(tfc:wood/crate/maple)item(tfc:wood/crate/oak)item(tfc:wood/crate/palm)item(tfc:wood/crate/pine)item(tfc:wood/crate/rosewood)item(tfc:wood/crate/sequoia)item(tfc:wood/crate/spruce)item(tfc:wood/crate/sycamore)item(tfc:wood/crate/white_cedar)item(tfc:wood/crate/willow))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					count: 1
+					id: "1FF4F55B4B73D1C5"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(tfc:fired_large_vessels)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					optional_task: true
+					type: "item"
+				}
+			]
+			x: 18.0d
+			y: -1.75d
+		}
+		{
+			dependencies: [
+				"25B7ECAFDADE0A45"
+			]
+			id: "0B98DB7D47E4C852"
+			tasks: [
+				{
+					count: 1
+					id: "5815C101EB72946F"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(tfc:barrels)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 18.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"0B98DB7D47E4C852"
+			]
+			icon: {
+				count: 1
+				id: "tfc:barrel_rack"
+			}
+			id: "72E64E89ED3F2A0A"
+			optional: true
+			tasks: [
+				{
+					count: 1
+					id: "6B478CEFE5D703DC"
+					item: {
+						count: 1
+						id: "tfc:barrel_rack"
+					}
+					type: "item"
+				}
+			]
+			x: 20.0d
+			y: -6.125d
+		}
+		{
+			dependencies: [
+				"0B98DB7D47E4C852"
+				"39F059704DE0FE03"
+			]
+			dependency_requirement: "one_completed"
+			id: "791962DF1FC6FD5D"
+			tasks: [
+				{
+					count: 1
+					id: "65D68B679585B074"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(tfc:leather_knapping)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 20.0d
+			y: -2.625d
+		}
+		{
+			dependencies: [
+				"791962DF1FC6FD5D"
+			]
+			icon: {
+				count: 1
+				id: "minecraft:leather_helmet"
+			}
+			id: "6FA751181FAF7647"
+			optional: true
+			shape: "heart"
+			tasks: [
+				{
+					count: 1
+					id: "7660A053841B462A"
+					item: {
+						count: 1
+						id: "minecraft:leather_helmet"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "0CE8216CB685C776"
+					item: {
+						count: 1
+						id: "minecraft:leather_chestplate"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "4E9B8415A176ABAF"
+					item: {
+						count: 1
+						id: "minecraft:leather_leggings"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "5E63545037512A21"
+					item: {
+						count: 1
+						id: "minecraft:leather_boots"
+					}
+					type: "item"
+				}
+			]
+			x: 22.0d
+			y: -0.875d
+		}
+		{
+			dependencies: [
+				"06941934630BB12E"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "tfc:thatch"
+			}
+			id: "78ECD5A5FFE1D5DC"
+			tasks: [
+				{
+					count: 2
+					id: "0C29AAC58B3E62CC"
+					item: {
+						count: 1
+						id: "tfc:thatch"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "6E5EB62ED2C467B9"
+					item: {
+						count: 1
+						id: "tfc:large_raw_hide"
+					}
+					type: "item"
+				}
+				{
+					id: "31E6C354971E8D05"
+					observe_type: 0
+					timer: 0
+					to_observe: "tfc:thatch_bed"
+					type: "observation"
+				}
+			]
+			x: 8.0d
+			y: 1.75d
+		}
+		{
+			dependencies: [
+				"25B7ECAFDADE0A45"
+			]
+			dependency_requirement: "one_completed"
+			id: "39F059704DE0FE03"
+			tasks: [
+				{
+					count: 1
+					id: "0C6A502889108D85"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(tfc:looms)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 18.0d
+			y: 1.75d
+		}
+		{
+			dependencies: [
+				"25B7ECAFDADE0A45"
+				"39F059704DE0FE03"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "tfc:unrefined_paper"
+			}
+			id: "79F30AED6544D26B"
+			tasks: [
+				{
+					count: 1
+					id: "1249C5E40237FF62"
+					item: {
+						count: 1
+						id: "tfc:unrefined_paper"
+					}
+					type: "item"
+				}
+			]
+			x: 20.0d
+			y: -0.875d
+		}
+		{
+			dependencies: [
+				"39F059704DE0FE03"
+			]
+			icon: {
+				count: 1
+				id: "tfc:burlap_cloth"
+			}
+			id: "45F778BD6955A5B6"
+			optional: true
+			tasks: [
+				{
+					count: 1
+					id: "3ABCE123EDCBEAA0"
+					item: {
+						count: 1
+						id: "tfc:burlap_cloth"
+					}
+					type: "item"
+				}
+			]
+			x: 20.0d
+			y: 0.875d
+		}
+		{
+			dependencies: [
+				"39F059704DE0FE03"
+			]
+			icon: {
+				count: 1
+				id: "tfc:wool_cloth"
+			}
+			id: "0A26B6F81DEA43C8"
+			optional: true
+			tasks: [
+				{
+					count: 1
+					id: "661E57BA950C9CD9"
+					item: {
+						count: 1
+						id: "tfc:wool_cloth"
+					}
+					type: "item"
+				}
+			]
+			x: 20.0d
+			y: 2.625d
+		}
+		{
+			dependencies: [
+				"39F059704DE0FE03"
+			]
+			icon: {
+				count: 1
+				id: "tfc:silk_cloth"
+			}
+			id: "34E7CDA9F06D1126"
+			optional: true
+			tasks: [
+				{
+					count: 1
+					id: "529419BDEB8CDF8A"
+					item: {
+						count: 1
+						id: "tfc:silk_cloth"
+					}
+					type: "item"
+				}
+			]
+			x: 20.0d
+			y: 4.375d
+		}
+		{
+			dependencies: [
+				"0A26B6F81DEA43C8"
+				"34E7CDA9F06D1126"
+				"39F059704DE0FE03"
+			]
+			dependency_requirement: "one_completed"
+			id: "3D682B481D907011"
+			shape: "octagon"
+			size: 1.5d
+			tasks: [
+				{
+					count: 1
+					id: "26D2D61DB2F149E2"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(minecraft:beds)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 22.0d
+			y: 0.875d
+		}
+		{
+			dependencies: [
+				"25B7ECAFDADE0A45"
+			]
+			icon: {
+				count: 1
+				id: "tfc:metal/pickaxe/copper"
+			}
+			id: "3833BA84050D44D0"
+			tasks: [
+				{
+					count: 1
+					id: "098D602924422CDC"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:tools/propick)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					count: 1
+					id: "2AA45923EA8F3B57"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(minecraft:pickaxes)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					count: 16
+					id: "0B957AEFA1640C44"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(tfc:support_beams)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					count: 32
+					id: "090EAF7A62ECC3F3"
+					item: {
+						count: 1
+						id: "minecraft:ladder"
+					}
+					type: "item"
+				}
+			]
+			x: 18.0d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"3833BA84050D44D0"
+			]
+			icon: {
+				count: 1
+				id: "createdeco:decal_warning"
+			}
+			id: "41852D3A9E54EFE7"
+			shape: "circle"
+			tasks: [
+				{
+					id: "5FECF40F84C23EF4"
+					type: "checkmark"
+				}
+			]
+			x: 20.0d
+			y: 6.125d
+		}
+		{
+			dependencies: [
+				"4CCDA49060A81CA3"
+			]
+			icon: {
+				count: 1
+				id: "tfc:pan/empty"
+			}
+			id: "616329CB5D11DA43"
+			tasks: [
+				{
+					count: 1
+					id: "12B77EBC01AAEC2A"
+					item: {
+						count: 1
+						id: "tfc:pan/empty"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					count: 1
+					id: "4F71ED348B044783"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(tfc:ore_deposits)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 5.25d
+		}
+		{
+			dependencies: [
+				"616329CB5D11DA43"
+			]
+			id: "2942B4128DBF45CA"
+			tasks: [
+				{
+					count: 1
+					id: "1FD5FBE96BB6A3C3"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(tfc:sluices)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 2.0d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"29109E15AE724F8D"
+				"5411253EA7898A26"
+			]
+			dependency_requirement: "one_completed"
+			id: "33BA9B2114A4B57C"
+			size: 2.0d
+			tasks: [
+				{
+					id: "4664BB090F6F27CE"
+					observe_type: 0
+					timer: 0
+					to_observe: "tfc:charcoal_forge"
+					type: "observation"
+				}
+			]
+			x: 12.0d
+			y: 0.875d
+		}
+		{
+			dependencies: [
+				"4CCDA49060A81CA3"
+			]
+			icon: {
+				count: 1
+				id: "tfc:rock/raw/granite"
+			}
+			id: "29109E15AE724F8D"
+			size: 1.5d
+			tasks: [
+				{
+					count: 1
+					id: "6EAF1A27D783B874"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(tfc:rock/raw/granite)item(tfc:rock/raw/diorite)item(tfc:rock/raw/gabbro)item(tfc:rock/raw/andesite)item(tfc:rock/raw/basalt)item(tfc:rock/raw/dacite)item(tfc:rock/raw/rhyolite))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 7.0d
+		}
+		{
+			dependencies: [
+				"29109E15AE724F8D"
+			]
+			id: "4AFA6ED4A5A1FE79"
+			tasks: [
+				{
+					count: 1
+					id: "5B8DB72D54E86933"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:tools/hammer)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					id: "387D86F5ED52332D"
+					observe_type: 1
+					timer: 0
+					to_observe: "#tfc:anvils"
+					type: "observation"
+				}
+			]
+			x: 2.0d
+			y: 5.25d
+		}
+		{
+			dependencies: [
+				"713241BB5FF5A95F"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "tfc:powder/flux"
+			}
+			id: "5B3F3A59D257A974"
+			tasks: [
+				{
+					count: 1
+					id: "689699F737FAEE60"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(tfc:fluxstone)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "7A48012817BE6739"
+					item: {
+						count: 1
+						id: "tfc:powder/flux"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 1.75d
+		}
+		{
+			dependencies: [
+				"29109E15AE724F8D"
+				"3DB2937CFB46B93D"
+			]
+			icon: {
+				count: 1
+				id: "tfc:quern"
+			}
+			id: "5D652DF7356DC4C5"
+			tasks: [
+				{
+					count: 1
+					id: "2A71FBCA5CB12590"
+					item: {
+						count: 1
+						id: "tfc:quern"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "3DEE77BDFF975EBC"
+					item: {
+						count: 1
+						id: "tfc:handstone"
+					}
+					type: "item"
+				}
+			]
+			x: 14.0d
+			y: 4.375d
+		}
+		{
+			dependencies: [
+				"5B3F3A59D257A974"
+				"3DB2937CFB46B93D"
+				"4AFA6ED4A5A1FE79"
+				"33BA9B2114A4B57C"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "tfc:metal/double_ingot/copper"
+			}
+			id: "6CDF98F6A3920C34"
+			tasks: [
+				{
+					count: 1
+					id: "07D8403EE87D3605"
+					item: {
+						count: 1
+						id: "tfc:metal/double_ingot/copper"
+					}
+					type: "item"
+				}
+			]
+			x: 14.0d
+			y: 0.875d
+		}
+		{
+			dependencies: [
+				"33BA9B2114A4B57C"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "minecraft:charcoal"
+			}
+			id: "651526D0BA6DA1D1"
+			optional: true
+			shape: "heart"
+			tasks: [
+				{
+					id: "59A84C40F323DE91"
+					type: "checkmark"
+				}
+			]
+			x: 14.0d
+			y: -0.875d
+		}
+		{
+			dependencies: [
+				"193640A1B80EB4C3"
+				"58737E4CE402E036"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "tfc:bellows"
+			}
+			id: "2FABEDB61F73CB73"
+			tasks: [
+				{
+					count: 1
+					id: "13D34CF420CEAF7A"
+					item: {
+						count: 1
+						id: "tfc:bellows"
+					}
+					type: "item"
+				}
+			]
+			x: 16.0d
+			y: -0.875d
+		}
+		{
+			dependencies: [
+				"0B98DB7D47E4C852"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "tfc:candle"
+			}
+			id: "094BA6B5628B036B"
+			optional: true
+			tasks: [
+				{
+					count: 1
+					id: "0DE55160A2E68340"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(tfc:candle)item_tag(tfc:colored_candles))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 20.0d
+			y: -4.375d
 		}
 	]
 }

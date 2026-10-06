@@ -1,0 +1,474 @@
+{
+ "chapter": "combat_tips",
+ "decisions": [
+  {
+   "key": "combat_tips.iron_main",
+   "action": "keep",
+   "chapter": "combat_tips"
+  },
+  {
+   "key": "combat_tips.crossbow",
+   "action": "edit",
+   "chapter": "combat_tips",
+   "reason": "The Quiver is from sns, which isn't in this pack; added the TFC damage-type note (skeletons are immune to piercing).",
+   "desc": [
+    "Quite simply, it functions the same as the vanilla crossbow. Like the bow, it fires arrows, which deal &9Piercing&r damage, so don't waste them on Skeletons."
+   ]
+  },
+  {
+   "key": "combat_tips.steel_main",
+   "action": "keep",
+   "chapter": "combat_tips"
+  },
+  {
+   "key": "combat_tips.crankbow",
+   "action": "drop",
+   "reason": "Species (crankbow) isn't in this pack."
+  },
+  {
+   "key": "combat_tips.springfield_gun",
+   "action": "drop",
+   "reason": "TACZ guns aren't in this pack."
+  },
+  {
+   "key": "combat_tips.lv_main",
+   "action": "edit",
+   "chapter": "combat_tips",
+   "reason": "Text pointed at TFG's guns; LV here needs TFC steel, not black steel, so it hangs off the Iron Age instead of the Black Steel Age.",
+   "desc": [
+    "Not much new equipment is available at &7LV&r, but GregTech's &6power tools&r arrive here, and some of them make fine weapons too."
+   ],
+   "deps": [
+    "combat_tips.iron_main"
+   ]
+  },
+  {
+   "key": "combat_tips.q07a777baab2dbcfc",
+   "action": "drop",
+   "reason": "TFG's MV gun mechanism (tfg:advanced_clockwork_mechanism) and TACZ guns aren't in this pack; as a bare MV marker it's redundant."
+  },
+  {
+   "key": "combat_tips.revolver_gun",
+   "action": "drop",
+   "reason": "TACZ guns aren't in this pack."
+  },
+  {
+   "key": "combat_tips.rimmed_blunt_ammo",
+   "action": "drop",
+   "reason": "TACZ guns aren't in this pack."
+  },
+  {
+   "key": "combat_tips.slap_ammo",
+   "action": "drop",
+   "reason": "TACZ guns aren't in this pack."
+  },
+  {
+   "key": "combat_tips.high_slap_ammo",
+   "action": "drop",
+   "reason": "TACZ guns aren't in this pack."
+  },
+  {
+   "key": "combat_tips.q278f18477f9b7e08",
+   "action": "drop",
+   "reason": "TFG's EV gun mechanism (tfg:certus_mechanism), certus quartz from the Moon: TACZ and Ad Astra aren't in this pack."
+  },
+  {
+   "key": "combat_tips.hard_quartz_ammo",
+   "action": "drop",
+   "reason": "TACZ guns aren't in this pack."
+  },
+  {
+   "key": "combat_tips.12g_ammo",
+   "action": "drop",
+   "reason": "TACZ guns aren't in this pack."
+  },
+  {
+   "key": "combat_tips.fluix_quartz_ammo",
+   "action": "drop",
+   "reason": "TACZ guns aren't in this pack."
+  },
+  {
+   "key": "combat_tips.etched_quartz_ammo",
+   "action": "drop",
+   "reason": "TACZ guns aren't in this pack."
+  },
+  {
+   "key": "combat_tips.cluster_quartz_ammo",
+   "action": "drop",
+   "reason": "TACZ guns aren't in this pack."
+  },
+  {
+   "key": "combat_tips.40mm_ammo",
+   "action": "drop",
+   "reason": "TACZ guns aren't in this pack."
+  },
+  {
+   "key": "combat_tips.bronze_main",
+   "action": "edit",
+   "chapter": "combat_tips",
+   "reason": "#tfc:bronze_anvils doesn't exist here; the three bronze anvils listed instead.",
+   "tasks": [
+    {
+     "filter": "or(item(tfc:metal/anvil/bronze)item(tfc:metal/anvil/bismuth_bronze)item(tfc:metal/anvil/black_bronze))",
+     "any": [
+      "tfc:metal/anvil/bronze",
+      "tfc:metal/anvil/bismuth_bronze",
+      "tfc:metal/anvil/black_bronze"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "combat_tips.stone_main",
+   "action": "keep",
+   "chapter": "combat_tips"
+  },
+  {
+   "key": "combat_tips.knife",
+   "action": "edit",
+   "chapter": "combat_tips",
+   "reason": "#tfc:knives is #c:tools/knife here; damage claim checked against TFC's data (zombies take 25% more piercing damage).",
+   "desc": [
+    "Knives are most useful for crafting, but they can be a weapon in a pinch. They deal &9Piercing&r damage, which Zombies are weak to.\n\nFor more information on &cDamage Types&r consult the &3Field Guide&r."
+   ],
+   "tasks": [
+    {
+     "filter": "item_tag(c:tools/knife)",
+     "any": [
+      "#c:tools/knife"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "combat_tips.shield",
+   "action": "edit",
+   "chapter": "combat_tips",
+   "reason": "#tfc:shields doesn't exist here; the explosion and 'fun shapes' claims aren't verifiable and are cut. Metal shields are anvil-forged from a double sheet.",
+   "desc": [
+    "Now these are some real shields. Metal shields are forged on an anvil from a &7double sheet&r of the metal, and better metals last longer."
+   ],
+   "tasks": [
+    {
+     "filter": "or(item(tfc:metal/shield/copper)item(tfc:metal/shield/bismuth_bronze)item(tfc:metal/shield/black_bronze)item(tfc:metal/shield/bronze)item(tfc:metal/shield/wrought_iron)item(tfc:metal/shield/steel)item(tfc:metal/shield/black_steel)item(tfc:metal/shield/blue_steel)item(tfc:metal/shield/red_steel))",
+     "any": [
+      "tfc:metal/shield/copper",
+      "tfc:metal/shield/bismuth_bronze",
+      "tfc:metal/shield/black_bronze",
+      "tfc:metal/shield/bronze",
+      "tfc:metal/shield/wrought_iron",
+      "tfc:metal/shield/steel",
+      "tfc:metal/shield/black_steel",
+      "tfc:metal/shield/blue_steel",
+      "tfc:metal/shield/red_steel"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "combat_tips.armor",
+   "action": "edit",
+   "chapter": "combat_tips",
+   "reason": "The Beneath (TFG's Nether) and illager raids don't apply here; forging steps and steel toughness from TFC's field guide.",
+   "desc": [
+    "Metal armor requires a two-step forging process, but don't be scared off by its difficulty: smith an unfinished piece from a &7double sheet&r (a single sheet for boots), then weld a sheet onto it (a double sheet for chestplates).\n\nAll metal armor will give you bonus protection to &6Slashing&r, &9Piercing&r, and &2Crushing&r damage, and steel armor adds toughness on top."
+   ]
+  },
+  {
+   "key": "combat_tips.javelin",
+   "action": "edit",
+   "chapter": "combat_tips",
+   "reason": "#tfc:javelins is #c:tools/spear here; the Quiver (sns) isn't in this pack; added that skeletons are immune to piercing (TFC data).",
+   "desc": [
+    "If you want to keep your foes away from you, javelins are the weapon for you. They are the earliest ranged weapons you will have available to you. They deal &9Piercing&r damage, which can help you against Zombies, but Skeletons shrug it off completely.\n\nFor more information on &cDamage Types&r consult the &3Field Guide&r."
+   ],
+   "tasks": [
+    {
+     "filter": "item_tag(c:tools/spear)",
+     "any": [
+      "#c:tools/spear"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "combat_tips.forged_weapons",
+   "action": "edit",
+   "chapter": "combat_tips",
+   "reason": "Butchery knives here are GregTech's (crafted with a file and hammer, not forged) and TFC animals' loot ignores Looting, so the 'extra meat' claim fails; rewritten around anvil-forged weapons.",
+   "desc": [
+    "Molds only take copper and the bronzes. From wrought iron on, you will need to forge your weapons: work the blade or head on an anvil of at least the metal's tier (a wrought iron anvil for wrought iron, a steel anvil for steel...), then finish it on the crafting grid."
+   ],
+   "tasks": [
+    {
+     "filter": "or(item(tfc:metal/sword/wrought_iron)item(tfc:metal/sword/steel)item(tfc:metal/sword/black_steel)item(tfc:metal/sword/blue_steel)item(tfc:metal/sword/red_steel)item(tfc:metal/mace/wrought_iron)item(tfc:metal/mace/steel)item(tfc:metal/mace/black_steel)item(tfc:metal/mace/blue_steel)item(tfc:metal/mace/red_steel)item(tfc:metal/javelin/wrought_iron)item(tfc:metal/javelin/steel)item(tfc:metal/javelin/black_steel)item(tfc:metal/javelin/blue_steel)item(tfc:metal/javelin/red_steel))",
+     "any": [
+      "tfc:metal/sword/wrought_iron",
+      "tfc:metal/sword/steel",
+      "tfc:metal/sword/black_steel",
+      "tfc:metal/sword/blue_steel",
+      "tfc:metal/sword/red_steel",
+      "tfc:metal/mace/wrought_iron",
+      "tfc:metal/mace/steel",
+      "tfc:metal/mace/black_steel",
+      "tfc:metal/mace/blue_steel",
+      "tfc:metal/mace/red_steel",
+      "tfc:metal/javelin/wrought_iron",
+      "tfc:metal/javelin/steel",
+      "tfc:metal/javelin/black_steel",
+      "tfc:metal/javelin/blue_steel",
+      "tfc:metal/javelin/red_steel"
+     ]
+    }
+   ],
+   "deps": [
+    "combat_tips.iron_main"
+   ]
+  },
+  {
+   "key": "combat_tips.chainsaw",
+   "action": "edit",
+   "chapter": "combat_tips",
+   "reason": "#c:tools/chainsaws is #c:tools/chainsaw here.",
+   "tasks": [
+    {
+     "filter": "item_tag(c:tools/chainsaw)",
+     "any": [
+      "#c:tools/chainsaw"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "combat_tips.axe",
+   "action": "edit",
+   "chapter": "combat_tips",
+   "reason": "#tfc:axes is #minecraft:axes here; TFC 4 has no creeper damage resistances in its data (only zombies and skeletons), so the creeper claim is replaced.",
+   "desc": [
+    "Until you can upgrade, an axe will be your most reliable weapon. Along with high damage, they deal &6Slashing&r damage, which neither Zombies nor Skeletons resist.\n\nFor more information on &cDamage Types&r consult the &3Field Guide&r."
+   ],
+   "tasks": [
+    {
+     "filter": "item_tag(minecraft:axes)",
+     "any": [
+      "#minecraft:axes"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "combat_tips.mold_main",
+   "action": "keep",
+   "chapter": "combat_tips"
+  },
+  {
+   "key": "combat_tips.bow",
+   "action": "edit",
+   "chapter": "combat_tips",
+   "reason": "The Quiver (sns) isn't in this pack; added that skeletons are immune to piercing (TFC data).",
+   "desc": [
+    "While javelins are cool, it's hard to beat a bow and arrow. Arrows can be expensive, so setting up a bird farm for feathers isn't a bad idea.\n\nArrows deal &9Piercing&r damage: good against Zombies, useless against Skeletons, which are immune to it."
+   ]
+  },
+  {
+   "key": "combat_tips.hammer",
+   "action": "edit",
+   "chapter": "combat_tips",
+   "reason": "#tfc:hammers is #c:tools/hammer here; claim checked (skeletons take 50% more crushing damage).",
+   "tasks": [
+    {
+     "filter": "item_tag(c:tools/hammer)",
+     "any": [
+      "#c:tools/hammer"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "combat_tips.mold_weapons",
+   "action": "edit",
+   "chapter": "combat_tips",
+   "reason": "#tfc:swords/#tfc:scythes/#tfc:maces are #minecraft:swords, #c:tools/scythe and #c:tools/mace here; the scythe and mace damage comparisons aren't verifiable and are cut.",
+   "desc": [
+    "Molds allow you to make copper and bronze versions of most weapons, including three new types: Swords, Scythes, and Maces.\n\nSwords: These well rounded weapons deal &6Slashing&r damage.\n\nScythes: They also deal &6Slashing&r damage.\n\nMaces: Heavy weapons that deal &2Crushing&r damage, a Skeleton's worst nightmare."
+   ],
+   "tasks": [
+    {
+     "filter": "item_tag(minecraft:swords)",
+     "any": [
+      "#minecraft:swords"
+     ]
+    },
+    {
+     "filter": "item_tag(c:tools/scythe)",
+     "any": [
+      "#c:tools/scythe"
+     ]
+    },
+    {
+     "filter": "item_tag(c:tools/mace)",
+     "any": [
+      "#c:tools/mace"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "combat_tips.wood_shield",
+   "action": "edit",
+   "chapter": "combat_tips",
+   "reason": "'Won't protect you from explosions' isn't verifiable (vanilla shields do block explosions); recipe here is lumber and glue.",
+   "desc": [
+    "A wooden shield, made from lumber and glue, will protect you somewhat from most damage sources you point it at.\n\nIt's cheap, and it shows. Metal shields come once you can work an anvil."
+   ]
+  },
+  {
+   "key": "combat_tips.leather",
+   "action": "keep",
+   "chapter": "combat_tips"
+  },
+  {
+   "key": "combat_tips.steel_ammo",
+   "action": "drop",
+   "reason": "TACZ guns aren't in this pack."
+  },
+  {
+   "key": "combat_tips.wireless_ammo",
+   "action": "drop",
+   "reason": "Applied Ammo Box / AE2 and TACZ aren't in this pack."
+  },
+  {
+   "key": "combat_tips.magnalium_ammo",
+   "action": "drop",
+   "reason": "TACZ guns aren't in this pack."
+  },
+  {
+   "key": "combat_tips.desh_ammo",
+   "action": "drop",
+   "reason": "TACZ guns aren't in this pack. Desh is Ad Astra's."
+  },
+  {
+   "key": "combat_tips.mag",
+   "action": "drop",
+   "reason": "TACZ guns aren't in this pack. NBT-only task."
+  },
+  {
+   "key": "combat_tips.grip",
+   "action": "drop",
+   "reason": "TACZ guns aren't in this pack."
+  },
+  {
+   "key": "combat_tips.muzzle",
+   "action": "drop",
+   "reason": "TACZ guns aren't in this pack."
+  },
+  {
+   "key": "combat_tips.any_ammo",
+   "action": "drop",
+   "reason": "TACZ guns aren't in this pack."
+  },
+  {
+   "key": "combat_tips.scope",
+   "action": "drop",
+   "reason": "TACZ guns aren't in this pack."
+  },
+  {
+   "key": "combat_tips.potato_cannon",
+   "action": "drop",
+   "reason": "Create's potato cannon only fires the vanilla foods in its projectile list (potato, carrot, apple...), which TFC worlds don't grow; TFC crops aren't on it, so 'any crop as ammunition' is false and it has next to no ammo here."
+  },
+  {
+   "key": "combat_tips.flintlock_gun",
+   "action": "drop",
+   "reason": "TACZ guns aren't in this pack."
+  },
+  {
+   "key": "combat_tips.flintlock_mechanism",
+   "action": "drop",
+   "reason": "tfg:flintlock_mechanism and TACZ aren't in this pack."
+  },
+  {
+   "key": "combat_tips.gun",
+   "action": "drop",
+   "reason": "TACZ guns aren't in this pack."
+  },
+  {
+   "key": "combat_tips.club",
+   "action": "drop",
+   "reason": "Primitive Creatures (flint clubs) isn't in this pack."
+  },
+  {
+   "key": "combat_tips.hv_main",
+   "action": "edit",
+   "chapter": "combat_tips",
+   "reason": "No Ad Astra space suit here; points at the NanoMuscle suite.",
+   "desc": [
+    "&6HV&r doesn't unlock any new weapons, but it does come with an important piece of equipment: GregTech's &6NanoMuscle™ Suite&r (see Tips: Tools)."
+   ]
+  },
+  {
+   "key": "combat_tips.iv_main",
+   "action": "drop",
+   "reason": "Only led to QuarkTech (dropped: LuV gear needing tungsten, which has no source here); IV is past the book's last chapter."
+  },
+  {
+   "key": "combat_tips.quiver",
+   "action": "drop",
+   "reason": "sns (quiver) isn't in this pack."
+  },
+  {
+   "key": "combat_tips.trims",
+   "action": "edit",
+   "chapter": "combat_tips",
+   "reason": "Templates come from TFC's Sewing Table here and trim materials are TFC's (field guide); the smithing table needs a wrought iron sheet, so it follows the Iron Age. Beekeeper outfit/clothes are TFG's.",
+   "desc": [
+    "Almost everything you can wear can have an armor trim applied, TFC's metal armor included. Check the &a#minecraft:trimmable_armor&r tag to see what you can apply trims to, and the &a#minecraft:trim_materials&r tag for your color options: TFC's gems, silver, sterling silver, gold, rose gold and bismuth.\n\nSmithing templates are sewn on a &6Sewing Table&r, then applied at a &6Smithing Table&r. Trims are purely cosmetic."
+   ],
+   "deps": [
+    "combat_tips.iron_main"
+   ]
+  },
+  {
+   "key": "combat_tips.javelin_throwing",
+   "action": "drop",
+   "reason": "Firmaciv's rope coil (javelin recall) isn't in this pack."
+  },
+  {
+   "key": "combat_tips.q79a0ca1eb77deb7b",
+   "action": "drop",
+   "reason": "tfg:piglin_disguise isn't in this pack (and there's no Nether access)."
+  },
+  {
+   "key": "tfg_tips.blue_steel_diving",
+   "action": "edit",
+   "chapter": "combat_tips",
+   "reason": "Here red steel (not blue) welds Create's copper diving gear into its netherite tier (Woodencog). Create grants lava immunity only when legs and feet are fire-resistant too, and netherite leggings are unreachable, so 'impervious to lava' is false; ambient-temperature protection is a TFG mechanic.",
+   "title": "Red Steel Diving Gear",
+   "subtitle": "Almost lava-proof",
+   "desc": [
+    "In this pack, &4Red Steel&r takes Create's diving gear to its netherite tier: weld a Red Steel Helmet, Chestplate or Boots onto the matching copper piece to get the &4Netherite Diving Helmet&r, &4Backtank&r and &4Boots&r. They're much tougher than copper, and with air in the backtank the helmet lets you breathe even in &clava&r.\n\nCreate only makes you immune to burning when &oall four&r armor slots are fire-resistant, and the leggings would have to be netherite, which needs the Nether. So treat lava as deadly all the same."
+   ],
+   "tasks": [
+    {
+     "item": "create:netherite_diving_helmet"
+    },
+    {
+     "item": "create:netherite_backtank"
+    },
+    {
+     "item": "create:netherite_diving_boots"
+    }
+   ]
+  },
+  {
+   "key": "space_survival.t2_space_suit",
+   "action": "drop",
+   "reason": "Ad Astra (space suits, Venus, Mercury) isn't in this pack."
+  },
+  {
+   "key": "space_survival.soulbound",
+   "action": "drop",
+   "reason": "Ad Astra and Enderman Overhaul (soul pearl) aren't in this pack."
+  }
+ ]
+}

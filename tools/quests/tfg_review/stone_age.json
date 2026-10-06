@@ -1,0 +1,1118 @@
+{
+ "chapter": "stone_age",
+ "decisions": [
+  {
+   "key": "stone_age.find_rock",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "Flint isn't knappable in this pack (TFC 4 rock knapping takes loose rocks and obsidian shards), so it's out of the filter; count raised to the 4 rocks the text asks for; linked to the welcome quest.",
+   "desc": [
+    "As you begin your journey, the first thing you'll notice is a completely changed world. You can no longer break trees with your fists, but fret not, for any caveman is not a real caveman without his stone tools!\n\nInstead of crafting a wooden pickaxe, you can just pick up rocks from the ground. Begin by collecting at least 4 rocks. You can collect rocks by breaking or right-clicking them with an empty hand. Obsidian shards knap just like rocks.",
+    "{@pagebreak}",
+    "",
+    "{image:tfc:textures/gui/book/gui/rock_knapping.png width:100 height:100 align:center fit:true}"
+   ],
+   "tasks": [
+    {
+     "filter": "ftbfiltersystem:item_tag(tfc:rock_knapping)",
+     "any": [
+      "#tfc:rock_knapping"
+     ],
+     "count": 4
+    }
+   ],
+   "deps": [
+    "welcome"
+   ]
+  },
+  {
+   "key": "stone_age.find_potable_water",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "TFG's gamestage task became a checkmark, so the 'drink several times so the quest completes' advice is gone; wording.",
+   "desc": [
+    "Thirst is the blue bar by your hunger bar. You can and will die of dehydration if you don't keep it filled! The easiest way to have a drink is from fresh water in the wild: right-click a lake or river with an empty hand.\n\nTick this off once you've had a drink of fresh water. You don't have to worry about purifying water here, though Salt Water will just make you more thirsty."
+   ],
+   "deps": [
+    "welcome"
+   ]
+  },
+  {
+   "key": "stone_age.find_stick",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "Stick bundles are two bunches, not a bunch of bunches (tfc:crafting/stick_bundle); added what bundles burn in (tfc:firepit_logs, pit_kiln_logs, log_pile_logs).",
+   "desc": [
+    "Another abundant item on the ground are sticks, which have many uses! They can create tools, torches, firestarters and more. Breaking leaves by hand drops sticks too.\n\nTo avoid having your inventory get clogged with different types of twigs, you can craft them into 'regular' sticks to stack them together. Later, at a workbench, nine sticks make a Stick Bunch and two bunches a Stick Bundle, which burns like a log in firepits, pit kilns and charcoal pits."
+   ],
+   "deps": [
+    "welcome"
+   ]
+  },
+  {
+   "key": "stone_age.rock_knapping",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "GregTech stone/flint tool heads don't exist here; TFC 4 knaps per-rock-category heads (tfc:stone/*_head/<category>) and obsidian heads.",
+   "desc": [
+    "Rocks can be \"Knapped\", which is the process of shaping a basic material into a usable form by smacking them together. Rock Knapping requires at least two rocks: hold them and right-click the air to open the Knapping interface. You can then \"chip off\" pieces of your rock to create a stone tool head. All the shapes for different tools can be found in EMI and the Field Guide.\n\nThe two most important tools for the beginning of your journey are a Stone Knife and a Stone Axe, so try knapping those tool heads."
+   ],
+   "tasks": [
+    {
+     "filter": "or(item(tfc:stone/axe_head/igneous_extrusive)item(tfc:stone/axe_head/igneous_intrusive)item(tfc:stone/axe_head/metamorphic)item(tfc:stone/axe_head/sedimentary)item(tfc:obsidian_axe_head))",
+     "any": [
+      "tfc:stone/axe_head/igneous_extrusive",
+      "tfc:stone/axe_head/igneous_intrusive",
+      "tfc:stone/axe_head/metamorphic",
+      "tfc:stone/axe_head/sedimentary",
+      "tfc:obsidian_axe_head"
+     ]
+    },
+    {
+     "filter": "or(item(tfc:stone/knife_head/igneous_extrusive)item(tfc:stone/knife_head/igneous_intrusive)item(tfc:stone/knife_head/metamorphic)item(tfc:stone/knife_head/sedimentary)item(tfc:obsidian_knife_head))",
+     "any": [
+      "tfc:stone/knife_head/igneous_extrusive",
+      "tfc:stone/knife_head/igneous_intrusive",
+      "tfc:stone/knife_head/metamorphic",
+      "tfc:stone/knife_head/sedimentary",
+      "tfc:obsidian_knife_head"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "stone_age.first_stone_tools",
+   "action": "merge",
+   "merge_into": "stone_tools",
+   "reason": "Same milestone as the route's stone_tools (a knife and an axe). Replaces the route's checkmark with TFG's two item tasks, rewritten for TFC 4's stone tools.",
+   "desc": [
+    "Pick up loose rocks and sticks from the ground. Knap rocks into tool heads (use two rocks), then craft a head with a stick. A knife and an axe come first: the axe fells whole trees, the knife cuts straw from grass and plants.",
+    "",
+    "You've officially entered the Stone Age! Stone tools are enough for basic survival, but eventually you'll want metal tools for much better speed, durability and tool options."
+   ],
+   "tasks": [
+    {
+     "filter": "or(item(tfc:stone/axe/igneous_extrusive)item(tfc:stone/axe/igneous_intrusive)item(tfc:stone/axe/metamorphic)item(tfc:stone/axe/sedimentary)item(tfc:obsidian_axe))",
+     "any": [
+      "tfc:stone/axe/igneous_extrusive",
+      "tfc:stone/axe/igneous_intrusive",
+      "tfc:stone/axe/metamorphic",
+      "tfc:stone/axe/sedimentary",
+      "tfc:obsidian_axe"
+     ]
+    },
+    {
+     "filter": "or(item(tfc:stone/knife/igneous_extrusive)item(tfc:stone/knife/igneous_intrusive)item(tfc:stone/knife/metamorphic)item(tfc:stone/knife/sedimentary)item(tfc:obsidian_knife))",
+     "any": [
+      "tfc:stone/knife/igneous_extrusive",
+      "tfc:stone/knife/igneous_intrusive",
+      "tfc:stone/knife/metamorphic",
+      "tfc:stone/knife/sedimentary",
+      "tfc:obsidian_knife"
+     ]
+    }
+   ],
+   "deps": [
+    "stone_age.rock_knapping",
+    "stone_age.find_stick"
+   ]
+  },
+  {
+   "key": "stone_age.stone_tools",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "GregTech stone tools and #tfc:stone_javelins don't exist here; tasks now take TFC 4's stone tools (any rock category) or obsidian ones.",
+   "desc": [
+    "While stone and obsidian are relatively simple and primitive materials, they're what you're stuck with until you learn how to work with metals. Some other useful tools include the Javelin, which can be thrown like a vanilla Trident, the Hammer, which you'll need for flux and anvils, and the Hoe, which allows you to farm."
+   ],
+   "tasks": [
+    {
+     "filter": "or(item(tfc:stone/hammer/igneous_extrusive)item(tfc:stone/hammer/igneous_intrusive)item(tfc:stone/hammer/metamorphic)item(tfc:stone/hammer/sedimentary)item(tfc:obsidian_hammer))",
+     "any": [
+      "tfc:stone/hammer/igneous_extrusive",
+      "tfc:stone/hammer/igneous_intrusive",
+      "tfc:stone/hammer/metamorphic",
+      "tfc:stone/hammer/sedimentary",
+      "tfc:obsidian_hammer"
+     ]
+    },
+    {
+     "filter": "or(item(tfc:stone/shovel/igneous_extrusive)item(tfc:stone/shovel/igneous_intrusive)item(tfc:stone/shovel/metamorphic)item(tfc:stone/shovel/sedimentary)item(tfc:obsidian_shovel))",
+     "any": [
+      "tfc:stone/shovel/igneous_extrusive",
+      "tfc:stone/shovel/igneous_intrusive",
+      "tfc:stone/shovel/metamorphic",
+      "tfc:stone/shovel/sedimentary",
+      "tfc:obsidian_shovel"
+     ]
+    },
+    {
+     "filter": "or(item(tfc:stone/axe/igneous_extrusive)item(tfc:stone/axe/igneous_intrusive)item(tfc:stone/axe/metamorphic)item(tfc:stone/axe/sedimentary)item(tfc:obsidian_axe))",
+     "any": [
+      "tfc:stone/axe/igneous_extrusive",
+      "tfc:stone/axe/igneous_intrusive",
+      "tfc:stone/axe/metamorphic",
+      "tfc:stone/axe/sedimentary",
+      "tfc:obsidian_axe"
+     ]
+    },
+    {
+     "filter": "or(item(tfc:stone/hoe/igneous_extrusive)item(tfc:stone/hoe/igneous_intrusive)item(tfc:stone/hoe/metamorphic)item(tfc:stone/hoe/sedimentary)item(tfc:obsidian_hoe))",
+     "any": [
+      "tfc:stone/hoe/igneous_extrusive",
+      "tfc:stone/hoe/igneous_intrusive",
+      "tfc:stone/hoe/metamorphic",
+      "tfc:stone/hoe/sedimentary",
+      "tfc:obsidian_hoe"
+     ]
+    },
+    {
+     "filter": "or(item(tfc:stone/knife/igneous_extrusive)item(tfc:stone/knife/igneous_intrusive)item(tfc:stone/knife/metamorphic)item(tfc:stone/knife/sedimentary)item(tfc:obsidian_knife))",
+     "any": [
+      "tfc:stone/knife/igneous_extrusive",
+      "tfc:stone/knife/igneous_intrusive",
+      "tfc:stone/knife/metamorphic",
+      "tfc:stone/knife/sedimentary",
+      "tfc:obsidian_knife"
+     ]
+    },
+    {
+     "filter": "or(item(tfc:stone/javelin/igneous_extrusive)item(tfc:stone/javelin/igneous_intrusive)item(tfc:stone/javelin/metamorphic)item(tfc:stone/javelin/sedimentary)item(tfc:obsidian_javelin))",
+     "any": [
+      "tfc:stone/javelin/igneous_extrusive",
+      "tfc:stone/javelin/igneous_intrusive",
+      "tfc:stone/javelin/metamorphic",
+      "tfc:stone/javelin/sedimentary",
+      "tfc:obsidian_javelin"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "stone_age.gather_logs",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "In TFC 4 felling a tree only gives saplings and sticks from leaves broken by hand (field guide); dep on the merged first_stone_tools now points at the route's stone_tools.",
+   "desc": [
+    "With your new Stone Axe, you'll be able to chop down trees. Breaking the base of a tree fells the whole tree, logs and leaves included; break leaves one by one if you want saplings and sticks.\n\nGather at least 10 logs -- 8 of these will be used for a Pit Kiln while the other two will be used for a Fire Pit."
+   ],
+   "deps": [
+    "stone_tools"
+   ]
+  },
+  {
+   "key": "stone_age.gather_straw",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "The straw hat (sun protection) is TFC Ambiental, not in this pack; thatch facts from the field guide; dep moved to the route's stone_tools.",
+   "desc": [
+    "Most grasses you find in the overworld can be harvested for Straw when broken with a Knife or Hoe. Straw has a number of uses for crafting, but you'll want at least 8 to create a Pit Kiln.\n\nStraw can also be crafted into Thatch, a simple building block that players and mobs pass right through, and two thatch blocks make a Thatch Bed."
+   ],
+   "deps": [
+    "stone_tools"
+   ]
+  },
+  {
+   "key": "stone_age.firepit",
+   "action": "merge",
+   "merge_into": "firepit",
+   "reason": "Same milestone as the route's firepit. Adds TFG's firestarter and firepit tasks in place of the checkmark, and its how-to detail (kindling odds from TFC's field guide; surface monsters are off in tfc-server.toml).",
+   "desc": [
+    "Craft a Firestarter from two sticks. Throw one log and three sticks on the ground (up to five pieces of kindling, such as straw, raise the odds), then hold right-click on them with the firestarter until they catch.",
+    "",
+    "The firepit cooks food, heats metal and later lights pit kilns and charcoal pits. Heating sticks in it makes torches. Keep it burning by adding logs (or stick bundles or peat) in its screen; if it goes out, add fuel and light it again.",
+    "",
+    "Monsters don't spawn on the surface here, but nocturnal predators prowl at night."
+   ],
+   "tasks": [
+    {
+     "item": "tfc:firestarter"
+    },
+    {
+     "type": "observation",
+     "observe_type": 0,
+     "to_observe": "tfc:firepit",
+     "timer": 0
+    }
+   ],
+   "deps": [
+    "stone_tools",
+    "stone_age.gather_logs"
+   ]
+  },
+  {
+   "key": "stone_age.foods",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "#tfc:foods doesn't exist; #c:foods holds TFC's foods. Removed the TerraFirmaGreg name and the unverified 'deadly if not cooked' claim.",
+   "desc": [
+    "In TerraFirmaCraft, the world is a harsh place, and one of the most important aspects of survival is being able to obtain food. Most food by itself yields little nutritional value, and all of it rots in time.\n\nBegin by obtaining any form of food."
+   ],
+   "tasks": [
+    {
+     "filter": "ftbfiltersystem:item_tag(c:foods)",
+     "any": [
+      "#c:foods"
+     ]
+    }
+   ],
+   "deps": [
+    "welcome"
+   ]
+  },
+  {
+   "key": "stone_age.cook_meat",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "#tfc:foods/raw_meats and cooked_meats don't exist; #c:foods/raw_meat and #c:foods/cooked_meat hold TFC's meats and fish. Dep on the merged firepit points at the route quest.",
+   "desc": [
+    "Cooking raw meat is an important step for getting protein: cooked meat keeps much longer than raw meat.\n\nThe simplest way to cook meat is in a Fire Pit (see the Fire quest): put it in the firepit's heating slot."
+   ],
+   "tasks": [
+    {
+     "filter": "ftbfiltersystem:item_tag(c:foods/raw_meat)",
+     "any": [
+      "#c:foods/raw_meat"
+     ]
+    },
+    {
+     "filter": "ftbfiltersystem:item_tag(c:foods/cooked_meat)",
+     "any": [
+      "#c:foods/cooked_meat"
+     ]
+    }
+   ],
+   "deps": [
+    "firepit",
+    "stone_age.foods"
+   ]
+  },
+  {
+   "key": "stone_age.soup_time",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "#tfc:soups doesn't exist; task lists TFC's five soups. How-to from TFC's Pot page; the 'much more saturation' claim is cut (the field guide says soups are cheaper but less nutrient-dense).",
+   "desc": [
+    "By crafting a pot and some bowls out of clay, you'll be able to create soups! Put the fired pot on a lit firepit, fill it with water, add 3 to 5 fruits, vegetables or meats and let it boil, then scoop the soup out with a bowl.\n\nSoups are one of the first and easiest ways to create more complex meals. Unlike eating plain ingredients, they let you consume multiple nutrients at once!"
+   ],
+   "tasks": [
+    {
+     "item": "tfc:ceramic/pot"
+    },
+    {
+     "filter": "or(item(tfc:food/grain_soup)item(tfc:food/fruit_soup)item(tfc:food/vegetables_soup)item(tfc:food/protein_soup)item(tfc:food/dairy_soup))",
+     "any": [
+      "tfc:food/grain_soup",
+      "tfc:food/fruit_soup",
+      "tfc:food/vegetables_soup",
+      "tfc:food/protein_soup",
+      "tfc:food/dairy_soup"
+     ]
+    }
+   ],
+   "deps": [
+    "firepit",
+    "stone_age.cook_meat",
+    "stone_age.clay"
+   ]
+  },
+  {
+   "key": "stone_age.nutrition",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "Removed the TerraFirmaGreg name and the HP-per-heart figure (not verified for TFC 4); rest matches TFC's Food and Water page.",
+   "desc": [
+    "Each basic food contains nutrients, split into 5 categories: &lGrain&r, &lFruit&r, &lVegetables&r, &lProtein&r and &lDairy&r.\n\nWhile you could eat only one kind of nutrient such as Protein, your maximum health will suffer, while a balanced diet gives you much higher max health. Only recent meals count, so keep eating a variety; soups, salads and sandwiches combine several nutrients at once.\n\nLook at the field guide's \"Food and Water\" section for full details. The nutrition tab of your inventory shows your current levels."
+   ]
+  },
+  {
+   "key": "stone_age.meals",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "#tfc:salads doesn't exist; #c:foods/salad holds TFC's five salads. Sandwich ids exist as they are.",
+   "tasks": [
+    {
+     "filter": "ftbfiltersystem:item_tag(c:foods/salad)",
+     "any": [
+      "#c:foods/salad"
+     ]
+    },
+    {
+     "filter": "or(item(tfc:food/barley_bread_sandwich)item(tfc:food/maize_bread_sandwich)item(tfc:food/oat_bread_sandwich)item(tfc:food/rye_bread_sandwich)item(tfc:food/rice_bread_sandwich)item(tfc:food/wheat_bread_sandwich))",
+     "any": [
+      "tfc:food/barley_bread_sandwich",
+      "tfc:food/maize_bread_sandwich",
+      "tfc:food/oat_bread_sandwich",
+      "tfc:food/rye_bread_sandwich",
+      "tfc:food/rice_bread_sandwich",
+      "tfc:food/wheat_bread_sandwich"
+     ]
+    },
+    {
+     "filter": "or(item(tfc:food/barley_bread_jam_sandwich)item(tfc:food/maize_bread_jam_sandwich)item(tfc:food/oat_bread_jam_sandwich)item(tfc:food/rye_bread_jam_sandwich)item(tfc:food/rice_bread_jam_sandwich)item(tfc:food/wheat_bread_jam_sandwich))",
+     "any": [
+      "tfc:food/barley_bread_jam_sandwich",
+      "tfc:food/maize_bread_jam_sandwich",
+      "tfc:food/oat_bread_jam_sandwich",
+      "tfc:food/rye_bread_jam_sandwich",
+      "tfc:food/rice_bread_jam_sandwich",
+      "tfc:food/wheat_bread_jam_sandwich"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "stone_age.garlic_bread",
+   "action": "drop",
+   "reason": "Garlic bread is a Firmalife item; Firmalife isn't in the pack."
+  },
+  {
+   "key": "stone_age.hydration",
+   "action": "keep",
+   "chapter": "stone"
+  },
+  {
+   "key": "stone_age.water_jug",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "Absorbs TFG's duplicate make_jug quest (same item); jug facts match tfc-server.toml (100 mB, 2% break chance) and the jug's whistle sound.",
+   "desc": [
+    "Knap a Jug out of clay and fire it in a Pit Kiln. A Ceramic Jug is the earliest liquid container you can craft, but it only holds 100 mB, so you'll need to refill it after every drink: right-click water with it, then hold right-click to drink.\n\nThe Jug is relatively fragile and has a small chance to break when you drink from it! You can also blow into it to make it whistle."
+   ],
+   "deps": [
+    "stone_age.pit_kiln",
+    "stone_age.clay",
+    "stone_age.find_potable_water"
+   ]
+  },
+  {
+   "key": "stone_age.make_jug",
+   "action": "drop",
+   "reason": "Duplicate of water_jug (same tfc:ceramic/jug task); its text is merged there."
+  },
+  {
+   "key": "stone_age.leather_flask",
+   "action": "drop",
+   "reason": "Waterflasks (waterflasks:leather_flask) isn't in the pack."
+  },
+  {
+   "key": "stone_age.iron_flask",
+   "action": "drop",
+   "reason": "Waterflasks (waterflasks:iron_flask) isn't in the pack."
+  },
+  {
+   "key": "tfg_tips.juicer",
+   "action": "drop",
+   "reason": "beneath:juicer is from The Beneath, which isn't in the pack."
+  },
+  {
+   "key": "stone_age.glass_bottles",
+   "action": "edit",
+   "chapter": "bronze",
+   "reason": "Bottle needs brass (glassworking blow, pinch with jacks = two welded brass rods, saw with a gem saw = brass rod + gem powder), so it belongs in the brass era; capacities from tfc-server.toml (silica 500 mB, hematitic/volcanic 400); no leather flask here.",
+   "desc": [
+    "Glass bottles are a sturdier way to carry water: a silica glass bottle holds 500 mB, five drinks, and the other glasses a little less. However, blowing glass bottles won't be possible until you can shape Brass: a bottle is blown on a blowpipe, pinched with Jacks (two welded brass rods) and cut with a Gem Saw (a brass rod and gem powder).\n\nCheck the field guide's Glassworking pages for glass batches and the blowpipe."
+   ],
+   "deps": [
+    "stone_age.find_potable_water",
+    "brass"
+   ]
+  },
+  {
+   "key": "stone_age.water_bucket",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "Checkmark replaced by the wooden bucket item; facts from tfc-server.toml (1000 mB, woodenBucketCanPlaceSources = false) and the field guide. Needs lumber, so after the workbench.",
+   "title": "Wooden Bucket",
+   "subtitle": "Not as easy as you think",
+   "desc": [
+    "Carrying around a water source would be an easy way to never run out, but it doesn't work here.\n\nA Wooden Bucket, made from lumber, holds 1000 mB of any fluid for filling barrels and pots, but it cannot place source blocks: pouring it out only makes a small puddle that quickly disappears."
+   ],
+   "tasks": [
+    {
+     "item": "tfc:wooden_bucket"
+    }
+   ],
+   "deps": [
+    "stone_age.find_potable_water",
+    "stone_age.workbench"
+   ],
+   "icon": "tfc:wooden_bucket"
+  },
+  {
+   "key": "stone_age.temperature",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "Body temperature, wetness and the HUD triangle are TFC Ambiental, which isn't in the pack; kept the season and climate part (tfc-common.toml: 8-day months, start June 1) and added that the climate follows the real Earth (TFC: Real World).",
+   "desc": [
+    "A new world starts in early summer (June), with each month lasting 8 days. Seasons will change, and with them the temperature and rainfall, which affect crops, fruit trees, bushes and whether snow and ice form.\n\nThe Calendar and Climate tabs of your inventory show the date, the season, and your location's average and current temperature and rainfall. This world is a real-scale Earth, so its climate is the climate of the real place you're standing in: pick your farm site accordingly."
+   ],
+   "deps": [
+    "welcome"
+   ]
+  },
+  {
+   "key": "stone_age.insulation",
+   "action": "drop",
+   "reason": "Body temperature is TFC Ambiental's mechanic, which isn't in the pack; TFC 4 has no hypothermia, heatstroke or clothing insulation."
+  },
+  {
+   "key": "stone_age.clothes",
+   "action": "drop",
+   "reason": "Clothing curios slots and insulating clothes are TFC Ambiental/TFC Textile, not in the pack (all four curios tags missing)."
+  },
+  {
+   "key": "stone_age.primitive_insulation",
+   "action": "drop",
+   "reason": "tfc_textile clothes aren't in the pack, and there is no body temperature to insulate against."
+  },
+  {
+   "key": "stone_age.snowshoes",
+   "action": "drop",
+   "reason": "tfg:snowshoes is a TerraFirmaGreg item."
+  },
+  {
+   "key": "stone_age.find_clay",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "Block tag #tfc:clay is #tfc:clays in TFC 4; replaced the mud flats tip with the field guide's (clay patches where annual rainfall is 175 mm+, smaller deposits near water).",
+   "desc": [
+    "Clay is an essential part of stone age tech! Similar to knapping rocks, clay can be molded into different shapes and then fired in a Pit Kiln to create a wide variety of items. Stone Tools and Clay Ceramics will be the backbone of your survival until you learn how to work with Metals.\n\nClay is found in patches in the ground, usually covered by grass, in areas with at least 175 mm of annual rainfall. Certain plants, known as \"Clay Indicators\" (athyrium fern, canna, goldenrod, pampas grass, perovskia and water canna), grow right on top of it. Smaller deposits sit close to rivers, lakes and ponds."
+   ],
+   "tasks": [
+    {
+     "type": "observation",
+     "observe_type": 1,
+     "to_observe": "#tfc:clays",
+     "timer": 0
+    },
+    {
+     "optional": true,
+     "type": "observation",
+     "observe_type": 1,
+     "to_observe": "#tfc:clay_indicators",
+     "timer": 0
+    }
+   ],
+   "deps": [
+    "welcome"
+   ]
+  },
+  {
+   "key": "stone_age.clay",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "Text asked for 25 clay while the task takes 5; reworded around 5 clay per knapping instead.",
+   "desc": [
+    "Gather some Clay: knapping takes 5 clay per item, and you'll want a vessel, a saw blade mold, ingot molds and more (see the next quests). Once you mold the clay, put the pieces in a Pit Kiln to bake them into Ceramic. You mold clay the same way you knap stone, but if you make a mistake you can just close the interface and reshape it."
+   ]
+  },
+  {
+   "key": "stone_age.pit_kiln",
+   "action": "keep",
+   "chapter": "stone"
+  },
+  {
+   "key": "stone_age.make_vessel",
+   "action": "merge",
+   "merge_into": "vessel",
+   "reason": "Same milestone as the route's vessel (keeps its fired-vessel task). Adds TFG's explanation of the vessel; deps put it after TFG's pit kiln and clay quests.",
+   "desc": [
+    "Knap clay into a small vessel and ingot molds, then fire them in a pit kiln (straw and logs over the pottery, lit).",
+    "",
+    "The vessel holds up to four items like a small bag (food inside keeps longer), but more importantly it's your first tool for working with metals: fill it with ore, fire it in a pit kiln to &lmelt&r the metal, then use it to pour into a mold. Its tooltip tells you what the ores inside will melt into, which is especially useful for alloys.",
+    "",
+    "Alloys need specific percentages of each metal. Copper is great right away, but you could make your very first metal tools from bronze instead."
+   ],
+   "deps": [
+    "firepit",
+    "stone_age.pit_kiln",
+    "stone_age.clay"
+   ]
+  },
+  {
+   "key": "stone_age.make_saw_mold",
+   "action": "keep",
+   "chapter": "stone"
+  },
+  {
+   "key": "stone_age.clay_products",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "Dropped the tasks for tfg:decorative_vase and Firmalife's oven parts (not in the pack); the rest exist.",
+   "tasks": [
+    {
+     "item": "tfc:ceramic/jug"
+    },
+    {
+     "item": "tfc:ceramic_blowpipe"
+    },
+    {
+     "item": "minecraft:flower_pot"
+    },
+    {
+     "item": "tfc:ceramic/bowl"
+    },
+    {
+     "filter": "ftbfiltersystem:item_tag(tfc:fired_vessels)",
+     "any": [
+      "#tfc:fired_vessels"
+     ]
+    },
+    {
+     "item": "tfc:ceramic/large_vessel"
+    },
+    {
+     "item": "tfc:ceramic/pot"
+    },
+    {
+     "filter": "ftbfiltersystem:item_tag(tfc:fired_molds)",
+     "any": [
+      "#tfc:fired_molds"
+     ]
+    },
+    {
+     "item": "tfc:ceramic/spindle_head"
+    },
+    {
+     "item": "tfc:pan/empty"
+    },
+    {
+     "item": "minecraft:brick"
+    }
+   ]
+  },
+  {
+   "key": "stone_age.native_ores",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "Indicators here are TFC's small ore pieces (TFG's dust piles and crystal buds and its 'TFG Ores' guide category don't exist); each is 10 mB, not a nugget; vein wording from TFC's field guide.",
+   "desc": [
+    "Ore veins generate differently than what you might be used to - you can't just wander into a random cave. Instead, look for small pieces of ore lying on the surface among the loose rocks and sticks.\n\nCan't find anything that melts into Copper (native copper, malachite or tetrahedrite)? Try looking in another rock type -- different ores spawn in different rocks. The field guide's ores section tells you where each one is found.",
+    "{@pagebreak}",
+    "These small pieces are indicators: a larger vein of the same ore lies somewhere nearby, probably underground and close to the surface. You don't have a pickaxe yet, so take note of the place where you found the ore! It'll be very useful later on.\n\nEach piece is worth 10 mB of metal (an ingot is 100 mB), so collect as many as you can, but make sure you make a note of where you found them!"
+   ],
+   "deps": [
+    "welcome"
+   ]
+  },
+  {
+   "key": "stone_age.first_saw",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "GregTech saws -> TFC saws (copper or any bronze); a saw blade casts from 100 mB, not 144; TFC 4 has no hot-item damage or tongs (TFC Hot or Not isn't in the pack), so the tongs and the #tfchotornot:insulating task are gone; alloy ratios from TFC's alloy recipes; vessel dep points at the route quest.",
+   "desc": [
+    "To begin making your Saw, put at least 100 mB of ore of your desired metal in a Vessel (ten small ore pieces). Afterwards, place the Vessel in a Pit Kiln and light it on fire.\n\nOnce the Pit Kiln burns out, take your vessel while the metal is still molten and use it to open the Casting interface. Simply place the fired Saw Blade Mold in its slot and watch it fill with your very first Saw Blade. Afterwards, combine your Saw Blade with a Stick and you'll create your Saw!",
+    "{@pagebreak}",
+    "While the easiest metal to work with is Copper, you can try your hand at the process of alloying. This quest accepts a saw of Copper or any of the three bronzes.\n\n&lBismuth Bronze&r: Copper (50-65%), Zinc (20-30%) and Bismuth (10-20%).\n\n&lBronze&r: Copper (88-92%) and Tin (8-12%). The most average of the bronzes.\n\n&lBlack Bronze&r: Copper (50-70%), Silver (10-25%) and Gold (10-25%). Considerably more expensive."
+   ],
+   "tasks": [
+    {
+     "filter": "or(item(tfc:metal/saw/copper)item(tfc:metal/saw/bismuth_bronze)item(tfc:metal/saw/bronze)item(tfc:metal/saw/black_bronze))",
+     "any": [
+      "tfc:metal/saw/copper",
+      "tfc:metal/saw/bismuth_bronze",
+      "tfc:metal/saw/bronze",
+      "tfc:metal/saw/black_bronze"
+     ]
+    }
+   ],
+   "deps": [
+    "stone_age.native_ores",
+    "vessel",
+    "stone_age.make_saw_mold"
+   ],
+   "icon": "tfc:metal/saw/copper"
+  },
+  {
+   "key": "stone_age.craft_lumber",
+   "action": "keep",
+   "chapter": "stone"
+  },
+  {
+   "key": "stone_age.workbench",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "Typo; added this pack's note that TFC workbenches count as crafting tables (compat/vanilla_substitutes.js); 'recyclable' made concrete (an anvil melts back into 1400 mB).",
+   "desc": [
+    "Congratulations! With your Workbench you've officially entered the Peak of the Stone Age. With it you'll be able to craft a multitude of new things with the items you've gathered so far. In this pack TFC workbenches also count as crafting tables wherever a recipe asks for one.\n\nNow comes your main goal of the Primitive Age: proper metalworking with the Copper Anvil.\n\nSidenote: While you could gather enough materials to make 14 ingots of bronze right now, you won't be able to turn them into a bronze anvil without crafting the copper one first, sorry! At least anvils are recyclable: an anvil melts back into all 14 ingots' worth of metal."
+   ]
+  },
+  {
+   "key": "stone_age.inventory",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "TFC 4 chests take items up to Large (only Very Large items such as logs don't fit); GregTech's wooden crate needs iron screws, and astikorcarts' supply cart isn't in the pack, so the optional tasks are TFC's own crate (one item type, 36 stacks) and a fired large vessel; facts from TFC's Storage and Decay pages.",
+   "desc": [
+    "In the early game, you have a few simple storage options:\n\n&lChest&r: Chests are cheap and easy to craft from lumber and have 18 slots. They hold items up to Large in size; Very Large items such as logs don't fit.\n\n&lCrate&r: A Crate stores a single kind of item, but up to 36 stacks of it.\n\n&lLarge Vessels&r: The cheapest to craft, only requiring clay, with nine slots. Sealed, they're ideal for food preservation. Available in a wide variety of colors too!\n\nBaskets, shelves and tool racks round things out (see the field guide's Storage page). Keep food in sealed vessels: food left in chests can attract rats."
+   ],
+   "tasks": [
+    {
+     "filter": "ftbfiltersystem:item_tag(c:chests/wooden)",
+     "any": [
+      "#c:chests/wooden"
+     ]
+    },
+    {
+     "filter": "or(item(tfc:wood/crate/acacia)item(tfc:wood/crate/ash)item(tfc:wood/crate/aspen)item(tfc:wood/crate/birch)item(tfc:wood/crate/blackwood)item(tfc:wood/crate/chestnut)item(tfc:wood/crate/douglas_fir)item(tfc:wood/crate/hickory)item(tfc:wood/crate/kapok)item(tfc:wood/crate/mangrove)item(tfc:wood/crate/maple)item(tfc:wood/crate/oak)item(tfc:wood/crate/palm)item(tfc:wood/crate/pine)item(tfc:wood/crate/rosewood)item(tfc:wood/crate/sequoia)item(tfc:wood/crate/spruce)item(tfc:wood/crate/sycamore)item(tfc:wood/crate/white_cedar)item(tfc:wood/crate/willow))",
+     "any": [
+      "tfc:wood/crate/acacia",
+      "tfc:wood/crate/ash",
+      "tfc:wood/crate/aspen",
+      "tfc:wood/crate/birch",
+      "tfc:wood/crate/blackwood",
+      "tfc:wood/crate/chestnut",
+      "tfc:wood/crate/douglas_fir",
+      "tfc:wood/crate/hickory",
+      "tfc:wood/crate/kapok",
+      "tfc:wood/crate/mangrove",
+      "tfc:wood/crate/maple",
+      "tfc:wood/crate/oak",
+      "tfc:wood/crate/palm",
+      "tfc:wood/crate/pine",
+      "tfc:wood/crate/rosewood",
+      "tfc:wood/crate/sequoia",
+      "tfc:wood/crate/spruce",
+      "tfc:wood/crate/sycamore",
+      "tfc:wood/crate/white_cedar",
+      "tfc:wood/crate/willow"
+     ],
+     "optional": true
+    },
+    {
+     "filter": "ftbfiltersystem:item_tag(tfc:fired_large_vessels)",
+     "any": [
+      "#tfc:fired_large_vessels"
+     ],
+     "optional": true
+    }
+   ]
+  },
+  {
+   "key": "stone_age.portable_storage",
+   "action": "drop",
+   "reason": "Pointer to TFG's Tips chapter and Sophisticated Backpacks, neither of which exist here; TFC's storage options are covered by the Early Storage quest."
+  },
+  {
+   "key": "stone_age.barrels",
+   "action": "keep",
+   "chapter": "stone"
+  },
+  {
+   "key": "stone_age.barrelrack",
+   "action": "keep",
+   "chapter": "stone"
+  },
+  {
+   "key": "stone_age.leather",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "Pineapple leather is Firmalife (not in the pack); TFC leather knaps into armor, saddles and horse armor, not flasks; added the process steps from TFC's Leather Making page and this pack's leather/burlap belts.",
+   "desc": [
+    "When killed, wild animals drop raw hides. Hide cannot be used as leather directly and instead must be worked and processed first: soak it in limewater, scrape it on a log with a knife, soak it in water, then seal it in a barrel of tannin. The field guide's Leather Making page walks you through it.\n\nLeather, just like Clay and Stone, can be Knapped, into Leather Armor, saddles and horse armor. In this pack Create's belts take leather (or burlap) too."
+   ]
+  },
+  {
+   "key": "stone_age.leather_armor",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "'Protects you from the elements' was TFC Ambiental; protection wording from TFC's Armor page.",
+   "desc": [
+    "Leather Armor, just like its Minecraft counterpart, is a very basic set of armor, knapped from leather. It doesn't last long, but a full suit gives decent protection against the predators of the early game."
+   ]
+  },
+  {
+   "key": "tfg_tips.thatch_bed",
+   "action": "keep",
+   "chapter": "stone"
+  },
+  {
+   "key": "tfg_tips.loom",
+   "action": "keep",
+   "chapter": "stone"
+  },
+  {
+   "key": "tfg_tips.unrefined_paper",
+   "action": "keep",
+   "chapter": "stone"
+  },
+  {
+   "key": "tfg_tips.burlap_cloth",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "No flax in TFC 4 (jute only: soaked in a sealed barrel, 12 fibers per cloth); burlap clothes and beekeeper armor aren't in the pack; added burlap's uses here (Create belting parts per docs/design.md, the sewing table).",
+   "desc": [
+    "You can create &dBurlap Cloth&r by soaking &aJute&r in a sealed barrel of water and weaving the resulting &aJute Fiber&r on the &3Loom&r (12 fibers per cloth).\n\nIn this pack burlap matters: Create's belts, spouts, funnels, tunnels and pulleys take burlap cloth (or leather), and the sewing table uses it too."
+   ]
+  },
+  {
+   "key": "tfg_tips.wool_cloth",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "Wool clothes aren't in the pack; uses and yarn/cloth counts from TFC's Weaving page and recipes (spindle + wool = 8 yarn, 16 yarn per cloth; large sheepskin scrapes into wool).",
+   "desc": [
+    "By shearing some friendly &2wool-producing&r livestock (or scraping a sheepskin hide), you can spin the resulting wool into &dWool Yarn&r with a &3Spindle&r. Working 16 yarn in a &3Loom&r gives you &dWool Cloth.&r\n\nBesides rolling glass in &bGlassworking&r, it's used for beds and on the sewing table.\n\nWool is considered a &bHigh Quality Cloth.&r"
+   ]
+  },
+  {
+   "key": "tfg_tips.silk_cloth",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "The Beneath isn't in the pack and silk clothes don't exist; loom recipe is 24 string; GregTech's wiremill does spin polycaprolactam into string.",
+   "desc": [
+    "&dSilk Cloth&r is woven on the &3Loom&r from 24 &aString&r, which you get from killing &bSpiders&r underground. No silkworms exist yet, sorry! Much later, GregTech's wiremill spins Polycaprolactam (nylon) into string.\n\nSilk Cloth can stand in for wool cloth in some recipes, such as beds.\n\nSilk Cloth is considered a &bHigh Quality Cloth.&r"
+   ]
+  },
+  {
+   "key": "tfg_tips.phantom_silk",
+   "action": "drop",
+   "reason": "tfg:phantom_silk is a TerraFirmaGreg item, and phantoms come from The Beneath."
+  },
+  {
+   "key": "tfg_tips.cotton_cloth",
+   "action": "drop",
+   "reason": "tfc_textile:cotton_cloth (TFC Textile) and The Beneath aren't in the pack."
+  },
+  {
+   "key": "tfg_tips.bed",
+   "action": "keep",
+   "chapter": "stone"
+  },
+  {
+   "key": "tfg_tips.sleeping_bags",
+   "action": "drop",
+   "reason": "Comforts (sleeping bags) isn't in the pack."
+  },
+  {
+   "key": "tfg_tips.hammocks",
+   "action": "drop",
+   "reason": "Comforts (hammocks, rope and nail) isn't in the pack."
+  },
+  {
+   "key": "stone_age.mining_prep",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "#tfc:propicks/#tfc:pickaxes don't exist (now #c:tools/propick and #minecraft:pickaxes); removed the TFG name and the unverified 'hammers won't work'; icon gtceu:copper_pickaxe doesn't exist.",
+   "desc": [
+    "Progressing beyond the stone age will require a lot of metal, and just picking up small ores on the surface won't be enough. You'll have to dig down and begin mining.\nAssuming you &odid&r mark the place where you found your copper, find the rough middle of where the ore pieces were and start digging! It might be pretty deep, but you'll eventually strike it rich. A Prospector's Pick helps you home in on the vein. The next page has some equipment you'll want to bring along for your first mining trip!",
+    "{@pagebreak}",
+    "&lPickaxe&r: Pretty obvious what this does, you'll need a way to break the stone and harvest the ore. Cast a copper pickaxe head in a mold.\n\n&lLadders and Torches&r: You'll need some way to climb back up out of the hole and see what you're doing!\n\n&lSupport Beams and Planks&r: Mining here is much more dangerous - not only do monsters spawn underground, but carelessly digging around can cause a cave-in! The next quest goes over how to mitigate dangers while mining.\n\nNow go and dig your hole, diggy diggy hole!"
+   ],
+   "tasks": [
+    {
+     "filter": "ftbfiltersystem:item_tag(c:tools/propick)",
+     "any": [
+      "#c:tools/propick"
+     ],
+     "optional": true
+    },
+    {
+     "filter": "ftbfiltersystem:item_tag(minecraft:pickaxes)",
+     "any": [
+      "#minecraft:pickaxes"
+     ]
+    },
+    {
+     "filter": "ftbfiltersystem:item_tag(tfc:support_beams)",
+     "any": [
+      "#tfc:support_beams"
+     ],
+     "count": 16
+    },
+    {
+     "item": "minecraft:ladder",
+     "count": 32
+    }
+   ],
+   "icon": "tfc:metal/pickaxe/copper"
+  },
+  {
+   "key": "stone_age.hazards",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "TFG said only vertical beams support rock; TFC 4's field guide says only horizontal beams do (9 x 5 x 9 around them), vertical columns are up to three tall and horizontals span up to five blocks; the dropped diagram ('like this') is replaced by words; added ore degrading on collapse.",
+   "desc": [
+    "Besides the monsters, the biggest challenge when mining is dealing with cave-ins. Mining raw rock near rock that isn't supported can start a collapse, and once one has started even supported rock can come down. Rock with a solid block beneath it is supported, and cave roofs are naturally supported. The safest thing you can do is just mine the floor, but if you want to safely mine anything else you'll have to learn how to use support beams! These are crafted from logs and a saw.",
+    "{@pagebreak}",
+    "Placing a support beam on a block raises a vertical column up to three tall, and horizontal beams connect two vertical ones up to five blocks apart. Only the horizontal beams support rock: anything within a 9 x 5 x 9 area around them. The field guide's Support Beams page has diagrams.\n\nOre that collapses drops a grade (rich becomes normal, normal becomes poor), so support your veins!"
+   ]
+  },
+  {
+   "key": "tfg_tips.panning",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "Deposits also hold cassiterite, which isn't a native ore; how-to and products from TFC's Panning page.",
+   "desc": [
+    "Along riverbeds and lakebeds, you may notice gravel with specks of minerals, known as &aOre Deposits&r. Use a &bPan&r (knapped from clay and fired) on one, then stand in water and hold right-click to pan it. With luck you'll get &dsmall pieces of ore&r (native copper, native silver, native gold or cassiterite), sometimes a loose rock or even a gem. These can come in a pinch when you're missing a few millibuckets to fill a mold."
+   ],
+   "deps": [
+    "welcome"
+   ]
+  },
+  {
+   "key": "tfg_tips.sluice",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "TFC 4's sluice gives the same products as panning with slightly different odds (field guide), not extra rare outputs; added how it works.",
+   "desc": [
+    "A &3Sluice&r, made from sticks and lumber, processes those &aore deposits&r in a faster, slightly automated way: water must flow through it, and deposits dropped into the stream wash onto it and come out the bottom as ore, rocks or gems, with slightly better ore odds than panning. Check the &2Field Guide&r entry for the water setup!"
+   ]
+  },
+  {
+   "key": "tfg_tips.charcoal_pile",
+   "action": "merge",
+   "merge_into": "charcoal",
+   "reason": "Same milestone as the route's charcoal (keeps its item task). Adds TFG's charcoal pit how-to (TFC field guide) and its coke oven tip, corrected: here the coke oven needs wrought iron plates, so it's an iron-age upgrade.",
+   "desc": [
+    "Stack logs in a pit, cover them and light them: a charcoal pit. Charcoal is hot enough for a forge, the bloomery and the blast furnace, and you'll need a lot of it.",
+    "",
+    "Sneak and right-click with logs to place log piles in your pit; the more logs in the piles, the more charcoal. Cover them with non-flammable blocks, leaving one pile open, light it with a firestarter or a torch, then cover it too. Once the smoke stops, dig out the charcoal piles, preferably with a shovel.",
+    "",
+    "Later, with wrought iron plates, GregTech's coke oven turns logs into charcoal (plus creosote) and coal into coke."
+   ]
+  },
+  {
+   "key": "stone_age.create_forge",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "Forge build and fuels from TFC's field guide and the tfc:forge_fuel tag (charcoal, coal, bituminous coal, lignite; coke isn't forge fuel); added Woodencog's forge-heated basin from docs/design.md; charcoal dep points at the route quest.",
+   "desc": [
+    "The Forge is a crafting station used to heat materials to high temperatures. It heats things considerably faster than the Pit Kiln, and is much easier to control too.\n\nTo make the forge, surround a charcoal pile of 7 or 8 layers with 5 stone blocks (raw rock, cobblestone and the like) and light it. It needs open air above it and a view of the sky. The Forge doesn't burn logs; it burns Charcoal or Coal (bituminous coal or lignite), and a Bellows makes it hotter.\n\nCheck the field guide for walkthroughs on how to make a Charcoal Pit and a Charcoal Forge.",
+    "{@pagebreak}",
+    "In this pack a Create basin set on a charcoal forge is Create's heat source: 750 °C and up counts as heated and 2000 °C (a forge with bellows) as superheated, for heated mixing and alloying in the basin."
+   ],
+   "deps": [
+    "stone_age.get_raw_rock",
+    "charcoal"
+   ]
+  },
+  {
+   "key": "stone_age.get_raw_rock",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "Vanilla deepslate and blackstone aren't TFC rock (they're GregTech/Create-made here), so the filter takes TFC's seven raw igneous rocks; rock anvil is made on the top face with a hammer (field guide).",
+   "desc": [
+    "To create your Copper Anvil you'll need both a basic Stone Anvil and a Charcoal Forge. To make a Stone Anvil, you will need a block of Raw &6Igneous&r rock: granite, diorite, gabbro, andesite, basalt, dacite or rhyolite.\n\nTo obtain Raw Rock you can carefully break the blocks &laround&r the Raw Rock you want to mine. Once all 6 sides of the Raw Rock are exposed to air, it'll pop off into its Item form. An exposed block in the world works too: right-click its top face with a hammer to turn it into your Stone Anvil."
+   ],
+   "tasks": [
+    {
+     "filter": "or(item(tfc:rock/raw/granite)item(tfc:rock/raw/diorite)item(tfc:rock/raw/gabbro)item(tfc:rock/raw/andesite)item(tfc:rock/raw/basalt)item(tfc:rock/raw/dacite)item(tfc:rock/raw/rhyolite))",
+     "any": [
+      "tfc:rock/raw/granite",
+      "tfc:rock/raw/diorite",
+      "tfc:rock/raw/gabbro",
+      "tfc:rock/raw/andesite",
+      "tfc:rock/raw/basalt",
+      "tfc:rock/raw/dacite",
+      "tfc:rock/raw/rhyolite"
+     ]
+    }
+   ],
+   "deps": [
+    "welcome"
+   ]
+  },
+  {
+   "key": "stone_age.rock_anvil",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "#tfc:hammers is #c:tools/hammer in TFC 4; block tag #tfc:rock_anvils doesn't exist, #tfc:anvils includes the rock anvils (tfc:rock/anvil/<rock>).",
+   "desc": [
+    "Anvils are the foundation of all early game metal working. To create a proper metal anvil, you'll need to weld ingots using the previous tier of Anvil. Since Copper is the first tier, you have to use a Rock Anvil to weld them. Make one by right-clicking the top face of a block of raw igneous rock with a hammer. Welding ingots is the only thing it can do, unfortunately - you'll need the metal's proper anvil to shape them into anything else."
+   ],
+   "tasks": [
+    {
+     "filter": "ftbfiltersystem:item_tag(c:tools/hammer)",
+     "any": [
+      "#c:tools/hammer"
+     ]
+    },
+    {
+     "type": "observation",
+     "observe_type": 1,
+     "to_observe": "#tfc:anvils",
+     "timer": 0
+    }
+   ]
+  },
+  {
+   "key": "stone_age.flux",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "TFC 4 makes flux by crafting a fluxstone with any hammer (tfc:crafting/powder/flux, 2 flux) as well as in the quern; the quern needs smooth stone from a metal chisel here, so flux no longer waits for it.",
+   "desc": [
+    "Flux is an item that is primarily used in metal working to weld things together, and later in the blast furnace, leather making and glass.\nSome rocks - Chalk, Dolomite, Limestone and Marble - can be turned into Flux, as can shells, scutes and barnacles: craft one with any hammer (even a stone one) for 2 flux, or grind it in a Quern."
+   ],
+   "deps": [
+    "stone_tools"
+   ]
+  },
+  {
+   "key": "stone_age.quern",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "TFC 4's quern base takes smooth stone, which needs a metal chisel, so it comes after copper; the quern grinds ores into TFC powders that don't melt (no heating recipe), not crushed ore, which comes from Create/GregTech here.",
+   "desc": [
+    "The Quern and Handstone are two big rocks grinding against each other to break down materials. The bottom piece is called a Quern while the top piece is called a Handstone. The quern takes three smooth stone, which you make by chiseling raw rock, so it comes once you've cast a metal chisel.\n\nThe Quern grinds Flux, Flour, Bone Meal, Salt, dyes and mineral powders such as sulfur and redstone. Don't grind your metal ores in it: here its ore powders don't melt, and crushed ore comes from Create's millstone and GregTech's macerator instead."
+   ],
+   "deps": [
+    "stone_age.get_raw_rock",
+    "copper"
+   ]
+  },
+  {
+   "key": "stone_age.copper_for_anvil",
+   "action": "merge",
+   "merge_into": "copper",
+   "reason": "Same milestone as the route's copper (TFG's task was minecraft:copper_ingot, unified away here; the route's tfc:metal/ingot/copper stays). Adds TFG's anvil-cost advice, recomputed for 100 mB ingots (14 ingots = 140 small pieces), and the ingot mold's 10% break chance.",
+   "desc": [
+    "Melt native copper, malachite or tetrahedrite in a small vessel and pour it into a fired ingot mold. Ingot molds have a 10% chance to break each cast.",
+    "",
+    "TFC ores come in grades: small 10 mB, poor 15, normal 25, rich 35; an ingot is 100 mB.",
+    "",
+    "Anvils aren't cheap! Each anvil takes 14 ingots, welded into 7 double ingots: 140 small ore pieces' worth of copper. You might want to start mining (or panning) at this point if you haven't already."
+   ]
+  },
+  {
+   "key": "stone_age.weld_copper_ingots",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "gtceu:copper_double_ingot -> tfc:metal/double_ingot/copper; no tongs in TFC 4; welding is done by using a hammer on the anvil with flux in it (field guide), not sneak-clicking; copper dep points at the route quest.",
+   "desc": [
+    "Light up your Forge and give it at least 2 Copper Ingots. Keep an eye on their tooltip as they heat up - once they get hot, it'll show \"Can Work\", but we need to wait until they get to \"Can Weld\", which is just before their melting point.\n\nOnce they reach it, quickly move them from the forge into the Rock Anvil's interface (the two left slots), along with at least one Flux. Then use a hammer on the anvil to weld the two ingots together while they're still hot. A barrel of water cools your new double ingot down quickly."
+   ],
+   "tasks": [
+    {
+     "item": "tfc:metal/double_ingot/copper"
+    }
+   ],
+   "deps": [
+    "stone_age.flux",
+    "copper",
+    "stone_age.rock_anvil",
+    "stone_age.create_forge"
+   ]
+  },
+  {
+   "key": "metal_age.copper_anvil",
+   "action": "merge",
+   "merge_into": "copper_anvil",
+   "reason": "Same milestone as the route's copper_anvil (same item). Combined text; also corrects the route's 'shape them on a stone anvil' (a stone anvil only welds; the seven double ingots are crafted into the anvil) and adds TFC's tier rule. Dep on TFG's welding quest.",
+   "desc": [
+    "Congratulations! You've finished the Stone Age and entered the Metal Age!",
+    "",
+    "Weld pairs of copper ingots into double ingots on a stone anvil (14 ingots make 7 double ingots), then craft the seven double ingots into the anvil. The anvil makes tools, sheets and most metal parts.",
+    "",
+    "Anvils come in tiers: each one works the metals of its own tier and welds those one tier up, so the copper anvil is where you weld bronze for the bronze anvil. Climb the tiers and each new anvil opens up new tools."
+   ],
+   "deps": [
+    "stone_age.weld_copper_ingots"
+   ]
+  },
+  {
+   "key": "stone_age.fuel_temperatures",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "tfg:dried_peat_brick doesn't exist and TFC peat isn't forge fuel (tfc:forge_fuel); kept the lesson with TFC 4's numbers (fuel data: charcoal/lignite 1350 °C, bituminous coal 1415 °C; bronze melts at 950 °C, copper 1080 °C) as a checkmark tip.",
+   "desc": [
+    "You may have noticed that different fuels burn at different temperatures: a fuel's tooltip tells you. Charcoal and lignite burn at 1350 °C and bituminous coal at 1415 °C, well above the melting points of bronze (950 °C) and copper (1080 °C), so keep an eye on your ingots' temperature and take them out once they can be worked or welded.\n\n&9Note&r: putting a mold or vessel on the right side of the forge interface will catch any metals that melt."
+   ],
+   "tasks": [
+    {
+     "type": "checkmark"
+    }
+   ],
+   "deps": [
+    "stone_age.create_forge"
+   ],
+   "icon": "minecraft:charcoal"
+  },
+  {
+   "key": "stone_age.crush_ore",
+   "action": "merge",
+   "merge_into": "crushed_ore",
+   "reason": "Same milestone as the route's crushed_ore. In this pack the quern doesn't make crushed ore (TFC quern ore recipes give powders with no melting recipe); crushed ore comes from the millstone, crushing wheels or macerator. Kept TFG's framing and added the quern warning.",
+   "desc": [
+    "Proper ore processing is a large, complex beast that you'll learn more about as you progress; it gets much more metal and other byproducts out of every ore you mine.",
+    "",
+    "Crushed ore comes from Create's millstone and crushing wheels or GregTech's macerator. Wash it in a cauldron or ore washer, smelt it in a steam furnace or with Create's fan, or keep processing it for byproducts. Crushed hematite, magnetite, limonite and pyrite smelt into cast iron.",
+    "",
+    "TFC's quern doesn't make crushed ore in this pack: it grinds ores into powders that don't melt, so keep your metal ores out of it."
+   ]
+  },
+  {
+   "key": "stone_age.crush_crushed_ore",
+   "action": "edit",
+   "chapter": "ore_processing",
+   "reason": "Hand-hammering needs a GregTech hammer (#gtceu:crafting_tools/hammer; #c:tools/hammer isn't the recipe's tag and TFC hammers don't count); it doesn't raise the yield (impure dust smelts into the same one ingot as the crushed ore), so that claim is replaced; macerator byproduct from its recipe (14%). Belongs with GregTech ore processing, after the route's crushed_ore.",
+   "desc": [
+    "Combine Crushed Ore with a GregTech hammer in a crafting grid to turn it into Impure Dust (TFC's hammers don't work for this). The macerator does the same, with a chance at a byproduct dust on top.\n\nImpure dust smelts into the same ingot as the crushed ore, but it can also be washed into clean dust (next quest). This may all be slow and tedious for now, but you'll soon unlock ways to do this faster and automatically!"
+   ],
+   "tasks": [
+    {
+     "filter": "ftbfiltersystem:item_tag(c:impure_dusts)",
+     "any": [
+      "#c:impure_dusts"
+     ]
+    },
+    {
+     "filter": "ftbfiltersystem:item_tag(gtceu:crafting_tools/hammer)",
+     "any": [
+      "#gtceu:crafting_tools/hammer"
+     ]
+    }
+   ],
+   "deps": [
+    "crushed_ore"
+   ]
+  },
+  {
+   "key": "stone_age.clean_dust",
+   "action": "edit",
+   "chapter": "ore_processing",
+   "reason": "GregTech CEu washes dust by right-clicking a water cauldron with it (its tooltip: 'Right click a Cauldron to get clean Dust'); dropping it in water was TFG's. The cauldron takes 7 wrought iron plates; ore washer and centrifuge recipes verified.",
+   "desc": [
+    "Finally, right-click a Cauldron of water with Impure or Purified Dust to wash it into clean Dust, your ore's final form. A cauldron takes seven wrought iron plates; later the ore washer and the centrifuge do this in bulk, with byproducts.\n\nClean dust smelts into an ingot, and many GregTech recipes take it directly."
+   ]
+  },
+  {
+   "key": "stone_age.medical_conditions",
+   "action": "edit",
+   "chapter": "ore_processing",
+   "reason": "GregTech's hazards are on in this pack (gtceu.yaml defaults: hazardsEnabled, universalHazards), so the tip applies, but TFG's pills, tablets and salves don't exist; GregTech's face mask, rubber gloves, paracetamol and RadAway pills do. Moved to ore processing, where GregTech dusts first show up.",
+   "desc": [
+    "Be careful what you carry! GregTech marks some materials &cHazardous&r on their tooltip (hold Shift for the details), and carrying them builds up a &6Medical Condition&r with nasty effects, up to and including &cdeath&r.\n\nIf a debuff suddenly appears, get that item out of your inventory and into a chest!",
+    "{@pagebreak}",
+    "You will eventually need to work with some of these materials, so you have ways to deal with them.\n\nThe best way is to avoid getting any conditions in the first place: GregTech's Face Mask and Rubber Gloves protect against some hazards (their tooltips list which). Many conditions fade on their own, but some are &epermanent&r; GregTech's Paracetamol and RadAway pills, made much later, are its medicine."
+   ],
+   "deps": [
+    "crushed_ore"
+   ]
+  },
+  {
+   "key": "tfg_tips.status_effects",
+   "action": "drop",
+   "reason": "Hub for TFG's aged alcohol, medicine powders and pills, none of which exist here."
+  },
+  {
+   "key": "tfg_tips.aged_alcohol",
+   "action": "drop",
+   "reason": "TFC Aged Alcohol (tfcagedalcohol:*) isn't in the pack."
+  },
+  {
+   "key": "tfg_tips.powders",
+   "action": "drop",
+   "reason": "tfg:*_powder medicines are TerraFirmaGreg items."
+  },
+  {
+   "key": "tfg_tips.pills",
+   "action": "drop",
+   "reason": "tfg:*_pill items are TerraFirmaGreg items."
+  },
+  {
+   "key": "tfg_tips.create_canoe",
+   "action": "drop",
+   "reason": "Firmaciv (canoes, paddles) isn't in the pack."
+  }
+ ]
+}

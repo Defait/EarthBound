@@ -1,0 +1,861 @@
+{
+ "chapter": "low_voltage",
+ "decisions": [
+  {
+   "key": "low_voltage.lv_fluid_regulator",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Its prerequisite (TFG's LV pump quest) merges into route lv_parts.",
+   "deps": [
+    "lv_parts"
+   ]
+  },
+  {
+   "key": "low_voltage.lv_robot_arm",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Promise of later tutorial quests cut (they aren't ported); prerequisite now route lv_parts (the piston).",
+   "desc": [
+    "When placed on a machine, Robot Arms are a more configurable version of a Conveyor Module. They allow you to transfer items in specific batches, at specific rates, or keep a certain amount of items stocked.\n\n&9Note:&r The functionalities provided by the Robot Arm work &lonly&r if it is &lrequired&r to perform the operation.",
+    "{@pagebreak}",
+    "&l&3Lore:&r&o GregTech 5 had blocks such as the Buffer, Filter and Type Filter to allow fine control over items. In GTCE it's all been replaced by the almighty Robot Arm and various Filter Covers. Much more compact!"
+   ],
+   "deps": [
+    "lv_parts"
+   ]
+  },
+  {
+   "key": "low_voltage.lv_conveyor",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Prerequisite (TFG's motor quest) merges into route lv_motor.",
+   "deps": [
+    "lv_motor"
+   ]
+  },
+  {
+   "key": "low_voltage.lv_pump",
+   "action": "merge",
+   "merge_into": "lv_parts",
+   "reason": "Route lv_parts covers the LV pump (and piston); recipe checked, cover use added.",
+   "desc": [
+    "LV pumps contain a Create mechanical pump, LV pistons a Create cogwheel.",
+    "",
+    "Pump: an LV motor, a Create mechanical pump, a tin rotor, a tin screw, two rubber rings and a tin cable. Piston: an LV motor, a Create cogwheel, three steel plates, two steel rods and two tin cables.",
+    "",
+    "Both are crafting components first, but the pump is also a &9cover&r: placed on a machine it moves fluids in or out, and it takes a Fluid Filter."
+   ]
+  },
+  {
+   "key": "low_voltage.lv_piston",
+   "action": "merge",
+   "merge_into": "lv_parts",
+   "reason": "Route lv_parts covers the LV piston (and pump); same combined text as the pump merge.",
+   "desc": [
+    "LV pumps contain a Create mechanical pump, LV pistons a Create cogwheel.",
+    "",
+    "Pump: an LV motor, a Create mechanical pump, a tin rotor, a tin screw, two rubber rings and a tin cable. Piston: an LV motor, a Create cogwheel, three steel plates, two steel rods and two tin cables.",
+    "",
+    "Both are crafting components first, but the pump is also a &9cover&r: placed on a machine it moves fluids in or out, and it takes a Fluid Filter."
+   ]
+  },
+  {
+   "key": "low_voltage.lv_steam_turbine",
+   "action": "merge",
+   "merge_into": "steam_turbine",
+   "reason": "Same milestone as route steam_turbine (gtceu:lv_steam_turbine); adds the steam rate (640 mB -> 320 EU, checked) and the Large Bronze Boiler (LV circuits, tin cables, bronze firebox casing; lava/creosote fuels checked).",
+   "desc": [
+    "Electricity comes from boiler steam: feed an LV steam turbine from your boilers and cable it to your machines.",
+    "",
+    "The turbine turns &d2 mB of steam into 1 EU&r: 64 mB a tick for 32 EU/t. Steam isn't energy-dense, so plan on plenty of boilers and wide pipes.",
+    "",
+    "When single boilers can't keep up, a &6Large Bronze Boiler&r (LV circuits, tin cables and a bronze firebox casing) burns solid fuels, lava or creosote."
+   ]
+  },
+  {
+   "key": "low_voltage.lv_amp_explanation",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Points to this book's GregTech Power chapter; promise of an MV voltage questline cut.",
+   "desc": [
+    "This questline serves as a quick guide to &9GregTech Amperage&r.\n\n&6&lTL;DR:&r For safety, match the Amperage limit of your Cables with the max amount of Amps provided by your Energy Producers.\n\nStill confused? Check the &cGregTech Power&r chapter for a full rundown on GregTech's electricity system, voltage tiers included!"
+   ]
+  },
+  {
+   "key": "low_voltage.aluminium_ingot",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Recipe facts checked: EBF aluminium at 1700K, 884 ticks or 592 with nitrogen; air centrifuge gives nitrogen.",
+   "desc": [
+    "Well... can you show us an &bMV&r Circuit as well?\n\n&aAluminium&r is the main ingredient for &bMV&r machinery. Get ready to need a lot of it. The EBF smelts aluminium dust at &c1700K&r, so Cupronickel Coils (1800K) are just hot enough.\n\nSmelting takes about a third less time with &9Nitrogen&r, which you get by centrifuging &9Air&r from a &3Gas Collector&r.\n\n&6You will still need MV Circuits in order to make MV machines!&r"
+   ]
+  },
+  {
+   "key": "low_voltage.lv_battery_preparation",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Stibnite is a GregTech-only ore; lead and antimony sources here checked (silver and tetrahedrite byproducts; mixer 4 lead + 1 antimony). Greate steel mixer / steam alloy smelter deps replaced by the LV mixer.",
+   "desc": [
+    "Make some &aBattery Alloy&r, used for Battery Hulls: mix 4 lead dust with 1 antimony dust in a Mixer.\n\nNeither has its own ore here. &aLead&r is a byproduct of TFC native silver (macerate its crushed ore), and &aAntimony&r one of tetrahedrite.\n\nA Battery Hull is two battery alloy plates and a tin cable.\n\n&9Note:&r This quest does &lnot&r contain functional Batteries - head on for that."
+   ],
+   "deps": [
+    "low_voltage.lv_mixer"
+   ]
+  },
+  {
+   "key": "low_voltage.cover_behaviour",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Prerequisite pump quest merges into route lv_parts.",
+   "deps": [
+    "low_voltage.lv_conveyor",
+    "lv_parts",
+    "low_voltage.lv_fluid_regulator",
+    "low_voltage.lv_robot_arm"
+   ]
+  },
+  {
+   "key": "low_voltage.machine_auto_output_behaviour",
+   "action": "keep",
+   "chapter": "lv"
+  },
+  {
+   "key": "low_voltage.lv_wiremill",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Vintage Improvements coiling machine removed from the filter; 'three times cheaper' isn't true here (Create's press + saw already give two wires per ingot); fine-wire recipes checked.",
+   "desc": [
+    "The Wiremill is a good first machine. It draws &6two Wires from one Ingot&r, the same as Create's press and saw, but in one step and on electricity. It also makes &6fine wire&r, four from a single wire, which resistors and diodes eat by the stack.",
+    "{@pagebreak}",
+    "&9Note:&r Recipes inside &3LV Machines&r go up to a maximum usage of &a32 EU/t (LV)&r. Anything higher than that and you will need a &bMV&r (or better) Machine. Needless to say, we aren't quite there yet.\n\nYou will need a &dProgrammed Circuit&r for certain recipes. We're sure you don't want to spend a precious Circuit to craft one, so &6read the dedicated quest for important details&r.\n\nWith this machine safely crafted - welcome to the age of all things electric!"
+   ],
+   "tasks": [
+    {
+     "item": "gtceu:lv_wiremill"
+    }
+   ]
+  },
+  {
+   "key": "low_voltage.lv_bender",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Create Crafts & Additions rolling mill removed; Create's press already does ingot -> plate here, so the text is about what else the bender does (foils 4 per plate vs 2 by hammer; double plates at 96 EU/t = MV), checked.",
+   "desc": [
+    "Create's press already turns one ingot into one plate, but the Bender does more. It rolls a plate into &6four Foils&r (a hammer gets two), and you'll want a pile of bronze foils for your first heating coils. At &bMV&r it also bends double plates.\n\nAnd yes, it bends plates one for one too, if you'd rather keep it all electric."
+   ],
+   "tasks": [
+    {
+     "item": "gtceu:lv_bender"
+    }
+   ]
+  },
+  {
+   "key": "low_voltage.lv_lathe",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Vintage Improvements belt grinder removed; here the lathe gives one rod plus two small dusts per ingot (not two rods), and one screw per bolt (two bolts by hand), checked; lore contradicted that, cut.",
+   "desc": [
+    "The Lathe is an important machine to help shape metals. It turns &6one Bolt into one Screw&r, where crafting by hand takes two bolts per screw.\n\nIt also turns an ingot into a rod plus two small piles of dust, which you can smelt back, so nothing is lost."
+   ],
+   "tasks": [
+    {
+     "item": "gtceu:lv_lathe"
+    }
+   ]
+  },
+  {
+   "key": "low_voltage.lv_polariser",
+   "action": "keep",
+   "chapter": "lv"
+  },
+  {
+   "key": "low_voltage.lv_superconductor",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "Manganese only comes from MV electrolysis here (spessartine, from red garnet; checked), so this goes to the MV chapter; 2A claim unverified, cut; tin-cable recycling in the extractor checked (tin + rubber).",
+   "desc": [
+    "&6Superconductors&r are special Wires available for each Voltage tier. They don't come with a Cable counterpart, but that isn't necessary, as they have absolutely &6zero cable loss&r.\n\nThey also won't damage you when you touch them. This makes them the best choice for wiring, if not a little expensive in comparison to the other wires.\n\nThe &7LV&r one is Manganese Phosphide. Manganese has no ore of its own here: electrolyzing spessartine (from red garnet) gives it, and that needs an &bMV&r Electrolyzer.\n\nWhen it's time, replace your crappy &aTin Cables&r. The &3Extractor&r melts them back into tin and rubber.",
+    "{@pagebreak}",
+    "&l&3Lore:&r&o No version of GregTech has had actual Superconductors for &7LV&f up until Gregicality and GTCEu, though some modpacks had lossless cables."
+   ],
+   "deps": [
+    "ebf"
+   ]
+  },
+  {
+   "key": "low_voltage.lv_chemical_bath",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "TFG's sealed-barrel recipes (leather) aren't here; this pack's bath recipes checked (creosote-treated planks, paper from wood pulp); silver hint cut.",
+   "desc": [
+    "&lOutside of Ore Processing:&r\n\nThe Chemical Bath soaks items in fluids: planks in creosote become treated wood, wood pulp in water becomes paper, and it can dye and bleach various items and blocks.",
+    "{@pagebreak}",
+    "&lFor Ore Processing:&r\n\nSome &aCrushed Ores&r have alternate routes to &aPurified Ore&r: a bath in &aMercury&r or &aSodium Persulfate&r. This step isn't really important, unless you really want that special &6Byproduct&r."
+   ]
+  },
+  {
+   "key": "low_voltage.programmed_circuits",
+   "action": "keep",
+   "chapter": "lv"
+  },
+  {
+   "key": "low_voltage.lv_canner",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Prerequisite assembler quest merges into route assembler.",
+   "deps": [
+    "assembler"
+   ]
+  },
+  {
+   "key": "low_voltage.lv_battery",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Lepidolite is GregTech-only; this pack's sources checked: sodium from electrolyzing salt (TFC halite) at LV, cadmium from a sodium persulfate bath of crushed tetrahedrite, lithium only at MV (clay electrolysis).",
+   "desc": [
+    "&aBatteries&r can be put into the energy slot at the bottom middle of machine GUIs, or in a &3Battery Buffer&r.\n\nWhen inside your inventory, they can be sneak-right-clicked to allow the batteries to &dcharge&r your EU items.\n\n&7LV&r, &bMV&r, and &6HV&r Batteries come in three forms: &dLithium&r has the best capacity, followed by &dCadmium&r, then &dSodium&r. A Canner fills a Battery Hull with two dusts.\n\nIn this pack &dSodium&r is the easy one: electrolyze &asalt&r from TFC halite. &dCadmium&r comes from bathing crushed tetrahedrite in sodium persulfate, and &dLithium&r waits for &bMV&r.\n\nGet &eany&r &aBattery&r to complete this quest."
+   ]
+  },
+  {
+   "key": "low_voltage.lv_battery_buffer_4x",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "RF/FE tool charging cut (no FE items or electricity mods in the pack).",
+   "desc": [
+    "By itself, the Battery Buffer does nothing. However, if you place batteries inside its internal storage, it will act as a power buffer.\n\nThe &3Battery Buffer&r handles &9two Amps in&r, and &9one Amp out&r, &dper Battery&r. The output side has the dot, and all other sides are used as inputs.\n\n&6It also charges electric tools placed inside it.&r\n\nThis is a must have if you don't have unlimited power at hand. Get &eany&r &7LV&r Battery Buffer to finish the quest. However, the 16 slots variant is likely overkill at this stage.",
+    "{@pagebreak}",
+    "&9Note:&r Don't loop your lossy Cables back to your Battery Buffer! If you think about it, you'll just end up voiding energy.\n\n&l&3Lore:&r&o To be frank with you, the GTCE Battery Buffer was... mediocre. It's been reworked in GTCEu to provide a mix between GT5 and GTCE's functionality. Energy now splits evenly across all batteries!"
+   ]
+  },
+  {
+   "key": "low_voltage.lv_ebf",
+   "action": "merge",
+   "merge_into": "ebf",
+   "reason": "Same milestone as route ebf (gtceu:electric_blast_furnace). Recipe checked (3 TFC blast furnaces, 3 LV circuits, heat-proof casing, 2 tin cables); 120 EU/t minimum and aluminium at 1700K checked. TFG's 'steel faster than the TFC smithy' left out (see doubts).",
+   "desc": [
+    "Built from TFC's blast furnace, heat-proof invar casings and LV circuits. It needs cupronickel coils and electricity to run.",
+    "",
+    "Your &efirst electric multiblock&r: three TFC blast furnaces, three LV circuits, a heat-proof casing and two tin cables make the controller. It processes materials at high temperatures; its main job now is &aAluminium&r (1700K), on the way to &bMV&r.",
+    "",
+    "It's a beefy boy: every recipe needs at least &9120 EU/t&r, almost four &7LV&r generators. Two LV energy hatches let it draw up to 128 EU/t. Keep the generators close and use thick cable (2x tin cable or better), or cable loss will make it flicker."
+   ]
+  },
+  {
+   "key": "low_voltage.other_machines",
+   "action": "keep",
+   "chapter": "lv"
+  },
+  {
+   "key": "low_voltage.lv_age_progression",
+   "action": "drop",
+   "reason": "Redundant: its advice (LV goals: EBF, assembler, MV circuits, circuit assembler) is in low_voltage.lost, and its task (basic electronic circuit) is route's `circuit` quest."
+  },
+  {
+   "key": "low_voltage.lv_fluid_solidifier",
+   "action": "keep",
+   "chapter": "lv"
+  },
+  {
+   "key": "low_voltage.lv_ore_prospector",
+   "action": "drop",
+   "reason": "GregTech's ore veins are off here; whether the prospector shows TFC's ore blocks is unverified (TFC ores are in c:ores as items, but the scan behaviour couldn't be checked), and TFG backed it with its own field-guide page. TFC's prospector's pick covers ore finding. Revisit if it's confirmed to see TFC veins."
+  },
+  {
+   "key": "low_voltage.cupronickel_coil",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "TFG's coil recipe (blue steel, refractory bricks) isn't this pack's; checked: assembler, 8 cupronickel double wires + 8 bronze foils + 144 mB tin alloy per coil, 16 for an EBF. Refractory brick prerequisite (TFG) replaced by route assembler.",
+   "desc": [
+    "Your first Electric Blast Furnace needs &a16 Cupronickel Coils&r. Each is assembled from 8 Cupronickel Double Wires, 8 Bronze Foils and 144 mB of molten Tin Alloy, so the set takes &a128 Cupronickel&r ingots, &a128 Bronze Foils&r and &a16 Tin Alloy&r ingots' worth of metal.\n\nYou will also need Invar for the Heat Proof Casings, so get mining.\n\nThe Cupronickel Coils will allow the EBF to perform recipes up to &d1,800K&r (ignoring Voltage bonuses). That's pretty hot if you ask us.\n\n&6Coils are explained further in the GregTech Power chapter (Blast Overclocking).&r"
+   ],
+   "deps": [
+    "low_voltage.cupronickel_ingot",
+    "assembler"
+   ]
+  },
+  {
+   "key": "low_voltage.lv_gas_collector",
+   "action": "keep",
+   "chapter": "lv"
+  },
+  {
+   "key": "low_voltage.lv_chemical_reactor",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Rubber-fluid filter used nbt() (not allowed): now an optional rubber bucket. 'Better recipe' made concrete: 9 raw rubber + 1 sulfur -> 1296 mB vs 3 raw rubber per ingot in the alloy smelter (checked).",
+   "desc": [
+    "The &3Chemical Reactor&r will be required for &la lot&r of recipes.\n\nLet's give it a spin: it makes &6Rubber three times cheaper&r than the alloy smelter. 9 raw rubber and 1 sulfur give 1296 mB of molten Rubber, nine ingots' worth, where the alloy smelter takes 3 raw rubber per ingot. Molten Rubber has to go into another machine, though.",
+    "{@pagebreak}",
+    "Here are some &aother machines&r you might want to aim for:\n\nA &3Fluid Solidifier&r is useful to solidify your Rubber directly into &aRubber Sheets&r. You'll want these moving forward.\n\nYou could then make use of an &3Assembler&r to use your molten Rubber for &aCables&r. This isn't important for Tin Cables, but better cables will &eneed&r to be made in the Assembler."
+   ],
+   "tasks": [
+    {
+     "item": "gtceu:lv_chemical_reactor"
+    },
+    {
+     "optional": true,
+     "item": "gtceu:rubber_bucket"
+    }
+   ]
+  },
+  {
+   "key": "low_voltage.universal_cell",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Filter trimmed to cells reachable around LV (titanium/tungstensteel/stainless cells dropped); assembler prerequisite now route assembler.",
+   "tasks": [
+    {
+     "filter": "or(item(gtceu:fluid_cell)item(gtceu:universal_fluid_cell)item(gtceu:steel_fluid_cell)item(gtceu:aluminium_fluid_cell)item(gtceu:glass_vial))",
+     "any": [
+      "gtceu:fluid_cell",
+      "gtceu:universal_fluid_cell",
+      "gtceu:steel_fluid_cell",
+      "gtceu:aluminium_fluid_cell",
+      "gtceu:glass_vial"
+     ]
+    }
+   ],
+   "deps": [
+    "assembler"
+   ]
+  },
+  {
+   "key": "low_voltage.mold_rotor",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Checked: solidifier tin rotor = 576 mB (4 ingots) vs 4 plates + screw + ring + tools by hand; gear molds exist. Extruder remark cut.",
+   "desc": [
+    "Use both of your new machines to turn a material into a Fluid, and solidify it back into a Rotor! That's &6four Ingots per Rotor&r, with no plates, ring or screw to make first.\n\nYou can do the same for &6Gears&r and &6Small Gears&r with their casting molds.\n\n&9Note:&r Some metals require higher voltages than &7LV&r for Fluid Extraction, so make sure to keep an eye on the recipe tier in EMI."
+   ]
+  },
+  {
+   "key": "low_voltage.soldering_alloy",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Made concrete and checked: mixer 6 tin + 3 lead + 1 antimony dust; circuits take 72 mB soldering alloy instead of 144 mB tin.",
+   "desc": [
+    "&aSoldering Alloy&r is used solely as a &9Fluid&r, and in circuit recipes it's a &dcheaper&r stand-in for molten Tin: half as much per circuit.\n\nThe choice is yours. Save more materials? Make Soldering Alloy. Spend less time crafting materials? Tin is the way to go.\n\nMix 6 tin, 3 lead and 1 antimony dust in a Mixer, then melt the dust in an Extractor. Ignore the Alloy Blast Smelter recipes in EMI!"
+   ]
+  },
+  {
+   "key": "low_voltage.lv_electroliser",
+   "action": "keep",
+   "chapter": "lv"
+  },
+  {
+   "key": "low_voltage.lv_cutter",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Greate steel saw removed from the filter; claims checked (rod -> 4 bolts, water works, lapis plates only from the cutter, fluid filter -> gas collector).",
+   "tasks": [
+    {
+     "item": "gtceu:lv_cutter"
+    }
+   ]
+  },
+  {
+   "key": "low_voltage.lv_centrifuge",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Lore page (GTCEu devs' 'we tuned it down') cut; assembler prerequisite now route assembler.",
+   "desc": [
+    "&lOutside of Ore Processing:&r\n\nOh boy, what can't this machine do? Decomposition recipes to separate dust types, separating air, do your taxes, and many others...\n\nThe list is too long! Let's just say &cyou need the Centrifuge&r.",
+    "{@pagebreak}",
+    "&lFor Ore Processing:&r\n\nThis takes &aImpure Dust&r or &aPurified Dust&r and turns them into clean Dust, plus an added tiny Dust &6Byproduct&r. This is outside of the optimal chain for Byproducts, but this is also the cheapest Ore Processing machine of the presented array to run and to setup on a small scale."
+   ],
+   "deps": [
+    "assembler"
+   ]
+  },
+  {
+   "key": "low_voltage.lv_sprayer",
+   "action": "keep",
+   "chapter": "lv"
+  },
+  {
+   "key": "low_voltage.lv_assembler",
+   "action": "merge",
+   "merge_into": "assembler",
+   "reason": "Same milestone as route assembler (gtceu:lv_assembler). Recipe and the better-recipe claims checked (vacuum tubes 2/3/4 per craft vs 1 by hand; resistors 2, 4 with annealed copper; boards 4 copper foils + glue vs 8 copper wires).",
+   "desc": [
+    "Most of GregTech's LV recipes go through the assembler.",
+    "",
+    "It's &cexpensive&r (two robot arms and two conveyor modules), but it pays back fast with better recipes:",
+    "&9-&r &6Vacuum Tubes&r: two per craft, three with molten red alloy and four with annealed copper wire too, instead of one by hand",
+    "&9-&r &6Resistors&r: two per craft with glue, four with annealed copper fine wire",
+    "&9-&r &6Circuit Boards&r: four copper foils and glue instead of eight copper wires"
+   ]
+  },
+  {
+   "key": "low_voltage.lv_extractor",
+   "action": "keep",
+   "chapter": "lv"
+  },
+  {
+   "key": "low_voltage.lv_circuit_assembler",
+   "action": "keep",
+   "chapter": "lv"
+  },
+  {
+   "key": "low_voltage.lv_arc_furnace",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Machine/component recycling isn't here (GregTech 8.0 drops its recycling recipes when KubeJS recipe scripts exist, docs/design.md); checked: sand -> 2 glass, copper -> annealed copper, metal parts -> ingots. Wrought iron claim left out (see doubts); GTCEu-dev lore cut.",
+   "desc": [
+    "The &3Arc Furnace&r uses a lil' bit of &9Oxygen&r to smelt items in a different fashion than Furnaces.\n\nIt can &adouble your Glass&r (two per sand), gives you &aAnnealed Copper&r for cheaper electronic components, and melts metal parts such as plates, rods, wires and pipes back into ingots."
+   ]
+  },
+  {
+   "key": "low_voltage.lv_oxygen",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Oxygen filter used nbt() (not allowed): now an optional bucket plus the checkmark. Sources checked (air centrifuge, silicon dioxide and water electrolysis, all LV).",
+   "desc": [
+    "You could waste &o&eprecious years of your life&r in EMI looking for the most optimal Oxygen recipe, given the many ways to obtain it. Various minerals will produce it when electrolyzed.\n\nIf only the quest book had more information!",
+    "{@pagebreak}",
+    "Surprise! The best source according to us (!) is &acentrifuging Air&r after making a &dGas Collector&r, which you might not be able to make just yet. This recipe also gives &aNitrogen&r, which is handy as it can speed up certain &3Electric Blast Furnace&r recipes.\n\nThe second best source according to us (!) is &aelectrolyzing Silicon Dioxide&r, which also gives you silicon. EMI shows where to get Silicon Dioxide.",
+    "{@pagebreak}",
+    "The third best source according to us (!) is &aelectrolyzing Water&r. It's slow and costly, so it suits &1Hydrogen&r production better. &4Don't use this method as your main source of Oxygen&r.\n\nThe fourth best source according to us (!) is &ato not void&r it, EVER! Any Oxygen obtained from any source is worth something and should be stored in Tanks."
+   ],
+   "tasks": [
+    {
+     "optional": true,
+     "item": "gtceu:oxygen_bucket"
+    },
+    {
+     "type": "checkmark"
+    }
+   ]
+  },
+  {
+   "key": "low_voltage.lv_glue",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Glue filter used nbt(): now an optional bucket plus checkmark. TFC glue / conifer rosin centrifuging is TFG-only, cut; sticky resin -> 100 mB glue + raw rubber checked.",
+   "desc": [
+    "You can now &3centrifuge&r &aSticky Resin&r, which will give you &aGlue&r in fluid form, plus raw rubber and the occasional Plantball.\n\nGive yourself a headstart and get on producing Glue. You can use it to make &6cheaper Resistors&r, as well as &6cheaper Circuit Boards&r in the &3Assembler&r."
+   ],
+   "tasks": [
+    {
+     "optional": true,
+     "item": "gtceu:glue_bucket"
+    },
+    {
+     "type": "checkmark"
+    }
+   ]
+  },
+  {
+   "key": "low_voltage.gallium_arsenide",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Bauxite, realgar and cobaltite are GregTech-only ores without veins here; gallium sources from TFC sphalerite checked (thermal centrifuge 33%, purified macerating 14%, electrolysis 8%). Arsenic currently has no source in the pack (checker: unreachable), stated plainly; see doubts.",
+   "desc": [
+    "Many materials going forward cannot be smelted directly from any Ores! They are instead obtained as byproducts from processing of other ores. Gallium and Arsenic are &4among&r these materials.\n\nFor &dGallium&r, from worst to best:\n\n&9- &3Electrolyze &aSphalerite&r dust for a low chance of it. Note that you lose out on direct smelting value.\n\n&9-&r Process TFC &aSphalerite&r: macerating purified sphalerite ore, or running the crushed ore through a &3Thermal Centrifuge&r, gives it as a &6Byproduct&r.\n\nFor &dArsenic&r, GregTech relies on realgar and cobaltite, ores that have no veins in this pack yet; check EMI for any other source.\n\nMix one gallium and one arsenic dust for two Gallium Arsenide."
+   ]
+  },
+  {
+   "key": "low_voltage.q3647b1b964a15e4e",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "TFG's bakelite board, forming press and Artisan Table aren't here; checked: phenolic circuit board = assembler, wood pulp + 50 mB glue; etched by 8 silver wires by hand or 4 silver foils + iron III chloride / sodium persulfate in the chemical reactor.",
+   "title": "Phenolic Printed Circuit Board",
+   "desc": [
+    "This Circuit Board is used to create &dMV Circuits&r!\n\nFirst make a Phenolic Circuit Board in the &3Assembler&r from wood pulp and &aGlue&r. Then etch it: by hand with 8 silver wires, or in the &3Chemical Reactor&r with 4 silver foils and &aIron III Chloride&r or &aSodium Persulfate&r, which takes &6only a quarter of the Silver&r.\n\nGiven how painful those chemicals may be to obtain &oright now&r, you can simply use more silver from TFC's native silver.",
+    "{@pagebreak}",
+    "&l&3Lore:&r&o Back in GTCEu 1.12.2, these circuit boards were called &2Good Circuit Boards&f. Not exactly a fitting name, as they're &4rather evil&f to craft."
+   ],
+   "deps": [
+    "low_voltage.lv_glue",
+    "assembler"
+   ]
+  },
+  {
+   "key": "low_voltage.lv_diode",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Text matches the recipes here (glass-fluid diodes at LV; polyethylene later) with ingredients spelled out; assembler prerequisite now route assembler.",
+   "desc": [
+    "Don't let EMI fool you... at &7LV&r only two of its recipes work: the liquid glass ones, with fine copper (or annealed copper) wire and a small pile of Gallium Arsenide.\n\nDiodes have an infamously &4nasty recipe&r, but they will become cheaper and more convenient once you can obtain &ePolyethylene&r.\n\nThis is required for &dMV Circuits&r."
+   ],
+   "deps": [
+    "assembler",
+    "low_voltage.gallium_arsenide"
+   ]
+  },
+  {
+   "key": "low_voltage.1_mv_circuit",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Deployer comparison and Progression Table chapter are TFG; recipe checked (phenolic PCB, basic circuits, diodes, copper wire).",
+   "desc": [
+    "Well... got any Aluminium Ingots yet?\n\nEach Electric Age has Circuits corresponding to its tier. The Good Electronic Circuit is the &dfirst MV Circuit&r you can make: a Phenolic Printed Circuit Board, Basic Electronic Circuits, Diodes and copper wire.\n\nAlways be on the lookout for a cheaper way to make your circuits - new sets of recipes become available each time you make a new tier of &2Circuit Assembler&r. Conveniently, this circuit unlocks the first one.\n\n&6Having this and Aluminium will grant access to MV Machines.&r"
+   ]
+  },
+  {
+   "key": "low_voltage.aluminium_dust",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Sources checked for this pack: sapphire electrolysis at LV (30 EU/t), ruby -> aluminium nuggets in the EBF (1200K), byproducts; EBF prerequisite now route ebf.",
+   "desc": [
+    "There's many minerals that can be electrolyzed into aluminium, but most of them are off-limits until &bMV&r. TFC's gems are the exception: electrolyze &aSapphire&r dust in an &7LV&r Electrolyzer, or blast &aRuby&r straight into aluminium nuggets in the EBF. Several ore processing chains also give aluminium dust as a byproduct. TFC's field guide tells you where to find sapphire and ruby.\n\nOnce you have enough aluminium, we recommend making the Electrolyzer your first &bMV&r machine to unlock all the other options."
+   ],
+   "deps": [
+    "ebf"
+   ]
+  },
+  {
+   "key": "low_voltage.multiblock_tech",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Points to this book's GregTech Power chapter.",
+   "desc": [
+    "This is the &6basics&r of what you need to build your first &bEBF&r, though it is highly customisable. Remember to use &6EMI&r, use &6U&r on the controller and don't hesitate to &6left click on the structure blocks&r to see what the possibilities are.\n\nAn important notice, each Energy Hatch can accept &a2A&r, which means that at &7LV&r they can each handle &a64 EU/t&r. With two of them, your &eEBF&r can run at &a128 EU/t&r.\n\nFor more details about this mechanic, refer to the &eGregTech Power&r chapter, specifically the &eSpending Energy&r quest.\n\nMultiblocks bear a large variety of interesting mechanics that might seem daunting, but don't worry - you don't need to do anything fancy right yet. You'll learn more as you go!"
+   ]
+  },
+  {
+   "key": "low_voltage.lv_turbo_charge",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "RF items cut; filter trimmed to ULV-HV chargers; TFG prerequisites (prospector, goggles, TFG tips, lunchbox) replaced by the battery quest.",
+   "desc": [
+    "&oThis quest's subject is optional, but may still be of interest to you. We've put it here in the name of completeness.&r\n\nThe &3Turbo Charger&r charges electric items such as &9Drills&r extremely quickly.\n\nIt accepts up to 4 Amps for every item it charges, making it &6twice as fast&r as the &3Battery Buffer&r. It cannot discharge, though.\n\n&eAny&r Charger will complete this Quest."
+   ],
+   "tasks": [
+    {
+     "filter": "or(item(gtceu:ulv_charger_4x)item(gtceu:lv_charger_4x)item(gtceu:mv_charger_4x)item(gtceu:hv_charger_4x))",
+     "any": [
+      "gtceu:ulv_charger_4x",
+      "gtceu:lv_charger_4x",
+      "gtceu:mv_charger_4x",
+      "gtceu:hv_charger_4x"
+     ]
+    }
+   ],
+   "deps": [
+    "low_voltage.lv_battery"
+   ]
+  },
+  {
+   "key": "low_voltage.lv_mixer",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Checked: mixer makes black, red and blue steel dust (TFC's colored steels) and the EBF smelts them; ABS remark cut (ABS needs tantalum carbide, unreachable here).",
+   "desc": [
+    "The Mixer is the GregTech way of alloying: &amix dusts together&r, then smelt them into ingots or melt them into fluids. Any new alloy goes through it, and the old ones can too.\n\nIt also &6speeds up&r TFC's colored steels: &aBlack Steel&r, &aRed Steel&r and &aBlue Steel&r dust come straight out of it, ready for the EBF. Even if you don't think you need it now, you'll find it &6essential&r later on."
+   ]
+  },
+  {
+   "key": "low_voltage.lv_machine_hull",
+   "action": "merge",
+   "merge_into": "lv_hull",
+   "reason": "Same milestone as route lv_hull (gtceu:lv_machine_hull). Red steel isn't in this pack's hull; recipe checked (casing: 8 steel plates + wrench; hull: 2 wrought iron plates, steel plate, 2 tin cables).",
+   "desc": [
+    "Steel plates and tin cable (tin wire covered in rubber). Every LV machine starts as a hull.",
+    "",
+    "The LV Machine Casing is eight steel plates and a wrench; the hull adds two wrought iron plates, a steel plate and two tin cables. Try to make at least three or four to begin.",
+    "",
+    "These quests mark each new tier by its machine hull. As a quick reminder, &cmachines explode when exposed to rain or water&r, so keep them under a roof."
+   ]
+  },
+  {
+   "key": "low_voltage.lv_nitrogen",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Nitrogen filter used nbt(): now an optional bucket plus checkmark.",
+   "tasks": [
+    {
+     "optional": true,
+     "item": "gtceu:nitrogen_bucket"
+    },
+    {
+     "type": "checkmark"
+    }
+   ]
+  },
+  {
+   "key": "low_voltage.lv_motor",
+   "action": "merge",
+   "merge_into": "lv_motor",
+   "reason": "Same milestone as route lv_motor (gtceu:lv_electric_motor). Recipe checked (2 Create shafts, 4 copper wires, 2 tin cables, magnetic iron or steel rod; rod magnetized with 4 redstone by hand or in the polarizer); adds TFG's 'make plenty' and EMI tip.",
+   "desc": [
+    "GregTech's LV motors are built around two Create shafts, with copper wire and a magnetic iron rod.",
+    "",
+    "The full recipe: two Create shafts, four copper wires, two tin cables and a magnetic iron (or steel) rod. Magnetize the rod with redstone by hand, or for free in a Polarizer. Make plenty: the first LV machines take up to four motors each, and every pump and piston hides one (conveyors two).",
+    "",
+    "&2EMI is your friend&r: the recipe tree button at the bottom right of a recipe breaks it down into everything it needs, and can add a shopping list to your favourites."
+   ]
+  },
+  {
+   "key": "low_voltage.mold_plate",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Alloy smelter / extruder comparison updated: here Create's press makes rubber plates 1:1 from ingots; the point is the chemical reactor's cheaper molten rubber cast straight into sheets (solidifier 144 mB + plate mold, checked).",
+   "desc": [
+    "You're gonna need a lot of &6Rubber Sheets&r, and later on other plastics too.\n\nWith the Chemical Reactor's cheaper molten Rubber, the &3Fluid Solidifier&r and a Plate Casting Mold cast it straight into sheets: 144 mB each, no rubber ingots or press in between."
+   ]
+  },
+  {
+   "key": "low_voltage.q4b4f052f00435afe",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "Untitled in TFG; the glass lens in the recipe needs a lathe at 120 EU/t (MV), so it moves to the MV chapter; keybind claim unverified, cut.",
+   "title": "Nightvision Goggles",
+   "desc": [
+    "Charge them up and put them on your face to get a permanent Night Vision effect as long as the batteries last!\n\nThe glass lens they need takes an &bMV&r Lathe."
+   ]
+  },
+  {
+   "key": "low_voltage.mv_hull",
+   "action": "drop",
+   "reason": "Redundant with medium_voltage.mv_machine_hull ('Welcome to MV!', same item task) that opens the MV chapter; its second page is about Greate's aluminium shafts and cogwheels, which aren't in the pack."
+  },
+  {
+   "key": "low_voltage.lv_machine_casing",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "TFG's Create-alternative machines (Greate, Vintage Improvements, Create Additions) aren't here; text now says what Create already does in this pack (press 1:1 plates, saw 2 wires per plate) and what GregTech adds. Generator prerequisites now route steam_turbine.",
+   "desc": [
+    "Now that you've got some electricity going, it's time to use it! We recommend starting by making machines that will make it easier and cheaper to make even more machines.\n\nCreate already does part of that job in this pack: the press makes plates one for one and the saw slits a plate into two wires. GregTech's machines add what Create can't: foils, screws, fine wire, magnetic rods, molten metals and chemistry."
+   ],
+   "deps": [
+    "steam_turbine"
+   ]
+  },
+  {
+   "key": "low_voltage.lv_greenhouse",
+   "action": "drop",
+   "reason": "Electric Greenhouse is a TFG multiblock (tfg:electric_greenhouse not in the pack)."
+  },
+  {
+   "key": "low_voltage.lv_aqueous_accumulator",
+   "action": "drop",
+   "reason": "Aqueous Accumulator is a TFG machine (tfg:*_aqueous_accumulator not in the pack)."
+  },
+  {
+   "key": "low_voltage.lv_combuston_gen",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "No LV combustion fuel here (no TFC-alcohol biodiesel; ethanol/methanol need MV, checked), said plainly; TFG fuel-quest prerequisites (dropped) replaced by the energy intro.",
+   "desc": [
+    "The &7LV Combustion Generator&r burns liquid fuels that carry a lot of energy per mB, so a drum of fuel can power a generator far from your base.\n\nLike other &7LV Generators&r, it produces &a32 EU/t&r.\n\nIn this pack its fuels (ethanol, methanol, &2Bio Diesel&r, then oil products) arrive at &bMV&r, so this one can wait until then."
+   ],
+   "deps": [
+    "low_voltage.link_chapter"
+   ]
+  },
+  {
+   "key": "low_voltage.link_chapter",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "TFG's page link (clickEvent to a TFG quest id) can't carry over; now names this book's GregTech Power chapter and this pack's LV power options.",
+   "desc": [
+    "GregTech's energy system (EU, Energy Units) works differently to FE (Forge Energy), the system used by almost every other mod, so the book has a whole chapter on it: &eGregTech Power&r.\n\nIt might look like a lot of reading, but it's important to understand if you want to avoid accidents and get the most out of your power generation.\n\nIn this pack, &7LV&r power comes from Steam Turbines fed by your boilers. Gas Turbines can burn methane, and Combustion Generators get their fuels at &bMV&r."
+   ],
+   "deps": [
+    "lv_hull"
+   ]
+  },
+  {
+   "key": "low_voltage.lv_seeds",
+   "action": "drop",
+   "reason": "TFG crops (rapeseed, sunflower, peanut, oil palm) aren't in the pack, and the plant-oil -> biodiesel path it starts needs MV here."
+  },
+  {
+   "key": "low_voltage.lv_seed_oil",
+   "action": "drop",
+   "reason": "TFG/Firmalife oils not in the pack; the blaze-burner use doesn't apply (no Nether blazes). Seed oil only feeds lubricant and MV biodiesel here."
+  },
+  {
+   "key": "low_voltage.lv_biodiesel",
+   "action": "drop",
+   "reason": "Bio diesel here needs ethanol or methanol plus sodium hydroxide (MV; TFG's TFC-alcohol recipe isn't in the pack); redundant with medium_voltage.mv_bio_diesel. The gregtech_energy copy (tfg_id 139C7DF629329753) drops too.",
+   "tfg_id": "522E08B1592136D5"
+  },
+  {
+   "key": "low_voltage.cupronickel_ingot",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Recipe made concrete and checked (alloy smelter: copper + nickel -> 2 cupronickel, LV 16 EU/t, so the steam alloy smelter can do it).",
+   "desc": [
+    "A big part of progression in GregTech revolves around gaining access to new materials that you'll use to upgrade your machines or unlock advanced components.\n\nOne such material you'll encounter is &bCupronickel&r — the beginning of a long journey.\nThis material is used to build your first &6Electric Blast Furnace&r, an essential step in your industrial growth.\n\nLuckily, this first step is fairly simple: an Alloy Smelter turns one copper and one nickel (from TFC garnierite) into two cupronickel. So even if the coils ask for &b128 Cupronickel&r, don't worry — it's easier than it looks!&r\n\nLater on, their counterparts will become much more complex, so enjoy the simplicity while it lasts!"
+   ]
+  },
+  {
+   "key": "low_voltage.aluminium_greate",
+   "action": "drop",
+   "reason": "Greate cogwheels/shafts, Steam Powered engines and TFG combustion engines aren't in the pack."
+  },
+  {
+   "key": "low_voltage.oil",
+   "action": "drop",
+   "reason": "Oilsands are a GregTech ore (veins off here) and desert oil spouts are TFG world generation; no early oil in this pack."
+  },
+  {
+   "key": "low_voltage.lv_gas_turbine",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Syngas is TFG-only; this pack's LV gas fuel is methane from centrifuging rubber logs (60 mB each, checked). TFG gas-well and syngas prerequisites replaced by the energy intro.",
+   "desc": [
+    "The &cGas Turbine&r works exactly like the other &6generators&r, but burns gases.\n\nAt &7LV&r that means &7Methane&r: a Centrifuge gets 60 mB from every rubber log, along with sticky resin you need anyway. It won't power a factory alone, but a rubber tree farm keeps it going."
+   ],
+   "deps": [
+    "low_voltage.link_chapter"
+   ]
+  },
+  {
+   "key": "low_voltage.lv_naphtha_light",
+   "action": "drop",
+   "reason": "Depends on early oil (TFG oilsands/spouts); naphtha and light oil residue come from oil distillation at MV here, covered by the MV chapter."
+  },
+  {
+   "key": "low_voltage.lv_gas_syngas",
+   "action": "drop",
+   "reason": "Syngas is a TFG fluid (tfg:syngas_bucket not in the pack), made with Vintage Improvements' vacuum chamber."
+  },
+  {
+   "key": "low_voltage.glowstone",
+   "action": "drop",
+   "reason": "Relies on glowstone dust from TFG's Beneath; here glowstone dust is only a byproduct (refined cinnabar 14%), so it isn't a sensible LV goal."
+  },
+  {
+   "key": "low_voltage.lost",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Positional references to TFG's chapter layout and TFG's steam-age Create equivalents cut; power advice set to this pack (steam turbines); points to the GregTech Power chapter.",
+   "desc": [
+    "Getting into &7LV&r opens up a LOT of options, so it's easy to get lost. Here's our recommendations:\n\n1) Set up a source of power: Steam Turbines fed by your boilers. Don't cheap out, build multiple generators!\n\nBe sure to &eread the GregTech Power chapter&r so you get a good understanding of how EU, Volts, Amps, and Cable Loss all work.",
+    "{@pagebreak}",
+    "2) Focus on machines that make building more machines cheaper.\n\nThe Polarizer is a super cheap machine that can magnetize rods for basically free. Create's press and saw already make plates and wires; add a Bender for foils, a Lathe for screws and a Cutter for bolts.\n\nAfter that, focus on making Rubber cheaper with a Chemical Reactor and Fluid Solidifier, and making electronic components cheaper with an Assembler.\n\nOnce everything's at its cheapest, make sure you craft components in batches to save you lots of time.",
+    "{@pagebreak}",
+    "3) Build a Canner and make some batteries. Battery Buffers will help a lot with the growth of your factory.\n\n4) &7LV&r has two main end goals, the &aCircuit Assembler&r and the &aElectric Blast Furnace&r. You should now be ready to tackle those."
+   ],
+   "deps": [
+    "lv_hull"
+   ]
+  },
+  {
+   "key": "low_voltage.next_machines",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Pointer to TFG's optional-machine layout cut.",
+   "desc": [
+    "Now that you've got a few machines going, it's time to put them to work.\n\nThe Assembler will make electronic components cheaper, while the Chemical Reactor, Extractor, and Fluid Solidifier will make Rubber cheaper. After that, the rest of &7LV&r is yours to explore!"
+   ]
+  },
+  {
+   "key": "low_voltage.q26c843a618a39a44",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Untitled in TFG; phenol was for TFG's phenolic resin. Checked here: LV distillery turns creosote into lubricant (24 EU/t); phenol/toluene from wood tar need 64 EU/t (MV).",
+   "title": "Basic Distillery",
+   "desc": [
+    "The Distillery is kind of like a centrifuge, but mostly for organic/petrochemical fluids: one input, one chosen output, picked with a Programmed Circuit. This will change once you get the Distillation Tower.\n\nAt &7LV&r its handiest job is turning &7Creosote&r from your coke ovens into &eLubricant&r, which the Cutter and other machines can use. Most of its other recipes, such as phenol and toluene from wood tar, need &bMV&r."
+   ]
+  },
+  {
+   "key": "low_voltage.q671f90adcdf476a8",
+   "action": "drop",
+   "reason": "Phenolic resin is a TFG material (tfg:phenolic_resin_bucket not in the pack)."
+  },
+  {
+   "key": "low_voltage.q1c5f5edaee355130",
+   "action": "drop",
+   "reason": "Bakelite is a TFG material (tfg:bakelite_plate not in the pack); here phenolic boards are made from wood pulp and glue."
+  },
+  {
+   "key": "low_voltage.q628c72bc441daab5",
+   "action": "drop",
+   "reason": "Its TFG roles (TFC welding, the phenolic circuit board) don't apply: here the phenolic board comes from the assembler, so the forming press has no LV milestone."
+  },
+  {
+   "key": "low_voltage.q02e5d186abf719f0",
+   "action": "drop",
+   "reason": "Magnesia refractory bricks are TFG items (tfg:magnesia_refractory_brick_ingot not in the pack); this pack's cupronickel coils don't use them."
+  },
+  {
+   "key": "low_voltage.q698dcab4f014eb3b",
+   "action": "drop",
+   "reason": "Magnesia was only needed for TFG's refractory bricks; no LV use here."
+  },
+  {
+   "key": "low_voltage.food_machines",
+   "action": "drop",
+   "reason": "Food processor, electric oven and rotten voiding cover are TFG machines (not in the pack)."
+  },
+  {
+   "key": "low_voltage.q383a14a5c65b3adf",
+   "action": "drop",
+   "reason": "TFG used the LV laser engraver for Create transmitters; here the transmitter is Create's normal crafting recipe, and at LV the engraver only engraves decorative stone."
+  },
+  {
+   "key": "tfg_tips.magnets",
+   "action": "drop",
+   "reason": "Duplicate: TFG shows this tips quest in two chapters; this is the LV copy (tfg_id 07EDEA9613D6F02D). The tools_tips chapter has the same key, which should carry the decision.",
+   "tfg_id": "07EDEA9613D6F02D"
+  },
+  {
+   "key": "medium_voltage.mv_jetpack",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "Checked: jetpack craftable at LV (steel cells, LV pump, lead rotors, potin pipe) but combustion fuels arrive at MV here, so it goes to the MV chapter; hover keybind unverified, cut; TFG field-guide page dropped.",
+   "desc": [
+    "This Jetpack burns combustion fuels to enable a primitive form of flight.\n\nFill it like you would fill a Drum, or with a &3Canning Machine&r. In this pack its fuels arrive at &bMV&r: ethanol, methanol or bio diesel will do."
+   ]
+  },
+  {
+   "key": "low_voltage.rancher",
+   "action": "drop",
+   "reason": "Pastoral Rancher is a TFG multiblock (tfg:pastoral_engine not in the pack)."
+  },
+  {
+   "key": "tfg_tips.capsules",
+   "action": "drop",
+   "reason": "TFG medicine/contaminants mechanic (#tfg:medicine/capsules not in the pack)."
+  },
+  {
+   "key": "low_voltage.q4f6c86ca85019228",
+   "action": "drop",
+   "reason": "Geothermal Vulcanizer is a TFG multiblock in TFG's Beneath dimension (tfg:ore_processing_beneath not in the pack)."
+  },
+  {
+   "key": "low_voltage.q37f316c0599b52de",
+   "action": "drop",
+   "reason": "TFC Lunchbox isn't in the pack."
+  },
+  {
+   "key": "low_voltage.stock_ticker",
+   "action": "edit",
+   "chapter": "create",
+   "reason": "Not an LV item here: Create's own recipe (stock link = transmitter + item vault; glass; gold ingot), so it moves to the Create chapter. TFG's rose-quartz-lens prerequisite and field-guide pointer dropped; Ponder points to Create's own help.",
+   "desc": [
+    "You now have access to &6centralized, searchable storage&r!\n\nA basic setup is straightforward: you only need a &eStock Ticker&r, a &eStock Link&r and a &ePackager&r, as well as somewhere to put everything, such as a large &9Vault&r.\n\nHold &eW&r over any of them to Ponder how they work."
+   ],
+   "deps": [
+    "wrought_iron"
+   ]
+  },
+  {
+   "key": "low_voltage.factory_gauge",
+   "action": "edit",
+   "chapter": "create",
+   "reason": "Create's own recipe here (stock link + precision mechanism), so it moves to the Create chapter after the stock ticker; Fluid Logistics gauge (not in the pack) removed; field-guide pointer replaced by Ponder.",
+   "desc": [
+    "&bFactory Gauges&r can do two things:\n\n1) Monitor levels of items attached to a connected Packager\n2) Automatically order crafting requests when those levels drop below a certain amount.\n\nYou heard that right, Gauges enable &6autocrafting&r! Hold &eW&r over one to Ponder a full breakdown of how to use them."
+   ],
+   "tasks": [
+    {
+     "item": "create:factory_gauge"
+    }
+   ],
+   "deps": [
+    "low_voltage.stock_ticker"
+   ]
+  },
+  {
+   "key": "create_logistics.rose_quartz_lens",
+   "action": "drop",
+   "reason": "Greate's rose quartz lens isn't in the pack, and Create's transmitter is crafted normally here (lightning rod, copper sheets, redstone), so the lens-and-engraver chain doesn't apply."
+  }
+ ]
+}

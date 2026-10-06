@@ -1,0 +1,554 @@
+{
+ "chapter": "ore_proc",
+ "decisions": [
+  {
+   "key": "ore_proc.native_ore",
+   "action": "edit",
+   "reason": "Adds how ore processing starts here (TFC ores into GregTech crushed ore, GregTech veins off); the EMI diagram starts at GregTech ore blocks that don't generate; cut the TFG star markers.",
+   "desc": [
+    "An important part of &6GregTech&r is its &dOre Processing Mechanics&r, but it can get pretty complicated, so this chapter is here to help!",
+    "",
+    "In this pack GregTech's own ore veins are off: every ore is a TFC ore. Create's millstone and crushing wheels and GregTech's macerator turn TFC ore pieces into GregTech &aCrushed Ore&r, and from there GregTech's usual chain applies. GregTech-only minerals (bauxite, galena, platinum, ...) have no veins here, so their lines don't apply.",
+    "{@pagebreak}",
+    "EMI has an &6Ore Processing Diagram&r tab: press the Show Uses key (default &bU&r) on a crushed ore and look for it. It starts from GregTech's ore blocks, which don't generate here, so start reading at crushed ore.",
+    "",
+    "A major part of GregTech philosophy is that there's not just one way to solve a problem. The columns of this chapter follow an ore from raw ore to dust; the rows are the tiers that bring new machines."
+   ],
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.raw_ore",
+   "action": "edit",
+   "reason": "Raw ore here means TFC's ore pieces; GregTech's raw ores and ore blocks don't generate.",
+   "desc": [
+    "This column shows ways to process raw ore, the first step of ore processing! Here that's TFC's ore pieces (small, poor, normal and rich, plus the mineral and gem ores); GregTech's own ore blocks and raw ores don't generate in this pack."
+   ],
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.crushed_ore",
+   "action": "keep",
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.purified_ore",
+   "action": "keep",
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.refined_ore",
+   "action": "edit",
+   "reason": "Refined ore can also be smelted (GregTech smelting recipe).",
+   "desc": [
+    "The only things you can really do with refined ore are crush it into dust or smelt it."
+   ],
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.impure_dust",
+   "action": "keep",
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.purified_dust",
+   "action": "keep",
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.dust_processed",
+   "action": "edit",
+   "reason": "No vanilla furnace in a TFC world; smelt in a steam furnace or with Create's fan; iron dusts give cast iron.",
+   "desc": [
+    "&6Dusts&r are the final form of almost every ore.",
+    "",
+    "From here, you can smelt it in a steam furnace or with Create's fan, send it to &estorage&r, or even start using it right away! Iron dusts smelt into TFC cast iron. Some dusts will require one last step before they become truly useful.",
+    "",
+    "Remember to keep your &6ore processing line&r in top shape! You'll want to keep expanding and upgrading it as you progress, so you can spend less time mining and more time gregging."
+   ],
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.copper_tier",
+   "action": "edit",
+   "title": "Early Ore Processing",
+   "subtitle": "Before electricity",
+   "reason": "There is no copper-age GregTech ore processing here (the quern makes TFC powder, not crushed ore); this row becomes the pre-electric basics, opened by the route's first crushed ore.",
+   "desc": [
+    "This row is for the very basics of ore processing: Create's millstone and crushing wheels, a hammer in the crafting grid and a cauldron of water. There are no byproducts yet, though Create can already automate the crushing.",
+    "",
+    "The millstone gives TFC's own yield; crushing wheels and the macerator give twice that."
+   ],
+   "deps": [
+    "crushed_ore"
+   ],
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.bronze_tier",
+   "action": "drop",
+   "reason": "TFG gates GregTech ore-processing steps behind TFC anvil tiers; this pack doesn't, the row is empty, and #tfc:bronze_anvils doesn't exist here. The early row covers the bronze age."
+  },
+  {
+   "key": "ore_proc.steel_tier",
+   "action": "drop",
+   "reason": "TFG's steel-anvil gate for ore-washing byproducts doesn't exist here; the row is empty."
+  },
+  {
+   "key": "ore_proc.steam_tier",
+   "action": "edit",
+   "subtitle": "Steam does the hammering",
+   "reason": "TFG's black steel anvil gate doesn't exist here; the steam age starts with bronze boilers. Rewritten as the steam row's header.",
+   "desc": [
+    "Steam machines take over the hand work: the &3Steam Macerator&r crushes TFC ore at twice TFC's yield and crushed ore into impure dust, the &3Steam Forge Hammer&r does the hammer's crafting-grid steps, and the &3Steam Furnace&r smelts crushed ore and dusts.",
+    "",
+    "Washing still means a cauldron, and byproducts wait for LV."
+   ],
+   "tasks": [
+    {
+     "type": "checkmark"
+    }
+   ],
+   "deps": [
+    "steam_macerator"
+   ],
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.lv_tier",
+   "action": "keep",
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.mv_tier",
+   "action": "keep",
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.hv_tier",
+   "action": "keep",
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.ev_tier",
+   "action": "keep",
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.iv_tier",
+   "action": "keep",
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.luv_tier",
+   "action": "drop",
+   "reason": "Header for TFG's Naquadah line; naquadah has no ore here and nothing else is in the row."
+  },
+  {
+   "key": "stone_age.crush_ore",
+   "action": "merge",
+   "merge_into": "crushed_ore",
+   "reason": "Same milestone as the route's crushed_ore (first crushed ore). TFC's quern grinds ore into TFC powder here, not GregTech crushed ore, so the quern tasks go; the 'more from every ore' framing joins the route quest.",
+   "desc": [
+    "Crushed ore comes from Create's millstone and crushing wheels or GregTech's macerator. Wash it in a cauldron or ore washer, smelt it in a steam furnace or with Create's fan, or keep processing it for byproducts. Crushed hematite, magnetite, limonite and pyrite smelt into cast iron.",
+    "",
+    "This is only the first step: proper ore processing is a large, complex beast that gets more metal and byproducts out of every ore you mine. The Ore Processing chapter walks through it."
+   ]
+  },
+  {
+   "key": "stone_age.crush_crushed_ore",
+   "action": "edit",
+   "reason": "GregTech's stone hammer isn't in the pack (bronze and wrought iron hammers are); impure dust holds the same metal as crushed ore here, so the yield claim is cut.",
+   "desc": [
+    "Combine &aCrushed Ore&r with a GregTech hammer in a crafting grid to turn it into &aImpure Dust&r. A bronze hammer is six bronze ingots and a stick.",
+    "",
+    "The dust holds the same metal as the crushed ore, but dusts are what many GregTech recipes want, and washing them is the next step.",
+    "",
+    "This may all be slow and tedious for now, but the steam forge hammer and the macerator will soon do it for you."
+   ],
+   "tasks": [
+    {
+     "filter": "ftbfiltersystem:item_tag(gtceu:crafting_tools/hammer)",
+     "any": [
+      "#gtceu:crafting_tools/hammer"
+     ]
+    }
+   ],
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "stone_age.clean_dust",
+   "action": "edit",
+   "reason": "GregTech washes items when you use them on a water cauldron (not by dropping them in water); task is the cauldron (seven wrought iron plates and a hammer).",
+   "desc": [
+    "Finally, right-click a &9cauldron of water&r with Impure or Purified Dust to wash it into clean Dust, your ore's final form. Crushed Ore washes into Purified Ore the same way. Each wash uses up some of the water.",
+    "",
+    "A cauldron is seven wrought iron plates and a hammer. Washing by hand gives no byproducts; the LV Ore Washer will."
+   ],
+   "tasks": [
+    {
+     "item": "minecraft:cauldron"
+    }
+   ],
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.robot_arm",
+   "action": "edit",
+   "reason": "Smart filter id is gtceu:smart_item_filter here; replaced the unverified laser-engraver example.",
+   "desc": [
+    "GregTech comes with its own tools to help solve ore processing logistics.",
+    "",
+    "The &6Robot Arm&r can move precise numbers of items into a machine. The &6Tag Filter&r can filter items by tag, such as '&5*purified_ores*&r' to match all Purified Ores.",
+    "",
+    "The &4Smart Filter&r can filter items depending on their &6recipe&r. For example, if you use it with a robot arm on an electrolyzer, and set the robot arm to supply exact, it will only move your dusts into the electrolyzer once it has as many inputs as the recipe requires!"
+   ],
+   "tasks": [
+    {
+     "optional": true,
+     "item": "gtceu:item_tag_filter"
+    },
+    {
+     "optional": true,
+     "item": "gtceu:smart_item_filter"
+    },
+    {
+     "optional": true,
+     "item": "gtceu:lv_robot_arm"
+    },
+    {
+     "type": "checkmark"
+    }
+   ],
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.q2d40f76dfa41d747",
+   "action": "drop",
+   "reason": "tfg:ore_processing_beneath (Geothermal Vulcanizer) is TerraFirmaGreg's own multiblock and needs its Beneath dimension."
+  },
+  {
+   "key": "ore_proc.ore_washer",
+   "action": "edit",
+   "reason": "Create's fan has no bulk-washing recipes for GregTech crushed ore here; the hand option is a water cauldron.",
+   "desc": [
+    "Most ores don't need any fancy bathing setups, and running them through an &dOre Washer&r will suffice: about a third of a byproduct per ore.",
+    "",
+    "If you use the &bOre Washer&r, make sure to use &9Distilled Water&r to double the speed of the recipe.",
+    "",
+    "Don't have one yet? You can right-click a cauldron of water with crushed ore to purify it, though this won't get you any byproducts."
+   ],
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.sodium_persulfate",
+   "action": "edit",
+   "reason": "Sea water isn't a thing here; byproduct chances checked (70% bath vs 33% washer).",
+   "desc": [
+    "Once you get to LV, you may be interested in using a &bChemical Bath&r with &dSodium Persulfate&r to get some extra byproducts. Not all ores can be processed this way, but the ones that can will get a &670 percent&r chance of a byproduct, compared to the &633 percent&r of the &bOre Washer&r.",
+    "",
+    "Sodium persulfate comes from electrolyzing sodium bisulfate, and it can be a little annoying to mass produce.",
+    "",
+    "The quest below gives the crushed ores worth the investment."
+   ],
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.mercury_ores",
+   "action": "edit",
+   "reason": "Mercury here comes from centrifuging TFC cinnabar dust (or redstone); byproduct chances checked.",
+   "desc": [
+    "Bathing certain ores in &dMercury&r can give some other useful byproducts. Not all ores can be processed this way, but the ones that can will get a &670 percent&r chance of a byproduct, compared to the &633 percent&r of the &bOre Washer&r.",
+    "",
+    "&dMercury&r can be easily obtained by centrifuging TFC &cCinnabar&r dust (or &cRedstone&r).",
+    "",
+    "The quest below gives the crushed ores worth bathing in Mercury."
+   ],
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.mercury",
+   "action": "edit",
+   "reason": "Platinum, cooperite and nickel ores don't generate here; replaced with the TFC ores that have mercury baths.",
+   "desc": [
+    "Here's what TFC's ores give in a Mercury bath:",
+    "",
+    "- &6Crushed Gold&r: &dSilver&r",
+    "",
+    "- &6Crushed Copper&r: &dGold&r",
+    "",
+    "- &6Crushed Silver&r: &dGold&r",
+    "",
+    "- &6Crushed Magnetite&r: &dGold&r"
+   ],
+   "tasks": [
+    {
+     "item": "gtceu:crushed_gold_ore"
+    },
+    {
+     "item": "gtceu:crushed_copper_ore"
+    },
+    {
+     "item": "gtceu:crushed_silver_ore"
+    },
+    {
+     "item": "gtceu:crushed_magnetite_ore"
+    }
+   ],
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.sodium_ores",
+   "action": "edit",
+   "reason": "Bauxite, aluminium, cobalt and desh ores don't exist here; replaced with the TFC ores that have sodium persulfate baths.",
+   "desc": [
+    "Here's what TFC's ores give in a Sodium Persulfate bath:",
+    "",
+    "- &6Crushed Sphalerite&r: &dZinc&r",
+    "",
+    "- &6Crushed Tetrahedrite&r: &dCadmium&r",
+    "",
+    "- &6Crushed Limonite&r: &dCobalt Oxide&r",
+    "",
+    "- &6Crushed Malachite&r: &dZincite&r"
+   ],
+   "tasks": [
+    {
+     "item": "gtceu:crushed_sphalerite_ore"
+    },
+    {
+     "item": "gtceu:crushed_tetrahedrite_ore"
+    },
+    {
+     "item": "gtceu:crushed_yellow_limonite_ore"
+    },
+    {
+     "item": "gtceu:crushed_malachite_ore"
+    }
+   ],
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.thermal_centrifuge",
+   "action": "edit",
+   "reason": "TFG's steam thermal centrifuge multiblock isn't in the pack.",
+   "desc": [
+    "For all your other Purified Ores that don't need special treatment, it's best to run them through the &dThermal Centrifuge&r. This machine can produce byproducts at a reliable rate, without needing any other ingredients. It's quite slow, however, so we suggest making several."
+   ],
+   "tasks": [
+    {
+     "filter": "or(item(gtceu:lv_thermal_centrifuge)item(gtceu:mv_thermal_centrifuge)item(gtceu:hv_thermal_centrifuge)item(gtceu:ev_thermal_centrifuge)item(gtceu:iv_thermal_centrifuge)item(gtceu:luv_thermal_centrifuge)item(gtceu:zpm_thermal_centrifuge)item(gtceu:uv_thermal_centrifuge))",
+     "any": [
+      "gtceu:lv_thermal_centrifuge",
+      "gtceu:mv_thermal_centrifuge",
+      "gtceu:hv_thermal_centrifuge",
+      "gtceu:ev_thermal_centrifuge",
+      "gtceu:iv_thermal_centrifuge",
+      "gtceu:luv_thermal_centrifuge",
+      "gtceu:zpm_thermal_centrifuge",
+      "gtceu:uv_thermal_centrifuge"
+     ]
+    }
+   ],
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.sifter",
+   "action": "edit",
+   "reason": "Vintage Improvements' vibrating table isn't in the pack; names TFC's gem ores; softened the 'only way' claim.",
+   "desc": [
+    "The &6Sifter&r should be used for all your &aGems&r: TFC's ruby, sapphire, emerald, topaz, opal, amethyst and diamond. Sifting a purified gem ore gives more gems than any other method, and it's the easiest way to get Exquisite and Flawless gems."
+   ],
+   "tasks": [
+    {
+     "filter": "or(item(gtceu:lv_sifter)item(gtceu:mv_sifter)item(gtceu:hv_sifter)item(gtceu:ev_sifter)item(gtceu:iv_sifter)item(gtceu:luv_sifter)item(gtceu:zpm_sifter)item(gtceu:uv_sifter))",
+     "any": [
+      "gtceu:lv_sifter",
+      "gtceu:mv_sifter",
+      "gtceu:hv_sifter",
+      "gtceu:ev_sifter",
+      "gtceu:iv_sifter",
+      "gtceu:luv_sifter",
+      "gtceu:zpm_sifter",
+      "gtceu:uv_sifter"
+     ]
+    }
+   ],
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.macerator_separator",
+   "action": "keep",
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.centrifuge_sifter",
+   "action": "keep",
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.electro_separator",
+   "action": "edit",
+   "reason": "Naquadah and bastnasite don't exist here; the separator works on purified dusts (not refined ores); examples are TFC's magnetite, hematite, limonite and pyrite.",
+   "desc": [
+    "The &6Electromagnetic Separator&r pulls magnetic metals out of &dPurified Dusts&r, which you get by crushing purified ores. From TFC's ores: purified &6Magnetite&r dust gives some &eGold&r, and purified hematite, limonite and pyrite dust give a little &7Iron&r."
+   ],
+   "tasks": [
+    {
+     "filter": "or(item(gtceu:lv_electromagnetic_separator)item(gtceu:mv_electromagnetic_separator)item(gtceu:hv_electromagnetic_separator)item(gtceu:ev_electromagnetic_separator)item(gtceu:iv_electromagnetic_separator)item(gtceu:luv_electromagnetic_separator)item(gtceu:zpm_electromagnetic_separator)item(gtceu:uv_electromagnetic_separator))",
+     "any": [
+      "gtceu:lv_electromagnetic_separator",
+      "gtceu:mv_electromagnetic_separator",
+      "gtceu:hv_electromagnetic_separator",
+      "gtceu:ev_electromagnetic_separator",
+      "gtceu:iv_electromagnetic_separator",
+      "gtceu:luv_electromagnetic_separator",
+      "gtceu:zpm_electromagnetic_separator",
+      "gtceu:uv_electromagnetic_separator"
+     ]
+    },
+    {
+     "optional": true,
+     "item": "gtceu:pure_magnetite_dust"
+    }
+   ],
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.electrolyzer",
+   "action": "edit",
+   "reason": "Tantalite has no ore here; examples are ruby (chromium and aluminium) and clay (aluminium), both 60 EU/t, so MV.",
+   "desc": [
+    "Certain &6Dusts&r have no direct use and need splitting into their elements. &cRuby&r dust, for example, electrolyzes into &dChromium&r and &dAluminium&r, and clay dust gives aluminium too.",
+    "",
+    "Most of these recipes will only be available with an &bMV Electrolyzer&r, so come back to this later!"
+   ],
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.packer",
+   "action": "keep",
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.chromium",
+   "action": "edit",
+   "title": "Chromium",
+   "subtitle": "Chrome me up, choom!",
+   "reason": "Garnet sand, chromite and TFG's Beneath/Moon don't exist here; chromium comes from TFC's ruby (ore washer 33%, impure ruby dust centrifuge, MV electrolysis, ruby slurry).",
+   "desc": [
+    "Getting &bChromium&r will be one of the first ore processing challenges you encounter. In this pack it comes from TFC's &cRuby&r:",
+    "",
+    "- Washing crushed ruby in the &dOre Washer&r gives chromium dust a third of the time.",
+    "",
+    "- Centrifuging impure ruby dust gives a little more.",
+    "",
+    "- An &bMV Electrolyzer&r splits ruby dust into chromium and aluminium.",
+    "{@pagebreak}",
+    "Later, &6Ruby Slurry&r (crushed or purified ruby mixed with aqua regia) gets more chromium out of each ruby, along with aluminium.",
+    "",
+    "GregTech's other chromium sources, chromite and garnet sand, have no veins here."
+   ],
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.molybdenum",
+   "action": "drop",
+   "reason": "Molybdenite, powellite, wulfenite (and scheelite) are GregTech-only ores with no veins here; the checker finds no molybdenum."
+  },
+  {
+   "key": "ore_proc.macerator_byproduct",
+   "action": "edit",
+   "reason": "Greate's crushing wheel isn't in the pack; the millstone never gives GregTech byproducts; TFC ore pieces have none at the first crush.",
+   "desc": [
+    "While looking at &bEMI&r, you've probably noticed that your &dMacerator&r lists more &boutputs&r than what you're actually getting.",
+    "",
+    "GregTech doesn't communicate this very well, but these extra slots are only available in &6HV&r. Once you make it to that tier, the &6HV&r macerator becomes incredibly powerful, giving a huge amount of bonus byproducts when it grinds crushed and purified ores.",
+    "",
+    "TFC ore pieces have no byproducts at the first crush, in any machine."
+   ],
+   "tasks": [
+    {
+     "item": "gtceu:hv_macerator"
+    }
+   ],
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.bauxite",
+   "action": "drop",
+   "reason": "Bauxite is a GregTech-only ore with no veins here; crushed and purified bauxite are unreachable."
+  },
+  {
+   "key": "ore_proc.ae2",
+   "action": "drop",
+   "reason": "Applied Energistics 2 and ExtendedAE aren't in the pack."
+  },
+  {
+   "key": "ore_proc.platline",
+   "action": "edit",
+   "reason": "Platinum group sludge here comes from purified TFC tetrahedrite (+ nitric acid); GregTech's platinum-bearing ores don't generate, so it's the main source; the TFG-only ore tag is replaced.",
+   "desc": [
+    "The &6Platinum Line&r will be your first real challenge to process, providing you with essential platinum-group metals: &bPlatinum&r, &bPalladium&r, &bRuthenium&r, &bRhodium&r, &bIridium&r, and &bOsmium&r.",
+    "",
+    "GregTech's platinum-bearing ores don't generate here, so this line is the main way to get any of them. &aPlatinum Group Sludge&r comes from purified &6Tetrahedrite&r, a TFC copper ore, in a Chemical Reactor with nitric acid.",
+    "",
+    "The Platline can be started at &6HV&r, but you won't be able to complete it fully until later in &5EV&r."
+   ],
+   "tasks": [
+    {
+     "item": "gtceu:platinum_group_sludge_dust"
+    },
+    {
+     "optional": true,
+     "item": "gtceu:purified_tetrahedrite_ore"
+    }
+   ],
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.gtcy",
+   "action": "edit",
+   "reason": "Cut the claim that all of them need Alloy Blast Smelter alloys; dropped the Large Centrifugal Unit task (its molybdenum disilicide springs need molybdenum, which has no source here).",
+   "desc": [
+    "Once you get to IV, you'll gain access to multiblock versions of GregTech's single block machines. They do the exact same recipes as their single block cousins, but are more flexible - you can put lots of huge Input Buses on them, you can overclock them with higher tier &6Energy Hatches&r instead of making new ones every tier, and they even support &6Parallel Hatches&r to do multiple recipes simultaneously!",
+    "",
+    "Their recipes and casings take advanced alloys, so check EMI before you commit."
+   ],
+   "tasks": [
+    {
+     "optional": true,
+     "item": "gtceu:large_maceration_tower"
+    },
+    {
+     "optional": true,
+     "item": "gtceu:large_sifting_funnel"
+    },
+    {
+     "optional": true,
+     "item": "gtceu:large_chemical_bath"
+    },
+    {
+     "optional": true,
+     "item": "gtceu:large_electromagnet"
+    },
+    {
+     "optional": true,
+     "item": "gtceu:large_electrolyzer"
+    },
+    {
+     "optional": true,
+     "item": "gtceu:large_packer"
+    },
+    {
+     "type": "checkmark"
+    }
+   ],
+   "chapter": "ore_processing"
+  },
+  {
+   "key": "ore_proc.indium",
+   "action": "drop",
+   "reason": "Indium concentrate needs purified galena, a GregTech-only ore with no veins here; indium is unreachable."
+  }
+ ]
+}

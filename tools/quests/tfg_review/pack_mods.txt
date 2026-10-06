@@ -1,0 +1,45 @@
+AllTheLeaks (Memory Leak Fix)
+Almost Unified
+Architectury API
+Better Advanced Tooltips
+Clumps
+Configuration
+Create
+Create Aeronautics
+Create Big Cannons
+Create Deco
+Create Factory Logistics
+Create: Aeroworks
+Create: Connected
+Create: Copycats+
+Create: Design n' Decor
+Create: Power Loader
+CreateBetterFps
+Dynamic FPS
+EMI
+Entity Culling
+FTB Filter System
+FTB Library (NeoForge)
+FTB Quests (NeoForge)
+FTB Teams (NeoForge)
+FerriteCore
+GregTech CEu Modern
+ImmediatelyFast
+Iris Shaders
+Just Enough Items (JEI)
+KubeJS
+KubeJS Create
+KubeJS TFC
+Lithium
+ModernFix
+Patchouli
+ProbeJS
+Rhino
+Ritchie's Projectile Library
+Sable
+Sodium
+Steam 'n' Rails Neoforge
+TFC: Real World
+TerraFirmaCraft
+WoodenCog
+spark

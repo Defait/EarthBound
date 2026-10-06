@@ -1,0 +1,1236 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "hv"
+	group: ""
+	icon: {
+		count: 1
+		id: "gtceu:hv_machine_hull"
+	}
+	id: "42FB8D81B966DA61"
+	order_index: 11
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"0FA2318EDDC6EC90"
+				"73C85F0F7531C720"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:cetane_boosted_diesel_bucket"
+			}
+			id: "7452DA48ECE0BA0C"
+			optional: true
+			shape: "heart"
+			tasks: [
+				{
+					count: 1
+					id: "7E9C9EECB45CB913"
+					item: {
+						count: 1
+						id: "gtceu:cetane_boosted_diesel_bucket"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "4B197C99578171AD"
+					type: "checkmark"
+				}
+			]
+			x: -4.0d
+			y: 7.0d
+		}
+		{
+			dependencies: [
+				"79524F90EE972B4B"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:energy_crystal"
+			}
+			id: "6774E44AB58F381E"
+			tasks: [
+				{
+					count: 1
+					id: "457FDC9AA75DA5D6"
+					item: {
+						count: 1
+						id: "gtceu:energy_crystal"
+					}
+					type: "item"
+				}
+			]
+			x: -4.0d
+			y: -4.0d
+		}
+		{
+			dependencies: [
+				"326094BCCF778B49"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:hv_autoclave"
+			}
+			id: "79524F90EE972B4B"
+			shape: "square"
+			tasks: [
+				{
+					count: 1
+					id: "7490D9D4C62CBB48"
+					item: {
+						count: 1
+						id: "gtceu:hv_autoclave"
+					}
+					type: "item"
+				}
+			]
+			x: -2.5d
+			y: -4.0d
+		}
+		{
+			dependencies: [
+				"326094BCCF778B49"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:hv_chemical_bath"
+			}
+			id: "34C4CC12E9F88274"
+			tasks: [
+				{
+					count: 1
+					id: "462FE8DA10D7EF41"
+					item: {
+						count: 1
+						id: "gtceu:hv_chemical_bath"
+					}
+					type: "item"
+				}
+			]
+			x: -1.5d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"326094BCCF778B49"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:configurable_maintenance_hatch"
+			}
+			id: "1F550EAB25A17073"
+			shape: "square"
+			tasks: [
+				{
+					count: 1
+					id: "34BCACBE2EBA0F43"
+					item: {
+						count: 1
+						id: "gtceu:configurable_maintenance_hatch"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "49F55F611C6A100C"
+					item: {
+						count: 1
+						id: "gtceu:auto_maintenance_hatch"
+					}
+					type: "item"
+				}
+			]
+			x: -2.5d
+			y: -3.0d
+		}
+		{
+			dependencies: [
+				"326094BCCF778B49"
+				"56B7D5F41BC74321"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:hv_electric_motor"
+			}
+			id: "36CC046818525B7C"
+			tasks: [
+				{
+					count: 1
+					id: "25A797C7AB062EC8"
+					item: {
+						count: 1
+						id: "gtceu:hv_electric_motor"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "6508631D706E828B"
+					item: {
+						count: 1
+						id: "gtceu:hv_electric_piston"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "7193A1473DB0B7DD"
+					item: {
+						count: 1
+						id: "gtceu:hv_conveyor_module"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "4EB54B53A4ADCC10"
+					item: {
+						count: 1
+						id: "gtceu:hv_electric_pump"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "4725E10AEF19E24F"
+					item: {
+						count: 1
+						id: "gtceu:hv_robot_arm"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "71735B7CE4F51F8A"
+					item: {
+						count: 1
+						id: "gtceu:hv_emitter"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "4B421F677B633E89"
+					item: {
+						count: 1
+						id: "gtceu:hv_sensor"
+					}
+					type: "item"
+				}
+			]
+			x: -2.5d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"326094BCCF778B49"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:hv_assembler"
+			}
+			id: "54A73DD3BD21D343"
+			tasks: [
+				{
+					count: 1
+					id: "056E5C48A224C5B0"
+					item: {
+						count: 1
+						id: "gtceu:hv_assembler"
+					}
+					type: "item"
+				}
+			]
+			x: 5.0d
+			y: -6.0d
+		}
+		{
+			dependencies: [
+				"08C7DA782BA13103"
+				"34C4CC12E9F88274"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:cyan_glass_lens"
+			}
+			id: "3A4AC456356DFB6B"
+			tasks: [
+				{
+					count: 1
+					id: "10D9EB82946B7C8A"
+					item: {
+						count: 1
+						id: "gtceu:cyan_glass_lens"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					count: 1
+					id: "6F02480793B485FF"
+					item: {
+						count: 1
+						id: "gtceu:simple_soc"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "4A46A0D8A4759148"
+					item: {
+						count: 1
+						id: "gtceu:orange_glass_lens"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "2A1BDFCFF3650EEA"
+					item: {
+						count: 1
+						id: "gtceu:lpic_chip"
+					}
+					type: "item"
+				}
+			]
+			x: -2.5d
+			y: -6.5d
+		}
+		{
+			dependencies: [
+				"3A4AC456356DFB6B"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:nand_chip"
+			}
+			id: "25B0BF87328E2546"
+			tasks: [
+				{
+					count: 1
+					id: "1C9B16EC09FF162E"
+					item: {
+						count: 1
+						id: "gtceu:nand_chip"
+					}
+					type: "item"
+				}
+			]
+			x: -4.0d
+			y: -6.5d
+		}
+		{
+			dependencies: [
+				"08C7DA782BA13103"
+				"54A73DD3BD21D343"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:hv_energy_input_hatch"
+			}
+			id: "5F01F1984B2EB701"
+			shape: "octagon"
+			size: 1.5d
+			tasks: [
+				{
+					count: 1
+					id: "3A46A427D4E5B3A8"
+					item: {
+						count: 1
+						id: "gtceu:lpic_chip"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					count: 1
+					id: "23E4D1E551F20EB1"
+					item: {
+						count: 1
+						id: "gtceu:hv_energy_input_hatch"
+					}
+					type: "item"
+				}
+			]
+			x: 2.5d
+			y: -6.0d
+		}
+		{
+			dependencies: [
+				"326094BCCF778B49"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:hv_chemical_reactor"
+			}
+			id: "18559C584D4D2089"
+			tasks: [
+				{
+					count: 1
+					id: "033567994287D7EB"
+					item: {
+						count: 1
+						id: "gtceu:hv_chemical_reactor"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: [
+				"27A80F0C09BF21BA"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:rutile_dust"
+			}
+			id: "65465894A2D8E709"
+			shape: "square"
+			tasks: [
+				{
+					count: 1
+					id: "33EB69F49AA9DAB0"
+					item: {
+						count: 1
+						id: "gtceu:rutile_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 2.0d
+			y: 7.0d
+		}
+		{
+			dependencies: [
+				"18559C584D4D2089"
+				"65465894A2D8E709"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:titanium_tetrachloride_bucket"
+			}
+			id: "05FC80F849E5E5F2"
+			tasks: [
+				{
+					count: 1
+					id: "0852C447A4A937EA"
+					item: {
+						count: 1
+						id: "gtceu:titanium_tetrachloride_bucket"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "178371C26DDB7B32"
+					type: "checkmark"
+				}
+			]
+			x: 3.5d
+			y: 7.0d
+		}
+		{
+			dependencies: [
+				"75D85202FBB76019"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:mercury_barium_calcium_cuprate_double_wire"
+			}
+			id: "77B04582730D0020"
+			optional: true
+			shape: "heart"
+			tasks: [
+				{
+					count: 1
+					id: "73AB5F577102D24E"
+					item: {
+						count: 1
+						id: "gtceu:mercury_barium_calcium_cuprate_single_wire"
+					}
+					type: "item"
+				}
+			]
+			x: 22.5d
+			y: -2.5d
+		}
+		{
+			dependencies: [
+				"53C2EC535971A36B"
+				"54A73DD3BD21D343"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:nichrome_coil_block"
+			}
+			id: "75D85202FBB76019"
+			shape: "octagon"
+			size: 1.5d
+			tasks: [
+				{
+					count: 16
+					id: "39D36FE610BDCF80"
+					item: {
+						count: 1
+						id: "gtceu:nichrome_coil_block"
+					}
+					type: "item"
+				}
+			]
+			x: 21.0d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"05FC80F849E5E5F2"
+				"6EB96826C21AC73A"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:titanium_ingot"
+			}
+			id: "615C6D742F443F43"
+			shape: "octagon"
+			size: 1.5d
+			tasks: [
+				{
+					count: 1
+					id: "7476C729E123D258"
+					item: {
+						count: 1
+						id: "gtceu:titanium_ingot"
+					}
+					type: "item"
+				}
+			]
+			x: 21.0d
+			y: 7.0d
+		}
+		{
+			dependencies: [
+				"29CBECDB71C151D7"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:vacuum_freezer"
+			}
+			id: "6EB96826C21AC73A"
+			shape: "octagon"
+			size: 2.0d
+			tasks: [
+				{
+					count: 1
+					id: "7260F71E8717C9C3"
+					item: {
+						count: 1
+						id: "gtceu:vacuum_freezer"
+					}
+					type: "item"
+				}
+			]
+			x: 21.0d
+			y: -8.5d
+		}
+		{
+			dependencies: [
+				"29CBECDB71C151D7"
+				"36CC046818525B7C"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:hv_circuit_assembler"
+			}
+			id: "7D8B9890952660C3"
+			shape: "octagon"
+			size: 1.5d
+			tasks: [
+				{
+					count: 1
+					id: "23FCDBB4DF2250A5"
+					item: {
+						count: 1
+						id: "gtceu:hv_circuit_assembler"
+					}
+					type: "item"
+				}
+			]
+			x: 9.0d
+			y: 3.0d
+		}
+		{
+			dependencies: [
+				"326094BCCF778B49"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:cleanroom"
+			}
+			id: "08C7DA782BA13103"
+			shape: "octagon"
+			size: 1.5d
+			tasks: [
+				{
+					count: 1
+					id: "25CDEDC7B115E05B"
+					item: {
+						count: 1
+						id: "gtceu:cleanroom"
+					}
+					type: "item"
+				}
+				{
+					count: 8
+					id: "399DAB1294049DE0"
+					item: {
+						count: 1
+						id: "gtceu:filter_casing"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "229548C67C58928F"
+					item: {
+						count: 1
+						id: "gtceu:plascrete"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "4CC9325F15853A89"
+					item: {
+						count: 1
+						id: "gtceu:cleanroom_glass"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					count: 1
+					id: "6493FAE818B5E5CF"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:auto_maintenance_hatch)item(gtceu:maintenance_hatch))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: -6.0d
+		}
+		{
+			dependencies: [
+				"36CC046818525B7C"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:prospector.hv"
+			}
+			id: "0FE3395E6B2219DA"
+			optional: true
+			shape: "heart"
+			tasks: [
+				{
+					count: 1
+					id: "780EA10B57AD272E"
+					item: {
+						count: 1
+						id: "gtceu:prospector.hv"
+					}
+					type: "item"
+				}
+			]
+			x: 7.5d
+			y: 2.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:fluorine_bucket"
+			}
+			id: "2AE9373E8C1D79C6"
+			tasks: [
+				{
+					count: 1
+					id: "2DB53417E4816D94"
+					item: {
+						count: 1
+						id: "gtceu:fluorine_bucket"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "1177E0251F727EA0"
+					type: "checkmark"
+				}
+			]
+			x: -1.0d
+			y: 5.0d
+		}
+		{
+			dependencies: [
+				"18559C584D4D2089"
+				"2AE9373E8C1D79C6"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:polytetrafluoroethylene_plate"
+			}
+			id: "5C79B0DF7CC7D6E7"
+			tasks: [
+				{
+					count: 1
+					id: "6AF80E0C00D2EA3E"
+					item: {
+						count: 1
+						id: "gtceu:polytetrafluoroethylene_plate"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "0C3AAD3EB5E6C1E4"
+					item: {
+						count: 1
+						id: "gtceu:hydrofluoric_acid_bucket"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					count: 1
+					id: "090AC00A34374050"
+					item: {
+						count: 1
+						id: "gtceu:chloroform_bucket"
+					}
+					optional_task: true
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 5.0d
+		}
+		{
+			dependencies: [
+				"5C79B0DF7CC7D6E7"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:large_chemical_reactor"
+			}
+			id: "0841E0F3E7DA1785"
+			shape: "octagon"
+			size: 2.0d
+			tasks: [
+				{
+					count: 1
+					id: "4A63699113783D3F"
+					item: {
+						count: 1
+						id: "gtceu:large_chemical_reactor"
+					}
+					type: "item"
+				}
+				{
+					count: 10
+					id: "5D7ED0BC4826C4A8"
+					item: {
+						count: 1
+						id: "gtceu:inert_machine_casing"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "302A4952655CBCB9"
+					item: {
+						count: 1
+						id: "gtceu:ptfe_pipe_casing"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 7.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "minecraft:tnt"
+			}
+			id: "56D1A7BA6216C70A"
+			tasks: [
+				{
+					count: 1
+					id: "67685A5203EB6B05"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(minecraft:tnt)item(gtceu:industrial_tnt)item(gtceu:powderbarrel)item(gtceu:dynamite))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 3.5d
+			y: 4.5d
+		}
+		{
+			dependencies: [
+				"44717F43067E0B98"
+				"56D1A7BA6216C70A"
+				"73C85F0F7531C720"
+			]
+			icon: {
+				count: 1
+				id: "minecraft:ender_pearl"
+			}
+			id: "56B7D5F41BC74321"
+			tasks: [
+				{
+					count: 1
+					id: "1F6D26D464B999A7"
+					item: {
+						count: 1
+						id: "gtceu:ender_pearl_dust"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					count: 1
+					id: "1D8D736AAAC33FDB"
+					item: {
+						count: 1
+						id: "minecraft:ender_pearl"
+					}
+					type: "item"
+				}
+			]
+			x: 3.5d
+			y: 3.0d
+		}
+		{
+			dependencies: [
+				"08C7DA782BA13103"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:phosphorus_boule"
+			}
+			id: "0444B1B9CCF2B737"
+			tasks: [
+				{
+					count: 1
+					id: "35D0775DB2CA8BBD"
+					item: {
+						count: 1
+						id: "gtceu:phosphorus_boule"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "2885599B490F3234"
+					item: {
+						count: 1
+						id: "gtceu:hv_laser_engraver"
+					}
+					type: "item"
+				}
+			]
+			x: -2.5d
+			y: -5.5d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:implosion_compressor"
+			}
+			id: "44717F43067E0B98"
+			tasks: [
+				{
+					count: 1
+					id: "31F499325B23AA1A"
+					item: {
+						count: 1
+						id: "gtceu:implosion_compressor"
+					}
+					type: "item"
+				}
+			]
+			x: 2.0d
+			y: 3.0d
+		}
+		{
+			dependencies: [
+				"4A3F3437DFC7ABE5"
+				"0841E0F3E7DA1785"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "gtceu:nitric_acid_bucket"
+			}
+			id: "0FA2318EDDC6EC90"
+			tasks: [
+				{
+					count: 1
+					id: "26DEA7FA0B7F2982"
+					item: {
+						count: 1
+						id: "gtceu:nitric_acid_bucket"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "7484920623D2312B"
+					type: "checkmark"
+				}
+			]
+			x: -2.5d
+			y: 7.0d
+		}
+		{
+			dependencies: [
+				"54A73DD3BD21D343"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:smd_transistor"
+			}
+			id: "60DDE4DD9AA992CA"
+			tasks: [
+				{
+					count: 1
+					id: "2B8899C63F1DF1A8"
+					item: {
+						count: 1
+						id: "gtceu:smd_transistor"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "084CC481159B317B"
+					item: {
+						count: 1
+						id: "gtceu:smd_resistor"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "4D5A144396D88F71"
+					item: {
+						count: 1
+						id: "gtceu:smd_capacitor"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "142C875847638CA3"
+					item: {
+						count: 1
+						id: "gtceu:smd_inductor"
+					}
+					type: "item"
+				}
+			]
+			x: 8.0d
+			y: -6.0d
+		}
+		{
+			dependencies: [
+				"60DDE4DD9AA992CA"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:smd_capacitor"
+			}
+			id: "7DA6CF1025153359"
+			tasks: [
+				{
+					count: 1
+					id: "192EF8210385C5AE"
+					item: {
+						count: 1
+						id: "gtceu:smd_diode"
+					}
+					type: "item"
+				}
+			]
+			x: 9.5d
+			y: -6.0d
+		}
+		{
+			dependencies: [
+				"18559C584D4D2089"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:ammonia_bucket"
+			}
+			id: "4A3F3437DFC7ABE5"
+			tasks: [
+				{
+					count: 1
+					id: "2579B01528C8718D"
+					item: {
+						count: 1
+						id: "gtceu:ammonia_bucket"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "68EA35F7C0FC97B9"
+					type: "checkmark"
+				}
+			]
+			x: -2.5d
+			y: 5.0d
+		}
+		{
+			dependencies: [
+				"326094BCCF778B49"
+			]
+			dependency_requirement: "all_started"
+			icon: {
+				count: 1
+				id: "gtceu:hv_mixer"
+			}
+			id: "73C85F0F7531C720"
+			tasks: [
+				{
+					count: 1
+					id: "5C4323DD863ED726"
+					item: {
+						count: 1
+						id: "gtceu:hv_mixer"
+					}
+					type: "item"
+				}
+			]
+			x: 3.5d
+			y: -2.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:blue_alloy_ingot"
+			}
+			id: "5EC4160C4B3475E3"
+			shape: "diamond"
+			tasks: [
+				{
+					count: 1
+					id: "2915EFB0C5E8021C"
+					item: {
+						count: 1
+						id: "gtceu:blue_alloy_ingot"
+					}
+					type: "item"
+				}
+			]
+			x: 1.0d
+			y: -7.5d
+		}
+		{
+			dependencies: [
+				"7F4BA01344B10ECF"
+				"08C7DA782BA13103"
+				"5EC4160C4B3475E3"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:micro_processor_computer"
+			}
+			id: "29CBECDB71C151D7"
+			shape: "octagon"
+			size: 1.5d
+			tasks: [
+				{
+					count: 1
+					id: "3953A2EA04A34AC1"
+					item: {
+						count: 1
+						id: "gtceu:micro_processor_computer"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: -8.5d
+		}
+		{
+			dependencies: [
+				"22F653B8888E16CC"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:hv_machine_hull"
+			}
+			id: "326094BCCF778B49"
+			shape: "gear"
+			size: 3.0d
+			tasks: [
+				{
+					count: 1
+					id: "6D210B9F3A8D8143"
+					item: {
+						count: 1
+						id: "gtceu:hv_machine_hull"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"6EB96826C21AC73A"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:nichrome_ingot"
+			}
+			id: "53C2EC535971A36B"
+			tasks: [
+				{
+					count: 1
+					id: "0D67601626D8819A"
+					item: {
+						count: 1
+						id: "gtceu:nichrome_ingot"
+					}
+					type: "item"
+				}
+			]
+			x: 21.0d
+			y: -5.0d
+		}
+		{
+			dependencies: [
+				"615C6D742F443F43"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:ev_machine_hull"
+			}
+			id: "7702DD7793FFE608"
+			shape: "gear"
+			size: 4.0d
+			tasks: [
+				{
+					count: 1
+					id: "112E711B8A021D64"
+					item: {
+						count: 1
+						id: "gtceu:ev_machine_hull"
+					}
+					type: "item"
+				}
+			]
+			x: 24.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"73C85F0F7531C720"
+				"6EB96826C21AC73A"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:ultimet_ingot"
+			}
+			id: "432641555426039E"
+			tasks: [
+				{
+					count: 1
+					id: "2F4F984951739C62"
+					item: {
+						count: 1
+						id: "gtceu:ultimet_dust"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "76400B8A3339BF0E"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:hv_ultimet_drill)item(gtceu:hv_ultimet_screwdriver)item(gtceu:hv_ultimet_wire_cutter)item(gtceu:hv_ultimet_chainsaw)item(gtceu:hv_ultimet_wrench))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					optional_task: true
+					type: "item"
+				}
+			]
+			x: 3.5d
+			y: -3.0d
+		}
+		{
+			dependencies: [
+				"326094BCCF778B49"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:steam_large_turbine"
+			}
+			id: "36664E69CF201E82"
+			optional: true
+			tasks: [
+				{
+					count: 1
+					id: "16FE2B29F4BAC14F"
+					item: {
+						count: 1
+						id: "gtceu:steam_large_turbine"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "65DAAC03B80297AA"
+					item: {
+						count: 1
+						id: "gtceu:hv_energy_output_hatch"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "3293B541B66605BA"
+					item: {
+						count: 1
+						id: "gtceu:hv_rotor_holder"
+					}
+					type: "item"
+				}
+			]
+			x: -2.5d
+			y: -1.0d
+		}
+	]
+}

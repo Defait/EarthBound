@@ -8,7 +8,7 @@ All tools run with the venv in `tools/.venv` from the repo root, for example
 
 | Tool | What it does |
 |---|---|
-| `smoke.py` | Boots the pack on a headless NeoForge server with a fresh world, runs `/reload`, stops, and triages the logs. Also runs `smoke_checks.js` on the server (e.g. that GregTech's recipe-viewer mixins apply to the pinned JEI). Exit code 1 on a crash, KubeJS error, or unknown error. |
+| `smoke.py` | Boots the pack on a headless NeoForge server with a fresh world, runs `/reload`, stops, and triages the logs. Also runs `smoke_checks.js` on the server (that GregTech's recipe-viewer mixins apply to the pinned JEI, and that every quest item task and FTB Filter System filter in the book loads). Exit code 1 on a crash, KubeJS error, or unknown error. |
 | `startat_test.py` | Checks the `/startat` command on a fresh headless world: the start-point finder for a few real places, then the command itself as a non-op fake player (open water, first use, second use, bad input). Exit code 1 on any failure. |
 | `logtriage.py` | Groups a log's warnings/errors, hides known-harmless ones (`known_issues.json`, each with a reason), and flags what's new since the last run. Default: the Prism client's `latest.log`; `--server` for the test server. |
 | `pregen.py` | Pre-generates a fixed-seed area with Chunky (added to the test server for that run only) and reports chunks/second. `--place LAT,LON` centers it on a real-world spot in TFC: Real World. |
@@ -16,6 +16,8 @@ All tools run with the venv in `tools/.venv` from the repo root, for example
 | `recipes/dump.py` | Dumps every recipe, tag and block loot table from the pack via a dev-only KubeJS script on the test server, into `tools/.data/dumps/`; `index.json` also counts GregTech's ore veins (how many still generate). `--label NAME` to tag a before/after dump. |
 | `recipes/serve.py` | Recipe explorer: how anything is made or used, first route from the world, why something is unreachable, duplicate materials, progression rules (`recipes/progression.json`), and dump comparison. `--world` picks the world used as the starting point. |
 | `quests/build.py` | Builds the FTB Quests book (`config/ftbquests/quests/`) from `quests/route.json`, then checks the route against the progression checker: every quest item exists and is reachable, and no quest comes before its prerequisites. Edit `route.json`, not the generated files. |
+| `quests/pack_query.py` | Quest-writing lookups against the newest dump: an item's name, progression step and recipes (`item`), `search`, `tag`, `uses`. |
+| `quests/port_tfg.py` | Ports TerraFirmaGreg's quests (LGPL-3.0): `fetch` pins its quest files at a commit, `extract` converts them to route.json's quest format with notes on what doesn't carry over, and `merge` applies the per-quest review (`quests/tfg_review/`, brief in `REVIEW.md` there) to `quests/route.json`. After the port, edit `route.json` directly; `merge` is for re-porting. |
 | `gt_update.py` | Reports newer GregTech nightlies (commits in between, dependency check against the pack); `--apply` swaps the pack's pinned build. |
 | `mod_report.py` | Available updates with changelogs, client/server side audit against Modrinth, and license flags for redistribution. |
 

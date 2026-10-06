@@ -1,0 +1,652 @@
+{
+ "chapter": "chemical_elements",
+ "decisions": [
+  {
+   "key": "chemical_elements.q417807f06314e78f",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "Bucket tasks only (NBT fluid filters not allowed); sources checked here (water/salt water electrolysis LV, deuterium centrifuge 20 EU/t, tritium 80 EU/t); dropped the formic acid loop and LuV fusion.",
+   "desc": [
+    "Hydrogen is used in countless GregTech chemical reactions, starting in &7LV&r with hydrochloric acid.\n\nIt can be obtained in &7LV&r in infinite amounts by electrolyzing water, or salt water (the sea will do), which also gives chlorine.\n\nDeuterium and tritium are for collectors: centrifuge hydrogen into deuterium (&7LV&r) and deuterium into tritium (&bMV&r)."
+   ],
+   "tasks": [
+    {
+     "item": "gtceu:hydrogen_bucket"
+    },
+    {
+     "item": "gtceu:deuterium_bucket",
+     "optional": true
+    },
+    {
+     "item": "gtceu:tritium_bucket",
+     "optional": true
+    }
+   ]
+  },
+  {
+   "key": "chemical_elements.q3ee0ae78935a527f",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "No Moon here: helium comes from liquid air (vacuum freezer 480 EU/t, distillation tower 480 EU/t; both controllers need EV circuits); helium-3 by centrifuging helium (80 EU/t). Bucket tasks.",
+   "desc": [
+    "Helium is used in &6HV&r+ to speed up the electric blast furnace, and as liquid helium to cool hot ingots in the vacuum freezer.\n\nIt can be obtained from liquid air: freeze air from a gas collector in the vacuum freezer, then distill it in the distillation tower. Both multiblocks need &5EV&r circuits.\n\nHelium-3 can be obtained by centrifuging helium (&bMV&r)."
+   ],
+   "tasks": [
+    {
+     "item": "gtceu:helium_bucket"
+    },
+    {
+     "item": "gtceu:helium_3_bucket",
+     "optional": true
+    }
+   ]
+  },
+  {
+   "key": "chemical_elements.q3271728cd931477e",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "Tungstate/scheelite are GregTech-only ores (off here); lithium comes from clay electrolysis (60 EU/t: 13 clay dust -> 2 Na, 1 Li, 2 Al, 2 Si). Battery use checked (canner lithium batteries LV/MV/HV).",
+   "desc": [
+    "Lithium is the best electrolyte for &7LV&r, &bMV&r and &6HV&r batteries.\n\nGregTech's ore veins are off here, so lithium comes from clay: electrolyze clay dust (macerated clay) in an &bMV&r electrolyzer for lithium, sodium, aluminium and silicon."
+   ]
+  },
+  {
+   "key": "chemical_elements.q57ba243d35af24f3",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "Fission, heat batteries, FLiBe and ender dust are TFG content; GregTech uses beryllium for ender pearl dust (HV mixer, 480 EU/t). Source: TFC emerald byproduct (macerating/washing crushed emerald ore).",
+   "desc": [
+    "Beryllium is used in &6HV&r to make ender pearl dust, together with potassium and nitrogen.\n\nIt is a byproduct of processing TFC emerald: macerating or washing crushed emerald ore gives beryllium dust."
+   ]
+  },
+  {
+   "key": "chemical_elements.q7b09373f39e86d84",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "Removed AE2/vitrified pearls/lenses; uses checked: borosilicate glass and magnesium diboride (MV superconductor). Borax electrolysis is 60 EU/t (MV); borax dust comes from TFC borax in the macerator.",
+   "desc": [
+    "Boron goes into borosilicate glass and into magnesium diboride, the &bMV&r superconductor.\n\nIt can be obtained in &bMV&r by electrolyzing borax dust, which the macerator makes from TFC borax."
+   ]
+  },
+  {
+   "key": "chemical_elements.q13a2584bfc01606a",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "No diamond electrolysis or oil distillation route checked; carbon comes from coal dust centrifuging (30 EU/t), rubber logs, coke. Carbon fibres also have an LV polyethylene recipe, so no tier given.",
+   "desc": [
+    "Carbon is the base of organic chemistry. It is used in &7LV&r+ to make resistors and later carbon fibres.\n\nIt can be obtained in &7LV&r by centrifuging coal dust (from TFC bituminous coal or lignite) or rubber logs, or by electrolyzing coke dust."
+   ]
+  },
+  {
+   "key": "chemical_elements.q7fb54cb8d9790bae",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "Text holds here (gas collector + air centrifuge are LV); task becomes the bucket (NBT fluid filters not allowed).",
+   "desc": [
+    "Nitrogen is used in &7LV&r+ for countless chemical reactions and to speed up the EBF and pyrolyse oven.\n\nIt can be obtained in &7LV&r in infinite amounts by centrifuging air from a gas collector."
+   ],
+   "tasks": [
+    {
+     "item": "gtceu:nitrogen_bucket"
+    }
+   ]
+  },
+  {
+   "key": "chemical_elements.q23f2473b4f67d79e",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "EBF use is ore roasting, not a speed-up; flint dust -> silicon dioxide (centrifuge) -> electrolysis checked. Bucket task.",
+   "desc": [
+    "Oxygen is used in &7LV&r+ in countless chemical reactions, and in the electric blast furnace to roast sulfide ores.\n\nIt can be obtained in &7LV&r in infinite amounts by centrifuging air or electrolyzing water. Flint dust, centrifuged into silicon dioxide and electrolyzed, gives oxygen and silicon."
+   ],
+   "tasks": [
+    {
+     "item": "gtceu:oxygen_bucket"
+    }
+   ]
+  },
+  {
+   "key": "chemical_elements.q53714898c549f8ca",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "No Moon or bastnasite here; topaz electrolysis (60 EU/t) checked, and TFC topaz exists; biotite (from stone dust) also gives fluorine. Removed \"not infinite\". Bucket task.",
+   "desc": [
+    "Fluorine is used for hydrofluoric acid, and from it polytetrafluoroethylene (PTFE).\n\nIt can be obtained in &bMV&r by electrolyzing topaz dust (from TFC topaz), or biotite dust, which the centrifuge separates from stone dust."
+   ],
+   "tasks": [
+    {
+     "item": "gtceu:fluorine_bucket"
+    }
+   ]
+  },
+  {
+   "key": "chemical_elements.q6ddb5ac172f50249",
+   "action": "drop",
+   "reason": "No source here: GregTech makes neon only from Nether air (TFG: Mars air); no Nether access, no space."
+  },
+  {
+   "key": "chemical_elements.q3b9db7067b45c465",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "Salt water electrolysis gives sodium hydroxide, not sodium; sodium comes from salt dust electrolysis (30 EU/t) (TFC halite -> GregTech salt). Uses checked: sodium batteries LV-HV, sodium-potassium in the HV energy hatch.",
+   "desc": [
+    "Sodium is a subpar &7LV&r to &6HV&r battery electrolyte, and with potassium it makes sodium-potassium, which &6HV&r+ energy hatches are made with.\n\nIt can be obtained in &7LV&r by electrolyzing salt dust, which comes from processing TFC halite ore."
+   ]
+  },
+  {
+   "key": "chemical_elements.q052ee4adb19956d5",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "Obsidian/EV magnalium turbine claims replaced with checked sources (hematite refined-ore byproduct, magnesia electrolysis 30 EU/t) and uses (MgB2 at 480 EU/t, magnalium, titanium tetrachloride reduction in the EBF).",
+   "desc": [
+    "Magnesium is used in &6HV&r to make magnesium diboride, the &bMV&r superconductor, and to reduce titanium tetrachloride to titanium in the electric blast furnace. It also makes magnalium with aluminium.\n\nIt can be obtained in &7LV&r as a byproduct of TFC hematite (macerating refined hematite ore) and by electrolyzing magnesia, which centrifuging lava (&bMV&r) gives."
+   ]
+  },
+  {
+   "key": "chemical_elements.q4a6e870ab234e8be",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "No bauxite veins, Moon ore or dusty raw ores here; checked: sapphire electrolysis 30 EU/t, ruby and clay 60 EU/t, sapphire/emerald byproducts; EBF 1700 K at 120 EU/t; MV casing is aluminium plates.",
+   "desc": [
+    "Aluminium is the base material of &bMV&r: its machine casings are aluminium plates. Smelt the dust in the electric blast furnace (1700 K, &bMV&r power).\n\nGregTech's ore veins are off here. Aluminium can be obtained in &7LV&r by electrolyzing sapphire dust (from TFC sapphire) and as a byproduct of processing TFC sapphire and emerald, and in &bMV&r by electrolyzing ruby or clay dust."
+   ]
+  },
+  {
+   "key": "chemical_elements.q081a57061c64f14f",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "Removed AE2 processors; uses checked (silicone rubber via polydimethylsiloxane, silicon boules need gallium arsenide); flint -> silicon dioxide -> silicon both 30 EU/t. \"Infinite\" cut (flint is not infinite in TFC).",
+   "desc": [
+    "Silicon is used to make silicone rubber and, in the electric blast furnace with a pinch of gallium arsenide, the silicon boules that wafers and chips are cut from.\n\nIt can be obtained in &7LV&r: centrifuge flint dust into silicon dioxide, then electrolyze it."
+   ]
+  },
+  {
+   "key": "chemical_elements.q1b7ebe6dcbcc20bb",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "Apatite and dusty raw tricalcium phosphate don't exist here; phosphorus comes from tricalcium phosphate (pyrite byproduct) -> centrifuge (calcium + phosphate) -> phosphate electrolysis, all LV.",
+   "desc": [
+    "Phosphorus is a plant nutrient. It is used to make manganese phosphide, the &7LV&r superconductor, and later phosphorus-doped silicon boules.\n\nIt can be obtained in &7LV&r from tricalcium phosphate, a byproduct of processing TFC pyrite: centrifuge it into calcium and phosphate, then electrolyze the phosphate."
+   ]
+  },
+  {
+   "key": "chemical_elements.q2c697389e4aa2b58",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "No oil distillation needed: TFC sulfur and pyrite go through the macerator (design.md), byproducts of cinnabar/gypsum, sphalerite electrolysis. Sulfuric acid is a 7 EU/t chemical reactor chain (LV).",
+   "desc": [
+    "Sulfur is used from the steam age on to vulcanize rubber, and in &7LV&r+ to make sulfuric acid.\n\nIt can be obtained from TFC sulfur and pyrite ores, and as a byproduct of cinnabar, gypsum and sphalerite: electrolyzing sphalerite dust gives zinc and sulfur."
+   ]
+  },
+  {
+   "key": "chemical_elements.q506be6495ccf841d",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "Hydrochloric acid is LV here (chemical reactor 7 EU/t); TFC sea water counts as salt water for the electrolyzer; salt and rock salt (TFC halite, sylvite) also electrolyze into chlorine. Bucket task.",
+   "desc": [
+    "Chlorine is used in &7LV&r+ to make hydrochloric acid, and in many later chemical chains.\n\nIt can be obtained in &7LV&r in infinite amounts by electrolyzing salt water (the sea is salt water), or from salt and rock salt dust (TFC halite and sylvite)."
+   ],
+   "tasks": [
+    {
+     "item": "gtceu:chlorine_bucket"
+    }
+   ]
+  },
+  {
+   "key": "chemical_elements.q75c2af14caef3875",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "No Moon; argon only from liquid air distillation here (distillation tower 480 EU/t, controller needs EV circuits). Bucket task.",
+   "desc": [
+    "Argon is used to speed up the electric blast furnace for many high-tier alloys.\n\nIt can be obtained from liquid air in the distillation tower, like helium. The vacuum freezer and the distillation tower both need &5EV&r circuits."
+   ],
+   "tasks": [
+    {
+     "item": "gtceu:argon_bucket"
+    }
+   ]
+  },
+  {
+   "key": "chemical_elements.q461ed2281995badb",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "Polybenzimidazole and MV saltpeter claims replaced: rock salt electrolysis (30 EU/t, TFC sylvite) and saltpeter byproducts are LV; uses checked (ender pearl dust, sodium-potassium). Potassium is a TFC crop nutrient.",
+   "desc": [
+    "Potassium is a plant nutrient. It is used in &6HV&r to make ender pearl dust, and with sodium it makes sodium-potassium, which &6HV&r+ energy hatches are made with.\n\nIt can be obtained in &7LV&r by electrolyzing rock salt dust (from TFC sylvite) and as a byproduct of processing TFC saltpeter."
+   ]
+  },
+  {
+   "key": "chemical_elements.q3771ac87a526185b",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "Dusty raw tricalcium phosphate doesn't exist here; bone meal electrolysis (26 EU/t) checked, gypsum/hematite byproducts. Calcium isn't a TFC nutrient, so \"plant nutrient\" became the fertilizer recipes.",
+   "desc": [
+    "Calcium is used in &6HV&r to make mercury barium calcium cuprate, the &6HV&r superconductor, and in GregTech's fertilizer recipes.\n\nIt can be obtained in &7LV&r in infinite amounts by electrolyzing bone meal, and as a byproduct of TFC gypsum and hematite."
+   ]
+  },
+  {
+   "key": "chemical_elements.q4aeb8d209c70660a",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "No ilmenite/bauxite veins or Moon: checked chain stone dust -> metal mixture (MV 120 EU/t) -> ilmenite/bauxite (EV 900 EU/t) -> rutile (EBF / bauxite electrolysis) -> TiCl4 (480 EU/t) -> EBF with magnesium -> vacuum freezer.",
+   "desc": [
+    "Titanium is the base material of &5EV&r: its machine casings are titanium plates.\n\nGregTech's ore veins are off here. Centrifuge stone dust (left over from washing ores) into metal mixture, then centrifuge that in &5EV&r for ilmenite and bauxite. Ilmenite with carbon in the electric blast furnace, or electrolyzed bauxite, gives rutile; a chemical reactor turns rutile, carbon and chlorine into titanium tetrachloride, and the electric blast furnace reduces that with magnesium. Cool the hot ingot in the vacuum freezer."
+   ]
+  },
+  {
+   "key": "chemical_elements.q227a966dca13a941",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "Vanadium magnetite is a GregTech-only ore; the only source here is the 2% vanadium from ruby/sapphire slurry (aqua regia + crushed ore in a 1920 EU/t mixer, then a 480 EU/t centrifuge). Icon was a Vintage Improvements item.",
+   "desc": [
+    "Vanadium is used to make vanadium steel, which the &bMV&r cutter's buzzsaw blade is made of, and vanadium-gallium.\n\nGregTech's ore veins are off here. Vanadium is a rare byproduct of ruby and sapphire slurry: mix crushed TFC ruby or sapphire ore with aqua regia (&5EV&r mixer) and centrifuge the slurry."
+   ],
+   "icon": "gtceu:vanadium_ingot"
+  },
+  {
+   "key": "chemical_elements.q4dfbf867874cbfa8",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "Chromite and ruby slurry replaced by the checked LV route (TFC ruby byproduct) and ruby electrolysis (60 EU/t); uses checked (stainless steel = HV casing, nichrome, kanthal). EBF 1700 K.",
+   "desc": [
+    "Chromium is used in &6HV&r+ to make stainless steel (the base material of &6HV&r) and in nichrome and kanthal for heating coils.\n\nIt can be obtained in &7LV&r as a byproduct of processing TFC ruby, or by electrolyzing ruby dust (&bMV&r). Smelt it in the electric blast furnace."
+   ]
+  },
+  {
+   "key": "chemical_elements.q6252be28a5c23283",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "Pyrolusite is GregTech-only here (metal mixture, EV); checked MV routes: tantalite (lava centrifuge 80 EU/t) and spessartine (red garnet from TFC ruby) electrolysis at 60 EU/t.",
+   "desc": [
+    "Manganese is used in &6HV&r+ to make stainless steel, and in manganese phosphide, the &7LV&r superconductor.\n\nGregTech's ore veins are off here. Manganese can be obtained in &bMV&r by electrolyzing tantalite (centrifuged from lava) or spessartine (centrifuged from red garnet, a byproduct of TFC ruby)."
+   ]
+  },
+  {
+   "key": "chemical_elements.q1afafb838e3c036e",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "minecraft:iron_ingot is unified onto TFC wrought iron here; task and text follow the pack's iron rules (bloomery only, cast iron otherwise, steel only from pig iron). TFG's ore list and dusty raw goethite removed.",
+   "desc": [
+    "Iron is the metal of TFC's iron age, and steel is the base material of &7LV&r.\n\nIn this pack iron means TFC wrought iron: smelt TFC hematite, magnetite or limonite in a bloomery and work the bloom on an anvil. Iron melted or smelted anywhere else becomes cast iron, and steel comes only from pig iron (TFC blast furnace)."
+   ],
+   "tasks": [
+    {
+     "item": "tfc:metal/ingot/wrought_iron"
+    }
+   ],
+   "icon": "tfc:metal/ingot/wrought_iron"
+  },
+  {
+   "key": "chemical_elements.q0cf1250c10714990",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "Cobaltite is GregTech-only; cobalt is a byproduct of TFC native copper (crushed copper ore). Cobalt brass checked (mixer: brass + aluminium + cobalt; its buzzsaw blade is in the LV cutter). Item pipe claim cut.",
+   "desc": [
+    "Cobalt is used in &7LV&r to make cobalt brass (brass, aluminium and cobalt in the mixer), whose buzzsaw blade goes into the &7LV&r cutter, and later in various alloys.\n\nIt can be obtained as a byproduct of processing TFC native copper: macerating or washing crushed copper ore."
+   ]
+  },
+  {
+   "key": "chemical_elements.q09c0951651cbe65f",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "Pentlandite is GregTech-only; TFC garnierite is the source. Uses checked (TFC black steel, invar EBF casing, cupronickel coils).",
+   "desc": [
+    "Nickel goes into TFC's black steel, and in GregTech into invar (the electric blast furnace's casings), cupronickel (its first coils), nichrome, stainless steel and many other alloys.\n\nIt can be obtained from TFC garnierite."
+   ],
+   "icon": "tfc:metal/ingot/nickel"
+  },
+  {
+   "key": "chemical_elements.q0537eb5ae0bd3b83",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "TFG's ore list and dusty raw goethite replaced with TFC's copper ores; \"Metallurgy Age\" is TFG's era name.",
+   "desc": [
+    "Copper is TFC's first metal. In GregTech, copper wires, fine wires and foil go into circuit boards and electronic components from &7LV&r on.\n\nIt can be obtained from TFC native copper, malachite and tetrahedrite."
+   ],
+   "icon": "tfc:metal/ingot/copper"
+  },
+  {
+   "key": "chemical_elements.q16c019f81fc5a87a",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "Heat pipe casings are TFG content; inductors use nickel-zinc ferrite rings (checked). Brass gates Create's airships here.",
+   "desc": [
+    "Zinc is used in the bronze age for brass (Create's brass, and with it airships) and bismuth bronze, and later in nickel-zinc ferrite for inductors.\n\nIt can be obtained from TFC sphalerite."
+   ],
+   "icon": "tfc:metal/ingot/zinc"
+  },
+  {
+   "key": "chemical_elements.q508e7521e49f115a",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "No bauxite here; sphalerite byproduct and sphalerite electrolysis (30 EU/t) checked.",
+   "desc": [
+    "Gallium is used to make gallium arsenide for silicon boules and diodes.\n\nIt can be obtained in &7LV&r as a byproduct of processing TFC sphalerite, or by electrolyzing sphalerite dust."
+   ]
+  },
+  {
+   "key": "chemical_elements.q4e78b7bf08dd5137",
+   "action": "drop",
+   "reason": "No source here: GregTech gets arsenic only from cobaltite and realgar (GregTech-only ores, off) or from compounds that already contain it. Note for the pack: gallium arsenide (diodes, silicon boules) needs it, so MV circuits are currently unreachable."
+  },
+  {
+   "key": "chemical_elements.q45fd8cc0cc0cabff",
+   "action": "drop",
+   "reason": "Nothing in the pack produces bromine; TFG's text is about its own Venus content."
+  },
+  {
+   "key": "chemical_elements.q45fd8cc0cc0cab6f",
+   "action": "drop",
+   "reason": "No source here: only from liquid Ender air (the End) in GregTech, Mars air in TFG."
+  },
+  {
+   "key": "chemical_elements.q6018eab73b9d5b5d",
+   "action": "drop",
+   "reason": "No source here: rare earth processing needs GregTech-only ores (monazite, bastnasite)."
+  },
+  {
+   "key": "chemical_elements.q43b837b54e9ba726",
+   "action": "drop",
+   "reason": "gtceu:zirconium_ingot doesn't exist in this pack (TFG material); TFG lists it as unused."
+  },
+  {
+   "key": "chemical_elements.q6370608efca7a482",
+   "action": "drop",
+   "reason": "No source here: pyrochlore/columbite are GregTech-only ores and ilmenite slag has no route."
+  },
+  {
+   "key": "chemical_elements.q5dbe8c4d8c1c34c3",
+   "action": "drop",
+   "reason": "No source here: molybdenite, powellite and wulfenite are GregTech-only ores."
+  },
+  {
+   "key": "chemical_elements.q5ed5d1204e674c5b",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "Platinum line checked: PGS from purified tetrahedrite + nitric acid (30 EU/t), PGS + aqua regia centrifuge (480 EU/t), inert metal mixture + sulfuric acid (1920 EU/t) -> ruthenium tetroxide; + carbon (120 EU/t). Uses: RTM alloy coils and ruridit.",
+   "desc": [
+    "Ruthenium is used in RTM alloy, for heating coils, and in ruridit.\n\nIt comes from GregTech's platinum line: a chemical reactor turns purified TFC tetrahedrite ore and nitric acid into platinum group sludge, and centrifuging the sludge with aqua regia (&6HV&r) gives inert metal mixture. A chemical reactor (&5EV&r) splits that with sulfuric acid into rhodium sulfate and ruthenium tetroxide, and ruthenium tetroxide with carbon gives ruthenium."
+   ]
+  },
+  {
+   "key": "chemical_elements.q7382cf8ac2faa612",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "Rhodium from the EV inert metal mixture step (rhodium sulfate electrolysis, 120 EU/t). Use (rhodium-plated palladium, LuV) kept as a fact.",
+   "desc": [
+    "Rhodium is used to make rhodium-plated palladium, the base material of &dLuV&r.\n\nIt comes from the platinum line (see ruthenium): electrolyze the rhodium sulfate split from inert metal mixture (&5EV&r)."
+   ]
+  },
+  {
+   "key": "chemical_elements.q330da2570b63b70c",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "No platinum/cooperite ore to wash here; raw palladium from the PGS centrifuge (480 EU/t) + hydrochloric acid in a chemical reactor (120 EU/t) checked.",
+   "desc": [
+    "Palladium is used to make rhodium-plated palladium, the base material of &dLuV&r.\n\nIt comes from GregTech's platinum line: a chemical reactor turns purified TFC tetrahedrite ore and nitric acid into platinum group sludge, and centrifuging the sludge with aqua regia (&6HV&r) gives raw palladium dust, which a chemical reactor turns into palladium with hydrochloric acid."
+   ]
+  },
+  {
+   "key": "chemical_elements.q6c59cd0d4b7c0224",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "Blue alloy and dusty raw silver are TFG/Nether content; HV motor silver cables and electrum checked; TFC sterling silver.",
+   "desc": [
+    "Silver is used in the bronze age for TFC's sterling silver, and in GregTech for electrum and the silver cables of &6HV&r motors.\n\nIt can be obtained from TFC native silver."
+   ],
+   "icon": "tfc:metal/ingot/silver"
+  },
+  {
+   "key": "chemical_elements.q038ec8e07ad71956",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "Rare earth route removed; tetrahedrite + sodium persulfate chemical bath (70% cadmium) and refined sphalerite/tetrahedrite byproducts checked; cadmium batteries LV-HV in the canner.",
+   "desc": [
+    "Cadmium is a subpar &7LV&r to &6HV&r battery electrolyte.\n\nIt can be obtained as a byproduct of washing crushed TFC tetrahedrite with sodium persulfate in the chemical bath, or of macerating refined sphalerite or tetrahedrite ore."
+   ]
+  },
+  {
+   "key": "chemical_elements.q109d9795eb0d36a3",
+   "action": "drop",
+   "reason": "No source here: GregTech's indium line needs purified galena (GregTech-only ore) together with sphalerite; the other route is the fusion reactor."
+  },
+  {
+   "key": "chemical_elements.q74f9429b68cbdb9e",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "gtceu:tin_ingot is unified onto TFC tin here, so the task is the TFC ingot; TFG's biome hint and dusty raw cassiterite removed; tin cables are LV (checked in the LV machines).",
+   "desc": [
+    "Tin is used in the bronze age to make bronze, and in GregTech for soldering alloy and the tin cables of &7LV&r.\n\nIt can be obtained from TFC cassiterite."
+   ],
+   "tasks": [
+    {
+     "item": "tfc:metal/ingot/tin"
+    }
+   ],
+   "icon": "tfc:metal/ingot/tin"
+  },
+  {
+   "key": "chemical_elements.q376e58ed64e29244",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "Stibnite is a GregTech-only ore; antimony is a byproduct of TFC tetrahedrite (impure tetrahedrite dust centrifuge). Battery alloy and soldering alloy checked.",
+   "desc": [
+    "Antimony is used in &7LV&r to make battery alloy and soldering alloy.\n\nIt can be obtained as a byproduct of processing TFC tetrahedrite."
+   ]
+  },
+  {
+   "key": "chemical_elements.q0e79476b04fe4dff",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "Warpane/crimsene/bromine are TFG content; GregTech's chemical reactor makes iodine from a dried kelp block (here: nine TFC dried kelp or dried seaweed), hydrogen and hydrogen peroxide (240 EU/t, HV). Only use: potassium iodide.",
+   "desc": [
+    "Iodine has little use in GregTech (potassium iodide); it is here for the set.\n\nIt can be obtained in &6HV&r: a chemical reactor makes it from a dried kelp block, hydrogen and hydrogen peroxide. Craft the block from nine TFC dried kelp or dried seaweed (dry fresh seaweed by a fire)."
+   ]
+  },
+  {
+   "key": "chemical_elements.q315dfeecdca0182a",
+   "action": "drop",
+   "reason": "No source here: only from liquid Ender air (the End) in GregTech, Mars air in TFG."
+  },
+  {
+   "key": "chemical_elements.q754bd4898ea2e32d",
+   "action": "drop",
+   "reason": "No source here: pollucite and lepidolite are GregTech-only ores; caesium-137 (TFG) isn't in the pack."
+  },
+  {
+   "key": "chemical_elements.q754bd4898ea2e32c",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "Barite is a GregTech-only ore here; checked route: stone dust -> metal mixture (MV) -> barite (EV centrifuge, 900 EU/t) -> electrolysis (60 EU/t). Uses: HV superconductor.",
+   "desc": [
+    "Barium is used in &6HV&r to make mercury barium calcium cuprate, the &6HV&r superconductor.\n\nGregTech's ore veins are off here. Centrifuge stone dust into metal mixture, centrifuge that in &5EV&r for barite, and electrolyze the barite."
+   ]
+  },
+  {
+   "key": "chemical_elements.q29c3462efe0f4921",
+   "action": "drop",
+   "reason": "No source here: rare earth processing needs GregTech-only ores (monazite, bastnasite)."
+  },
+  {
+   "key": "chemical_elements.q651b779d02d74f5d",
+   "action": "drop",
+   "reason": "No source here: rare earth and bastnasite are GregTech-only ores."
+  },
+  {
+   "key": "chemical_elements.q59dede9d49bf6be8",
+   "action": "drop",
+   "reason": "No source here: rare earth and bastnasite/monazite are GregTech-only ores. Note for the pack: EV and IV electric motors need magnetic neodymium rods."
+  },
+  {
+   "key": "chemical_elements.q02b800af538538c8",
+   "action": "drop",
+   "reason": "No source here: rare earth and monazite are GregTech-only ores."
+  },
+  {
+   "key": "chemical_elements.q23d55e8a38f45779",
+   "action": "drop",
+   "reason": "No source here: fusion of neodymium (which has no source) and hydrogen."
+  },
+  {
+   "key": "chemical_elements.q67361686c18ab4e6",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "Tantalite is a GregTech-only ore here; checked: lava centrifuge (80 EU/t) gives 1.25% tantalite, tantalite electrolysis (60 EU/t) gives tantalum and manganese. Uses: tantalum capacitors, tantalum SMD resistors.",
+   "desc": [
+    "Tantalum is used to make tantalum capacitors and SMD resistors.\n\nGregTech's ore veins are off here. Centrifuge lava (&bMV&r) for a little tantalite, then electrolyze the tantalite for tantalum and manganese."
+   ]
+  },
+  {
+   "key": "chemical_elements.q5987b2fd290054b3",
+   "action": "drop",
+   "reason": "No source here: scheelite and tungstate are GregTech-only ores (End stone is out of reach too)."
+  },
+  {
+   "key": "chemical_elements.q61ffbbfccb38c478",
+   "action": "drop",
+   "reason": "gtceu:rhenium_dust doesn't exist in this pack (TFG material)."
+  },
+  {
+   "key": "chemical_elements.q66827d3183133eb8",
+   "action": "drop",
+   "reason": "Only from the platinum line's IV steps (osmium tetroxide) or LuV alloys; IV machines are built from tungstensteel, and tungsten has no source here."
+  },
+  {
+   "key": "chemical_elements.q0089869fbff4bb2e",
+   "action": "drop",
+   "reason": "Only from the platinum line's IV steps (iridium chloride) or LuV alloys; IV machines are built from tungstensteel, and tungsten has no source here."
+  },
+  {
+   "key": "chemical_elements.q5bf3a1d8b66162c2",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "No nickel ore to bathe in mercury (garnierite isn't GregTech nickel ore); raw platinum from the PGS centrifuge (480 EU/t) electrolyzed (120 EU/t) checked. Uses kept to checked ones.",
+   "desc": [
+    "Platinum is a high-tier GregTech metal: platinum cables and uranium triplatinum, the &5EV&r superconductor.\n\nIt comes from GregTech's platinum line: a chemical reactor turns purified TFC tetrahedrite ore and nitric acid into platinum group sludge, and centrifuging the sludge with aqua regia (&6HV&r) gives raw platinum dust, which an electrolyzer splits into platinum."
+   ]
+  },
+  {
+   "key": "chemical_elements.q46576f512686b6f2",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "Nano circuits and dusty raw gold removed; uses checked (TFC rose gold, electrum, HV gold cables).",
+   "desc": [
+    "Gold is used in the bronze age for TFC's rose gold, and in GregTech for electrum and the gold cables of &6HV&r.\n\nIt can be obtained from TFC native gold."
+   ],
+   "icon": "tfc:metal/ingot/gold"
+  },
+  {
+   "key": "chemical_elements.q7c23e33a844d9df0",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "TFC cinnabar is the source (cinnabar centrifuge 30 EU/t); TFG's volcanic-biome redstone hint removed. Bucket task.",
+   "desc": [
+    "Mercury is used in &7LV&r+ in the chemical bath to wash ores for extra byproducts, and in the &6HV&r superconductor.\n\nIt can be obtained in &7LV&r by centrifuging cinnabar dust (from TFC cinnabar) or redstone."
+   ],
+   "tasks": [
+    {
+     "item": "gtceu:mercury_bucket"
+    }
+   ]
+  },
+  {
+   "key": "chemical_elements.q4529f4271c78317c",
+   "action": "drop",
+   "reason": "gtceu:thallium_dust doesn't exist in this pack (TFG material)."
+  },
+  {
+   "key": "chemical_elements.q4d0e732c63bbee02",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "Galena (lead ore) is GregTech-only; lead is a byproduct of TFC native silver here. Ammo (TACZ), ULV hulls and atomic casings removed; soldering and battery alloy checked.",
+   "desc": [
+    "Lead is used in &7LV&r+ to make soldering alloy and battery alloy.\n\nGregTech's ore veins are off here, so lead is a byproduct of TFC native silver: macerating or washing crushed silver ore gives lead dust."
+   ]
+  },
+  {
+   "key": "chemical_elements.q31e5166cd1acf135",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "Tungsten bismuth oxide composite is TFG content; TFC bismuthinite goes straight to bismuth dust in the macerator (ore_processing.js).",
+   "desc": [
+    "Bismuth is used in the bronze age to make bismuth bronze.\n\nIt can be obtained from TFC bismuthinite; GregTech's macerator grinds it straight into bismuth dust."
+   ],
+   "icon": "tfc:metal/ingot/bismuth"
+  },
+  {
+   "key": "chemical_elements.q26ccd7e7de2b4547",
+   "action": "drop",
+   "reason": "No source here: only from the fusion reactor or liquid Ender air (TFG: Mars fission line)."
+  },
+  {
+   "key": "chemical_elements.thorium",
+   "action": "edit",
+   "chapter": "elements",
+   "reason": "thorium_232/230 are TFG items; GregTech's thorium dust is a 1.5% byproduct of macerating deepslate, and Woodencog compacts four TFC loose slate into deepslate. No real use in GregTech (fission is TFG).",
+   "desc": [
+    "Thorium has little use in GregTech; it is here for the set.\n\nGregTech's ore veins are off here, but macerating deepslate has a small chance to give thorium dust. TFC worlds have no deepslate: compact four TFC loose slate rocks into deepslate with a mechanical press over a basin."
+   ],
+   "tasks": [
+    {
+     "item": "gtceu:thorium_dust"
+    }
+   ],
+   "icon": "gtceu:thorium_ingot"
+  },
+  {
+   "key": "chemical_elements.uranium",
+   "action": "drop",
+   "reason": "gtceu:uranium_dust doesn't exist here; uranium-238/235 only come from GregTech-only ores (uraninite, pitchblende) or the fusion reactor."
+  },
+  {
+   "key": "chemical_elements.q439c31850df0b983",
+   "action": "drop",
+   "reason": "gtceu:neptunium_237_dust doesn't exist in this pack (TFG fission)."
+  },
+  {
+   "key": "chemical_elements.plutonium",
+   "action": "drop",
+   "reason": "gtceu:plutonium_dust doesn't exist here; plutonium-239/241 only come from uranium (no source) or the fusion reactor."
+  },
+  {
+   "key": "chemical_elements.americium",
+   "action": "drop",
+   "reason": "gtceu:americium_241_dust doesn't exist here; americium is only made in the fusion reactor (LuV+), far beyond this pack's GregTech range: IV machines already need tungstensteel and tungsten has no source here."
+  },
+  {
+   "key": "chemical_elements.q1b5846eafa1dfd2f",
+   "action": "drop",
+   "reason": "Lutetium is only made in the fusion reactor (LuV+), far beyond this pack's GregTech range: IV machines already need tungstensteel and tungsten has no source here (and needs lanthanum, which has no source)."
+  },
+  {
+   "key": "chemical_elements.q46a3048bba303a6f",
+   "action": "drop",
+   "reason": "Darmstadtium is only made in the fusion reactor (LuV+), far beyond this pack's GregTech range: IV machines already need tungstensteel and tungsten has no source here (and needs arsenic, which has no source)."
+  },
+  {
+   "key": "chemical_elements.q3bfca913579f56dd",
+   "action": "drop",
+   "reason": "Tritanium is only made in the fusion reactor (LuV+), far beyond this pack's GregTech range: IV machines already need tungstensteel and tungsten has no source here."
+  },
+  {
+   "key": "chemical_elements.q1ed10c267196e4a1",
+   "action": "drop",
+   "reason": "Duranium is only made in the fusion reactor (LuV+), far beyond this pack's GregTech range: IV machines already need tungstensteel and tungsten has no source here."
+  },
+  {
+   "key": "chemical_elements.q07dad6e1b2c3d4e5",
+   "action": "drop",
+   "reason": "No source here: comes from naquadah, a GregTech-only ore (TFG: Ostrum linear accelerator)."
+  },
+  {
+   "key": "chemical_elements.q29fcf803d4e5f6a7",
+   "action": "drop",
+   "reason": "No source here: naquadah is a GregTech-only ore (TFG: Ostrum linear accelerator, Mercury)."
+  },
+  {
+   "key": "chemical_elements.q4b1e1a25f6a7b8c9",
+   "action": "drop",
+   "reason": "Neutronium is only made in the fusion reactor (LuV+), far beyond this pack's GregTech range: IV machines already need tungstensteel and tungsten has no source here (and needs americium and naquadria, which have no source)."
+  }
+ ]
+}

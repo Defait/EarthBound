@@ -8,7 +8,7 @@
 		id: "gtceu:lv_machine_hull"
 	}
 	id: "041BA3786BB55BC5"
-	order_index: 6
+	order_index: 7
 	quest_links: [ ]
 	quests: [
 		{
@@ -34,7 +34,7 @@
 				}
 			]
 			x: 0.0d
-			y: -0.875d
+			y: -6.125d
 		}
 		{
 			dependencies: [
@@ -58,7 +58,7 @@
 				}
 			]
 			x: 0.0d
-			y: 0.875d
+			y: -4.375d
 		}
 		{
 			dependencies: [
@@ -141,7 +141,7 @@
 				}
 			]
 			x: 2.0d
-			y: 1.75d
+			y: -7.0d
 		}
 		{
 			dependencies: [
@@ -166,7 +166,7 @@
 				}
 			]
 			x: 4.0d
-			y: -0.875d
+			y: 1.75d
 		}
 		{
 			dependencies: [
@@ -192,7 +192,1468 @@
 				}
 			]
 			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"0921EDF6053EBE28"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:potin_normal_fluid_pipe"
+			}
+			id: "53FBD2DECB32F26A"
+			optional: true
+			shape: "heart"
+			tasks: [
+				{
+					count: 1
+					id: "56ED5C5DA1B5AB54"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:potin_tiny_fluid_pipe)item(gtceu:potin_small_fluid_pipe)item(gtceu:potin_normal_fluid_pipe)item(gtceu:potin_large_fluid_pipe)item(gtceu:potin_huge_fluid_pipe)item(gtceu:potin_quadruple_fluid_pipe)item(gtceu:potin_nonuple_fluid_pipe))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: -2.625d
+		}
+		{
+			dependencies: [
+				"53FBD2DECB32F26A"
+				"7A75798DC8627620"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "gtceu:steam_grinder"
+			}
+			id: "2EB449E77D3A9658"
+			optional: true
+			shape: "heart"
+			tasks: [
+				{
+					count: 1
+					id: "7BFB726B32952F3A"
+					item: {
+						count: 1
+						id: "gtceu:steam_grinder"
+					}
+					type: "item"
+				}
+				{
+					count: 22
+					id: "1A997578D9509118"
+					item: {
+						count: 1
+						id: "gtceu:steam_machine_casing"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "36FDE15E1639D504"
+					item: {
+						count: 1
+						id: "gtceu:steam_input_hatch"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "1B20F38189E6C49F"
+					item: {
+						count: 1
+						id: "gtceu:steam_input_bus"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "7315E1605CE81E3E"
+					item: {
+						count: 1
+						id: "gtceu:steam_output_bus"
+					}
+					type: "item"
+				}
+			]
+			x: 2.0d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"70D4CDC5438ED00B"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lv_super_chest"
+			}
+			id: "51073AB9BEAC50AD"
+			tasks: [
+				{
+					count: 1
+					id: "2811E46F3271E533"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:lv_super_chest)item(gtceu:mv_super_chest)item(gtceu:hv_super_chest)item(gtceu:ev_super_chest)item(gtceu:iv_quantum_chest)item(gtceu:luv_quantum_chest)item(gtceu:zpm_quantum_chest)item(gtceu:uv_quantum_chest)item(gtceu:uhv_quantum_chest)item(gtceu:lv_super_tank)item(gtceu:mv_super_tank)item(gtceu:hv_super_tank)item(gtceu:ev_super_tank)item(gtceu:iv_quantum_tank)item(gtceu:luv_quantum_tank)item(gtceu:zpm_quantum_tank)item(gtceu:uv_quantum_tank)item(gtceu:uhv_quantum_tank))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: -7.0d
+		}
+		{
+			dependencies: [
+				"2FEA213C7927F27F"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lv_fluid_regulator"
+			}
+			id: "45D61D76A472A3EE"
+			optional: true
+			shape: "square"
+			tasks: [
+				{
+					count: 1
+					id: "0273D06A21E03B19"
+					item: {
+						count: 1
+						id: "gtceu:lv_fluid_regulator"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: 5.25d
+		}
+		{
+			dependencies: [
+				"2FEA213C7927F27F"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lv_robot_arm"
+			}
+			id: "51536FE961408316"
+			shape: "square"
+			tasks: [
+				{
+					count: 1
+					id: "1C8031DCDC7D5830"
+					item: {
+						count: 1
+						id: "gtceu:lv_robot_arm"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: 7.0d
+		}
+		{
+			dependencies: [
+				"2399E4EF4131F58E"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lv_conveyor_module"
+			}
+			id: "60E2DB6C3FFBF19B"
+			shape: "square"
+			tasks: [
+				{
+					count: 1
+					id: "11E81112C9D350B0"
+					item: {
+						count: 1
+						id: "gtceu:lv_conveyor_module"
+					}
+					type: "item"
+				}
+			]
+			x: 2.0d
+			y: 1.75d
+		}
+		{
+			dependencies: [
+				"50EAC77686C8619B"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:tin_quadruple_cable"
+			}
+			id: "3C0FD7A40911ACF4"
+			optional: true
+			shape: "heart"
+			tasks: [
+				{
+					count: 4
+					id: "5EB2B607D250193D"
+					item: {
+						count: 1
+						id: "gtceu:tin_quadruple_cable"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: -5.25d
+		}
+		{
+			dependencies: [
+				"63833F5CEF1EE62B"
+				"69563131D6E8644E"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "gtceu:aluminium_ingot"
+			}
+			id: "30E3D476C0CDB561"
+			shape: "octagon"
+			size: 2.0d
+			tasks: [
+				{
+					count: 1
+					id: "2B98E2D8CD539E75"
+					item: {
+						count: 1
+						id: "gtceu:aluminium_ingot"
+					}
+					type: "item"
+				}
+			]
+			x: 8.0d
+			y: -0.875d
+		}
+		{
+			dependencies: [
+				"627BF49FE6F099D7"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "gtceu:battery_alloy_ingot"
+			}
+			id: "34D2518FB05ACB0A"
+			tasks: [
+				{
+					count: 1
+					id: "7FCA1BAD2C39122F"
+					item: {
+						count: 1
+						id: "gtceu:lv_battery_hull"
+					}
+					type: "item"
+				}
+				{
+					count: 2
+					id: "0C0C1211D829162C"
+					item: {
+						count: 1
+						id: "gtceu:battery_alloy_plate"
+					}
+					type: "item"
+				}
+			]
+			x: 8.0d
+			y: 4.375d
+		}
+		{
+			dependencies: [
+				"60E2DB6C3FFBF19B"
+				"2FEA213C7927F27F"
+				"45D61D76A472A3EE"
+				"51536FE961408316"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "gtceu:storage_cover"
+			}
+			id: "6CF83DD6A75997DF"
+			shape: "circle"
+			tasks: [
+				{
+					id: "7953818B7FAB4BC2"
+					type: "checkmark"
+				}
+			]
+			x: 6.0d
+			y: -3.5d
+		}
+		{
+			dependencies: [
+				"741C08492572FB66"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "minecraft:hopper"
+			}
+			id: "0E0EEA17CD70C458"
+			shape: "circle"
+			tasks: [
+				{
+					id: "2F8557EAB4C36AC0"
+					type: "checkmark"
+				}
+			]
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"4B964648327668AF"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lv_wiremill"
+			}
+			id: "760B1FBE7A083E6A"
+			tasks: [
+				{
+					count: 1
+					id: "702D2EC8027DD031"
+					item: {
+						count: 1
+						id: "gtceu:lv_wiremill"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: -1.75d
+		}
+		{
+			dependencies: [
+				"4B964648327668AF"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lv_bender"
+			}
+			id: "44F85BB206730CA4"
+			tasks: [
+				{
+					count: 1
+					id: "26F7208535A4718B"
+					item: {
+						count: 1
+						id: "gtceu:lv_bender"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"4B964648327668AF"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lv_lathe"
+			}
+			id: "18891BC3AA9170CF"
+			tasks: [
+				{
+					count: 1
+					id: "778C3C06312434B7"
+					item: {
+						count: 1
+						id: "gtceu:lv_lathe"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 1.75d
+		}
+		{
+			dependencies: [
+				"4B964648327668AF"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lv_polarizer"
+			}
+			id: "4F07D0C306DFEE2B"
+			tasks: [
+				{
+					count: 1
+					id: "4EA2380619B7121C"
+					item: {
+						count: 1
+						id: "gtceu:lv_polarizer"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"741C08492572FB66"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lv_chemical_bath"
+			}
+			id: "18E4DF305DFBB933"
+			optional: true
+			shape: "heart"
+			tasks: [
+				{
+					count: 1
+					id: "6F6EAE8B10CCD723"
+					item: {
+						count: 1
+						id: "gtceu:lv_chemical_bath"
+					}
+					type: "item"
+				}
+			]
+			x: 10.0d
+			y: 1.75d
+		}
+		{
+			dependencies: [
+				"0E0EEA17CD70C458"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:programmed_circuit"
+			}
+			id: "0ABCBED4780E3070"
+			shape: "circle"
+			tasks: [
+				{
+					id: "046ABAFB656D5531"
+					type: "checkmark"
+				}
+			]
+			x: 12.0d
+			y: -1.75d
+		}
+		{
+			dependencies: [
+				"23825C07601E4DD7"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lv_canner"
+			}
+			id: "012DC6D84EA3796D"
+			tasks: [
+				{
+					count: 1
+					id: "0F31809DB4E9B8FA"
+					item: {
+						count: 1
+						id: "gtceu:lv_canner"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: -8.75d
+		}
+		{
+			dependencies: [
+				"012DC6D84EA3796D"
+				"34D2518FB05ACB0A"
+			]
+			id: "0D701D3F51BCC0AF"
+			tasks: [
+				{
+					count: 1
+					id: "5E89F72B80821D53"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item_tag(gtceu:batteries/lv))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 10.0d
+			y: -5.25d
+		}
+		{
+			dependencies: [
+				"0D701D3F51BCC0AF"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lv_battery_buffer_4x"
+			}
+			id: "58A4E185C690D07E"
+			tasks: [
+				{
+					count: 1
+					id: "36BF7BF0A23997F5"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:lv_battery_buffer_4x)item(gtceu:lv_battery_buffer_8x)item(gtceu:lv_battery_buffer_16x))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 12.0d
+			y: -5.25d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:crushed_sphalerite_ore"
+			}
+			id: "4815EA0FDABCC49F"
+			shape: "circle"
+			tasks: [
+				{
+					id: "2B060F29A804DCFD"
+					type: "checkmark"
+				}
+			]
+			x: 0.0d
+			y: -0.875d
+		}
+		{
+			dependencies: [
+				"21E9C3AB3603B368"
+				"63C744822BF87E37"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "gtceu:lv_fluid_solidifier"
+			}
+			id: "5FB592A117BBCFA9"
+			tasks: [
+				{
+					count: 1
+					id: "0153B1E639A9E663"
+					item: {
+						count: 1
+						id: "gtceu:lv_fluid_solidifier"
+					}
+					type: "item"
+				}
+			]
+			x: 12.0d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"15604562C26BB8B7"
+				"23825C07601E4DD7"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:cupronickel_coil_block"
+			}
+			id: "3C4D718ED647B684"
+			tasks: [
+				{
+					count: 16
+					id: "333036D9C98E84BD"
+					item: {
+						count: 1
+						id: "gtceu:cupronickel_coil_block"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 10.5d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:lv_gas_collector"
+			}
+			id: "22F7F6CFF45D44B7"
+			shape: "square"
+			tasks: [
+				{
+					count: 1
+					id: "393EB6958C9CB52E"
+					item: {
+						count: 1
+						id: "gtceu:lv_gas_collector"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
 			y: 0.875d
+		}
+		{
+			dependencies: [
+				"741C08492572FB66"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lv_chemical_reactor"
+			}
+			id: "21E9C3AB3603B368"
+			tasks: [
+				{
+					count: 1
+					id: "7583632465B832D9"
+					item: {
+						count: 1
+						id: "gtceu:lv_chemical_reactor"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "3A0760E3D904FD07"
+					item: {
+						count: 1
+						id: "gtceu:rubber_bucket"
+					}
+					optional_task: true
+					type: "item"
+				}
+			]
+			x: 10.0d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"23825C07601E4DD7"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:fluid_cell"
+			}
+			id: "23972FD3A008121D"
+			optional: true
+			shape: "heart"
+			tasks: [
+				{
+					count: 1
+					id: "641136BD453A3D6D"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:fluid_cell)item(gtceu:universal_fluid_cell)item(gtceu:steel_fluid_cell)item(gtceu:aluminium_fluid_cell)item(gtceu:glass_vial))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: -7.0d
+		}
+		{
+			dependencies: [
+				"5FB592A117BBCFA9"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:rotor_casting_mold"
+			}
+			id: "54E75E6C6CD49CE1"
+			tasks: [
+				{
+					count: 1
+					id: "435E8BE2AE1FE0AE"
+					item: {
+						count: 1
+						id: "gtceu:rotor_casting_mold"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "708DB5415BDC472B"
+					item: {
+						count: 1
+						id: "gtceu:tin_rotor"
+					}
+					type: "item"
+				}
+			]
+			x: 14.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"63C744822BF87E37"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "gtceu:soldering_alloy_bucket"
+			}
+			id: "0923233DF1EDA4AC"
+			optional: true
+			shape: "square"
+			tasks: [
+				{
+					count: 1
+					id: "701A3D3E5DEDB2EA"
+					item: {
+						count: 1
+						id: "gtceu:soldering_alloy_bucket"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "3D80037647462599"
+					type: "checkmark"
+				}
+			]
+			x: 12.0d
+			y: 5.25d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:lv_electrolyzer"
+			}
+			id: "64C485F99244C9F3"
+			optional: true
+			tasks: [
+				{
+					count: 1
+					id: "0945A0F2AC5D5F4E"
+					item: {
+						count: 1
+						id: "gtceu:lv_electrolyzer"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 2.625d
+		}
+		{
+			dependencies: [
+				"4B964648327668AF"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lv_cutter"
+			}
+			id: "4428D6E39558777F"
+			tasks: [
+				{
+					count: 1
+					id: "0C152DBED9E8A3B9"
+					item: {
+						count: 1
+						id: "gtceu:lv_cutter"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 5.25d
+		}
+		{
+			dependencies: [
+				"23825C07601E4DD7"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lv_centrifuge"
+			}
+			id: "0B18E2D3F5CD9725"
+			tasks: [
+				{
+					count: 1
+					id: "2FC3920D0803D6FB"
+					item: {
+						count: 1
+						id: "gtceu:lv_centrifuge"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: -5.25d
+		}
+		{
+			dependencies: [
+				"012DC6D84EA3796D"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:empty_spray_can"
+			}
+			id: "01A6CA9A337188A3"
+			optional: true
+			shape: "heart"
+			tasks: [
+				{
+					count: 1
+					id: "110BEDFA8A6BF1AE"
+					item: {
+						count: 1
+						id: "gtceu:empty_spray_can"
+					}
+					type: "item"
+				}
+			]
+			x: 8.0d
+			y: -4.375d
+		}
+		{
+			dependencies: [
+				"741C08492572FB66"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lv_extractor"
+			}
+			id: "63C744822BF87E37"
+			tasks: [
+				{
+					count: 1
+					id: "3257FD393A8FD31F"
+					item: {
+						count: 1
+						id: "gtceu:lv_extractor"
+					}
+					type: "item"
+				}
+			]
+			x: 10.0d
+			y: 5.25d
+		}
+		{
+			dependencies: [
+				"5F155C91B477A331"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lv_circuit_assembler"
+			}
+			id: "4168ACDF3DB192BD"
+			shape: "gear"
+			size: 4.0d
+			tasks: [
+				{
+					count: 1
+					id: "3F32F13110B5CF27"
+					item: {
+						count: 1
+						id: "gtceu:lv_circuit_assembler"
+					}
+					type: "item"
+				}
+			]
+			x: 14.0d
+			y: -1.75d
+		}
+		{
+			dependencies: [
+				"2354D80A310ED7CB"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lv_arc_furnace"
+			}
+			id: "4B718D8FDA012BA8"
+			tasks: [
+				{
+					count: 1
+					id: "300B93D08E4FA69A"
+					item: {
+						count: 1
+						id: "gtceu:lv_arc_furnace"
+					}
+					type: "item"
+				}
+			]
+			x: 10.0d
+			y: -1.75d
+		}
+		{
+			dependencies: [
+				"0B18E2D3F5CD9725"
+				"64C485F99244C9F3"
+				"22F7F6CFF45D44B7"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "gtceu:oxygen_bucket"
+			}
+			id: "2354D80A310ED7CB"
+			shape: "square"
+			tasks: [
+				{
+					count: 1
+					id: "0094698171F5ECEE"
+					item: {
+						count: 1
+						id: "gtceu:oxygen_bucket"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "072727A647A3B705"
+					type: "checkmark"
+				}
+			]
+			x: 8.0d
+			y: 0.875d
+		}
+		{
+			dependencies: [
+				"0B18E2D3F5CD9725"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:glue_bucket"
+			}
+			id: "214FE96C0C15902B"
+			tasks: [
+				{
+					count: 1
+					id: "4CB474972583D2DC"
+					item: {
+						count: 1
+						id: "gtceu:glue_bucket"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "261EF5F6FA1D0B97"
+					type: "checkmark"
+				}
+			]
+			x: 8.0d
+			y: -2.625d
+		}
+		{
+			dependencies: [
+				"4815EA0FDABCC49F"
+				"06C99D4DA23732A7"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "gtceu:gallium_arsenide_dust"
+			}
+			id: "387D7F928D362C32"
+			tasks: [
+				{
+					count: 1
+					id: "052B20F7BD29C086"
+					item: {
+						count: 1
+						id: "gtceu:gallium_arsenide_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 2.0d
+			y: 5.25d
+		}
+		{
+			dependencies: [
+				"214FE96C0C15902B"
+				"23825C07601E4DD7"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:phenolic_printed_circuit_board"
+			}
+			id: "7574FEF33C293D98"
+			tasks: [
+				{
+					count: 1
+					id: "51D283B20F3B2701"
+					item: {
+						count: 1
+						id: "gtceu:phenolic_printed_circuit_board"
+					}
+					type: "item"
+				}
+			]
+			x: 10.0d
+			y: -3.5d
+		}
+		{
+			dependencies: [
+				"23825C07601E4DD7"
+				"387D7F928D362C32"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:diode"
+			}
+			id: "500C13EC1D23A17D"
+			tasks: [
+				{
+					count: 1
+					id: "6B0F20C9750C5504"
+					item: {
+						count: 1
+						id: "gtceu:diode"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 7.0d
+		}
+		{
+			dependencies: [
+				"7574FEF33C293D98"
+				"500C13EC1D23A17D"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:good_electronic_circuit"
+			}
+			id: "5F155C91B477A331"
+			shape: "octagon"
+			size: 2.0d
+			tasks: [
+				{
+					count: 1
+					id: "37D09CC123B81C85"
+					item: {
+						count: 1
+						id: "gtceu:good_electronic_circuit"
+					}
+					type: "item"
+				}
+			]
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"744DCCFC40160583"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:aluminium_dust"
+			}
+			id: "63833F5CEF1EE62B"
+			tasks: [
+				{
+					count: 1
+					id: "402B2BEADBBDAE95"
+					item: {
+						count: 1
+						id: "gtceu:aluminium_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: -10.5d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:heatproof_machine_casing"
+			}
+			id: "5064EFEE162D91DC"
+			shape: "circle"
+			tasks: [
+				{
+					count: 1
+					id: "3AFBA3CE880ECA73"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:ulv_input_bus)item(gtceu:lv_input_bus))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "692BEC5BEF0AE2A2"
+					item: {
+						count: 1
+						id: "gtceu:maintenance_hatch"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "3BF88FB02E79D79E"
+					item: {
+						count: 1
+						id: "gtceu:lv_muffler_hatch"
+					}
+					type: "item"
+				}
+				{
+					count: 10
+					id: "14B6A440E18F3EEA"
+					item: {
+						count: 1
+						id: "gtceu:heatproof_machine_casing"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "5262999D973D017A"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:ulv_input_hatch)item(gtceu:lv_input_hatch))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					count: 2
+					id: "6ABDC578462CE22D"
+					item: {
+						count: 1
+						id: "gtceu:lv_energy_input_hatch"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "264B61819A2CB782"
+					item: {
+						count: 1
+						id: "gtceu:lv_output_bus"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 4.375d
+		}
+		{
+			dependencies: [
+				"0D701D3F51BCC0AF"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "gtceu:lv_charger_4x"
+			}
+			id: "727A1E0D3CC4D5DC"
+			optional: true
+			shape: "heart"
+			tasks: [
+				{
+					count: 1
+					id: "4D99CB699C8CF777"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:ulv_charger_4x)item(gtceu:lv_charger_4x)item(gtceu:mv_charger_4x)item(gtceu:hv_charger_4x))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 12.0d
+			y: -3.5d
+		}
+		{
+			dependencies: [
+				"4B964648327668AF"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lv_mixer"
+			}
+			id: "627BF49FE6F099D7"
+			tasks: [
+				{
+					count: 1
+					id: "61C832734A7407EA"
+					item: {
+						count: 1
+						id: "gtceu:lv_mixer"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 8.75d
+		}
+		{
+			dependencies: [
+				"22F7F6CFF45D44B7"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:nitrogen_bucket"
+			}
+			id: "69563131D6E8644E"
+			shape: "square"
+			tasks: [
+				{
+					count: 1
+					id: "4173A2AFE8F54AEE"
+					item: {
+						count: 1
+						id: "gtceu:nitrogen_bucket"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "4D835E1AB546D369"
+					type: "checkmark"
+				}
+			]
+			x: 2.0d
+			y: 7.0d
+		}
+		{
+			dependencies: [
+				"5FB592A117BBCFA9"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:plate_casting_mold"
+			}
+			id: "2D327656CC5534AE"
+			shape: "square"
+			tasks: [
+				{
+					count: 1
+					id: "5DDF5E9767081A61"
+					item: {
+						count: 1
+						id: "gtceu:plate_casting_mold"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "7945229406D30F44"
+					item: {
+						count: 1
+						id: "gtceu:rubber_plate"
+					}
+					type: "item"
+				}
+			]
+			x: 14.0d
+			y: 1.75d
+		}
+		{
+			dependencies: [
+				"01F0503DA2852C96"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "gtceu:red_steel_wire_cutter"
+			}
+			id: "4B964648327668AF"
+			shape: "circle"
+			size: 1.5d
+			tasks: [
+				{
+					id: "471F965017412543"
+					type: "checkmark"
+				}
+			]
+			x: 4.0d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"50EAC77686C8619B"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "gtceu:lv_combustion"
+			}
+			id: "4EB5E57BDDC0647B"
+			optional: true
+			tasks: [
+				{
+					count: 1
+					id: "7367ED86D2D24F08"
+					item: {
+						count: 1
+						id: "gtceu:lv_combustion"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: -3.5d
+		}
+		{
+			dependencies: [
+				"386572E7B641951D"
+			]
+			icon: {
+				count: 1
+				id: "createdeco:decal_electrical"
+			}
+			id: "50EAC77686C8619B"
+			shape: "none"
+			size: 2.0d
+			tasks: [
+				{
+					id: "3C9072BCE0510466"
+					type: "checkmark"
+				}
+			]
+			x: 2.0d
+			y: -5.25d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:cupronickel_ingot"
+			}
+			id: "15604562C26BB8B7"
+			shape: "diamond"
+			tasks: [
+				{
+					count: 1
+					id: "4130B8396495DF83"
+					item: {
+						count: 1
+						id: "gtceu:cupronickel_ingot"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 6.125d
+		}
+		{
+			dependencies: [
+				"50EAC77686C8619B"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "gtceu:lv_gas_turbine"
+			}
+			id: "057B715A2C3D0340"
+			optional: true
+			tasks: [
+				{
+					count: 1
+					id: "71A10A895AB920E1"
+					item: {
+						count: 1
+						id: "gtceu:lv_gas_turbine"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: -1.75d
+		}
+		{
+			dependencies: [
+				"386572E7B641951D"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lv_sensor"
+			}
+			id: "2D26159BF629829B"
+			shape: "circle"
+			tasks: [
+				{
+					id: "5E5B38B46E12ECE4"
+					type: "checkmark"
+				}
+			]
+			x: 2.0d
+			y: -3.5d
+		}
+		{
+			dependencies: [
+				"760B1FBE7A083E6A"
+				"4428D6E39558777F"
+				"44F85BB206730CA4"
+				"627BF49FE6F099D7"
+				"18891BC3AA9170CF"
+				"4F07D0C306DFEE2B"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "gtceu:lv_blue_steel_wrench"
+			}
+			id: "741C08492572FB66"
+			shape: "circle"
+			size: 1.5d
+			tasks: [
+				{
+					id: "7FB86531E47CA5CA"
+					type: "checkmark"
+				}
+			]
+			x: 8.0d
+			y: 2.625d
+		}
+		{
+			dependencies: [
+				"21E9C3AB3603B368"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lv_distillery"
+			}
+			id: "7AA2C30E2C07E368"
+			tasks: [
+				{
+					count: 1
+					id: "66FAC413478E1648"
+					item: {
+						count: 1
+						id: "gtceu:lv_distillery"
+					}
+					type: "item"
+				}
+			]
+			x: 12.0d
+			y: 1.75d
 		}
 	]
 }

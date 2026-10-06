@@ -1,0 +1,574 @@
+{
+ "chapter": "gregtech_energy",
+ "decisions": [
+  {
+   "key": "gregtech_energy.start",
+   "action": "keep",
+   "chapter": "power"
+  },
+  {
+   "key": "gregtech_energy.moving",
+   "action": "edit",
+   "chapter": "power",
+   "reason": "Depended on TFG's LV tier marker (dropped); now on route's lv_hull.",
+   "deps": [
+    "lv_hull"
+   ]
+  },
+  {
+   "key": "gregtech_energy.storage",
+   "action": "edit",
+   "chapter": "power",
+   "reason": "Fusion Reactor and IV references cut (book ends at EV); tier-marker dep replaced.",
+   "desc": [
+    "Storing your energy is one of the most fundamental pillars of the power system in GregTech.\n\nWhy is that? Simply because even the strongest generators won't keep up when you start a big craft.\n\nGregTech provides several ways to store large amounts of EU. These storages act as a buffer between your energy production and the machines that drain it during long operations.\n\nWhether you're running an Electric Blast Furnace or a whole HV-EV crafting chain, you'll want that backup of energy to keep everything stable.\n\nDon't underestimate the power of a good battery — it may just be the thing that saves your base from a blackout during critical moments."
+   ],
+   "deps": [
+    "lv_hull"
+   ]
+  },
+  {
+   "key": "gregtech_energy.produce_energy",
+   "action": "edit",
+   "chapter": "power",
+   "reason": "Named TFG; now says where power comes from in this pack (design: all power from GregTech generators, steam turbines first).",
+   "desc": [
+    "It's all about making energy, right? This part won't be the most complicated one: in this pack all electricity comes from &5GregTech's&r own generators. Steam turbines fed by your boilers come first; gas turbines and combustion generators join them as you unlock their fuels.\n\nYou'll learn about the various &6methods to generate energy&r, as well as some of the &afuels&r you can use to get the most out of your setup."
+   ]
+  },
+  {
+   "key": "gregtech_energy.spending_energy",
+   "action": "edit",
+   "chapter": "power",
+   "reason": "Named TFG; the last page used IV/LuV and Large Circuit Assembler examples beyond this book, cut to the general rule (4A/16A hatches exist from EV).",
+   "desc": [
+    "How to spend all this energy?\n\nUse your machines! Sounds simple, right?\nWell... not exactly. There are many small details worth learning.\n\nBasic Machines:\n- These machines are simple.\n- They can request up to &a2A&r each.\n- If you input a higher tier of energy... &4💥 they explode&r.\n\nGregTech Multiblocks:\nNow things get interesting. Multiblocks offer more flexibility and power — &eif&r you understand how they work.",
+    "{@pagebreak}",
+    "Standard Mechanics:\n- If a multiblock can accept two Energy Hatches (most of them), this allows you to use higher-tier recipes than the machine's base tier.\n\nExample:\nIf you're building an Electric Blast Furnace and you install two &7LV&r Energy Hatches, it will be able to process &bMV&r-tier EBF recipes.\n\nThis is one of the key benefits of multiblocks over single-block machines — to upgrade them to the next tier, you only have to swap out their energy hatches instead of replacing the whole machine.",
+    "{@pagebreak}",
+    "Some multiblocks only accept one Energy Hatch, but that doesn't limit them to 2 amps! From &5EV&r on there are 4A and 16A Energy Hatches.\n\nMore amps on a single hatch let the machine &bOverclock&r recipes, but not run higher-tier recipes. That limitation is intentional, to keep multiblocks from skipping GregTech's tier progression.\n\nSo remember: More amps on a single hatch means faster processing, but two hatches are required to unlock higher-tier recipes."
+   ],
+   "deps": [
+    "lv_hull"
+   ]
+  },
+  {
+   "key": "gregtech_energy.moving_wire",
+   "action": "edit",
+   "chapter": "power",
+   "reason": "Platinum cable task removed (platinum has no source here, checker: unreachable); the platinum loss figure replaced by where to read cable stats.",
+   "desc": [
+    "Moving energy around in GregTech can be tricky — &bcables lose energy&r. For every block, for every amp, some EU is lost along the way. But don't worry, there are solutions:\n\n&7•&r Cover your wires with rubber. Cables (insulated wires) lose less than bare wires, and they won't shock you. Just check the quest items for a reference.\n\n&7•&r Pick the right material. Hover over a wire or cable to see its maximum voltage, maximum amperage and loss per block; better materials lose less for the energy they carry.\n\n&7•&r &bSuperconductors&r. These beauties are a bit pricier, but they have &9zero loss&r. They don't need rubber covers, and won't zap you either. Just be aware that they're usually only craftable near the end of their tier.\n\nOptimize your energy flow — &breduce losses&r and make your systems more efficient."
+   ],
+   "tasks": [
+    {
+     "optional": true,
+     "item": "gtceu:tin_single_cable"
+    },
+    {
+     "optional": true,
+     "item": "gtceu:tin_single_wire"
+    },
+    {
+     "type": "checkmark"
+    }
+   ]
+  },
+  {
+   "key": "gregtech_energy.moving_amp",
+   "action": "keep",
+   "chapter": "power"
+  },
+  {
+   "key": "gregtech_energy.transformer",
+   "action": "drop",
+   "reason": "Active Transformer and laser hatches are IV-tier GregTech multiblocks and the task item tfg:active_power_transformer isn't in the pack; beyond the tiers this pack's book covers (chapters end at EV)."
+  },
+  {
+   "key": "gregtech_energy.battery_buffer",
+   "action": "edit",
+   "chapter": "power",
+   "reason": "Filter's UHV buffers swapped for MV/HV ones; amperage wording made consistent with the LV battery buffer quest.",
+   "desc": [
+    "Battery Buffers are your basic machines to store and manage energy — though technically, they don't store energy on their own. They simply serve as a housing for your batteries.\n\n&c⚠ If you don't want them to explode&r:\n- &4Never input higher-tier energy&r into a lower-tier Battery Buffer.\n- Batteries can only be charged if they are of &cequal or lower tier&r than the Battery Buffer.",
+    "{@pagebreak}",
+    "A Battery Buffer takes in up to two amps and puts out one amp for each battery inside.\nSo a full 4x Battery Buffer can take in &a8A&r — but will only output &e4A&r max.\n\n&eReminder&r:\n- No batteries = no output.\n- The number of batteries sets the number of Amps it outputs. (That means a &68x Battery Buffer&r with only &e3 batteries&r will only output &e3A&r.)\n\nUse them wisely — they are the foundation of any stable energy network."
+   ],
+   "tasks": [
+    {
+     "optional": true,
+     "filter": "or(item(gtceu:lv_battery_buffer_4x)item(gtceu:lv_battery_buffer_8x)item(gtceu:lv_battery_buffer_16x)item(gtceu:mv_battery_buffer_4x)item(gtceu:mv_battery_buffer_8x)item(gtceu:mv_battery_buffer_16x)item(gtceu:hv_battery_buffer_4x)item(gtceu:hv_battery_buffer_8x)item(gtceu:hv_battery_buffer_16x))",
+     "any": [
+      "gtceu:lv_battery_buffer_4x",
+      "gtceu:lv_battery_buffer_8x",
+      "gtceu:lv_battery_buffer_16x",
+      "gtceu:mv_battery_buffer_4x",
+      "gtceu:mv_battery_buffer_8x",
+      "gtceu:mv_battery_buffer_16x",
+      "gtceu:hv_battery_buffer_4x",
+      "gtceu:hv_battery_buffer_8x",
+      "gtceu:hv_battery_buffer_16x"
+     ]
+    },
+    {
+     "type": "checkmark"
+    }
+   ]
+  },
+  {
+   "key": "gregtech_energy.pss",
+   "action": "drop",
+   "reason": "The Power Substation needs LuV circuits, lapotron crystals and Palladium Substation Casings (gtceu:palladium_substation isn't an id here; the casing is gtceu:palladium_substation_casing); palladium has no source in this pack (GregTech-only ores, checker: unreachable), and it's beyond the tiers this pack's book covers (chapters end at EV)."
+  },
+  {
+   "key": "gregtech_energy.tank",
+   "action": "edit",
+   "chapter": "power",
+   "reason": "Quantum tanks (IV+) cut from the filter; plasma mention cut.",
+   "desc": [
+    "Obviously, storing energy can also mean storing the fuel that makes it.\n\nFor this, Drums and Crates are decent early options, but don't overlook GregTech's &dSuper Tanks&r and &dSuper Chests&r.",
+    "{@pagebreak}",
+    "These hold huge amounts of fluid or items — handy for fuelling generators far from your main base without building a whole cable network.\n\nLoad them up with fuel and let them handle the rest. With proper planning, an outpost can run with no live connection to your central grid.\n\nEnergy doesn't always come in wires — sometimes, it comes in barrels."
+   ],
+   "tasks": [
+    {
+     "filter": "or(item(gtceu:lv_super_tank)item(gtceu:mv_super_tank)item(gtceu:hv_super_tank)item(gtceu:ev_super_tank))",
+     "any": [
+      "gtceu:lv_super_tank",
+      "gtceu:mv_super_tank",
+      "gtceu:hv_super_tank",
+      "gtceu:ev_super_tank"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "gregtech_energy.batteries",
+   "action": "edit",
+   "chapter": "power",
+   "reason": "Filter trimmed to the crystals within the book's tiers (energium crystal: HV autoclave; lapotron crystal: EV assembler, both checked); first batteries here are sodium/cadmium (lithium needs MV).",
+   "desc": [
+    "In &7LV&r and &bMV&r, you probably built your first batteries from Sodium or Cadmium.\n\nBut let's be real — these are the weakest batteries GregTech has to offer.\n\nHere are the stronger alternatives: the &acrystal batteries&r. The &aEnergium Crystal&r grows in an &6HV&r Autoclave, the &aLapotron Crystal&r is put together in an &5EV&r Assembler. They store way more energy and can help you push your factory to the next tier.\n\nAre they more expensive? Of course. But let's be real...\nPower is Power. Who's counting?"
+   ],
+   "tasks": [
+    {
+     "filter": "or(item(gtceu:energy_crystal)item(gtceu:lapotron_crystal))",
+     "any": [
+      "gtceu:energy_crystal",
+      "gtceu:lapotron_crystal"
+     ]
+    }
+   ],
+   "deps": [
+    "gregtech_energy.battery_buffer",
+    "high_voltage.hv_hull"
+   ]
+  },
+  {
+   "key": "gregtech_energy.lst",
+   "action": "edit",
+   "chapter": "power",
+   "reason": "TFG's own tfg:large_steam_turbine (and its TFG output numbers and EV holder cap) replaced by GregTech's gtceu:steam_large_turbine (HV hull, HV circuits, steel gears, large steel pipes, checked); a natural fit for a pack that runs on boilers.",
+   "title": "The Large Steam Turbine",
+   "subtitle": "Your boilers, scaled up",
+   "desc": [
+    "The &6Large Steam Turbine&r — or &dLST&r — is GregTech's first large generator, built at &6HV&r from an HV hull, HV circuits, steel gears and large steel pipes. In a pack that runs on boilers, it's the natural next step after a wall of single-block steam turbines.\n\nTo make it work you'll need an Input Hatch for steam, an Output Hatch for the distilled water it gives back, and a Maintenance Hatch. Like all Large Turbines, it takes a Rotor Holder on one side and a Dynamo Hatch to extract the power.",
+    "{@pagebreak}",
+    "The Rotor Holder must be at least &6HV&r, and each tier above that doubles the output. The rotor's power multiplies it further, and its efficiency stretches each mB of steam.\n\nSize the Dynamo Hatch to what your holder and rotor produce: a normal Dynamo Hatch handles 2A. Check EMI's multiblock preview for the exact structure."
+   ],
+   "tasks": [
+    {
+     "item": "gtceu:steam_large_turbine"
+    }
+   ],
+   "deps": [
+    "high_voltage.hv_hull"
+   ]
+  },
+  {
+   "key": "gregtech_energy.lce",
+   "action": "drop",
+   "reason": "This copy (tfg_id 4AC4D681124751EE) is the Extreme Combustion Engine: tungstensteel and LuV circuits; tungsten has no source here (GregTech-only ores, checker: unreachable) and it's beyond the tiers this pack's book covers (chapters end at EV).",
+   "tfg_id": "4AC4D681124751EE"
+  },
+  {
+   "key": "gregtech_energy.lgt",
+   "action": "edit",
+   "chapter": "power",
+   "reason": "TFG claims cut (finishing TFG on gas turbines, voiding behaviour); recipe checked (EV hull, EV circuits, stainless steel gears and large pipes); EV tier marker replaced.",
+   "subtitle": "The big gas burner",
+   "desc": [
+    "The &6Large Gas Turbine&r — also known as &dLGT&r — is the large generator for gas fuels. You can build your first one at &5EV&r from an EV hull, EV circuits, stainless steel gears and large stainless steel pipes.\n\nLike the other large turbines it needs a Maintenance Hatch, an Input Hatch for the gas, a Rotor Holder and a Dynamo Hatch. It also needs a Muffler Hatch, but no Output Hatch.",
+    "{@pagebreak}",
+    "Its output doubles with every Rotor Holder tier above &5EV&r, and the rotor's power multiplies it further. Size the Dynamo Hatch to match: a normal one handles 2A, so a strong turbine may need a 4A hatch.\n\nThe Efficiency stat of a Turbine Rotor makes each mB of fuel last longer.\n\nTurbines burn fuel while they run, so switch them off when your batteries are full, for example with an Energy Detector cover and a Machine Controller cover."
+   ],
+   "deps": [
+    "extreme_voltage.welcome_to_ev"
+   ]
+  },
+  {
+   "key": "gregtech_energy.lpt",
+   "action": "drop",
+   "reason": "Large Plasma Turbine runs on fusion plasma and needs LuV parts and tungstensteel; beyond the tiers this pack's book covers (chapters end at EV) and tungsten has no source here."
+  },
+  {
+   "key": "gregtech_energy.blast_oc",
+   "action": "edit",
+   "chapter": "power",
+   "reason": "Mega Blast Furnace isn't in the pack and the Alloy Blast Smelter needs tantalum carbide (no tantalum source here, checker: unreachable), so this is about the EBF only; the LuV example redone at EV with GregTech's coil temperatures.",
+   "subtitle": "You don't need to understand this one",
+   "desc": [
+    "If you haven't learnt about Perfect Overclocking yet, read the Overclock quest first.\n\nThe &3Electric Blast Furnace&r has a special ability: it can &ePerfect Overclock&r recipes depending on the &ctemperature of the machine&r. You can check its current temperature by clicking on the controller.\n\nThere are two ways to increase the temperature:\n1) Upgrade the coils\n2) Use higher-tier energy: every tier above &bMV&r adds 100K",
+    "{@pagebreak}",
+    "To see the temperature of a coil, hover over it.\n\nOnce you know your machine's temperature, you'll need the temperature of the recipe. The easiest way to find it is to use EMI.\n\nWith both values, you can do a quick calculation to see if Perfect Overclocking applies:\n&bYour machine must be at least 1800K hotter than the recipe for each overclock you want to be perfect.&r\n\nIt also gets a small energy discount for every 900K it runs above the recipe.",
+    "{@pagebreak}",
+    "Example:\n- Stainless Steel requires &c1700K&r and is an &6HV&r recipe.\n- You run it on &5EV&r power: that's one overclock.\n- For it to be perfect, the furnace needs 1700 + 1800 = &c3500K&r.\n- Cupronickel coils (1800K) reach 2000K on EV and Kanthal coils (2700K) 2900K: a normal overclock. Nichrome coils (3600K) reach 3800K: a perfect one.\n\nFeeling overwhelmed? Just remember this: better coils = faster and cheaper recipes."
+   ],
+   "tasks": [
+    {
+     "optional": true,
+     "item": "gtceu:electric_blast_furnace"
+    },
+    {
+     "type": "checkmark"
+    }
+   ]
+  },
+  {
+   "key": "gregtech_energy.overclock",
+   "action": "edit",
+   "chapter": "power",
+   "reason": "TFG's perfect-overclock list (Heat Exchanger, Rotary Hearth Furnace, ABS) replaced by GregTech's own (LCR, EBF); MV tier-marker dep dropped (overclocking matters from LV).",
+   "desc": [
+    "Have you heard about Overclocking, but don't really understand what it is? Let's take some time to explain it.\n\nWe should start with the basics:\n&dLV&r represents a maximum of 32 EU/t — sometimes less, but never more.\n&dMV&r goes up to 128 EU/t.\n&dHV&r reaches 512 EU/t.\nBasically, every tier is a 4x increase in power usage.",
+    "{@pagebreak}",
+    "What happens when you run a lower-tier recipe in a higher-tier machine? That's what we call &eOverclocking&r!\n\nAn &dMV&r recipe (33–128 EU/t) run in an &dHV&r machine will both: 1) Use 4x more energy, and 2) Be 2x faster.\n\nThe same MV recipe in an &dEV&r machine? 16x the energy cost, but only 4x faster.\n\nAs you can see, it's more power efficient to use multiple machines rather than overclocking a single one.\nBut let's be real: in most setups, you'll prefer overclocking to building a ton of the same machines.\n\nStill, it's good to know this early on, when energy is tight.",
+    "{@pagebreak}",
+    "There's a special kind of overclocking exclusive to just a few multiblocks: &ePerfect Overclocking&r.\nHere, instead of 4x energy for 2x speed, you get &a4x energy&r for &a4x speed&r! This makes it just as efficient as running multiple machines.\n\nThe ones you'll meet:\n- Large Chemical Reactor, always\n- Electric Blast Furnace, when its coils run hot enough (see the Blast Overclocking quest)"
+   ],
+   "deps": [
+    "gregtech_energy.spending_energy"
+   ]
+  },
+  {
+   "key": "gregtech_energy.subtick",
+   "action": "edit",
+   "chapter": "power",
+   "reason": "TFG's Heat Exchanger and IV/LuV/ZPM examples cut; LCR recipe checked (HV hull and circuits, stainless rotor, PTFE pipes); HV tier marker replaced.",
+   "desc": [
+    "Another hidden mechanic in GregTech Multiblocks: the &dSubtick&r.\n\nWhat is it? Subtick kicks in when a recipe gets so fast it would take less than one tick. Normally, machines can't go faster than one recipe per tick — but with Subtick, they can!\n\nHow does it work? Once a recipe hits 1 tick, more power can't make it any shorter.\nInstead of wasting that power, the machine &aruns several recipes in parallel internally&r.",
+    "{@pagebreak}",
+    "&dNote&r: the &6Large Chemical Reactor&r, an &6HV&r multiblock, combines Subtick with Perfect Overclocking, so extra power is never wasted on it. That makes it the best home for your fast chemistry."
+   ],
+   "deps": [
+    "gregtech_energy.spending_energy",
+    "high_voltage.hv_hull"
+   ]
+  },
+  {
+   "key": "gregtech_energy.parallel_hatch",
+   "action": "drop",
+   "reason": "Parallel hatches start at IV (filter is IV-UV hatches); beyond the tiers this pack's book covers (chapters end at EV)."
+  },
+  {
+   "key": "gregtech_energy.lgt_fuel",
+   "action": "edit",
+   "chapter": "power",
+   "reason": "TFG's rebalanced gases and its syngas/reformate/BTX fuels aren't here; ranking redone from GregTech's gas turbine recipes in the dump (EU per mB: natural gas < methane < refinery gas < LPG < benzene < nitrobenzene); methane at LV from centrifuging rubber logs (checked).",
+   "desc": [
+    "All of these fuels are used in &2Gas Turbines&r — ranked here from the least efficient to the best: natural gas, methane, refinery gas, LPG, benzene and nitrobenzene.\n\nGas fuels hold less energy per mB than combustion fuels. That doesn't make them worse — you just need more millibuckets for the same output. Later, they can feed the &2Large Gas Turbine&r, a very powerful multiblock.",
+    "{@pagebreak}",
+    "At &7LV&r your gas is &eMethane&r: a Centrifuge gets 60 mB from every rubber log, along with sticky resin. The others come from oil processing at &bMV&r and later; check EMI for each one's chain."
+   ],
+   "tasks": [
+    {
+     "optional": true,
+     "item": "gtceu:natural_gas_bucket"
+    },
+    {
+     "optional": true,
+     "item": "gtceu:methane_bucket"
+    },
+    {
+     "optional": true,
+     "item": "gtceu:refinery_gas_bucket"
+    },
+    {
+     "optional": true,
+     "item": "gtceu:lpg_bucket"
+    },
+    {
+     "optional": true,
+     "item": "gtceu:benzene_bucket"
+    },
+    {
+     "optional": true,
+     "item": "gtceu:nitrobenzene_bucket"
+    },
+    {
+     "type": "checkmark"
+    }
+   ]
+  },
+  {
+   "key": "gregtech_energy.lpt_fuel",
+   "action": "drop",
+   "reason": "Fusion plasma fuels (helium, nickel plasma) for the Large Plasma Turbine; beyond the tiers this pack's book covers (chapters end at EV)."
+  },
+  {
+   "key": "gregtech_energy.lst_fuel",
+   "action": "edit",
+   "chapter": "power",
+   "reason": "TFG's own large boilers (tfg:large_bronze_boiler/large_steel_boiler) aren't here; GregTech's four Large Boilers instead (Large Bronze Boiler: LV circuits, tin cables, bronze firebox casing, checked; fluid fuels lava, creosote, oils and biomass checked).",
+   "desc": [
+    "Steam isn't complicated — just boil water.\n\nTo do it at scale, build GregTech's &6Large Boilers&r: Bronze first (LV circuits, tin cables and a Bronze Firebox Casing), then Steel, Titanium and Tungstensteel. Each tier makes a lot more steam. They burn solid fuels or liquids such as lava and creosote; EMI lists them all.\n\nAs a reminder: &e2 mB&r of steam = &e1 EU&r in a steam turbine."
+   ],
+   "tasks": [
+    {
+     "optional": true,
+     "item": "gtceu:steam_bucket"
+    },
+    {
+     "filter": "or(item(gtceu:bronze_large_boiler)item(gtceu:steel_large_boiler)item(gtceu:titanium_large_boiler)item(gtceu:tungstensteel_large_boiler))",
+     "any": [
+      "gtceu:bronze_large_boiler",
+      "gtceu:steel_large_boiler",
+      "gtceu:titanium_large_boiler",
+      "gtceu:tungstensteel_large_boiler"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "gregtech_energy.lce_fuel",
+   "action": "edit",
+   "chapter": "power",
+   "reason": "Fuel timing redone for this pack: no TFC-alcohol biodiesel here, so combustion fuels start at MV (ethanol/methanol); cetane (HV mixer + tetranitromethane), gasoline (HV chemical reactor, raw gasoline from a large chemical reactor + toluene) and high octane gasoline (EV large chemical reactor) checked.",
+   "desc": [
+    "All of these fuels are used in &6Combustion Generators&r — ranked here from the least efficient to the best.\n\nIn this pack the first combustion fuels arrive at &bMV&r: ethanol and methanol, and &2Bio Diesel&r made from seed oil, either of them and a pinch of sodium hydroxide. At &6HV&r a mixer turns diesel or bio diesel plus a little tetranitromethane into &eCetane-Boosted Diesel&r.",
+    "{@pagebreak}",
+    "&aGasoline&r comes from oil: a large chemical reactor makes raw gasoline from naphtha, refinery gas, methanol and acetone, and an &6HV&r chemical reactor finishes it with toluene. &cHigh Octane Gasoline&r, twice as strong, needs an &5EV&r large chemical reactor.\n\nThese oil fuels need a proper refinery, so distill your oils carefully: a Distillation Tower beats a row of single Distilleries."
+   ]
+  },
+  {
+   "key": "gregtech_energy.lv_generator",
+   "action": "edit",
+   "chapter": "power",
+   "reason": "TFG's three LV paths (TFC-alcohol biodiesel, syngas) don't exist here; rewritten from the dump: steam turbine (64 mB/t -> 32 EU/t) and Large Bronze Boiler, methane from rubber logs for the gas turbine, combustion fuels only from MV. LV tier marker replaced by route lv_hull.",
+   "desc": [
+    "These are your basic &61-block Generators&r. Each has a single &9input&r for its fuel — &esteam&r, &agas&r or &6liquid fuel&r — and outputs exactly &e1A&r of power at its tier.\n\nThey're simple to work with and will be your &ofirst source of power&r in &5GregTech&r until you reach the &dlarge multiblock generators&r later on.\n\n&aEMI&r shows what each one burns, and the fuel quests nearby list the best inputs. Here's what &7LV&r offers in this pack:",
+    "{@pagebreak}",
+    "&e1. Steam Power&r:\n\nThe main road here. A Steam Turbine turns the steam from your boilers into EU: &e32 EU/t&r from &e64 mB/t&r of steam. When single boilers can't keep up, build a &6Large Bronze Boiler&r, which burns solid fuels, lava or creosote (check EMI!).",
+    "{@pagebreak}",
+    "&e2. Gas Power&r:\n\nThe Gas Turbine burns gases. At &7LV&r that means &eMethane&r: a Centrifuge gets 60 mB from every rubber log, along with sticky resin you need anyway. Not strong, but a rubber tree farm keeps it going.",
+    "{@pagebreak}",
+    "&e3. Combustion Power&r:\n\nThe Combustion Generator burns liquid fuels that pack a lot of energy per mB, easy to carry around in drums or cells. In this pack those fuels (ethanol, methanol, bio diesel, then oil products) arrive at &bMV&r, so this one can wait.\n\nIt's your choice how you want to grow your energy production."
+   ],
+   "deps": [
+    "lv_hull"
+   ]
+  },
+  {
+   "key": "gregtech_energy.mv_generator",
+   "action": "edit",
+   "chapter": "power",
+   "reason": "Fuel list adjusted to this pack's MV fuels; MV tier marker replaced by the MV chapter's hull quest.",
+   "desc": [
+    "To run your &bMV&r machines, you will need to upgrade your power production.\n\nIf an &7LV&r Generator produces &e32 EU/t&r, the &bMV&r Generator runs at &e128 EU/t&r.\nIt consumes four times more fuel to produce four times more energy.\n\nAt &bMV&r you also gain access to more options:\n\n- Liquid fuels: ethanol, methanol and bio diesel, later diesel and light oil residue\n- Gas fuels: methane, refinery gas, LPG and benzene\n- Steam keeps working, though you may need larger pipes (steel, aluminium or potin can handle it)\n\nThe &bMV&r chapter has more on power at this tier."
+   ],
+   "deps": [
+    "medium_voltage.mv_machine_hull"
+   ]
+  },
+  {
+   "key": "gregtech_energy.q109c57b63ee95e35",
+   "action": "drop",
+   "reason": "Ad Astra solar panel on the Moon; Ad Astra isn't in the pack."
+  },
+  {
+   "key": "gregtech_energy.q0585527d1854628b",
+   "action": "drop",
+   "reason": "Large Solar Array (TFG multiblock for the Moon, AE2 bases); not in the pack."
+  },
+  {
+   "key": "gregtech_energy.hv_single_generator",
+   "action": "edit",
+   "chapter": "power",
+   "reason": "GregTech also has an HV steam turbine (TFG framed it as LST-or-these); added to the filter, text corrected (single-block generators stop at HV here too).",
+   "subtitle": "Third time's the charm?",
+   "desc": [
+    "At &6HV&r the single-block generators get their last upgrade: the HV Steam Turbine, Combustion Generator and Gas Turbine.\n\nThere are no &5EV&r versions; past &6HV&r, power comes from the large turbines.\n\nStill, they remain strong choices for energy generation at the &6HV&r tier."
+   ],
+   "tasks": [
+    {
+     "filter": "or(item(gtceu:hv_steam_turbine)item(gtceu:hv_combustion)item(gtceu:hv_gas_turbine))",
+     "any": [
+      "gtceu:hv_steam_turbine",
+      "gtceu:hv_combustion",
+      "gtceu:hv_gas_turbine"
+     ]
+    }
+   ],
+   "deps": [
+    "high_voltage.hv_hull"
+   ]
+  },
+  {
+   "key": "gregtech_energy.q4c620105aac49381",
+   "action": "drop",
+   "reason": "Empty tier-marker quest (machine hull task, no text) for LV (same item as route lv_hull; its dependents now point at lv_hull); redundant with the tier chapters' hull quests."
+  },
+  {
+   "key": "gregtech_energy.q0af286aa540a82e6",
+   "action": "drop",
+   "reason": "Empty tier-marker quest (machine hull task, no text) for MV (dependents now point at medium_voltage.mv_machine_hull); redundant with the tier chapters' hull quests."
+  },
+  {
+   "key": "gregtech_energy.q4d0adc66d2cf09b1",
+   "action": "drop",
+   "reason": "Empty tier-marker quest (machine hull task, no text) for HV (dependents now point at high_voltage.hv_hull); redundant with the tier chapters' hull quests."
+  },
+  {
+   "key": "gregtech_energy.q7af726555d721dfc",
+   "action": "drop",
+   "reason": "Empty tier-marker quest (machine hull task, no text) for EV (dependents now point at extreme_voltage.welcome_to_ev); redundant with the tier chapters' hull quests."
+  },
+  {
+   "key": "gregtech_energy.q05e2f203da46a5e8",
+   "action": "drop",
+   "reason": "Empty tier-marker quest for IV (hull task, 'TODO' or no text); beyond the tiers this pack's book covers (chapters end at EV)."
+  },
+  {
+   "key": "gregtech_energy.q1db543efeeb67238",
+   "action": "drop",
+   "reason": "Empty tier-marker quest for LuV (hull task, 'TODO' or no text); beyond the tiers this pack's book covers (chapters end at EV)."
+  },
+  {
+   "key": "gregtech_energy.q39019ef278d09df7",
+   "action": "drop",
+   "reason": "Empty tier-marker quest for ZPM (hull task, 'TODO' or no text); beyond the tiers this pack's book covers (chapters end at EV)."
+  },
+  {
+   "key": "gregtech_energy.q7eca77dfee2f6f20",
+   "action": "drop",
+   "reason": "Empty tier-marker quest for UV (hull task, 'TODO' or no text); beyond the tiers this pack's book covers (chapters end at EV)."
+  },
+  {
+   "key": "gregtech_energy.reformate_gas",
+   "action": "drop",
+   "reason": "Reformate gas is a TFG fluid (tfg:reformate_gas_bucket not in the pack), made with TFG's liquefaction tower and tarkianite rhenium.",
+   "tfg_id": "3630849A7B0818C8"
+  },
+  {
+   "key": "medium_voltage.mv_diesel",
+   "action": "drop",
+   "reason": "TFG shows this MV quest in two chapters; this is the gregtech_energy copy (tfg_id 79AA7691F398A8C7). The medium_voltage chapter has its own copy under the same key, which should carry the decision; the diesel fuel is covered here by Liquid Fuel.",
+   "tfg_id": "79AA7691F398A8C7"
+  },
+  {
+   "key": "gregtech_energy.fission_reactor",
+   "action": "drop",
+   "reason": "Fission reactor is from TFG's deafission mod (deafission:fission_reactor_mk1, tfg:nuclear_turbine not in the pack).",
+   "tfg_id": "4512E5DE7A84F809"
+  },
+  {
+   "key": "low_voltage.lv_biodiesel",
+   "action": "drop",
+   "reason": "Copy of the LV chapter's Bio Diesel quest (tfg_id 139C7DF629329753). Here bio diesel needs ethanol or methanol (MV), not TFC alcohol, so both copies drop in favour of medium_voltage.mv_bio_diesel; Liquid Fuel covers it in this chapter.",
+   "tfg_id": "139C7DF629329753"
+  },
+  {
+   "key": "high_voltage.cetane_diesel",
+   "action": "drop",
+   "reason": "TFG shows this HV quest in two chapters; this is the gregtech_energy copy (tfg_id 376BFF92714C5012). The high_voltage chapter has its own copy under the same key, which should carry the decision; Liquid Fuel mentions cetane here.",
+   "tfg_id": "376BFF92714C5012"
+  },
+  {
+   "key": "gregtech_energy.high_gasoline",
+   "action": "edit",
+   "chapter": "power",
+   "reason": "Recipe checked: EV large chemical reactor (1920 EU/t) from gasoline, octane, nitrous oxide, toluene and ETBE; twice gasoline's burn time per mB. TFG's IV tier dep replaced by EV.",
+   "desc": [
+    "The direct upgrade of &cGasoline&r is a &5two times more powerful fuel&r. An &5EV&r Large Chemical Reactor mixes gasoline with octane, nitrous oxide, toluene and ethyl tert-butyl ether. By then you'll know your way around EMI's petrochemistry, so trace each ingredient there and begin the fabrication of this insanely strong fuel."
+   ],
+   "deps": [
+    "gregtech_energy.gasoline",
+    "extreme_voltage.welcome_to_ev"
+   ]
+  },
+  {
+   "key": "gregtech_energy.lce",
+   "action": "drop",
+   "reason": "This copy (tfg_id 351AED1612D00EF8) is the Large Combustion Engine: in this pack its recipe needs an IV circuit plus titanium gears and EV components; titanium only comes as a 2% byproduct of HV gem slurries (checker: unreachable) and IV circuits are beyond the tiers this pack's book covers (chapters end at EV).",
+   "tfg_id": "351AED1612D00EF8"
+  },
+  {
+   "key": "gregtech_energy.q3aeab1930f4cc034",
+   "action": "drop",
+   "reason": "Large Solar Array MK II (TFG, Moon/AE2); not in the pack."
+  },
+  {
+   "key": "gregtech_energy.q7ca3a5efe3d5b688",
+   "action": "drop",
+   "reason": "Large Solar Array MK III (TFG, Moon/rocket tier 3); not in the pack."
+  },
+  {
+   "key": "gregtech_energy.rotor",
+   "action": "edit",
+   "chapter": "power",
+   "reason": "Mechanical Arm claim (rotor insertion) unverified, cut with its task; rotor recipe checked (8 turbine blades + long magnalium rod, HV assembler); LPT dep dropped.",
+   "desc": [
+    "Rotor Holders naturally require a Rotor to use, but there's a lot of options and they all have different stats, so what do they all mean?\n\nHigher &9Efficiency&r makes each mB of fuel last longer. Meanwhile, &9Power&r will increase how much EU the turbine will generate. Lastly, &9Durability&r should be obvious.",
+    "{@pagebreak}",
+    "Ideally, you'll want to maximize all three, but the choice depends on how much fuel you're producing, how many turbines you have, and how often you want to replace them, so there's no definitive correct answer.\n\nA rotor is eight turbine blades on a long magnalium rod, put together in an &6HV&r Assembler. Hover over a rotor to compare its stats."
+   ],
+   "tasks": [
+    {
+     "item": "gtceu:turbine_rotor"
+    }
+   ],
+   "deps": [
+    "gregtech_energy.lst",
+    "gregtech_energy.lgt"
+   ]
+  },
+  {
+   "key": "gregtech_energy.smr",
+   "action": "drop",
+   "reason": "Small Modular Reactor setup is TFG/deafission content (tfg:smr_generator, deafission:fission_reactor_smr1, TFG fluids not in the pack)."
+  },
+  {
+   "key": "gregtech_energy.syngas",
+   "action": "drop",
+   "reason": "Syngas is a TFG fluid (tfg:syngas_bucket not in the pack)."
+  },
+  {
+   "key": "gregtech_energy.fission_rod",
+   "action": "drop",
+   "reason": "TFG fission fuels (tfg:tbu_232_rod etc. not in the pack), made on Mars."
+  },
+  {
+   "key": "gregtech_energy.btx",
+   "action": "drop",
+   "reason": "BTX fuel is a TFG fluid (tfg:btx_fuel_bucket not in the pack)."
+  },
+  {
+   "key": "gregtech_energy.gasoline",
+   "action": "edit",
+   "chapter": "power",
+   "reason": "Recipe checked (raw gasoline: large chemical reactor at HV voltage; gasoline: HV chemical reactor with toluene; toluene from wood tar or heavy oil residue). TFG's EV dep corrected to HV.",
+   "desc": [
+    "&aGasoline&r is a really strong combustion fuel that you can make at &6HV&r. A Large Chemical Reactor turns naphtha, refinery gas, methanol and acetone into raw gasoline, and a Chemical Reactor finishes it with &7Toluene&r, distilled from wood tar or heavy oil residue.\n\nIt's strong, and even better, it can be upgraded into &cHigh Octane Gasoline&r."
+   ],
+   "deps": [
+    "gregtech_energy.lce_fuel",
+    "high_voltage.hv_hull"
+   ]
+  },
+  {
+   "key": "gregtech_energy.q7f2f435c727c7ab3",
+   "action": "drop",
+   "reason": "Cooling tower / nuclear turbine fission power is TFG content (tfg:cooling_tower and its fluids not in the pack)."
+  }
+ ]
+}

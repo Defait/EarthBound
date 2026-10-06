@@ -14,6 +14,7 @@
 		{
 			dependencies: [
 				"07C81F40FBB9407D"
+				"07FEB5D83B2D0768"
 			]
 			icon: {
 				count: 1
@@ -32,7 +33,7 @@
 				}
 			]
 			x: 0.0d
-			y: -1.75d
+			y: -4.375d
 		}
 		{
 			dependencies: [
@@ -81,7 +82,7 @@
 				}
 			]
 			x: 4.0d
-			y: -1.75d
+			y: -10.5d
 		}
 		{
 			dependencies: [
@@ -104,7 +105,7 @@
 				}
 			]
 			x: 0.0d
-			y: 0.0d
+			y: -2.625d
 		}
 		{
 			dependencies: [
@@ -127,7 +128,7 @@
 				}
 			]
 			x: 4.0d
-			y: 0.0d
+			y: -8.75d
 		}
 		{
 			dependencies: [
@@ -151,7 +152,7 @@
 				}
 			]
 			x: 6.0d
-			y: 0.0d
+			y: -4.375d
 		}
 		{
 			dependencies: [
@@ -174,7 +175,7 @@
 				}
 			]
 			x: 0.0d
-			y: 1.75d
+			y: -0.875d
 		}
 		{
 			dependencies: [
@@ -198,7 +199,661 @@
 				}
 			]
 			x: 4.0d
+			y: -7.0d
+		}
+		{
+			dependencies: [
+				"64C18F9BF387363D"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:tin_small_item_pipe"
+			}
+			id: "1F6D4A7FD8AED990"
+			tasks: [
+				{
+					count: 1
+					id: "0DCF6C70AEBE2BB0"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:tin_small_item_pipe)item(gtceu:brass_small_item_pipe)item(gtceu:cobalt_small_item_pipe)item(gtceu:tin_normal_item_pipe)item(gtceu:brass_normal_item_pipe)item(gtceu:cobalt_normal_item_pipe))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: -5.25d
+		}
+		{
+			dependencies: [
+				"64C18F9BF387363D"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:bronze_normal_fluid_pipe"
+			}
+			id: "30C3B9319A96DEAE"
+			optional: true
+			tasks: [
+				{
+					count: 1
+					id: "6B128C64D5F7CE6A"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:bronze_tiny_fluid_pipe)item(gtceu:bronze_quadruple_fluid_pipe)item(gtceu:bronze_nonuple_fluid_pipe)item(gtceu:bronze_huge_fluid_pipe)item(gtceu:bronze_large_fluid_pipe)item(gtceu:bronze_normal_fluid_pipe)item(gtceu:bronze_small_fluid_pipe))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "00429235D8399562"
+					item: {
+						count: 1
+						id: "gtceu:wood_normal_fluid_pipe"
+					}
+					optional_task: true
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: -3.5d
+		}
+		{
+			dependencies: [
+				"5B177F2400CD6242"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:bronze_drum"
+			}
+			id: "6DF3F3C9B0B5E8DB"
+			tasks: [
+				{
+					count: 1
+					id: "5FE7010A7968DB52"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:bronze_drum)item(gtceu:steel_drum)item(gtceu:aluminium_drum)item(gtceu:stainless_steel_drum)item(gtceu:gold_drum)item(gtceu:titanium_drum)item(gtceu:tungsten_steel_drum))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 0.875d
+		}
+		{
+			dependencies: [
+				"3C06EB454053DF65"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:wooden_multiblock_tank"
+			}
+			id: "599D49582B9592CA"
+			optional: true
+			shape: "heart"
+			tasks: [
+				{
+					count: 1
+					id: "22EE760C87B1C6D1"
+					item: {
+						count: 1
+						id: "gtceu:wooden_multiblock_tank"
+					}
+					type: "item"
+				}
+				{
+					count: 24
+					id: "63BE029B65A0F82F"
+					item: {
+						count: 1
+						id: "gtceu:wood_wall"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "3F60D7B528D33748"
+					item: {
+						count: 1
+						id: "gtceu:wooden_tank_valve"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 2.625d
+		}
+		{
+			dependencies: [
+				"64C18F9BF387363D"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "gtceu:sticky_resin"
+			}
+			id: "419312C4AB7C7771"
+			shape: "diamond"
+			tasks: [
+				{
+					count: 1
+					id: "439F701F47E212C8"
+					item: {
+						count: 1
+						id: "gtceu:sticky_resin"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: -1.75d
+		}
+		{
+			dependencies: [
+				"64C18F9BF387363D"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "gtceu:lp_steam_miner"
+			}
+			id: "0C3F12BBF127206D"
+			optional: true
+			tasks: [
+				{
+					count: 1
+					id: "4D4CC3ABBFA87515"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:lp_steam_miner)item(gtceu:hp_steam_miner)item(create:mechanical_drill))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"06D9D74614BC03F5"
+				"085716E91923B183"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:ball_casting_mold"
+			}
+			id: "1682B45C9E28D8AA"
+			tasks: [
+				{
+					count: 1
+					id: "752DD4C6DD73DAA3"
+					item: {
+						count: 1
+						id: "gtceu:ball_casting_mold"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "551FFED4AAED040B"
+					item: {
+						count: 1
+						id: "gtceu:plate_casting_mold"
+					}
+					optional_task: true
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: -2.625d
+		}
+		{
+			dependencies: [
+				"1682B45C9E28D8AA"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "gtceu:glass_tube"
+			}
+			id: "68964210104DDDF9"
+			tasks: [
+				{
+					count: 1
+					id: "48D726915CA3BE63"
+					item: {
+						count: 1
+						id: "gtceu:glass_tube"
+					}
+					type: "item"
+				}
+			]
+			x: 8.0d
+			y: -0.875d
+		}
+		{
+			dependencies: [
+				"68964210104DDDF9"
+				"085716E91923B183"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:vacuum_tube"
+			}
+			id: "66380B5C035A2419"
+			shape: "octagon"
+			size: 2.0d
+			tasks: [
+				{
+					count: 1
+					id: "0D32071DBA6A2843"
+					item: {
+						count: 1
+						id: "gtceu:vacuum_tube"
+					}
+					type: "item"
+				}
+			]
+			x: 10.0d
+			y: -0.875d
+		}
+		{
+			dependencies: [
+				"64C18F9BF387363D"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lp_steam_compressor"
+			}
+			id: "54277F0D544DEF06"
+			tasks: [
+				{
+					count: 1
+					id: "57AD7A9AAC2575A4"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:lp_steam_compressor)item(gtceu:hp_steam_compressor))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
 			y: 1.75d
+		}
+		{
+			dependencies: [
+				"54277F0D544DEF06"
+				"7A75798DC8627620"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:wood_plate"
+			}
+			id: "7209557EAD971E75"
+			tasks: [
+				{
+					count: 1
+					id: "27F8794A6E01FB81"
+					item: {
+						count: 1
+						id: "gtceu:wood_plate"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 0.875d
+		}
+		{
+			dependencies: [
+				"7209557EAD971E75"
+				"419312C4AB7C7771"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:resin_circuit_board"
+			}
+			id: "727711AAFEF0B076"
+			tasks: [
+				{
+					count: 1
+					id: "553DFBB564C742AA"
+					item: {
+						count: 1
+						id: "gtceu:resin_circuit_board"
+					}
+					type: "item"
+				}
+			]
+			x: 8.0d
+			y: 0.875d
+		}
+		{
+			dependencies: [
+				"727711AAFEF0B076"
+				"419312C4AB7C7771"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:resin_printed_circuit_board"
+			}
+			id: "2843A7A3EBCBB556"
+			shape: "square"
+			tasks: [
+				{
+					count: 1
+					id: "61F5F4B27C59A054"
+					item: {
+						count: 1
+						id: "gtceu:resin_printed_circuit_board"
+					}
+					type: "item"
+				}
+			]
+			x: 10.0d
+			y: 0.875d
+		}
+		{
+			dependencies: [
+				"29BF6E4C939D8EA2"
+				"419312C4AB7C7771"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "gtceu:resistor"
+			}
+			id: "454D1CA82011EC37"
+			shape: "square"
+			tasks: [
+				{
+					count: 1
+					id: "6FB080D4A3F02B0E"
+					item: {
+						count: 1
+						id: "gtceu:resistor"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 2.625d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "minecraft:paper"
+			}
+			id: "29BF6E4C939D8EA2"
+			shape: "diamond"
+			tasks: [
+				{
+					count: 1
+					id: "226967C276BBCFAC"
+					item: {
+						count: 1
+						id: "minecraft:paper"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 4.375d
+		}
+		{
+			dependencies: [
+				"06D9D74614BC03F5"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "gtceu:red_alloy_ingot"
+			}
+			id: "0C3BDFB496BDE961"
+			shape: "square"
+			tasks: [
+				{
+					count: 1
+					id: "5D3D751D14E22F59"
+					item: {
+						count: 1
+						id: "gtceu:red_alloy_ingot"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "0FEBF5F63F5538F6"
+					item: {
+						count: 1
+						id: "gtceu:red_alloy_single_wire"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: -0.875d
+		}
+		{
+			dependencies: [
+				"64C18F9BF387363D"
+				"00695D396C7FED88"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lp_steam_forge_hammer"
+			}
+			id: "6949C06F669C6F94"
+			shape: "square"
+			tasks: [
+				{
+					count: 1
+					id: "500A1FD1B414A7FD"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:lp_steam_forge_hammer)item(gtceu:hp_steam_forge_hammer))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"64C18F9BF387363D"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lp_steam_furnace"
+			}
+			id: "3A03A0E33944514A"
+			tasks: [
+				{
+					count: 1
+					id: "2766C7172E29BDE0"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:lp_steam_furnace)item(gtceu:hp_steam_furnace))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: 5.25d
+		}
+		{
+			dependencies: [
+				"3A03A0E33944514A"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:steam_oven"
+			}
+			id: "3D0A5D059655EB83"
+			optional: true
+			shape: "heart"
+			tasks: [
+				{
+					count: 1
+					id: "4DC208D25E69F60F"
+					item: {
+						count: 1
+						id: "gtceu:steam_oven"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "548F67AD328B39E2"
+					item: {
+						count: 1
+						id: "gtceu:steam_input_hatch"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "4BBCE74E04E5EBA8"
+					item: {
+						count: 1
+						id: "gtceu:steam_input_bus"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "783BC70607F985A4"
+					item: {
+						count: 1
+						id: "gtceu:steam_output_bus"
+					}
+					type: "item"
+				}
+				{
+					count: 8
+					id: "680662ECFC4223C2"
+					item: {
+						count: 1
+						id: "gtceu:steam_machine_casing"
+					}
+					type: "item"
+				}
+				{
+					count: 8
+					id: "6334C8940AC203A4"
+					item: {
+						count: 1
+						id: "gtceu:bronze_firebox_casing"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 4.375d
+		}
+		{
+			dependencies: [
+				"64C18F9BF387363D"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lp_steam_rock_crusher"
+			}
+			id: "7AB741431A670F31"
+			optional: true
+			shape: "heart"
+			tasks: [
+				{
+					count: 1
+					id: "421AE1A668C659D0"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:lp_steam_rock_crusher)item(gtceu:hp_steam_rock_crusher))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: 7.0d
+		}
+		{
+			dependencies: [
+				"64C18F9BF387363D"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:wood_mallet"
+			}
+			id: "3AEFFCF8FADDFD7F"
+			optional: true
+			shape: "heart"
+			tasks: [
+				{
+					count: 1
+					id: "291E5F70239796C4"
+					item: {
+						count: 1
+						id: "gtceu:wood_mallet"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: 8.75d
+		}
+		{
+			dependencies: [
+				"70D4CDC5438ED00B"
+				"64C18F9BF387363D"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "gtceu:bronze_large_boiler"
+			}
+			id: "0EA1CFB62F855B98"
+			shape: "heart"
+			size: 1.25d
+			tasks: [
+				{
+					count: 1
+					id: "0778E98C53782512"
+					item: {
+						count: 1
+						id: "gtceu:bronze_large_boiler"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: 10.5d
 		}
 	]
 }

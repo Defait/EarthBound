@@ -52,7 +52,11 @@ def main():
     srv.start(args.xmx)
     done = srv.wait_for(DONE_RE.pattern, args.timeout)
     if done:
-        print(f"Server ready in {done[1]}s (wall clock {time.time() - started:.0f}s). Testing /reload...")
+        print(f"Server ready in {done[1]}s (wall clock {time.time() - started:.0f}s).")
+        # smoke_checks.js runs some checks a second after startup (once FTB Quests has loaded its book).
+        if not srv.wait_for(r"\[smoke-checks\] done", 60):
+            print("  smoke_checks.js did not finish within a minute")
+        print("Testing /reload...")
         srv.command("reload")
         if not srv.wait_for(r"Reloaded with .*KubeJS|Failed to reload|reload failed", 300):
             print("  /reload did not report completion within 5 minutes")

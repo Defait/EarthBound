@@ -1,0 +1,662 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "combat_tips"
+	group: "1F9C8D54B077CFBC"
+	icon: {
+		count: 1
+		id: "tfc:metal/sword/bronze"
+	}
+	id: "295D2DEF23052519"
+	order_index: 14
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"1E4555A7AE8262F5"
+			]
+			icon: {
+				count: 1
+				id: "tfc:metal/anvil/wrought_iron"
+			}
+			id: "0959F5B3F2214E58"
+			shape: "octagon"
+			size: 1.5d
+			tasks: [
+				{
+					count: 1
+					id: "780C9D4F9524796B"
+					item: {
+						count: 1
+						id: "tfc:metal/anvil/wrought_iron"
+					}
+					type: "item"
+				}
+			]
+			x: 3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"0959F5B3F2214E58"
+			]
+			icon: {
+				count: 1
+				id: "minecraft:crossbow"
+			}
+			id: "38675AAD8AD89B02"
+			tasks: [
+				{
+					count: 1
+					id: "495B98D746F2A8D9"
+					item: {
+						count: 1
+						id: "minecraft:crossbow"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: -1.5d
+		}
+		{
+			dependencies: [
+				"0959F5B3F2214E58"
+			]
+			icon: {
+				count: 1
+				id: "tfc:metal/anvil/black_steel"
+			}
+			id: "6AF69F9A5D54F09B"
+			shape: "octagon"
+			size: 1.5d
+			tasks: [
+				{
+					count: 1
+					id: "48D91703AC9D8257"
+					item: {
+						count: 1
+						id: "tfc:metal/anvil/black_steel"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"0959F5B3F2214E58"
+			]
+			id: "7D3CA6CE28AD8FE3"
+			shape: "octagon"
+			size: 1.5d
+			tasks: [
+				{
+					count: 1
+					id: "2EA175513BF4D3BC"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(gtceu:circuits/lv)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 9.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"5647CFCF82DC5C51"
+			]
+			icon: {
+				count: 1
+				id: "tfc:metal/anvil/bronze"
+			}
+			id: "1E4555A7AE8262F5"
+			shape: "octagon"
+			size: 1.5d
+			tasks: [
+				{
+					count: 1
+					id: "16673E0768144A41"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(tfc:metal/anvil/bronze)item(tfc:metal/anvil/bismuth_bronze)item(tfc:metal/anvil/black_bronze))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "tfc:rock/loose/gabbro"
+			}
+			id: "04462F0277710661"
+			shape: "octagon"
+			size: 1.5d
+			tasks: [
+				{
+					id: "7465C1EA48631F52"
+					type: "checkmark"
+				}
+			]
+			x: -8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"04462F0277710661"
+			]
+			id: "11EC1AB24A424C40"
+			tasks: [
+				{
+					count: 1
+					id: "12E9CD024E79ABE8"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:tools/knife)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: -7.0d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"1E4555A7AE8262F5"
+			]
+			icon: {
+				count: 1
+				id: "tfc:metal/shield/copper"
+			}
+			id: "6B6F8FE279EE0D2E"
+			tasks: [
+				{
+					count: 1
+					id: "74AAA228889F1BAF"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(tfc:metal/shield/copper)item(tfc:metal/shield/bismuth_bronze)item(tfc:metal/shield/black_bronze)item(tfc:metal/shield/bronze)item(tfc:metal/shield/wrought_iron)item(tfc:metal/shield/steel)item(tfc:metal/shield/black_steel)item(tfc:metal/shield/blue_steel)item(tfc:metal/shield/red_steel))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: -1.0d
+			y: -1.5d
+		}
+		{
+			dependencies: [
+				"1E4555A7AE8262F5"
+			]
+			icon: {
+				count: 1
+				id: "tfc:metal/helmet/bismuth_bronze"
+			}
+			id: "349835095C5DD04C"
+			tasks: [
+				{
+					count: 1
+					id: "52672715D288BAAE"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(tfc:metal/helmet/bismuth_bronze)item(tfc:metal/helmet/black_bronze)item(tfc:metal/helmet/bronze)item(tfc:metal/helmet/copper)item(tfc:metal/helmet/wrought_iron)item(tfc:metal/helmet/steel)item(tfc:metal/helmet/black_steel)item(tfc:metal/helmet/blue_steel)item(tfc:metal/helmet/red_steel))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "1FF1E40C1CC5165D"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(tfc:metal/chestplate/bismuth_bronze)item(tfc:metal/chestplate/black_bronze)item(tfc:metal/chestplate/bronze)item(tfc:metal/chestplate/copper)item(tfc:metal/chestplate/wrought_iron)item(tfc:metal/chestplate/steel)item(tfc:metal/chestplate/black_steel)item(tfc:metal/chestplate/blue_steel)item(tfc:metal/chestplate/red_steel))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "0FBF73C54EBC76E4"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(tfc:metal/greaves/bismuth_bronze)item(tfc:metal/greaves/black_bronze)item(tfc:metal/greaves/bronze)item(tfc:metal/greaves/copper)item(tfc:metal/greaves/wrought_iron)item(tfc:metal/greaves/steel)item(tfc:metal/greaves/black_steel)item(tfc:metal/greaves/blue_steel)item(tfc:metal/greaves/red_steel))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "7185BF3682A5DD8B"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(tfc:metal/boots/bismuth_bronze)item(tfc:metal/boots/black_bronze)item(tfc:metal/boots/bronze)item(tfc:metal/boots/copper)item(tfc:metal/boots/wrought_iron)item(tfc:metal/boots/steel)item(tfc:metal/boots/black_steel)item(tfc:metal/boots/blue_steel)item(tfc:metal/boots/red_steel))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: -3.0d
+		}
+		{
+			dependencies: [
+				"04462F0277710661"
+			]
+			icon: {
+				count: 1
+				id: "tfc:stone/javelin/igneous_extrusive"
+			}
+			id: "598C71EB59EFF457"
+			tasks: [
+				{
+					count: 1
+					id: "2FBF5133B45E463F"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:tools/spear)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: -8.0d
+			y: -3.0d
+		}
+		{
+			dependencies: [
+				"0959F5B3F2214E58"
+			]
+			icon: {
+				count: 1
+				id: "tfc:metal/sword/wrought_iron"
+			}
+			id: "38A051C57C68817F"
+			tasks: [
+				{
+					count: 1
+					id: "1D48542509C1204B"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(tfc:metal/sword/wrought_iron)item(tfc:metal/sword/steel)item(tfc:metal/sword/black_steel)item(tfc:metal/sword/blue_steel)item(tfc:metal/sword/red_steel)item(tfc:metal/mace/wrought_iron)item(tfc:metal/mace/steel)item(tfc:metal/mace/black_steel)item(tfc:metal/mace/blue_steel)item(tfc:metal/mace/red_steel)item(tfc:metal/javelin/wrought_iron)item(tfc:metal/javelin/steel)item(tfc:metal/javelin/black_steel)item(tfc:metal/javelin/blue_steel)item(tfc:metal/javelin/red_steel))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 1.0d
+			y: -1.5d
+		}
+		{
+			dependencies: [
+				"7D3CA6CE28AD8FE3"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lv_blue_steel_chainsaw"
+			}
+			id: "2718A3ECD4BDF513"
+			tasks: [
+				{
+					count: 1
+					id: "4F6E0E3F251199F8"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:tools/chainsaw)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 10.0d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"04462F0277710661"
+			]
+			id: "7240010A1012782E"
+			tasks: [
+				{
+					count: 1
+					id: "3C77D1752CCF60B7"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(minecraft:axes)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: -9.0d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"04462F0277710661"
+			]
+			icon: {
+				count: 1
+				id: "tfc:ceramic/scythe_blade_mold"
+			}
+			id: "5647CFCF82DC5C51"
+			shape: "octagon"
+			size: 1.5d
+			tasks: [
+				{
+					count: 1
+					id: "71BA815026733A08"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(tfc:fired_molds)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: -4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"04462F0277710661"
+			]
+			icon: {
+				count: 1
+				id: "minecraft:bow"
+			}
+			id: "6541E6B876BB04BF"
+			tasks: [
+				{
+					count: 1
+					id: "1C1495CEA84CC31A"
+					item: {
+						count: 1
+						id: "minecraft:bow"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "7FB6E5889E96801E"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(minecraft:arrows)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					optional_task: true
+					type: "item"
+				}
+			]
+			x: -7.0d
+			y: -1.5d
+		}
+		{
+			dependencies: [
+				"04462F0277710661"
+			]
+			id: "440CA363F5E74068"
+			tasks: [
+				{
+					count: 1
+					id: "6B199CB5A70EC359"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:tools/hammer)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: -9.0d
+			y: -1.5d
+		}
+		{
+			dependencies: [
+				"5647CFCF82DC5C51"
+			]
+			id: "23B41740510DCA4B"
+			tasks: [
+				{
+					count: 1
+					id: "3720C0B94171D2DB"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(minecraft:swords)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "1BAF0B280D90D225"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:tools/scythe)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "7911B34248018653"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:tools/mace)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: -3.0d
+			y: -1.5d
+		}
+		{
+			dependencies: [
+				"5647CFCF82DC5C51"
+			]
+			icon: {
+				count: 1
+				id: "minecraft:shield"
+			}
+			id: "08BF36E8C1A5F640"
+			tasks: [
+				{
+					count: 1
+					id: "0F2081A43E729F8F"
+					item: {
+						count: 1
+						id: "minecraft:shield"
+					}
+					type: "item"
+				}
+			]
+			x: -5.0d
+			y: -1.5d
+		}
+		{
+			dependencies: [
+				"5647CFCF82DC5C51"
+			]
+			icon: {
+				count: 1
+				id: "minecraft:leather_helmet"
+			}
+			id: "0560BE2B9092FD80"
+			tasks: [
+				{
+					count: 1
+					id: "3159841ED0071201"
+					item: {
+						count: 1
+						id: "minecraft:leather_helmet"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "46E85058FEEEF2BF"
+					item: {
+						count: 1
+						id: "minecraft:leather_chestplate"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "3D3E064088E648A8"
+					item: {
+						count: 1
+						id: "minecraft:leather_leggings"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "70A1E199B5CF1AB1"
+					item: {
+						count: 1
+						id: "minecraft:leather_boots"
+					}
+					type: "item"
+				}
+			]
+			x: -4.0d
+			y: -3.0d
+		}
+		{
+			dependencies: [
+				"7D3CA6CE28AD8FE3"
+			]
+			id: "0C7E965D4E868A3F"
+			shape: "octagon"
+			size: 1.5d
+			tasks: [
+				{
+					count: 1
+					id: "7D6C368F2A4BC6A4"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(gtceu:circuits/hv)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 16.5d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"0959F5B3F2214E58"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "minecraft:smithing_table"
+			}
+			id: "113579E5D7E23CC0"
+			tasks: [
+				{
+					count: 1
+					id: "6A5BFA328DBBF627"
+					item: {
+						count: 1
+						id: "minecraft:smithing_table"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"6AF69F9A5D54F09B"
+			]
+			icon: {
+				count: 1
+				id: "create:netherite_diving_helmet"
+			}
+			id: "57DB11B86C2A2EB4"
+			tasks: [
+				{
+					count: 1
+					id: "6D61308E777FB270"
+					item: {
+						count: 1
+						id: "create:netherite_diving_helmet"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "15D9B72F6FB3E000"
+					item: {
+						count: 1
+						id: "create:netherite_backtank"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "232F049998FE72F1"
+					item: {
+						count: 1
+						id: "create:netherite_diving_boots"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: -3.0d
+		}
+	]
+}

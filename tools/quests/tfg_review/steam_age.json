@@ -1,0 +1,636 @@
+{
+ "chapter": "steam_age",
+ "decisions": [
+  {
+   "key": "steam_age.boilers",
+   "action": "merge",
+   "merge_into": "boiler",
+   "reason": "Same milestone as the route's first boiler; TFG's quest asked for high-pressure boilers because its steam age starts at black steel. Its boiler-type, vent and explosion advice is true here and goes on the route quest (the route's hp_boiler covers steel boilers).",
+   "desc": [
+    "Bronze plates, TFC fire bricks and a Create mechanical pump. It burns logs or charcoal. Every steam machine runs on boiler steam, and later the steam turbine turns it into electricity.",
+    "",
+    "There are three kinds, all built around a mechanical pump: the &3Solid&r boiler burns solid fuels like coal and charcoal, the &3Liquid&r boiler burns lava or creosote, and the &3Solar&r boiler needs no fuel but only works during the day. If you're unsure, start with the solid one.",
+    "",
+    "Steam machines all have a vent which needs to stay unblocked in order for them to work properly.",
+    "{@pagebreak}",
+    "&aWarning:&r Boilers will &bexplode&r if you put water into them while they are dry and hot. It's best to always have water being piped into them, but you can always break and place the block to reset its temperature."
+   ]
+  },
+  {
+   "key": "steam_age.alloy_smelter",
+   "action": "merge",
+   "merge_into": "steam_alloy_smelter",
+   "reason": "Same machine as the route's steam_alloy_smelter. Kept TFG's bronze/brass and soft-mallet tips (verified: 3 copper + 1 tin or zinc -> 4 TFC ingots); cut high-carbon welding (no such recipe here).",
+   "desc": [
+    "Runs GregTech's alloy recipes on steam: red alloy from one copper and four redstone (grind cinnabar or cryolite in a TFC quern), rubber from raw rubber and sulfur.",
+    "",
+    "It also makes &6Bronze&r and &6Brass&r the effortless way: three copper and one tin or zinc, as ingots or dusts, give four ingots. No vessel, no watching temperatures.",
+    "",
+    "It's a steam-hungry machine. If you find yourself running out of steam, give a machine a &alove-tap&r with a &dSoft Mallet&r to pause it."
+   ]
+  },
+  {
+   "key": "steam_age.steam_macerator",
+   "action": "merge",
+   "merge_into": "steam_macerator",
+   "reason": "Same machine as the route's steam_macerator. TFG said it equals the millstone; here it doubles the millstone's yield. Kept the note that byproducts need an HV macerator (GregTech's tooltips: LV/MV/steam macerators work without byproducts).",
+   "desc": [
+    "Crushes TFC ore pieces into GregTech crushed ore at twice TFC's yield: 5 small, 10 poor, 2 normal or 10 rich pieces give 1, 3, 1 or 7 crushed ores. Mineral and gem ores give 2 each.",
+    "",
+    "That's twice what the millstone gives, so it's worth building even next to one. It also grinds crushed ore into impure dust and logs into wood pulp.",
+    "",
+    "EMI shows more output slots than you'll get: the steam macerator has one, and byproducts from macerating wait for an &6HV&r macerator."
+   ]
+  },
+  {
+   "key": "steam_age.lv_circuit",
+   "action": "merge",
+   "merge_into": "circuit",
+   "reason": "Same milestone as the route's circuit quest (basic electronic circuit).",
+   "desc": [
+    "Vacuum tubes, resistors and red alloy cable on a circuit board, with a steel plate. Circuits gate every LV machine.",
+    "",
+    "The recipe may look intimidating, but if you've spent some time in the steam age, every part should be easy to make in bulk. You'll be making a lot of these: the assembler makes their parts cheaper, and the circuit assembler makes two circuits at a time."
+   ]
+  },
+  {
+   "key": "steam_age.crushing_wheel",
+   "action": "drop",
+   "reason": "Greate's steel crushing wheel isn't in the pack; Create's crushing wheels are the route's crushing_wheels quest."
+  },
+  {
+   "key": "steam_age.steam_bloomery",
+   "action": "drop",
+   "reason": "tfg:steam_bloomery is TerraFirmaGreg's own multiblock; here wrought iron comes only from TFC's bloomery."
+  },
+  {
+   "key": "steam_age.coiling_machine",
+   "action": "drop",
+   "reason": "Vintage Improvements isn't in the pack; Create's saw makes wires here (route saw quest)."
+  },
+  {
+   "key": "steam_age.steel_mixer",
+   "action": "drop",
+   "reason": "Greate's steel mechanical mixer isn't in the pack (no Greate tiers)."
+  },
+  {
+   "key": "steam_age.lathe",
+   "action": "drop",
+   "reason": "Vintage Improvements' belt grinder isn't in the pack."
+  },
+  {
+   "key": "steam_age.centrifuge",
+   "action": "drop",
+   "reason": "Vintage Improvements' centrifuge isn't in the pack."
+  },
+  {
+   "key": "steam_age.vibrating_table",
+   "action": "drop",
+   "reason": "Vintage Improvements' vibrating table isn't in the pack."
+  },
+  {
+   "key": "steam_age.rolling_mill",
+   "action": "drop",
+   "reason": "Create Crafts & Additions isn't in the pack; Create's press already makes GregTech plates one for one."
+  },
+  {
+   "key": "steam_age.steel_saw",
+   "action": "drop",
+   "reason": "Greate's steel mechanical saw isn't in the pack."
+  },
+  {
+   "key": "steam_age.curving_press",
+   "action": "drop",
+   "reason": "Vintage Improvements' curving press isn't in the pack."
+  },
+  {
+   "key": "steam_age.vacuum_chamber",
+   "action": "drop",
+   "reason": "Vintage Improvements' vacuum chamber isn't in the pack; vacuum tubes are crafted from a glass tube, steel bolts and copper wire here."
+  },
+  {
+   "key": "metal_age.black_steel_goodies",
+   "action": "drop",
+   "reason": "TFG gates high-pressure steam behind black steel; here high-pressure steam and LV need steel (route hp_boiler)."
+  },
+  {
+   "key": "steam_age.steam_presser",
+   "action": "drop",
+   "reason": "tfg:steam_presser is TerraFirmaGreg's own multiblock."
+  },
+  {
+   "key": "steam_age.steam_fuser",
+   "action": "drop",
+   "reason": "tfg:steam_fuser is TerraFirmaGreg's own multiblock."
+  },
+  {
+   "key": "steam_age.steam_squasher",
+   "action": "drop",
+   "reason": "tfg:steam_squasher is TerraFirmaGreg's own multiblock."
+  },
+  {
+   "key": "steam_age.cobalt_brass",
+   "action": "drop",
+   "reason": "TFG's route (aluminium silicate in a crucible, fan-washing for aluminium) doesn't exist here; cobalt brass is an LV mixer alloy that nothing on the path needs (tools and a late casing only)."
+  },
+  {
+   "key": "steam_age.q66e34daa25149fc0",
+   "action": "drop",
+   "reason": "tfg:gas_well is TerraFirmaGreg's own machine; natural gas deposits are TFG worldgen."
+  },
+  {
+   "key": "tfg_tips.tablets",
+   "action": "drop",
+   "reason": "TerraFirmaGreg's medicine tablets (tfg:*_tablet) aren't in the pack."
+  },
+  {
+   "key": "steam_age.steel_steam_engine",
+   "action": "drop",
+   "reason": "Steam Powered isn't in the pack."
+  },
+  {
+   "key": "steel_combustion_engine",
+   "action": "drop",
+   "reason": "tfg:generators/steel_combustion_engine is TerraFirmaGreg's own; this pack has no Create power from fuel engines."
+  },
+  {
+   "key": "tfg_tips.transportation_tips.rnr_plow",
+   "action": "drop",
+   "reason": "TerraFirmaGreg's paving cart (rnr roads, Astikor) isn't in the pack."
+  },
+  {
+   "key": "steam_age.electron_tube",
+   "action": "edit",
+   "chapter": "create",
+   "reason": "Electron tubes here are polished rose quartz on a wrought iron sheet (no glass tube/red alloy/wood plank, no cheaper deployer recipe).",
+   "desc": [
+    "An &9Electron Tube&r is polished rose quartz on a wrought iron sheet. Rose quartz is nether quartz crafted with eight redstone; polish it with sand paper.",
+    "",
+    "Quartz comes from grinding TFC rock: a millstone finds a little in raw quartzite, crushing wheels more in diorite. A quern grinds TFC cinnabar or cryolite into redstone.",
+    "",
+    "Deployers and mechanical crafters are built with them."
+   ],
+   "deps": [
+    "wrought_iron"
+   ]
+  },
+  {
+   "key": "steam_age.deployers",
+   "action": "edit",
+   "chapter": "create",
+   "reason": "Electron tubes have no cheaper deployer recipe here; the text now says what deployers are for in this pack (sequenced assembly, tracks, cheaper envelopes).",
+   "desc": [
+    "A deployer is a mechanical hand: it uses whatever it holds on the block or item in front of it. Create's sequenced assembly runs on deployers; that's how precision mechanisms and train tracks are made.",
+    "",
+    "While you could get by with a single deployer, we &3really&r don't recommend it. Setting up a line of deployers along a belt will save heaps of time and sanity.",
+    "",
+    "Airship envelopes also cost fewer brass nuggets when a deployer makes them."
+   ]
+  },
+  {
+   "key": "steam_age.mech_crafter",
+   "action": "edit",
+   "chapter": "create",
+   "reason": "TFG's text points at its own uses; here Create's crushing wheels need it (5x5 mechanical crafting recipe). Not optional here: the route's crushing wheels need mechanical crafters.",
+   "desc": [
+    "Mechanical crafters build Create's oversized recipes: set out enough of them in the recipe's shape, give them rotation and put one ingredient in each.",
+    "",
+    "You'll want them for Create's &3Crushing Wheels&r, whose 5x5 recipe needs them. The wheels grind TFC ore at the macerator's rate."
+   ],
+   "optional": false
+  },
+  {
+   "key": "steam_age.trains",
+   "action": "edit",
+   "chapter": "create",
+   "reason": "Cut TFG's claim about player teleportation; added this pack's train facts (tracks by sequenced assembly, train casing, Steam 'n' Rails with GregTech coke) and the real-scale world.",
+   "desc": [
+    "Trains are a fantastic option when it comes to any sort of long distance transportation, whether that's players, items, or fluids! They can also safely travel through unloaded chunks. On a real-scale Earth, where Rome to Naples is 9,500 blocks, a rail network pays for itself.",
+    "",
+    "Tracks come out of sequenced assembly, so you'll need deployers; stations and controls start from train casing (brass casing with an obsidian plate). Steam 'n' Rails adds more tracks and locometal train parts, and its locometal boilers take GregTech coke."
+   ],
+   "deps": [
+    "steam_age.deployers"
+   ]
+  },
+  {
+   "key": "steam_age.packager",
+   "action": "edit",
+   "chapter": "create",
+   "reason": "TFG's quest pointed at its field guide; replaced with a short description of Create 6's logistics and an item task for the packager (wrought iron, cardboard from the press, redstone).",
+   "desc": [
+    "Is your chest monster starting to grow out of control? Create's logistics can help: a &3Packager&r boxes up items from an inventory, belts, chain conveyors and frogports carry the packages, and stock links let you order from your whole storage at once.",
+    "",
+    "Factory Logistics does the same for fluids, in jars. Hold W over any of these items for Create's Ponder scenes."
+   ],
+   "tasks": [
+    {
+     "item": "create:packager"
+    }
+   ],
+   "deps": [
+    "press"
+   ]
+  },
+  {
+   "key": "steam_age.miner",
+   "action": "edit",
+   "chapter": "steam",
+   "subtitle": "Let the machines swing the pickaxe",
+   "reason": "Either steam miner (low or high pressure) or a drill completes it; mentions Power Loader for chunk loading; TFC ores count as ores for the steam miner (they're in c:ores).",
+   "desc": [
+    "You now have two ways to mine automatically! Both of them are very slow, so it's a good idea to set them up, keep their chunks loaded (Create: Power Loader's chunk loaders) and go do something else instead of sitting and waiting.",
+    "",
+    "The &3Mechanical Drill&r needs a contraption to move it, breaking all stone along the way. You can also attach it to the front of a train or minecart to dig tunnels.",
+    "{@pagebreak}",
+    "The &3Steam Miner&r, on the other hand, only breaks ore blocks (TFC's ores count) and replaces them with cobblestone, leaving the rest of the ground intact. It mines ores in a small radius, so it has to be moved less often than a drill, but it's also a lot slower."
+   ],
+   "tasks": [
+    {
+     "filter": "or(item(gtceu:lp_steam_miner)item(gtceu:hp_steam_miner)item(create:mechanical_drill))",
+     "any": [
+      "gtceu:lp_steam_miner",
+      "gtceu:hp_steam_miner",
+      "create:mechanical_drill"
+     ]
+    }
+   ],
+   "deps": [
+    "boiler"
+   ]
+  },
+  {
+   "key": "steam_age.molding",
+   "action": "edit",
+   "chapter": "steam",
+   "reason": "Molds need steel (empty mold: four steel plates, hammer, file); the ball mold is what glass tubes need, the plate mold is optional (Create's press makes plates); cut the gear-mold cost claim.",
+   "desc": [
+    "In addition to alloying metals together, the Alloy Smelter can also use &3Casting Molds&r to shape materials.",
+    "",
+    "Molds start as an &aEmpty Mold&r: four steel plates with a hammer and a file. A hammer then shapes it into the mold you want. You'll need the &aBall&r mold for glass tubes; the &aPlate&r mold makes glass plates.",
+    "",
+    "Be sure to make &aCasting Molds&r - don't make &cExtruder Molds&r, as they're used in a different machine."
+   ],
+   "tasks": [
+    {
+     "item": "gtceu:ball_casting_mold"
+    },
+    {
+     "optional": true,
+     "item": "gtceu:plate_casting_mold"
+    }
+   ],
+   "deps": [
+    "steam_alloy_smelter",
+    "steel"
+   ]
+  },
+  {
+   "key": "steam_age.glass_tube",
+   "action": "edit",
+   "chapter": "steam",
+   "reason": "No glassblowing recipe for glass tubes here; they come only from glass dust and a ball mold. Cut the rock crusher/flint route (needs an LV mixer and vanilla sand).",
+   "desc": [
+    "Glass tubes come out of the Alloy Smelter: one glass dust with a &aBall Casting Mold&r. Grind glass (made with TFC's glassworking) in the steam macerator for the dust."
+   ],
+   "deps": [
+    "steam_age.molding"
+   ]
+  },
+  {
+   "key": "steam_age.vacuum_tubes",
+   "action": "edit",
+   "chapter": "steam",
+   "reason": "Vacuum tubes here: a glass tube, two steel bolts and three copper wires by hand (no vacuum chamber).",
+   "desc": [
+    "Crafting Vacuum Tubes might make you question your existence: a glass tube, two steel bolts and three copper wires each. They're very expensive right now, but they'll get cheaper in a moment - that's the general GregTech philosophy! The assembler makes two to four at a time.",
+    "",
+    "Vacuum Tubes are also technically your first Ultra Low Voltage (&8ULV&r) Circuit! Congratulations! From here you can jump right into crafting LV Circuits."
+   ],
+   "deps": [
+    "steam_age.glass_tube",
+    "steel"
+   ]
+  },
+  {
+   "key": "steam_age.compressor",
+   "action": "edit",
+   "chapter": "steam",
+   "reason": "Accepts the low-pressure (bronze) compressor too; this pack's steam age starts with bronze machines.",
+   "tasks": [
+    {
+     "filter": "or(item(gtceu:lp_steam_compressor)item(gtceu:hp_steam_compressor))",
+     "any": [
+      "gtceu:lp_steam_compressor",
+      "gtceu:hp_steam_compressor"
+     ]
+    }
+   ],
+   "deps": [
+    "boiler"
+   ]
+  },
+  {
+   "key": "steam_age.wood_plank",
+   "action": "edit",
+   "chapter": "steam",
+   "reason": "TFG's text refers to its treated planks quest; says how wood planks are made here (macerated logs -> wood pulp -> compressor).",
+   "desc": [
+    "GregTech's &aWood Plank&r is a thin wooden plate, the base of your first circuit boards. Grind logs (TFC logs work) into wood pulp in a macerator, then press the pulp into planks in the Steam Compressor, one each."
+   ],
+   "deps": [
+    "steam_age.compressor",
+    "steam_macerator"
+   ]
+  },
+  {
+   "key": "steam_age.resin_boards",
+   "action": "edit",
+   "chapter": "steam",
+   "reason": "Tree taps are TFG/Firmalife; replaced with the recipe.",
+   "desc": [
+    "Coat a wood plank in sticky resin: one plank and two resin make a &aResin Circuit Board&r (three planks and six resin make three)."
+   ]
+  },
+  {
+   "key": "steam_age.circuit_boards",
+   "action": "edit",
+   "chapter": "steam",
+   "reason": "No artisan table here; the board is crafted from a resin circuit board and eight copper wires.",
+   "desc": [
+    "Surround a Resin Circuit Board with eight copper single wires to make your first &aResin Printed Circuit Board&r!",
+    "",
+    "Create's mechanical saw slits a copper plate into two wires. Later the assembler makes boards from glue and copper foil instead."
+   ],
+   "tasks": [
+    {
+     "item": "gtceu:resin_printed_circuit_board"
+    }
+   ]
+  },
+  {
+   "key": "steam_age.resistors",
+   "action": "edit",
+   "chapter": "steam",
+   "reason": "No coiling machine here; wires come from Create's saw, fine wires pay off with the LV wiremill.",
+   "desc": [
+    "Resistors are components that will be used to make your first Circuit: sticky resin, paper, copper wire and a pinch of coal or charcoal dust.",
+    "",
+    "Wires may be expensive right now: Create's mechanical saw slits a copper plate into two. Once you have an LV &3Wiremill&r, switch to the recipes with &aFine Wires&r; one copper ingot makes eight."
+   ]
+  },
+  {
+   "key": "steam_age.paper",
+   "action": "edit",
+   "chapter": "steam",
+   "reason": "TFG's vellum/papyrus/hardwood recipes are its own; these are TFC's (papyrus on the loom, or treated hide, egg, flour and lime) and GregTech's chemical bath.",
+   "desc": [
+    "If you haven't made any yet, there are two ways to get paper without electricity.",
+    "",
+    "1) Papyrus: cut it into strips with a knife, soak the strips in a barrel of water, weave four soaked strips on a loom and scrape the unrefined paper with a knife.",
+    "",
+    "2) Craft it from treated hide, an egg, flour and lime.",
+    "",
+    "Later, a chemical bath turns wood pulp straight into paper."
+   ]
+  },
+  {
+   "key": "tfg_tips.create_sticky_resin",
+   "action": "edit",
+   "chapter": "steam",
+   "reason": "The vat/latex/conifer pitch route is TFG's (Firmalife); here sticky resin drops from wild rubber logs (85%, GregTech's loot table) or comes from an LV centrifuge. Sticky resin isn't a slime ball here.",
+   "desc": [
+    "&dSticky Resin&r is key in the production of &aResin Circuit Boards&r and &aResistors&r, which you'll need a fair bit of to advance into the &7Low Voltage&r age.",
+    "",
+    "Wild &aRubber Trees&r grow in the world, and chopping a log of a wild one usually drops sticky resin along with it. Later, an LV centrifuge gets resin out of rubber logs too."
+   ]
+  },
+  {
+   "key": "steam_age.red_alloy",
+   "action": "edit",
+   "chapter": "steam",
+   "reason": "No TFC crucible recipe for red alloy here; it's the alloy smelter only. Electron tubes don't use it here; circuits need red alloy cable. Wires come from Create's press and saw.",
+   "desc": [
+    "&4Red Alloy&r is an alloy of Copper and Redstone, prized in the GregTech universe for its conductivity. Make it in the Alloy Smelter: one copper and four redstone. A TFC quern grinds cinnabar or cryolite into redstone.",
+    "",
+    "Press it into a plate and slit the plate into wires with Create's saw. Your first circuits need red alloy cable.",
+    "",
+    "&l&3Lore:&r&o This material originally comes from RedPower - what a throwback!"
+   ],
+   "deps": [
+    "steam_alloy_smelter"
+   ]
+  },
+  {
+   "key": "steam_age.forge_hammer",
+   "action": "edit",
+   "chapter": "steam",
+   "reason": "Its cobble/gravel/sand recipes take vanilla stone only, not TFC rock; no bloom or pig iron recipes here; the press beats its plate ratio; accepts the bronze machine; its recipe needs a vanilla anvil.",
+   "desc": [
+    "With the creation of this machine, many recipes that once required you to use a hammer can instead be made here, and quickly: crushed ore into impure dust, purified ore into purified dust, and gem blocks back into gems.",
+    "",
+    "It also makes &aPlates&r at a better ratio than by hand: &6three Ingots for two Plates&r. (Create's press still beats it at one for one.)",
+    "",
+    "It crushes vanilla cobblestone into gravel and gravel into sand, but not TFC rock. Its recipe takes a vanilla anvil, so start saving wrought iron."
+   ],
+   "tasks": [
+    {
+     "filter": "or(item(gtceu:lp_steam_forge_hammer)item(gtceu:hp_steam_forge_hammer))",
+     "any": [
+      "gtceu:lp_steam_forge_hammer",
+      "gtceu:hp_steam_forge_hammer"
+     ]
+    }
+   ],
+   "deps": [
+    "boiler",
+    "wrought_iron"
+   ]
+  },
+  {
+   "key": "steam_age.steam_furnace",
+   "action": "edit",
+   "chapter": "steam",
+   "reason": "Accepts the bronze furnace; adds that iron ores and dusts smelt into cast iron here.",
+   "desc": [
+    "Want to quickly smelt something into an ingot? The &3Steam Furnace&r does just that! It can turn crushed ores and dusts quickly into their ingot form, at the expense of not getting any byproducts.",
+    "",
+    "Iron ores (hematite, magnetite, limonite, pyrite) and iron dusts come out as TFC cast iron, as if you'd melted them; wrought iron still comes only from the bloomery."
+   ],
+   "tasks": [
+    {
+     "filter": "or(item(gtceu:lp_steam_furnace)item(gtceu:hp_steam_furnace))",
+     "any": [
+      "gtceu:lp_steam_furnace",
+      "gtceu:hp_steam_furnace"
+     ]
+    }
+   ],
+   "deps": [
+    "boiler"
+   ]
+  },
+  {
+   "key": "steam_age.steam_oven",
+   "action": "edit",
+   "chapter": "steam",
+   "reason": "Cut the unverifiable lore; added how to see the structure and that steam multiblocks run slower than EMI shows.",
+   "desc": [
+    "&o...or little brother. Don't let him know!&r",
+    "",
+    "The &3Steam Oven&r is a great multiblock option if you need to &6effortlessly smelt large quantities of items.&r No more lines of furnaces that you have to manually empty and refuel!",
+    "",
+    "It effectively behaves as a parallel furnace, smelting up to 8 items at a time for a low cost of Steam. Like every steam multiblock, its recipes take half again as long as EMI shows. Press the EMI 'Uses' key (U) on the controller to see the structure; click a block to see what fits there."
+   ]
+  },
+  {
+   "key": "steam_age.rock_crusher",
+   "action": "edit",
+   "chapter": "steam",
+   "reason": "Corrected: it needs lava and water next to it and makes vanilla cobblestone/stone only (not TFC rock); accepts the bronze machine.",
+   "desc": [
+    "The Rock Crusher is basically a cobblestone generator in a box. With lava and water next to it, it makes more of the vanilla cobblestone or stone in its slot (which isn't used up), at the low cost of just a little steam.",
+    "",
+    "It only makes vanilla stone, not TFC rock, so this doesn't help at all for progression; its cobblestone can feed the forge hammer if you need vanilla gravel or sand."
+   ],
+   "tasks": [
+    {
+     "filter": "or(item(gtceu:lp_steam_rock_crusher)item(gtceu:hp_steam_rock_crusher))",
+     "any": [
+      "gtceu:lp_steam_rock_crusher",
+      "gtceu:hp_steam_rock_crusher"
+     ]
+    }
+   ],
+   "deps": [
+    "boiler"
+   ]
+  },
+  {
+   "key": "steam_age.q1d4701c28c2facf7",
+   "action": "edit",
+   "chapter": "steam",
+   "title": "Soft Mallet",
+   "subtitle": "Time for a break",
+   "reason": "Rephrased to what the soft mallet does (pause/resume a machine); TFG's claim that out-of-steam machines need a mallet to restart isn't verified here.",
+   "desc": [
+    "The &6Soft Mallet&r is a particularly useful tool during the steam age. Hit a GregTech machine with it to pause it, and again to start it back up.",
+    "",
+    "When your boilers can't keep up, pause the machines you don't need right now so the rest get the steam."
+   ],
+   "deps": [
+    "boiler"
+   ]
+  },
+  {
+   "key": "steam_age.q1f7aaf65cc0a4adf",
+   "action": "edit",
+   "chapter": "steam",
+   "title": "Large Bronze Boiler",
+   "subtitle": "Mass producing Steam",
+   "reason": "TFG's own large boiler (with boosters) isn't here; GregTech's Large Bronze Boiler is (tin cable, LV circuits, bronze firebox casing). Text rewritten without TFG's booster mechanics.",
+   "desc": [
+    "The &eLarge Bronze Boiler&r is a multiblock that makes far more &bSteam&r than the small boilers. It burns solid fuels or liquid ones such as creosote, and takes a while to heat up.",
+    "",
+    "Its controller takes LV circuits. Press the EMI 'Uses' key (U) on the controller to see the structure.",
+    "",
+    "Like every boiler, keep water flowing in before it gets hot, or it will &cEXPLODE&r."
+   ],
+   "tasks": [
+    {
+     "item": "gtceu:bronze_large_boiler"
+    }
+   ],
+   "deps": [
+    "circuit",
+    "boiler"
+   ]
+  },
+  {
+   "key": "steam_age.potin",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Potin needs lead, which here is only a byproduct of silver (LV ore washer or centrifuge), so it's an LV material; TFG's crucible dependency is gone; cut the throughput claim and the TFG lore line.",
+   "desc": [
+    "&dPotin Fluid Pipes&r carry plenty of fluid for an early pipe (check the tooltip for the numbers). You may want to look into making some of these to aid with fluid logistics.",
+    "",
+    "Potin is six copper, two tin and one lead: craft its &eDust&r form by hand, then smelt it. TFC has no lead ore; lead is a byproduct of silver, from washing crushed silver in the &3Ore Washer&r or centrifuging impure silver dust.",
+    "",
+    "This quest calls for any size of potin pipe.",
+    "{@pagebreak}",
+    "&l&3Lore:&r&o &dPotin Fluid Pipes&r were originally created in &9GT++&r, and were a huge power spike for players in a little pack called &4GT:NH&r.",
+    "",
+    "In the real world, &dPotin&r is an alloy used in coins, not pipes. GTCEu just gets more unrealistic by the day..."
+   ],
+   "tasks": [
+    {
+     "filter": "or(item(gtceu:potin_tiny_fluid_pipe)item(gtceu:potin_small_fluid_pipe)item(gtceu:potin_normal_fluid_pipe)item(gtceu:potin_large_fluid_pipe)item(gtceu:potin_huge_fluid_pipe)item(gtceu:potin_quadruple_fluid_pipe)item(gtceu:potin_nonuple_fluid_pipe))",
+     "any": [
+      "gtceu:potin_tiny_fluid_pipe",
+      "gtceu:potin_small_fluid_pipe",
+      "gtceu:potin_normal_fluid_pipe",
+      "gtceu:potin_large_fluid_pipe",
+      "gtceu:potin_huge_fluid_pipe",
+      "gtceu:potin_quadruple_fluid_pipe",
+      "gtceu:potin_nonuple_fluid_pipe"
+     ]
+    }
+   ],
+   "deps": [
+    "ore_proc.ore_washer"
+   ]
+  },
+  {
+   "key": "steam_age.steam_grinder",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "Its recipe takes two potin gears, and potin needs lead from LV byproducts, so it sits with potin.",
+   "desc": [
+    "Like the Steam Oven, the &3Steam Grinder&r is a multiblock version of a single machine, the macerator, that can do up to 8 items at the same time. Its recipe takes two potin gears. Is it worth it? That's totally up to you."
+   ],
+   "deps": [
+    "steam_age.potin",
+    "steam_macerator"
+   ]
+  },
+  {
+   "key": "steam_age.supers",
+   "action": "edit",
+   "chapter": "lv",
+   "reason": "No ULV super chest/tank here (they start at LV); dropped the AE2 mention. Put in lv rather than tools_tips so the tips chapter keeps its own layout (a mixed-source chapter loses TFG's layout).",
+   "desc": [
+    "This is the &cu&6l&et&ai&bm&9a&5t&4e&r portable item and storage solution if you have a lot of single items or fluids. While the first (&7LV&r) Super Chests and Tanks start out relatively small, higher tiers, and the Quantum Chests and Tanks after them, can hold an insane amount of stuff - all in one single block without any regard to temperature or acidity!",
+    "",
+    "Like Drums, Super Tanks and Chests &6keep their contents when broken&r, can be cleared in the crafting grid, and can automatically void any overflow. Unlike drums, however, Super Tanks also &asafely contain&r their contents, preventing you from getting burnt, frozen, or floating."
+   ],
+   "tasks": [
+    {
+     "filter": "or(item(gtceu:lv_super_chest)item(gtceu:mv_super_chest)item(gtceu:hv_super_chest)item(gtceu:ev_super_chest)item(gtceu:iv_quantum_chest)item(gtceu:luv_quantum_chest)item(gtceu:zpm_quantum_chest)item(gtceu:uv_quantum_chest)item(gtceu:uhv_quantum_chest)item(gtceu:lv_super_tank)item(gtceu:mv_super_tank)item(gtceu:hv_super_tank)item(gtceu:ev_super_tank)item(gtceu:iv_quantum_tank)item(gtceu:luv_quantum_tank)item(gtceu:zpm_quantum_tank)item(gtceu:uv_quantum_tank)item(gtceu:uhv_quantum_tank))",
+     "any": [
+      "gtceu:lv_super_chest",
+      "gtceu:mv_super_chest",
+      "gtceu:hv_super_chest",
+      "gtceu:ev_super_chest",
+      "gtceu:iv_quantum_chest",
+      "gtceu:luv_quantum_chest",
+      "gtceu:zpm_quantum_chest",
+      "gtceu:uv_quantum_chest",
+      "gtceu:uhv_quantum_chest",
+      "gtceu:lv_super_tank",
+      "gtceu:mv_super_tank",
+      "gtceu:hv_super_tank",
+      "gtceu:ev_super_tank",
+      "gtceu:iv_quantum_tank",
+      "gtceu:luv_quantum_tank",
+      "gtceu:zpm_quantum_tank",
+      "gtceu:uv_quantum_tank",
+      "gtceu:uhv_quantum_tank"
+     ]
+    }
+   ],
+   "deps": [
+    "circuit"
+   ]
+  }
+ ]
+}

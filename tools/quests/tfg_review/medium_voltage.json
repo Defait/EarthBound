@@ -1,0 +1,779 @@
+{
+ "chapter": "medium_voltage",
+ "decisions": [
+  {
+   "key": "medium_voltage.pyrolyse",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "Checked against GregTech 8.0's pyrolyse recipes: it makes biomass from bio chaff (not as a log byproduct), recipes run at 64-96 EU/t, and its tooltip makes Cupronickel coils 25% slower than Kanthal. Cut the 'superconductors' remark and kept the lore.",
+   "desc": [
+    "The &3Pyrolyse Oven&r is an electric equivalent to the &3Coke Oven&r. It turns logs into &9Charcoal&r and coal into &9Coke&r with a &9Creosote&r byproduct just as before, but with other circuits it gives other &6Organic Byproducts&r, the most useful of these being &aWood Tar&r.\n\nIt also turns &aBio Chaff&r into &aBiomass&r, which is more pertinent for your progression right now.",
+    "{@pagebreak}",
+    "The byproducts can be distilled into an array of organic resources, with &odifferent&r byproducts giving &odifferent&r ratios of &odifferent&r chemicals.\n\nTake a peek at the &9Distillery&r Quest to get to grips with the power of distillation...",
+    "{@pagebreak}",
+    "Some recipes accept &bNitrogen&r to run faster. This isn't quite worth pursuing right now.\n\nIts basic recipes need &d64 EU/t&r, which a single &7LV&r Energy Hatch supplies. &3Cupronickel Coils&r are fine while you get used to it, but they run it 25 percent slower than &bKanthal&r, and every coil after Kanthal makes it faster.",
+    "{@pagebreak}",
+    "&9&lNote:&r&l The plant path is one way to &9&lEthylene&r&l, which you need for your first plastic on the way to &6HV&r&l. The other path involves Oil.&r\n\nThe Pyrolyse Oven remains &doptional&r. However, it is very rewarding to build one, either for Power or for its Byproducts, and a tree farm keeps it fed.\n\n&l&3Lore:&r&o In GT5u, the structure for the Pyrolyse Oven was infamously a giant box with only 9 coils inside. Players usually spent several minutes debugging what was wrong due to the lack of a preview."
+   ]
+  },
+  {
+   "key": "medium_voltage.mv_biomass",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "Plant balls: GregTech compresses 8 vanilla crops (TFC crops are different items) or one sapling, and centrifuges rubber logs or sticky resin; the tappable-log tag (#afc:tappable_logs) is from TFG's ArborFirmaCraft. Removed the HV-crushing chance claim. The 66 percent pyrolyse bonus is right (750 vs 1,250 mB per chaff).",
+   "desc": [
+    "Welcome to the organic &dEthylene&r path! The goal here is to produce &dEthanol&r and react it with &dSulfuric Acid&r to make &dEthylene&r.\n\nTo get &dEthanol&r, you'll need to distill it from &aBiomass&r, so let's look at the ways to produce that biomass.\n\nThe first method is simple: put &asaplings&r (TFC's count) into a &dBrewery&r with water. The downside? &eIt's slow&r.",
+    "{@pagebreak}",
+    "The second method yields much better results. Macerate &bPlant Balls&r into &aBio Chaff&r.\n\n&bPlant Balls&r can be obtained by:\n-Compressing &asaplings&r (one sapling makes one plant ball)\n-Centrifuging &9rubber logs&r or &9sticky resin&r\n\nFinally, process your &aBio Chaff&r with water in a &dBrewery&r, or go for a &dPyrolyse Oven&r for &e66 percent more&r biomass.",
+    "{@pagebreak}",
+    "&l&3Lore:&r&o You may recognise Plantballs from IndustrialCraft2! In IC2 Experimental, there was this rather... obscure way to turn Biomass into Biogas for power, which sadly required too much investment to be really worth it."
+   ]
+  },
+  {
+   "key": "medium_voltage.mv_brewery",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.mv_ethylene",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.mv_ethanol",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.mv_naphtha",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "Removed the oil sands mention (GregTech's ore veins, oil sands included, are off here) and the TFG balance aside; the desulfurization and H2S electrolysis recipes check out.",
+   "desc": [
+    "Distilling &aOil&r or &aRaw Oil&r gives you fuels that you need to desulfurize with &bHydrogen&r in a &3Chemical Reactor&r.\n\nThe &aHydrogen Sulfide&r it leaves is perfectly &drecycled&r in an &3Electrolyzer&r, back into Hydrogen and Sulfur.\n\nTo automate this process, simply place your &3Chemical Reactor&r and your &3Electrolyzer&r next to each other. Be sure to use your &5Screwdriver&r to &4enable input from the output side&r.\n\n&aNaphtha&r is a good &9Product&r source, and surprisingly it's also a decent fuel, but if you don't have Raw Oil then Light Oil Residue may be better. Keep following the quests for more details."
+   ]
+  },
+  {
+   "key": "medium_voltage.mv_fuel_cracking",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.mv_energy",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "No FE/RF sources in this pack (all power is GregTech's), so the energy converters and their page are gone. GregTech 8.0 transformers switch up/down with a Screwdriver (tooltip), not a Soft Hammer, and their recipes take ULPIC/LPIC chips, not coils. The 256 mB/t steam figure checks out.",
+   "desc": [
+    "Hello there, and welcome to &bMV Energy Production&r.\n\nIn this quest, we'll go over the options for keeping your &bMV machines&r powered and running smoothly.\n\nWe won't cover this in every chapter, so we highly recommend that you &aread the GregTech Power chapter&r for a deeper understanding of how everything works.\n\nFor now, here are your options:\n\n&7- &bUse an MV Generator&r to directly produce &bMV-level energy&r.\n\n&7- &bStep up your &7LV&r power with transformers&r, with a &e4:1 ratio&r between &7LV&r and &bMV&r amps.",
+    "{@pagebreak}",
+    "Higher-tier Generators burn fuel faster in proportion to what they produce, so a bucket of fuel still gives the same energy. The &3Advanced Steam Turbine&r uses &d5,120 mB Steam&r per second, equivalent to &d256 mB/t&r.\n\nGet &eany&r of these generators or transformers to complete this quest, but you may prefer starting off with the &3Advanced Steam Turbine&r.",
+    "{@pagebreak}",
+    "There are a few new power options at &bMV&r. Look up the Generators in EMI and press &4U&r to see which fuels count as &aCombustion&r or &aGas&r fuels.\n\nThe quests about fuels in this chapter cover the valuable options.\n\nIf you stick to &9Steam&r for your Power generation, you'll probably want a &3Large Boiler&r.",
+    "{@pagebreak}",
+    "&3Transformers&r step power safely up and down between voltage tiers. They turn the power they receive into the same amount of power one tier above or below.\n\nApart from running machines on other tiers, Transformers help carry power over long distances, as cable loss matters less at higher voltages. Just like real life!",
+    "{@pagebreak}",
+    "Transformers have 5 low voltage sides, and 1 high voltage side.\n\nThe basic Transformer converts 1A <-> 4A; the &9Hi-Amp&r Transformers move more amps at once.\n\nA new Transformer steps down; use a &aScrewdriver&r to switch it to stepping up. From &bMV&r up, Transformers also need integrated circuit chips (ULPIC chips at &bMV&r)."
+   ],
+   "tasks": [
+    {
+     "filter": "or(item(gtceu:mv_steam_turbine)item(gtceu:mv_gas_turbine)item(gtceu:mv_combustion)item(gtceu:lv_transformer_1a)item(gtceu:lv_transformer_2a)item(gtceu:lv_transformer_4a))",
+     "any": [
+      "gtceu:mv_steam_turbine",
+      "gtceu:mv_gas_turbine",
+      "gtceu:mv_combustion",
+      "gtceu:lv_transformer_1a",
+      "gtceu:lv_transformer_2a",
+      "gtceu:lv_transformer_4a"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "medium_voltage.mv_stainless",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "No pyrolusite or chromite here (GregTech-only ores). Chromium comes from TFC ruby; manganese only from spessartine, which is centrifuged from the red garnet that ruby processing gives, then electrolyzed at MV (checked: no other reachable manganese recipe). Stainless EBF recipe is 480 EU/t, 1,700 K, as stated.",
+   "desc": [
+    "Any Steel you encounter in day-to-day life is most likely &7Stainless Steel&r. It is extremely resilient against corrosion.&r\n\nStainless Steel is the material for &6HV&r components, like Aluminium for &bMV&r and Steel for &7LV&r. It is also used in large amounts in the &3Distillation Tower&r.\n\nIt needs &cChromium&r, from &cRuby&r, and &2Manganese&r. In this pack manganese is scarce: it comes from &2Spessartine&r, which you get by centrifuging the &cRed Garnet&r that processing Ruby leaves behind, and then electrolyzing it in an &bMV&r Electrolyzer.",
+    "{@pagebreak}",
+    "Smelting Stainless Steel requires &dHV Power&r, which you likely do not have at this point. Scaling Power Production is crucial.\n\nIf you &9haven't already&r, it would be a good idea to get a second EBF going. Multiblocks can share blocks, so a second EBF built against the first only needs &a10 Cupronickel Coils&r instead of 16.\n\nHave one EBF run off &bMV&r for Aluminium and any other recipes requiring &bMV&r Power, and one running off &6HV&r with &32 MV Energy Hatches&r."
+   ]
+  },
+  {
+   "key": "medium_voltage.mv_mixer",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "Greate (aluminium mechanical mixer) is not in this pack; the task is the GregTech MV mixer alone.",
+   "tasks": [
+    {
+     "item": "gtceu:mv_mixer"
+    }
+   ]
+  },
+  {
+   "key": "medium_voltage.mv_component",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "No AE2 here, so no autocrafting; otherwise accurate (the MV emitter takes a flawless emerald).",
+   "desc": [
+    "Here's a list of the components you will need in &bMV&r. To ease the pain, be sure to &dbulk-craft&r these parts, especially &aMotors&r.\n\nFamiliar with the &aEmitter&r? This tier's Emitter needs a &dFlawless Emerald&r, which you'll mostly get from the &3Sifting Machine&r for now.\n\nConveyors, Pumps and Robot Arms are objective upgrades to &7LV&r versions if you use them as covers."
+   ]
+  },
+  {
+   "key": "medium_voltage.electrolyzer",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "Lepidolite, topaz (no TFC topaz was found in the pregen world) and GregTech's own pyrope/sodalite veins don't apply. Listed the MV electrolysis inputs that are reachable here: ruby, clay dust, emerald, the garnets from ruby processing, sodalite and lazurite from lapis.",
+   "desc": [
+    "&bThis one should look familiar&r: you've seen it before.\n&2We highly recommend crafting it as soon as possible,&r as it opens up many new sources of &7Aluminium&r.\n\nUntil now, you were limited to electrolyzing Sapphire or ore processing byproducts to obtain &7Aluminium Dust&r.\nThe &bMV&r Electrolyzer runs the recipes that need more than &7LV&r power, and a whole new world of resources opens up.",
+    "{@pagebreak}",
+    "&6Here are some key materials to look for:&r\n&9Ruby&r: &7Aluminium&r and &5Chromium&r.\n&9Clay Dust&r (macerated clay): &7Aluminium&r, &bSilicon&r, Sodium and Lithium.\n&9Emerald&r: &7Aluminium&r, &bSilicon&r and Beryllium.\n&9Garnets&r (centrifuged from the Red Garnet that Ruby processing gives): &7Aluminium&r, &bSilicon&r, and &2Manganese&r from Spessartine.\n&9Sodalite&r and &9Lazurite&r (from processing Lapis): &7Aluminium&r, &bSilicon&r, Sodium and &3Chlorine&r.\n\n&2And that's just the beginning!&r Use &aEMI&r to explore even more options; we promise, there's a lot to discover."
+   ]
+  },
+  {
+   "key": "medium_voltage.mv_miner",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "GregTech miners mine TFC ore blocks (they're in #c:ores). FTB Chunks claiming, ME chests and backpacks aren't in this pack: Create: Power Loader's chunk loaders and GregTech crates replace them. TFC veins aren't GregTech's chunk-sized veins, so the range advice is generic.",
+   "desc": [
+    "This kind soul will mine ores for you when placed above an ore vein, TFC's included.\n\nVertical range is unlimited below the miner. Horizontal range is displayed in the tooltip.\n\nHigher tiers cover a wider area, so the &6HV&r variant reaches much more of a big vein; you may wish to hold off for now. Get &eany&r of them to complete this Quest.",
+    "{@pagebreak}",
+    "You will need &9Power&r. &aCharged Batteries&r may work, but they tend to run out of power, which is a bit inconvenient.\n\nOur top suggestion is to use a filled &3Drum&r of some kind of fuel &7(if you're using Steam, no dice!)&r and a &3Generator&r.\n\nPlace the Drum above your Generator and right-click it with a &5Soft Mallet&r or &5Screwdriver&r to auto-output into the Generator.",
+    "{@pagebreak}",
+    "&cNote:&r Do not forget to keep the area &dchunk-loaded&r while the miner works: a chunk loader from &3Create: Power Loader&r does the job.\n\n&9Tip:&r Use a &3GT Crate&r as the output inventory to make carrying the ores back home a simple task."
+   ]
+  },
+  {
+   "key": "medium_voltage.mv_steel_alloy",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "Vanadium magnetite is a GregTech-only ore, so the text no longer says where vanadium comes from. PACK GAP: nothing reachable makes vanadium before EV (only the ruby/sapphire slurry centrifuge, 2%, after an EV aqua-regia mixer), yet the MV cutter's buzzsaw blade and the MV fluid drilling rig's gears are vanadium steel.",
+   "desc": [
+    "Vanadium Steel (Vanadium, Chromium and Steel, mixed and then smelted in the EBF) is required in small quantities in progression: the &bMV&r Cutter's buzzsaw blade and the Fluid Drilling Rig's gears are made of it.\n\nIt's also &6nearly four times as durable&r as Steel when used in GregTech tools."
+   ]
+  },
+  {
+   "key": "medium_voltage.mv_cutter",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "Greate's aluminium mechanical saw isn't in this pack. Talc and soapstone are GregTech-only ores; lubricant here is redstone plus creosote, seed oil or oil. Boule cutting is 64 EU/t, so it needs the MV cutter.",
+   "desc": [
+    "The &3MV Cutter&r is required to cut &7Silicon Boules&r into wafers for &aLaser Engraving&r, and the engraved wafers into chips. Its saw is a &bVanadium Steel&r buzzsaw blade.\n\nWe recommend you supply this machine with a steady stream of &dLubricant&r to cut down on the processing time.\n\nLubricant can be &3brewed&r from &cRedstone&r and &dCreosote&r, &eSeed Oil&r or &eOil&r."
+   ],
+   "tasks": [
+    {
+     "item": "gtceu:mv_cutter"
+    }
+   ]
+  },
+  {
+   "key": "medium_voltage.mv_laser_engraver",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.mv_energy_hatch",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.mv_assembler",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.mv_kanthal_coil",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "Plain GregTech Kanthal coils (8 Kanthal double wires, 8 aluminium foils, copper); TFG's Rene 41 and silicon carbide prerequisites dropped. Pointed to this book's power chapter.",
+   "desc": [
+    "&3Kanthal Heating Coils&r are the next major step in progression. They increase the temperature of your &3Blast Furnace&r to &d2,700K&r, allowing you to process new materials. They may also &eaccelerate&r less hot recipes; check the &aGregTech Power&r chapter for how Blast Furnace overclocks work.\n\nRemember that you &ccannot&r mix coils in an EBF."
+   ],
+   "deps": [
+    "medium_voltage.mv_energy_hatch",
+    "medium_voltage.mv_kanthal_ingot",
+    "low_voltage.cupronickel_coil",
+    "ore_proc.chromium"
+   ]
+  },
+  {
+   "key": "medium_voltage.mv_first_hv",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.mv_ram",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.mv_more_lv",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.mv_more_mv",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.mv_silicon_boule",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "TFG makes boules in its own High Temperature Precision Fabricator from polysilicon; GregTech 8.0 makes them in the EBF: 32 silicon dust + a small pile of gallium arsenide, 1,784 K, 120 EU/t for 9,000 ticks (the same 7.5 min / 1,080,000 EU). No cleanroom variant. PACK GAP: arsenic has no source here (realgar and cobaltite are GregTech-only), so gallium arsenide, boules and diodes are unreachable.",
+   "desc": [
+    "&9Silicon Boules&r are grown in the &3Electric Blast Furnace&r from 32 &aSilicon Dust&r and a small pile of &aGallium Arsenide&r. Their primary purpose is to make &6Wafers&r for circuits.\n\nAfter making the Boule, process it in the &3MV Cutter&r to get 16 Silicon Wafers ready for engraving.\n\n&cWarning:&r Each Silicon Boule takes &47.5 minutes&r to make at 120 EU/t, or 1,080,000 EU! If the EBF loses power midway, the recipe will start to &close progress&r.\n\nWith that being said, Silicon Boules take an absolute age to craft, so consider &3stockpiling&r them."
+   ],
+   "deps": [
+    "medium_voltage.mv_silicon",
+    "medium_voltage.mv_cutter"
+   ]
+  },
+  {
+   "key": "medium_voltage.mv_circuit_assembler",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.mv_multi_smelter",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "Cut the furnace/steam oven equivalence figures (not verifiable here); kept the GregTech parallel behaviour and added this pack's cast iron rule for smelted iron.",
+   "desc": [
+    "Even at its lowest power (Cupronickel coils and &7LV&r Voltage), the &dMulti Smelter&r smelts 32 items at once, far beyond any furnace you've built.\n\nIf that wasn't already enough to convince you, standard &aoverclocks&r apply with sufficient voltage.\n\nAnd even better: higher tier &3Coils&r increase the number of items it can smelt in &dparallel&r!\n\nAs everywhere in this pack, iron that is smelted comes out as cast iron."
+   ]
+  },
+  {
+   "key": "medium_voltage.mv_best_lv",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.mv_best_mv",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.mv_second_hv",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.mv_inductor",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.mv_polyethylene",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "The fluid NBT filter isn't allowed; the task is now a polyethylene sheet (plate). Text checks out (oxygen gives 216 mB per 144 mB ethylene, air 144).",
+   "tasks": [
+    {
+     "item": "gtceu:polyethylene_plate"
+    }
+   ]
+  },
+  {
+   "key": "medium_voltage.mv_pvc",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "Fluid NBT filter replaced by a PVC sheet. GregTech 8.0 insulates EV+ cables (platinum, tungsten, ...) with silicone rubber, styrene-butadiene rubber or PVC foil, so PVC isn't strictly required; cut the claim about PVC fluid never being used.",
+   "desc": [
+    "&aPolyvinyl Chloride (PVC)&r is the 3rd-most produced plastic in real life. Here it can replace Polyethylene in &aPlastic Circuit Boards&r and other items to increase the yield, and from &5EV&r on its foil is one of the ways to insulate cables that rubber can't.\n\nPVC item pipes also have the &6highest throughput&r available for a while, but most of your setups right now won't need such speed. Still, it's good to keep this knowledge in your pocket."
+   ],
+   "tasks": [
+    {
+     "item": "gtceu:polyvinyl_chloride_plate"
+    }
+   ]
+  },
+  {
+   "key": "medium_voltage.mv_boards",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "TFG's ceramic boards (tfg:mo_activated_sic_substrate) don't exist; GregTech's equivalent step is the plastic circuit board: polyethylene sheet + 4 copper foil + sulfuric acid (PVC gives 2, PTFE 4), then 6 copper foil etched with iron III chloride or sodium persulfate for the printed board.",
+   "title": "Plastic Boards",
+   "subtitle": "It's a Casio on a Plastic Board",
+   "desc": [
+    "At this point, you have all the tools you need for &9Plastic Circuit Boards&r: a Polyethylene sheet and Copper Foil, treated with &aSulfuric Acid&r in a &3Chemical Reactor&r. Better plastics later (PVC, PTFE) give more boards per sheet.\n\nThen etch more Copper Foil onto the board with &aIron III Chloride&r or &aSodium Persulfate&r for a &9Plastic Printed Circuit Board&r.\n\nThe recipe chains are starting to get pretty long, so we recommend processing large batches in two dedicated &3Chemical Reactors&r."
+   ],
+   "tasks": [
+    {
+     "item": "gtceu:plastic_circuit_board",
+     "optional": true
+    },
+    {
+     "item": "gtceu:plastic_printed_circuit_board"
+    }
+   ],
+   "deps": [
+    "medium_voltage.mv_sodium_iron",
+    "medium_voltage.mv_polyethylene"
+   ]
+  },
+  {
+   "key": "medium_voltage.mv_sodium_iron",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "Redstone T-p-T is a TFG fluid. In GregTech 8.0 both sodium persulfate and iron III chloride etch plastic boards too; persulfate comes from salt + sulfuric acid (giving hydrochloric acid) and sodium bisulfate electrolysis.",
+   "title": "Sodium Persulfate / Iron III Chloride",
+   "desc": [
+    "&aSodium Persulfate&r can be used in &9Ore Processing&r in the &3Chemical Bath&r to get various bonus outputs you would not normally obtain. It's completely optional, but pretty rewarding.\n\n&lWait, stop! That's only a distraction&r - the real topic of this Quest is...\n\n&aSodium Persulfate&r and &aIron III Chloride&r are used to make cheaper &9Good Circuit Boards&r, as they cut Silver usage by a factor of four. They also etch your &9Plastic Circuit Boards&r.",
+    "{@pagebreak}",
+    "Making &aSodium Persulfate&r from Salt and &aSulfuric Acid&r yields &aHydrochloric Acid&r as a coproduct, which you can react with Iron Dust to make &aIron III Chloride&r. This should be the best approach right now, but the decision is entirely yours.\n\nThough if you are pumping &9Sea Water&r, Iron III Chloride is easy: its Chlorine and Hydrogen make plenty of Hydrochloric Acid."
+   ],
+   "tasks": [
+    {
+     "item": "gtceu:sodium_persulfate_bucket",
+     "optional": true
+    },
+    {
+     "item": "gtceu:iron_iii_chloride_bucket",
+     "optional": true
+    },
+    {
+     "type": "checkmark"
+    }
+   ]
+  },
+  {
+   "key": "medium_voltage.mv_sulfuric_acid",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "Added where sulfur comes from in this pack (TFC sulfur or pyrite, crushed); the three-step LV chain checks out.",
+   "desc": [
+    "EMI might look a little overwhelming here, so we'll go through the best path for Sulfuric Acid here.\n\nMaking &eSulfuric Acid&r is a three step process. It is used in many important reactions, so you should automate its production ASAP.",
+    "{@pagebreak}",
+    "To automate it, you will need &3three LV Chemical Reactors&r. We would recommend building a dedicated setup somewhere with &3a single LV Generator&r to power all three machines. You can then spaghetti your pipes to handle input and output.\n\n&9-&r Step 1: React &aSulfur&r (crush TFC sulfur or pyrite) with &bOxygen&r to form &aSulfur Dioxide&r.\n&9-&r Step 2: React &aSulfur Dioxide&r with more &bOxygen&r to form &aSulfur Trioxide&r.\n&9-&r Step 3: React &aSulfur Trioxide&r with &bWater&r to form &eSulfuric Acid&r.",
+    "{@pagebreak}",
+    "&l&3Lore:&r&o GregTech 5's Chemical Reactor only had one Fluid slot. To circumvent that, they would do &dcell chemistry&f. The way you would automate Sulfuric Acid was by having one cell travel from machine to machine and then loop back to its starting position. A somewhat fun and interesting automation challenge, but also a chore!"
+   ]
+  },
+  {
+   "key": "medium_voltage.mv_hydrochloric",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.mv_aciditic",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.mv_batteries",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.mv_extruder",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "This pack's GregTech 8.0 has no machine recycling recipes (docs/design.md, upstream issues), so the arc furnace advice is cut. Checked: only 51 of 818 extruder recipes run at 32 EU/t or less.",
+   "desc": [
+    "We &lSINCERELY&r hope you didn't make the &7LV&r Extruder, because only the &bMV&r Extruder is actually useful: almost every extruder recipe needs more than &7LV&r power.\n\nThe Extruder shapes solid materials into (almost!) any form using &aIngots&r. This is a great way to reduce the amount of microcrafting, as well as keeping a high conversion ratio.\n\nThe Extruder can make &6Bolts&r, &6Small Gears&r, &6Gears&r, and &6Rings&r at the highest efficiency in a single step!\n\nYou may also like to use it for &dPipes&r, &dScrews&r, and &dRotors&r."
+   ]
+  },
+  {
+   "key": "medium_voltage.mv_cells",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.mv_fluid_rig",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "GregTech's bedrock fluid veins are still registered here (8: the six overworld deposits plus the two Nether ones; only ore veins are off), so the rig works in the overworld. Cut the Beneath and Moon pages (TFG dimensions), the dropped prospector image and the yield numbers. The MV rig needs 4 vanadium steel gears (see the vanadium gap).",
+   "desc": [
+    "It's quite the investment to own a &3Fluid Drilling Rig&r, but it is &oby far&r the most prominent &6source of Oil&r.\n\nIt pumps fluids from underneath Bedrock itself. Note that the fluids aren't actually there, instead being simulated.\n\nFluid veins are stored within &cchunk-aligned regions&r. Each vein has a different fluid, but they are mostly types of Oil.\n\nYou can't prospect for fluid veins &oyet&r: the &6HV&r prospector has a fluid mode.",
+    "{@pagebreak}",
+    "Each vein generates with a different base yield. When drained, fluid veins slowly deplete, and their yield drops until it reaches the vein's depletion yield. At that point, you should move the Rig to a different vein.\n\nHigher tier Rigs massively increase the yield (see the multiplier in their tooltip) while depleting the vein more slowly.",
+    "{@pagebreak}",
+    "&lWhat you can find in the &2Overworld&r&l:&r\n\n&9Oil:&r richer in &aLight Oil Residue&r, the most appreciated variant.\n&9Light Oil:&r richer in &aRefinery Gas&r, usable for power.\n&9Heavy Oil:&r richer in &aHeavy Oil Residue&r, which has more niche uses, notably Toluene.\n&9Raw Oil:&r richer in &aNaphtha&r, the best source of the early-game oil products.\n&9Natural Gas:&r grants &aRefinery Gas&r with no distillation required.\n&9Salt Water:&r grants &aSodium Hydroxide&r and &aChlorine&r, useful later.\n\nWhen starting out, you may have to tap randomly until you find something you like. Remember that whatever you pump could also fuel your Fluid Rig."
+   ]
+  },
+  {
+   "key": "medium_voltage.mv_oilsands",
+   "action": "drop",
+   "reason": "Oil sands are a GregTech ore vein, and GregTech's ore veins are off in this pack; gtceu:oilsands_dust has no other source (unreachable). Oil comes only from the fluid drilling rig here."
+  },
+  {
+   "key": "medium_voltage.mv_distillery",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.mv_lpg",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.mv_benzene",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "Reformate gas is a TFG fuel and the benzene 'nerf' lore is about TFG; both cut. Wood tar (pyrolyse, circuit 9) distills to benzene at 64 EU/t; charcoal pyrolyses to coal tar; heavy oil residue also distills straight to benzene.",
+   "desc": [
+    "&aBenzene&r is a &9Gas Fuel&r. To skip some frustration, let's check out the two best ways to obtain it.\n\nThe first option is &dWood based&r. Put Logs in the &3Pyrolyse Oven&r for &9Wood Tar&r, which you &3distill&r for &aBenzene&r. The extra Charcoal can either be broken down further into &9Coal Tar&r or sent to a Boiler.\n\nYour second option is &dHeavy Oil based&r. Put Heavy Oil in a &3Distillery&r for &9Heavy Oil Residue&r, which you &aseverely steam-crack&r and &3distill&r again for &aBenzene&r.",
+    "{@pagebreak}",
+    "For information on how to process Oil, check the Light Oil Residue and Naphtha Quests.\n\nIn general, it is better to prioritize placing down more machines (&dparallelisation&r) over overclocking the recipes. That way, you end up losing less energy processing the resources.\n\n&aBenzene&r is burned in a &3Gas Turbine&r. Ultimately, your power source is your choice."
+   ]
+  },
+  {
+   "key": "medium_voltage.mv_light_fuel",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "Only replaced the 'quest to the left' layout pointer; recipes check out.",
+   "desc": [
+    "Distilling &aOil&r will give you Residue that you will need to desulfurize.\n\n&aHydrogen Sulfide&r is perfectly &drecycled&r in an &3Electrolyzer&r.\n\nTo automate this process, simply place your &3Chemical Reactor&r and your &3Electrolyzer&r next to each other. Be sure to use your &5Screwdriver&r to &4enable input from the output side&r.\n\n&aLight Oil Residue&r is a mediocre &9Power&r option, but you can turn it into something much greater... check the &aDiesel&r Quest."
+   ]
+  },
+  {
+   "key": "medium_voltage.mv_mutli_channel",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "The #c:quadruple_fluid_pipes / #c:nonuple_fluid_pipes tags don't exist here; the task lists GregTech's quadruple and nonuple fluid pipes by id. Subtitle no longer references AE2 (not in this pack).",
+   "subtitle": "Four fluids, one pipe",
+   "tasks": [
+    {
+     "filter": "or(item(gtceu:bronze_quadruple_fluid_pipe)item(gtceu:copper_quadruple_fluid_pipe)item(gtceu:gold_quadruple_fluid_pipe)item(gtceu:lead_quadruple_fluid_pipe)item(gtceu:tin_alloy_quadruple_fluid_pipe)item(gtceu:potin_quadruple_fluid_pipe)item(gtceu:steel_quadruple_fluid_pipe)item(gtceu:aluminium_quadruple_fluid_pipe)item(gtceu:chromium_quadruple_fluid_pipe)item(gtceu:stainless_steel_quadruple_fluid_pipe)item(gtceu:titanium_quadruple_fluid_pipe)item(gtceu:tungsten_steel_quadruple_fluid_pipe)item(gtceu:polyethylene_quadruple_fluid_pipe)item(gtceu:polytetrafluoroethylene_quadruple_fluid_pipe)item(gtceu:bronze_nonuple_fluid_pipe)item(gtceu:copper_nonuple_fluid_pipe)item(gtceu:gold_nonuple_fluid_pipe)item(gtceu:lead_nonuple_fluid_pipe)item(gtceu:tin_alloy_nonuple_fluid_pipe)item(gtceu:potin_nonuple_fluid_pipe)item(gtceu:steel_nonuple_fluid_pipe)item(gtceu:aluminium_nonuple_fluid_pipe)item(gtceu:chromium_nonuple_fluid_pipe)item(gtceu:stainless_steel_nonuple_fluid_pipe)item(gtceu:titanium_nonuple_fluid_pipe)item(gtceu:tungsten_steel_nonuple_fluid_pipe)item(gtceu:polyethylene_nonuple_fluid_pipe)item(gtceu:polytetrafluoroethylene_nonuple_fluid_pipe))",
+     "any": [
+      "gtceu:bronze_quadruple_fluid_pipe",
+      "gtceu:copper_quadruple_fluid_pipe",
+      "gtceu:gold_quadruple_fluid_pipe",
+      "gtceu:lead_quadruple_fluid_pipe",
+      "gtceu:tin_alloy_quadruple_fluid_pipe",
+      "gtceu:potin_quadruple_fluid_pipe",
+      "gtceu:steel_quadruple_fluid_pipe",
+      "gtceu:aluminium_quadruple_fluid_pipe",
+      "gtceu:chromium_quadruple_fluid_pipe",
+      "gtceu:stainless_steel_quadruple_fluid_pipe",
+      "gtceu:titanium_quadruple_fluid_pipe",
+      "gtceu:tungsten_steel_quadruple_fluid_pipe",
+      "gtceu:polyethylene_quadruple_fluid_pipe",
+      "gtceu:polytetrafluoroethylene_quadruple_fluid_pipe",
+      "gtceu:bronze_nonuple_fluid_pipe",
+      "gtceu:copper_nonuple_fluid_pipe",
+      "gtceu:gold_nonuple_fluid_pipe",
+      "gtceu:lead_nonuple_fluid_pipe",
+      "gtceu:tin_alloy_nonuple_fluid_pipe",
+      "gtceu:potin_nonuple_fluid_pipe",
+      "gtceu:steel_nonuple_fluid_pipe",
+      "gtceu:aluminium_nonuple_fluid_pipe",
+      "gtceu:chromium_nonuple_fluid_pipe",
+      "gtceu:stainless_steel_nonuple_fluid_pipe",
+      "gtceu:titanium_nonuple_fluid_pipe",
+      "gtceu:tungsten_steel_nonuple_fluid_pipe",
+      "gtceu:polyethylene_nonuple_fluid_pipe",
+      "gtceu:polytetrafluoroethylene_nonuple_fluid_pipe"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "medium_voltage.mv_ic",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.mv_ulpic",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.mv_jetpack_2",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.mv_electronic_components",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "Text is right (transistors need silicon plates from hot silicon ingots, 2,273 K); silicone rubber isn't used by any of these components in GregTech 8.0, so that prerequisite is replaced by the MV assembler (their recipes run at 120 EU/t).",
+   "deps": [
+    "medium_voltage.mv_polyethylene",
+    "medium_voltage.mv_kanthal_coil",
+    "medium_voltage.mv_assembler"
+   ]
+  },
+  {
+   "key": "medium_voltage.mv_chlorine",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.mv_hydrogen",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.mv_seawater",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "TFC's salt water is in #c:salt_water, so GregTech's salt water electrolysis (LV: chlorine, hydrogen, sodium hydroxide) takes it directly. Cut the two-source-block infinite claim and the Aqueous Accumulator (not verified for TFC salt water).",
+   "desc": [
+    "This quest is here to point out the &9Sea Water&r in &aTerraFirmaCraft&r's oceans. GregTech takes TFC's salt water wherever a recipe asks for Salt Water.\n\nPump it from the sea and &aelectrolyze it&r to get &dChlorine&r, &dHydrogen&r and &dSodium Hydroxide&r."
+   ]
+  },
+  {
+   "key": "medium_voltage.mv_battery",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.hv_machine_hull",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.mv_machine_hull",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "Oil sands are off with GregTech's ore veins; oil comes from the fluid drilling rig. GregTech's gas generator is the Gas Turbine. Added the route's EBF as prerequisite (aluminium for the hull comes from it).",
+   "desc": [
+    "Every time you enter a new tier, things can get a bit overwhelming. You'll be faced with lots of &enew machines&r to build and &echemicals&r to produce.\n\nAs you've probably seen in the quests, you have &2three main objectives&r to complete before progressing into &6HV&r. Let's break them down one by one.",
+    "{@pagebreak}",
+    "First, you'll need to upgrade your &dEBF&r with two new &bMV Energy Hatches&r. This will allow it to overclock and run &6HV recipes&r. That upgrade is key for producing &estainless steel&r, the main material for &6HV&r, and also &eKanthal&r, which you'll need to upgrade your &dEBF coils&r.",
+    "{@pagebreak}",
+    "Your second objective (although you can tackle it first if you prefer) involves diving into chemistry. Your first plastic, &ePolyethylene&r, is essential for future progress. There are two possible paths you can follow, and the quests will help guide you:\n\n- &ePetrochem route&r: pump oil from deep underground with a Fluid Drilling Rig. This path also unlocks &eDiesel&r production for fuel combustion.\n\n- &eBiochem route&r: use a &6Pyrolyse Oven&r and wood (a Create-powered tree farm works great) or a Brewery. This method gives you more &eBenzene&r and opens the door to using a &eGas Turbine&r.\n\nEach path has its pros and cons, but eventually, you'll need both anyway.",
+    "{@pagebreak}",
+    "The final step here is unlocking the &6second HV Circuit&r. It only requires &atwo steps&r, making it faster than crafting the &6first HV Circuit&r, which needs &cthree steps&r.\n\nTo achieve this, you'll need to get your hands on a &dLaser Engraver&r, which allows you to produce your first &dWafers&r. With those, you can craft an &6HV Circuit&r that you'll use to build the &bMV Circuit Assembler&r.\n\nIt's not strictly necessary to do this now (you can continue using the first HV Circuit for progression), but &ait will make your life much easier&r if you take care of it now. Trust us."
+   ],
+   "deps": [
+    "ebf"
+   ]
+  },
+  {
+   "key": "medium_voltage.mv_kanthal_ingot",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "GregTech 8.0 cools hot ingots in the chemical bath (water 400 ticks, distilled water 250) or vacuum freezer, as TFG says; but nothing in GregTech burns the player for carrying them and TFC has no tongs, so that part is cut. 128 ingots = 16 coils x 8 double wires, correct. Tag is #c:hot_ingots here.",
+   "desc": [
+    "Oh good lord, 128 ingots for 16 coils, that's a lot of &cKanthal&r... And what the heck is this &chot ingot&r thing?\n\nKanthal comes out of the EBF as a &cHot Ingot&r, and unlike hot metal in &aTerraFirmaCraft&r, &cit doesn't cool down on its own&r! You'll need to actively &acool it&r down.",
+    "{@pagebreak}",
+    "To do that, place hot ingots into a &dChemical Bath&r with &9Water&r, or even better, &9Distilled Water&r for a faster cooling time.\n\nWe highly recommend you &aautomate&r this process: use &apipes&r to send them directly from your &dEBF&r to your &dChemical Bath&r.\n\nYou can also set up an &aItem Tag Filter&r to help with sorting the hot ingots &7#c:hot_ingots&r."
+   ]
+  },
+  {
+   "key": "medium_voltage.mv_chemical_reactor",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.mv_silicon",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "Mica, kyanite and zeolite (chalcopyrite/realgar veins) are GregTech-only ores. Sources here: clay dust, emerald and garnet electrolysis (MV), redstone centrifuging (LV), and the flint route: cobble -> gravel (forge hammer or Create millstone) -> sifter -> flint dust -> centrifuge -> silicon dioxide -> electrolyzer (LV).",
+   "desc": [
+    "Going forward, Silicon will be essential for anything involving electronics, so it's definitely something you're going to want a reliable setup for.\n\nTo obtain &5Silicon&r, we'll suggest &ctwo main methods&r so you have clear directions. As always, it's up to you to figure out what's &abest for your situation&r.",
+    "{@pagebreak}",
+    "First method: electrolyzing minerals. &aClay Dust&r (macerated clay) gives Silicon along with Aluminium, Sodium and Lithium, and so do &9Emerald&r and the &9Garnets&r from Ruby processing. Centrifuging &cRedstone&r also yields a little.\n\nSecond method: although slower early on, making Silicon out of cobblestone becomes the &ebest method&r later. Plus, it generates &9Oxygen&r as a bonus!\n\nThe idea is simple: electrolyze &aSilicon Dioxide Dust&r into Oxygen and Silicon. You get Silicon Dioxide Dust by centrifuging &9Flint Dust&r, and a &3Sifter&r turns gravel (hammered or milled from cobblestone) into plenty of Flint.\n\nThis setup can become &afully passive&r easily. Try using EMI's &aRecipe Tree&r to plan your builds; it really helps!"
+   ]
+  },
+  {
+   "key": "medium_voltage.mv_cpu",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.mv_bio_diesel",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "Sunflower and canola seed oil are TFG's; GregTech's extractor makes seed oil from (vanilla) seeds. Glycerol + CO2 -> ethylene is a real MV recipe (200 EU/t); sodium hydroxide comes from salt water electrolysis.",
+   "desc": [
+    "Want to try something plant-based but without a tree farm? Give &3Bio Diesel&r a shot! Extract &dSeed Oil&r from seeds (look it up in EMI), then just mix it with a little Ethanol and Sodium Hydroxide (from Sea Water!) in a Chemical Reactor and you're done! As a bonus, this route also outputs Glycerol, which you can react with Carbon Dioxide into &dEthylene&r!"
+   ]
+  },
+  {
+   "key": "medium_voltage.stainless_greate",
+   "action": "drop",
+   "reason": "Greate, Steam Powered and TFG's stainless combustion engine aren't in this pack; plain Create machines have no tiers."
+  },
+  {
+   "key": "medium_voltage.reformate_gas",
+   "action": "drop",
+   "reason": "Reformate gas is a TFG fluid (tfg:reformate_gas_bucket), made with rhenium (not in this pack) in TFG's coal liquefaction tower."
+  },
+  {
+   "key": "medium_voltage.q54a255c1c6e33165",
+   "action": "drop",
+   "reason": "The coal liquefaction tower is a TFG multiblock (gtceu:coal_liquefaction_tower doesn't exist here)."
+  },
+  {
+   "key": "medium_voltage.mv_diesel",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "Oil sands are off; cut the distillery ratio arithmetic (not verifiable from the dump). Checked: diesel = 5 light fuel + 1 heavy fuel in an MV mixer (120 EU/t); heavy oil distills to far more heavy fuel than oil; cetane-boosted diesel is a 480 EU/t (HV) mixer recipe.",
+   "desc": [
+    "&aDiesel&r is an &dOil-based &9Combustion Fuel&r.\n\nMix &aLight Oil Residue&r and &aHeavy Oil Residue&r at &65:1&r in an &bMV&r &3Mixer&r. From &dOil&r or &dRaw Oil&r that means several Distilleries making Light Oil Residue for every one making Heavy Oil Residue.",
+    "{@pagebreak}",
+    "You can cut the amount of &dOil&r required &6drastically&r by distilling &dHeavy Oil&r for the &aHeavy Oil Residue&r specifically: it gives far more of it.",
+    "{@pagebreak}",
+    "In general, it is better to prioritize placing down more machines (&dparallelisation&r) over overclocking the recipes. That way, you end up losing less energy processing the resources.\n\n&aDiesel&r is burned in a &3Combustion Generator&r. It can be further refined to &6Cetane-Boosted Diesel&r in &6HV&r. Compared to the other power sources, it is generally more efficient, but a more demanding processing line. If you take the &eOil&r route for &aPolyethylene&r, this can work great with existing infrastructure. Ultimately, the power source you want to use is your choice."
+   ]
+  },
+  {
+   "key": "medium_voltage.terminal_dismantler",
+   "action": "drop",
+   "reason": "GregTech Terminal (gtceuterminal:dismantler) is not in this pack."
+  },
+  {
+   "key": "medium_voltage.q02d2a2ffab2ab0f1",
+   "action": "drop",
+   "reason": "Rene 41 is a TFG alloy (tfg:rene_41_ingot); plain GregTech Kanthal coils don't use it."
+  },
+  {
+   "key": "medium_voltage.q3b34f995b31d4c5b",
+   "action": "drop",
+   "reason": "Silicon carbide is a TFG material (tfg:silicon_carbide_ingot) used only by TFG's own recipes."
+  },
+  {
+   "key": "medium_voltage.silicon_rubber",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "'Latex' is TFG's; GregTech's rubber comes from sticky resin. Silicone rubber isn't needed for MV circuit parts in GregTech 8.0: it insulates cables at half rubber's cost (72 vs 144 mB), replaces rubber in conveyors/pumps, and is one of the insulators EV+ cables need. PDMS needs the MV chemical reactor (96 EU/t). Task is now a silicone rubber sheet instead of a checkmark.",
+   "title": "Silicone Rubber",
+   "desc": [
+    "&bSilicone Rubber&r is essentially an improved version of regular rubber. As you progress through &bGregTech&r, you will unlock better substitutes for older materials, and this is one of them.\n\nIt coats your &eWires&r for half the cost of rubber and can replace rubber in parts like Conveyors and Pumps. From &5EV&r on, most cables can't be insulated with plain rubber at all.\n\nIf you are struggling to get enough &fSticky Resin&r from rubber trees, this material will solve the issue, as it is made from &eSilicon&r, &aChlorine&r, &7Methane&r and a little Sulfur, resources you can easily produce endlessly at this stage."
+   ],
+   "tasks": [
+    {
+     "item": "gtceu:silicone_rubber_plate"
+    }
+   ]
+  },
+  {
+   "key": "medium_voltage.q28111275f2315ff7",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "Plain GregTech MV chemical bath (no molybdenum or polyethylene in its recipe; molybdenum has no source here). Hot ingot cooling recipes run at 120 EU/t, so it has to be the MV bath; the vacuum freezer needs EV circuits.",
+   "title": "Chemical Bath",
+   "desc": [
+    "The &dChemical Bath&r is a versatile machine, mainly used to dye materials and to get extra resources out of ores, but until you build a &bVacuum Freezer&r it is also how you cool your hot ingots. Cooling takes 120 EU/t, so you need the &bMV&r Chemical Bath."
+   ],
+   "deps": [
+    "medium_voltage.mv_machine_hull"
+   ]
+  },
+  {
+   "key": "medium_voltage.q738e8e10951e17c6",
+   "action": "drop",
+   "reason": "The High Temperature Precision Fabricator is a TFG multiblock; in GregTech 8.0 silicon boules come from the EBF and lenses from the lathe."
+  },
+  {
+   "key": "medium_voltage.gem_lens",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "TFG coats borosilicate blank lenses with liquefied gems; GregTech 8.0 turns an exquisite gem on a lathe (30 EU/t) or a gem plate on an MV lathe. Lens colours checked against the engraver recipes (#c:lenses/red, green, blue, light_blue). Dropped the TFG blank and the TFG lore.",
+   "desc": [
+    "Lenses are turned on a &3Lathe&r from an &bExquisite&r gem; an &bMV&r Lathe can also turn a gem plate into one. Exquisite gems come from sifting purified gem ores, so a &aSifter&r is your friend here.\n\nEach colour of lens engraves a different wafer: &cRuby&r for ILC, &aEmerald&r for RAM, &9Sapphire&r for ULPIC and &bDiamond&r for CPU."
+   ],
+   "tasks": [
+    {
+     "item": "gtceu:ruby_lens"
+    },
+    {
+     "item": "gtceu:sapphire_lens"
+    },
+    {
+     "item": "gtceu:emerald_lens"
+    },
+    {
+     "item": "gtceu:diamond_lens"
+    }
+   ],
+   "deps": [
+    "medium_voltage.mv_machine_hull"
+   ]
+  },
+  {
+   "key": "medium_voltage.vanadium_tools",
+   "action": "edit",
+   "chapter": "mv",
+   "reason": "GregTech 8.0's vanadium steel tool ids (several TFG ids like mv_vanadium_steel_wrench don't exist); TFG's vanadium steel anvil and the red steel / diamond-tipped comparisons are TFG's. Blocked by the vanadium gap like the alloy.",
+   "desc": [
+    "Each new tier unlocks additional materials used to craft an entirely new set of &eTools&r.\n\nWhile you may not want to replace your full set every time, it is still worth reviewing their stats, as some provide higher mining speed while others offer greater durability, and there is no absolute best choice. It ultimately depends on your priorities.\n\n&bVanadium Steel Tools&r are a big step up in durability from Steel."
+   ],
+   "tasks": [
+    {
+     "filter": "or(item(gtceu:vanadium_steel_pickaxe)item(gtceu:vanadium_steel_axe)item(gtceu:vanadium_steel_shovel)item(gtceu:vanadium_steel_sword)item(gtceu:vanadium_steel_hoe)item(gtceu:vanadium_steel_knife)item(gtceu:vanadium_steel_hammer)item(gtceu:vanadium_steel_file)item(gtceu:vanadium_steel_saw)item(gtceu:vanadium_steel_wrench)item(gtceu:vanadium_steel_screwdriver)item(gtceu:vanadium_steel_wire_cutter)item(gtceu:vanadium_steel_crowbar)item(gtceu:vanadium_steel_scythe)item(gtceu:vanadium_steel_butchery_knife)item(gtceu:vanadium_steel_mining_hammer)item(gtceu:vanadium_steel_spade)item(gtceu:lv_vanadium_steel_drill)item(gtceu:mv_vanadium_steel_drill)item(gtceu:lv_vanadium_steel_chainsaw)item(gtceu:lv_vanadium_steel_buzzsaw)item(gtceu:lv_vanadium_steel_wrench)item(gtceu:lv_vanadium_steel_screwdriver)item(gtceu:lv_vanadium_steel_wire_cutter))",
+     "any": [
+      "gtceu:vanadium_steel_pickaxe",
+      "gtceu:vanadium_steel_axe",
+      "gtceu:vanadium_steel_shovel",
+      "gtceu:vanadium_steel_sword",
+      "gtceu:vanadium_steel_hoe",
+      "gtceu:vanadium_steel_knife",
+      "gtceu:vanadium_steel_hammer",
+      "gtceu:vanadium_steel_file",
+      "gtceu:vanadium_steel_saw",
+      "gtceu:vanadium_steel_wrench",
+      "gtceu:vanadium_steel_screwdriver",
+      "gtceu:vanadium_steel_wire_cutter",
+      "gtceu:vanadium_steel_crowbar",
+      "gtceu:vanadium_steel_scythe",
+      "gtceu:vanadium_steel_butchery_knife",
+      "gtceu:vanadium_steel_mining_hammer",
+      "gtceu:vanadium_steel_spade",
+      "gtceu:lv_vanadium_steel_drill",
+      "gtceu:mv_vanadium_steel_drill",
+      "gtceu:lv_vanadium_steel_chainsaw",
+      "gtceu:lv_vanadium_steel_buzzsaw",
+      "gtceu:lv_vanadium_steel_wrench",
+      "gtceu:lv_vanadium_steel_screwdriver",
+      "gtceu:lv_vanadium_steel_wire_cutter"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "medium_voltage.q044089a612080f9b",
+   "action": "drop",
+   "reason": "The SiC-SiC turbine rotor is made of TFG's silicon carbide, which this pack doesn't have."
+  },
+  {
+   "key": "medium_voltage.gem_slurry",
+   "action": "drop",
+   "reason": "Gem suspensions (tfg:dirty_*_slurry) and the liquefaction tower line are TFG-only."
+  },
+  {
+   "key": "high_voltage.mv_superconductors",
+   "action": "keep",
+   "chapter": "mv"
+  },
+  {
+   "key": "medium_voltage.polysilicon",
+   "action": "drop",
+   "reason": "Polysilicon is a TFG item (tfg:polysilicon_dust); GregTech 8.0's boule takes plain silicon dust."
+  },
+  {
+   "key": "medium_voltage.rhenium",
+   "action": "drop",
+   "reason": "Rhenium doesn't exist in this pack (no gtceu:rhenium_dust), and TFG's tarkianite desert ore isn't here either."
+  },
+  {
+   "key": "medium_voltage.diamond_tools",
+   "action": "drop",
+   "reason": "Diamond-tipped Mo-Re tools are TFG items."
+  },
+  {
+   "key": "medium_voltage.q6dcf1e5effe24901",
+   "action": "drop",
+   "reason": "Describes TFG's modular Large Steel Boiler (tfg:large_steel_boiler, boosters and binders). GregTech's own large boilers would belong in the steam/power chapters."
+  },
+  {
+   "key": "medium_voltage.q382646e2476ed41c",
+   "action": "drop",
+   "reason": "The chameleon spray can and prismatic paint are TFG items."
+  },
+  {
+   "key": "medium_voltage.q317c71249eba0f15",
+   "action": "drop",
+   "reason": "The heat pump is a TFG item for its space-climate mechanics."
+  },
+  {
+   "key": "tfg_tips.reinforced_glider",
+   "action": "drop",
+   "reason": "The Hang Glider mod (hangglider:reinforced_hang_glider) is not in this pack."
+  }
+ ]
+}

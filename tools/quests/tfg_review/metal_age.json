@@ -1,0 +1,1197 @@
+{
+ "chapter": "metal_age",
+ "decisions": [
+  {
+   "key": "metal_age.this_is_a_bucket",
+   "action": "edit",
+   "chapter": "iron",
+   "reason": "TFG gated the vanilla bucket behind red + blue steel buckets. Here GregTech makes it from 3 wrought iron plates and a hammer (step 21), and it's the only bucket that places source blocks (tfc-server.toml: wooden and metal buckets can't place sources; the wooden one can't hold lava).",
+   "desc": [
+    "Three iron plates and a hammer make a vanilla bucket. In this pack iron plates are wrought iron: hammer them by hand (two ingots per plate) or press them one for one in Create's mechanical press.",
+    "",
+    "TFC's buckets can't do what this one does: the wooden bucket can't carry lava, and neither it nor the red and blue steel buckets can place source blocks. The vanilla bucket does both, which makes it the way to set up lava for Create's encased fan."
+   ],
+   "deps": [
+    "wrought_iron"
+   ]
+  },
+  {
+   "key": "metal_age.redblu_buckets",
+   "action": "drop",
+   "reason": "Only TFG's bucket recipe needs both coloured steel buckets. Here the vanilla bucket is a wrought iron item (this_is_a_bucket) that outdoes TFC's red/blue steel buckets, which can't place source blocks in this pack's config."
+  },
+  {
+   "key": "metal_age.black_steel_anvil",
+   "action": "edit",
+   "chapter": "iron",
+   "reason": "TFG's black steel unlocks its high-pressure steam; here HP steam and LV need only steel (design.md).",
+   "subtitle": "Tier V",
+   "desc": [
+    "With the black steel anvil you can work black steel ingots into tools, armour and parts.",
+    "",
+    "GregTech doesn't wait for it in this pack: high-pressure steam and LV electrics need only steel. Dive into industry now, or finish the last tier of anvils first."
+   ]
+  },
+  {
+   "key": "metal_age.steel_anvil",
+   "action": "edit",
+   "chapter": "iron",
+   "reason": "Text holds (TFC anvil tiers); depends on the route's steel instead of the blast furnace.",
+   "deps": [
+    "steel"
+   ]
+  },
+  {
+   "key": "metal_age.wrought_iron_anvil",
+   "action": "edit",
+   "chapter": "iron",
+   "reason": "No Greate/windmills gate here. Pack fact worth a quest: wrought iron sheets need a tier-3 anvil (tfc:anvil/metal/sheet/wrought_iron tier 3), and the press, saw, harvester, chute, blast furnace and reinforced fire bricks all take them.",
+   "subtitle": "Sheets for heavy machines",
+   "desc": [
+    "With the wrought iron anvil (tier III) you can work wrought iron ingots into sheets, tool heads and more.",
+    "",
+    "Wrought iron sheets are what this pack's heavy machines are made of: Create's mechanical press (a double sheet), saw, harvester and chute, and TFC's blast furnace with its reinforced fire bricks all need them.",
+    "",
+    "Wrought iron tools and armour aren't much of an improvement over bronze, but they last far longer. The next anvil is a big step up in difficulty, so this is a good point to settle down and catch up on the rest of your base."
+   ],
+   "deps": [
+    "wrought_iron"
+   ]
+  },
+  {
+   "key": "metal_age.bronze_anvil",
+   "action": "merge",
+   "merge_into": "bronze_anvil",
+   "reason": "Same milestone. Task widened to any of the three tier-2 anvils (TFG accepted any; all are tier II per the field guide); welding quest added as a dep.",
+   "desc": [
+    "A tier-2 anvil works brass and bronze; wrought iron needs it too.",
+    "",
+    "Weld 14 ingots in pairs on your copper anvil (with flux) and craft the seven double ingots into the anvil. Bismuth bronze and black bronze make tier-2 anvils as well, but don't mix the three.",
+    "",
+    "Bronze also opens Create (andesite alloy takes bronze nuggets) and GregTech's bronze steam machines."
+   ],
+   "tasks": [
+    {
+     "filter": "or(item(tfc:metal/anvil/bronze)item(tfc:metal/anvil/bismuth_bronze)item(tfc:metal/anvil/black_bronze))",
+     "any": [
+      "tfc:metal/anvil/bronze",
+      "tfc:metal/anvil/bismuth_bronze",
+      "tfc:metal/anvil/black_bronze"
+     ]
+    }
+   ],
+   "deps": [
+    "metal_age.weld_bronze_ingots"
+   ]
+  },
+  {
+   "key": "metal_age.weld_bronze_ingots",
+   "action": "edit",
+   "chapter": "bronze",
+   "reason": "GregTech double ingots don't exist here; TFC's do (tfc:metal/double_ingot/*). Welding needs flux.",
+   "desc": [
+    "Get at least 14 ingots of one kind of bronze and weld them in pairs on your copper anvil (with flux) into seven double ingots.",
+    "",
+    "The tier-2 anvil can be made from bronze, bismuth bronze or black bronze, but not a mixture of the three."
+   ],
+   "tasks": [
+    {
+     "filter": "or(item(tfc:metal/double_ingot/bronze)item(tfc:metal/double_ingot/bismuth_bronze)item(tfc:metal/double_ingot/black_bronze))",
+     "any": [
+      "tfc:metal/double_ingot/bronze",
+      "tfc:metal/double_ingot/bismuth_bronze",
+      "tfc:metal/double_ingot/black_bronze"
+     ]
+    }
+   ],
+   "deps": [
+    "metal_age.copper_anvil",
+    "bronze"
+   ]
+  },
+  {
+   "key": "metal_age.copper_anvil",
+   "action": "merge",
+   "merge_into": "copper_anvil",
+   "reason": "Same milestone; adds TFC's anvil tiers (field guide: an anvil works its tier and welds one tier higher).",
+   "desc": [
+    "Weld ingots into double ingots and shape them on a stone anvil. The anvil makes tools, sheets and most metal parts.",
+    "",
+    "From here you climb the anvil tiers: copper (I); bronze, bismuth bronze and black bronze (II); wrought iron (III); steel (IV); black steel (V); red and blue steel (VI). An anvil works metals of its own tier and welds metals one tier higher, so each new anvil opens new tools and parts."
+   ]
+  },
+  {
+   "key": "metal_age.anvil_recycling",
+   "action": "keep",
+   "chapter": "bronze"
+  },
+  {
+   "key": "metal_age.tongs",
+   "action": "drop",
+   "reason": "TFC Hot or Not (tfchotornot tongs, hot-item damage) isn't in the pack."
+  },
+  {
+   "key": "metal_age.bloomery",
+   "action": "merge",
+   "merge_into": "bloomery",
+   "reason": "Same milestone; adds TFC 4's bloomery facts (field guide, tfc-server.toml: 16 items per level, 3 levels; 100 mB cast iron + 2 charcoal per bloom; 12 h; blooms worked at tier 2).",
+   "desc": [
+    "Built from eight bronze double sheets, with charcoal and iron ore inside.",
+    "",
+    "Wrought iron comes only from the bloomery: anything iron that is smelted or melted (GregTech's furnaces, Create's fan, TFC heat) becomes cast iron.",
+    "",
+    "Set the bloomery in a chimney of stone blocks; a full chimney holds 48 items. Throw in iron ore (hematite, limonite, magnetite, or any iron item, even cast iron ingots) with charcoal: each bloom takes 100 mB of cast iron and two charcoal. Light it and wait 12 hours, then mine the bloom for raw iron blooms and work them on a bronze anvil into refined blooms and then wrought iron ingots. The field guide shows the build."
+   ]
+  },
+  {
+   "key": "metal_age.blast_furnace",
+   "action": "merge",
+   "merge_into": "blast_furnace",
+   "reason": "Same milestone; the crucible quest becomes a dep (the blast furnace is crafted from one). TFC 4 changed the build: chimney of reinforced fire bricks, 8 per layer, up to 5 layers (field guide, multiblock pattern); fuel is charcoal only (#tfc:blast_furnace_fuel), not TFG's coke/anthracite. Pig iron and steel tasks are the route's pig_iron/steel quests.",
+   "desc": [
+    "TFC's blast furnace turns iron ore, charcoal and flux into pig iron. GregTech's electric blast furnace is later built from one.",
+    "",
+    "Craft it from a crucible and eight wrought iron double sheets, then build its chimney on top from reinforced fire bricks (a fire bricks block and a wrought iron or steel sheet): eight per layer, up to five layers, each layer holding four more ore. Put a bellows on one side, a tuyere in its interface, and a crucible right below it to catch the molten pig iron.",
+    "",
+    "Drop in equal numbers of iron ore and flux, plus charcoal: it burns only charcoal (coke is for GregTech's primitive blast furnace). Light it, keep it fuelled, and work the bellows once it's as hot as charcoal gets. The field guide has the full build."
+   ],
+   "deps": [
+    "metal_age.crucible"
+   ]
+  },
+  {
+   "key": "metal_age.blast_furnace_fuel",
+   "action": "drop",
+   "reason": "Wrong here: TFC's blast furnace burns only charcoal (#tfc:blast_furnace_fuel = minecraft:charcoal), and the Beneath's anthracite doesn't exist. Folded into the blast_furnace merge; charcoal is the route's charcoal quest."
+  },
+  {
+   "key": "metal_age.fully_stacked_blast_furnace",
+   "action": "edit",
+   "chapter": "iron",
+   "reason": "TFC 4's chimney is reinforced fire bricks, 8 per layer, 5 layers max (blastFurnaceMaxChimneyHeight = 5, 4 ore per layer); TFG's insulation item and its alloy-smelter fire brick recipe don't exist.",
+   "desc": [
+    "A blast furnace's chimney can be five layers tall, each a ring of eight reinforced fire bricks. Every layer holds four more ore, so a full one smelts twenty at a time.",
+    "",
+    "It's worth building it up: you'll need a lot of steel."
+   ],
+   "tasks": [
+    {
+     "item": "tfc:reinforced_fire_bricks",
+     "count": 40
+    }
+   ]
+  },
+  {
+   "key": "metal_age.fire_bricks",
+   "action": "merge",
+   "merge_into": "fire_bricks",
+   "reason": "Same item (tfc:fire_bricks); fire clay becomes a dep (the bricks are knapped from it). TFG's wrought iron plate 'insulation' became TFC 4's reinforced fire bricks (tfc:crafting/reinforced_fire_bricks_from_iron/steel); tfcbetterbf isn't in the pack.",
+   "desc": [
+    "Fire clay bricks, fired and set with mortar. GregTech's steam machines use them where they wanted a vanilla furnace.",
+    "",
+    "Knap fire clay into unfired fire bricks and fire them at 1399 °C (a pit kiln, or a forge with bellows), then craft the bricks with mortar into fire bricks blocks. TFC's blast furnace takes them too, as reinforced fire bricks: a fire bricks block and a wrought iron sheet."
+   ],
+   "deps": [
+    "metal_age.fire_clay"
+   ]
+  },
+  {
+   "key": "metal_age.coke_oven",
+   "action": "edit",
+   "chapter": "iron",
+   "reason": "GregTech coke oven exists (step 21). Recipes checked (log -> charcoal + 250 mB creosote, coal incl. TFC bituminous -> coke + 500 mB; 32-bucket tank per GT's description). Coke doesn't fuel TFC's blast furnace here, only the primitive blast furnace. Dropped the controller-hologram claim and the TFG image.",
+   "desc": [
+    "The coke oven is your first GregTech multiblock! It needs no fuel: it bakes a log into charcoal and 250 mB of creosote, or coal (TFC bituminous coal counts) into coke and 500 mB of creosote, and holds up to 32 buckets of creosote.",
+    "",
+    "Charcoal feeds the forge, the bloomery and TFC's blast furnace; coke refines pig iron into steel in GregTech's primitive blast furnace. Creosote turns planks into treated wood.",
+    "",
+    "Press U (uses) on the coke oven in EMI to see how to build it.",
+    "{@pagebreak}",
+    "Coke ovens can be fully automated with a coke oven hatch on their side: the hatch works as both input and output, for items and fluids. A crate for the input, a chest for the output and a drum or tank for the creosote make a simple one-way coke oven."
+   ],
+   "deps": [
+    "wrought_iron"
+   ]
+  },
+  {
+   "key": "metal_age.weak_steel",
+   "action": "edit",
+   "chapter": "iron",
+   "reason": "Ingredients as TFC ingots (GregTech ingots are unified onto TFC's; dusts don't go in a crucible). Ratios checked against tfc:alloy/weak_steel.",
+   "desc": [
+    "Weak steel is one half of black steel. Alloy it in a crucible from 2 parts steel, 1 part nickel and 1 part black bronze.",
+    "",
+    "The exact ranges are 50-70% steel, 15-25% nickel and 15-25% black bronze; EMI shows them on molten weak steel."
+   ],
+   "tasks": [
+    {
+     "item": "tfc:metal/ingot/nickel"
+    },
+    {
+     "item": "tfc:metal/ingot/steel",
+     "count": 2
+    },
+    {
+     "item": "tfc:metal/ingot/black_bronze"
+    }
+   ],
+   "deps": [
+    "steel"
+   ]
+  },
+  {
+   "key": "metal_age.highcarb_black_steel",
+   "action": "edit",
+   "chapter": "iron",
+   "reason": "No alloy-smelter recipe for high carbon black steel here (only TFC welding), so the 'double your output' line goes.",
+   "desc": [
+    "The final two anvils are made of complex alloys that take a lot of metal. Weld weak steel and pig iron into high carbon black steel, then work it on the anvil into black steel."
+   ]
+  },
+  {
+   "key": "metal_age.red_blu",
+   "action": "edit",
+   "chapter": "iron",
+   "reason": "Heat/cold protection is TFG's Hot or Not mechanic (not here). Added the pack's red steel use: Woodencog welds red steel armour onto Create's copper diving gear for the netherite tier (tier-5 welding).",
+   "desc": [
+    "The final tier of anvil can be made of either red or blue steel. Both are complex alloys of black steel, steel and two more metals: brass and rose gold for red steel, bismuth bronze and sterling silver for blue.",
+    "",
+    "Red steel has one more use here: welded onto Create's copper diving gear, red steel armour turns it into netherite diving gear."
+   ]
+  },
+  {
+   "key": "metal_age.weak_red_steel",
+   "action": "edit",
+   "chapter": "iron",
+   "reason": "Ingredients as TFC ingots; ratios checked against tfc:alloy/weak_red_steel.",
+   "desc": [
+    "Like before, weak red steel is the first step of red steel. Alloy it from 4 parts black steel, 2 parts steel, 1 part brass and 1 part rose gold.",
+    "",
+    "The exact ranges are 50-55% black steel, 20-25% steel and 10-15% each of brass and rose gold."
+   ],
+   "tasks": [
+    {
+     "item": "tfc:metal/ingot/brass"
+    },
+    {
+     "item": "tfc:metal/ingot/steel",
+     "count": 2
+    },
+    {
+     "item": "tfc:metal/ingot/rose_gold"
+    },
+    {
+     "item": "tfc:metal/ingot/black_steel",
+     "count": 4
+    }
+   ]
+  },
+  {
+   "key": "metal_age.weak_blu_steel",
+   "action": "edit",
+   "chapter": "iron",
+   "reason": "Ingredients as TFC ingots; ratios checked against tfc:alloy/weak_blue_steel.",
+   "desc": [
+    "Like before, weak blue steel is the first step of blue steel. Alloy it from 4 parts black steel, 2 parts steel, 1 part bismuth bronze and 1 part sterling silver.",
+    "",
+    "The exact ranges are 50-55% black steel, 20-25% steel and 10-15% each of bismuth bronze and sterling silver."
+   ],
+   "tasks": [
+    {
+     "item": "tfc:metal/ingot/steel",
+     "count": 2
+    },
+    {
+     "item": "tfc:metal/ingot/black_steel",
+     "count": 4
+    },
+    {
+     "item": "tfc:metal/ingot/bismuth_bronze"
+    },
+    {
+     "item": "tfc:metal/ingot/sterling_silver"
+    }
+   ]
+  },
+  {
+   "key": "metal_age.highcarb_red_steel",
+   "action": "edit",
+   "chapter": "iron",
+   "reason": "No alloy-smelter recipe for it here; welding only.",
+   "desc": [
+    "Red steel first starts as high carbon red steel: weld weak red steel and black steel together, then work it on the anvil into red steel."
+   ]
+  },
+  {
+   "key": "metal_age.highcarb_blu_steel",
+   "action": "edit",
+   "chapter": "iron",
+   "reason": "No alloy-smelter recipe for it here; welding only.",
+   "desc": [
+    "Blue steel first starts as high carbon blue steel: weld weak blue steel and black steel together, then work it on the anvil into blue steel."
+   ]
+  },
+  {
+   "key": "metal_age.redblu_anvil",
+   "action": "edit",
+   "chapter": "iron",
+   "reason": "Tag #tfc:red_or_blue_anvil doesn't exist; LV doesn't wait for TFC's last tier here.",
+   "desc": [
+    "The final tier of anvil! A red or blue steel anvil (tier VI) works both red and blue steel ingots.",
+    "",
+    "This is the top of TerraFirmaCraft's metalworking; from here on, GregTech carries the metal."
+   ],
+   "tasks": [
+    {
+     "filter": "or(item(tfc:metal/anvil/red_steel)item(tfc:metal/anvil/blue_steel))",
+     "any": [
+      "tfc:metal/anvil/red_steel",
+      "tfc:metal/anvil/blue_steel"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "metal_age.red_steel_flask",
+   "action": "drop",
+   "reason": "Waterflasks isn't in the pack; the Beneath doesn't exist."
+  },
+  {
+   "key": "metal_age.temperature_protection",
+   "action": "drop",
+   "reason": "Built on TFG's Hot or Not heat/cold protection tags (holding hot ingots, steam pipes), which don't exist here; sns hiking boots aren't in the pack either."
+  },
+  {
+   "key": "metal_age.steel_goodies",
+   "action": "drop",
+   "reason": "TFG hub for Greate's steel tier, which doesn't exist here (plain Create); steel is the route's steel quest."
+  },
+  {
+   "key": "metal_age.black_steel_goodies",
+   "action": "drop",
+   "reason": "TFG hub that opens high-pressure steam at black steel; here HP steam needs steel (route hp_boiler)."
+  },
+  {
+   "key": "metal_age.wrought_iron_goodies",
+   "action": "drop",
+   "reason": "TFG hub; its checklist is mostly TFG mods (Helve Hammer, backpacks). Its follow-ups get explicit deps."
+  },
+  {
+   "key": "metal_age.bronze_goodies",
+   "action": "drop",
+   "reason": "TFG hub (copper anvil unlocks wood, bronze unlocks automation) that doesn't match this pack's gates; the route's bronze chapter covers bronze."
+  },
+  {
+   "key": "metal_age.wrought_iron_create",
+   "action": "drop",
+   "reason": "TFG hub that gates Create at wrought iron; here Create opens in the bronze age with andesite alloy (route andesite_alloy)."
+  },
+  {
+   "key": "metal_age.bellows",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "TFC 4 numbers checked: charcoal 1350 °C, bituminous coal 1415 °C (tfc fuel data), pottery 1399 °C, cast iron melts 1535 °C; bellows from lumber + leather. Coke isn't a TFC fuel here.",
+   "desc": [
+    "The bellows forces air into the firepit or forge in front of it (or in front and one block down), raising its maximum temperature for a short time at the cost of burning fuel faster.",
+    "",
+    "Charcoal burns at 1350 °C: not quite hot enough to fire pottery in a forge (1399 °C), and iron melts at 1535 °C. The bellows makes up the difference. Bituminous coal burns at 1415 °C on its own.",
+    "",
+    "Made from lumber and leather. TFC's blast furnace needs one too."
+   ]
+  },
+  {
+   "key": "metal_age.fire_clay_ingredients",
+   "action": "edit",
+   "chapter": "bronze",
+   "reason": "Fire clay is needed earlier here: GregTech's boilers take fire bricks in the late bronze age (design.md), so the chain hangs off bronze instead of the wrought iron anvil.",
+   "desc": [
+    "Fire clay is a special clay made of kaolinite, graphite and regular clay that stands up to very high temperatures. It makes the crucible, a better vessel for melting and alloying metal, and fire bricks: GregTech's steam machines are built with them, and TFC's blast furnace, the way to steel, needs them too.",
+    "",
+    "You'll likely need to travel far, far away from your base for both graphite and kaolin clay, so preparation is key!"
+   ],
+   "deps": [
+    "bronze"
+   ]
+  },
+  {
+   "key": "metal_age.overworld_kaolin",
+   "action": "edit",
+   "chapter": "bronze",
+   "reason": "Spawn rules checked (TFC field guide + placed_feature: 18 °C, 300 mm, high-altitude biomes, blood lilies). TFG's 'south-east across the ocean' is TFG's world; here the climate is the real Earth's. Iron Flask and Firmaciv boats aren't in the pack.",
+   "desc": [
+    "Kaolin clay is found at high altitudes, in plateaus, old mountains, rolling hills and highlands, where the temperature is at least 18 °C and rainfall at least 300 mm. Blood lilies grow on it, so look out for them.",
+    "",
+    "TFC: Real World's climate follows the real Earth, so think warm, wet uplands, mostly in the tropics and subtropics. From a temperate start that is a long expedition: bring plenty of food and water, a boat if there's sea in the way, and storage for bringing home as much kaolin as you can."
+   ]
+  },
+  {
+   "key": "metal_age.kaolin_clay",
+   "action": "edit",
+   "chapter": "bronze",
+   "reason": "20% kaolinite and 500 °C checked; added that GregTech's steam machines keep using fire bricks.",
+   "desc": [
+    "Once you find kaolin clay, bring back as much as you can carry! Only 20% of it turns into kaolinite powder when heated (500 °C), so it's worth firing it on the spot in pit kilns to save inventory space.",
+    "",
+    "Each fire clay takes four kaolinite powder, about twenty kaolin clay, and GregTech's steam machines keep asking for fire bricks long after the crucible and blast furnace are built. Bring home more than you think you'll need, to avoid a repeat journey.",
+    "",
+    "P.S.: If you've found blood lilies but no clay, try digging down a little further! Sometimes it lies a little underground."
+   ]
+  },
+  {
+   "key": "metal_age.overworld_graphite",
+   "action": "edit",
+   "chapter": "bronze",
+   "reason": "TFC 4 graphite: cluster veins in gneiss, marble, quartzite and schist, y -30..60, no indicators (tfc:vein/graphite); not TFG's deep discs with coal and diamonds. Digger Helmet isn't in the pack.",
+   "desc": [
+    "Graphite forms in metamorphic rock: gneiss, marble, quartzite and schist, below y=60.",
+    "",
+    "Its veins leave no loose pieces on the surface, so explore caves in those rocks and bring a prospector's pick. A metal shield and a spyglass can prove very useful too."
+   ]
+  },
+  {
+   "key": "metal_age.graphite",
+   "action": "edit",
+   "chapter": "bronze",
+   "reason": "Graphite here is TFC's mineral (tfc:ore/graphite), ground in a quern into 4 graphite powder; GregTech graphite ores don't generate. Its veins don't carry coal or diamonds.",
+   "desc": [
+    "Once you find graphite, bring back as much as you can, though you'll need far less of it than kaolin clay.",
+    "",
+    "Grind it in a quern: one graphite gives four graphite powder, enough for one fire clay."
+   ],
+   "tasks": [
+    {
+     "item": "tfc:ore/graphite"
+    }
+   ]
+  },
+  {
+   "key": "metal_age.fire_clay",
+   "action": "edit",
+   "chapter": "bronze",
+   "reason": "Graphite powder comes straight from the quern (TFG's dust-then-crush is TFG-only). Recipe checked: 4 + 4 + 1 clay ball.",
+   "desc": [
+    "Heat kaolin clay to get kaolinite powder. You can use a forge to heat it, but cooking big batches in pit kilns may be faster.",
+    "",
+    "Grind graphite in a quern for graphite powder.",
+    "",
+    "Finally, combine 4 graphite powder, 4 kaolinite powder and 1 clay ball to make fire clay."
+   ]
+  },
+  {
+   "key": "metal_age.crucible",
+   "action": "edit",
+   "chapter": "bronze",
+   "reason": "Capacity is 4000 mB in this pack (tfc-server.toml crucibleCapacity), not 4608.",
+   "desc": [
+    "The crucible sits on top of a charcoal forge (any heat source below works). It has 9 slots, holds 4000 mB of metal and shows your alloy ratios as you go. It keeps its contents when broken, and it also collects pig iron when placed below a blast furnace.",
+    "",
+    "Keep in mind that the crucible WILL try to alloy everything inside it - it does not keep metals separate like a TC Smeltery - so it's a good idea to keep it clean when you aren't using it."
+   ]
+  },
+  {
+   "key": "metal_age.fire_clay_products",
+   "action": "edit",
+   "chapter": "bronze",
+   "reason": "TFC 4 has its own mold table and casting channels (tfc:mold_table, tfc:channel); tfcchannelcasting and TFG's rod/gear molds aren't here. Added the fire ingot mold (1 in 100 breaks, field guide).",
+   "desc": [
+    "Just like regular clay, fire clay can be knapped into things that you'll then need to fire (1399 °C). Most importantly, it makes the crucible and fire bricks.",
+    "",
+    "Fire ingot molds break only 1 time in 100, against 1 in 10 for a clay ingot mold.",
+    "",
+    "You can also make a mold table and casting channels: connect mold tables to a crucible with channels to cast into several molds at once. Use the channel next to the crucible to start pouring, or give it a redstone pulse."
+   ],
+   "tasks": [
+    {
+     "item": "tfc:ceramic/fire_brick"
+    },
+    {
+     "optional": true,
+     "item": "tfc:ceramic/fire_ingot_mold"
+    },
+    {
+     "optional": true,
+     "item": "tfc:mold_table"
+    },
+    {
+     "optional": true,
+     "item": "tfc:channel"
+    }
+   ]
+  },
+  {
+   "key": "metal_age.beneath_kaolin",
+   "action": "drop",
+   "reason": "The Beneath (TFG's Nether replacement) and primitive_creatures aren't in the pack."
+  },
+  {
+   "key": "metal_age.beneath_graphite",
+   "action": "drop",
+   "reason": "The Beneath (TFG's Nether replacement) and primitive_creatures aren't in the pack."
+  },
+  {
+   "key": "steam_age.mold_table",
+   "action": "drop",
+   "reason": "TFG's tfcchannelcasting mold table with pump/chute automation; TFC 4's own mold table and channels are covered in fire_clay_products."
+  },
+  {
+   "key": "metal_age.mining",
+   "action": "edit",
+   "chapter": "bronze",
+   "reason": "Tags renamed (#c:tools/mining_hammer, #c:tools/spade); GregTech's first mining hammer here is bronze (no copper tools). Rope ladders and Digger Helmet aren't in the pack. Added TFC cave-ins.",
+   "desc": [
+    "Extracting valuable resources from the ground is a major part of this modpack, and you will consume a &llot&r of metal from here on. One way to mine a lot of it at once is a GregTech mining hammer: it breaks a 3x3 area at a slower speed. Hold sneak to break single blocks.",
+    "",
+    "The spade does the same for dirt, sand and gravel. The first ones you can make, in bronze, rose gold or sterling silver, come with the bronze age.",
+    "",
+    "Mind TFC's cave-ins: big holes in raw rock bring the roof down unless you put up support beams."
+   ],
+   "tasks": [
+    {
+     "filter": "item_tag(c:tools/mining_hammer)",
+     "any": [
+      "#c:tools/mining_hammer"
+     ]
+    },
+    {
+     "optional": true,
+     "filter": "item_tag(c:tools/spade)",
+     "any": [
+      "#c:tools/spade"
+     ]
+    }
+   ],
+   "deps": [
+    "bronze"
+   ]
+  },
+  {
+   "key": "metal_age.redstone_devices",
+   "action": "edit",
+   "chapter": "bronze",
+   "reason": "TFC 4 field guide: the Precision Clock reads hour or month (not recipe timers); all four output a signal without a comparator. They're built on brass mechanisms, so they hang off brass.",
+   "desc": [
+    "These brass-geared devices measure the world around you, and each gives out a redstone signal directly, no comparator needed.",
+    "",
+    "The Precision Clock reads the hour, or the month after you toggle it.",
+    "",
+    "The Thermometer reads the air temperature, or the heat of the device it's placed on.",
+    "",
+    "The Anemometer and Weather Vane read wind speed and direction respectively."
+   ],
+   "deps": [
+    "brass"
+   ]
+  },
+  {
+   "key": "tfg_tips.candles",
+   "action": "edit",
+   "chapter": "stone",
+   "reason": "TFC 4 candles are string sealed in a barrel of tallow (no wax/rosin, Firmalife isn't here); they burn 240 in-game hours (candleTicks), not 30 days. Tag #tfc:candles doesn't exist.",
+   "desc": [
+    "Candles are a better light source than torches: a candle burns for 240 in-game hours (ten days) before it needs relighting, a torch for 72.",
+    "",
+    "Seal string in a barrel of tallow to make them (cook blubber in a pot of water for tallow), and dye them in a barrel if you like."
+   ],
+   "tasks": [
+    {
+     "filter": "or(item(tfc:candle)item_tag(tfc:colored_candles))",
+     "any": [
+      "tfc:candle",
+      "#tfc:colored_candles"
+     ]
+    }
+   ],
+   "deps": [
+    "stone_age.barrels"
+   ]
+  },
+  {
+   "key": "steam_age.basic_greate",
+   "action": "merge",
+   "merge_into": "cogwheel",
+   "reason": "Greate's tiered shafts/cogwheels and stress limits don't exist (plain Create); same milestone as the route's first shafts and cogwheels.",
+   "desc": [
+    "Shafts from andesite alloy, cogwheels from shafts and planks. TFC workbenches count as crafting tables everywhere.",
+    "",
+    "Large cogwheels (a shaft or cogwheel with more planks) mesh with small ones to double or halve the speed: gear your machines up or down as they need."
+   ]
+  },
+  {
+   "key": "steam_age.horse_crank",
+   "action": "drop",
+   "reason": "Create Horse Power (animal crank) isn't in the pack."
+  },
+  {
+   "key": "steam_age.poor_paths",
+   "action": "drop",
+   "reason": "About the animal crank (Create Horse Power), not in the pack."
+  },
+  {
+   "key": "steam_age.normal_paths",
+   "action": "drop",
+   "reason": "About the animal crank (Create Horse Power) and rnr roads, not in the pack."
+  },
+  {
+   "key": "steam_age.good_paths",
+   "action": "drop",
+   "reason": "About the animal crank (Create Horse Power) and rnr roads, not in the pack."
+  },
+  {
+   "key": "steam_age.helve_hammer",
+   "action": "drop",
+   "reason": "Vintage Improvements isn't in the pack."
+  },
+  {
+   "key": "steam_age.water_wheel",
+   "action": "merge",
+   "merge_into": "water_wheel",
+   "reason": "Same milestone. Water wheels here are plain planks + shaft (no treated wood); 'oceans and lakes give a little power' cut.",
+   "desc": [
+    "Put a water wheel in a river. TFC: Real World's rivers follow real rivers.",
+    "",
+    "Water wheels need flowing water. If you're far from a river, a windmill is the other way to get going."
+   ]
+  },
+  {
+   "key": "steam_age.windmill",
+   "action": "edit",
+   "chapter": "create",
+   "reason": "No treated wood here (windmill bearing: slab + andesite alloy + shaft; sails: wool + sticks + andesite alloy). Sail rules from create-server.toml (8 sails minimum, +1 RPM per 8). Was gated on the coke oven.",
+   "desc": [
+    "No river nearby? A windmill turns anywhere it has room. Build at least eight sails (wool, sticks and andesite alloy) onto a windmill bearing and right-click the bearing to start it; every eight more sails add speed."
+   ],
+   "deps": [
+    "cogwheel"
+   ]
+  },
+  {
+   "key": "steam_age.large_water_wheel",
+   "action": "edit",
+   "chapter": "create",
+   "reason": "Was gated on Greate steel. Capacity from create-server.toml (128 vs 32 SU per RPM); recipe is a water wheel in 8 planks.",
+   "desc": [
+    "Large water wheels give four times a small wheel's stress capacity per RPM, but still need flowing water from a river. Wrap a water wheel in eight more planks to make one."
+   ],
+   "deps": [
+    "water_wheel"
+   ]
+  },
+  {
+   "key": "steam_age.metal_casing",
+   "action": "edit",
+   "chapter": "create",
+   "reason": "Andesite casing is a bronze-age item here (andesite alloy on a stripped log, step 9), not wrought iron. Removed TFG/cobble-generator remarks.",
+   "desc": [
+    "Andesite casing (andesite alloy applied to a stripped log; TFC logs count) is the basis of most of Create's simple machines: gearboxes, the millstone, the press, the fan, the saw and more. Check EMI for everything you can build with it.",
+    "",
+    "New to Create? There are many tutorials online about different kinds of contraptions you can build, and most of them work here too."
+   ],
+   "deps": [
+    "andesite_alloy"
+   ]
+  },
+  {
+   "key": "steam_age.create_tools",
+   "action": "edit",
+   "chapter": "create",
+   "reason": "Tag is #c:tools/wrench here. TFG tips-chapter/hammer remarks cut.",
+   "desc": [
+    "A wrench rotates Create blocks, and sneak + right-click picks them up (an axe or pickaxe still breaks them too). Create's wrench takes gold sheets and a cogwheel; any GregTech wrench completes this quest as well.",
+    "",
+    "The goggles let you see much more about your machines, such as how much stress they produce or use. They're optional for now, but will prove very useful later."
+   ],
+   "tasks": [
+    {
+     "optional": true,
+     "item": "create:goggles"
+    },
+    {
+     "filter": "item_tag(c:tools/wrench)",
+     "any": [
+      "#c:tools/wrench"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "steam_age.basic_millstone",
+   "action": "merge",
+   "merge_into": "millstone",
+   "reason": "Greate's andesite millstone = Create's millstone. Greate's extra output slots and TFG's grain lore don't apply.",
+   "desc": [
+    "Besides Create's usual milling, it grinds TFC ores into GregTech crushed ore at TFC's own yield: a rich piece gives a crushed ore 35% of the time, a normal one 25%.",
+    "",
+    "It's an automatic quern: throw items in the top and take the results out with right-click (or let a funnel pull them). It's slow when turned slowly, so gear it up."
+   ]
+  },
+  {
+   "key": "steam_age.steel_pump",
+   "action": "merge",
+   "merge_into": "pump",
+   "reason": "Greate's steel pump = Create's mechanical pump. Kept TFG's useful pipe comparison; range from create-server.toml (mechanicalPumpRange 16), GT6-style pipes from gtceu.yaml. Dropped the 'flip the pump twice' workaround.",
+   "desc": [
+    "Every GregTech boiler is built around a Create mechanical pump, so GregTech's steam age starts here.",
+    "",
+    "It also moves fluids, from tanks and source blocks into Create's or GregTech's pipes, which work differently. Create's pipes hold no fluid themselves, need a pump to move anything and reach 16 blocks from it; a wrench turns a pipe into a straight window pipe so parallel pipes don't join. GregTech's pipes have their own buffer, keep fluid moving without a pump once it's inside, and connect only where you open them with a wrench."
+   ]
+  },
+  {
+   "key": "steam_age.mechanical_saw",
+   "action": "merge",
+   "merge_into": "saw",
+   "reason": "Greate's andesite saw = Create's saw (heavy machine, wrought iron sheets here). No saw recipes for lumber or bolts in this pack, so those claims go.",
+   "desc": [
+    "Slits a GregTech plate into two single wires (copper, tin, red alloy, gold, ...), GregTech's wiremill rate without electricity.",
+    "",
+    "On a moving contraption it fells trees; facing up, it cuts blocks like a stonecutter."
+   ]
+  },
+  {
+   "key": "steam_age.steel_encased_fan",
+   "action": "merge",
+   "merge_into": "fan",
+   "reason": "Greate's steel fan = Create's encased fan. Greate's pumped-water washing doesn't exist, and Create's bulk washing has no recipes for GregTech crushed ore here.",
+   "desc": [
+    "Blowing through lava or fire smelts items like a furnace: crushed copper becomes copper ingots. Crushed iron ores become cast iron; only the bloomery makes wrought iron.",
+    "",
+    "Blowing through water washes items instead, but it doesn't clean GregTech crushed ore here: wash that in a cauldron or an ore washer."
+   ]
+  },
+  {
+   "key": "steam_age.basic_mech_press",
+   "action": "merge",
+   "merge_into": "press",
+   "reason": "Greate's andesite press = Create's press. Greate's forge-basin welding doesn't exist here (no Create recipes make TFC double ingots or sheets).",
+   "desc": [
+    "Takes a TFC wrought iron double sheet. Presses ingots into GregTech plates one for one (by hand, GregTech takes two ingots per plate).",
+    "",
+    "Over a basin it compacts the basin's contents instead of pressing single items."
+   ]
+  },
+  {
+   "key": "steam_age.steel_mech_press",
+   "action": "drop",
+   "reason": "Greate's steel-tier press doesn't exist (plain Create); the press is the route's press."
+  },
+  {
+   "key": "steam_age.steel_greate",
+   "action": "drop",
+   "reason": "Greate's steel-tier shafts and cogwheels don't exist (plain Create)."
+  },
+  {
+   "key": "steam_age.steel_millstone",
+   "action": "drop",
+   "reason": "Greate's steel-tier millstone doesn't exist (plain Create)."
+  },
+  {
+   "key": "metal_age.q0ac614966cca8294",
+   "action": "drop",
+   "reason": "Kinetic Bridge exists (Create: Connected), but the quest only explains Greate's stress tiers, which don't exist here."
+  },
+  {
+   "key": "steam_age.mechanical_harvester",
+   "action": "edit",
+   "chapter": "create",
+   "reason": "Greenhouse (Firmalife) and bedrock-temperature remarks cut. Needs wrought iron sheets here.",
+   "desc": [
+    "Too lazy to harvest and replant your crops? Mount harvesters on a moving contraption and they'll pick mature crops and replant them as they pass."
+   ],
+   "deps": [
+    "steam_age.metal_casing",
+    "metal_age.wrought_iron_anvil"
+   ]
+  },
+  {
+   "key": "steam_age.chute",
+   "action": "edit",
+   "chapter": "create",
+   "reason": "Chute takes wrought iron sheets (needs the tier-3 anvil); hopper recipes checked (GregTech iron plates, TFC steel sheets). Helve Hammer reference cut.",
+   "desc": [
+    "You can now move your items around! Chutes drop items straight down into whatever is below them (an encased fan can push them up). Funnels pull items out of, or put them into, inventories and belts. Hoppers work too: GregTech makes them from iron plates, TFC from steel sheets.",
+    "",
+    "Chutes and hoppers can also push items from containers into GregTech's item pipes."
+   ],
+   "deps": [
+    "metal_age.wrought_iron_anvil"
+   ]
+  },
+  {
+   "key": "steam_age.rotation_speed_controller",
+   "action": "edit",
+   "chapter": "create",
+   "reason": "Text holds; was gated on Greate steel. Needs a precision mechanism (sequenced assembly) and brass casing.",
+   "deps": [
+    "brass_casing",
+    "press"
+   ]
+  },
+  {
+   "key": "metal_age.q6a3cf1cd0a79df7e",
+   "action": "edit",
+   "chapter": "create",
+   "reason": "Needed a title. Recipe here: wrought iron blocks, logs, smooth stone, dispenser. Fires gunpowder.",
+   "title": "Schematicannon",
+   "subtitle": "Automatic building",
+   "desc": [
+    "The &6Schematicannon&r is an automatic building machine: it places blocks from attached containers according to a schematic, firing gunpowder as it goes. Use it to bring over buildings made in a creative world, or to copy and paste parts of your own structures.",
+    "",
+    "Draw schematics with Create's schematic and quill, and write them out at a schematic table."
+   ],
+   "deps": [
+    "wrought_iron"
+   ]
+  },
+  {
+   "key": "metal_age.copper_diving",
+   "action": "edit",
+   "chapter": "create",
+   "reason": "Air from create-server.toml (airInBacktank 900 = 15 min, not 20). Added the pack's red steel upgrade (Woodencog welding). Hangs off andesite alloy (the backtank takes it) and glass.",
+   "desc": [
+    "Struggling with aquifers in your ore veins? Create's copper diving helmet, backtank and boots let you work underwater. A full backtank holds 900 air, fifteen minutes of breathing; place it and give it rotation to fill it.",
+    "",
+    "Later, red steel armour welded onto the copper pieces turns them into netherite diving gear."
+   ],
+   "deps": [
+    "andesite_alloy",
+    "tfg_tips.glass_blocks"
+   ]
+  },
+  {
+   "key": "steam_age.organization",
+   "action": "edit",
+   "chapter": "create",
+   "reason": "JEI bookmarks -> EMI favourites. Put in create (Create items) rather than tools_tips, so tools_tips keeps TFG's manual layout.",
+   "desc": [
+    "Struggling to keep up with all the recipes and items you need? Here's a couple of options which may help:",
+    "",
+    "&3Clipboard&r: a portable to-do list, letting you check off items as you like.",
+    "",
+    "&3Crafting Blueprint&r: hang it on a wall and set a recipe on it, then craft that recipe straight from your inventory without looking it up in EMI.",
+    "",
+    "&3EMI favourites&r: press A while hovering over an item in EMI to add it to your favourites. It works on recipe outputs too, to keep the whole recipe."
+   ],
+   "deps": [
+    "andesite_alloy"
+   ]
+  },
+  {
+   "key": "steam_age.item_pipes",
+   "action": "edit",
+   "chapter": "steam",
+   "reason": "GregTech item pipes exist (tin/brass step 14). Trimmed the routing explanation; GT6-style pipes confirmed in gtceu.yaml. Was gated on the chute (iron era); hangs off the boiler instead.",
+   "desc": [
+    "&3Item Pipes&r are a simple yet effective way to move items around &dinstantly&r, but with throughput limits. Higher tier pipes provide ridiculously large throughput - a rare sight in modded Minecraft!",
+    "",
+    "Item Pipes &9do not pull&r: they push any item inserted into them to connected inventories, prioritizing &9the closest inventory&r. Restrictive pipes are the last choice.",
+    "{@pagebreak}",
+    "For now, feed them with Create funnels, &6Chutes&r and &6Hoppers&r; in LV, Conveyor Modules, Output Buses and machine Auto-Outputs join in.",
+    "",
+    "&9Note:&r pipes connect only to the block they were placed against. To open more connections, use your &5Wrench&r.",
+    "",
+    "Get &eany&r of the suggested Item Pipes to complete this quest.",
+    "{@pagebreak}",
+    "&l&3Lore:&r&o Oooooh, YEAH! Item Pipes were in GregTech 5, and for whatever reason they weren't kept for GTCE, so you had to use other mods to transport items. Who does that!? We hope you enjoy Item Pipes being back in GregTech!"
+   ],
+   "deps": [
+    "boiler"
+   ]
+  },
+  {
+   "key": "steam_age.fluid_pipes",
+   "action": "edit",
+   "chapter": "steam",
+   "reason": "Throughput/buffer numbers cut (not checked for GregTech 8.0); hover shows them. Hangs off the boiler.",
+   "desc": [
+    "&bFluid Pipes&r will transport &7Steam&r and other fluids between machines for you.",
+    "",
+    "Each pipe has a throughput in mB/t and a &6Temperature Limit&r. This is relevant right now, as steam will burn wooden pipes. The bigger the pipe, the &ahigher&r the throughput, but the more &dexpensive&r the craft; hover over one for its numbers.",
+    "",
+    "To start off, use wooden pipes for room-temperature fluids and bronze ones for steam and anything hot.",
+    "{@pagebreak}",
+    "&aReminder:&r 1 second = 20 ticks... assuming the server isn't lagging.",
+    "",
+    "&dNote:&r pipes connect only to the block they were placed against. To open more connections, use your wrench on the pipe. You can also sneak-right-click with your wrench to disable input from a side, which helps against sloshing."
+   ],
+   "deps": [
+    "boiler"
+   ]
+  },
+  {
+   "key": "steam_age.fluid_drums",
+   "action": "edit",
+   "chapter": "steam",
+   "reason": "Bismuth/black bronze drums don't exist; 'TFG' wording.",
+   "desc": [
+    "This pack has a plethora of fluids, so you may be looking for a way to store them.",
+    "",
+    "Introducing... &aDrums&r! They have large internal buffers, and any &aDrum&r can be broken and picked up and will &dkeep the fluid&r inside. A right-click with a Soft Mallet or Screwdriver lets a Drum drain its contents into a tank placed below it.",
+    "{@pagebreak}",
+    "&l&3Lore:&r&o These drums are actually ported from GregTech 6."
+   ],
+   "tasks": [
+    {
+     "filter": "or(item(gtceu:bronze_drum)item(gtceu:steel_drum)item(gtceu:aluminium_drum)item(gtceu:stainless_steel_drum)item(gtceu:gold_drum)item(gtceu:titanium_drum)item(gtceu:tungsten_steel_drum))",
+     "any": [
+      "gtceu:bronze_drum",
+      "gtceu:steel_drum",
+      "gtceu:aluminium_drum",
+      "gtceu:stainless_steel_drum",
+      "gtceu:gold_drum",
+      "gtceu:titanium_drum",
+      "gtceu:tungsten_steel_drum"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "steam_age.multiblock_tank",
+   "action": "edit",
+   "chapter": "steam",
+   "reason": "1,000-bucket figure not checked, cut; fill/drain wording from GregTech's tooltip.",
+   "desc": [
+    "Do you have a huge pile of barrels as you try to store all that creosote?",
+    "",
+    "Look no further than multiblock tanks: even the cheapest, wooden one holds far more than barrels, and there are bronze and steel versions for even more storage. Fill and drain them through the controller or a tank valve."
+   ]
+  },
+  {
+   "key": "tfg_tips.create_sticky_resin",
+   "action": "edit",
+   "chapter": "steam",
+   "reason": "Arborfirmacraft trees/vats aren't here. GregTech rubber trees generate (rubber logs are world seeds for the checker); natural rubber logs drop sticky resin 85% of the time (loot table); the extractor makes raw rubber from it.",
+   "desc": [
+    "&dSticky Resin&r stands in for slime balls in some recipes, and goes into &aResistors&r and &aCircuit Boards&r, which you'll need a fair bit of to advance into the &7Low Voltage&r age.",
+    "",
+    "GregTech's rubber trees grow in this world: chop their natural logs and they usually drop sticky resin. A steam extractor turns it into raw rubber."
+   ],
+   "deps": [
+    "boiler"
+   ]
+  },
+  {
+   "key": "tfg_tips.create_rubber_ingot",
+   "action": "merge",
+   "merge_into": "rubber",
+   "reason": "Same milestone (gtceu:rubber_ingot). TFG's vacuum chamber/latex route doesn't exist; kept its automation tip. Alloy smelter ratio checked (3 raw rubber + 1 sulfur dust).",
+   "desc": [
+    "Sticky resin from GregTech's rubber trees goes into a steam extractor for raw rubber; alloy-smelt three raw rubber with one sulfur dust (crush TFC sulfur or pyrite). Create's press turns rubber into plates.",
+    "",
+    "Rubber insulates every cable from here on, so it's well worth automating."
+   ]
+  },
+  {
+   "key": "metal_age.q7d76615185c637b8",
+   "action": "edit",
+   "chapter": "iron",
+   "reason": "Needed a title; Crafting Station isn't in the pack. Put in iron (steel era) rather than tools_tips, so tools_tips keeps TFG's manual layout.",
+   "title": "Steel Crate",
+   "desc": [
+    "Steel Crates are a big upgrade over wooden and bronze crates or walls of chests, boasting a whopping &672&r inventory slots."
+   ],
+   "deps": [
+    "steel"
+   ]
+  },
+  {
+   "key": "metal_age.stonecutters",
+   "action": "edit",
+   "chapter": "iron",
+   "reason": "Architect's Cutter and Framing Saw aren't in the pack. The stonecutter takes a wrought iron ingot here; listed what it cuts in this pack (Create palettes from TFC rock per stones.js/entry.js, Create Deco, Steam 'n' Rails, Copycats+).",
+   "desc": [
+    "The Stonecutter turns blocks into their decorative versions in one step, without chiselling each one in the world.",
+    "",
+    "It's the workshop for this pack's building mods: Create's cut and polished stones (TFC andesite, basalt, dacite and rhyolite count as andesite; TFC limestone, chalk and tuff give Create's limestone, calcite and tuff), Create Deco's bricks and catwalks, Steam 'n' Rails' locometal and Copycats+ blocks. Create's mechanical saw does the same job automatically."
+   ],
+   "tasks": [
+    {
+     "item": "minecraft:stonecutter"
+    }
+   ],
+   "deps": [
+    "wrought_iron"
+   ]
+  },
+  {
+   "key": "tfg_tips.oven_appliances",
+   "action": "edit",
+   "chapter": "iron",
+   "reason": "Firmalife ovens, vat and jarring station aren't here; its optional task, TFC's wrought iron grill, is a real TFC 4 firepit upgrade (field guide), so the quest becomes that.",
+   "title": "Grill",
+   "subtitle": "Cook five at once",
+   "desc": [
+    "A wrought iron grill turns a firepit into a grill: use it on a firepit. It cooks five items at once, and food cooked on it gets the Wood Grilled trait, which makes it keep a little longer.",
+    "",
+    "Work a wrought iron double sheet into a grill on a wrought iron anvil."
+   ],
+   "tasks": [
+    {
+     "item": "tfc:wrought_iron_grill"
+    }
+   ],
+   "deps": [
+    "wrought_iron_double",
+    "metal_age.wrought_iron_anvil"
+   ]
+  },
+  {
+   "key": "metal_age.crafting_station",
+   "action": "drop",
+   "reason": "Crafting Station mod (#tfg:crafting_stations) isn't in the pack."
+  },
+  {
+   "key": "tfg_tips.treetap",
+   "action": "drop",
+   "reason": "ArborFirmaCraft tree tapping (tree tap, syrup/rosin/latex trees, TFG's tags and items) isn't in the pack."
+  },
+  {
+   "key": "tfg_tips.find_syrup_tree",
+   "action": "drop",
+   "reason": "ArborFirmaCraft tree tapping (tree tap, syrup/rosin/latex trees, TFG's tags and items) isn't in the pack."
+  },
+  {
+   "key": "tfg_tips.find_rosin_tree",
+   "action": "drop",
+   "reason": "ArborFirmaCraft tree tapping (tree tap, syrup/rosin/latex trees, TFG's tags and items) isn't in the pack."
+  },
+  {
+   "key": "tfg_tips.find_latex_tree",
+   "action": "drop",
+   "reason": "ArborFirmaCraft tree tapping (tree tap, syrup/rosin/latex trees, TFG's tags and items) isn't in the pack."
+  },
+  {
+   "key": "tfg_tips.create_conifer_rosin",
+   "action": "drop",
+   "reason": "ArborFirmaCraft tree tapping (tree tap, syrup/rosin/latex trees, TFG's tags and items) isn't in the pack."
+  },
+  {
+   "key": "tfg_tips.create_tree_sugar",
+   "action": "drop",
+   "reason": "ArborFirmaCraft tree tapping (tree tap, syrup/rosin/latex trees, TFG's tags and items) isn't in the pack."
+  },
+  {
+   "key": "tfg_tips.create_rowboat",
+   "action": "drop",
+   "reason": "Firmaciv/Alekiships boats aren't in the pack."
+  },
+  {
+   "key": "tfg_tips.sloop_under_construction_materials",
+   "action": "drop",
+   "reason": "Firmaciv/Alekiships boats aren't in the pack."
+  },
+  {
+   "key": "tfg_tips.kayak_materials",
+   "action": "drop",
+   "reason": "Firmaciv boats aren't in the pack."
+  },
+  {
+   "key": "tfg_tips.warfare",
+   "action": "drop",
+   "reason": "Firmaciv/Alekiships cannons aren't in the pack."
+  },
+  {
+   "key": "tfg_tips.create_concrete_support",
+   "action": "drop",
+   "reason": "TFG's concrete supports (tfg:*) aren't in the pack."
+  },
+  {
+   "key": "tfg_tips.create_reinforced_concrete_support",
+   "action": "drop",
+   "reason": "TFG's concrete and steel supports (tfg:*) aren't in the pack."
+  },
+  {
+   "key": "tfg_tips.salvo",
+   "action": "drop",
+   "reason": "TFG's medicine items (tfg:*_salvo) aren't in the pack."
+  },
+  {
+   "key": "tfg_tips.first_backpack",
+   "action": "drop",
+   "reason": "Sophisticated Backpacks isn't in the pack."
+  },
+  {
+   "key": "tfg_tips.camera",
+   "action": "drop",
+   "reason": "Exposure isn't in the pack."
+  },
+  {
+   "key": "tfg_tips.blank_disc",
+   "action": "drop",
+   "reason": "Etched isn't in the pack."
+  },
+  {
+   "key": "metal_age.climate_station",
+   "action": "drop",
+   "reason": "Firmalife isn't in the pack."
+  },
+  {
+   "key": "metal_age.lunchbox",
+   "action": "drop",
+   "reason": "TFC Lunchbox isn't in the pack."
+  },
+  {
+   "key": "metal_age.q7a9dc5eb8e994d9f",
+   "action": "drop",
+   "reason": "TFC Lunchbox (cooling lunchbox) isn't in the pack."
+  },
+  {
+   "key": "metal_age.copper_construction_wand",
+   "action": "drop",
+   "reason": "Construction Wand isn't in the pack."
+  },
+  {
+   "key": "metal_age.iron_construction_wand",
+   "action": "drop",
+   "reason": "Construction Wand and TFG's trowel aren't in the pack."
+  },
+  {
+   "key": "metal_age.blue_steel_construction_wand",
+   "action": "drop",
+   "reason": "Construction Wand isn't in the pack."
+  },
+  {
+   "key": "combat_tips.springfield_gun",
+   "action": "drop",
+   "reason": "TACZ guns aren't in the pack."
+  },
+  {
+   "key": "metal_age.wax_products",
+   "action": "drop",
+   "reason": "Firmalife (mixing bowl, beeswax) and TFG's rosin aren't in the pack."
+  },
+  {
+   "key": "tfg_tips.beekeeping",
+   "action": "drop",
+   "reason": "Firmalife beekeeping isn't in the pack."
+  },
+  {
+   "key": "tfg_tips.greenhouse_automation",
+   "action": "drop",
+   "reason": "Firmalife greenhouses (picker, sweeper) aren't in the pack."
+  },
+  {
+   "key": "metal_age.q07f580c9462629cf",
+   "action": "drop",
+   "reason": "Firmalife's compost tumbler isn't in the pack."
+  },
+  {
+   "key": "tfg_tips.glider",
+   "action": "drop",
+   "reason": "Hang Glider isn't in the pack."
+  },
+  {
+   "key": "tfg_tips.astikorcarts",
+   "action": "drop",
+   "reason": "TFC Astikor Carts isn't in the pack."
+  },
+  {
+   "key": "tfg_tips.hiking_boots",
+   "action": "drop",
+   "reason": "Sacks 'n Such (sns hiking boots) isn't in the pack."
+  },
+  {
+   "key": "tfg_tips.horseshoes",
+   "action": "drop",
+   "reason": "Sacks 'n Such (sns horseshoes) isn't in the pack."
+  }
+ ]
+}

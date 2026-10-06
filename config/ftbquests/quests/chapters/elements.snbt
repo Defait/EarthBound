@@ -1,0 +1,990 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "elements"
+	group: "0B67406B7FAC80B7"
+	icon: {
+		count: 1
+		id: "gtceu:hydrogen_bucket"
+	}
+	id: "12904AF9C7DC536E"
+	order_index: 15
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:hydrogen_bucket"
+			}
+			id: "080872DBA7A3B160"
+			tasks: [
+				{
+					count: 1
+					id: "306A71F2D988A908"
+					item: {
+						count: 1
+						id: "gtceu:hydrogen_bucket"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "79B5BF78EEA671A1"
+					item: {
+						count: 1
+						id: "gtceu:deuterium_bucket"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					count: 1
+					id: "03612B6290FB4764"
+					item: {
+						count: 1
+						id: "gtceu:tritium_bucket"
+					}
+					optional_task: true
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:helium_bucket"
+			}
+			id: "3AC0DA943E0DFF10"
+			tasks: [
+				{
+					count: 1
+					id: "07476DBCDFE2FA02"
+					item: {
+						count: 1
+						id: "gtceu:helium_bucket"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "71A06670272C4CA3"
+					item: {
+						count: 1
+						id: "gtceu:helium_3_bucket"
+					}
+					optional_task: true
+					type: "item"
+				}
+			]
+			x: 17.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:lithium_dust"
+			}
+			id: "5D52545E34E93B11"
+			tasks: [
+				{
+					count: 1
+					id: "7CB68A788393703E"
+					item: {
+						count: 1
+						id: "gtceu:lithium_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 1.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:beryllium_dust"
+			}
+			id: "59FBF1430046DF9E"
+			tasks: [
+				{
+					count: 1
+					id: "3EF8C18461B5D044"
+					item: {
+						count: 1
+						id: "gtceu:beryllium_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 1.0d
+			y: 1.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:boron_dust"
+			}
+			id: "3A4EF49D167E27A4"
+			tasks: [
+				{
+					count: 1
+					id: "4DE1C5B0AFE7961B"
+					item: {
+						count: 1
+						id: "gtceu:boron_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 12.0d
+			y: 1.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:carbon_dust"
+			}
+			id: "649ED67652030623"
+			tasks: [
+				{
+					count: 1
+					id: "0E16E5DD8D0431A8"
+					item: {
+						count: 1
+						id: "gtceu:carbon_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 13.0d
+			y: 1.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:nitrogen_bucket"
+			}
+			id: "17B268615FD2D56D"
+			tasks: [
+				{
+					count: 1
+					id: "3306CC8BE8A2599F"
+					item: {
+						count: 1
+						id: "gtceu:nitrogen_bucket"
+					}
+					type: "item"
+				}
+			]
+			x: 14.0d
+			y: 1.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:oxygen_bucket"
+			}
+			id: "28ED4E500F052E8C"
+			tasks: [
+				{
+					count: 1
+					id: "4B9DC99187037C13"
+					item: {
+						count: 1
+						id: "gtceu:oxygen_bucket"
+					}
+					type: "item"
+				}
+			]
+			x: 15.0d
+			y: 1.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:fluorine_bucket"
+			}
+			id: "0F32780099526FC4"
+			tasks: [
+				{
+					count: 1
+					id: "2348573BF9A01C4C"
+					item: {
+						count: 1
+						id: "gtceu:fluorine_bucket"
+					}
+					type: "item"
+				}
+			]
+			x: 16.0d
+			y: 1.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:sodium_dust"
+			}
+			id: "66C581A8872245B1"
+			tasks: [
+				{
+					count: 1
+					id: "0B798F89B54E6F24"
+					item: {
+						count: 1
+						id: "gtceu:sodium_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:magnesium_dust"
+			}
+			id: "62A2893E91B1A49C"
+			tasks: [
+				{
+					count: 1
+					id: "25B645B60608A6BE"
+					item: {
+						count: 1
+						id: "gtceu:magnesium_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 1.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:aluminium_ingot"
+			}
+			id: "5770630C59A82777"
+			tasks: [
+				{
+					count: 1
+					id: "7CBE6924BEDEC59E"
+					item: {
+						count: 1
+						id: "gtceu:aluminium_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 12.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:silicon_ingot"
+			}
+			id: "09B8C65CB61591CE"
+			tasks: [
+				{
+					count: 1
+					id: "7ED32A85E013B3DC"
+					item: {
+						count: 1
+						id: "gtceu:silicon_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 13.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:phosphorus_dust"
+			}
+			id: "73B372D980E0AD59"
+			tasks: [
+				{
+					count: 1
+					id: "17C471A1FE97C1DA"
+					item: {
+						count: 1
+						id: "gtceu:phosphorus_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 14.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:sulfur_dust"
+			}
+			id: "0601C96611FFB82E"
+			tasks: [
+				{
+					count: 1
+					id: "4D0B560D2BD59151"
+					item: {
+						count: 1
+						id: "gtceu:sulfur_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 15.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:chlorine_bucket"
+			}
+			id: "0E5DA1024FCEB1CE"
+			tasks: [
+				{
+					count: 1
+					id: "1400A8AC13297F36"
+					item: {
+						count: 1
+						id: "gtceu:chlorine_bucket"
+					}
+					type: "item"
+				}
+			]
+			x: 16.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:argon_bucket"
+			}
+			id: "72872C829E97A326"
+			tasks: [
+				{
+					count: 1
+					id: "038AFF5BEF4BB21F"
+					item: {
+						count: 1
+						id: "gtceu:argon_bucket"
+					}
+					type: "item"
+				}
+			]
+			x: 17.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:potassium_dust"
+			}
+			id: "19C743189F6D0D1E"
+			tasks: [
+				{
+					count: 1
+					id: "76A37306FBC9EF83"
+					item: {
+						count: 1
+						id: "gtceu:potassium_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:calcium_dust"
+			}
+			id: "7938C16E0526BF61"
+			tasks: [
+				{
+					count: 1
+					id: "431A0C87808F9DEB"
+					item: {
+						count: 1
+						id: "gtceu:calcium_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 1.0d
+			y: 3.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:titanium_ingot"
+			}
+			id: "3638A7D2BEDD4C10"
+			tasks: [
+				{
+					count: 1
+					id: "7F31F276D651E060"
+					item: {
+						count: 1
+						id: "gtceu:titanium_ingot"
+					}
+					type: "item"
+				}
+			]
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:vanadium_ingot"
+			}
+			id: "2F2352F74A7D6D52"
+			tasks: [
+				{
+					count: 1
+					id: "245749834F80241A"
+					item: {
+						count: 1
+						id: "gtceu:vanadium_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: 3.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:chromium_ingot"
+			}
+			id: "5EF922E23D7A9AEC"
+			tasks: [
+				{
+					count: 1
+					id: "57A7796D476DA83D"
+					item: {
+						count: 1
+						id: "gtceu:chromium_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 5.0d
+			y: 3.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:manganese_dust"
+			}
+			id: "5458EEC6D129ED86"
+			tasks: [
+				{
+					count: 1
+					id: "0257E316AF4046B4"
+					item: {
+						count: 1
+						id: "gtceu:manganese_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 3.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "tfc:metal/ingot/wrought_iron"
+			}
+			id: "385D62BB715D6351"
+			tasks: [
+				{
+					count: 1
+					id: "79C301B2B231D58A"
+					item: {
+						count: 1
+						id: "tfc:metal/ingot/wrought_iron"
+					}
+					type: "item"
+				}
+			]
+			x: 7.0d
+			y: 3.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:cobalt_ingot"
+			}
+			id: "2006CA886B1141B8"
+			tasks: [
+				{
+					count: 1
+					id: "718F7FB1806E223C"
+					item: {
+						count: 1
+						id: "gtceu:cobalt_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 8.0d
+			y: 3.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "tfc:metal/ingot/nickel"
+			}
+			id: "167A094CD8F158C2"
+			tasks: [
+				{
+					count: 1
+					id: "6D31FECBFACA768C"
+					item: {
+						count: 1
+						id: "gtceu:nickel_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 9.0d
+			y: 3.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "tfc:metal/ingot/copper"
+			}
+			id: "50FA8DF5D69FC4DA"
+			tasks: [
+				{
+					count: 1
+					id: "4E0A07C4214598B1"
+					item: {
+						count: 1
+						id: "gtceu:copper_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 10.0d
+			y: 3.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "tfc:metal/ingot/zinc"
+			}
+			id: "7C105A9259BD8E39"
+			tasks: [
+				{
+					count: 1
+					id: "00FA1F0FEF2CAFD8"
+					item: {
+						count: 1
+						id: "gtceu:zinc_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 11.0d
+			y: 3.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:gallium_dust"
+			}
+			id: "13CD47440020B7C8"
+			tasks: [
+				{
+					count: 1
+					id: "291BD83A5C3D18B3"
+					item: {
+						count: 1
+						id: "gtceu:gallium_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 12.0d
+			y: 3.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:ruthenium_dust"
+			}
+			id: "4100AE6929808748"
+			tasks: [
+				{
+					count: 1
+					id: "7F2E37BF2172B46B"
+					item: {
+						count: 1
+						id: "gtceu:ruthenium_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 7.0d
+			y: 4.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:rhodium_dust"
+			}
+			id: "10AEBA6BC88ED1F3"
+			tasks: [
+				{
+					count: 1
+					id: "3B1841196790CAC2"
+					item: {
+						count: 1
+						id: "gtceu:rhodium_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 8.0d
+			y: 4.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:palladium_ingot"
+			}
+			id: "28203C51BE80D3C4"
+			tasks: [
+				{
+					count: 1
+					id: "21601D74E0E2FD72"
+					item: {
+						count: 1
+						id: "gtceu:palladium_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 9.0d
+			y: 4.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "tfc:metal/ingot/silver"
+			}
+			id: "08B0EE2E85E999E2"
+			tasks: [
+				{
+					count: 1
+					id: "5360DC98E2F3F6DD"
+					item: {
+						count: 1
+						id: "gtceu:silver_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 10.0d
+			y: 4.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:cadmium_dust"
+			}
+			id: "33C7C1497D8521F9"
+			tasks: [
+				{
+					count: 1
+					id: "71109EFB6D9E9864"
+					item: {
+						count: 1
+						id: "gtceu:cadmium_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 11.0d
+			y: 4.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "tfc:metal/ingot/tin"
+			}
+			id: "7329DED320FAFB9B"
+			tasks: [
+				{
+					count: 1
+					id: "2C32DFFE699DBAA8"
+					item: {
+						count: 1
+						id: "tfc:metal/ingot/tin"
+					}
+					type: "item"
+				}
+			]
+			x: 13.0d
+			y: 4.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:antimony_dust"
+			}
+			id: "312B76EC8D7E1466"
+			tasks: [
+				{
+					count: 1
+					id: "3BD14D77402AF84A"
+					item: {
+						count: 1
+						id: "gtceu:antimony_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 14.0d
+			y: 4.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:iodine_dust"
+			}
+			id: "1A7D1D59EE94B474"
+			tasks: [
+				{
+					count: 1
+					id: "5AB2ECDB75ADD5F1"
+					item: {
+						count: 1
+						id: "gtceu:iodine_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 16.0d
+			y: 4.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:barium_dust"
+			}
+			id: "2B605D05F49DF852"
+			tasks: [
+				{
+					count: 1
+					id: "019C067C2E127452"
+					item: {
+						count: 1
+						id: "gtceu:barium_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 1.0d
+			y: 5.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:tantalum_ingot"
+			}
+			id: "1BAADD5400F302BB"
+			tasks: [
+				{
+					count: 1
+					id: "79BC5EE20AFE984B"
+					item: {
+						count: 1
+						id: "gtceu:tantalum_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: 5.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:platinum_ingot"
+			}
+			id: "19F0503A32E6F671"
+			tasks: [
+				{
+					count: 1
+					id: "5257065742E81106"
+					item: {
+						count: 1
+						id: "gtceu:platinum_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 9.0d
+			y: 5.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "tfc:metal/ingot/gold"
+			}
+			id: "3DBFA585D3177E1B"
+			tasks: [
+				{
+					count: 1
+					id: "300ACAF0B1CC703C"
+					item: {
+						count: 1
+						id: "gtceu:gold_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 10.0d
+			y: 5.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:mercury_bucket"
+			}
+			id: "2B8C0171DA56DEA2"
+			tasks: [
+				{
+					count: 1
+					id: "2E658A59E737AEA9"
+					item: {
+						count: 1
+						id: "gtceu:mercury_bucket"
+					}
+					type: "item"
+				}
+			]
+			x: 11.0d
+			y: 5.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:lead_ingot"
+			}
+			id: "00BAF81D5528D7A2"
+			tasks: [
+				{
+					count: 1
+					id: "61CD68121F8A0519"
+					item: {
+						count: 1
+						id: "gtceu:lead_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 13.0d
+			y: 5.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "tfc:metal/ingot/bismuth"
+			}
+			id: "22E35FC12304838C"
+			tasks: [
+				{
+					count: 1
+					id: "36DC05D815D1C495"
+					item: {
+						count: 1
+						id: "gtceu:bismuth_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 14.0d
+			y: 5.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:thorium_ingot"
+			}
+			id: "59A2A6FD8395E094"
+			tasks: [
+				{
+					count: 1
+					id: "5F5997217AA38366"
+					item: {
+						count: 1
+						id: "gtceu:thorium_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 3.0d
+			y: 8.5d
+		}
+	]
+}

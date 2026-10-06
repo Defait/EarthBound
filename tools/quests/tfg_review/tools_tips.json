@@ -1,0 +1,720 @@
+{
+ "chapter": "tools_tips",
+ "decisions": [
+  {
+   "key": "tfg_tips.tools_tips.tools",
+   "action": "keep",
+   "chapter": "tools_tips"
+  },
+  {
+   "key": "tfg_tips.first_backpack",
+   "action": "drop",
+   "reason": "Sophisticated Backpacks isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.red_steel_backpack",
+   "action": "drop",
+   "reason": "Sophisticated Backpacks isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.backpack_upgrades",
+   "action": "drop",
+   "reason": "Sophisticated Backpacks isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.aluminium_backpack",
+   "action": "drop",
+   "reason": "Sophisticated Backpacks isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.titanium_backpack",
+   "action": "drop",
+   "reason": "Sophisticated Backpacks isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.crafting_upgrade",
+   "action": "drop",
+   "reason": "Sophisticated Backpacks isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.advanced_upgrades",
+   "action": "drop",
+   "reason": "Sophisticated Backpacks isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.all_backpack_upgrades",
+   "action": "drop",
+   "reason": "Sophisticated Backpacks isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.256m_portable_cells",
+   "action": "drop",
+   "reason": "MEGA Cells / Applied Energistics 2 aren't in this pack."
+  },
+  {
+   "key": "tfg_tips.maxed_out_toolbelt",
+   "action": "drop",
+   "reason": "Toolbelt isn't in this pack (and its task is an NBT filter)."
+  },
+  {
+   "key": "tfg_tips.toolbelt",
+   "action": "drop",
+   "reason": "Toolbelt isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.portable_cells",
+   "action": "drop",
+   "reason": "Applied Energistics 2 isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.backpack_materials",
+   "action": "drop",
+   "reason": "Frame packs (sns) and Sophisticated Backpacks aren't in this pack."
+  },
+  {
+   "key": "tfg_tips.vessels",
+   "action": "edit",
+   "chapter": "tools_tips",
+   "reason": "The 'Large Vessels double as early backpacks' tip isn't backed by TFC's field guide; replaced with what the guide says about vessels (Preserved trait, rats).",
+   "desc": [
+    "&dSmall Vessels&r have 4 inventory slots while &6Large Vessels&r have 9! The &dSmall Vessel&r is not just for item storage: you can also melt ores and alloy basic metals in it.\nThe &6Large Vessel&r is a block, and once &3sealed&r it is great for preserving food.\n\n&l&9Tip:&r&o Food in a Small Vessel or a sealed Large Vessel gets the Preserved trait and lasts longer, and it won't attract the rats that raid food left in chests."
+   ]
+  },
+  {
+   "key": "tfg_tips.portable_storage",
+   "action": "edit",
+   "chapter": "tools_tips",
+   "reason": "Most of its branch (sacks, backpacks, toolbelt, AE2 cells) is dropped; text now names what remains.",
+   "desc": [
+    "In your travels, you may explore a whole &olot&r and end up picking up a lot of junk. This quest branch covers a couple of ways to carry and store more: TFC's &dvessels&r and Create's &dtoolboxes&r."
+   ]
+  },
+  {
+   "key": "tfg_tips.tungstensteel_backpack",
+   "action": "drop",
+   "reason": "Sophisticated Backpacks isn't in this pack."
+  },
+  {
+   "key": "tools_tips.q222295cd03af00dc",
+   "action": "edit",
+   "chapter": "tools_tips",
+   "reason": "The Smart Item Filter's id here is gtceu:smart_item_filter (TFG's gtceu:item_smart_filter doesn't exist); needs a title for the book.",
+   "title": "Smart Item Filter",
+   "tasks": [
+    {
+     "item": "gtceu:smart_item_filter"
+    }
+   ]
+  },
+  {
+   "key": "high_voltage.250_iq",
+   "action": "edit",
+   "chapter": "tools_tips",
+   "reason": "1.20's #forge: tags are #c: here; the regex note rewritten to what the filter's own info says (expressions with AND/OR/NOT, wildcards, grouping). Hot ingots: the chemical bath only cools kanthal, silicon and black/red/blue steel here; the vacuum freezer cools them all (checked in the recipe dump).",
+   "desc": [
+    "This is a guide on how to automatically route &lall&r your Hot Ingots to a cooler, while keeping everything automated in tip-top shape.\n\nThe &3Vacuum Freezer&r cools every hot ingot. The &3Chemical Bath&r only cools a few here: &ekanthal&r, &esilicon&r and the &eblack, red and blue steels&r. Everything else needs the freezer.\n\nThe cheap way would be to use filters, and manually add Hot Ingots one by one... which is so boring! Let's try the fun option.\n\nInstall an &aItem Tag Filter&r Cover on the side of your &3Vacuum Freezer&r's input bus, open it and set it to &e&l*hot_ingots*&r.\n\nFrom here, you can route with &9any logistics system&r of your choice.",
+    "{@pagebreak}",
+    "Connect the output of your &3EBF(s)&r to the input of your cooler and to an output dump (Chest or Crate). You can also put a &dRestrictive Pipe&r in front of the output dump so the cooler gets priority.\n\n&l&9Note:&r If you wish to know more tags for more automation setups, they will display if you press Shift when hovering over an item. For instance, an item tagged with &e&o#c:plates/copper&r is matched by &e&lc:plates/copper&r, or by a wildcard such as &e&l*plates/copper&r.\n\n&9&lOther Note:&r The Item Tag Filter accepts whole expressions: AND, OR and NOT, wildcards and grouping. Hover over the info icon for the syntax."
+   ]
+  },
+  {
+   "key": "tfg_tips.crates",
+   "action": "edit",
+   "chapter": "tools_tips",
+   "reason": "Bismuth bronze and black bronze crates don't exist here; the Create-contraption claim is unverified and cut.",
+   "desc": [
+    "In theory, Crates are flat upgrades to Chests. A single block space that stores more items - what more could you ask for?\n\nThey're more expensive than regular Chests, but they hold items of any size and can &6accept Covers&r, making them perfect candidates for buffers in automation."
+   ],
+   "tasks": [
+    {
+     "filter": "or(item(gtceu:wood_crate)item(gtceu:bronze_crate)item(gtceu:steel_crate)item(gtceu:aluminium_crate)item(gtceu:stainless_steel_crate)item(gtceu:titanium_crate)item(gtceu:tungsten_steel_crate))",
+     "any": [
+      "gtceu:wood_crate",
+      "gtceu:bronze_crate",
+      "gtceu:steel_crate",
+      "gtceu:aluminium_crate",
+      "gtceu:stainless_steel_crate",
+      "gtceu:titanium_crate",
+      "gtceu:tungsten_steel_crate"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "tfg_tips.tape",
+   "action": "keep",
+   "chapter": "tools_tips"
+  },
+  {
+   "key": "tfg_tips.gt_filters",
+   "action": "keep",
+   "chapter": "tools_tips"
+  },
+  {
+   "key": "tfg_tips.nano_saber",
+   "action": "keep",
+   "chapter": "tools_tips"
+  },
+  {
+   "key": "tfg_tips.magnets",
+   "action": "keep",
+   "chapter": "tools_tips"
+  },
+  {
+   "key": "tools_tips.q361ac06d62d9bccf",
+   "action": "edit",
+   "chapter": "tools_tips",
+   "reason": "Needs a title for the book; arsenic claim generalised (recipe checked: paper and string).",
+   "title": "Face Mask",
+   "desc": [
+    "The &6Face Mask&r will protect you from &cinhaling dangerous dust&r. It's &aeasy to craft&r, just paper and string, and worth wearing whenever you handle a powder with an inhalation hazard."
+   ]
+  },
+  {
+   "key": "tfg_tips.nano_armor",
+   "action": "edit",
+   "chapter": "tools_tips",
+   "reason": "GregTech's NanoMuscle leggings have no speed bonus (the class only has night vision, step assist and fall damage); alcohol/medicine are TFG mechanics.",
+   "desc": [
+    "A modern suit of armor for the modern era! Like GregTech's power tools, every piece runs on charge.\n\n- The Helmet comes with built-in night vision goggles.\n\n- The Chestplate doesn't do a lot on its own, but can be upgraded to have a jetpack.\n\n- The Leggings round off the set.\n\n- The Boots completely protect you from fall damage and have a toggleable Step Assist mode."
+   ]
+  },
+  {
+   "key": "tfg_tips.quarktech",
+   "action": "drop",
+   "reason": "QuarkTech is LuV-tier (LuV circuits, tungstensteel, iridium): beyond this book (it ends at EV), and tungsten has no source here (GregTech-only mineral, veins off)."
+  },
+  {
+   "key": "tools_tips.q035b0fdd90e51c0c",
+   "action": "drop",
+   "reason": "Advanced QuarkTech chestplate: same as QuarkTech, beyond the book and needs tungsten."
+  },
+  {
+   "key": "tfg_tips.gt_power_tools",
+   "action": "edit",
+   "chapter": "tools_tips",
+   "reason": "Here power tools are a material's tool head plus a Power Unit (LV/MV/HV), and a blue steel drill exists at LV, MV and HV, so TFG's 'Blue Steel Drill only with an LV head' is wrong.",
+   "desc": [
+    "As with any good tech mod, &5GregTech&r comes with a wide variety of &6tools&r you can use. To operate them, you'll need to &acharge them with energy&r — and there are several ways to do that: place the tool in a &6Battery Buffer&r, in an &denergy slot&r of a machine, or even better, use a &eTurbo Charger&r.\n\nJust remember: you can only charge an item using a power source of &7equal&r or &ahigher tier&r. &cLower-tier sources&r won’t work on higher-tier tools — but don’t worry, &cnothing should explode&r. Probably.",
+    "{@pagebreak}",
+    "Most &5GregTech&r power tools are crafted from a material's &6Tool Head&r (a Drill Head, a Chainsaw Head...) and a &6Power Unit&r. Try using &aEMI&r to explore what you can do with them — just remember two important things:\n\n- The &ePower Unit's tier&r (LV, MV, HV...) sets the tool's tier and the &6size of its battery&r.\n- The &cmaterial&r of the head decides how good the tool itself is."
+   ]
+  },
+  {
+   "key": "tfg_tips.armor",
+   "action": "edit",
+   "chapter": "tools_tips",
+   "reason": "Climate insulation and breathing in space are TFG/Ad Astra mechanics; text now lists what the NanoMuscle suite does here.",
+   "desc": [
+    "With &5GregTech&r comes its own line of armor. Sure, it was cool to wear &7metal plates&r, but now that you're an &bindustrial maniac&r, maybe it's time to check out some &atechnological armor&r.\n\nThe first model, the &6NanoMuscle™ Suite&r, becomes available around &6HV&r. It runs on charge like the power tools and brings night vision, freedom from fall damage and, later, a &dJetpack&r upgrade.\n\nThe second model, &dQuarkTech™&r, won't be available until much later — around &1IV&r and &dLuV&r."
+   ]
+  },
+  {
+   "key": "tfg_tips.hazard_materials",
+   "action": "keep",
+   "chapter": "tools_tips"
+  },
+  {
+   "key": "tools_tips.q3db4ad491ef28cbe",
+   "action": "edit",
+   "chapter": "tools_tips",
+   "reason": "Needs a title; TFG's two recipes (a TFC path and the high-pressure steam alloy smelter) don't apply: here they are two rubber plates on the crafting grid.",
+   "title": "Rubber Gloves",
+   "desc": [
+    "The &6Rubber Gloves&r will obviously protect you from &cskin contact hazards&r. Two &7Rubber Plates&r on the crafting grid is all they take."
+   ]
+  },
+  {
+   "key": "tfg_tips.hazmat",
+   "action": "edit",
+   "chapter": "tools_tips",
+   "reason": "Drops the dependency on TFG's MV gun-mechanism quest (dropped).",
+   "deps": [
+    "tfg_tips.hazard_materials",
+    "medium_voltage.mv_pvc"
+   ]
+  },
+  {
+   "key": "tfg_tips.long_distance_fluids",
+   "action": "keep",
+   "chapter": "tools_tips"
+  },
+  {
+   "key": "tfg_tips.long_distance_items",
+   "action": "keep",
+   "chapter": "tools_tips"
+  },
+  {
+   "key": "tfg_tips.gt",
+   "action": "edit",
+   "chapter": "tools_tips",
+   "reason": "Subtitle referred to TFG's name.",
+   "subtitle": "The industrial third of this pack."
+  },
+  {
+   "key": "tools_tips.q179e89c50e900dc0",
+   "action": "edit",
+   "chapter": "tools_tips",
+   "reason": "Needs a title for the book (an empty title breaks build.py); text checked (auto maintenance hatch is HV).",
+   "title": "Duct Tape"
+  },
+  {
+   "key": "tools_tips.q58d40a430654c997",
+   "action": "keep",
+   "chapter": "tools_tips"
+  },
+  {
+   "key": "tools_tips.q7d5e9cfbe5990dff",
+   "action": "edit",
+   "chapter": "tools_tips",
+   "reason": "Needs a title for the book.",
+   "title": "Machine Memory Card"
+  },
+  {
+   "key": "tools_tips.q2f6c9a987865b966",
+   "action": "edit",
+   "chapter": "tools_tips",
+   "reason": "Needs a title for the book; Shift + right-click auto-build matches the item's tooltip.",
+   "title": "Terminal"
+  },
+  {
+   "key": "tools_tips.q4c37dad7c66523cc",
+   "action": "edit",
+   "chapter": "tools_tips",
+   "reason": "Needs a title for the book; discharge mode (sneak + use on a battery) is GregTech's.",
+   "title": "Advanced NanoMuscle™ Chestplate"
+  },
+  {
+   "key": "tfg_tips.lamps",
+   "action": "edit",
+   "chapter": "tools_tips",
+   "reason": "TFG's #tfg:unfinished_lamps tag doesn't exist; no Curios or dynamic lights here. Fuels from TFC's field guide.",
+   "desc": [
+    "Just like in regular Minecraft, &dLamps&r can be hung from the ceiling with the help of chains or placed on top of blocks. They're smithed on an anvil, finished with &dLamp Glass&r, and filled with a bucket of liquid fuel such as &6Olive Oil&r or &6Tallow&r.\n\nLava keeps burning &4indefinitely&r, but only a Blue Steel or Red Steel lamp can hold it. Lamps keep their fuel when broken."
+   ],
+   "tasks": [
+    {
+     "item": "tfc:lamp_glass"
+    },
+    {
+     "filter": "ftbfiltersystem:item_tag(tfc:lamps)",
+     "any": [
+      "#tfc:lamps"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "tfg_tips.glass_blocks",
+   "action": "edit",
+   "chapter": "tools_tips",
+   "reason": "Tags #c:glass/silica and #exposure:filters don't exist; TFC 4 makes panes as Poured Glass by a table pour and blocks by a basin pour; TFG's alloy-smelter tip cut.",
+   "desc": [
+    "&dGlass Blocks&r come from a &3Basin Pour&r and glass panes (TFC's &dPoured Glass&r) from a &3Table Pour&r. Depending on the type of sand used for the &aGlass Batch&r, your glass will have a different natural color; silica glass from white sand is clear.\n\nCheck out the &2Field Guide&r section on &3Glass Products&r to learn how powders added from a &aBowl&r make other colors. Later on, &3GregTech&r's Chemical Bath can dye glass blocks with liquid dye."
+   ],
+   "tasks": [
+    {
+     "filter": "item_tag(c:glass_blocks)",
+     "any": [
+      "#c:glass_blocks"
+     ]
+    },
+    {
+     "optional": true,
+     "filter": "or(item(tfc:poured_glass)item_tag(c:glass_panes))",
+     "any": [
+      "tfc:poured_glass",
+      "#c:glass_panes"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "tfg_tips.glassblowing_tools",
+   "action": "edit",
+   "chapter": "tools_tips",
+   "reason": "Tag is #c:tools/glassworking here (paddle, jacks, gem saw); 'gem buds' aren't a thing in this pack. Uses checked against TFC's glassworking recipes.",
+   "desc": [
+    "To work &dGlass&r you'll need a variety of tools, held in your off-hand while you use the blowpipe.\n\n&3Paddle&r: Performs flatten, mainly used for creating &dGlass Panes&r and &dLamp Glass.&r\n\n&3Gem Saw&r: Performs saw, the last step of most glass products. It also breaks placed &dGlass Blocks&r and &dPanes&r so you get them back.\n\n&3Jacks&r: Used to pinch glass, needed for &dLamp Glass&r and &dJars.&r\n\n&3Wool Cloth&r: Used for rolling glass, needed for &dLenses&r and &dJars.&r"
+   ],
+   "tasks": [
+    {
+     "filter": "item_tag(c:tools/glassworking)",
+     "any": [
+      "#c:tools/glassworking"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "tfg_tips.glassblowing",
+   "action": "edit",
+   "chapter": "tools_tips",
+   "reason": "TFC 4 has a clay (ceramic) blowpipe, so glassworking starts before brass; brass plated blocks are only needed to pour panes and blocks. Tags are #c:tools/blowpipe and the brass block here.",
+   "desc": [
+    "To make any sort of &dGlass&r, you'll need a &3glassblowing&r setup.\n\nIt starts with a &aBlowpipe&r: knap one from clay and fire it into a &aCeramic Blowpipe&r (brittle, it can break), or work a sturdier one from a &6Brass Rod&r on an anvil. Add a &aGlass Batch&r, heat it to &4Faint Red&r, and work it.\n\n&dGlass Panes&r and &dBlocks&r are poured onto &6Brass Plated Blocks&r: a flat table of them for panes, a basin for blocks. Check out the &2Field Guide&r for the details."
+   ],
+   "tasks": [
+    {
+     "filter": "item_tag(c:tools/blowpipe)",
+     "any": [
+      "#c:tools/blowpipe"
+     ]
+    },
+    {
+     "optional": true,
+     "item": "tfc:metal/block/brass"
+    }
+   ]
+  },
+  {
+   "key": "tfg_tips.trowel",
+   "action": "drop",
+   "reason": "tfg:trowel and rnr roads aren't in this pack."
+  },
+  {
+   "key": "tfg_tips.fishing_net",
+   "action": "edit",
+   "chapter": "tools_tips",
+   "reason": "Fishing nets aren't in this pack; turned into TFC's fishing rod (hook, bait and reeling from TFC's field guide).",
+   "title": "Fishing Rods",
+   "subtitle": "Patience is a virtue.",
+   "desc": [
+    "Fish have never been so easy to catch. Well, almost. Forge a &dFish Hook&r on an anvil and craft it into a &dFishing Rod&r with sticks and string.\n\nA rod is useless without &abait&r, added on the crafting grid: &aseeds&r or &ashellfish&r for normal fish, and cod, salmon, tropical fish or bluegill for big catches like dolphins and orcas.\n\nCast, wait for a bite, then reel in without pulling too fast or the fish gets away with your bait. Pull it onto land and finish it with a tool."
+   ],
+   "tasks": [
+    {
+     "filter": "item_tag(c:tools/fishing_rod)",
+     "any": [
+      "#c:tools/fishing_rod"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "tfg_tips.cane",
+   "action": "drop",
+   "reason": "tfccanes isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.blank_disc",
+   "action": "drop",
+   "reason": "Etched (music discs, labels, players) isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.dye_discs",
+   "action": "drop",
+   "reason": "Discs are dyed from Etched's blank disc, which isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.amogus",
+   "action": "drop",
+   "reason": "Hidden Etched easter egg; gtceu:sus_record has no recipe here."
+  },
+  {
+   "key": "tfg_tips.special_discs",
+   "action": "drop",
+   "reason": "Crafted from Etched blank discs (not in this pack); alekiships disc missing too."
+  },
+  {
+   "key": "tfg_tips.disc_collector",
+   "action": "drop",
+   "reason": "Disc collection relies on Etched's disc crafting; most discs have no source in a TFC world here."
+  },
+  {
+   "key": "tfg_tips.label_album",
+   "action": "drop",
+   "reason": "Etched (music discs, labels, players) isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.etching_disc",
+   "action": "drop",
+   "reason": "Etched (music discs, labels, players) isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.disc_players",
+   "action": "drop",
+   "reason": "Etched (music discs, labels, players) isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.radio",
+   "action": "drop",
+   "reason": "Etched (music discs, labels, players) isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.DIGGY_DIGGY_HOLE",
+   "action": "drop",
+   "reason": "Etched (music discs, labels, players) isn't in this pack. NBT-only task."
+  },
+  {
+   "key": "tfg_tips.camera",
+   "action": "drop",
+   "reason": "Exposure (cameras and photos) isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.film_rolls",
+   "action": "drop",
+   "reason": "Exposure (cameras and photos) isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.developing_film",
+   "action": "drop",
+   "reason": "Exposure (cameras and photos) isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.selfie",
+   "action": "drop",
+   "reason": "Exposure (cameras and photos) isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.photo",
+   "action": "drop",
+   "reason": "Exposure (cameras and photos) isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.photo_album",
+   "action": "drop",
+   "reason": "Exposure (cameras and photos) isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.photo_frame",
+   "action": "drop",
+   "reason": "Exposure (cameras and photos) isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.camera_attachments",
+   "action": "drop",
+   "reason": "Exposure (cameras and photos) isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.filters",
+   "action": "drop",
+   "reason": "Exposure (cameras and photos) isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.interplanar_projector",
+   "action": "drop",
+   "reason": "Exposure (cameras and photos) isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.grappling_hook",
+   "action": "drop",
+   "reason": "The grappling hook mod isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.grapple_length",
+   "action": "drop",
+   "reason": "The grappling hook mod isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.grapple_motor",
+   "action": "drop",
+   "reason": "The grappling hook mod isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.grapple_upgrades",
+   "action": "drop",
+   "reason": "The grappling hook mod isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.grapple_smart_motor",
+   "action": "drop",
+   "reason": "The grappling hook mod isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.grapple_sticky",
+   "action": "drop",
+   "reason": "The grappling hook mod isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.grapple_gravity_50",
+   "action": "drop",
+   "reason": "The grappling hook mod isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.grapple_gravity_0",
+   "action": "drop",
+   "reason": "The grappling hook mod isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.grapple_tweaks",
+   "action": "drop",
+   "reason": "The grappling hook mod isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.grapple_field",
+   "action": "drop",
+   "reason": "The grappling hook mod isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.grapple_magnet",
+   "action": "drop",
+   "reason": "The grappling hook mod isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.grapple_throw_speed",
+   "action": "drop",
+   "reason": "The grappling hook mod isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.grapple_double",
+   "action": "drop",
+   "reason": "The grappling hook mod isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.digger_helmet",
+   "action": "drop",
+   "reason": "Digger Helmet mod (and Sodium Dynamic Lights) aren't in this pack."
+  },
+  {
+   "key": "tfg_tips.chalk",
+   "action": "drop",
+   "reason": "Chalk mod isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.tape_measure",
+   "action": "drop",
+   "reason": "Measurements mod isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.tools_tips.markings",
+   "action": "drop",
+   "reason": "Modern Markings (ags_modernmarkings) isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.tools_tips.harvest_basket",
+   "action": "drop",
+   "reason": "Harvest baskets are TFG items (tfg:harvester), not in this pack."
+  },
+  {
+   "key": "tfg_tips.harpoon",
+   "action": "drop",
+   "reason": "Species (harpoon) isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.coil",
+   "action": "drop",
+   "reason": "Species (coil, ziplines) isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.self_defense",
+   "action": "drop",
+   "reason": "Species cranktrap and Create Crafts & Additions barbed wire aren't in this pack."
+  },
+  {
+   "key": "tfg_tips.first_sacks",
+   "action": "drop",
+   "reason": "TFG's sacks/packs mod (sns) isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.frame_pack",
+   "action": "drop",
+   "reason": "TFG's sacks/packs mod (sns) isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.special_sacks",
+   "action": "drop",
+   "reason": "TFG's sacks/packs mod (sns) isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.toolbox",
+   "action": "keep",
+   "chapter": "tools_tips"
+  },
+  {
+   "key": "tfg_tips.straw_basket",
+   "action": "drop",
+   "reason": "TFG's sacks/packs mod (sns) isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.hiking",
+   "action": "drop",
+   "reason": "TFG's sacks/packs mod (sns) isn't in this pack. (hiking boots)"
+  },
+  {
+   "key": "tfg_tips.lightning_rod",
+   "action": "edit",
+   "chapter": "tools_tips",
+   "reason": "'Thunderstorms are way more active in TFC' isn't backed by TFC's config; 128-block radius and fires around the rod match vanilla's lightning code; the rod must be the top block of its column.",
+   "desc": [
+    "Thunderstorms can set your thatch and timber alight. To keep lightning away from your base, you can use a &dLightning Rod&r for the cheap price of 3 copper rods.\n\nThe &dLightning Rod&r redirects lightning that would strike within &3128 blocks&r onto itself, as long as nothing is built above it.\nBeware: It &oredirects&r lightning and doesn't nullify it, so a strike can still start fires right around it. Place it far away from any flammables."
+   ]
+  },
+  {
+   "key": "tfg_tips.tools_tips.mattocks",
+   "action": "drop",
+   "reason": "rnr (TFG's roads mod) isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.tools_tips.base_course",
+   "action": "drop",
+   "reason": "rnr (TFG's roads mod) isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.tools_tips.concrete_roads",
+   "action": "drop",
+   "reason": "rnr (TFG's roads mod) isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.tools_tips.brick_roads",
+   "action": "drop",
+   "reason": "rnr (TFG's roads mod) isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.tools_tips.gravel_roads",
+   "action": "drop",
+   "reason": "rnr (TFG's roads mod) isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.feeding_troughs",
+   "action": "drop",
+   "reason": "TFC Groomer (feeding troughs) isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.scraping_knives",
+   "action": "drop",
+   "reason": "TFC Scraping (scraping knives) isn't in this pack."
+  },
+  {
+   "key": "tfg_tips.tools_tips.swim_gear",
+   "action": "edit",
+   "chapter": "tools_tips",
+   "reason": "Snorkel and flippers are TFG items; turned into Create's copper diving gear, which is in the pack (helmet step 11, backtank 14).",
+   "title": "Diving Gear",
+   "desc": [
+    "Create's &6Copper Diving Helmet&r lets you breathe underwater for as long as the &6Copper Backtank&r on your back has air. Place the backtank and give it rotational power to fill it up.\n\n&aCopper Diving Boots&r make you sink and walk along the bottom instead of swimming."
+   ],
+   "tasks": [
+    {
+     "item": "create:copper_diving_helmet"
+    },
+    {
+     "item": "create:copper_backtank"
+    },
+    {
+     "optional": true,
+     "item": "create:copper_diving_boots"
+    }
+   ],
+   "deps": [
+    "andesite_alloy"
+   ]
+  },
+  {
+   "key": "tfg_tips.terrafirmacraft",
+   "action": "edit",
+   "chapter": "tools_tips",
+   "reason": "Named TerraFirmaGreg and its add-ons (aged alcohol, canes) that aren't here.",
+   "title": "TerraFirmaCraft",
+   "subtitle": "The ground this pack stands on.",
+   "desc": [
+    "&3TerraFirmaCraft&r is the survival half of this pack. This branch covers some of its handier features, such as &dglassworking&r, &dlamps&r and &bfishing&r."
+   ]
+  },
+  {
+   "key": "tfg_tips.tools_tips.asphalt_roads",
+   "action": "drop",
+   "reason": "rnr (TFG's roads mod) isn't in this pack. (and tfg asphalt)"
+  }
+ ]
+}

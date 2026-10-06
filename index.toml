@@ -13,32 +13,68 @@ file = "config/almostunified/unification/materials.json"
 hash = "e55d4625f22184ff768d4ec44720786eb72db1da15a75693c9e39fd9a9a6d846"
 
 [[files]]
+file = "config/ftbquests/quests/chapter_groups.snbt"
+hash = "6255f9589f5173473647db622de468d6d5fe6f3cb849bc3c1cf074f04e24ecbb"
+
+[[files]]
 file = "config/ftbquests/quests/chapters/airships.snbt"
-hash = "055158481aa5d30d3389e5b17d4231a4161a3ffec5f939eb0418a69168225aa9"
+hash = "2e3ae39533d6a586e6aaf39e14187c53ffdc514725dd3b3110029093b880318f"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/bronze.snbt"
-hash = "b8add4f2dd7f234c8c6728a2bd9aff103d3a6234023cd97c0e0d49f2749f943a"
+hash = "9b0b13aa5900ca61b41ec0c3fb52e6b298c37c8453b03bc10f4fbac9201061b3"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/combat_tips.snbt"
+hash = "fd78715f15347dbf5cda7ef1572cd9e9f2fe0cb157ff7a382da9012d84561c6f"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/create.snbt"
-hash = "b1e53c42200826dbcef8d25a0d3dcf4de50555f4289856843f8266c1dc4aa1b1"
+hash = "ed3f2f9741cbb744fac2a6ae6cdf907bbb7d5d36e6124aa9c816c74252b57e32"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/elements.snbt"
+hash = "8859a0baeac874fc980859f43021775cef470db91936e95f649b08d1e478c4ef"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/ev.snbt"
+hash = "58b47865e6324e7a990dce1049ea409953fbaa8986d6f0356844607bb2c60e16"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/hv.snbt"
+hash = "f0d266e4d701a918094d6748399b29d60bbf0733a7b9049dbaa0597855349d72"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/iron.snbt"
-hash = "de39fe8cadbaeb247c28423705f8627da627835804b5afe4375d7683d099e22a"
+hash = "3960092e04faf5ab78075b091036e0204731623b94c3f8bfa2ff0ebd8ddbe8ed"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/lv.snbt"
-hash = "d26b9d109c61c61cd3431c1bfd6cc796ea8a7f61821645a920fe870221e5c98d"
+hash = "1e2686bf9c914e6d7b8f4bf53ef037843c6942132813dea303d6e8cee79b9017"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/mv.snbt"
+hash = "e27ee7a83cb7d519ff13e29335ef589735d78537e56c712d4e8c0b68ad0f5972"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/ore_processing.snbt"
+hash = "69bb3cee4f580a2735af56bd64302755665a6caf4c3ad2669a1a7da3c0448f7b"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/power.snbt"
+hash = "46b85ced0210077d3624cfde9c67350160153959a7678915e22cc870c1c5ec34"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/steam.snbt"
-hash = "619ef0ae8fdf69eb566cd573e13f865d9f80f0a3d6cabb0c4d423d4ea5dde3cf"
+hash = "49255d8c26def33248563ec36aea77503422fa1fdcba385ef454cd0a51518f37"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/stone.snbt"
-hash = "31d2b5c1dd1451426d8dc083ef3a9445466d6095e6ce87a1fbeeafaca06d4088"
+hash = "e9a1bfb742895c93724ecded7934f365a3eb2dfb729ad19d0e1e43632e9a72dd"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/tools_tips.snbt"
+hash = "6eb091bd3a0c9bc1882b5bd224f359109ce798144b2a598a2eaf56f671727426"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/welcome.snbt"
@@ -50,7 +86,7 @@ hash = "92909a371debd092a96b182bb9c9a79a6b9aed8ef116c34b79bd1d573b440063"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "833bf6a12c36db4a6e3c8f6db9089756b26fe4ba7bb459df491c1844683debce"
+hash = "767e60388ff2b2e1a58f52fc6426aadd0c56bda89ff2fc57dfd2ad4bc78cf261"
 
 [[files]]
 file = "config/tfc-server.toml"
@@ -186,15 +222,15 @@ hash = "a08f4b5f928065798152638c212ea647f8326a345a1d1504b5b8727dd787febd"
 
 [[files]]
 file = "kubejs/server_scripts/compat/metal_gates.js"
-hash = "d921bae224c299af03c25d37ddd4e13be38b5d59940fe92918d6079080c8df02"
+hash = "3f6ab58a5f1007cc2deaa309a72cf3e3b43c591591200084a80083b6637f693b"
 
 [[files]]
 file = "kubejs/server_scripts/compat/vanilla_substitutes.js"
-hash = "b9eca79d2225e9a5d417ac6d30c27e0256e3e6ad3e48188df30ec436a75e06d8"
+hash = "3e6316b0a21fa3623a230faf01fe1bbbcbdaa3aaa0ec1b1a388c089a80363036"
 
 [[files]]
 file = "kubejs/server_scripts/create/entry.js"
-hash = "ff60db04799d54fd9ad9cfe677fd7c8e3411ab7f03a31fff4c5f3e069128d7e4"
+hash = "c79d170c48fa17e332c7af845926490d3903a89723e9cf2d7dd215a032304c84"
 
 [[files]]
 file = "kubejs/server_scripts/create/stones.js"
@@ -227,6 +263,10 @@ hash = "5c4659e7bb368960801ccfce24ac3493fa14aae88a7e17b2a9cdfe1931985ffe"
 [[files]]
 file = "kubejs/startup_scripts/world_scale.js"
 hash = "52715da011296bd7cb1fb707166c3cdbbbb9e0ee6bfaf45dc4c131ecb7ba6bf7"
+
+[[files]]
+file = "licenses/TerraFirmaGreg-quests.txt"
+hash = "73618509153c93e949e4dceb870d46e8eedc68741abdff66a57711d7d3cf2cf2"
 
 [[files]]
 file = "mods/alltheleaks.pw.toml"
@@ -336,6 +376,11 @@ metafile = true
 [[files]]
 file = "mods/ferrite-core.pw.toml"
 hash = "73360e397134d238ee8fd21d33fd7f9275e9441f74f8f1b6ed92278877c0b9f1"
+metafile = true
+
+[[files]]
+file = "mods/ftb-filter-system.pw.toml"
+hash = "9cb8d355c77067b00a96d96db398f60db62a6ee238dabff45ade33dd8d9f9e3b"
 metafile = true
 
 [[files]]

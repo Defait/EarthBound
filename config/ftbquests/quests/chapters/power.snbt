@@ -1,0 +1,727 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "power"
+	group: ""
+	icon: {
+		count: 1
+		id: "gtceu:tin_single_cable"
+	}
+	id: "1C6E26542D7508E5"
+	order_index: 8
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:uhv_ultimate_battery"
+			}
+			id: "3847A90124C0831F"
+			shape: "gear"
+			size: 3.0d
+			tasks: [
+				{
+					id: "68D6975DB590EFB3"
+					type: "checkmark"
+				}
+			]
+			x: 0.0d
+			y: -9.5d
+		}
+		{
+			dependencies: [
+				"386572E7B641951D"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:luv_field_generator"
+			}
+			id: "2F58F9EF3BC1004B"
+			shape: "circle"
+			size: 1.5d
+			tasks: [
+				{
+					id: "5E3D6348C6394A0C"
+					type: "checkmark"
+				}
+			]
+			x: 6.0d
+			y: -7.0d
+		}
+		{
+			dependencies: [
+				"386572E7B641951D"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:uv_field_generator"
+			}
+			id: "161F2A1961D57E50"
+			shape: "circle"
+			size: 1.5d
+			tasks: [
+				{
+					id: "1A9DE4C3A01ED0F3"
+					type: "checkmark"
+				}
+			]
+			x: 9.0d
+			y: -7.0d
+		}
+		{
+			dependencies: [
+				"3847A90124C0831F"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "gtceu:lv_field_generator"
+			}
+			id: "465196AF7894448D"
+			shape: "circle"
+			size: 1.5d
+			tasks: [
+				{
+					id: "263A512A55AAE7F7"
+					type: "checkmark"
+				}
+			]
+			x: -10.5d
+			y: -9.5d
+		}
+		{
+			dependencies: [
+				"386572E7B641951D"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:hv_field_generator"
+			}
+			id: "11472E726E00A598"
+			shape: "circle"
+			size: 1.5d
+			tasks: [
+				{
+					id: "7508A87115A3157F"
+					type: "checkmark"
+				}
+			]
+			x: 3.0d
+			y: -7.0d
+		}
+		{
+			dependencies: [
+				"2F58F9EF3BC1004B"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:tin_single_cable"
+			}
+			id: "3662C74FF3312438"
+			shape: "circle"
+			tasks: [
+				{
+					count: 1
+					id: "439C86EB84DF1B3F"
+					item: {
+						count: 1
+						id: "gtceu:tin_single_cable"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					count: 1
+					id: "394BA22ACDD67F04"
+					item: {
+						count: 1
+						id: "gtceu:tin_single_wire"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "4D9478CCAE1F1EFB"
+					type: "checkmark"
+				}
+			]
+			x: 7.0d
+			y: -6.0d
+		}
+		{
+			dependencies: [
+				"2F58F9EF3BC1004B"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:tin_octal_cable"
+			}
+			id: "003FD72ED518BE70"
+			shape: "circle"
+			tasks: [
+				{
+					count: 1
+					id: "086740150B8FD958"
+					item: {
+						count: 1
+						id: "gtceu:tin_octal_wire"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					count: 1
+					id: "0D761EF0EC2B63AB"
+					item: {
+						count: 1
+						id: "gtceu:tin_octal_cable"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "1ED442F5EB73CE33"
+					type: "checkmark"
+				}
+			]
+			x: 5.0d
+			y: -6.0d
+		}
+		{
+			dependencies: [
+				"161F2A1961D57E50"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lv_battery_buffer_4x"
+			}
+			id: "2827645A006C231F"
+			tasks: [
+				{
+					count: 1
+					id: "5B6F0A9046C2FC04"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:lv_battery_buffer_4x)item(gtceu:lv_battery_buffer_8x)item(gtceu:lv_battery_buffer_16x)item(gtceu:mv_battery_buffer_4x)item(gtceu:mv_battery_buffer_8x)item(gtceu:mv_battery_buffer_16x)item(gtceu:hv_battery_buffer_4x)item(gtceu:hv_battery_buffer_8x)item(gtceu:hv_battery_buffer_16x))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "2C4B82D6415B7749"
+					type: "checkmark"
+				}
+			]
+			x: 10.0d
+			y: -6.0d
+		}
+		{
+			dependencies: [
+				"161F2A1961D57E50"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lv_super_tank"
+			}
+			id: "4885FED598655330"
+			tasks: [
+				{
+					count: 1
+					id: "2F06933762832612"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:lv_super_tank)item(gtceu:mv_super_tank)item(gtceu:hv_super_tank)item(gtceu:ev_super_tank))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 10.0d
+			y: -8.0d
+		}
+		{
+			dependencies: [
+				"2827645A006C231F"
+				"326094BCCF778B49"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:energy_crystal"
+			}
+			id: "7D5FADCDB5BADB79"
+			tasks: [
+				{
+					count: 1
+					id: "67E36600C25B293F"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:energy_crystal)item(gtceu:lapotron_crystal))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 10.0d
+			y: -3.0d
+		}
+		{
+			dependencies: [
+				"326094BCCF778B49"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:steam_large_turbine"
+			}
+			id: "406A3F6F0D74FC37"
+			tasks: [
+				{
+					count: 1
+					id: "3F8E6E972A4B81B6"
+					item: {
+						count: 1
+						id: "gtceu:steam_large_turbine"
+					}
+					type: "item"
+				}
+			]
+			x: -3.0d
+			y: -3.0d
+		}
+		{
+			dependencies: [
+				"15BDF7BE4A90BFE0"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:gas_large_turbine"
+			}
+			id: "3017AC6CEC8FD09A"
+			tasks: [
+				{
+					count: 1
+					id: "0918F1D0E9491F32"
+					item: {
+						count: 1
+						id: "gtceu:gas_large_turbine"
+					}
+					type: "item"
+				}
+			]
+			x: -3.0d
+			y: -1.0d
+		}
+		{
+			dependencies: [
+				"11472E726E00A598"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:electric_blast_furnace"
+			}
+			id: "3CF09447EDDB3B33"
+			shape: "circle"
+			tasks: [
+				{
+					count: 1
+					id: "4DB5A29E07BCE1FC"
+					item: {
+						count: 1
+						id: "gtceu:electric_blast_furnace"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "0BFBD0A32351B5E2"
+					type: "checkmark"
+				}
+			]
+			x: 3.0d
+			y: -4.0d
+		}
+		{
+			dependencies: [
+				"11472E726E00A598"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:large_assembler"
+			}
+			id: "06858E14C61E1D7B"
+			shape: "circle"
+			tasks: [
+				{
+					id: "0A760C827D056461"
+					type: "checkmark"
+				}
+			]
+			x: 3.0d
+			y: -5.0d
+		}
+		{
+			dependencies: [
+				"11472E726E00A598"
+				"326094BCCF778B49"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:large_chemical_reactor"
+			}
+			id: "6AA37138C25E6BA2"
+			tasks: [
+				{
+					count: 1
+					id: "178B602110742BC7"
+					item: {
+						count: 1
+						id: "gtceu:large_chemical_reactor"
+					}
+					type: "item"
+				}
+			]
+			x: 3.0d
+			y: -3.0d
+		}
+		{
+			dependencies: [
+				"465196AF7894448D"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:nitrobenzene_bucket"
+			}
+			id: "585E54567985032C"
+			tasks: [
+				{
+					count: 1
+					id: "1D018EACFA22B26A"
+					item: {
+						count: 1
+						id: "gtceu:natural_gas_bucket"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					count: 1
+					id: "3F4B0A6DD69F848F"
+					item: {
+						count: 1
+						id: "gtceu:methane_bucket"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					count: 1
+					id: "4A316BD3DC7DFC51"
+					item: {
+						count: 1
+						id: "gtceu:refinery_gas_bucket"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					count: 1
+					id: "5E924B64A119FEAB"
+					item: {
+						count: 1
+						id: "gtceu:lpg_bucket"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					count: 1
+					id: "37B98D431287A033"
+					item: {
+						count: 1
+						id: "gtceu:benzene_bucket"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					count: 1
+					id: "749B7D28C8397F9B"
+					item: {
+						count: 1
+						id: "gtceu:nitrobenzene_bucket"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "1AB0C86DDA718DD4"
+					type: "checkmark"
+				}
+			]
+			x: -10.5d
+			y: -8.0d
+		}
+		{
+			dependencies: [
+				"465196AF7894448D"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:steam_bucket"
+			}
+			id: "2851F7375B178EFC"
+			tasks: [
+				{
+					count: 1
+					id: "1A0AF51B3725C872"
+					item: {
+						count: 1
+						id: "gtceu:steam_bucket"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					count: 1
+					id: "5A00EA49C485170E"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:bronze_large_boiler)item(gtceu:steel_large_boiler)item(gtceu:titanium_large_boiler)item(gtceu:tungstensteel_large_boiler))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: -12.0d
+			y: -8.0d
+		}
+		{
+			dependencies: [
+				"465196AF7894448D"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:high_octane_gasoline_bucket"
+			}
+			id: "5CFD1E92F6BFBA1F"
+			tasks: [
+				{
+					count: 1
+					id: "0EC4D63F3B21C837"
+					item: {
+						count: 1
+						id: "gtceu:bio_diesel_bucket"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					count: 1
+					id: "61282993E238C886"
+					item: {
+						count: 1
+						id: "gtceu:diesel_bucket"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					count: 1
+					id: "20A69122C8452EFF"
+					item: {
+						count: 1
+						id: "gtceu:cetane_boosted_diesel_bucket"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					count: 1
+					id: "76AC953E0EC8D47D"
+					item: {
+						count: 1
+						id: "gtceu:gasoline_bucket"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					count: 1
+					id: "1B7BB7E44048CBA5"
+					item: {
+						count: 1
+						id: "gtceu:high_octane_gasoline_bucket"
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "2E72C49C2CB7196E"
+					type: "checkmark"
+				}
+			]
+			x: -9.0d
+			y: -8.0d
+		}
+		{
+			dependencies: [
+				"386572E7B641951D"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lv_combustion"
+			}
+			id: "6B5734E2CD596CAB"
+			tasks: [
+				{
+					count: 1
+					id: "590329A630C64159"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:lv_combustion)item(gtceu:lv_steam_turbine)item(gtceu:lv_gas_turbine))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: -3.0d
+			y: -7.0d
+		}
+		{
+			dependencies: [
+				"32CC2CAF976BF298"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:mv_steam_turbine"
+			}
+			id: "73D4041F4BBECD24"
+			tasks: [
+				{
+					count: 1
+					id: "5111FDB5152C68C2"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:mv_steam_turbine)item(gtceu:mv_gas_turbine)item(gtceu:mv_combustion))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: -3.0d
+			y: -5.0d
+		}
+		{
+			dependencies: [
+				"326094BCCF778B49"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:hv_steam_turbine"
+			}
+			id: "5556D43BFD90C796"
+			tasks: [
+				{
+					count: 1
+					id: "170BADBE8A35C763"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:hv_steam_turbine)item(gtceu:hv_combustion)item(gtceu:hv_gas_turbine))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: -1.5d
+			y: -3.0d
+		}
+		{
+			dependencies: [
+				"64BC39133D40186E"
+				"15BDF7BE4A90BFE0"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:high_octane_gasoline_bucket"
+			}
+			id: "350F820A8F7F234E"
+			tasks: [
+				{
+					count: 1
+					id: "1909CDCA79AF39E1"
+					item: {
+						count: 1
+						id: "gtceu:high_octane_gasoline_bucket"
+					}
+					type: "item"
+				}
+			]
+			x: -9.0d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"406A3F6F0D74FC37"
+				"3017AC6CEC8FD09A"
+			]
+			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "gtceu:turbine_rotor"
+			}
+			id: "4B0C155879B01B90"
+			tasks: [
+				{
+					count: 1
+					id: "7526688A585E967D"
+					item: {
+						count: 1
+						id: "gtceu:turbine_rotor"
+					}
+					type: "item"
+				}
+			]
+			x: -3.0d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"5CFD1E92F6BFBA1F"
+				"326094BCCF778B49"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:gasoline_bucket"
+			}
+			id: "64BC39133D40186E"
+			tasks: [
+				{
+					count: 1
+					id: "384CC0C358C63F20"
+					item: {
+						count: 1
+						id: "gtceu:gasoline_bucket"
+					}
+					type: "item"
+				}
+			]
+			x: -9.0d
+			y: -1.0d
+		}
+	]
+}
