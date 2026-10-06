@@ -1,6 +1,18 @@
 hash-format = "sha256"
 
 [[files]]
+file = "config/almostunified/placeholders.json"
+hash = "631a901a9341a12ec937f70f48259a2bbbcf04fe7b794cfc936b2827d274b20d"
+
+[[files]]
+file = "config/almostunified/tags.json"
+hash = "39086313b0a157400f35fa3c1bcfb0c3fbb0b8a0f4e1e4b030c9857d739f1c21"
+
+[[files]]
+file = "config/almostunified/unification/materials.json"
+hash = "e55d4625f22184ff768d4ec44720786eb72db1da15a75693c9e39fd9a9a6d846"
+
+[[files]]
 file = "kubejs/README.txt"
 hash = "989f3737ae4621b8ff6730bce4cbeeee756921e7e510e0c281c8a350501d98af"
 
@@ -31,6 +43,10 @@ hash = "74f01c3b886aa9dd2ebc49781ddb0541b974ad34e2f41e7a566b98d9182abd48"
 [[files]]
 file = "kubejs/server_scripts/main.js"
 hash = "dae099ae3be7f033c0c190ee8c3b023b42f6b235d9d0591be5926e8435dbd67f"
+
+[[files]]
+file = "kubejs/server_scripts/unification/gregtech.js"
+hash = "ad81406779d5b76b020828b91a92e4d95924e3ed4eabff72dbc73079de45f588"
 
 [[files]]
 file = "kubejs/startup_scripts/main.js"

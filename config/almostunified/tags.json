@@ -1,0 +1,25 @@
+{
+  "custom_tags": {},
+  "tag_substitutions": {
+    "c:ingots/wrought_iron": [
+      "c:ingots/iron"
+    ],
+    "c:nuggets/wrought_iron": [
+      "c:nuggets/iron"
+    ],
+    "c:storage_blocks/wrought_iron": [
+      "c:storage_blocks/iron"
+    ],
+    "c:plates/wrought_iron": [
+      "c:plates/iron"
+    ],
+    "c:rods/wrought_iron": [
+      "c:rods/iron"
+    ]
+  },
+  "item_tag_inheritance_mode": "ALLOW",
+  "item_tag_inheritance": {},
+  "block_tag_inheritance_mode": "ALLOW",
+  "block_tag_inheritance": {},
+  "emi_strict_hiding": true
+}
