@@ -98,16 +98,32 @@
       "note": "optional client-side compat (most likely Sable's and EMI's) touching client classes on a dedicated server; caught, the server carries on. Revisit if a server crash names these classes"
     },
     {
-      "pattern": "^net\\.dries007\\.tfc\\.util\\.MetalItem: Item minecraft:iron_ingot was inferred to match multiple metals wrought_iron and iron, using former",
-      "note": "expected: Almost Unified maps iron onto TFC wrought iron (tag substitution), and TFC correctly picks wrought iron"
+      "pattern": "^net\\.dries007\\.tfc\\.util\\.MetalItem: Item minecraft:iron_ingot was inferred to match multiple metals (wrought_iron and iron|iron and wrought_iron), using former",
+      "note": "Almost Unified maps iron onto TFC wrought iron, so vanilla iron ingots match two TFC metals; which one TFC picks varies, but vanilla iron ingots barely occur (unified outputs are TFC wrought iron)"
     },
     {
-      "pattern": "^net\\.minecraft\\.world\\.item\\.crafting\\.RecipeManager: Skipping recipe minecraft:\\S+, not a json object",
-      "note": "vanilla recipes TFC disables; logged once a KubeJS recipe script is present (they were already absent before)"
+      "pattern": "^net\\.minecraft\\.world\\.item\\.crafting\\.RecipeManager: Skipping recipe \\S+, not a json object",
+      "note": "recipes switched off by a false condition: vanilla ones TFC disables, and TFC's 5-8 clay ball recipes the pack disables (logged once a KubeJS recipe script is present)"
     },
     {
       "pattern": "^GTCEu: failed to add recipe from staging into lookup DB: gtceu:",
       "note": "iron and wrought-iron variants of a GregTech recipe became identical after unification (iron = wrought iron); GregTech keeps one of each pair"
+    },
+    {
+      "pattern": "^net\\.neoforged\\.neoforge\\.common\\.CommonHooks: The following mods have version differences that were not resolved",
+      "note": "opening a world last saved with other mod versions (after a pack update); shown once"
+    },
+    {
+      "pattern": "^patchouli: Could not locate JEI keybindings",
+      "note": "Patchouli's show-recipe shortcut in books looks for JEI's keys, which EMI handles; EMI's R/U keys work"
+    },
+    {
+      "pattern": "^net\\.dries007\\.tfc\\.TerraFirmaCraft: Experimental world gen",
+      "note": "TFC's joke warning about the experimental world-gen settings screen; harmless"
+    },
+    {
+      "pattern": "^mezz\\.jei\\.library\\.plugins\\.vanilla\\.ingredients\\.ItemStackListFactory: Item Group has no display items .*KubeJS",
+      "note": "KubeJS's creative tab is empty because the pack adds no items"
     }
   ]
 }

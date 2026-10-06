@@ -49,7 +49,7 @@ After each step: `tools/recipes/dump.py --label <step>`, compare dumps, check th
 - **GregTech 8.0 drops its recycling recipes when any KubeJS recipe script exists.** `GTRecipes` skips recycling generation when KubeJS has recipe listeners, but the 1.21 KubeJS plugin no longer runs it afterwards (1.20.1 did, in `injectRuntimeRecipes`). About 3,300 macerator/arc furnace recycling recipes are missing; none are needed for progression. Recheck with a dump comparison after GregTech updates.
 - **JEI is pinned to 19.44.0.413.** GregTech 8.0 bundles ModularUI 3.3.1, whose mixin into JEI's `RecipeSlot` needs a field (`allIngredients`) that JEI 19.50 removed. With a newer JEI the mixin fails when the class first loads, and EMI shows "render failure" for every recipe it gets from JEI plugins (all of Create's). `tools/smoke_checks.js` loads those JEI classes on the test server, so the smoke test fails if a JEI or GregTech update breaks this again. Unpin once ModularUI supports JEI 19.50+.
 - **GregTech 8.0 nightlies ship no names for recipe categories and types** (`recipe_category.gtceu.*`, `gtceu.<type>`), so recipe viewers show raw keys. Workaround: `kubejs/assets/gtceu/lang/en_us.json`; drop entries once GregTech ships them.
-- **TFC clay-ball recipes fail after `/reload`** (stack size 16 vs. outputs of 20–32); fine after a restart.
+- **TFC's 5–8 hardened clay → clay ball recipes give 20–32 balls**, more than the 16 per stack TFC itself allows, so they failed whenever recipes reloaded in a session (`/reload`, opening a second world). Disabled by data overrides in `kubejs/data/tfc/recipe/crafting/clay_ball_[5-8].json`; 1–4 clay at a time still works. Drop the overrides if TFC fixes them.
 
 ## Open questions
 

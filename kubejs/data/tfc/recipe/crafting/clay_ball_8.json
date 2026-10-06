@@ -1,0 +1,4 @@
+{
+  "_comment": "Disabled (docs/design.md, Upstream issues): TFC's 5-8 hardened clay -> clay ball recipes give 20-32 clay balls, more than the 16 per stack TFC allows, so they fail whenever recipes reload in a session. Crafting 1-4 hardened clay at a time (up to 16 balls) still works.",
+  "neoforge:conditions": [{ "type": "neoforge:false" }]
+}

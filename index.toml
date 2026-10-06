@@ -93,6 +93,22 @@ file = "kubejs/config/web_server.json"
 hash = "74f01c3b886aa9dd2ebc49781ddb0541b974ad34e2f41e7a566b98d9182abd48"
 
 [[files]]
+file = "kubejs/data/tfc/recipe/crafting/clay_ball_5.json"
+hash = "5f5056da3174f4bfd139698b2bc3b7a68b60856c9bef177423dd8ae5c44f8a85"
+
+[[files]]
+file = "kubejs/data/tfc/recipe/crafting/clay_ball_6.json"
+hash = "5f5056da3174f4bfd139698b2bc3b7a68b60856c9bef177423dd8ae5c44f8a85"
+
+[[files]]
+file = "kubejs/data/tfc/recipe/crafting/clay_ball_7.json"
+hash = "5f5056da3174f4bfd139698b2bc3b7a68b60856c9bef177423dd8ae5c44f8a85"
+
+[[files]]
+file = "kubejs/data/tfc/recipe/crafting/clay_ball_8.json"
+hash = "5f5056da3174f4bfd139698b2bc3b7a68b60856c9bef177423dd8ae5c44f8a85"
+
+[[files]]
 file = "kubejs/server_scripts/aeronautics/airships.js"
 hash = "1e2a5a5e14b0b4beef928653a81b8e912119156980aeee224598e1d506d87e95"
 
