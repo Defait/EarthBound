@@ -8,6 +8,8 @@
 //   recipes for mud bricks use TFC 1.20's soil names (kubejs/data overrides switch them off); they're
 //   redone here for TFC 4's soils.
 // - Steam 'n' Rails: locometal boilers are fired with GregTech coke instead of blaze rods.
+// - Design n Decor: dyeing an industrial cogwheel takes any from its tag, which lists only the dyed
+//   ones; the plain cogwheel joins it so the first one can be dyed.
 // - Power Loader: the chunk loaders' respawn anchor needs the Nether; a wrought iron block (andesite
 //   loader) or a steel block (brass loader) stands in for it. An empty loader comes alive by capturing
 //   a Ghast, also Nether-only, so creepers can be captured too.
@@ -32,6 +34,10 @@ ServerEvents.recipes(event => {
 
   event.replaceInput({ id: 'create_power_loader:empty_andesite_chunk_loader' }, 'minecraft:respawn_anchor', '#c:storage_blocks/wrought_iron')
   event.replaceInput({ id: 'create_power_loader:empty_brass_chunk_loader' }, 'minecraft:respawn_anchor', '#c:storage_blocks/steel')
+})
+
+ServerEvents.tags('item', event => {
+  event.add('dndecor:industrial_cogwheels', 'dndecor:industrial_cogwheel')
 })
 
 ServerEvents.tags('entity_type', event => {

@@ -182,7 +182,7 @@ hash = "0126279db895129cb4db2f9977018789922f46131bbbc91776312f93800108ca"
 
 [[files]]
 file = "kubejs/server_scripts/compat/create_addons.js"
-hash = "f1feb0ebd1ec4cc8aa2877c00045a9ae3cdf622bf065ab1d08f6b3a8472436ea"
+hash = "a08f4b5f928065798152638c212ea647f8326a345a1d1504b5b8727dd787febd"
 
 [[files]]
 file = "kubejs/server_scripts/compat/metal_gates.js"
@@ -195,6 +195,10 @@ hash = "b9eca79d2225e9a5d417ac6d30c27e0256e3e6ad3e48188df30ec436a75e06d8"
 [[files]]
 file = "kubejs/server_scripts/create/entry.js"
 hash = "ff60db04799d54fd9ad9cfe677fd7c8e3411ab7f03a31fff4c5f3e069128d7e4"
+
+[[files]]
+file = "kubejs/server_scripts/create/stones.js"
+hash = "2d352908dbfafa7b0459e604c84d6aef8ce6169875bf96e42dc40710fd367574"
 
 [[files]]
 file = "kubejs/server_scripts/gregtech/ore_processing.js"
