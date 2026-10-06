@@ -358,6 +358,16 @@
       "create:large_water_wheel",
       "create:windmill_bearing",
       "create:steam_engine"
+    ],
+    "create_parts": [
+      "create:fluid_tank",
+      "create:mechanical_pump",
+      "create:mechanical_press"
+    ],
+    "bronze_family": [
+      "#i:c:ingots/bronze",
+      "#i:c:ingots/bismuth_bronze",
+      "#i:c:ingots/black_bronze"
     ]
   },
   "gregtech": {
@@ -384,39 +394,101 @@
   },
   "rules": [
     {
-      "item": "i:gtceu:steel_ingot",
+      "item": "i:create:andesite_alloy",
       "requires": [
-        "i:tfc:metal/ingot/pig_iron"
+        "#i:c:nuggets/zinc",
+        "#i:c:nuggets/bronze"
       ],
-      "why": "starter rule: GregTech steel shouldn't skip TFC's iron age (pig iron from the blast furnace)"
+      "why": "design: andesite alloy is TFC andesite + zinc or bronze nuggets"
     },
     {
-      "item": "i:gtceu:lv_machine_hull",
+      "item": "i:create:water_wheel",
       "requires": [
-        "i:tfc:metal/ingot/steel"
+        "i:create:andesite_alloy"
       ],
-      "why": "starter rule: the first electric machines should need TFC steel"
+      "why": "design: Create's kinetics start from andesite alloy"
     },
     {
       "item": "i:create:mechanical_press",
       "requires": [
-        "#i:c:ingots/bronze"
+        "#i:c:sheets/wrought_iron"
       ],
-      "why": "starter rule: Create machines should come after the bronze age"
+      "why": "design: heavy Create machines need TFC wrought iron sheets"
+    },
+    {
+      "item": "i:create:mechanical_mixer",
+      "requires": [
+        "#i:c:sheets/wrought_iron"
+      ],
+      "why": "design: heavy Create machines need TFC wrought iron sheets"
+    },
+    {
+      "item": "i:create:deployer",
+      "requires": [
+        "#i:c:sheets/wrought_iron"
+      ],
+      "why": "design: heavy Create machines need TFC wrought iron sheets"
+    },
+    {
+      "item": "i:gtceu:lp_steam_solid_boiler",
+      "requires": [
+        "@create_parts"
+      ],
+      "why": "design: GregTech's first boiler needs a Create machine part"
+    },
+    {
+      "item": "i:gtceu:lp_steam_solid_boiler",
+      "requires": [
+        "i:tfc:fire_bricks",
+        "i:tfc:ceramic/fire_brick"
+      ],
+      "why": "design: GregTech's first boiler uses TFC fire bricks instead of a vanilla furnace"
+    },
+    {
+      "item": "i:gtceu:hp_steam_solid_boiler",
+      "requires": [
+        "#i:c:ingots/steel"
+      ],
+      "why": "design: high-pressure steam needs TFC steel"
+    },
+    {
+      "item": "i:gtceu:lv_machine_hull",
+      "requires": [
+        "#i:c:ingots/steel"
+      ],
+      "why": "design: LV electrics need TFC steel"
+    },
+    {
+      "item": "#i:c:ingots/steel",
+      "requires": [
+        "i:tfc:metal/ingot/pig_iron"
+      ],
+      "why": "design: steel comes from TFC's blast furnace route (pig iron), not from a shortcut"
+    },
+    {
+      "item": "i:aeronautics:propeller_bearing",
+      "requires": [
+        "#i:c:ingots/brass"
+      ],
+      "why": "design: airships unlock with brass"
     }
   ],
   "milestones": [
     "i:tfc:firepit",
     "i:tfc:ceramic/vessel",
-    "f:tfc:metal/copper",
     "#i:c:ingots/copper",
     "#i:c:ingots/bronze",
+    "i:create:andesite_alloy",
+    "i:create:water_wheel",
     "i:tfc:bloomery",
     "#i:c:ingots/wrought_iron",
+    "i:create:mechanical_press",
+    "#i:c:ingots/brass",
+    "i:aeronautics:propeller_bearing",
+    "i:gtceu:lp_steam_solid_boiler",
     "#i:c:ingots/pig_iron",
     "#i:c:ingots/steel",
-    "i:create:andesite_alloy",
-    "i:create:mechanical_press",
+    "i:gtceu:hp_steam_solid_boiler",
     "i:gtceu:lv_machine_hull",
     "i:gtceu:electric_blast_furnace"
   ]

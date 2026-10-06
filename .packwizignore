@@ -4,6 +4,7 @@
 /LICENSE*
 /CLAUDE.md
 /tools/
+/docs/
 packwiz-installer*.jar
 /.claude/
 /.github/
