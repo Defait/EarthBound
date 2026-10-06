@@ -97,7 +97,22 @@ ServerEvents.loaded(event => {
     console.warn('[pack-dump] block loot tables skipped: ' + e)
   }
 
+  // Sizes of datapack registries the pack changes. GregTech's KubeJS removal keeps ore veins in the
+  // registry but stops them generating, so ore veins also report how many can still generate.
+  const registries = new $JsonObject()
+  ;['gtceu:ore_vein', 'gtceu:bedrock_ore', 'gtceu:bedrock_fluid'].forEach(name => {
+    var reg = server.registryAccess().registry($ResourceKey.createRegistryKey(name))
+    if (!reg.isPresent()) return
+    registries.addProperty(name, reg.get().size())
+    if (name === 'gtceu:ore_vein') {
+      var active = 0
+      reg.get().forEach(def => { if (def.canGenerate()) active++ })
+      registries.addProperty(name + ' (generating)', active)
+    }
+  })
+
   const index = new $JsonObject()
+  index.add('registries', registries)
   index.add('recipe_types', types)
   index.addProperty('recipes', total)
   index.addProperty('failed', failed)

@@ -35,13 +35,26 @@
       ]
     },
     "minecraft:smelting": [
-      "minecraft:furnace"
+      [
+        "minecraft:furnace",
+        "gtceu:lp_steam_furnace",
+        "gtceu:hp_steam_furnace",
+        "gtceu:*_electric_furnace",
+        "gtceu:multi_smelter",
+        "create:encased_fan"
+      ]
     ],
     "minecraft:blasting": [
-      "minecraft:blast_furnace"
+      [
+        "minecraft:blast_furnace",
+        "create:encased_fan"
+      ]
     ],
     "minecraft:smoking": [
-      "minecraft:smoker"
+      [
+        "minecraft:smoker",
+        "create:encased_fan"
+      ]
     ],
     "minecraft:campfire_cooking": [
       [
@@ -483,6 +496,13 @@
         "i:tfc:metal/ingot/pig_iron"
       ],
       "why": "design: steel comes from TFC's blast furnace route (pig iron), not from a shortcut"
+    },
+    {
+      "item": "#i:c:ingots/wrought_iron",
+      "requires": [
+        "i:tfc:bloomery"
+      ],
+      "why": "design: wrought iron comes from TFC's bloomery; GregTech's ore smelting gives cast iron"
     },
     {
       "item": "i:aeronautics:propeller_bearing",
