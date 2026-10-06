@@ -63,6 +63,16 @@ def game_version(world):
         return None
 
 
+def player_pos(world):
+    """The single-player player's block x, z from level.dat (None on servers or if unreadable)."""
+    try:
+        with gzip.open(os.path.join(world, "level.dat")) as f:
+            pos = nbt.loads(f.read())["Data"]["Player"]["Pos"]
+        return float(pos[0]), float(pos[2])
+    except Exception:
+        return None
+
+
 def build_colors(names, jars):
     assets = colors.Assets(jars)
     out = []
@@ -94,12 +104,17 @@ class Source:
             self.world.scan()
             if self.world.ready:
                 w = self.world
+                # Start on the area the player is in (single-player); otherwise the largest.
+                pos = player_pos(self.world_dir) if self.dim == "overworld" else None
+                if pos:
+                    w.select_area(w.area_at(*pos))
                 cols = build_colors(w.names, self.jars)
                 has_climate = any(c.get("climate") for c in w.chunks.values())
                 self.info = {
                     "world": os.path.basename(os.path.normpath(self.world_dir)), "path": self.world_dir,
                     "dim": self.dim, "version": self.version,
                     "ymin": w.ymin, "height": w.H, "cbox": w.cbox, "chunks": len(w.chunks),
+                    "area": w.area, "areas": self.describe_areas(),
                     "partial": w.partial, "scanSeconds": round(w.scan_seconds, 2),
                     "climate": has_climate, "geo": self.projection.params() if self.projection else None,
                     "blocks": [{
@@ -109,6 +124,22 @@ class Source:
                     } for i, n in enumerate(w.names)],
                 }
         threading.Thread(target=run, daemon=True).start()
+
+    def describe_areas(self):
+        out = []
+        for i, a in enumerate(self.world.areas):
+            x0, z0, x1, z1 = a["cbox"]
+            x, z = (x0 + x1 + 1) * 8, (z0 + z1 + 1) * 8
+            entry = {"i": i, "cbox": a["cbox"], "chunks": a["chunks"], "x": x, "z": z}
+            if self.projection:
+                lon, lat = self.projection.to_geo(x, z)
+                entry["lat"], entry["lon"] = round(lat, 2), round(lon, 2)
+            out.append(entry)
+        return out
+
+    def select_area(self, i):
+        self.world.select_area(i)
+        self.info["area"], self.info["cbox"] = self.world.area, self.world.cbox
 
     def rescan(self):
         """Re-read the save; unchanged regions come straight from the cache."""
@@ -177,6 +208,9 @@ def make_handler(app):
                 w = src.world
                 if url.path == "/api/info":
                     return self._json(src.info)
+                if url.path == "/api/area":
+                    src.select_area(int(q.get("i", 0)))
+                    return self._json({"area": w.area, "cbox": w.cbox})
                 if url.path == "/api/surface":
                     step = max(1, int(q.get("step", 1)))
                     ids, ys = w.surface(step)

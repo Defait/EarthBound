@@ -78,7 +78,8 @@ nav button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(-
 .toolbar label { display: inline-flex; gap: 6px; align-items: center; color: var(--ink-2); }
 .toolbar input[type=number] { width: 80px; padding: 3px 6px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface-2); }
 .toolbar input[type=range] { width: 220px; }
-.toolbar select { padding: 3px 6px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface-2); }
+.toolbar select, #areasel { padding: 3px 6px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface-2); }
+#areasel { max-width: 22rem; }
 .view { flex: 1; min-height: 0; display: none; flex-direction: column; }
 .view.active { display: flex; }
 .stage { position: relative; flex: 1; min-height: 0; background: var(--void); }
@@ -124,6 +125,7 @@ th { color: var(--ink-2); font-weight: 600; position: sticky; top: 0; background
       <button data-w="a" aria-pressed="true">World A</button>
       <button data-w="b" aria-pressed="false">World B</button>
     </div>
+    <select id="areasel" title="Parts of the world far apart (e.g. after /startat) are shown one area at a time" hidden></select>
     <div id="meta"></div>
     <button class="btn" id="rescan" title="Re-read the save (run /save-all in game first)">Rescan</button>
     <button class="btn" id="theme" title="Toggle light/dark">Theme</button>
@@ -936,6 +938,14 @@ $('#theme').onclick = () => {
   renderMap(true); refreshSliceImage(); renderHeat(true); if (S.view === 'dist') renderDist();
 };
 $('#rescan').onclick = async () => { await fetch('/api/rescan'); S.ycache.clear(); hostCache.clear(); boot(); };
+$('#areasel').addEventListener('change', async e => {
+  await getJSON(`/api/area?i=${e.target.value}${wq()}`);
+  await loadWorld();
+});
+function areaLabel(a) {
+  const where = a.lat !== undefined ? `${Math.abs(a.lat).toFixed(2)}°${a.lat >= 0 ? 'N' : 'S'} ${Math.abs(a.lon).toFixed(2)}°${a.lon >= 0 ? 'E' : 'W'}` : `x ${fmt(a.x)}, z ${fmt(a.z)}`;
+  return `Area ${a.i + 1}: ${where} · ${fmt(a.chunks)} chunks`;
+}
 $('#worldsel').addEventListener('click', async e => {
   const b = e.target.closest('button'); if (!b || b.dataset.w === S.w) return;
   S.w = b.dataset.w; $$('#worldsel button').forEach(x => x.setAttribute('aria-pressed', x === b));
@@ -973,7 +983,10 @@ async function loadWorld() {
   S.blocks.forEach(b => { if (S.visByName.has(b.name)) S.vis[b.id] = S.visByName.get(b.name); });
   S.ycache.clear(); S.slice.data = null;
   const i = S.info, [cx0, cz0, cx1, cz1] = i.cbox;
-  $('#meta').textContent = `${S.worlds.length > 1 ? 'World ' + S.w.toUpperCase() + ': ' : ''}${i.world} · ${i.dim} · ${i.version || '?'} · ${fmt(i.chunks)} generated chunks (${fmt(i.partial)} partial, ignored) · x ${cx0 * 16}…${cx1 * 16 + 15}, z ${cz0 * 16}…${cz1 * 16 + 15} · y ${i.ymin}…${i.ymin + i.height - 1} · scanned in ${i.scanSeconds}s`;
+  const areas = i.areas || [];
+  $('#areasel').hidden = areas.length < 2;
+  $('#areasel').innerHTML = areas.map(a => `<option value="${a.i}"${a.i === i.area ? ' selected' : ''}>${areaLabel(a)}</option>`).join('');
+  $('#meta').textContent = `${S.worlds.length > 1 ? 'World ' + S.w.toUpperCase() + ': ' : ''}${i.world} · ${i.dim} · ${i.version || '?'} · ${fmt(i.chunks)} generated chunks${areas.length > 1 ? ` in ${areas.length} areas` : ''} (${fmt(i.partial)} partial, ignored) · x ${cx0 * 16}…${cx1 * 16 + 15}, z ${cz0 * 16}…${cz1 * 16 + 15} · y ${i.ymin}…${i.ymin + i.height - 1} · scanned in ${i.scanSeconds}s`;
   if (!S.slice.pos) S.slice.pos = 0;
   buildEntities(); renderList(); renderHeatChoices();
   $('#loading').style.display = 'none';

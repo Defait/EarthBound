@@ -22,6 +22,8 @@ CACHE_VERSION = 2
 CLIMATE_FIELDS = ("temperature", "rainfall", "rainVariance", "baseGroundwater", "forestType")
 AIR = {"minecraft:air", "minecraft:cave_air", "minecraft:void_air"}
 MISSING = 0xFFFF
+# Generated regions within this many regions of each other form one map area (see World._find_areas).
+AREA_GAP = 4
 
 
 def cache_dir_for(world_dir, region_dir):
@@ -234,12 +236,61 @@ class World:
                 c["region"] = (s["rx"], s["rz"])
                 self.chunks[(c["cx"], c["cz"])] = c
         self.totals = self.ycounts.sum(axis=1)
-        if self.chunks:
-            xs = [k[0] for k in self.chunks]
-            zs = [k[1] for k in self.chunks]
-            self.cbox = (min(xs), min(zs), max(xs), max(zs))
-        else:
-            self.cbox = (0, 0, -1, -1)
+        self.areas = self._find_areas()
+        self.select_area(0)
+
+    # ------------------------------------------------------------------ areas
+    def _find_areas(self, gap=AREA_GAP):
+        """Groups of generated regions near each other (within `gap` regions), largest first.
+
+        A world explored in one place is one area; teleporting across a big map (e.g. /startat on
+        TFC: Real World) leaves islands of terrain hundreds of thousands of blocks apart, and one
+        image spanning all of them wouldn't fit in memory, so the map shows one area at a time.
+        """
+        regions = sorted({c["region"] for c in self.chunks.values()})
+        parent = {r: r for r in regions}
+
+        def find(r):
+            while parent[r] != r:
+                parent[r] = parent[parent[r]]
+                r = parent[r]
+            return r
+
+        for i, a in enumerate(regions):
+            for b in regions[i + 1:]:
+                if b[0] - a[0] > gap:
+                    break
+                if abs(b[1] - a[1]) <= gap:
+                    parent[find(a)] = find(b)
+        groups = {}
+        for (cx, cz) in self.chunks:
+            root = find((cx >> 5, cz >> 5))
+            g = groups.setdefault(root, [cx, cz, cx, cz, 0])
+            g[0], g[1], g[2], g[3] = min(g[0], cx), min(g[1], cz), max(g[2], cx), max(g[3], cz)
+            g[4] += 1
+        areas = [{"cbox": tuple(g[:4]), "chunks": g[4]} for g in groups.values()]
+        return sorted(areas, key=lambda a: -a["chunks"])
+
+    def select_area(self, i):
+        """Make area i the one the map, climate and heatmaps cover."""
+        if not self.areas:
+            self.area, self.cbox = 0, (0, 0, -1, -1)
+            return
+        self.area = max(0, min(int(i), len(self.areas) - 1))
+        self.cbox = self.areas[self.area]["cbox"]
+
+    def area_at(self, x, z):
+        """Index of the area containing block x, z (or the nearest one)."""
+        cx, cz = int(x) >> 4, int(z) >> 4
+
+        def dist(a):
+            x0, z0, x1, z1 = a["cbox"]
+            return max(x0 - cx, cx - x1, 0) + max(z0 - cz, cz - z1, 0)
+        return min(range(len(self.areas)), key=lambda i: dist(self.areas[i])) if self.areas else 0
+
+    def _in_box(self, cx, cz):
+        x0, z0, x1, z1 = self.cbox
+        return x0 <= cx <= x1 and z0 <= cz <= z1
 
     def _gid(self, n):
         i = self.name_ids.get(n)
@@ -327,6 +378,8 @@ class World:
         ys = np.full((Hh, W), -32768, dtype=np.int16)
         luts = {k: np.append(s["lut"], np.uint16(MISSING)) for k, s in self.regions.items()}
         for (cx, cz), c in self.chunks.items():
+            if not self._in_box(cx, cz):
+                continue
             r, q = (cz - cz0) * 16, (cx - cx0) * 16
             lut = luts[c["region"]]
             sid = np.where(c["surf_id"] == MISSING, len(lut) - 1, c["surf_id"])
@@ -339,6 +392,8 @@ class World:
         cx0, cz0, cx1, cz1 = self.cbox
         out = np.full((cz1 - cz0 + 1, cx1 - cx0 + 1), np.nan, dtype=np.float32)
         for (cx, cz), c in self.chunks.items():
+            if not self._in_box(cx, cz):
+                continue
             v = (c.get("climate") or {}).get(field)
             if v is not None:
                 out[cz - cz0, cx - cx0] = v
@@ -370,6 +425,8 @@ class World:
         slo = 0 if ylo is None else max(0, (ylo >> 4) - self.secmin)
         shi = self.nsec - 1 if yhi is None else min(self.nsec - 1, (yhi >> 4) - self.secmin)
         for (cx, cz), c in self.chunks.items():
+            if not self._in_box(cx, cz):
+                continue
             hit = np.nonzero(c["gids"] == gid)[0]
             v = 0
             if len(hit):
