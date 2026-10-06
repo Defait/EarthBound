@@ -1,0 +1,110 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "bronze"
+	group: ""
+	icon: {
+		count: 1
+		id: "tfc:metal/ingot/bronze"
+	}
+	id: "1B35DA1A0F81CE6B"
+	order_index: 2
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"3DB2937CFB46B93D"
+			]
+			icon: {
+				count: 1
+				id: "tfc:metal/ingot/bronze"
+			}
+			id: "26CB1992A45CFEF6"
+			size: 1.5d
+			tasks: [
+				{
+					count: 1
+					id: "731FF05804A3848A"
+					item: {
+						count: 1
+						id: "tfc:metal/ingot/bronze"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: -1.75d
+		}
+		{
+			dependencies: [
+				"26CB1992A45CFEF6"
+				"58737E4CE402E036"
+			]
+			icon: {
+				count: 1
+				id: "tfc:metal/anvil/bronze"
+			}
+			id: "3D897027F7BD8EE2"
+			tasks: [
+				{
+					count: 1
+					id: "04B14128FBBAED11"
+					item: {
+						count: 1
+						id: "tfc:metal/anvil/bronze"
+					}
+					type: "item"
+				}
+			]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"3DB2937CFB46B93D"
+			]
+			icon: {
+				count: 1
+				id: "tfc:metal/ingot/brass"
+			}
+			id: "542F4F6916343D21"
+			size: 1.5d
+			tasks: [
+				{
+					count: 1
+					id: "33EAD7CC73A19CC6"
+					item: {
+						count: 1
+						id: "tfc:metal/ingot/brass"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"4B98A0DD1B3B274A"
+			]
+			icon: {
+				count: 1
+				id: "minecraft:charcoal"
+			}
+			id: "5411253EA7898A26"
+			tasks: [
+				{
+					count: 1
+					id: "4AE5EC60E9DDC05D"
+					item: {
+						count: 1
+						id: "minecraft:charcoal"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 1.75d
+		}
+	]
+}

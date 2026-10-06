@@ -1,0 +1,156 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "iron"
+	group: ""
+	icon: {
+		count: 1
+		id: "tfc:metal/ingot/wrought_iron"
+	}
+	id: "385C3F6E218ADDC3"
+	order_index: 4
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"3D897027F7BD8EE2"
+				"5411253EA7898A26"
+			]
+			icon: {
+				count: 1
+				id: "tfc:bloomery"
+			}
+			id: "5FF149CEA2CAEBB6"
+			tasks: [
+				{
+					count: 1
+					id: "6E243C6542131338"
+					item: {
+						count: 1
+						id: "tfc:bloomery"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"5FF149CEA2CAEBB6"
+			]
+			icon: {
+				count: 1
+				id: "tfc:metal/ingot/wrought_iron"
+			}
+			id: "00695D396C7FED88"
+			size: 1.5d
+			tasks: [
+				{
+					count: 1
+					id: "1A08ADD867F11D4A"
+					item: {
+						count: 1
+						id: "tfc:metal/ingot/wrought_iron"
+					}
+					type: "item"
+				}
+			]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"00695D396C7FED88"
+			]
+			icon: {
+				count: 1
+				id: "tfc:metal/double_sheet/wrought_iron"
+			}
+			id: "3DDCFC0DA1D27547"
+			tasks: [
+				{
+					count: 1
+					id: "4BE973764D0FA02C"
+					item: {
+						count: 1
+						id: "tfc:metal/double_sheet/wrought_iron"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: -0.875d
+		}
+		{
+			dependencies: [
+				"00695D396C7FED88"
+			]
+			icon: {
+				count: 1
+				id: "tfc:blast_furnace"
+			}
+			id: "194A04058BBC0B1A"
+			tasks: [
+				{
+					count: 1
+					id: "71E75C48FDA4466D"
+					item: {
+						count: 1
+						id: "tfc:blast_furnace"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: 0.875d
+		}
+		{
+			dependencies: [
+				"194A04058BBC0B1A"
+			]
+			icon: {
+				count: 1
+				id: "tfc:metal/ingot/pig_iron"
+			}
+			id: "7FBA6A302D462285"
+			tasks: [
+				{
+					count: 1
+					id: "07E54983D22672F0"
+					item: {
+						count: 1
+						id: "tfc:metal/ingot/pig_iron"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"7FBA6A302D462285"
+			]
+			icon: {
+				count: 1
+				id: "tfc:metal/ingot/steel"
+			}
+			id: "085716E91923B183"
+			size: 1.5d
+			tasks: [
+				{
+					count: 1
+					id: "3BB53CDA3802073A"
+					item: {
+						count: 1
+						id: "tfc:metal/ingot/steel"
+					}
+					type: "item"
+				}
+			]
+			x: 8.0d
+			y: 0.0d
+		}
+	]
+}

@@ -1,0 +1,198 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "lv"
+	group: ""
+	icon: {
+		count: 1
+		id: "gtceu:lv_machine_hull"
+	}
+	id: "041BA3786BB55BC5"
+	order_index: 6
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"085716E91923B183"
+				"7BE9F40DE554360A"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lv_machine_hull"
+			}
+			id: "386572E7B641951D"
+			size: 1.5d
+			tasks: [
+				{
+					count: 1
+					id: "7D38D2098CE8379B"
+					item: {
+						count: 1
+						id: "gtceu:lv_machine_hull"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: -0.875d
+		}
+		{
+			dependencies: [
+				"7BE9F40DE554360A"
+				"26928A83F63777A9"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lv_electric_motor"
+			}
+			id: "2399E4EF4131F58E"
+			tasks: [
+				{
+					count: 1
+					id: "3AB1DBE376C6BF07"
+					item: {
+						count: 1
+						id: "gtceu:lv_electric_motor"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 0.875d
+		}
+		{
+			dependencies: [
+				"386572E7B641951D"
+				"2399E4EF4131F58E"
+				"64C18F9BF387363D"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lv_steam_turbine"
+			}
+			id: "01F0503DA2852C96"
+			size: 1.5d
+			tasks: [
+				{
+					count: 1
+					id: "6F4B4ECE12FBFB61"
+					item: {
+						count: 1
+						id: "gtceu:lv_steam_turbine"
+					}
+					type: "item"
+				}
+			]
+			x: 2.0d
+			y: -1.75d
+		}
+		{
+			dependencies: [
+				"2399E4EF4131F58E"
+				"5B177F2400CD6242"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lv_electric_pump"
+			}
+			id: "2FEA213C7927F27F"
+			tasks: [
+				{
+					count: 1
+					id: "5F1AFC6C9AF67A82"
+					item: {
+						count: 1
+						id: "gtceu:lv_electric_pump"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "13110A5E08715127"
+					item: {
+						count: 1
+						id: "gtceu:lv_electric_piston"
+					}
+					type: "item"
+				}
+			]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"06D9D74614BC03F5"
+				"386572E7B641951D"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:basic_electronic_circuit"
+			}
+			id: "70D4CDC5438ED00B"
+			tasks: [
+				{
+					count: 1
+					id: "1DB84751FA2B7043"
+					item: {
+						count: 1
+						id: "gtceu:basic_electronic_circuit"
+					}
+					type: "item"
+				}
+			]
+			x: 2.0d
+			y: 1.75d
+		}
+		{
+			dependencies: [
+				"70D4CDC5438ED00B"
+				"2FEA213C7927F27F"
+				"01F0503DA2852C96"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lv_assembler"
+			}
+			id: "23825C07601E4DD7"
+			tasks: [
+				{
+					count: 1
+					id: "7A5971A5F6F53120"
+					item: {
+						count: 1
+						id: "gtceu:lv_assembler"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: -0.875d
+		}
+		{
+			dependencies: [
+				"70D4CDC5438ED00B"
+				"194A04058BBC0B1A"
+				"01F0503DA2852C96"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:electric_blast_furnace"
+			}
+			id: "744DCCFC40160583"
+			size: 1.5d
+			tasks: [
+				{
+					count: 1
+					id: "47545B0724F6E574"
+					item: {
+						count: 1
+						id: "gtceu:electric_blast_furnace"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: 0.875d
+		}
+	]
+}

@@ -1,0 +1,160 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "airships"
+	group: ""
+	icon: {
+		count: 1
+		id: "aeronautics:propeller_bearing"
+	}
+	id: "5952610CFD517D7D"
+	order_index: 7
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"26928A83F63777A9"
+			]
+			icon: {
+				count: 1
+				id: "simulated:physics_assembler"
+			}
+			id: "251B952BB2E8EBBE"
+			tasks: [
+				{
+					count: 1
+					id: "53F87D4F44A60D03"
+					item: {
+						count: 1
+						id: "simulated:physics_assembler"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: -3.5d
+		}
+		{
+			dependencies: [
+				"542F4F6916343D21"
+			]
+			icon: {
+				count: 1
+				id: "aeronautics:white_envelope"
+			}
+			id: "28505A85304EF63B"
+			tasks: [
+				{
+					count: 1
+					id: "1E517432147E38CB"
+					item: {
+						count: 1
+						id: "aeronautics:white_envelope"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: -1.75d
+		}
+		{
+			dependencies: [
+				"28505A85304EF63B"
+				"00695D396C7FED88"
+			]
+			icon: {
+				count: 1
+				id: "aeronautics:adjustable_burner"
+			}
+			id: "1889CF43A33440C0"
+			size: 1.5d
+			tasks: [
+				{
+					count: 1
+					id: "70A7C7B05BD8D991"
+					item: {
+						count: 1
+						id: "aeronautics:adjustable_burner"
+					}
+					type: "item"
+				}
+			]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"149221361E259C6B"
+				"00695D396C7FED88"
+			]
+			icon: {
+				count: 1
+				id: "aeronautics:propeller_bearing"
+			}
+			id: "5F2E970FD74F1633"
+			size: 1.5d
+			tasks: [
+				{
+					count: 1
+					id: "7E37DAD678C00CCD"
+					item: {
+						count: 1
+						id: "aeronautics:propeller_bearing"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"55B9E873A37B07AC"
+				"542F4F6916343D21"
+				"46A24390F82ABD8C"
+			]
+			icon: {
+				count: 1
+				id: "simulated:red_portable_engine"
+			}
+			id: "288FDFED8EEFAC6C"
+			tasks: [
+				{
+					count: 1
+					id: "2038E2CA3DB5F5B4"
+					item: {
+						count: 1
+						id: "simulated:red_portable_engine"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 1.75d
+		}
+		{
+			dependencies: [
+				"542F4F6916343D21"
+			]
+			icon: {
+				count: 1
+				id: "aeronautics:steam_vent"
+			}
+			id: "0065A82458288853"
+			optional: true
+			tasks: [
+				{
+					count: 1
+					id: "2FC1771E09491973"
+					item: {
+						count: 1
+						id: "aeronautics:steam_vent"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 3.5d
+		}
+	]
+}

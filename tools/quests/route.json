@@ -1,0 +1,154 @@
+{
+  "_comment": "The pack's progression route, source for the FTB Quests book. tools/quests/build.py turns it into config/ftbquests/quests/ and checks it against the progression checker. Each quest: key (unique), title, subtitle, desc (lines), item (an item task, detected automatically) or checkmark: true (the player ticks it), deps (quest keys, any chapter), big (drawn larger), optional, extra_items (more item tasks).",
+  "title": "The Route",
+  "chapters": [
+    {
+      "key": "welcome", "title": "Welcome", "icon": "minecraft:compass",
+      "quests": [
+        {"key": "welcome", "title": "The Route", "subtitle": "TFC, then Create, then GregTech", "checkmark": true, "icon": "minecraft:compass", "big": true,
+         "desc": ["TerraFirmaCraft on a real-scale Earth, mechanized with Create, industrialized with GregTech, with airships from Create Aeronautics.",
+                  "",
+                  "The route: TFC's stone, copper and bronze ages; Create from the bronze age; TFC's iron; GregTech's steam age, which runs on Create parts; TFC steel; GregTech electricity. Airships open with brass.",
+                  "",
+                  "Look up any recipe in EMI: hover an item and press R for its recipes, U for its uses. TFC's field guide explains survival, knapping, pottery and metalworking.",
+                  "",
+                  "On a server, /startat <latitude> <longitude> moves you once to any place on Earth (south and west are negative), e.g. /startat 59.33 18.07 for Stockholm."]}
+      ]
+    },
+    {
+      "key": "stone", "title": "Stone and Copper", "icon": "tfc:stone/axe/igneous_extrusive",
+      "quests": [
+        {"key": "stone_tools", "title": "Stone Tools", "subtitle": "Knap loose rocks", "checkmark": true, "icon": "tfc:stone/axe/igneous_extrusive", "deps": ["welcome"],
+         "desc": ["Pick up loose rocks and sticks from the ground. Knap rocks into tool heads (use two rocks), then craft a head with a stick. A knife and an axe come first."]},
+        {"key": "firepit", "title": "Fire", "subtitle": "A firepit", "checkmark": true, "icon": "tfc:firepit", "deps": ["stone_tools"],
+         "desc": ["Throw one log and three sticks on the ground and use a firestarter on them. The firepit cooks food, heats metal and later lights pit kilns and charcoal pits."]},
+        {"key": "vessel", "title": "Pottery", "subtitle": "A fired small vessel", "item": "tfc:ceramic/vessel", "deps": ["firepit"],
+         "desc": ["Knap clay into a small vessel and ingot molds, then fire them in a pit kiln (straw and logs over the pottery, lit)."]},
+        {"key": "copper", "title": "Copper", "subtitle": "Your first metal", "item": "tfc:metal/ingot/copper", "deps": ["vessel"], "big": true,
+         "desc": ["Melt native copper, malachite or tetrahedrite in a small vessel and pour it into a fired ingot mold.",
+                  "",
+                  "TFC ores come in grades: small 10 mB, poor 15, normal 25, rich 35; an ingot is 100 mB."]},
+        {"key": "copper_anvil", "title": "Copper Anvil", "subtitle": "Metalworking", "item": "tfc:metal/anvil/copper", "deps": ["copper"],
+         "desc": ["Weld ingots into double ingots and shape them on a stone anvil. The anvil makes tools, sheets and most metal parts."]}
+      ]
+    },
+    {
+      "key": "bronze", "title": "Bronze and Brass", "icon": "tfc:metal/ingot/bronze",
+      "quests": [
+        {"key": "bronze", "title": "Bronze", "subtitle": "Copper and tin", "item": "tfc:metal/ingot/bronze", "deps": ["copper"], "big": true,
+         "desc": ["Alloy copper (88-92%) with tin from cassiterite (8-12%) in a vessel. Bismuth bronze and black bronze work too."]},
+        {"key": "bronze_anvil", "title": "Bronze Anvil", "subtitle": "For brass and iron", "item": "tfc:metal/anvil/bronze", "deps": ["bronze", "copper_anvil"],
+         "desc": ["A tier-2 anvil works brass and bronze; wrought iron needs it too."]},
+        {"key": "brass", "title": "Brass", "subtitle": "Copper and zinc", "item": "tfc:metal/ingot/brass", "deps": ["copper"], "big": true,
+         "desc": ["Alloy copper (88-92%) with zinc from sphalerite (8-12%). Brass is Create's precision metal and the airship metal."]},
+        {"key": "charcoal", "title": "Charcoal", "subtitle": "Fuel that burns hot", "item": "minecraft:charcoal", "deps": ["firepit"],
+         "desc": ["Stack logs in a pit, cover them and light them: a charcoal pit. Charcoal is hot enough for a forge, the bloomery and the blast furnace."]}
+      ]
+    },
+    {
+      "key": "create", "title": "Create", "icon": "create:cogwheel",
+      "quests": [
+        {"key": "andesite_alloy", "title": "Andesite Alloy", "subtitle": "Create starts here", "item": "create:andesite_alloy", "deps": ["bronze"], "big": true,
+         "desc": ["In this pack andesite alloy takes any TFC igneous extrusive rock (andesite, basalt, dacite or rhyolite; raw or cobble) plus zinc or bronze nuggets.",
+                  "",
+                  "Craft an ingot into nine nuggets."]},
+        {"key": "cogwheel", "title": "Shafts and Cogwheels", "subtitle": "Moving parts", "item": "create:cogwheel", "deps": ["andesite_alloy"],
+         "desc": ["Shafts from andesite alloy, cogwheels from shafts and planks. TFC workbenches count as crafting tables everywhere."]},
+        {"key": "water_wheel", "title": "Power", "subtitle": "A water wheel", "item": "create:water_wheel", "deps": ["cogwheel"],
+         "desc": ["Put a water wheel in a river. TFC: Real World's rivers follow real rivers."]},
+        {"key": "millstone", "title": "Millstone", "subtitle": "Grinding ore", "item": "create:millstone", "deps": ["water_wheel"],
+         "desc": ["Besides Create's usual milling, it grinds TFC ores into GregTech crushed ore at TFC's own yield: a rich piece gives a crushed ore 35% of the time, a normal one 25%."]},
+        {"key": "belts", "title": "Belts", "subtitle": "Leather or burlap", "item": "create:belt_connector", "deps": ["water_wheel"],
+         "desc": ["TFC worlds have no vanilla kelp, so belts, the spout, funnels, tunnels and pulleys take leather, burlap cloth or dried kelp."]},
+        {"key": "pump", "title": "Mechanical Pump", "subtitle": "The steam age needs it", "item": "create:mechanical_pump", "deps": ["cogwheel", "copper_anvil"],
+         "desc": ["Every GregTech boiler is built around a Create mechanical pump, so GregTech's steam age starts here."]},
+        {"key": "brass_casing", "title": "Brass Casing", "subtitle": "Precision machinery", "item": "create:brass_casing", "deps": ["brass", "andesite_alloy"],
+         "desc": ["A brass sheet on a stripped log (TFC logs count). Propellers, smart machines and airships build on it."]},
+        {"key": "press", "title": "Mechanical Press", "subtitle": "Heavy machines", "item": "create:mechanical_press", "deps": ["wrought_iron_double", "water_wheel"], "big": true,
+         "desc": ["Takes a TFC wrought iron double sheet. Presses ingots into GregTech plates one for one (by hand, GregTech takes two ingots per plate)."]},
+        {"key": "fan", "title": "Encased Fan", "subtitle": "Bulk smelting", "item": "create:encased_fan", "deps": ["wrought_iron"],
+         "desc": ["Blowing through lava or fire smelts items like a furnace: crushed copper becomes copper ingots. Crushed iron ores become cast iron; only the bloomery makes wrought iron."]},
+        {"key": "saw", "title": "Mechanical Saw", "subtitle": "Wires", "item": "create:mechanical_saw", "deps": ["wrought_iron"],
+         "desc": ["Slits a GregTech plate into two single wires (copper, tin, red alloy, gold, ...), GregTech's wiremill rate without electricity."]},
+        {"key": "crushing_wheels", "title": "Crushing Wheels", "subtitle": "Ore at GregTech's rate", "item": "create:crushing_wheel", "deps": ["brass_casing", "wrought_iron"],
+         "desc": ["Crush TFC ores into GregTech crushed ore at the macerator's rate, twice TFC's yield: a rich piece gives a crushed ore 70% of the time."]}
+      ]
+    },
+    {
+      "key": "iron", "title": "Iron and Steel", "icon": "tfc:metal/ingot/wrought_iron",
+      "quests": [
+        {"key": "bloomery", "title": "Bloomery", "subtitle": "The only way to wrought iron", "item": "tfc:bloomery", "deps": ["bronze_anvil", "charcoal"],
+         "desc": ["Built from bronze double sheets, with charcoal and iron ore inside.",
+                  "",
+                  "Wrought iron comes only from the bloomery: anything iron that is smelted or melted (GregTech's furnaces, Create's fan, TFC heat) becomes cast iron."]},
+        {"key": "wrought_iron", "title": "Wrought Iron", "subtitle": "Iron means wrought iron", "item": "tfc:metal/ingot/wrought_iron", "deps": ["bloomery"], "big": true,
+         "desc": ["Refine the bloom on the anvil. In this pack every iron ingot, plate and rod is TFC wrought iron."]},
+        {"key": "wrought_iron_double", "title": "Wrought Iron Double Sheet", "subtitle": "For the press", "item": "tfc:metal/double_sheet/wrought_iron", "deps": ["wrought_iron"],
+         "desc": ["Weld two wrought iron sheets. Create's mechanical press needs one."]},
+        {"key": "blast_furnace", "title": "Blast Furnace", "subtitle": "Pig iron", "item": "tfc:blast_furnace", "deps": ["wrought_iron"],
+         "desc": ["TFC's blast furnace turns iron ore, charcoal and flux into pig iron. GregTech's electric blast furnace is later built from one."]},
+        {"key": "pig_iron", "title": "Pig Iron", "subtitle": "On the way to steel", "item": "tfc:metal/ingot/pig_iron", "deps": ["blast_furnace"],
+         "desc": ["Cast the blast furnace's molten pig iron into ingots. Pig iron is the only way to steel, whether worked on the anvil or refined in GregTech's primitive blast furnace."]},
+        {"key": "steel", "title": "Steel", "subtitle": "Only from pig iron", "item": "tfc:metal/ingot/steel", "deps": ["pig_iron"], "big": true,
+         "desc": ["Work pig iron on the anvil into high-carbon steel and then steel, or refine pig iron with charcoal or coke in GregTech's primitive blast furnace."]}
+      ]
+    },
+    {
+      "key": "steam", "title": "GregTech Steam", "icon": "gtceu:lp_steam_solid_boiler",
+      "quests": [
+        {"key": "fire_bricks", "title": "Fire Bricks", "subtitle": "Fireboxes", "item": "tfc:fire_bricks", "deps": ["vessel"],
+         "desc": ["Fire clay bricks, fired and set with mortar. GregTech's steam machines use them where they wanted a vanilla furnace."]},
+        {"key": "boiler", "title": "Steam Boiler", "subtitle": "GregTech begins", "item": "gtceu:lp_steam_solid_boiler", "deps": ["pump", "fire_bricks", "bronze"], "big": true,
+         "desc": ["Bronze plates, TFC fire bricks and a Create mechanical pump. It burns logs or charcoal. Every steam machine runs on boiler steam, and later the steam turbine turns it into electricity."]},
+        {"key": "steam_macerator", "title": "Steam Macerator", "subtitle": "Twice the ore", "item": "gtceu:lp_steam_macerator", "deps": ["boiler"],
+         "desc": ["Crushes TFC ore pieces into GregTech crushed ore at twice TFC's yield: 5 small, 10 poor, 2 normal or 10 rich pieces give 1, 3, 1 or 7 crushed ores. Mineral and gem ores give 2 each."]},
+        {"key": "crushed_ore", "title": "Ore Processing", "subtitle": "Crushed ore", "item": "gtceu:crushed_copper_ore", "deps": ["millstone"],
+         "desc": ["Crushed ore comes from Create's millstone and crushing wheels or GregTech's macerator. Wash it in a cauldron or ore washer, smelt it in a steam furnace or with Create's fan, or keep processing it for byproducts. Crushed hematite, magnetite, limonite and pyrite smelt into cast iron."]},
+        {"key": "steam_alloy_smelter", "title": "Steam Alloy Smelter", "subtitle": "Red alloy and rubber", "item": "gtceu:lp_steam_alloy_smelter", "deps": ["boiler"],
+         "desc": ["Runs GregTech's alloy recipes on steam: red alloy from copper and redstone (grind cinnabar or cryolite in a TFC quern), rubber from raw rubber and sulfur."]},
+        {"key": "rubber", "title": "Rubber", "subtitle": "For cables", "item": "gtceu:rubber_ingot", "deps": ["steam_alloy_smelter", "steam_macerator"],
+         "desc": ["Sticky resin from GregTech's rubber trees goes into a steam extractor for raw rubber; alloy-smelt it with sulfur (crush TFC sulfur or pyrite). Create's press turns rubber into plates."]},
+        {"key": "pbf", "title": "Primitive Blast Furnace", "subtitle": "Faster steel", "item": "gtceu:primitive_blast_furnace", "deps": ["blast_furnace"],
+         "desc": ["Refines TFC pig iron with charcoal, coal or coke into steel, faster than working it on the anvil. It takes pig iron only."]},
+        {"key": "hp_boiler", "title": "High-Pressure Steam", "subtitle": "Steel boilers", "item": "gtceu:hp_steam_solid_boiler", "deps": ["steel", "boiler"],
+         "desc": ["Steel boilers make steam faster; high-pressure steam machines run at full speed."]}
+      ]
+    },
+    {
+      "key": "lv", "title": "Electricity", "icon": "gtceu:lv_machine_hull",
+      "quests": [
+        {"key": "lv_hull", "title": "LV Machine Hull", "subtitle": "Steel and cable", "item": "gtceu:lv_machine_hull", "deps": ["steel", "rubber"], "big": true,
+         "desc": ["Steel plates and tin cable (tin wire covered in rubber). Every LV machine starts as a hull."]},
+        {"key": "lv_motor", "title": "LV Motor", "subtitle": "Around a Create shaft", "item": "gtceu:lv_electric_motor", "deps": ["rubber", "cogwheel"],
+         "desc": ["GregTech's LV motors are built around two Create shafts, with copper wire and a magnetic iron rod."]},
+        {"key": "steam_turbine", "title": "Steam Turbine", "subtitle": "Electricity", "item": "gtceu:lv_steam_turbine", "deps": ["lv_hull", "lv_motor", "boiler"], "big": true,
+         "desc": ["Electricity comes from boiler steam: feed an LV steam turbine from your boilers and cable it to your machines."]},
+        {"key": "lv_parts", "title": "Pumps and Pistons", "subtitle": "Create inside", "item": "gtceu:lv_electric_pump", "extra_items": ["gtceu:lv_electric_piston"], "deps": ["lv_motor", "pump"],
+         "desc": ["LV pumps contain a Create mechanical pump, LV pistons a Create cogwheel."]},
+        {"key": "circuit", "title": "Circuits", "subtitle": "Electronic circuit", "item": "gtceu:basic_electronic_circuit", "deps": ["steam_alloy_smelter", "lv_hull"],
+         "desc": ["Vacuum tubes, resistors and red alloy cable on a circuit board. Circuits gate every LV machine."]},
+        {"key": "assembler", "title": "Assembler", "subtitle": "GregTech's workhorse", "item": "gtceu:lv_assembler", "deps": ["circuit", "lv_parts", "steam_turbine"],
+         "desc": ["Most of GregTech's LV recipes go through the assembler."]},
+        {"key": "ebf", "title": "Electric Blast Furnace", "subtitle": "The next tier", "item": "gtceu:electric_blast_furnace", "deps": ["circuit", "blast_furnace", "steam_turbine"], "big": true,
+         "desc": ["Built from TFC's blast furnace, heat-proof invar casings and LV circuits. It needs cupronickel coils and electricity to run."]}
+      ]
+    },
+    {
+      "key": "airships", "title": "Airships", "icon": "aeronautics:propeller_bearing",
+      "quests": [
+        {"key": "physics_assembler", "title": "Physics Assembler", "subtitle": "Builds that move", "item": "simulated:physics_assembler", "deps": ["cogwheel"],
+         "desc": ["Turns a build into a moving physics contraption: carts, boats and airships. Ground vehicles need no brass."]},
+        {"key": "envelope", "title": "Envelopes", "subtitle": "The balloon", "item": "aeronautics:white_envelope", "deps": ["brass"],
+         "desc": ["Hot-air envelopes take wool and brass nuggets: two nuggets for four envelopes by hand, one for three with a deployer. Build them into a closed balloon."]},
+        {"key": "burner", "title": "Hot-Air Burner", "subtitle": "Lift", "item": "aeronautics:adjustable_burner", "deps": ["envelope", "wrought_iron"], "big": true,
+         "desc": ["Fills a balloon with hot air. It runs on redstone and burns no fuel. Brass plates, wrought iron plates and any coal or charcoal."]},
+        {"key": "propeller", "title": "Propeller Bearing", "subtitle": "Thrust", "item": "aeronautics:propeller_bearing", "deps": ["brass_casing", "wrought_iron"], "big": true,
+         "desc": ["Every propeller sits on brass casing. Spin it with any Create power on board."]},
+        {"key": "engine", "title": "Portable Engine", "subtitle": "Power on board", "item": "simulated:red_portable_engine", "deps": ["fire_bricks", "brass", "press"],
+         "desc": ["A fuel-burning rotation source for vehicles: an engine assembly, a brass plate and TFC fire bricks."]},
+        {"key": "steam_vent", "title": "Steam Lift", "subtitle": "Optional", "item": "aeronautics:steam_vent", "deps": ["brass"], "optional": true,
+         "desc": ["A brass plate on a copper block. Like a Create steam engine it sits on a heated, watered fluid-tank boiler, and vents the steam into the balloon above: another way to lift."]}
+      ]
+    }
+  ]
+}

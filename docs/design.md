@@ -21,6 +21,7 @@ decisions as rules; when a rule breaks, the explorer shows the shortcut.
 | World scale | **~200 m per block, the maximum** TFC: Real World allows: map radius 100,000 × 50,000 (200,000 × 100,000 blocks). Ore and rock density per area are unchanged; climate zones and travel distances grow. Set in the pack's `config/tfc_real_world/common.toml`, which TFC: Real World copies into each new world's `serverconfig/` and uses as the create-world screen's defaults (NeoForge's `defaultconfigs/` isn't used by this mod). Worlds created before keep their own scale. |
 | Starting place | Single-player: the latitude/longitude fields on TFC: Real World's create-world tab (default Rome). Servers: a **once-per-player start command**, `/startat <latitude> <longitude>` (south and west negative, e.g. `/startat 59.33 18.07` for Stockholm), projects the point like world generation does, picks dry ground at or within 48 blocks of it, teleports the player there and makes it their respawn point. Open water is refused without using up the command. Operators can use it freely, and `/startat reset <player>` gives a player their use back. Used commands are recorded in the world (`kubejs_persistent_data.nbt`), so they survive restarts and deaths. |
 | Players | **Both** single-player and small servers; the headless smoke test stays part of every change. |
+| Guidance | **An FTB Quests book**, "The Route": a chapter per era (stone and copper, bronze and brass, Create, iron and steel, GregTech steam, electricity, airships), one quest per milestone with what this pack changes about it. Generated from `tools/quests/route.json` by `tools/quests/build.py`, which also checks the route against the progression checker. EMI shows every recipe: JEI is in the pack so EMI can show Create's recipe types, and `kubejs/assets/gtceu/lang/` names GregTech's recipe tabs, which the 8.0 nightly leaves untranslated. |
 
 ## Known gaps (from the recipe explorer)
 
@@ -46,6 +47,7 @@ After each step: `tools/recipes/dump.py --label <step>`, compare dumps, check th
 
 - **Almost Unified 1.4.2 doesn't unify GregTech 8.0 recipes.** Its GregTech unifier reads the old capability keys (`item`), while GregTech 8.0 writes `gtceu:item`. Workaround: `kubejs/server_scripts/unification/gregtech.js` asks Almost Unified for each tag's winning item and applies it to GregTech recipes.
 - **GregTech 8.0 drops its recycling recipes when any KubeJS recipe script exists.** `GTRecipes` skips recycling generation when KubeJS has recipe listeners, but the 1.21 KubeJS plugin no longer runs it afterwards (1.20.1 did, in `injectRuntimeRecipes`). About 3,300 macerator/arc furnace recycling recipes are missing; none are needed for progression. Recheck with a dump comparison after GregTech updates.
+- **GregTech 8.0 nightlies ship no names for recipe categories and types** (`recipe_category.gtceu.*`, `gtceu.<type>`), so recipe viewers show raw keys. Workaround: `kubejs/assets/gtceu/lang/en_us.json`; drop entries once GregTech ships them.
 - **TFC clay-ball recipes fail after `/reload`** (stack size 16 vs. outputs of 20–32); fine after a restart.
 
 ## Open questions

@@ -1,0 +1,274 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "create"
+	group: ""
+	icon: {
+		count: 1
+		id: "create:cogwheel"
+	}
+	id: "4F72E72B760CB007"
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"26CB1992A45CFEF6"
+			]
+			icon: {
+				count: 1
+				id: "create:andesite_alloy"
+			}
+			id: "244DFE17A8DDAF4A"
+			size: 1.5d
+			tasks: [
+				{
+					count: 1
+					id: "30E263F9558DEF0C"
+					item: {
+						count: 1
+						id: "create:andesite_alloy"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: -1.75d
+		}
+		{
+			dependencies: [
+				"244DFE17A8DDAF4A"
+			]
+			icon: {
+				count: 1
+				id: "create:cogwheel"
+			}
+			id: "26928A83F63777A9"
+			tasks: [
+				{
+					count: 1
+					id: "5D8CDDBB95932D74"
+					item: {
+						count: 1
+						id: "create:cogwheel"
+					}
+					type: "item"
+				}
+			]
+			x: 2.0d
+			y: -0.875d
+		}
+		{
+			dependencies: [
+				"26928A83F63777A9"
+			]
+			icon: {
+				count: 1
+				id: "create:water_wheel"
+			}
+			id: "6BD08720DB4FE695"
+			tasks: [
+				{
+					count: 1
+					id: "3A2207B4A577D90A"
+					item: {
+						count: 1
+						id: "create:water_wheel"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: -1.75d
+		}
+		{
+			dependencies: [
+				"6BD08720DB4FE695"
+			]
+			icon: {
+				count: 1
+				id: "create:millstone"
+			}
+			id: "5101210367294D7B"
+			tasks: [
+				{
+					count: 1
+					id: "45407764A1554462"
+					item: {
+						count: 1
+						id: "create:millstone"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: -1.75d
+		}
+		{
+			dependencies: [
+				"6BD08720DB4FE695"
+			]
+			icon: {
+				count: 1
+				id: "create:belt_connector"
+			}
+			id: "175CB60182CF29B9"
+			tasks: [
+				{
+					count: 1
+					id: "3EF76EF65E657C7E"
+					item: {
+						count: 1
+						id: "create:belt_connector"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"26928A83F63777A9"
+				"58737E4CE402E036"
+			]
+			icon: {
+				count: 1
+				id: "create:mechanical_pump"
+			}
+			id: "5B177F2400CD6242"
+			tasks: [
+				{
+					count: 1
+					id: "446D6C1C2AE69242"
+					item: {
+						count: 1
+						id: "create:mechanical_pump"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"542F4F6916343D21"
+				"244DFE17A8DDAF4A"
+			]
+			icon: {
+				count: 1
+				id: "create:brass_casing"
+			}
+			id: "149221361E259C6B"
+			tasks: [
+				{
+					count: 1
+					id: "4A8A0A44297DFE06"
+					item: {
+						count: 1
+						id: "create:brass_casing"
+					}
+					type: "item"
+				}
+			]
+			x: 2.0d
+			y: 0.875d
+		}
+		{
+			dependencies: [
+				"3DDCFC0DA1D27547"
+				"6BD08720DB4FE695"
+			]
+			icon: {
+				count: 1
+				id: "create:mechanical_press"
+			}
+			id: "46A24390F82ABD8C"
+			size: 1.5d
+			tasks: [
+				{
+					count: 1
+					id: "56EE9B7921D5C216"
+					item: {
+						count: 1
+						id: "create:mechanical_press"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 1.75d
+		}
+		{
+			dependencies: [
+				"00695D396C7FED88"
+			]
+			icon: {
+				count: 1
+				id: "create:encased_fan"
+			}
+			id: "35DB3DB9B82613B7"
+			tasks: [
+				{
+					count: 1
+					id: "55200A39537F540E"
+					item: {
+						count: 1
+						id: "create:encased_fan"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"00695D396C7FED88"
+			]
+			icon: {
+				count: 1
+				id: "create:mechanical_saw"
+			}
+			id: "5CE73B7ADDB6F42B"
+			tasks: [
+				{
+					count: 1
+					id: "0B881CDA15D50104"
+					item: {
+						count: 1
+						id: "create:mechanical_saw"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 1.75d
+		}
+		{
+			dependencies: [
+				"149221361E259C6B"
+				"00695D396C7FED88"
+			]
+			icon: {
+				count: 1
+				id: "create:crushing_wheel"
+			}
+			id: "7E00252CBF0B6958"
+			tasks: [
+				{
+					count: 1
+					id: "11888C041EFD36DA"
+					item: {
+						count: 1
+						id: "create:crushing_wheel"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: 1.75d
+		}
+	]
+}

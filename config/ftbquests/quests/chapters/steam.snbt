@@ -1,0 +1,204 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "steam"
+	group: ""
+	icon: {
+		count: 1
+		id: "gtceu:lp_steam_solid_boiler"
+	}
+	id: "65A3A9542E93C664"
+	order_index: 5
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"07C81F40FBB9407D"
+			]
+			icon: {
+				count: 1
+				id: "tfc:fire_bricks"
+			}
+			id: "55B9E873A37B07AC"
+			tasks: [
+				{
+					count: 1
+					id: "46772C526F24D41D"
+					item: {
+						count: 1
+						id: "tfc:fire_bricks"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: -1.75d
+		}
+		{
+			dependencies: [
+				"5B177F2400CD6242"
+				"55B9E873A37B07AC"
+				"26CB1992A45CFEF6"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lp_steam_solid_boiler"
+			}
+			id: "64C18F9BF387363D"
+			size: 1.5d
+			tasks: [
+				{
+					count: 1
+					id: "6FCB97B74142FB8E"
+					item: {
+						count: 1
+						id: "gtceu:lp_steam_solid_boiler"
+					}
+					type: "item"
+				}
+			]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"64C18F9BF387363D"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lp_steam_macerator"
+			}
+			id: "7A75798DC8627620"
+			tasks: [
+				{
+					count: 1
+					id: "37107A78AE5DD476"
+					item: {
+						count: 1
+						id: "gtceu:lp_steam_macerator"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: -1.75d
+		}
+		{
+			dependencies: [
+				"5101210367294D7B"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:crushed_copper_ore"
+			}
+			id: "2B9F4179B0245299"
+			tasks: [
+				{
+					count: 1
+					id: "6FD2A551931B3968"
+					item: {
+						count: 1
+						id: "gtceu:crushed_copper_ore"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"64C18F9BF387363D"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:lp_steam_alloy_smelter"
+			}
+			id: "06D9D74614BC03F5"
+			tasks: [
+				{
+					count: 1
+					id: "3E3F92C5A57FA808"
+					item: {
+						count: 1
+						id: "gtceu:lp_steam_alloy_smelter"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"06D9D74614BC03F5"
+				"7A75798DC8627620"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:rubber_ingot"
+			}
+			id: "7BE9F40DE554360A"
+			tasks: [
+				{
+					count: 1
+					id: "07BA79590BDF26F0"
+					item: {
+						count: 1
+						id: "gtceu:rubber_ingot"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"194A04058BBC0B1A"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:primitive_blast_furnace"
+			}
+			id: "55EE9925E60E0986"
+			tasks: [
+				{
+					count: 1
+					id: "14CD6BB173CE2B9C"
+					item: {
+						count: 1
+						id: "gtceu:primitive_blast_furnace"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 1.75d
+		}
+		{
+			dependencies: [
+				"085716E91923B183"
+				"64C18F9BF387363D"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:hp_steam_solid_boiler"
+			}
+			id: "4CBBBA90E6A30001"
+			tasks: [
+				{
+					count: 1
+					id: "5EDFBAE1E0BFDEF2"
+					item: {
+						count: 1
+						id: "gtceu:hp_steam_solid_boiler"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: 1.75d
+		}
+	]
+}

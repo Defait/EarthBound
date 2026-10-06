@@ -15,12 +15,13 @@ All tools run with the venv in `tools/.venv` from the repo root, for example
 | `worldview/serve.py` | Browser viewer for a save: map (surface, height, TFC temperature/rainfall, lat/long grid), slices, Y distribution with host rock, chunk heatmaps. `--compare OTHER` adds a world B. |
 | `recipes/dump.py` | Dumps every recipe, tag and block loot table from the pack via a dev-only KubeJS script on the test server, into `tools/.data/dumps/`; `index.json` also counts GregTech's ore veins (how many still generate). `--label NAME` to tag a before/after dump. |
 | `recipes/serve.py` | Recipe explorer: how anything is made or used, first route from the world, why something is unreachable, duplicate materials, progression rules (`recipes/progression.json`), and dump comparison. `--world` picks the world used as the starting point. |
+| `quests/build.py` | Builds the FTB Quests book (`config/ftbquests/quests/`) from `quests/route.json`, then checks the route against the progression checker: every quest item exists and is reachable, and no quest comes before its prerequisites. Edit `route.json`, not the generated files. |
 | `gt_update.py` | Reports newer GregTech nightlies (commits in between, dependency check against the pack); `--apply` swaps the pack's pinned build. |
 | `mod_report.py` | Available updates with changelogs, client/server side audit against Modrinth, and license flags for redistribution. |
 
 Typical loops:
 
-- After any mod or script change: `smoke.py`, then `recipes/dump.py` and check the explorer's Progression page.
+- After any mod or script change: `smoke.py`, then `recipes/dump.py` and check the explorer's Progression page, then `quests/build.py` (the route check uses the new dump).
 - Before and after a KubeJS integration script: `recipes/dump.py --label before`, change, `recipes/dump.py --label after`, then *Compare dumps*.
 - After a KubeJS, TFC: Real World or NeoForge update: `startat_test.py` too (the command leans on their internals).
 - World generation changes: `pregen.py --fresh --seed same-seed`, then `worldview/serve.py tools/.server/world-pregen --compare <older copy>`.

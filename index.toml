@@ -13,6 +13,46 @@ file = "config/almostunified/unification/materials.json"
 hash = "e55d4625f22184ff768d4ec44720786eb72db1da15a75693c9e39fd9a9a6d846"
 
 [[files]]
+file = "config/ftbquests/quests/chapters/airships.snbt"
+hash = "055158481aa5d30d3389e5b17d4231a4161a3ffec5f939eb0418a69168225aa9"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/bronze.snbt"
+hash = "b8add4f2dd7f234c8c6728a2bd9aff103d3a6234023cd97c0e0d49f2749f943a"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/create.snbt"
+hash = "b1e53c42200826dbcef8d25a0d3dcf4de50555f4289856843f8266c1dc4aa1b1"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/iron.snbt"
+hash = "de39fe8cadbaeb247c28423705f8627da627835804b5afe4375d7683d099e22a"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/lv.snbt"
+hash = "d26b9d109c61c61cd3431c1bfd6cc796ea8a7f61821645a920fe870221e5c98d"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/steam.snbt"
+hash = "619ef0ae8fdf69eb566cd573e13f865d9f80f0a3d6cabb0c4d423d4ea5dde3cf"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/stone.snbt"
+hash = "31d2b5c1dd1451426d8dc083ef3a9445466d6095e6ce87a1fbeeafaca06d4088"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/welcome.snbt"
+hash = "d011faac8b9b7fb0b1718f59f409ad1c6d9bb657f470583f7043fd6d19d71021"
+
+[[files]]
+file = "config/ftbquests/quests/data.snbt"
+hash = "92909a371debd092a96b182bb9c9a79a6b9aed8ef116c34b79bd1d573b440063"
+
+[[files]]
+file = "config/ftbquests/quests/lang/en_us.snbt"
+hash = "833bf6a12c36db4a6e3c8f6db9089756b26fe4ba7bb459df491c1844683debce"
+
+[[files]]
 file = "config/tfc_real_world/common.toml"
 hash = "59fb30e4aa341e661cc2e3aaa464e1801f6b87d71c703fed3f343e349be8b604"
 
@@ -102,6 +142,11 @@ hash = "3805fe2877cffdae5e7bf74d85069a2535daa39a0f3ed766755be49294a07680"
 metafile = true
 
 [[files]]
+file = "mods/architectury-api.pw.toml"
+hash = "657a01a86bbf8617e4726c77df08f708e43a3db12db74b837eebd8eb1d93faae"
+metafile = true
+
+[[files]]
 file = "mods/better-advanced-tooltips.pw.toml"
 hash = "03084ff4f74cedc1b8ac6c85a98842f75956fb4fa811d285d8ca7caa8d54da5d"
 metafile = true
@@ -124,6 +169,21 @@ metafile = true
 [[files]]
 file = "mods/emi.pw.toml"
 hash = "67bb77eae0b644960be3b1074178ceb5d54facbb42f326981b9d94625238a54a"
+metafile = true
+
+[[files]]
+file = "mods/ftb-library-forge.pw.toml"
+hash = "19d86081a1c7654a91f437d85ea34af4e3f2b899c8e0e50d48a04ca97babf7b4"
+metafile = true
+
+[[files]]
+file = "mods/ftb-quests-forge.pw.toml"
+hash = "93330f6ec85532067df176c6baee0e0f6d685c78088b1a2217726f6421899148"
+metafile = true
+
+[[files]]
+file = "mods/ftb-teams-forge.pw.toml"
+hash = "c21c2308684a75cda7dd9d557d129c9f89f49be527da3d5aa675fff444c11f5e"
 metafile = true
 
 [[files]]

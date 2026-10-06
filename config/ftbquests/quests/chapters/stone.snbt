@@ -1,0 +1,121 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "stone"
+	group: ""
+	icon: {
+		count: 1
+		id: "tfc:stone/axe/igneous_extrusive"
+	}
+	id: "291C5D019710D23E"
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"4CCDA49060A81CA3"
+			]
+			icon: {
+				count: 1
+				id: "tfc:stone/axe/igneous_extrusive"
+			}
+			id: "713241BB5FF5A95F"
+			tasks: [
+				{
+					id: "548DFA020F0CC5C2"
+					type: "checkmark"
+				}
+			]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"713241BB5FF5A95F"
+			]
+			icon: {
+				count: 1
+				id: "tfc:firepit"
+			}
+			id: "4B98A0DD1B3B274A"
+			tasks: [
+				{
+					id: "05C84FAD17812130"
+					type: "checkmark"
+				}
+			]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"4B98A0DD1B3B274A"
+			]
+			icon: {
+				count: 1
+				id: "tfc:ceramic/vessel"
+			}
+			id: "07C81F40FBB9407D"
+			tasks: [
+				{
+					count: 1
+					id: "59B3AFC1A2AFBC82"
+					item: {
+						count: 1
+						id: "tfc:ceramic/vessel"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"07C81F40FBB9407D"
+			]
+			icon: {
+				count: 1
+				id: "tfc:metal/ingot/copper"
+			}
+			id: "3DB2937CFB46B93D"
+			size: 1.5d
+			tasks: [
+				{
+					count: 1
+					id: "556BBC4490F1FE76"
+					item: {
+						count: 1
+						id: "tfc:metal/ingot/copper"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"3DB2937CFB46B93D"
+			]
+			icon: {
+				count: 1
+				id: "tfc:metal/anvil/copper"
+			}
+			id: "58737E4CE402E036"
+			tasks: [
+				{
+					count: 1
+					id: "62CBE483658BC43E"
+					item: {
+						count: 1
+						id: "tfc:metal/anvil/copper"
+					}
+					type: "item"
+				}
+			]
+			x: 8.0d
+			y: 0.0d
+		}
+	]
+}
