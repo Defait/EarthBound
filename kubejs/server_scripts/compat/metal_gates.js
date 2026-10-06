@@ -5,7 +5,8 @@
 //   iron in TFC (wrought iron included). GregTech's furnace recipes turned crushed hematite,
 //   magnetite, limonite and pyrite, their dusts, and iron dust (a byproduct of crushing magnetite)
 //   straight into iron, which is wrought iron here. GregTech's steam furnace and Create's fan run
-//   those recipes, so they would have skipped the bloomery.
+//   those recipes, so they would have skipped the bloomery. Create's crushed raw iron and vanilla's
+//   iron ore and raw iron smelt the same way.
 // - Chainmail no longer smelts into iron nuggets. Create makes chains from zinc and GregTech makes
 //   chainmail from chains, so vanilla's recycling recipe turned zinc into iron.
 // - GregTech's primitive blast furnace refines TFC pig iron into steel (instead of iron, which is
@@ -17,7 +18,11 @@ const PBF = 'gtceu:primitive_blast_furnace'
 
 ServerEvents.recipes(event => {
   // Unification may not have run yet, so match both the vanilla and the TFC iron ingot.
-  var oreSmelting = { type: 'minecraft:smelting', id: /^gtceu:smelting\/smelt_/ }
+  var oreSmelting = [
+    { type: 'minecraft:smelting', id: /^gtceu:smelting\/smelt_/ },
+    { id: /^create:(smelting|blasting)\/iron_ingot_from_crushed$/ },
+    { id: /^minecraft:iron_ingot_from_(smelting|blasting)_(raw_iron|iron_ore|deepslate_iron_ore)$/ }
+  ]
   ;['minecraft:iron_ingot', 'tfc:metal/ingot/wrought_iron'].forEach(iron => {
     event.replaceOutput(oreSmelting, iron, 'tfc:metal/ingot/cast_iron')
   })
