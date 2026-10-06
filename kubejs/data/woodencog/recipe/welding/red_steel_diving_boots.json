@@ -1,0 +1,14 @@
+{
+  "_comment": "Fixed copy of Woodencog's recipe (docs/design.md, Upstream issues): its result used the old item-stack format ('item'), which TFC 4 can't read. Red steel upgrades Create's copper diving gear to its netherite tier, which otherwise needs the Nether.",
+  "type": "tfc:welding",
+  "first_input": {
+    "item": "tfc:metal/boots/red_steel"
+  },
+  "second_input": {
+    "item": "create:copper_diving_boots"
+  },
+  "tier": 5,
+  "result": {
+    "id": "create:netherite_diving_boots"
+  }
+}

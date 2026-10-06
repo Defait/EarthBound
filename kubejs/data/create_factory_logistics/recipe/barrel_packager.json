@@ -1,0 +1,8 @@
+{
+  "_comment": "Disabled (docs/design.md, Upstream issues): a recipe for the barrel packager, which this Factory Logistics build doesn't register; it could never load and only logged an error.",
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:false"
+    }
+  ]
+}

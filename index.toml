@@ -97,6 +97,18 @@ file = "kubejs/config/web_server.json"
 hash = "74f01c3b886aa9dd2ebc49781ddb0541b974ad34e2f41e7a566b98d9182abd48"
 
 [[files]]
+file = "kubejs/data/create_factory_logistics/recipe/barrel_packager.json"
+hash = "8311ce8cbc9a7a6128a99ea0b7a01b834de325d9bd77a9480b86cf0acea07c0c"
+
+[[files]]
+file = "kubejs/data/create_factory_logistics/recipe/factory_chemical_gauge.json"
+hash = "ad685004cef41d6fbc9f09d4ca46b9b5d473f71226dae28a80e26d962983ab70"
+
+[[files]]
+file = "kubejs/data/createdeco/recipe/placard.json"
+hash = "f32f0ff27c65589c75964025745a66cf8ca5bbf4061046e7533f3c0861714da0"
+
+[[files]]
 file = "kubejs/data/tfc/recipe/crafting/clay_ball_5.json"
 hash = "5f5056da3174f4bfd139698b2bc3b7a68b60856c9bef177423dd8ae5c44f8a85"
 
@@ -113,6 +125,54 @@ file = "kubejs/data/tfc/recipe/crafting/clay_ball_8.json"
 hash = "5f5056da3174f4bfd139698b2bc3b7a68b60856c9bef177423dd8ae5c44f8a85"
 
 [[files]]
+file = "kubejs/data/woodencog/recipe/cutting/slab/loam_brick_slab.json"
+hash = "ea5b609bf12c7743b53743361e44bdb613b51246aec5200bedf701bd071d38c6"
+
+[[files]]
+file = "kubejs/data/woodencog/recipe/cutting/slab/sandy_loam_brick_slab.json"
+hash = "ea5b609bf12c7743b53743361e44bdb613b51246aec5200bedf701bd071d38c6"
+
+[[files]]
+file = "kubejs/data/woodencog/recipe/cutting/slab/silt_brick_slab.json"
+hash = "ea5b609bf12c7743b53743361e44bdb613b51246aec5200bedf701bd071d38c6"
+
+[[files]]
+file = "kubejs/data/woodencog/recipe/cutting/slab/silty_loam_brick_slab.json"
+hash = "ea5b609bf12c7743b53743361e44bdb613b51246aec5200bedf701bd071d38c6"
+
+[[files]]
+file = "kubejs/data/woodencog/recipe/cutting/stair/loam_brick_stairs.json"
+hash = "ea5b609bf12c7743b53743361e44bdb613b51246aec5200bedf701bd071d38c6"
+
+[[files]]
+file = "kubejs/data/woodencog/recipe/cutting/stair/sandy_loam_brick_stairs.json"
+hash = "ea5b609bf12c7743b53743361e44bdb613b51246aec5200bedf701bd071d38c6"
+
+[[files]]
+file = "kubejs/data/woodencog/recipe/cutting/stair/silt_brick_stairs.json"
+hash = "ea5b609bf12c7743b53743361e44bdb613b51246aec5200bedf701bd071d38c6"
+
+[[files]]
+file = "kubejs/data/woodencog/recipe/cutting/stair/silty_loam_brick_stairs.json"
+hash = "ea5b609bf12c7743b53743361e44bdb613b51246aec5200bedf701bd071d38c6"
+
+[[files]]
+file = "kubejs/data/woodencog/recipe/milling/quartz.json"
+hash = "d9481f7fac01ef8bf2efbd3817886d3be237e67bad37a6d001ae4aa76aeca6d3"
+
+[[files]]
+file = "kubejs/data/woodencog/recipe/welding/red_steel_diving_boots.json"
+hash = "3ae060c49b4f6235b415460e55fac35e3452b2ed6e6c0320bd76dd844dd706f1"
+
+[[files]]
+file = "kubejs/data/woodencog/recipe/welding/red_steel_diving_helmet.json"
+hash = "547715ebbce58802f397b2068578d9e6787e8b3c431f4a56deaa7677274d24c4"
+
+[[files]]
+file = "kubejs/data/woodencog/recipe/welding/redsteel_backtank.json"
+hash = "a9c47031f81f6cdac52adf84faa81257b2b7b480a090d426f8d26656ceb29b64"
+
+[[files]]
 file = "kubejs/server_scripts/aeronautics/airships.js"
 hash = "1e2a5a5e14b0b4beef928653a81b8e912119156980aeee224598e1d506d87e95"
 
@@ -122,7 +182,7 @@ hash = "0126279db895129cb4db2f9977018789922f46131bbbc91776312f93800108ca"
 
 [[files]]
 file = "kubejs/server_scripts/compat/create_addons.js"
-hash = "40af61047ac042d6c8d854c94a8ab68aeec73c6d3f2505ae517f358a3dd22b27"
+hash = "f1feb0ebd1ec4cc8aa2877c00045a9ae3cdf622bf065ab1d08f6b3a8472436ea"
 
 [[files]]
 file = "kubejs/server_scripts/compat/metal_gates.js"
@@ -130,7 +190,7 @@ hash = "d921bae224c299af03c25d37ddd4e13be38b5d59940fe92918d6079080c8df02"
 
 [[files]]
 file = "kubejs/server_scripts/compat/vanilla_substitutes.js"
-hash = "2165207b47389c14ff2cffd16390a1807efef626d472ef68ed3ec72dfaadd2cc"
+hash = "b9eca79d2225e9a5d417ac6d30c27e0256e3e6ad3e48188df30ec436a75e06d8"
 
 [[files]]
 file = "kubejs/server_scripts/create/entry.js"
@@ -352,11 +412,6 @@ metafile = true
 [[files]]
 file = "mods/rpl.pw.toml"
 hash = "7815e5a589de0c02a62ae83590e1f75f4d0c269e48f2435ce2ac448976ddf49f"
-metafile = true
-
-[[files]]
-file = "mods/sable-tfc-currents.pw.toml"
-hash = "11bdd22dcee5954aae224d20296081dfb694d589a7450cea7e63dda453757a8e"
 metafile = true
 
 [[files]]

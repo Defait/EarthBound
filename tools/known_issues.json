@@ -142,12 +142,8 @@
       "note": "Copycats+ mixes methods into its own copycat classes that already define them; Mixin keeps the class's own"
     },
     {
-      "pattern": "^net\\.minecraft\\.world\\.item\\.crafting\\.RecipeManager: (Error parsing|Parsing error loading) recipe (woodencog:(cutting/(stair|slab)/\\w*(loam|silt)\\w*_brick_\\w+|welding/red_?steel_\\w+|milling/quartz)|createdeco:placard|create_factory_logistics:(barrel_packager|factory_chemical_gauge))",
-      "note": "addon recipes written for other versions or absent mods (Woodencog's TFC mud-brick cutting, red steel diving gear and quartz milling; Create Deco's placard; Factory Logistics' barrel and Mekanism recipes); only those recipes are missing"
-    },
-    {
-      "pattern": "^KubeJS Server: \\w+\\.java#\\d+: Failed to parse recipe '(woodencog|createdeco|create_factory_logistics):[^']*'.* Falling back to vanilla",
-      "note": "KubeJS re-reading addon recipes it can't parse (the ones above, and Woodencog's lye alabaster bricks); vanilla's parse is used"
+      "pattern": "^KubeJS Server: \\w+\\.java#\\d+: Failed to parse recipe 'woodencog:mixing/lye_alabaster_bricks\\[create:mixing\\]'.* Falling back to vanilla",
+      "note": "KubeJS's Create schema can't read this recipe's fluid ingredient; it falls back to the game's own parse, which loads it fine"
     },
     {
       "pattern": "^dev\\.ryanhcode\\.sable\\.Sable: Failed to apply tag physics properties\\. Unknown block: copycats:copycat_catwalk",
@@ -178,8 +174,8 @@
       "note": "TFC picks ingot-pile textures from c:ingots/* tags, and iron ingots are in both c:ingots/iron and c:ingots/wrought_iron; config/tfc-server.toml excludes c:ingots/iron, but the server's first data load runs before server configs are read (it applies from the next reload, and on clients)"
     },
     {
-      "pattern": "^b34tingh34rt\\.sable_tfc_currents\\.SableTfcCurrents: Unable to apply TFC water currents to Sable sublevels",
-      "note": "Sable TFC Currents touches a client class, so it can't hook in on a dedicated server; it works in single-player"
+      "pattern": "^spark: Timed out waiting for world statistics",
+      "note": "spark gathers world statistics in the background; the short-lived test server stops before it finishes"
     }
   ]
 }

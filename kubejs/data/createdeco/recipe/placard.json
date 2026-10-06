@@ -1,0 +1,18 @@
+{
+  "_comment": "Fixed copy of Create Deco's recipe (docs/design.md, Upstream issues): its white dye ingredient was written as an item stack ('id') instead of an ingredient ('item'), so the recipe couldn't load. Washes a coloured placard back to Create's plain one.",
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "dye_placard",
+  "ingredients": [
+    {
+      "tag": "createdeco:placards"
+    },
+    {
+      "item": "minecraft:white_dye"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "create:placard"
+  }
+}

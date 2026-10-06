@@ -9,9 +9,12 @@
 //   line shafts), or either kind of dried kelp.
 // - Blast furnace: GregTech's electric blast furnace is built from TFC's blast furnace instead of
 //   the vanilla one, which TFC worlds can only get from a GregTech assembler.
+// - Coal: GregTech's coal recipes (the coke oven among them) take #c:gems/coal, which only held
+//   vanilla coal. TFC's bituminous coal is the same thing; lignite stays out (a poor coking coal).
 
 ServerEvents.tags('item', event => {
   event.add('pack:belting', ['minecraft:leather', 'tfc:burlap_cloth', 'minecraft:dried_kelp', 'tfc:food/dried_kelp'])
+  event.add('c:gems/coal', 'tfc:ore/bituminous_coal')
 })
 
 ServerEvents.recipes(event => {
