@@ -8,6 +8,10 @@ produced it, so any result can be explained as a chain of recipes.
 
 Rules "A requires B" are checked by banning B (and everything matching it)
 and re-running: if A is still reachable, the explanation is the shortcut.
+
+GregTech machines only count with power (gregtech.power in progression.json):
+each becomes a pseudo node "i:world:powered/..." made from the machine plus
+steam (a boiler) or electricity (a generator running one of its fuel recipes).
 """
 import fnmatch
 import heapq
@@ -54,8 +58,19 @@ class Progression:
         # their outputs may be pseudo nodes such as "i:world:pit_kiln" that stations can require.
         self.actions = list(self.cfg.get("actions", []))
         self.heat_nodes, self.kiln = self._build_heat()
-        self.pseudo = {o if o.startswith(("i:", "f:")) else "i:" + o for a in self.actions for o in a["outputs"]
+        # GregTech power: fuel recipes (boilers, generators) produce pseudo power nodes, and a machine only
+        # counts once it has power (see _powered).
+        self.power = self.cfg.get("gregtech", {}).get("power", {})
+        fuel_outs = [o for outs in self.power.get("fuel_recipes", {}).values() for o in outs]
+        self.pseudo = {o if o.startswith(("i:", "f:")) else "i:" + o for o in [o for a in self.actions for o in a["outputs"]] + fuel_outs
                        if (o.split(":", 1)[1] if o.startswith(("i:", "f:")) else o).startswith("world:")}
+        self._power_recipes = []
+        aliases = self.cfg.get("gregtech", {}).get("machine_aliases", {})
+        self._gt_types = {r["type"] for r in dump.recipes if r["type"].startswith("gtceu:")} | {a for al in aliases.values() for a in al}
+        # Machines that run fuel recipes are the power sources themselves.
+        fuel_names = {n.split(":", 1)[1] for t in self.power.get("fuel_recipes", {}) for n in [t] + aliases.get(t, [])}
+        self._power_exempt = frozenset("i:" + i for i in dump.items if i.startswith("gtceu:") and any(
+            i.split(":", 1)[1] == f or i.split(":", 1)[1].endswith("_" + f) for f in fuel_names))
         self._kind_nodes = {"i": sorted({"i:" + i for i in dump.items} | {p for p in self.pseudo if p[0] == "i"}),
                             "f": sorted("f:" + f for f in dump.fluids)}
         self._match_cache = {}
@@ -63,8 +78,14 @@ class Progression:
         self.missing_machines = Counter()
         self.unknown_patterns = Counter()
         self.recipes = []   # (recipe, [frozenset, ...] requirement slots)
+        fuel_recipes = self.power.get("fuel_recipes", {})
         for r in dump.recipes:
-            if r["skip"] or not r["outputs"]:
+            if r["skip"]:
+                continue
+            if r["type"] in fuel_recipes:
+                extra = [n for o in fuel_recipes[r["type"]] for n in sorted(self.match(o))]
+                r = dict(r, outputs=list(r["outputs"]) + [{"node": n, "n": 1, "chance": 1.0} for n in extra])
+            if not r["outputs"]:
                 continue
             slots = [Req(s["set"], "/".join(s["refs"]) or "?") for s in r["slots"] if s["set"] is not None]
             self.recipes.append((r, slots + self._station(r)))
@@ -73,6 +94,7 @@ class Progression:
             r = {"id": "action:" + a["id"], "type": "world action", "kind": "world action", "slots": [], "params": {},
                  "outputs": [{"node": n, "n": 1, "chance": 1.0} for n in outs], "skip": None, "note": a.get("why", "")}
             self.recipes.append((r, [self._req(q) for q in a["inputs"]]))
+        self.recipes.extend(self._power_recipes)
         self.out_index = defaultdict(list)
         for ri, (r, _) in enumerate(self.recipes):
             for o in r["outputs"]:
@@ -125,7 +147,39 @@ class Progression:
         if spec is None and heat is None:
             self.unmapped_types[t] += 1
             return []
-        return (self._spec_slots(spec, r, t) if spec is not None else []) + ([heat] if heat is not None else [])
+        slots = [self._power_slot(s) for s in self._spec_slots(spec, r, t)] if spec is not None else []
+        return slots + ([heat] if heat is not None else [])
+
+    # ---------------------------------------------------------------- GregTech power
+    def _power_kind(self, node):
+        """'steam', 'electric' or None (no power needed / not a GregTech machine) for an item node."""
+        if not node.startswith("i:gtceu:") or node in self._power_exempt:
+            return None
+        name = node[2:]
+        path = name.split(":", 1)[1]
+        if name in self.power.get("unpowered", []):
+            return None
+        if path.startswith(("lp_steam_", "hp_steam_")) or name in self.power.get("steam_multiblocks", []):
+            return "steam"
+        if path.split("_", 1)[0] in TIER_INDEX or name in self._gt_types:
+            return "electric"
+        return None
+
+    def _powered(self, node):
+        """The pseudo node 'this machine, with power'; a pseudo-recipe makes it from the machine + power."""
+        kind = self._power_kind(node) if self.power else None
+        if kind is None:
+            return node
+        pn = "i:world:powered/" + node[2:].replace(":", "/")
+        if pn not in self.pseudo:
+            self.pseudo.add(pn)
+            r = {"id": "power:" + node[2:], "type": "powered machine", "kind": "world action", "slots": [], "params": {},
+                 "outputs": [{"node": pn, "n": 1, "chance": 1.0}], "skip": None, "note": f"{node[2:]} with {kind} power"}
+            self._power_recipes.append((r, [Req({node}, node[2:]), self._req(self.power[kind], f"{kind} power")]))
+        return pn
+
+    def _power_slot(self, req):
+        return Req(frozenset(self._powered(n) for n in req), req.label)
 
     # ---------------------------------------------------------------- heat (TFC)
     def _build_heat(self):
@@ -227,6 +281,8 @@ class Progression:
             ok |= self.match(f"i:gtceu:{p}", quiet=True)
         slots = []
         tier_name = VOLTAGES[need][0].upper()
+        if ok and r["type"] not in self.power.get("fuel_recipes", {}):
+            ok = {self._powered(n) for n in ok}
         if ok:
             slots.append(Req(ok, f"GregTech machine for {r['type']} ({tier_name} or better)"))
         else:

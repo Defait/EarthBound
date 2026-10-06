@@ -41,12 +41,16 @@ file = "kubejs/config/web_server.json"
 hash = "74f01c3b886aa9dd2ebc49781ddb0541b974ad34e2f41e7a566b98d9182abd48"
 
 [[files]]
+file = "kubejs/server_scripts/bridges/create_gregtech.js"
+hash = "0126279db895129cb4db2f9977018789922f46131bbbc91776312f93800108ca"
+
+[[files]]
 file = "kubejs/server_scripts/compat/metal_gates.js"
 hash = "d921bae224c299af03c25d37ddd4e13be38b5d59940fe92918d6079080c8df02"
 
 [[files]]
 file = "kubejs/server_scripts/compat/vanilla_substitutes.js"
-hash = "ed0e08b85e7e8744e5dd961e7b65df2065049d1dd495cab3e3f264d2cfb76cf3"
+hash = "2165207b47389c14ff2cffd16390a1807efef626d472ef68ed3ec72dfaadd2cc"
 
 [[files]]
 file = "kubejs/server_scripts/create/entry.js"
@@ -54,7 +58,7 @@ hash = "ff60db04799d54fd9ad9cfe677fd7c8e3411ab7f03a31fff4c5f3e069128d7e4"
 
 [[files]]
 file = "kubejs/server_scripts/gregtech/ore_processing.js"
-hash = "f376e2ec2cb73a4836987ce2ea1e1cfb0099eac8fd0d7df0649a8b60385bbf33"
+hash = "7a9070e3431fb4efd7938f3a2705979fba716bd3d0a7783bf1944d8ee5ad2f49"
 
 [[files]]
 file = "kubejs/server_scripts/gregtech/steam_entry.js"

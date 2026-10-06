@@ -353,6 +353,20 @@
         "tfc:wood/stripped_wood/*"
       ],
       "why": "use an axe on a placed log or wood block"
+    },
+    {
+      "id": "boil_water",
+      "inputs": [
+        [
+          "gtceu:*_steam_solid_boiler",
+          "gtceu:*_steam_solar_boiler"
+        ]
+      ],
+      "outputs": [
+        "world:power/steam",
+        "f:gtceu:steam"
+      ],
+      "why": "a GregTech solid boiler burning logs or charcoal, or a solar boiler in the sun, makes steam"
     }
   ],
   "heat": {
@@ -402,9 +416,9 @@
     ]
   },
   "gregtech": {
-    "_comment": "gtceu:* recipe types need a machine named after the type: gtceu:<tier>_<type> at or above the recipe's voltage, a steam variant (gtceu:lp_steam_<type>/hp_steam_<type>) when EU/t is low enough, or a multiblock controller gtceu:<type>. EBF recipes also need a coil at or above ebf_temp.",
+    "_comment": "gtceu:* recipe types need a machine named after the type: gtceu:<tier>_<type> at or above the recipe's voltage, a steam variant (gtceu:lp_steam_<type>/hp_steam_<type>) for recipes up to LV (GregTech's steam machines run any LV-tier recipe; low pressure takes twice as long), or a multiblock controller gtceu:<type>. EBF recipes also need a coil at or above ebf_temp.",
     "steam_max_eut": {
-      "lp": 8,
+      "lp": 32,
       "hp": 32
     },
     "coils": {
@@ -420,7 +434,70 @@
     "machine_aliases": {
       "gtceu:chemical_reactor": [
         "gtceu:large_chemical_reactor"
+      ],
+      "gtceu:steam_boiler": [
+        "gtceu:lp_steam_liquid_boiler",
+        "gtceu:hp_steam_liquid_boiler"
+      ],
+      "gtceu:large_boiler": [
+        "gtceu:bronze_large_boiler",
+        "gtceu:steel_large_boiler",
+        "gtceu:titanium_large_boiler",
+        "gtceu:tungstensteel_large_boiler"
+      ],
+      "gtceu:combustion_generator": [
+        "gtceu:combustion",
+        "gtceu:large_combustion_engine",
+        "gtceu:extreme_combustion_engine"
+      ],
+      "gtceu:gas_turbine": [
+        "gtceu:gas_large_turbine"
+      ],
+      "gtceu:steam_turbine": [
+        "gtceu:steam_large_turbine"
+      ],
+      "gtceu:plasma_generator": [
+        "gtceu:plasma_large_turbine"
+      ],
+      "gtceu:rock_breaker": [
+        "gtceu:rock_crusher"
       ]
+    },
+    "power": {
+      "_comment": "A GregTech machine (also as a station elsewhere, e.g. smelting) counts only with power: steam machines and steam multiblocks need 'steam', electric machines and electric multiblocks need 'electric'. Fuel recipe types produce power nodes; their own machines need none, nor do 'unpowered' ones.",
+      "steam": "world:power/steam",
+      "electric": "world:power/electric",
+      "unpowered": [
+        "gtceu:coke_oven",
+        "gtceu:primitive_blast_furnace",
+        "gtceu:primitive_pump"
+      ],
+      "steam_multiblocks": [
+        "gtceu:steam_grinder",
+        "gtceu:steam_oven"
+      ],
+      "fuel_recipes": {
+        "gtceu:steam_boiler": [
+          "world:power/steam",
+          "f:gtceu:steam"
+        ],
+        "gtceu:large_boiler": [
+          "world:power/steam",
+          "f:gtceu:steam"
+        ],
+        "gtceu:steam_turbine": [
+          "world:power/electric"
+        ],
+        "gtceu:combustion_generator": [
+          "world:power/electric"
+        ],
+        "gtceu:gas_turbine": [
+          "world:power/electric"
+        ],
+        "gtceu:plasma_generator": [
+          "world:power/electric"
+        ]
+      }
     }
   },
   "rules": [
@@ -545,6 +622,27 @@
         "@create_parts"
       ],
       "why": "design: every GregTech boiler needs a Create part, so the steam age can't skip Create"
+    },
+    {
+      "item": "i:gtceu:lv_electric_motor",
+      "requires": [
+        "i:create:shaft"
+      ],
+      "why": "design: GregTech's LV motors are built around Create shafts"
+    },
+    {
+      "item": "i:gtceu:lv_electric_pump",
+      "requires": [
+        "i:create:mechanical_pump"
+      ],
+      "why": "design: GregTech's LV pumps contain a Create mechanical pump"
+    },
+    {
+      "item": "i:gtceu:lv_electric_piston",
+      "requires": [
+        "i:create:cogwheel"
+      ],
+      "why": "design: GregTech's LV pistons are geared with a Create cogwheel"
     }
   ],
   "milestones": [
@@ -554,18 +652,23 @@
     "#i:c:ingots/bronze",
     "i:create:andesite_alloy",
     "i:create:water_wheel",
+    "i:create:belt_connector",
     "i:tfc:bloomery",
     "#i:c:ingots/wrought_iron",
     "i:create:mechanical_press",
     "#i:c:ingots/brass",
     "i:aeronautics:propeller_bearing",
     "i:gtceu:lp_steam_solid_boiler",
+    "i:world:power/steam",
     "i:gtceu:lp_steam_liquid_boiler",
     "i:gtceu:lp_steam_macerator",
+    "#i:c:crushed_ores/copper",
     "#i:c:ingots/pig_iron",
     "#i:c:ingots/steel",
     "i:gtceu:hp_steam_solid_boiler",
     "i:gtceu:lv_machine_hull",
+    "i:world:power/electric",
+    "i:gtceu:lv_electric_motor",
     "i:gtceu:electric_blast_furnace"
   ]
 }
