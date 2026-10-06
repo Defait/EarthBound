@@ -322,6 +322,24 @@
         "tfc:rock/anvil/*"
       ],
       "why": "use a hammer on a raw igneous rock block"
+    },
+    {
+      "id": "strip_log",
+      "inputs": [
+        [
+          "#i:minecraft:logs"
+        ],
+        [
+          "#i:minecraft:axes",
+          "tfc:stone/axe/*",
+          "tfc:metal/axe/*"
+        ]
+      ],
+      "outputs": [
+        "tfc:wood/stripped_log/*",
+        "tfc:wood/stripped_wood/*"
+      ],
+      "why": "use an axe on a placed log or wood block"
     }
   ],
   "heat": {
@@ -397,9 +415,10 @@
       "item": "i:create:andesite_alloy",
       "requires": [
         "#i:c:nuggets/zinc",
-        "#i:c:nuggets/bronze"
+        "#i:c:nuggets/bronze",
+        "#i:c:nuggets/wrought_iron"
       ],
-      "why": "design: andesite alloy is TFC andesite + zinc or bronze nuggets"
+      "why": "design: andesite alloy needs metal nuggets (zinc or bronze in the bronze age, iron later), not just stone"
     },
     {
       "item": "i:create:water_wheel",

@@ -41,6 +41,14 @@ file = "kubejs/config/web_server.json"
 hash = "74f01c3b886aa9dd2ebc49781ddb0541b974ad34e2f41e7a566b98d9182abd48"
 
 [[files]]
+file = "kubejs/server_scripts/compat/vanilla_substitutes.js"
+hash = "ed0e08b85e7e8744e5dd961e7b65df2065049d1dd495cab3e3f264d2cfb76cf3"
+
+[[files]]
+file = "kubejs/server_scripts/create/entry.js"
+hash = "ff60db04799d54fd9ad9cfe677fd7c8e3411ab7f03a31fff4c5f3e069128d7e4"
+
+[[files]]
 file = "kubejs/server_scripts/main.js"
 hash = "dae099ae3be7f033c0c190ee8c3b023b42f6b235d9d0591be5926e8435dbd67f"
 

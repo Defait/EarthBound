@@ -104,6 +104,10 @@
     {
       "pattern": "^net\\.minecraft\\.world\\.item\\.crafting\\.RecipeManager: Skipping recipe minecraft:\\S+, not a json object",
       "note": "vanilla recipes TFC disables; logged once a KubeJS recipe script is present (they were already absent before)"
+    },
+    {
+      "pattern": "^GTCEu: failed to add recipe from staging into lookup DB: gtceu:",
+      "note": "iron and wrought-iron variants of a GregTech recipe became identical after unification (iron = wrought iron); GregTech keeps one of each pair"
     }
   ]
 }
