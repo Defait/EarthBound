@@ -214,8 +214,11 @@ class TestServer:
 
     def command(self, cmd):
         if self.proc and self.proc.poll() is None:
-            self.proc.stdin.write(cmd + "\n")
-            self.proc.stdin.flush()
+            try:
+                self.proc.stdin.write(cmd + "\n")
+                self.proc.stdin.flush()
+            except OSError:
+                pass  # the server exited in the meantime (e.g. crashed while starting)
 
     def stop(self, timeout=240):
         if not self.proc:

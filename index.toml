@@ -153,6 +153,10 @@ file = "kubejs/startup_scripts/main.js"
 hash = "5c4659e7bb368960801ccfce24ac3493fa14aae88a7e17b2a9cdfe1931985ffe"
 
 [[files]]
+file = "kubejs/startup_scripts/world_scale.js"
+hash = "52715da011296bd7cb1fb707166c3cdbbbb9e0ee6bfaf45dc4c131ecb7ba6bf7"
+
+[[files]]
 file = "mods/almostunified.pw.toml"
 hash = "3805fe2877cffdae5e7bf74d85069a2535daa39a0f3ed766755be49294a07680"
 metafile = true
