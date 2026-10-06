@@ -1,7 +1,7 @@
 """Local web viewer for Minecraft world saves: map, slices, Y distribution, heatmaps.
 
 Usage (from the repo root):
-    tools/.venv/Scripts/python tools/worldview/serve.py [WORLD] [--dim overworld|nether|end]
+    tools/.venv/Scripts/python tools/worldview/serve.py [WORLD] [--compare OTHER_WORLD] [--dim overworld|nether|end]
 
 WORLD is a path to a world folder or the name of a world in the instance's
 saves folder; it defaults to the most recently played world. The instance
@@ -11,7 +11,6 @@ read, never written; run /save-all (or quit) first so the files are current.
 import argparse
 import glob
 import gzip
-import hashlib
 import json
 import os
 import re
@@ -26,7 +25,8 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import numpy as np  # noqa: E402
 
 from worldview import colors, nbt  # noqa: E402
-from worldview.index import MISSING, World  # noqa: E402
+from worldview.geo import load_projection  # noqa: E402
+from worldview.index import MISSING, World, cache_dir_for  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 PRISM = os.path.join(os.environ.get("APPDATA", ""), "PrismLauncher")
@@ -72,27 +72,22 @@ def build_colors(names, jars):
     return out
 
 
-class App:
-    def __init__(self, world_dir, dim, jars):
+class Source:
+    """One scanned world (A, or B when comparing)."""
+
+    def __init__(self, world_dir, dim, jars, mod_dirs):
         self.world_dir = world_dir
         self.dim = dim
         self.jars = jars
         region_dir = os.path.join(world_dir, DIMS.get(dim, dim))
         if not os.path.isdir(region_dir):
             sys.exit(f"No region folder at {region_dir}")
-        slug = re.sub(r"[^A-Za-z0-9_-]+", "_", os.path.basename(world_dir))
-        key = hashlib.sha1(os.path.abspath(region_dir).encode()).hexdigest()[:10]
         self.region_dir = region_dir
-        self.cache_dir = os.path.join(HERE, ".cache", f"{slug}-{key}")
+        self.cache_dir = cache_dir_for(world_dir, region_dir)
         self.world = World(region_dir, self.cache_dir)
         self.version = game_version(world_dir)
+        self.projection = load_projection(world_dir, mod_dirs) if dim == "overworld" else None
         self.info = None
-
-    def rescan(self):
-        """Re-read the save; unchanged regions come straight from the cache."""
-        self.info = None
-        self.world = World(self.region_dir, self.cache_dir)
-        self.start_scan()
 
     def start_scan(self):
         def run():
@@ -100,10 +95,13 @@ class App:
             if self.world.ready:
                 w = self.world
                 cols = build_colors(w.names, self.jars)
+                has_climate = any(c.get("climate") for c in w.chunks.values())
                 self.info = {
-                    "world": os.path.basename(self.world_dir), "dim": self.dim, "version": self.version,
+                    "world": os.path.basename(os.path.normpath(self.world_dir)), "path": self.world_dir,
+                    "dim": self.dim, "version": self.version,
                     "ymin": w.ymin, "height": w.H, "cbox": w.cbox, "chunks": len(w.chunks),
                     "partial": w.partial, "scanSeconds": round(w.scan_seconds, 2),
+                    "climate": has_climate, "geo": self.projection.params() if self.projection else None,
                     "blocks": [{
                         "id": i, "name": n, "color": cols[i][0], "src": cols[i][1], "total": int(w.totals[i]),
                         "air": n in ("minecraft:air", "minecraft:cave_air", "minecraft:void_air"),
@@ -111,6 +109,24 @@ class App:
                     } for i, n in enumerate(w.names)],
                 }
         threading.Thread(target=run, daemon=True).start()
+
+    def rescan(self):
+        """Re-read the save; unchanged regions come straight from the cache."""
+        self.info = None
+        self.world = World(self.region_dir, self.cache_dir)
+        self.start_scan()
+
+
+class App:
+    def __init__(self, sources):
+        self.sources = sources   # {"a": Source, "b": Source}
+
+    def start_scan(self):
+        for s in {id(s): s for s in self.sources.values()}.values():   # A and B may be the same world
+            s.start_scan()
+
+    def ready(self):
+        return all(s.info is not None for s in self.sources.values())
 
 
 def make_handler(app):
@@ -143,16 +159,24 @@ def make_handler(app):
                     with open(os.path.join(HERE, "viewer.html"), "rb") as f:
                         return self._send(200, f.read(), "text/html; charset=utf-8")
                 if url.path == "/api/status":
-                    w = app.world
-                    return self._json({"ready": app.info is not None, "progress": w.progress, "error": w.error})
+                    uniq = {id(s): s for s in app.sources.values()}.values()
+                    done = sum(s.world.progress[0] for s in uniq)
+                    total = sum(s.world.progress[1] for s in uniq)
+                    err = next((s.world.error for s in app.sources.values() if s.world.error), None)
+                    return self._json({"ready": app.ready(), "progress": [done, total], "error": err,
+                                       "worlds": sorted(app.sources)})
                 if url.path == "/api/rescan":
-                    app.rescan()
+                    for s in {id(s): s for s in app.sources.values()}.values():
+                        s.rescan()
                     return self._json({"ok": True})
-                if app.info is None:
+                if not app.ready():
                     return self._json({"error": "scan in progress"}, 503)
-                w = app.world
+                src = app.sources.get(q.get("w", "a"))
+                if src is None:
+                    return self._json({"error": "no such world"}, 404)
+                w = src.world
                 if url.path == "/api/info":
-                    return self._json(app.info)
+                    return self._json(src.info)
                 if url.path == "/api/surface":
                     step = max(1, int(q.get("step", 1)))
                     ids, ys = w.surface(step)
@@ -174,8 +198,18 @@ def make_handler(app):
                                          "a0": a0, "b0": int(q.get("b0", 0)), "ytop": w.ymin + w.H - 1},
                                         arr.astype("<u2"))
                 if url.path == "/api/ydist":
-                    ids = [int(i) for i in q.get("ids", "").split(",") if i]
-                    return self._json({"ymin": w.ymin, "series": {i: w.ycounts[i].tolist() for i in ids}})
+                    # ids index this world's block list; names= lets the other world be queried by block name
+                    if "names" in q:
+                        ids = [w.name_ids[n] for n in q["names"].split(",") if n in w.name_ids]
+                    else:
+                        ids = [int(i) for i in q.get("ids", "").split(",") if i]
+                    return self._json({"ymin": w.ymin, "chunks": len(w.chunks),
+                                       "series": {w.names[i]: w.ycounts[i].tolist() for i in ids}})
+                if url.path == "/api/hostrock":
+                    names = q.get("names", "").split(",")
+                    ids = [w.name_ids[n] for n in names if n in w.name_ids]
+                    total, top = w.host_rock(ids) if ids else (0, [])
+                    return self._json({"total": total, "top": [{"name": w.names[i], "count": c} for i, c in top]})
                 if url.path == "/api/heatmap":
                     ids = [int(i) for i in q["ids"].split(",") if i]
                     ylo = int(q["ylo"]) if "ylo" in q else None
@@ -184,6 +218,43 @@ def make_handler(app):
                     hm[hm < 0] = -1  # missing chunks summed to -len(ids)
                     return self._json({"cx0": w.cbox[0], "cz0": w.cbox[1], "w": hm.shape[1], "h": hm.shape[0],
                                        "values": hm.ravel().tolist()})
+                if url.path == "/api/climate":
+                    grid = w.climate(q["field"])
+                    vals = [None if v != v else round(float(v), 3) for v in grid.ravel()]
+                    return self._json({"cx0": w.cbox[0], "cz0": w.cbox[1], "w": grid.shape[1], "h": grid.shape[0],
+                                       "field": q["field"], "values": vals})
+                if url.path == "/api/geo":
+                    if not src.projection:
+                        return self._json({"error": "not a TFC: Real World world"}, 404)
+                    p = src.projection
+                    if "x" in q:
+                        lon, lat = p.to_geo(float(q["x"]), float(q["z"]))
+                        return self._json({"lon": lon, "lat": lat})
+                    lon, lat = float(q["lon"]), float(q["lat"])
+                    x, z = p.to_block(lon, lat)
+                    return self._json({"x": x, "z": z})
+                if url.path == "/api/geogrid":
+                    # Graticule polylines in block coordinates, clipped by the client.
+                    if not src.projection:
+                        return self._json({"lines": []})
+                    p = src.projection
+                    step = float(q.get("step", 10))
+                    lines = []
+                    lat = -90 + step
+                    while lat < 90:
+                        a = p.to_block(p.west + 1e-6, lat)
+                        b = p.to_block(p.east - 1e-6, lat)
+                        lines.append({"label": f"{abs(lat):g}°{'N' if lat > 0 else 'S' if lat < 0 else ''}", "kind": "lat",
+                                      "pts": [a, b]})
+                        lat += step
+                    lon = p.west
+                    while lon <= p.east + 1e-9:
+                        pts = [p.to_block(lon, la) for la in [x / 2 for x in range(-180, 181)]]
+                        norm = (lon + 180) % 360 - 180
+                        lines.append({"label": f"{abs(norm):g}°{'E' if norm > 0 else 'W' if norm < 0 else ''}", "kind": "lon",
+                                      "pts": pts})
+                        lon += step
+                    return self._json({"lines": lines})
                 return self._json({"error": "not found"}, 404)
             except (KeyError, ValueError) as e:
                 return self._json({"error": f"bad request: {e}"}, 400)
@@ -196,6 +267,7 @@ def make_handler(app):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("world", nargs="?", help="world folder path or name in the instance's saves")
+    ap.add_argument("--compare", help="a second world (path or save name) to compare against, shown as world B")
     ap.add_argument("--instance", default=DEFAULT_INSTANCE, help="instance .minecraft folder (for saves and mod jars)")
     ap.add_argument("--dim", default="overworld", help="overworld, nether, end, or a region folder relative to the world")
     ap.add_argument("--client-jar", help="vanilla client jar for textures (auto-detected from Prism's libraries)")
@@ -207,15 +279,22 @@ def main():
     version = game_version(world)
     client = args.client_jar or os.path.join(PRISM, "libraries", "com", "mojang", "minecraft", str(version),
                                              f"minecraft-{version}-client.jar")
-    jars = ([client] if os.path.exists(client) else []) + sorted(glob.glob(os.path.join(args.instance, "mods", "*.jar")))
+    mod_dirs = [os.path.join(args.instance, "mods")]
+    jars = ([client] if os.path.exists(client) else []) + sorted(glob.glob(os.path.join(mod_dirs[0], "*.jar")))
     if not os.path.exists(client):
         print(f"warning: vanilla client jar not found ({client}); vanilla blocks get fallback colors")
 
-    app = App(world, args.dim, jars)
+    sources = {"a": Source(world, args.dim, jars, mod_dirs)}
+    if args.compare:
+        other = resolve_world(args.compare, args.instance)
+        same = os.path.normcase(os.path.abspath(other)) == os.path.normcase(os.path.abspath(world))
+        sources["b"] = sources["a"] if same else Source(other, args.dim, jars, mod_dirs)
+    app = App(sources)
     app.start_scan()
     server = ThreadingHTTPServer(("127.0.0.1", args.port), make_handler(app))
     url = f"http://127.0.0.1:{args.port}/"
-    print(f"World: {world} [{args.dim}, {version}]\nViewer: {url}  (Ctrl+C to stop)", flush=True)
+    print(f"World A: {world} [{args.dim}, {version}]" + (f"\nWorld B: {sources['b'].world_dir}" if args.compare else "")
+          + f"\nViewer: {url}  (Ctrl+C to stop)", flush=True)
     if not args.no_browser:
         webbrowser.open(url)
     try:

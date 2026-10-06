@@ -1,0 +1,29 @@
+{
+  "_comment": "Log noise judged harmless. Each pattern is a regex matched against '<logger>: <message>'. Keep a note saying why it's harmless.",
+  "known": [
+    {"pattern": "^mixin: Reference map '.*' for .* could not be read", "note": "normal on production NeoForge; refmaps are only needed in dev environments"},
+    {"pattern": "^probejs: Error while loading class .*just one class", "note": "ProbeJS scanning optional compat classes for mods that aren't installed (JEI, REI, TOP)"},
+    {"pattern": "^cpw\\.mods\\.modlauncher\\.TransformerClassWriter: Failed to find class (mezz/jei|me/shedaniel|mcjty/theoneprobe)", "note": "logged during a ProbeJS dump while it loads JEI/REI/TOP compat classes; harmless"},
+    {"pattern": "^KubeJS: Plugin .* does not have required mod '.*' loaded, skipping", "note": "KubeJS addon compat for mods not in the pack"},
+    {"pattern": "^KubeJS Server: (Due to the way Minecraft resource loading works|You can still see the full log)", "note": "KubeJS informational notice about server.log"},
+    {"pattern": "^GTCEu: FluidStorageKey\\{gtceu:liquid\\} already has an associated fluid for material gtceu:(water|lava|milk)", "note": "GregTech reusing the vanilla/NeoForge fluid for these materials"},
+    {"pattern": "^GTCEu: Predicate$", "note": "multiblock preview predicate with no candidates (EMI preview only)"},
+    {"pattern": "^net\\.minecraft\\.core\\.MappedRegistry: Not all defined tags for registry .* are present in data pack: c:mineable/", "note": "GregTech tool-type tags (crowbar, hammer, knife, saw) that nothing defines"},
+    {"pattern": "^EMI: \\[EMI\\] (The following EMI classes have mixins|.* is tainted by)", "note": "GregTech and ModularUI patch EMI for their integration"},
+    {"pattern": "^net\\.neoforged\\.jarjar\\.selection\\.JarSelector: Attempted to select a dependency jar for JarJar which was passed in as source", "note": "a mod also ships a library that's installed separately; the standalone jar wins"},
+    {"pattern": "^net\\.minecraft\\.server\\.packs\\.VanillaPackResourcesBuilder: Assets URL .* uses unexpected schema", "note": "NeoForge's union filesystem; vanilla warns about the URL scheme"},
+    {"pattern": "^oshi\\.util\\.", "note": "system performance-counter probing on Windows"},
+    {"pattern": "^net\\.minecraft\\.client\\.renderer\\.ShaderInstance: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2", "note": "vanilla shader warning"},
+    {"pattern": "^io\\.netty\\.bootstrap\\.Bootstrap: Unknown channel option 'SO_BROADCAST'", "note": "LAN discovery socket option unsupported on Windows"},
+    {"pattern": "^patchouli: Recipe minecraft:clay \\(of type minecraft:crafting\\) not found", "note": "TFC field guide page links a vanilla recipe that TFC removes"},
+    {"pattern": "^mixin: (Error loading class: (mezz/jei|net/irisshaders|org/jetbrains/annotations)/|@Mixin target (mezz\\.jei|net\\.irisshaders)\\.\\S+ was not found)", "note": "optional compat mixins (GregTech, Veil) for JEI and Iris, which aren't in the pack"},
+    {"pattern": "^dev\\.ryanhcode\\.sable\\.Sable: NOTE: Sable is loaded with Flywheel", "note": "Sable's standing notice about Flywheel (bundled with Create); only matters if rendering bugs show up"},
+    {"pattern": "^net\\.minecraft\\.server\\.dedicated\\.DedicatedServer: (\\*\\*\\*\\* SERVER IS RUNNING IN OFFLINE|The server will make no attempt to authenticate|While this makes the game possible to play without internet|To change this, set \\\"online-mode\\\")", "note": "the test server runs offline on 127.0.0.1 by design"},
+    {"pattern": "^net\\.minecraft\\.client\\.server\\.LanServerPinger: LanServerPinger: Invalid argument: sendto", "note": "LAN broadcast unavailable; irrelevant"},
+    {"pattern": "^KubeJS: Plugin .*Client.* does not load on server side, skipping", "note": "client-only KubeJS plugin skipped on a dedicated server, as intended"},
+    {"pattern": "^net\\.minecraft\\.core\\.MappedRegistry: Not all defined tags for registry .*minecraft:item.* are present in data pack: almostunified:", "note": "Almost Unified's EMI-hiding tags are referenced but empty until unification rules use them"},
+    {"pattern": "^GTCEu: duplicate loot table: gtceu:blocks/", "note": "GregTech nightly re-adds its generated block loot tables on /reload and logs each one; startup is clean (upstream bug, harmless)"},
+    {"pattern": "^net\\.neoforged\\.fml\\.common\\.asm\\.RuntimeDistCleaner: Attempted to load class net/minecraft/client/player/LocalPlayer for invalid dist DEDICATED_SERVER", "note": "TFC probing for a client recipe manager on a dedicated server; TFC logs 'This is fine' right after"},
+    {"pattern": "^net\\.neoforged\\.fml\\.common\\.asm\\.RuntimeDistCleaner: Attempted to load class net/minecraft/client/(multiplayer/ClientLevel|gui/components/Button) for invalid dist DEDICATED_SERVER", "note": "optional client-side compat (most likely Sable's and EMI's) touching client classes on a dedicated server; caught, the server carries on. Revisit if a server crash names these classes"}
+  ]
+}

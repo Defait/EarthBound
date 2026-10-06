@@ -18,9 +18,19 @@ import numpy as np
 
 from . import region
 
-CACHE_VERSION = 1
+CACHE_VERSION = 2
+CLIMATE_FIELDS = ("temperature", "rainfall", "rainVariance", "baseGroundwater", "forestType")
 AIR = {"minecraft:air", "minecraft:cave_air", "minecraft:void_air"}
 MISSING = 0xFFFF
+
+
+def cache_dir_for(world_dir, region_dir):
+    """Where scans of one world's region folder are cached (shared by all tools)."""
+    import hashlib
+    import re
+    slug = re.sub(r"[^A-Za-z0-9_-]+", "_", os.path.basename(os.path.normpath(world_dir)))
+    key = hashlib.sha1(os.path.abspath(region_dir).encode()).hexdigest()[:10]
+    return os.path.join(os.path.dirname(os.path.abspath(__file__)), ".cache", f"{slug}-{key}")
 
 
 def _cache_paths(cache_dir, path):
@@ -31,6 +41,32 @@ def _cache_paths(cache_dir, path):
 def _region_key(path):
     st = os.stat(path)
     return f"{CACHE_VERSION}-{st.st_mtime_ns}-{st.st_size}"
+
+
+def _climate(root):
+    """TFC's per-chunk climate (average of the four corner values), if the chunk has it."""
+    data = (root.get("neoforge:attachments") or {}).get("tfc:chunk_data")
+    if not isinstance(data, dict):
+        return None
+    out = {}
+    for k in CLIMATE_FIELDS:
+        v = data.get(k)
+        if isinstance(v, dict) and v:
+            out[k] = float(sum(v.values()) / len(v))
+        elif isinstance(v, (int, float)):
+            out[k] = float(v)
+    return out or None
+
+
+def _cached(cache_dir, path):
+    sum_path, sec_path = _cache_paths(cache_dir, path)
+    if not (os.path.exists(sum_path) and os.path.exists(sec_path)):
+        return False
+    try:
+        with open(sum_path, "rb") as f:
+            return pickle.load(f).get("key") == _region_key(path)
+    except Exception:
+        return False
 
 
 def scan_region(path, cache_dir):
@@ -57,7 +93,7 @@ def scan_region(path, cache_dir):
             is_air.append(n in AIR)
         return i
 
-    raw = []  # (cx, cz, secmin, [(sy, lut, packed)])
+    raw = []  # (cx, cz, [(sy, lut, packed)], climate)
     partial = 0
     rx, rz = map(int, region.REGION_RE.match(os.path.basename(path)).groups())
     for lx, lz, root in region.iter_chunks(path):
@@ -69,11 +105,11 @@ def scan_region(path, cache_dir):
         for sy, pal, data in secs:
             lut = np.array([local_id(n) for n in pal], dtype=np.uint16)
             packed.append((sy, lut, data))
-        raw.append((rx * 32 + lx, rz * 32 + lz, packed))
+        raw.append((rx * 32 + lx, rz * 32 + lz, packed, _climate(root)))
 
     air_id = local_id("minecraft:air")
-    secmin = min((s[0] for _, _, p in raw for s in p), default=0)
-    secmax = max((s[0] for _, _, p in raw for s in p), default=-1)
+    secmin = min((s[0] for _, _, p, _ in raw for s in p), default=0)
+    secmax = max((s[0] for _, _, p, _ in raw for s in p), default=-1)
     nsec = secmax - secmin + 1
     H = nsec * 16
     air_mask = np.array(is_air, dtype=bool)
@@ -81,7 +117,7 @@ def scan_region(path, cache_dir):
     chunks, sections = [], {}
     yrow = np.arange(H)[:, None]
 
-    for cx, cz, packed in raw:
+    for cx, cz, packed, climate in raw:
         arr = np.full((H, 16, 16), air_id, dtype=np.uint16)
         for sy, lut, data in packed:
             y0 = (sy - secmin) * 16
@@ -107,6 +143,7 @@ def scan_region(path, cache_dir):
             "surf_id": surf_id, "surf_y": surf_y,
             "ids": u.astype(np.uint16),
             "sec_counts": per_y.reshape(len(u), nsec, 16).sum(-1).astype(np.int32),
+            "climate": climate,
         })
 
     summary = {
@@ -140,13 +177,19 @@ class World:
             paths = [p for _, _, p in region.list_regions(self.region_dir)]
             self.progress = (0, len(paths))
             sum_paths = []
-            if len(paths) <= 1:
-                for p in paths:
+            # Regions already in the cache load in-process; only stale ones go to worker processes.
+            stale = [p for p in paths if not _cached(self.cache_dir, p)]
+            for p in paths:
+                if p not in stale:
+                    sum_paths.append(scan_region(p, self.cache_dir))
+            self.progress = (len(sum_paths), len(paths))
+            if len(stale) <= 1:
+                for p in stale:
                     sum_paths.append(scan_region(p, self.cache_dir))
                     self.progress = (len(sum_paths), len(paths))
             else:
-                with ProcessPoolExecutor(max_workers=workers or min(len(paths), os.cpu_count() or 2)) as ex:
-                    futs = [ex.submit(scan_region, p, self.cache_dir) for p in paths]
+                with ProcessPoolExecutor(max_workers=workers or min(len(stale), os.cpu_count() or 2)) as ex:
+                    futs = [ex.submit(scan_region, p, self.cache_dir) for p in stale]
                     for fut in as_completed(futs):
                         sum_paths.append(fut.result())
                         self.progress = (len(sum_paths), len(paths))
@@ -290,6 +333,36 @@ class World:
             ids[r:r + 16, q:q + 16] = lut[sid]
             ys[r:r + 16, q:q + 16] = c["surf_y"]
         return ids[::step, ::step], ys[::step, ::step]
+
+    def climate(self, field):
+        """Per-chunk climate value over the chunk bounding box (NaN where missing)."""
+        cx0, cz0, cx1, cz1 = self.cbox
+        out = np.full((cz1 - cz0 + 1, cx1 - cx0 + 1), np.nan, dtype=np.float32)
+        for (cx, cz), c in self.chunks.items():
+            v = (c.get("climate") or {}).get(field)
+            if v is not None:
+                out[cz - cz0, cx - cx0] = v
+        return out
+
+    def host_rock(self, gids, limit=12):
+        """What the given blocks touch: counts of neighbouring block ids over all their faces."""
+        gids = np.array(sorted(set(gids)), dtype=np.uint16)
+        counts = np.zeros(len(self.names), dtype=np.int64)
+        for (cx, cz), c in self.chunks.items():
+            if not np.isin(c["gids"], gids).any():
+                continue
+            arr = self.chunk_blocks(cx, cz)
+            m = np.isin(arr, gids)
+            for axis in range(3):
+                for a_sl, b_sl in ((slice(1, None), slice(None, -1)), (slice(None, -1), slice(1, None))):
+                    src = [slice(None)] * 3
+                    nb = [slice(None)] * 3
+                    src[axis], nb[axis] = a_sl, b_sl
+                    counts += np.bincount(arr[tuple(nb)][m[tuple(src)]], minlength=len(self.names))
+        counts[gids] = 0
+        total = int(counts.sum())
+        top = np.argsort(counts)[::-1][:limit]
+        return total, [(int(i), int(counts[i])) for i in top if counts[i] > 0]
 
     def heatmap(self, gid, ylo=None, yhi=None):
         cx0, cz0, cx1, cz1 = self.cbox

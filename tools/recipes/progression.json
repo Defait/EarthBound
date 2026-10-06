@@ -1,0 +1,423 @@
+{
+  "_comment": [
+    "Progression checker config. Patterns: 'i:ns:path' (item), 'f:ns:path' (fluid), '#i:tag', '#f:tag'; '*' and '?' globs work.",
+    "A bare 'ns:path' means an item. stations: per recipe type, a list of requirements that must ALL be available;",
+    "a requirement that is itself a list means any one of those. Tiered stations pick every tier at or above the recipe's value.",
+    "Station rules and starter rules below are a first pass; tune them to the progression you design."
+  ],
+  "seeds": {
+    "_comment": "Starting resources: blocks found in the scanned world (their loot-table drops) plus fluids in it, plus extras. Mob drops aren't in block loot tables, so common animal and mob drops are listed here.",
+    "from_world": true,
+    "extra": [
+      "tfc:small_raw_hide",
+      "tfc:medium_raw_hide",
+      "tfc:large_raw_hide",
+      "minecraft:bone",
+      "minecraft:feather",
+      "minecraft:string",
+      "minecraft:egg",
+      "minecraft:rotten_flesh",
+      "minecraft:gunpowder",
+      "minecraft:spider_eye"
+    ],
+    "exclude": [
+      "minecraft:bedrock"
+    ]
+  },
+  "stations": {
+    "minecraft:crafting": {
+      "large_grid": [
+        [
+          "minecraft:crafting_table",
+          "#i:c:player_workstations/crafting_tables",
+          "tfc:wood/workbench/*"
+        ]
+      ]
+    },
+    "minecraft:smelting": [
+      "minecraft:furnace"
+    ],
+    "minecraft:blasting": [
+      "minecraft:blast_furnace"
+    ],
+    "minecraft:smoking": [
+      "minecraft:smoker"
+    ],
+    "minecraft:campfire_cooking": [
+      [
+        "minecraft:campfire",
+        "minecraft:soul_campfire"
+      ]
+    ],
+    "minecraft:stonecutting": [
+      "minecraft:stonecutter"
+    ],
+    "minecraft:smithing": [
+      "minecraft:smithing_table"
+    ],
+    "tfc:heating": [],
+    "tfc:anvil": {
+      "param": "tier",
+      "tiers": {
+        "0": [
+          "tfc:rock/anvil/*"
+        ],
+        "1": [
+          "tfc:metal/anvil/copper"
+        ],
+        "2": [
+          "tfc:metal/anvil/bronze",
+          "tfc:metal/anvil/bismuth_bronze",
+          "tfc:metal/anvil/black_bronze"
+        ],
+        "3": [
+          "tfc:metal/anvil/wrought_iron"
+        ],
+        "4": [
+          "tfc:metal/anvil/steel"
+        ],
+        "5": [
+          "tfc:metal/anvil/black_steel"
+        ],
+        "6": [
+          "tfc:metal/anvil/red_steel",
+          "tfc:metal/anvil/blue_steel"
+        ]
+      },
+      "also": [
+        [
+          "#i:c:tools/hammer",
+          "tfc:metal/hammer/*",
+          "tfc:stone/hammer/*"
+        ]
+      ]
+    },
+    "tfc:welding": {
+      "param": "tier",
+      "same_as": "tfc:anvil",
+      "also": [
+        [
+          "tfc:powder/flux"
+        ]
+      ]
+    },
+    "tfc:alloy": [
+      [
+        "tfc:ceramic/vessel",
+        "tfc:crucible",
+        "tfc:ceramic/*_glazed_vessel"
+      ]
+    ],
+    "tfc:barrel_sealed": [
+      [
+        "tfc:wood/barrel/*"
+      ]
+    ],
+    "tfc:barrel_instant": [
+      [
+        "tfc:wood/barrel/*"
+      ]
+    ],
+    "tfc:barrel_instant_fluid": [
+      [
+        "tfc:wood/barrel/*"
+      ]
+    ],
+    "tfc:pot": [
+      "tfc:ceramic/pot"
+    ],
+    "tfc:quern": [
+      "tfc:quern",
+      "tfc:handstone"
+    ],
+    "tfc:loom": [
+      [
+        "tfc:wood/loom/*",
+        "tfc:power_loom"
+      ]
+    ],
+    "tfc:chisel": [
+      [
+        "tfc:metal/chisel/*"
+      ]
+    ],
+    "tfc:bloomery": [
+      "tfc:bloomery",
+      "tfc:bellows"
+    ],
+    "tfc:blast_furnace": [
+      "tfc:blast_furnace",
+      "tfc:bellows",
+      "tfc:crucible"
+    ],
+    "tfc:glassworking": [
+      [
+        "tfc:blowpipe",
+        "tfc:ceramic_blowpipe"
+      ]
+    ],
+    "tfc:sewing": [
+      [
+        "tfc:wood/sewing_table/*"
+      ]
+    ],
+    "tfc:casting": [],
+    "tfc:knapping": [],
+    "tfc:scraping": [],
+    "create:pressing": [
+      "create:mechanical_press",
+      "@create_power"
+    ],
+    "create:compacting": [
+      "create:mechanical_press",
+      "create:basin",
+      "@create_power"
+    ],
+    "create:mixing": {
+      "param": "heat_requirement",
+      "tiers": {
+        "none": [],
+        "heated": [
+          "create:blaze_burner"
+        ],
+        "superheated": [
+          "create:blaze_burner"
+        ]
+      },
+      "default": "none",
+      "also": [
+        "create:mechanical_mixer",
+        "create:basin",
+        "@create_power"
+      ]
+    },
+    "create:crushing": [
+      "create:crushing_wheel",
+      "@create_power"
+    ],
+    "create:milling": [
+      "create:millstone",
+      "@create_power"
+    ],
+    "create:cutting": [
+      "create:mechanical_saw",
+      "@create_power"
+    ],
+    "create:deploying": [
+      "create:deployer",
+      "@create_power"
+    ],
+    "create:splashing": [
+      "create:encased_fan",
+      "@create_power"
+    ],
+    "create:haunting": [
+      "create:encased_fan",
+      "@create_power"
+    ],
+    "create:filling": [
+      "create:spout"
+    ],
+    "create:emptying": [
+      "create:item_drain"
+    ],
+    "create:mechanical_crafting": [
+      "create:mechanical_crafter",
+      "@create_power"
+    ],
+    "create:item_application": [],
+    "create:sandpaper_polishing": [],
+    "create:sequenced_assembly": {
+      "steps": true
+    }
+  },
+  "actions": [
+    {
+      "id": "build_firepit",
+      "inputs": [
+        [
+          "#i:tfc:firepit_sticks"
+        ],
+        [
+          "#i:tfc:firepit_logs"
+        ],
+        [
+          "tfc:firestarter"
+        ]
+      ],
+      "outputs": [
+        "tfc:firepit"
+      ],
+      "why": "field guide: throw one log and three sticks on the ground and use a firestarter on them"
+    },
+    {
+      "id": "pit_kiln",
+      "inputs": [
+        [
+          "#i:tfc:pit_kiln_straw"
+        ],
+        [
+          "#i:tfc:pit_kiln_logs"
+        ],
+        [
+          "tfc:firestarter",
+          "tfc:torch"
+        ]
+      ],
+      "outputs": [
+        "world:pit_kiln"
+      ],
+      "why": "place unfired pottery, cover it with straw and logs, and light it"
+    },
+    {
+      "id": "charcoal_pit",
+      "inputs": [
+        [
+          "#i:tfc:log_pile_logs"
+        ],
+        [
+          "tfc:firestarter",
+          "tfc:torch"
+        ]
+      ],
+      "outputs": [
+        "minecraft:charcoal"
+      ],
+      "why": "a covered, lit log pile burns down into charcoal"
+    },
+    {
+      "id": "charcoal_forge",
+      "inputs": [
+        [
+          "minecraft:charcoal"
+        ],
+        [
+          "tfc:firestarter",
+          "tfc:torch"
+        ],
+        [
+          "#i:c:stones",
+          "tfc:rock/raw/*",
+          "tfc:rock/cobble/*",
+          "tfc:rock/bricks/*"
+        ]
+      ],
+      "outputs": [
+        "world:charcoal_forge"
+      ],
+      "why": "field guide: a charcoal pile of 7-8 layers surrounded by 5 stone blocks, then lit"
+    },
+    {
+      "id": "stone_anvil",
+      "inputs": [
+        [
+          "tfc:rock/raw/*"
+        ],
+        [
+          "tfc:stone/hammer/*",
+          "#i:c:tools/hammer"
+        ]
+      ],
+      "outputs": [
+        "tfc:rock/anvil/*"
+      ],
+      "why": "use a hammer on a raw igneous rock block"
+    }
+  ],
+  "heat": {
+    "_comment": "Heating recipes need a device hot enough for the recipe. A device's ceiling is the hottest fuel it can burn (TFC fuel data, read from the jars). A bellows lifts the charcoal forge's ceiling; the boost isn't modeled, so forge + bellows counts as any temperature. The pit kiln reaches tfc-server.toml's pitKilnTemperature and only fires unfired pottery.",
+    "devices": [
+      {
+        "id": "firepit",
+        "node": "tfc:firepit",
+        "fuel": "#i:tfc:firepit_fuel",
+        "types": [
+          "tfc:heating",
+          "tfc:pot"
+        ]
+      },
+      {
+        "id": "charcoal_forge",
+        "node": "world:charcoal_forge",
+        "fuel": "#i:tfc:forge_fuel",
+        "bellows": "tfc:bellows",
+        "types": [
+          "tfc:heating"
+        ]
+      }
+    ],
+    "pit_kiln": {
+      "node": "world:pit_kiln",
+      "only": "#i:tfc:unfired_pottery"
+    }
+  },
+  "groups": {
+    "create_power": [
+      "create:hand_crank",
+      "create:water_wheel",
+      "create:large_water_wheel",
+      "create:windmill_bearing",
+      "create:steam_engine"
+    ]
+  },
+  "gregtech": {
+    "_comment": "gtceu:* recipe types need a machine named after the type: gtceu:<tier>_<type> at or above the recipe's voltage, a steam variant (gtceu:lp_steam_<type>/hp_steam_<type>) when EU/t is low enough, or a multiblock controller gtceu:<type>. EBF recipes also need a coil at or above ebf_temp.",
+    "steam_max_eut": {
+      "lp": 8,
+      "hp": 32
+    },
+    "coils": {
+      "cupronickel": 1800,
+      "kanthal": 2700,
+      "nichrome": 3600,
+      "rtm_alloy": 4500,
+      "hssg": 5400,
+      "naquadah": 7200,
+      "trinium": 9001,
+      "tritanium": 10800
+    },
+    "machine_aliases": {
+      "gtceu:chemical_reactor": [
+        "gtceu:large_chemical_reactor"
+      ]
+    }
+  },
+  "rules": [
+    {
+      "item": "i:gtceu:steel_ingot",
+      "requires": [
+        "i:tfc:metal/ingot/pig_iron"
+      ],
+      "why": "starter rule: GregTech steel shouldn't skip TFC's iron age (pig iron from the blast furnace)"
+    },
+    {
+      "item": "i:gtceu:lv_machine_hull",
+      "requires": [
+        "i:tfc:metal/ingot/steel"
+      ],
+      "why": "starter rule: the first electric machines should need TFC steel"
+    },
+    {
+      "item": "i:create:mechanical_press",
+      "requires": [
+        "#i:c:ingots/bronze"
+      ],
+      "why": "starter rule: Create machines should come after the bronze age"
+    }
+  ],
+  "milestones": [
+    "i:tfc:firepit",
+    "i:tfc:ceramic/vessel",
+    "f:tfc:metal/copper",
+    "#i:c:ingots/copper",
+    "#i:c:ingots/bronze",
+    "i:tfc:bloomery",
+    "#i:c:ingots/wrought_iron",
+    "#i:c:ingots/pig_iron",
+    "#i:c:ingots/steel",
+    "i:create:andesite_alloy",
+    "i:create:mechanical_press",
+    "i:gtceu:lv_machine_hull",
+    "i:gtceu:electric_blast_furnace"
+  ]
+}

@@ -23,3 +23,7 @@ kubejs/export/
 tools/.venv/
 tools/**/.cache/
 __pycache__/
+
+# Dev tool state: test server, reports, dumps
+tools/.server/
+tools/.data/

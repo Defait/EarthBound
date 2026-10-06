@@ -120,6 +120,10 @@ th { color: var(--ink-2); font-weight: 600; position: sticky; top: 0; background
 <div id="shell">
   <header>
     <h1>World Viewer</h1>
+    <div class="seg" id="worldsel" hidden>
+      <button data-w="a" aria-pressed="true">World A</button>
+      <button data-w="b" aria-pressed="false">World B</button>
+    </div>
     <div id="meta"></div>
     <button class="btn" id="rescan" title="Re-read the save (run /save-all in game first)">Rescan</button>
     <button class="btn" id="theme" title="Toggle light/dark">Theme</button>
@@ -160,9 +164,13 @@ th { color: var(--ink-2); font-weight: 600; position: sticky; top: 0; background
         <div class="seg" id="mapmode">
           <button data-mode="surface" aria-pressed="true">Surface</button>
           <button data-mode="height" aria-pressed="false">Height</button>
+          <button data-mode="temperature" aria-pressed="false" class="clim" hidden title="TFC average annual temperature per chunk">Temperature</button>
+          <button data-mode="rainfall" aria-pressed="false" class="clim" hidden title="TFC average annual rainfall per chunk">Rainfall</button>
         </div>
+        <label id="gridlbl" hidden><input type="checkbox" id="geogrid" checked> Lat/long grid</label>
         <span class="hint">Scroll to zoom, drag to pan, double-click to fit. Click to pick a point for slicing.</span>
         <span class="scale" id="heightscale" hidden><span id="hlo" class="num"></span><span class="bar" id="hbar"></span><span id="hhi" class="num"></span></span>
+        <span class="scale" id="climscale" hidden><span id="clo" class="num"></span><span class="bar" id="cbar"></span><span id="chi" class="num"></span></span>
       </div>
       <div class="stage"><canvas id="c-map"></canvas></div>
       <div class="status num" id="st-map">&nbsp;</div>
@@ -195,6 +203,7 @@ th { color: var(--ink-2); font-weight: 600; position: sticky; top: 0; background
         <label><input type="checkbox" id="smooth"> Smooth (5-level average)</label>
         <label><input type="checkbox" id="fullh"> Full world height</label>
         <div id="legend"></div>
+        <span class="hint" id="cmpnote" hidden></span>
       </div>
       <div id="chartwrap"><svg id="chart" role="img" aria-label="Block count by Y level"></svg><div class="empty" id="dist-empty">Tick blocks in the list to plot how they are distributed by Y level.<br>Tip: choose “Ores” and turn on grouping by mineral.</div></div>
       <div id="tablewrap"><table id="disttable"></table></div>
@@ -248,7 +257,9 @@ const S = {
   map: { mode: 'surface', data: null },
   heat: { scale: 'linear', data: null, ent: null },
   ycache: new Map(),
+  w: 'a', worlds: ['a'], visByName: new Map(), climate: { field: null, data: null },
 };
+const wq = () => `&w=${S.w}`;
 
 async function getJSON(url) { const r = await fetch(url); const j = await r.json(); if (!r.ok) throw new Error(j.error || r.status); return j; }
 async function getBin(url) {
@@ -350,7 +361,7 @@ function buildEntities() {
   for (const b of S.blocks) {
     if (b.air) continue;
     const g = S.group ? oreGroup(b.name) : null;
-    const key = g ? g.key : 'b:' + b.id;
+    const key = g ? g.key : 'b:' + b.name;
     let e = byKey.get(key);
     if (!e) { e = { key, label: g ? g.label : b.name, ids: [], total: 0, ore: b.ore, rock: b.rock, fluid: b.fluid }; byKey.set(key, e); ents.push(e); }
     e.ids.push(b.id); e.total += b.total;
@@ -364,7 +375,9 @@ function buildEntities() {
   const oldSel = S.selected.map(k => S.entByKey.get(k)).filter(Boolean);
   S.ents = ents; S.entByKey = byKey;
   const newSel = [];
-  for (const old of oldSel) for (const e of ents) if (e.ids.some(i => old.ids.includes(i)) && !newSel.includes(e.key)) newSel.push(e.key);
+  const names = e => e.ids.map(i => S.blocks[i].name);
+  for (const old of oldSel) { const on = old.names || []; for (const e of ents) if (names(e).some(n => on.includes(n)) && !newSel.includes(e.key)) newSel.push(e.key); }
+  for (const e of ents) e.names = names(e);
   S.selected = newSel.slice(0, MAX_SERIES);
   S.slot = new Map(S.selected.map((k, i) => [k, i]));
 }
@@ -404,7 +417,7 @@ $('#list').addEventListener('click', e => {
   const ent = S.entByKey.get(row.dataset.key);
   if (e.target.closest('.eye')) {
     const nv = (entVis(ent) + 1) % 3;
-    for (const i of ent.ids) S.vis[i] = nv;
+    for (const i of ent.ids) { S.vis[i] = nv; S.visByName.set(S.blocks[i].name, nv); }
     renderList(); refreshSliceImage();
   } else if (e.target.classList.contains('sel')) {
     toggleSelect(ent.key, e.target.checked);
@@ -426,9 +439,10 @@ function flash(msg) { const el = $('#st-' + (S.view === 'dist' ? 'map' : S.view)
 $('#search').addEventListener('input', e => { S.text = e.target.value; renderList(); });
 $('#cats').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; S.cat = b.dataset.cat; $$('#cats button').forEach(x => x.setAttribute('aria-pressed', x === b)); renderList(); });
 $('#group').addEventListener('change', e => { S.group = e.target.checked; buildEntities(); renderList(); renderHeatChoices(); if (S.view === 'dist') renderDist(); if (S.view === 'heat') loadHeat(); });
-$('#v-all').onclick = () => { S.blocks.forEach(b => S.vis[b.id] = 0); renderList(); refreshSliceImage(); };
-$('#v-dimrock').onclick = () => { S.blocks.forEach(b => S.vis[b.id] = b.rock ? 1 : 0); renderList(); refreshSliceImage(); };
-$('#v-ores').onclick = () => { S.blocks.forEach(b => S.vis[b.id] = b.ore ? 0 : 2); renderList(); refreshSliceImage(); };
+function setVis(fn) { S.blocks.forEach(b => { S.vis[b.id] = fn(b); S.visByName.set(b.name, S.vis[b.id]); }); renderList(); refreshSliceImage(); }
+$('#v-all').onclick = () => setVis(() => 0);
+$('#v-dimrock').onclick = () => setVis(b => b.rock ? 1 : 0);
+$('#v-ores').onclick = () => setVis(b => b.ore ? 0 : 2);
 
 // ------------------------------------------------------------------ tabs
 $$('nav button').forEach(b => b.addEventListener('click', () => setView(b.dataset.view)));
@@ -446,6 +460,7 @@ function setView(v) {
 // ------------------------------------------------------------------ map
 const mapVP = new Viewport($('#c-map'), {
   overlay(ctx, vp) {
+    drawGraticule(ctx, vp);
     const d = S.map.data; if (!d || !S.point) return;
     const [sx, sy] = vp.toScreen((S.point.x - d.hdr.x0) / d.hdr.step + 0.5, (S.point.z - d.hdr.z0) / d.hdr.step + 0.5);
     ctx.strokeStyle = css('--marker'); ctx.lineWidth = 2;
@@ -459,8 +474,14 @@ const mapVP = new Viewport($('#c-map'), {
     const id = d.ids[cy * w + cx], x = x0 + cx * step, z = z0 + cy * step;
     if (id === MISSING) { hideTip(); $('#st-map').textContent = `x ${x}, z ${z} · not generated`; return; }
     const y = d.ys[cy * w + cx];
-    $('#st-map').textContent = `x ${x}, z ${z} · surface y ${y} · ${S.blocks[id].name}`;
-    showTip(e.clientX, e.clientY, `${blockHTML(id)}<div class="num" style="color:var(--ink-2)">x ${x}, z ${z} · y ${y}</div>`);
+    const geo = S.geo ? ' · ' + fmtGeo(...S.geo.toGeo(x, z)) : '';
+    let climTxt = '';
+    if (S.climate.data && (S.map.mode === 'temperature' || S.map.mode === 'rainfall')) {
+      const c = S.climate.data, v = c.values[Math.floor(cy * step / 16) * c.w + Math.floor(cx * step / 16)];
+      if (v !== null && v !== undefined) climTxt = ` · ${S.map.mode} ${v.toFixed(1)}${CLIM[S.map.mode].unit}`;
+    }
+    $('#st-map').textContent = `x ${x}, z ${z}${geo} · surface y ${y} · ${S.blocks[id].name}${climTxt}`;
+    showTip(e.clientX, e.clientY, `${blockHTML(id)}<div class="num" style="color:var(--ink-2)">x ${x}, z ${z} · y ${y}${geo ? '<br>' + geo.slice(3) : ''}${climTxt ? '<br>' + climTxt.slice(3) : ''}</div>`);
   },
   onClick(cx, cy) {
     const d = S.map.data; if (!d) return;
@@ -478,7 +499,7 @@ async function loadMap() {
   const [cx0, cz0, cx1, cz1] = S.info.cbox;
   const span = Math.max(cx1 - cx0 + 1, cz1 - cz0 + 1) * 16;
   const step = Math.max(1, Math.ceil(span / 4096));
-  const r = await getBin(`/api/surface?step=${step}`);
+  const r = await getBin(`/api/surface?step=${step}${wq()}`);
   const n = r.hdr.w * r.hdr.h;
   S.map.data = { hdr: r.hdr, ids: new Uint16Array(r.buf, r.off, n), ys: new Int16Array(r.buf, r.off + n * 2, n) };
   renderMap();
@@ -490,11 +511,16 @@ function renderMap(keepView) {
   let ymn = 1e9, ymx = -1e9;
   for (let i = 0; i < w * h; i++) if (d.ids[i] !== MISSING) { ymn = Math.min(ymn, d.ys[i]); ymx = Math.max(ymx, d.ys[i]); }
   const height = S.map.mode === 'height';
+  const clim = (S.map.mode === 'temperature' || S.map.mode === 'rainfall') && S.climate.data && S.climate.field === S.map.mode ? S.climate.data : null;
   for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
     const i = y * w + x, o = i * 4, id = d.ids[i];
     if (id === MISSING) { const c = checker(x, y, ca, cb); px[o] = c[0]; px[o + 1] = c[1]; px[o + 2] = c[2]; px[o + 3] = 255; continue; }
     let r, g, b;
-    if (height) [r, g, b] = rampColor((d.ys[i] - ymn) / Math.max(1, ymx - ymn));
+    if (clim) {
+      const v = clim.values[Math.floor(y * d.hdr.step / 16) * clim.w + Math.floor(x * d.hdr.step / 16)];
+      if (v === null || v === undefined) { const c = checker(x, y, ca, cb); px[o] = c[0]; px[o + 1] = c[1]; px[o + 2] = c[2]; px[o + 3] = 255; continue; }
+      [r, g, b] = climateColor(S.map.mode, v);
+    } else if (height) [r, g, b] = rampColor((d.ys[i] - ymn) / Math.max(1, ymx - ymn));
     else {
       r = S.rgb[id * 3]; g = S.rgb[id * 3 + 1]; b = S.rgb[id * 3 + 2];
       // hillshade from the north-west so terrain reads as relief
@@ -508,9 +534,99 @@ function renderMap(keepView) {
   const c = makeCanvas(w, h); c.getContext('2d').putImageData(img, 0, 0);
   mapVP.setImage(c, w, h, keepView);
   $('#heightscale').hidden = !height;
+  $('#climscale').hidden = !clim;
+  if (clim) { const sc = CLIM[S.map.mode]; $('#clo').textContent = sc.lo + sc.unit; $('#chi').textContent = sc.hi + sc.unit; $('#cbar').style.background = sc.css(); }
   if (height) { $('#hlo').textContent = 'y ' + ymn; $('#hhi').textContent = 'y ' + ymx; $('#hbar').style.background = rampCSS(); }
 }
-$('#mapmode').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; S.map.mode = b.dataset.mode; $$('#mapmode button').forEach(x => x.setAttribute('aria-pressed', x === b)); renderMap(true); });
+$('#mapmode').addEventListener('click', async e => {
+  const b = e.target.closest('button'); if (!b) return;
+  S.map.mode = b.dataset.mode; $$('#mapmode button').forEach(x => x.setAttribute('aria-pressed', x === b));
+  if ((S.map.mode === 'temperature' || S.map.mode === 'rainfall') && S.climate.field !== S.map.mode) {
+    S.climate = { field: S.map.mode, data: await getJSON(`/api/climate?field=${S.map.mode}${wq()}`) };
+  }
+  renderMap(true);
+});
+$('#geogrid').addEventListener('change', () => mapVP.draw());
+
+// Climate colors: temperature diverges around 0 °C (blue cold, red warm, gray at freezing); rainfall is sequential.
+const RED_ARM = ['#f3c5c0', '#ec9a91', '#e36b5f', '#d03b3b', '#a92a2a', '#7f1f1f'];
+function lerpHex(stops, t) {
+  const x = Math.max(0, Math.min(1, t)) * (stops.length - 1), i = Math.min(stops.length - 2, Math.floor(x)), f = x - i;
+  const a = hexRGB(stops[i]), b = hexRGB(stops[i + 1]);
+  return [0, 1, 2].map(k => Math.round(a[k] + (b[k] - a[k]) * f));
+}
+const CLIM = {
+  temperature: { lo: -30, hi: 30, unit: ' °C', css: () => `linear-gradient(90deg, ${[...RAMP].slice(4).reverse().join(',')}, ${css('--surface-2')}, ${RED_ARM.join(',')})` },
+  rainfall: { lo: 0, hi: 500, unit: ' mm', css: () => rampCSS() },
+};
+function climateColor(field, v) {
+  if (field === 'rainfall') return rampColor(v / 500);
+  const mid = hexRGB(css('--surface-2'));
+  if (v >= 0) { const t = Math.min(1, v / 30); const c = lerpHex(RED_ARM, t); return t < .15 ? mid.map((m, k) => Math.round(m + (c[k] - m) * t / .15)) : c; }
+  const t = Math.min(1, -v / 30); const c = lerpHex([...RAMP].slice(4), t); return t < .15 ? mid.map((m, k) => Math.round(m + (c[k] - m) * t / .15)) : c;
+}
+
+// Equal Earth (TFC: Real World) block <-> lat/long, mirroring the mod's projection.
+const EE = { A1: 1.340264, A2: -0.081106, A3: 0.000893, A4: 0.003796, M: Math.sqrt(3) / 2 };
+function eeForward(phi, dlam) {
+  const th = Math.asin(EE.M * Math.sin(phi)), t2 = th * th, t6 = t2 * t2 * t2;
+  const den = 3 * (9 * EE.A4 * t6 * t2 + 7 * EE.A3 * t6 + 3 * EE.A2 * t2 + EE.A1);
+  return [2 * Math.sqrt(3) * dlam * Math.cos(th) / den, th * (EE.A1 + EE.A2 * t2 + t6 * (EE.A3 + EE.A4 * t2))];
+}
+function geoSetup(g) {
+  const rad = Math.PI / 180, lam0 = (g.west + g.east) / 2 * rad;
+  const full = (g.east - g.west) % 360 === 0;
+  const wx = full ? eeForward(0, -Math.PI)[0] : eeForward(0, g.west * rad - lam0)[0];
+  const ex = full ? eeForward(0, Math.PI)[0] : eeForward(0, g.east * rad - lam0)[0];
+  const sy = eeForward(g.south * rad, 0)[1], ny = eeForward(g.north * rad, 0)[1];
+  return {
+    toBlock(lon, lat) {
+      let d = lon * rad - lam0; d = ((d + Math.PI) % (2 * Math.PI) + 2 * Math.PI) % (2 * Math.PI) - Math.PI;
+      const [px, py] = eeForward(lat * rad, d);
+      return [((px - wx) / (ex - wx)) * 2 * g.h - g.h, (1 - (py - sy) / (ny - sy)) * 2 * g.v - g.v];
+    },
+    toGeo(x, z) {
+      const px = wx + (x + g.h) / (2 * g.h) * (ex - wx), py = sy + (1 - (z + g.v) / (2 * g.v)) * (ny - sy);
+      let th = py / EE.A1;
+      for (let i = 0; i < 20; i++) { const t2 = th * th, t6 = t2 * t2 * t2; const f = th * (EE.A1 + EE.A2 * t2 + t6 * (EE.A3 + EE.A4 * t2)) - py; const fp = EE.A1 + 3 * EE.A2 * t2 + t6 * (7 * EE.A3 + 9 * EE.A4 * t2); th -= f / fp; }
+      const t2 = th * th, t6 = t2 * t2 * t2, den = 3 * (9 * EE.A4 * t6 * t2 + 7 * EE.A3 * t6 + 3 * EE.A2 * t2 + EE.A1);
+      const lat = Math.asin(Math.max(-1, Math.min(1, Math.sin(th) / EE.M))) / rad;
+      const lon = ((px * den / (2 * Math.sqrt(3) * Math.cos(th)) + lam0) / rad + 540) % 360 - 180;
+      return [lon, lat];
+    },
+  };
+}
+const fmtGeo = (lon, lat) => `${Math.abs(lat).toFixed(3)}°${lat >= 0 ? 'N' : 'S'}, ${Math.abs(lon).toFixed(3)}°${lon >= 0 ? 'E' : 'W'}`;
+function drawGraticule(ctx, vp) {
+  const d = S.map.data; if (!d || !S.geo || !$('#geogrid').checked) return;
+  const { x0, z0, step, w, h } = d.hdr;
+  // pick a spacing that puts a handful of lines across the visible area
+  const [c0x, c0y] = vp.toCell(0, 0), [c1x, c1y] = vp.toCell(vp.c.clientWidth, vp.c.clientHeight);
+  const bx0 = x0 + Math.max(0, c0x) * step, bx1 = x0 + Math.min(w, c1x) * step, bz0 = z0 + Math.max(0, c0y) * step, bz1 = z0 + Math.min(h, c1y) * step;
+  const [lonA, latA] = S.geo.toGeo(bx0, bz0), [lonB, latB] = S.geo.toGeo(bx1, bz1);
+  const span = Math.max(Math.abs(lonB - lonA), Math.abs(latB - latA));
+  const sp = [30, 10, 5, 2, 1, 0.5, 0.2, 0.1, 0.05, 0.02, 0.01].find(s => span / s >= 2.5) || 0.01;
+  const toScreen = (bx, bz) => vp.toScreen((bx - x0) / step, (bz - z0) / step);
+  ctx.save(); ctx.strokeStyle = css('--ink-2'); ctx.globalAlpha = .55; ctx.lineWidth = 1; ctx.setLineDash([3, 4]);
+  ctx.fillStyle = css('--ink'); ctx.font = '11px system-ui, sans-serif';
+  const labels = [];
+  for (let lat = Math.ceil(Math.min(latA, latB) / sp) * sp; lat <= Math.max(latA, latB); lat += sp) {
+    const [, bz] = S.geo.toBlock(0, lat); const [, sy] = toScreen(0, bz);
+    ctx.beginPath(); ctx.moveTo(0, sy); ctx.lineTo(vp.c.clientWidth, sy); ctx.stroke();
+    labels.push([6, sy - 4, `${Math.abs(+lat.toFixed(4))}°${lat >= 0 ? 'N' : 'S'}`]);
+  }
+  const lats = [Math.min(latA, latB) - sp, Math.max(latA, latB) + sp];
+  for (let lon = Math.ceil(Math.min(lonA, lonB) / sp) * sp; lon <= Math.max(lonA, lonB); lon += sp) {
+    ctx.beginPath();
+    for (let k = 0; k <= 20; k++) { const la = lats[0] + (lats[1] - lats[0]) * k / 20; const [bx, bz] = S.geo.toBlock(lon, la); const [sx, sy] = toScreen(bx, bz); k ? ctx.lineTo(sx, sy) : ctx.moveTo(sx, sy); }
+    ctx.stroke();
+    const [bx] = S.geo.toBlock(lon, (latA + latB) / 2); const [sx] = toScreen(bx, 0);
+    labels.push([sx + 4, 14, `${Math.abs(+lon.toFixed(4))}°${lon >= 0 ? 'E' : 'W'}`]);
+  }
+  ctx.setLineDash([]); ctx.globalAlpha = 1;
+  for (const [lx, ly, t] of labels) { ctx.strokeStyle = css('--surface-1'); ctx.lineWidth = 3; ctx.strokeText(t, lx, ly); ctx.fillText(t, lx, ly); }
+  ctx.restore();
+}
 
 // ------------------------------------------------------------------ slice
 function sliceBounds() {
@@ -538,10 +654,10 @@ async function loadSlice() {
   let url;
   if (ax === 'y') {
     const [a0, a1] = clampWindow(B.x0, B.x1, cx, 2048), [b0, b1] = clampWindow(B.z0, B.z1, cz, 2048);
-    url = `/api/slice?axis=y&pos=${pos}&a0=${a0}&a1=${a1}&b0=${b0}&b1=${b1}`;
+    url = `/api/slice?axis=y&pos=${pos}&a0=${a0}&a1=${a1}&b0=${b0}&b1=${b1}${wq()}`;
   } else {
     const [a0, a1] = ax === 'x' ? clampWindow(B.z0, B.z1, cz, 4096) : clampWindow(B.x0, B.x1, cx, 4096);
-    url = `/api/slice?axis=${ax}&pos=${pos}&a0=${a0}&a1=${a1}`;
+    url = `/api/slice?axis=${ax}&pos=${pos}&a0=${a0}&a1=${a1}${wq()}`;
   }
   const req = ++sliceReq;
   $('#st-slice').textContent = 'Loading…';
@@ -621,12 +737,21 @@ addEventListener('keydown', e => {
 });
 
 // ------------------------------------------------------------------ Y distribution (depth profile: Y up the side, count along the bottom)
-async function ensureY(ids) {
-  const need = ids.filter(i => !S.ycache.has(i));
+// Y counts cached per world and block name, so the other world can be queried by name.
+async function ensureY(world, names) {
+  const need = names.filter(n => !S.ycache.has(world + '|' + n));
   if (need.length) {
-    const r = await getJSON(`/api/ydist?ids=${need.join(',')}`);
-    for (const [i, arr] of Object.entries(r.series)) S.ycache.set(+i, arr);
+    const r = await getJSON(`/api/ydist?names=${encodeURIComponent(need.join(','))}&w=${world}`);
+    for (const n of need) S.ycache.set(world + '|' + n, r.series[n] || null);
+    S.ycache.set(world + '|#chunks', r.chunks);
+    S.ycache.set(world + '|#ymin', r.ymin);
   }
+}
+const hostCache = new Map();
+async function hostRock(world, names) {
+  const k = world + '|' + names.join(',');
+  if (!hostCache.has(k)) hostCache.set(k, getJSON(`/api/hostrock?names=${encodeURIComponent(names.join(','))}&w=${world}`));
+  return hostCache.get(k);
 }
 function niceTicks(max, n = 5) {
   if (max <= 0) return [0];
@@ -644,18 +769,26 @@ async function renderDist() {
   $('#legend').innerHTML = ents.length >= 2 ? ents.map(e => `<span><i style="background:${seriesColor(e.key)}"></i>${esc(e.label)}</span>`).join('') : '';
   if (!ents.length) { svg.innerHTML = ''; $('#disttable').innerHTML = ''; return; }
   const req = ++distReq;
-  await ensureY(ents.flatMap(e => e.ids));
+  const other = S.worlds.length > 1 ? (S.w === 'a' ? 'b' : 'a') : null;
+  const allNames = ents.flatMap(e => e.names);
+  await ensureY(S.w, allNames);
+  if (other) await ensureY(other, allNames);
   if (req !== distReq) return;
   const ymin = S.info.ymin, H = S.info.height, share = $('#distmode [aria-pressed=true]').dataset.mode === 'share';
-  const series = ents.map(e => {
-    const raw = new Float64Array(H);
-    for (const i of e.ids) S.ycache.get(i).forEach((v, k) => raw[k] += v);
+  const perChunks = !!other && !share;   // comparing worlds of different sizes: counts per 100 chunks
+  const build = (world, e) => {
+    const raw = new Float64Array(H), wy = S.ycache.get(world + '|#ymin') ?? ymin;
+    for (const n of e.names) { const arr = S.ycache.get(world + '|' + n); if (arr) arr.forEach((v, k) => { const kk = k + (wy - ymin); if (kk >= 0 && kk < H) raw[kk] += v; }); }
     const total = raw.reduce((a, b) => a + b, 0);
     let vals = raw;
     if ($('#smooth').checked) { vals = raw.map((_, k) => { let s = 0, n = 0; for (let j = k - 2; j <= k + 2; j++) if (j >= 0 && j < H) { s += raw[j]; n++; } return s / n; }); }
     if (share && total) vals = vals.map(v => v / total);
-    return { e, raw, vals, total };
-  });
+    if (perChunks) { const ch = S.ycache.get(world + '|#chunks') || 1; vals = vals.map(v => v * 100 / ch); }
+    return { raw, vals, total };
+  };
+  const series = ents.map(e => { const a = build(S.w, e); return { e, ...a, other: other ? build(other, e) : null }; });
+  $('#cmpnote').hidden = !other;
+  if (other) $('#cmpnote').textContent = `Solid: world ${S.w.toUpperCase()} · dashed: world ${other.toUpperCase()}${perChunks ? ' · per 100 generated chunks' : ''}`;
   // crop to where the selection actually occurs (unless full height requested)
   let lo = 0, hi = H - 1;
   if (!$('#fullh').checked) {
@@ -664,7 +797,8 @@ async function renderDist() {
     if (hi < 0) { lo = 0; hi = H - 1; } else { lo = Math.max(0, lo - 8); hi = Math.min(H - 1, hi + 8); }
   }
   const W = svg.clientWidth, Hh = svg.clientHeight, m = { l: 56, r: 24, t: 16, b: 34 };
-  const vmax = Math.max(...series.map(s => Math.max(...s.vals.slice(lo, hi + 1)))) || 1;
+  if (!$('#fullh').checked) for (const s of series) if (s.other) s.other.raw.forEach((v, k) => { if (v > 0) { lo = Math.min(lo, Math.max(0, k - 8)); hi = Math.max(hi, Math.min(H - 1, k + 8)); } });
+  const vmax = Math.max(...series.map(s => Math.max(...s.vals.slice(lo, hi + 1), ...(s.other ? s.other.vals.slice(lo, hi + 1) : [0])))) || 1;
   const ticks = niceTicks(vmax), xmax = ticks[ticks.length - 1] || 1;
   const X = v => m.l + (v / xmax) * (W - m.l - m.r);
   const Y = k => m.t + (1 - (k - lo) / Math.max(1, hi - lo)) * (Hh - m.t - m.b);
@@ -676,12 +810,14 @@ async function renderDist() {
     g += `<line x1="${m.l}" x2="${W - m.r}" y1="${sy}" y2="${sy}" stroke="var(--grid)"/><text x="${m.l - 8}" y="${sy + 4}" text-anchor="end" fill="var(--muted)" class="num" font-size="11">${y}</text>`;
   }
   g += `<line x1="${m.l}" x2="${m.l}" y1="${m.t}" y2="${Hh - m.b}" stroke="var(--axis)"/>`;
-  g += `<text x="${(m.l + W - m.r) / 2}" y="${Hh - 6}" text-anchor="middle" fill="var(--ink-2)" font-size="11">${share ? "Share of the block's total at each Y" : 'Blocks at each Y level (all generated chunks)'}</text>`;
+  g += `<text x="${(m.l + W - m.r) / 2}" y="${Hh - 6}" text-anchor="middle" fill="var(--ink-2)" font-size="11">${share ? "Share of the block's total at each Y" : perChunks ? 'Blocks at each Y level per 100 generated chunks' : 'Blocks at each Y level (all generated chunks)'}</text>`;
   g += `<text transform="translate(14 ${(m.t + Hh - m.b) / 2}) rotate(-90)" text-anchor="middle" fill="var(--ink-2)" font-size="11">Y level</text>`;
   for (const s of series) {
-    let d = '';
-    for (let k = lo; k <= hi; k++) d += (k === lo ? 'M' : 'L') + X(s.vals[k]).toFixed(1) + ',' + Y(k).toFixed(1);
-    g += `<path d="${d}" fill="none" stroke="${seriesColor(s.e.key)}" stroke-width="2" stroke-linejoin="round"/>`;
+    for (const [vals, dash] of [[s.vals, ''], ...(s.other ? [[s.other.vals, ' stroke-dasharray="5 4"']] : [])]) {
+      let d = '';
+      for (let k = lo; k <= hi; k++) d += (k === lo ? 'M' : 'L') + X(vals[k]).toFixed(1) + ',' + Y(k).toFixed(1);
+      g += `<path d="${d}" fill="none" stroke="${seriesColor(s.e.key)}" stroke-width="2" stroke-linejoin="round"${dash}/>`;
+    }
   }
   if (series.length <= 4) {     // direct labels at each series' peak, nudged apart so they never overlap
     const labels = series.map(s => {
@@ -707,19 +843,32 @@ async function renderDist() {
     svg.querySelector('#xh').setAttribute('visibility', 'visible');
     const l = svg.querySelector('#xhl'); l.setAttribute('y1', Y(k)); l.setAttribute('y2', Y(k));
     const rows = series.map(s => ({ s, v: s.vals[k], raw: s.raw[k] })).sort((a, b) => b.v - a.v);
+    const val = (v, raw) => perChunks ? v.toFixed(1) : (share ? fmtTick(v, true) + ' · ' : '') + fmt(Math.round(raw));
     showTip(ev.clientX, ev.clientY, `<div class="t num">y ${ymin + k}</div>` + rows.map(o =>
-      `<div class="r"><span class="k"><span class="d" style="background:${seriesColor(o.s.e.key)}"></span>${esc(shortName(o.s.e.label))}</span><span class="num">${share ? fmtTick(o.v, true) + ' · ' : ''}${fmt(Math.round(o.raw))}</span></div>`).join(''));
+      `<div class="r"><span class="k"><span class="d" style="background:${seriesColor(o.s.e.key)}"></span>${esc(shortName(o.s.e.label))}</span><span class="num">${val(o.v, o.raw)}${o.s.other ? ` <span style="color:var(--ink-2)">vs ${val(o.s.other.vals[k], o.s.other.raw[k])}</span>` : ''}</span></div>`).join(''));
   });
   hit.addEventListener('pointerleave', () => { svg.querySelector('#xh').setAttribute('visibility', 'hidden'); hideTip(); });
   // table view: totals, peak, and the Y band holding the middle 90%
   const pct = (raw, total, p) => { let acc = 0; for (let k = 0; k < H; k++) { acc += raw[k]; if (acc >= total * p) return ymin + k; } return ymin + H - 1; };
-  $('#disttable').innerHTML = `<thead><tr><th>Block</th><th>Total</th><th>Peak Y</th><th>Middle 90% between</th><th>Lowest–highest Y</th></tr></thead><tbody>` +
+  const ow = other ? other.toUpperCase() : '';
+  $('#disttable').innerHTML = `<thead><tr><th>Block</th><th>Total</th><th>Peak Y</th><th>Middle 90% between</th><th>Lowest–highest Y</th>${other ? `<th>World ${ow} total</th><th>World ${ow} peak Y</th>` : ''}<th>Touches most (host rock)</th></tr></thead><tbody>` +
     series.map(s => {
       let pk = 0, first = -1, last = -1;
       s.raw.forEach((v, k) => { if (v > s.raw[pk]) pk = k; if (v > 0) { if (first < 0) first = k; last = k; } });
       return `<tr><td><span class="ser" style="display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;background:${seriesColor(s.e.key)}"></span>${esc(s.e.label)}</td><td class="num">${fmt(s.total)}</td>` +
-        (s.total ? `<td class="num">${ymin + pk}</td><td class="num">y ${pct(s.raw, s.total, 0.05)} … ${pct(s.raw, s.total, 0.95)}</td><td class="num">y ${ymin + first} … ${ymin + last}</td>` : '<td colspan="3">not present</td>') + '</tr>';
+        (s.total ? `<td class="num">${ymin + pk}</td><td class="num">y ${pct(s.raw, s.total, 0.05)} … ${pct(s.raw, s.total, 0.95)}</td><td class="num">y ${ymin + first} … ${ymin + last}</td>` : '<td colspan="3">not present</td>') +
+        (s.other ? `<td class="num">${fmt(s.other.total)}</td><td class="num">${s.other.total ? ymin + s.other.raw.indexOf(Math.max(...s.other.raw)) : '—'}</td>` : '') +
+        `<td class="host" data-names="${esc(s.e.names.join(','))}"><span class="hint">…</span></td></tr>`;
     }).join('') + '</tbody>';
+  for (const td of $('#disttable').querySelectorAll('td.host')) {
+    hostRock(S.w, td.dataset.names.split(',')).then(r => {
+      if (!r.total) { td.innerHTML = '<span class="hint">—</span>'; return; }
+      const air = r.top.filter(t => /:(cave_)?air$/.test(t.name)).reduce((a, t) => a + t.count, 0);
+      const solid = r.top.filter(t => !/:(cave_)?air$/.test(t.name)).slice(0, 3);
+      td.innerHTML = solid.map(t => `${esc(t.name.replace(/^tfc:rock\//, ''))} <span class="num" style="color:var(--ink-2)">${(100 * t.count / r.total).toFixed(0)}%</span>`).join(', ') +
+        (air ? ` <span class="hint num">· exposed ${(100 * air / r.total).toFixed(0)}%</span>` : '');
+    }).catch(() => { td.textContent = '?'; });
+  }
 }
 const shortName = l => l.replace(/^tfc:ore\//, '').replace(/ \(all grades & rocks\)$/, ' (all)');
 $('#distmode').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; $$('#distmode button').forEach(x => x.setAttribute('aria-pressed', x === b)); renderDist(); });
@@ -743,7 +892,7 @@ async function loadHeat() {
   const ent = S.entByKey.get(S.heat.ent);
   $('#heat-empty').style.display = ent ? 'none' : 'grid';
   if (!ent) { heatVP.setImage(null, 0, 0); S.heat.data = null; return; }
-  let q = `/api/heatmap?ids=${ent.ids.join(',')}`;
+  let q = `/api/heatmap?ids=${ent.ids.join(',')}${wq()}`;
   if ($('#ylo').value !== '') q += `&ylo=${+$('#ylo').value}`;
   if ($('#yhi').value !== '') q += `&yhi=${+$('#yhi').value}`;
   const req = ++heatReq;
@@ -786,11 +935,17 @@ $('#theme').onclick = () => {
   root.dataset.theme = dark ? 'light' : 'dark';
   renderMap(true); refreshSliceImage(); renderHeat(true); if (S.view === 'dist') renderDist();
 };
-$('#rescan').onclick = async () => { await fetch('/api/rescan'); boot(); };
+$('#rescan').onclick = async () => { await fetch('/api/rescan'); S.ycache.clear(); hostCache.clear(); boot(); };
+$('#worldsel').addEventListener('click', async e => {
+  const b = e.target.closest('button'); if (!b || b.dataset.w === S.w) return;
+  S.w = b.dataset.w; $$('#worldsel button').forEach(x => x.setAttribute('aria-pressed', x === b));
+  await loadWorld();
+});
+let st = null;
 async function boot() {
   $('#loading').style.display = 'grid'; $('#loaderr').textContent = '';
   for (;;) {
-    const st = await getJSON('/api/status');
+    st = await getJSON('/api/status');
     if (st.error) { $('#loadmsg').textContent = 'Scan failed'; $('#loaderr').textContent = st.error; return; }
     const [done, total] = st.progress;
     $('#loadfill').style.width = total ? (100 * done / total) + '%' : '0';
@@ -798,17 +953,31 @@ async function boot() {
     if (st.ready) break;
     await new Promise(r => setTimeout(r, 400));
   }
-  S.info = await getJSON('/api/info');
+  S.worlds = st.worlds || ['a'];
+  if (!S.worlds.includes(S.w)) S.w = 'a';
+  $('#worldsel').hidden = S.worlds.length < 2;
+  await loadWorld();
+}
+async function loadWorld() {
+  S.info = await getJSON(`/api/info?w=${S.w}`);
   S.blocks = S.info.blocks;
+  S.geo = S.info.geo ? geoSetup(S.info.geo) : null;
+  S.climate = { field: null, data: null };
+  $$('.clim').forEach(b => b.hidden = !S.info.climate);
+  $('#gridlbl').hidden = !S.geo;
+  if (!S.info.climate && (S.map.mode === 'temperature' || S.map.mode === 'rainfall')) { S.map.mode = 'surface'; $$('#mapmode button').forEach(x => x.setAttribute('aria-pressed', x.dataset.mode === 'surface')); }
+  else if (S.map.mode === 'temperature' || S.map.mode === 'rainfall') S.climate = { field: S.map.mode, data: await getJSON(`/api/climate?field=${S.map.mode}${wq()}`) };
   S.rgb = new Uint8Array(S.blocks.length * 3);
   S.blocks.forEach(b => S.rgb.set(hexRGB(b.color), b.id * 3));
-  if (!S.vis || S.vis.length !== S.blocks.length) S.vis = new Uint8Array(S.blocks.length);
+  S.vis = new Uint8Array(S.blocks.length);
+  S.blocks.forEach(b => { if (S.visByName.has(b.name)) S.vis[b.id] = S.visByName.get(b.name); });
   S.ycache.clear(); S.slice.data = null;
   const i = S.info, [cx0, cz0, cx1, cz1] = i.cbox;
-  $('#meta').textContent = `${i.world} · ${i.dim} · ${i.version || '?'} · ${fmt(i.chunks)} generated chunks (${fmt(i.partial)} partial, ignored) · x ${cx0 * 16}…${cx1 * 16 + 15}, z ${cz0 * 16}…${cz1 * 16 + 15} · y ${i.ymin}…${i.ymin + i.height - 1} · scanned in ${i.scanSeconds}s`;
+  $('#meta').textContent = `${S.worlds.length > 1 ? 'World ' + S.w.toUpperCase() + ': ' : ''}${i.world} · ${i.dim} · ${i.version || '?'} · ${fmt(i.chunks)} generated chunks (${fmt(i.partial)} partial, ignored) · x ${cx0 * 16}…${cx1 * 16 + 15}, z ${cz0 * 16}…${cz1 * 16 + 15} · y ${i.ymin}…${i.ymin + i.height - 1} · scanned in ${i.scanSeconds}s`;
   if (!S.slice.pos) S.slice.pos = 0;
   buildEntities(); renderList(); renderHeatChoices();
   $('#loading').style.display = 'none';
+  S.slice.hdr = null; S.heat.data = null;
   await loadMap();
   if (S.view === 'slice') loadSlice();
   if (S.view === 'dist') renderDist();

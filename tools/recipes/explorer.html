@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recipe Explorer</title>
+<style>
+:root {
+  color-scheme: light;
+  --page: #f9f9f7; --surface-1: #fcfcfb; --surface-2: #f0efec; --border: rgba(11,11,11,0.10);
+  --ink: #0b0b0b; --ink-2: #52514e; --muted: #898781; --grid: #e1e0d9; --accent: #2a78d6; --accent-ink: #fff;
+  --hover: rgba(11,11,11,0.05); --good: #006300; --good-bg: rgba(12,163,12,.12); --bad: #b42d2d; --bad-bg: rgba(208,59,59,.12);
+  --warn: #8a5a00; --warn-bg: rgba(250,178,25,.18); --chip: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --page: #0d0d0d; --surface-1: #1a1a19; --surface-2: #232322; --border: rgba(255,255,255,0.10);
+    --ink: #fff; --ink-2: #c3c2b7; --muted: #898781; --grid: #2c2c2a; --accent: #3987e5; --accent-ink: #fff;
+    --hover: rgba(255,255,255,0.06); --good: #0ca30c; --good-bg: rgba(12,163,12,.16); --bad: #e66767; --bad-bg: rgba(208,59,59,.18);
+    --warn: #fab219; --warn-bg: rgba(250,178,25,.14); --chip: #262625;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0d0d0d; --surface-1: #1a1a19; --surface-2: #232322; --border: rgba(255,255,255,0.10);
+  --ink: #fff; --ink-2: #c3c2b7; --muted: #898781; --grid: #2c2c2a; --accent: #3987e5; --accent-ink: #fff;
+  --hover: rgba(255,255,255,0.06); --good: #0ca30c; --good-bg: rgba(12,163,12,.16); --bad: #e66767; --bad-bg: rgba(208,59,59,.18);
+  --warn: #fab219; --warn-bg: rgba(250,178,25,.14); --chip: #262625;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { height: 100%; margin: 0; }
+body { background: var(--page); color: var(--ink); font: 13px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+a { color: inherit; }
+button, input, select { font: inherit; color: inherit; }
+.num { font-variant-numeric: tabular-nums; }
+#shell { display: grid; grid-template-rows: auto 1fr; grid-template-columns: 320px 1fr; height: 100vh; }
+header { grid-column: 1 / -1; display: flex; gap: 14px; align-items: center; padding: 8px 16px; background: var(--surface-1); border-bottom: 1px solid var(--border); }
+header h1 { font-size: 15px; margin: 0; }
+#meta { color: var(--ink-2); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+nav { display: flex; gap: 2px; }
+nav a { text-decoration: none; padding: 5px 10px; border-radius: 6px; color: var(--ink-2); }
+nav a.on { background: var(--surface-2); color: var(--ink); font-weight: 600; }
+.btn { background: var(--surface-2); border: 1px solid var(--border); border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+aside { border-right: 1px solid var(--border); background: var(--surface-1); display: flex; flex-direction: column; min-height: 0; }
+#q { margin: 10px 12px; padding: 6px 9px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface-2); }
+#results { overflow-y: auto; flex: 1; }
+#results a { display: flex; gap: 8px; align-items: center; padding: 4px 12px; text-decoration: none; }
+#results a:hover { background: var(--hover); }
+#results .id { color: var(--muted); font-size: 11px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#results .txt { min-width: 0; }
+main { overflow-y: auto; padding: 16px 20px 40px; min-width: 0; }
+h2 { font-size: 18px; margin: 0 0 4px; }
+h3 { font-size: 14px; margin: 22px 0 8px; display: flex; gap: 8px; align-items: baseline; }
+h3 .c { color: var(--muted); font-weight: 400; }
+.sub { color: var(--ink-2); }
+.hint { color: var(--muted); }
+.icon { width: 20px; height: 20px; image-rendering: pixelated; flex: none; border-radius: 3px; }
+.icon.big { width: 40px; height: 40px; }
+.fallback { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 3px; font-size: 10px; font-weight: 700; color: #fff; flex: none; }
+.fallback.big { width: 40px; height: 40px; font-size: 16px; }
+.chip { display: inline-flex; align-items: center; gap: 5px; padding: 2px 7px 2px 3px; border: 1px solid var(--border); border-radius: 6px; background: var(--chip); text-decoration: none; max-width: 100%; vertical-align: middle; }
+.chip:hover { border-color: var(--accent); }
+.chip .nm { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.chip .n { color: var(--ink-2); }
+.chip.unreach .nm { color: var(--muted); }
+.chip.tag { background: var(--surface-2); }
+.badge { display: inline-block; padding: 1px 7px; border-radius: 10px; font-size: 11px; font-weight: 600; }
+.ok { background: var(--good-bg); color: var(--good); }
+.bad { background: var(--bad-bg); color: var(--bad); }
+.warn { background: var(--warn-bg); color: var(--warn); }
+.mutedb { background: var(--surface-2); color: var(--ink-2); }
+.itemhead { display: flex; gap: 12px; align-items: center; }
+.rcard { border: 1px solid var(--border); border-radius: 8px; background: var(--surface-1); margin: 8px 0; }
+.rhead { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 6px 10px; border-bottom: 1px solid var(--grid); }
+.rhead .rid { color: var(--ink-2); text-decoration: none; font-size: 12px; }
+.rhead .rid:hover { text-decoration: underline; }
+.type { font-weight: 600; }
+.rbody { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 10px; padding: 8px 10px; align-items: center; }
+.slots, .outs { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.slot { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+.slot .q { color: var(--ink-2); min-width: 34px; text-align: right; }
+.slot .or { color: var(--muted); }
+.slot.unmet .q::after { content: " ✗"; color: var(--bad); }
+.arrow { color: var(--muted); font-size: 18px; }
+.params { padding: 0 10px 8px; color: var(--ink-2); font-size: 12px; }
+.station { font-size: 12px; padding: 1px 7px; border-radius: 6px; }
+pre { background: var(--surface-2); border-radius: 6px; padding: 10px; overflow: auto; font-size: 12px; max-height: 420px; }
+details > summary { cursor: pointer; }
+.tree, .tree ul { list-style: none; margin: 0; padding-left: 18px; border-left: 1px solid var(--grid); }
+.tree { padding-left: 0; border: 0; }
+.tree li { margin: 4px 0; }
+.tree .via { color: var(--ink-2); font-size: 12px; }
+table { border-collapse: collapse; width: 100%; background: var(--surface-1); }
+th, td { padding: 5px 10px; border-bottom: 1px solid var(--grid); text-align: left; vertical-align: top; }
+th { color: var(--ink-2); font-weight: 600; position: sticky; top: 0; background: var(--surface-1); }
+td.r, th.r { text-align: right; }
+.group { margin-bottom: 6px; }
+.group > summary { font-weight: 600; padding: 4px 0; }
+.more { margin: 8px 0; }
+#loading { position: fixed; inset: 0; display: grid; place-items: center; background: var(--page); z-index: 9; color: var(--ink-2); }
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin: 10px 0; }
+.stat { background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; }
+.stat .v { font-size: 20px; font-weight: 600; }
+.stat .k { color: var(--ink-2); }
+</style>
+</head>
+<body>
+<div id="loading">Loading…</div>
+<div id="shell">
+  <header>
+    <h1>Recipe Explorer</h1>
+    <nav>
+      <a href="#/progression" data-nav="progression">Progression</a>
+      <a href="#/types" data-nav="types">Recipe types</a>
+      <a href="#/dupes" data-nav="dupes">Duplicates</a>
+      <a href="#/diff" data-nav="diff">Compare dumps</a>
+    </nav>
+    <div id="meta"></div>
+    <button class="btn" id="theme">Theme</button>
+  </header>
+  <aside>
+    <input id="q" type="search" placeholder="Search items, fluids, #tags…" autocomplete="off">
+    <div id="results"></div>
+  </aside>
+  <main id="main"></main>
+</div>
+<script>
+"use strict";
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const fmt = n => typeof n === "number" ? n.toLocaleString() : n;
+async function api(path) { const r = await fetch(path); const j = await r.json(); if (!r.ok) throw new Error(j.error || r.status); return j; }
+const NS_COLORS = ["#2a78d6", "#eb6834", "#1baf7a", "#c98500", "#d55181", "#008300", "#4a3aa7", "#e34948"];
+function nsColor(id) { const ns = (id.split(":")[1] || id); let h = 0; for (const c of ns) h = (h * 31 + c.charCodeAt(0)) | 0; return NS_COLORS[Math.abs(h) % NS_COLORS.length]; }
+function iconHTML(id, big) {
+  if (id.startsWith("#")) return `<span class="fallback${big ? " big" : ""}" style="background:var(--muted)">#</span>`;
+  const letter = (id.split(":").pop().split("/").pop()[0] || "?").toUpperCase();
+  return `<img class="icon${big ? " big" : ""}" src="/api/icon?id=${encodeURIComponent(id)}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fallback${big ? " big" : ""}',textContent:'${letter}',style:'background:${nsColor(id)}'}))">`;
+}
+const href = id => "#/node/" + encodeURIComponent(id);
+function chip(e, n, extra = "") {
+  if (!e.id || !(e.id.startsWith("i:") || e.id.startsWith("f:") || e.id.startsWith("#"))) return `<span class="chip"><span class="nm">${esc(e.name || e.id)}</span></span>`;
+  const unreach = !e.tag && (e.depth === null || e.depth === undefined);
+  const title = `${e.id}${e.tag ? ` (${e.size} entries)` : unreach ? " · not reachable from the starting resources" : ` · reachable in ${e.depth} steps`}`;
+  return `<a class="chip${e.tag ? " tag" : ""}${unreach ? " unreach" : ""}" href="${href(e.id)}" title="${esc(title)}">${iconHTML(e.id)}<span class="nm">${esc(e.name)}${e.tag && e.size !== "" && e.size !== undefined ? ` <span class="n">(${e.size})</span>` : ""}</span>${n !== undefined && n !== null && n !== 1 ? `<span class="n num">×${esc(n)}</span>` : ""}${extra}</a>`;
+}
+const VOLT = [["ULV", 8], ["LV", 32], ["MV", 128], ["HV", 512], ["EV", 2048], ["IV", 8192], ["LuV", 32768], ["ZPM", 131072], ["UV", 524288], ["UHV", 2097152]];
+function tierName(eut) { for (const [n, v] of VOLT) if (Math.abs(eut) <= v) return n; return "UHV+"; }
+function paramsHTML(p) {
+  const out = [];
+  if (p.temperature !== undefined) out.push(`${fmt(p.temperature)} °C`);
+  if (p.tier !== undefined) out.push(`tier ${p.tier}`);
+  if (p.eut !== undefined) out.push(`${fmt(p.eut)} EU/t (${tierName(p.eut)})`);
+  if (p.eut_out !== undefined) out.push(`produces ${fmt(p.eut_out)} EU/t`);
+  if (p.ebf_temp !== undefined) out.push(`coil ${fmt(p.ebf_temp)} K`);
+  if (p.duration !== undefined) out.push(`${(p.duration / 20).toFixed(p.duration % 20 ? 1 : 0)} s`);
+  if (p.processing_time !== undefined) out.push(`${p.processing_time} ticks`);
+  if (p.heat_requirement) out.push(`heat: ${p.heat_requirement}`);
+  if (p.knapping_type) out.push(`knapping: ${p.knapping_type}`);
+  if (p.grid) out.push(`grid ${p.grid}`);
+  if (p.output) out.push(p.output);
+  if (p.steps) out.push(`steps: ${p.steps}`);
+  if (p.conditions) out.push(`conditions: ${esc(p.conditions)}`);
+  return out.join(" · ");
+}
+function recipeCard(r, opts = {}) {
+  const slots = r.inputs.map(s => {
+    const shown = s.refs.slice(0, 4).map(ref => chip(ref)).join('<span class="or">or</span>');
+    const more = s.refs.length > 4 ? `<span class="hint">+${s.refs.length - 4} more</span>` : "";
+    return `<div class="slot${s.met ? "" : " unmet"}"><span class="q num" title="${esc(s.role)}">${esc(typeof s.n === "number" ? "×" + fmt(s.n) : s.n)}</span>${shown || '<span class="hint">anything (state check only)</span>'}${more}${s.consumed ? "" : ' <span class="badge mutedb" title="not consumed">kept</span>'}</div>`;
+  }).join("");
+  const outs = r.outputs.map(o => `<div>${chip(o, o.n, o.chance < 1 ? ` <span class="n num">${(o.chance * 100).toFixed(o.chance < .1 ? 1 : 0)}%</span>` : "")}</div>`).join("") || `<span class="hint">${esc(r.params.generator ? "energy only" : r.params.output || "no item output")}</span>`;
+  const st = r.stations.map(s => `<span class="station ${s.met ? "ok" : "bad"}" title="${s.met ? "available" : "not reachable yet"}">${esc(s.label)}</span>`).join(" ");
+  return `<div class="rcard"><div class="rhead"><span class="type">${esc(r.type)}</span>${r.kind !== r.type ? `<span class="hint">${esc(r.kind)}</span>` : ""}<a class="rid" href="#/recipe/${encodeURIComponent(r.id)}">${esc(r.id)}</a>${r.skip ? `<span class="badge warn">${esc(r.skip)}</span>` : ""}<span style="flex:1"></span>${st}</div>
+    <div class="rbody"><div class="slots">${slots || '<span class="hint">no inputs</span>'}</div><div class="arrow">→</div><div class="outs">${outs}</div></div>
+    ${paramsHTML(r.params) ? `<div class="params num">${paramsHTML(r.params)}</div>` : ""}${opts.raw ? `<div style="padding:0 10px 10px"><pre>${esc(JSON.stringify(r.raw, null, 2))}</pre></div>` : ""}</div>`;
+}
+function groupByType(list) { const m = new Map(); for (const r of list) { if (!m.has(r.type)) m.set(r.type, []); m.get(r.type).push(r); } return [...m.entries()].sort((a, b) => b[1].length - a[1].length); }
+function treeHTML(t) {
+  const node = chip({ id: t.node, name: t.name, depth: t.depth });
+  const via = t.recipe ? `<span class="via">← <a href="#/recipe/${encodeURIComponent(t.recipe)}">${esc(t.recipe)}</a> <span class="hint">(${esc(t.type)})</span></span>` : `<span class="via">${esc(t.source || "")}</span>`;
+  const kids = (t.inputs || []).map(treeHTML).join("");
+  return `<li>${node} <span class="hint num">step ${t.depth ?? "?"}</span> ${via}${t.truncated ? ' <span class="hint">(see above)</span>' : ""}${kids ? `<ul>${kids}</ul>` : ""}</li>`;
+}
+
+// ---------------------------------------------------------------- views
+const views = {
+  async node(id) {
+    const n = await api(`/api/node?id=${encodeURIComponent(id)}`);
+    if (n.tag) return `<div class="itemhead">${iconHTML(n.id, true)}<div><h2>${esc(n.name)}</h2><div class="sub">${n.members.length} entries</div></div></div><h3>Members</h3><div class="slot">${n.members.map(m => chip(m)).join("")}</div>`;
+    const reach = n.depth !== null && n.depth !== undefined;
+    let h = `<div class="itemhead">${iconHTML(n.id, true)}<div><h2>${esc(n.name)}</h2><div class="sub">${esc(n.id)} · ${n.kind} · ${reach ? `<span class="badge ok">reachable in ${n.depth} step${n.depth === 1 ? "" : "s"}</span>` : '<span class="badge bad">not reachable from the starting resources</span>'}${n.seed ? ` · <span class="hint">${esc(n.seed)}</span>` : ""}</div></div></div>`;
+    if (n.tags.length) h += `<h3>Tags <span class="c">${n.tags.length}</span></h3><div class="slot">${n.tags.map(t => chip({ id: t, name: t.slice(3), tag: true, size: "" })).join("")}</div>`;
+    if (n.duplicates.length) h += `<h3>Same material from other entries <span class="c">shares a unification tag</span></h3><div class="slot">${n.duplicates.map(d => chip(d, null, ` <span class="n">${esc(d.via.slice(3))}</span>`)).join("")}</div>`;
+    if (n.explain) h += `<h3>First route <span class="c">fewest recipe steps from the world</span></h3><details open><summary class="hint">Expand / collapse</summary><ul class="tree">${treeHTML(n.explain)}</ul></details>`;
+    if (n.why_not) h += `<h3>Why it isn't reachable <span class="c">each recipe that makes it, and what's missing</span></h3>` + (n.why_not.length ? `<table><tr><th>Recipe</th><th>Missing</th></tr>${n.why_not.map(w => `<tr><td><a href="#/recipe/${encodeURIComponent(w.recipe)}">${esc(w.recipe)}</a><div class="hint">${esc(w.type)}</div></td><td>${w.missing.map(m => `<span class="badge bad">${esc(m)}</span>`).join(" ")}</td></tr>`).join("")}</table>` : `<p class="hint">No recipe produces it${n.action_producers.length ? "" : ", and no world action is configured for it"}.</p>`);
+    h += `<h3>Made by <span class="c">${fmt(n.producers_total)} recipes</span></h3>` + (groupByType(n.producers).map(([t, rs]) => `<details class="group" open><summary>${esc(t)} <span class="hint">(${rs.length})</span></summary>${rs.slice(0, 40).map(r => recipeCard(r)).join("")}${rs.length > 40 ? `<div class="hint">…${rs.length - 40} more</div>` : ""}</details>`).join("") || '<p class="hint">Nothing makes this.</p>');
+    h += `<h3>Used in <span class="c">${fmt(n.consumers_total)} recipes${n.consumers_total > n.consumers.length ? `, first ${n.consumers.length} shown` : ""}</span></h3>` + (groupByType(n.consumers).map(([t, rs]) => `<details class="group"><summary>${esc(t)} <span class="hint">(${rs.length})</span></summary>${rs.slice(0, 40).map(r => recipeCard(r)).join("")}</details>`).join("") || '<p class="hint">Not used in any recipe.</p>');
+    return h;
+  },
+  async recipe(id) {
+    const r = await api(`/api/recipe?id=${encodeURIComponent(id)}`);
+    return `<h2>${esc(r.id)}</h2><div class="sub">${esc(r.type)}</div>${recipeCard(r, { raw: true })}`;
+  },
+  async types() {
+    const t = await api("/api/types");
+    return `<h2>Recipe types</h2><p class="sub">How each recipe type parsed, and whether the progression checker knows what station it needs.</p>
+      <table><tr><th>Type</th><th class="r">Recipes</th><th class="r">Parsed</th><th class="r">Skipped</th><th class="r">No item output</th><th>Station</th></tr>
+      ${t.rows.map(r => `<tr><td><a href="#/type/${encodeURIComponent(r.type)}">${esc(r.type)}</a></td><td class="r num">${fmt(r.total)}</td><td class="r num">${fmt(r.ok)}</td><td class="r num">${fmt(r.skipped)}</td><td class="r num">${fmt(r.no_outputs)}</td><td>${r.unmapped ? `<span class="badge warn">no station rule (treated as free)</span>` : r.missing_machine ? `<span class="badge warn">${r.missing_machine} without a matching machine</span>` : '<span class="badge ok">mapped</span>'}</td></tr>`).join("")}</table>`;
+  },
+  async type(t, page = 0) {
+    const r = await api(`/api/type?t=${encodeURIComponent(t)}&page=${page}`);
+    const pages = Math.ceil(r.total / 50);
+    const nav = pages > 1 ? `<div class="more">${page > 0 ? `<a class="btn" href="#/type/${encodeURIComponent(t)}/${page - 1}">← Previous</a>` : ""} <span class="hint num">page ${page + 1} of ${pages}</span> ${page < pages - 1 ? `<a class="btn" href="#/type/${encodeURIComponent(t)}/${page + 1}">Next →</a>` : ""}</div>` : "";
+    return `<h2>${esc(t)}</h2><div class="sub num">${fmt(r.total)} recipes</div>${nav}${r.recipes.map(x => recipeCard(x)).join("")}${nav}`;
+  },
+  async dupes() {
+    const d = await api("/api/dupes");
+    return `<h2>Duplicate materials</h2><p class="sub">Unification tags (ingots, plates, dusts, …) that still contain items from more than one mod. Each row is a candidate for Almost Unified or a KubeJS replacement.</p>
+      <p class="hint">${d.rows.length} tags</p><table><tr><th>Tag</th><th>Items</th></tr>${d.rows.map(r => `<tr><td><a href="${href(r.tag)}">${esc(r.tag.slice(3))}</a></td><td><div class="slot">${r.items.map(i => chip(i)).join("")}</div></td></tr>`).join("")}</table>`;
+  },
+  async progression() {
+    const p = await api("/api/progression");
+    const s = p.summary;
+    const status = { ok: "ok", violated: "bad", unreachable: "warn", invalid: "warn" };
+    let h = `<h2>Progression</h2><p class="sub">What can be made starting from ${p.world ? `the blocks found in <b>${esc(p.world.split(/[\\/]/).pop())}</b> (${fmt(p.world_blocks)} block types)` : "the configured seeds"}, honoring stations (anvil tiers, heat, machines, coils). Rules live in <code>tools/recipes/progression.json</code>.</p>
+      <div class="grid2"><div class="stat"><div class="v num">${fmt(s.reachable)}</div><div class="k">items and fluids reachable</div></div><div class="stat"><div class="v num">${fmt(s.seeds)}</div><div class="k">starting resources</div></div><div class="stat"><div class="v num">${fmt(s.max_depth)}</div><div class="k">longest chain (recipe steps)</div></div><div class="stat"><div class="v num">${fmt(s.recipes)}</div><div class="k">recipes considered</div></div></div>
+      <p class="hint">A small scanned area may be missing ores that exist elsewhere in the world (tin, for example), which makes later tiers look unreachable. Pre-generate a larger area for a fuller picture.</p>`;
+    h += `<h3>Rules</h3><table><tr><th>Status</th><th>Rule</th><th>Result</th></tr>${p.rules.map(r => `<tr><td><span class="badge ${status[r.status]}">${r.status}</span></td><td><a href="${href(r.rule.item)}">${esc(r.rule.item)}</a> requires ${r.rule.requires.map(x => `<a href="${href(x)}">${esc(x)}</a>`).join(", ")}<div class="hint">${esc(r.rule.why || "")}</div></td><td>${esc(r.detail || "holds")}${r.path ? `<details><summary class="hint">the shortcut</summary><ul class="tree">${treeHTML(r.path)}</ul></details>` : ""}</td></tr>`).join("")}</table>`;
+    h += `<h3>Milestones</h3><table><tr><th>Milestone</th><th>Resolves to</th><th class="r">Step</th></tr>${p.milestones.map(m => `<tr><td>${esc(m.milestone)}</td><td>${m.node ? chip({ id: m.node, name: m.name, depth: m.depth }) : '<span class="hint">matches nothing</span>'}</td><td class="r num">${m.depth ?? '<span class="badge bad">unreachable</span>'}</td></tr>`).join("")}</table>`;
+    const um = Object.entries(s.unmapped_types), mm = Object.entries(s.missing_machines), up = Object.entries(s.unknown_patterns);
+    if (um.length || mm.length || up.length) h += `<h3>Config gaps</h3><ul>${um.map(([t, n]) => `<li>No station rule for <b>${esc(t)}</b> (${n} recipes treated as free)</li>`).join("")}${mm.map(([t, n]) => `<li>No GregTech machine found for <b>${esc(t)}</b> (${n} recipes)</li>`).join("")}${up.map(([t, n]) => `<li>Pattern matches nothing: <code>${esc(t)}</code></li>`).join("")}</ul>`;
+    return h;
+  },
+  async diff(a, b) {
+    const meta = await api("/api/meta");
+    const opts = sel => meta.dumps.map(d => `<option ${d === sel ? "selected" : ""}>${esc(d)}</option>`).join("");
+    a = a || meta.dumps[Math.max(0, meta.dumps.length - 2)]; b = b || meta.dumps[meta.dumps.length - 1];
+    let h = `<h2>Compare dumps</h2><p class="sub">Which recipes a change added, removed, or altered. Make a dump before and after a script change (<code>tools/recipes/dump.py --label before</code>).</p>
+      <p><select id="da">${opts(a)}</select> → <select id="db">${opts(b)}</select> <button class="btn" id="go">Compare</button></p>`;
+    if (meta.dumps.length < 2) return h + '<p class="hint">Only one dump exists so far.</p>';
+    const d = await api(`/api/diff?a=${encodeURIComponent(a)}&b=${encodeURIComponent(b)}`);
+    h += `<p class="num"><span class="badge ok">+${fmt(d.totals.added)} added</span> <span class="badge bad">−${fmt(d.totals.removed)} removed</span> <span class="badge warn">${fmt(d.totals.changed)} changed</span></p>`;
+    h += d.rows.length ? `<table><tr><th>Type</th><th>Added</th><th>Removed</th><th>Changed</th></tr>${d.rows.map(r => `<tr><td>${esc(r.type)}</td>${["added", "removed", "changed"].map(k => `<td>${r[k].length ? `<details><summary class="num">${r[k].length}</summary>${r[k].slice(0, 200).map(id => k === "removed" ? `<div>${esc(id)}</div>` : `<div><a href="#/recipe/${encodeURIComponent(id)}">${esc(id)}</a></div>`).join("")}</details>` : ""}</td>`).join("")}</tr>`).join("")}</table>` : '<p class="hint">No differences.</p>';
+    return h;
+  },
+};
+
+async function route() {
+  const parts = location.hash.replace(/^#\/?/, "").split("/");
+  const [view, ...rest] = parts;
+  document.querySelectorAll("nav a").forEach(a => a.classList.toggle("on", a.dataset.nav === view));
+  const main = $("#main");
+  main.innerHTML = '<p class="hint">Loading…</p>';
+  try {
+    if (view === "node") main.innerHTML = await views.node(decodeURIComponent(rest.join("/")));
+    else if (view === "recipe") main.innerHTML = await views.recipe(decodeURIComponent(rest.join("/")));
+    else if (view === "type") { const last = rest[rest.length - 1]; const paged = /^\d+$/.test(last) && rest.length > 1; main.innerHTML = await views.type(decodeURIComponent((paged ? rest.slice(0, -1) : rest).join("/")), paged ? +last : 0); }
+    else if (view === "types") main.innerHTML = await views.types();
+    else if (view === "dupes") main.innerHTML = await views.dupes();
+    else if (view === "diff") { main.innerHTML = await views.diff(rest[0] && decodeURIComponent(rest[0]), rest[1] && decodeURIComponent(rest[1])); const go = $("#go"); if (go) go.onclick = () => location.hash = `#/diff/${encodeURIComponent($("#da").value)}/${encodeURIComponent($("#db").value)}`; }
+    else main.innerHTML = await views.progression();
+    main.scrollTop = 0;
+  } catch (e) { main.innerHTML = `<p class="badge bad">${esc(e.message)}</p>`; }
+}
+let searchTimer;
+$("#q").addEventListener("input", e => {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(async () => {
+    const hits = await api(`/api/search?q=${encodeURIComponent(e.target.value)}`);
+    $("#results").innerHTML = hits.map(h => `<a href="${href(h.id)}">${iconHTML(h.id)}<div class="txt"><div>${esc(h.name)}</div><div class="id">${esc(h.id)}</div></div></a>`).join("") || (e.target.value ? '<p class="hint" style="padding:0 12px">No matches.</p>' : "");
+  }, 150);
+});
+$("#theme").onclick = () => { const dark = getComputedStyle(document.documentElement).colorScheme === "dark"; document.documentElement.dataset.theme = dark ? "light" : "dark"; };
+addEventListener("hashchange", route);
+(async function boot() {
+  for (;;) {
+    const s = await api("/api/status");
+    if (s.state === "ready") break;
+    if (s.state === "error") { $("#loading").innerHTML = `<pre>${esc(s.error)}</pre>`; return; }
+    $("#loading").textContent = `Loading… (${s.state})`;
+    await new Promise(r => setTimeout(r, 400));
+  }
+  const m = await api("/api/meta");
+  $("#meta").textContent = `${m.dump} · ${fmt(m.recipes)} recipes · ${fmt(m.items)} items · ${fmt(m.fluids)} fluids · ${fmt(m.summary.reachable)} reachable · rules: ${Object.entries(m.rules).map(([k, v]) => `${v} ${k}`).join(", ")}`;
+  $("#loading").hidden = true;
+  route();
+})();
+</script>
+</body>
+</html>
