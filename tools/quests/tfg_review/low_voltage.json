@@ -449,9 +449,9 @@
    "key": "low_voltage.gallium_arsenide",
    "action": "edit",
    "chapter": "lv",
-   "reason": "Bauxite, realgar and cobaltite are GregTech-only ores without veins here; gallium sources from TFC sphalerite checked (thermal centrifuge 33%, purified macerating 14%, electrolysis 8%). Arsenic currently has no source in the pack (checker: unreachable), stated plainly; see doubts.",
+   "reason": "Gallium from sphalerite; arsenic from realgar, which this pack makes a tetrahedrite by-product (kubejs/startup_scripts/ore_byproducts.js).",
    "desc": [
-    "Many materials going forward cannot be smelted directly from any Ores! They are instead obtained as byproducts from processing of other ores. Gallium and Arsenic are &4among&r these materials.\n\nFor &dGallium&r, from worst to best:\n\n&9- &3Electrolyze &aSphalerite&r dust for a low chance of it. Note that you lose out on direct smelting value.\n\n&9-&r Process TFC &aSphalerite&r: macerating purified sphalerite ore, or running the crushed ore through a &3Thermal Centrifuge&r, gives it as a &6Byproduct&r.\n\nFor &dArsenic&r, GregTech relies on realgar and cobaltite, ores that have no veins in this pack yet; check EMI for any other source.\n\nMix one gallium and one arsenic dust for two Gallium Arsenide."
+    "Many materials going forward cannot be smelted directly from any Ores! They are instead obtained as byproducts from processing of other ores. Gallium and Arsenic are &4among&r these materials.\n\nFor &dGallium&r, from worst to best:\n\n&9- &3Electrolyze &aSphalerite&r dust for a low chance of it. Note that you lose out on direct smelting value.\n\n&9-&r Process TFC &aSphalerite&r: macerating purified sphalerite ore, or running the crushed ore through a &3Thermal Centrifuge&r, gives it as a &6Byproduct&r.\n\nFor &dArsenic&r: TFC &aTetrahedrite&r carries &aRealgar&r. Run crushed tetrahedrite through a &3Thermal Centrifuge&r (or centrifuge pure tetrahedrite dust) for realgar dust, then &3Centrifuge&r the realgar into arsenic and sulfur.\n\nMix one gallium and one arsenic dust for two Gallium Arsenide."
    ]
   },
   {

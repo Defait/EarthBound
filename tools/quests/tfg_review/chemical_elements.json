@@ -237,9 +237,9 @@
    "key": "chemical_elements.q227a966dca13a941",
    "action": "edit",
    "chapter": "elements",
-   "reason": "Vanadium magnetite is a GregTech-only ore; the only source here is the 2% vanadium from ruby/sapphire slurry (aqua regia + crushed ore in a 1920 EU/t mixer, then a 480 EU/t centrifuge). Icon was a Vintage Improvements item.",
+   "reason": "Vanadium magnetite is a TFC magnetite by-product here (kubejs/startup_scripts/ore_byproducts.js); centrifuging it gives vanadium (LV).",
    "desc": [
-    "Vanadium is used to make vanadium steel, which the &bMV&r cutter's buzzsaw blade is made of, and vanadium-gallium.\n\nGregTech's ore veins are off here. Vanadium is a rare byproduct of ruby and sapphire slurry: mix crushed TFC ruby or sapphire ore with aqua regia (&5EV&r mixer) and centrifuge the slurry."
+    "Vanadium is used to make vanadium steel, which the &bMV&r cutter's buzzsaw blade is made of, and vanadium-gallium.\n\nIt can be obtained in &7LV&r: wash crushed TFC &aMagnetite&r in an &3Ore Washer&r (or centrifuge impure magnetite dust) for &aVanadium Magnetite&r, then &3Centrifuge&r that into magnetite and vanadium."
    ],
    "icon": "gtceu:vanadium_ingot"
   },
@@ -326,8 +326,13 @@
   },
   {
    "key": "chemical_elements.q4e78b7bf08dd5137",
-   "action": "drop",
-   "reason": "No source here: GregTech gets arsenic only from cobaltite and realgar (GregTech-only ores, off) or from compounds that already contain it. Note for the pack: gallium arsenide (diodes, silicon boules) needs it, so MV circuits are currently unreachable."
+   "action": "edit",
+   "reason": "Realgar is a tetrahedrite by-product here (kubejs/startup_scripts/ore_byproducts.js)",
+   "chapter": "elements",
+   "title": "Arsenic",
+   "desc": [
+    "Arsenic goes into gallium arsenide, and with it every diode and silicon boule.\n\nIt can be obtained in &7LV&r: TFC &aTetrahedrite&r carries &aRealgar&r, the &3Thermal Centrifuge&r's by-product of crushed tetrahedrite. &3Centrifuge&r realgar dust into arsenic and sulfur."
+   ]
   },
   {
    "key": "chemical_elements.q45fd8cc0cc0cabff",
@@ -341,8 +346,13 @@
   },
   {
    "key": "chemical_elements.q6018eab73b9d5b5d",
-   "action": "drop",
-   "reason": "No source here: rare earth processing needs GregTech-only ores (monazite, bastnasite)."
+   "action": "edit",
+   "reason": "Monazite is a cassiterite by-product here (kubejs/startup_scripts/ore_byproducts.js)",
+   "chapter": "elements",
+   "title": "Yttrium",
+   "desc": [
+    "Yttrium goes into yttrium barium cuprate and other superconductors.\n\nIt can be obtained in &7LV&r: TFC &aCassiterite&r gives &aMonazite&r as its &3Ore Washer&r by-product. An &3Electrolyzer&r splits monazite dust into rare earth and phosphate, and a &3Centrifuge&r separates rare earth into small piles of cadmium, neodymium, samarium, cerium, yttrium and lanthanum."
+   ]
   },
   {
    "key": "chemical_elements.q43b837b54e9ba726",
@@ -356,8 +366,13 @@
   },
   {
    "key": "chemical_elements.q5dbe8c4d8c1c34c3",
-   "action": "drop",
-   "reason": "No source here: molybdenite, powellite and wulfenite are GregTech-only ores."
+   "action": "edit",
+   "reason": "Molybdenite is a malachite by-product here (kubejs/startup_scripts/ore_byproducts.js)",
+   "chapter": "elements",
+   "title": "Molybdenum",
+   "desc": [
+    "Molybdenum goes into RTM alloy, molybdenum disilicide coils and several high-tier alloys.\n\nIt can be obtained in &7LV&r: TFC &aMalachite&r gives &aMolybdenite&r as its &3Thermal Centrifuge&r by-product; an &3Electrolyzer&r splits it into molybdenum and sulfur."
+   ]
   },
   {
    "key": "chemical_elements.q5ed5d1204e674c5b",
@@ -464,23 +479,43 @@
   },
   {
    "key": "chemical_elements.q29c3462efe0f4921",
-   "action": "drop",
-   "reason": "No source here: rare earth processing needs GregTech-only ores (monazite, bastnasite)."
+   "action": "edit",
+   "reason": "Monazite is a cassiterite by-product here (kubejs/startup_scripts/ore_byproducts.js)",
+   "chapter": "elements",
+   "title": "Lanthanum",
+   "desc": [
+    "Lanthanum goes into a few late alloys.\n\nIt can be obtained in &7LV&r: TFC &aCassiterite&r gives &aMonazite&r as its &3Ore Washer&r by-product. An &3Electrolyzer&r splits monazite dust into rare earth and phosphate, and a &3Centrifuge&r separates rare earth into small piles of cadmium, neodymium, samarium, cerium, yttrium and lanthanum."
+   ]
   },
   {
    "key": "chemical_elements.q651b779d02d74f5d",
-   "action": "drop",
-   "reason": "No source here: rare earth and bastnasite are GregTech-only ores."
+   "action": "edit",
+   "reason": "Monazite is a cassiterite by-product here (kubejs/startup_scripts/ore_byproducts.js)",
+   "chapter": "elements",
+   "title": "Cerium",
+   "desc": [
+    "Cerium has few uses in GregTech; it is here for the set.\n\nIt can be obtained in &7LV&r: TFC &aCassiterite&r gives &aMonazite&r as its &3Ore Washer&r by-product. An &3Electrolyzer&r splits monazite dust into rare earth and phosphate, and a &3Centrifuge&r separates rare earth into small piles of cadmium, neodymium, samarium, cerium, yttrium and lanthanum."
+   ]
   },
   {
    "key": "chemical_elements.q59dede9d49bf6be8",
-   "action": "drop",
-   "reason": "No source here: rare earth and bastnasite/monazite are GregTech-only ores. Note for the pack: EV and IV electric motors need magnetic neodymium rods."
+   "action": "edit",
+   "reason": "Monazite is a cassiterite by-product here (kubejs/startup_scripts/ore_byproducts.js)",
+   "chapter": "elements",
+   "title": "Neodymium",
+   "desc": [
+    "Neodymium makes the magnetic rods of &5EV&r and &9IV&r electric motors.\n\nIt can be obtained in &7LV&r: TFC &aCassiterite&r gives &aMonazite&r as its &3Ore Washer&r by-product. An &3Electrolyzer&r splits monazite dust into rare earth and phosphate, and a &3Centrifuge&r separates rare earth into small piles of cadmium, neodymium, samarium, cerium, yttrium and lanthanum."
+   ]
   },
   {
    "key": "chemical_elements.q02b800af538538c8",
-   "action": "drop",
-   "reason": "No source here: rare earth and monazite are GregTech-only ores."
+   "action": "edit",
+   "reason": "Monazite is a cassiterite by-product here (kubejs/startup_scripts/ore_byproducts.js)",
+   "chapter": "elements",
+   "title": "Samarium",
+   "desc": [
+    "Samarium makes samarium-iron-arsenic oxide and magnetic samarium.\n\nIt can be obtained in &7LV&r: TFC &aCassiterite&r gives &aMonazite&r as its &3Ore Washer&r by-product. An &3Electrolyzer&r splits monazite dust into rare earth and phosphate, and a &3Centrifuge&r separates rare earth into small piles of cadmium, neodymium, samarium, cerium, yttrium and lanthanum."
+   ]
   },
   {
    "key": "chemical_elements.q23d55e8a38f45779",
@@ -498,8 +533,13 @@
   },
   {
    "key": "chemical_elements.q5987b2fd290054b3",
-   "action": "drop",
-   "reason": "No source here: scheelite and tungstate are GregTech-only ores (End stone is out of reach too)."
+   "action": "edit",
+   "reason": "Scheelite is a cassiterite by-product here (kubejs/startup_scripts/ore_byproducts.js)",
+   "chapter": "elements",
+   "title": "Tungsten",
+   "desc": [
+    "Tungsten makes tungstensteel, the material of &9IV&r machines, and tungsten carbide.\n\nIt can be obtained in &5EV&r: TFC &aCassiterite&r gives &aScheelite&r as its &3Thermal Centrifuge&r by-product. An &5EV&r &3Chemical Bath&r turns scheelite and hydrochloric acid into tungstic acid, and an &5EV&r &3Electrolyzer&r splits that into tungsten."
+   ]
   },
   {
    "key": "chemical_elements.q61ffbbfccb38c478",
@@ -508,13 +548,23 @@
   },
   {
    "key": "chemical_elements.q66827d3183133eb8",
-   "action": "drop",
-   "reason": "Only from the platinum line's IV steps (osmium tetroxide) or LuV alloys; IV machines are built from tungstensteel, and tungsten has no source here."
+   "action": "edit",
+   "reason": "The checker reaches it at step 67 through the platinum line; tungsten (IV) now has a source (kubejs/startup_scripts/ore_byproducts.js)",
+   "chapter": "elements",
+   "title": "Osmium",
+   "desc": [
+    "Osmium comes at the end of the platinum line: TFC &aTetrahedrite&r's purified ore gives &aPlatinum Group Sludge&r in a &3Chemical Reactor&r, and its later separation steps (follow EMI from the sludge) leave osmium."
+   ]
   },
   {
    "key": "chemical_elements.q0089869fbff4bb2e",
-   "action": "drop",
-   "reason": "Only from the platinum line's IV steps (iridium chloride) or LuV alloys; IV machines are built from tungstensteel, and tungsten has no source here."
+   "action": "edit",
+   "reason": "The checker reaches it at step 67 through the platinum line; tungsten (IV) now has a source (kubejs/startup_scripts/ore_byproducts.js)",
+   "chapter": "elements",
+   "title": "Iridium",
+   "desc": [
+    "Iridium comes at the end of the platinum line: TFC &aTetrahedrite&r's purified ore gives &aPlatinum Group Sludge&r in a &3Chemical Reactor&r, and its later separation steps (follow EMI from the sludge) leave iridium."
+   ]
   },
   {
    "key": "chemical_elements.q5bf3a1d8b66162c2",

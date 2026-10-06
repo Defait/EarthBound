@@ -452,8 +452,13 @@
   },
   {
    "key": "ore_proc.molybdenum",
-   "action": "drop",
-   "reason": "Molybdenite, powellite, wulfenite (and scheelite) are GregTech-only ores with no veins here; the checker finds no molybdenum."
+   "action": "edit",
+   "reason": "Molybdenite is a TFC malachite by-product here (kubejs/startup_scripts/ore_byproducts.js); GregTech electrolyzes it into molybdenum and sulfur. TFG's own trioxide line isn't in this pack.",
+   "chapter": "ore_processing",
+   "title": "Molybdenum Line",
+   "desc": [
+    "&bMolybdenum&r goes into the Large Centrifugal Unit's coils, RTM alloy and several &6EV&r alloys.\n\nTFC &aMalachite&r caps copper deposits that also hold &aMolybdenite&r. Run crushed malachite through a &3Thermal Centrifuge&r, or centrifuge pure malachite dust, and molybdenite comes out as the &6Byproduct&r.\n\nAn &3Electrolyzer&r splits molybdenite dust into &bMolybdenum&r and sulfur."
+   ]
   },
   {
    "key": "ore_proc.macerator_byproduct",

@@ -654,6 +654,69 @@
 			dependencies: [ ]
 			icon: {
 				count: 1
+				id: "gtceu:arsenic_dust"
+			}
+			id: "4E49CEA68BDBAFC1"
+			tasks: [
+				{
+					count: 1
+					id: "4EFAAA7552877F67"
+					item: {
+						count: 1
+						id: "gtceu:arsenic_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 14.0d
+			y: 3.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:yttrium_dust"
+			}
+			id: "4D1A3CDFA01373C4"
+			tasks: [
+				{
+					count: 1
+					id: "322899DB03FE297F"
+					item: {
+						count: 1
+						id: "gtceu:yttrium_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 2.0d
+			y: 4.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:molybdenum_dust"
+			}
+			id: "4E35DAC659C5E12C"
+			tasks: [
+				{
+					count: 1
+					id: "5731EE486579D55D"
+					item: {
+						count: 1
+						id: "gtceu:molybdenum_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 5.0d
+			y: 4.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
 				id: "gtceu:ruthenium_dust"
 			}
 			id: "4100AE6929808748"
@@ -843,6 +906,90 @@
 			dependencies: [ ]
 			icon: {
 				count: 1
+				id: "gtceu:lanthanum_dust"
+			}
+			id: "2AA712A252708D08"
+			tasks: [
+				{
+					count: 1
+					id: "7005164C31055308"
+					item: {
+						count: 1
+						id: "gtceu:lanthanum_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 2.0d
+			y: 7.5d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:cerium_dust"
+			}
+			id: "18C1F48C2B1DF94D"
+			tasks: [
+				{
+					count: 1
+					id: "79F3DA66EE91CA8A"
+					item: {
+						count: 1
+						id: "gtceu:cerium_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 3.0d
+			y: 7.5d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:neodymium_ingot"
+			}
+			id: "01660AE825F50880"
+			tasks: [
+				{
+					count: 1
+					id: "78B5E076CE9D99EC"
+					item: {
+						count: 1
+						id: "gtceu:neodymium_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 5.0d
+			y: 7.5d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:samarium_ingot"
+			}
+			id: "1C718DA55BE73FB2"
+			tasks: [
+				{
+					count: 1
+					id: "15F3708D7D68EA1D"
+					item: {
+						count: 1
+						id: "gtceu:samarium_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 7.0d
+			y: 7.5d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
 				id: "gtceu:tantalum_ingot"
 			}
 			id: "1BAADD5400F302BB"
@@ -858,6 +1005,69 @@
 				}
 			]
 			x: 4.0d
+			y: 5.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:tungsten_ingot"
+			}
+			id: "5695B1A09E36E60F"
+			tasks: [
+				{
+					count: 1
+					id: "180DD40431A99586"
+					item: {
+						count: 1
+						id: "gtceu:tungsten_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 5.0d
+			y: 5.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:osmium_dust"
+			}
+			id: "044A421FAF3D844D"
+			tasks: [
+				{
+					count: 1
+					id: "61B4E10789C2D3C7"
+					item: {
+						count: 1
+						id: "gtceu:osmium_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 7.0d
+			y: 5.0d
+		}
+		{
+			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:iridium_ingot"
+			}
+			id: "37408B085E9CB67C"
+			tasks: [
+				{
+					count: 1
+					id: "0449BD2C41CC1F05"
+					item: {
+						count: 1
+						id: "gtceu:iridium_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 8.0d
 			y: 5.0d
 		}
 		{

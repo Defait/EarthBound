@@ -847,6 +847,29 @@
 		}
 		{
 			dependencies: [
+				"4CFECFD85067967E"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:molybdenum_dust"
+			}
+			id: "7CFB25CD3E88510C"
+			tasks: [
+				{
+					count: 1
+					id: "02CDC8BA50851F2A"
+					item: {
+						count: 1
+						id: "gtceu:molybdenum_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 3.0d
+			y: -4.5d
+		}
+		{
+			dependencies: [
 				"27A80F0C09BF21BA"
 			]
 			icon: {

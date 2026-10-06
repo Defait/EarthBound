@@ -63,6 +63,13 @@
 	]
 	quest.012DC6D84EA3796D.quest_subtitle: "This machine does nothing exciting"
 	quest.012DC6D84EA3796D.title: "Basic Canner"
+	quest.01660AE825F50880.quest_desc: [
+		"Neodymium makes the magnetic rods of &5EV&r and &9IV&r electric motors."
+		""
+		"It can be obtained in &7LV&r: TFC &aCassiterite&r gives &aMonazite&r as its &3Ore Washer&r by-product. An &3Electrolyzer&r splits monazite dust into rare earth and phosphate, and a &3Centrifuge&r separates rare earth into small piles of cadmium, neodymium, samarium, cerium, yttrium and lanthanum."
+	]
+	quest.01660AE825F50880.quest_subtitle: "Element #60"
+	quest.01660AE825F50880.title: "Neodymium"
 	quest.01A6CA9A337188A3.quest_desc: [
 		"Unfortunately, this is only an &lEmpty&r Spray Can, which you have to fill with Dye before using."
 		""
@@ -147,6 +154,11 @@
 	quest.0444B1B9CCF2B737.quest_subtitle: "That's dope, bro!"
 	quest.0444B1B9CCF2B737.title: "Phosphorus Boules"
 	quest.04462F0277710661.title: "Stone Age"
+	quest.044A421FAF3D844D.quest_desc: [
+		"Osmium comes at the end of the platinum line: TFC &aTetrahedrite&r's purified ore gives &aPlatinum Group Sludge&r in a &3Chemical Reactor&r, and its later separation steps (follow EMI from the sludge) leave osmium."
+	]
+	quest.044A421FAF3D844D.quest_subtitle: "Element #76"
+	quest.044A421FAF3D844D.title: "Osmium"
 	quest.0465DCAC9F21A02A.quest_desc: [
 		"The crucible sits on top of a charcoal forge (any heat source below works). It has 9 slots, holds 4000 mB of metal and shows your alloy ratios as you go. It keeps its contents when broken, and it also collects pig iron when placed below a blast furnace."
 		""
@@ -950,6 +962,13 @@
 	]
 	quest.18B082A954A67CBD.quest_subtitle: "Don't stick your finger in it"
 	quest.18B082A954A67CBD.title: "Bathe them in Mercury"
+	quest.18C1F48C2B1DF94D.quest_desc: [
+		"Cerium has few uses in GregTech; it is here for the set."
+		""
+		"It can be obtained in &7LV&r: TFC &aCassiterite&r gives &aMonazite&r as its &3Ore Washer&r by-product. An &3Electrolyzer&r splits monazite dust into rare earth and phosphate, and a &3Centrifuge&r separates rare earth into small piles of cadmium, neodymium, samarium, cerium, yttrium and lanthanum."
+	]
+	quest.18C1F48C2B1DF94D.quest_subtitle: "Element #58"
+	quest.18C1F48C2B1DF94D.title: "Cerium"
 	quest.18E4DF305DFBB933.quest_desc: [
 		"&lOutside of Ore Processing:&r"
 		""
@@ -1082,6 +1101,13 @@
 	]
 	quest.1C16C78A27F7378C.quest_subtitle: "Fluid Drilling Rigs in CEu!"
 	quest.1C16C78A27F7378C.title: "Fluid Drilling Rigs"
+	quest.1C718DA55BE73FB2.quest_desc: [
+		"Samarium makes samarium-iron-arsenic oxide and magnetic samarium."
+		""
+		"It can be obtained in &7LV&r: TFC &aCassiterite&r gives &aMonazite&r as its &3Ore Washer&r by-product. An &3Electrolyzer&r splits monazite dust into rare earth and phosphate, and a &3Centrifuge&r separates rare earth into small piles of cadmium, neodymium, samarium, cerium, yttrium and lanthanum."
+	]
+	quest.1C718DA55BE73FB2.quest_subtitle: "Element #62"
+	quest.1C718DA55BE73FB2.title: "Samarium"
 	quest.1D65B1624ED9051B.quest_desc: [
 		"&aDiesel&r is an &dOil-based &9Combustion Fuel&r."
 		""
@@ -1606,6 +1632,13 @@
 	]
 	quest.2A3616367AF16F2E.quest_subtitle: "Because 14 ingots is a lot now"
 	quest.2A3616367AF16F2E.title: "Anvil Recycling?"
+	quest.2AA712A252708D08.quest_desc: [
+		"Lanthanum goes into a few late alloys."
+		""
+		"It can be obtained in &7LV&r: TFC &aCassiterite&r gives &aMonazite&r as its &3Ore Washer&r by-product. An &3Electrolyzer&r splits monazite dust into rare earth and phosphate, and a &3Centrifuge&r separates rare earth into small piles of cadmium, neodymium, samarium, cerium, yttrium and lanthanum."
+	]
+	quest.2AA712A252708D08.quest_subtitle: "Element #57"
+	quest.2AA712A252708D08.title: "Lanthanum"
 	quest.2AB8B4DDC3C44244.quest_desc: [
 		"Welcome to the world of &dLarge Multiblocks&r. These alloys build the casings of the large versions of GregTech's machines, starting with the &eAlloy Blast Smelter&r, which needs Tantalum Carbide plates. Tantalum Carbide needs the heat of your new RTM Coils."
 		"{@pagebreak}"
@@ -1734,7 +1767,7 @@
 	quest.2F2352F74A7D6D52.quest_desc: [
 		"Vanadium is used to make vanadium steel, which the &bMV&r cutter's buzzsaw blade is made of, and vanadium-gallium."
 		""
-		"GregTech's ore veins are off here. Vanadium is a rare byproduct of ruby and sapphire slurry: mix crushed TFC ruby or sapphire ore with aqua regia (&5EV&r mixer) and centrifuge the slurry."
+		"It can be obtained in &7LV&r: wash crushed TFC &aMagnetite&r in an &3Ore Washer&r (or centrifuge impure magnetite dust) for &aVanadium Magnetite&r, then &3Centrifuge&r that into magnetite and vanadium."
 	]
 	quest.2F2352F74A7D6D52.quest_subtitle: "Element #23"
 	quest.2F2352F74A7D6D52.title: "Vanadium"
@@ -2067,6 +2100,11 @@
 	]
 	quest.36CC046818525B7C.quest_subtitle: "We call this \"fun\""
 	quest.36CC046818525B7C.title: "High Voltage Components"
+	quest.37408B085E9CB67C.quest_desc: [
+		"Iridium comes at the end of the platinum line: TFC &aTetrahedrite&r's purified ore gives &aPlatinum Group Sludge&r in a &3Chemical Reactor&r, and its later separation steps (follow EMI from the sludge) leave iridium."
+	]
+	quest.37408B085E9CB67C.quest_subtitle: "Element #77"
+	quest.37408B085E9CB67C.title: "Iridium"
 	quest.37E454F09AD6727B.quest_desc: [
 		"Too lazy to harvest and replant your crops? Mount harvesters on a moving contraption and they'll pick mature crops and replant them as they pass."
 	]
@@ -2139,7 +2177,7 @@
 		""
 		"&9-&r Process TFC &aSphalerite&r: macerating purified sphalerite ore, or running the crushed ore through a &3Thermal Centrifuge&r, gives it as a &6Byproduct&r."
 		""
-		"For &dArsenic&r, GregTech relies on realgar and cobaltite, ores that have no veins in this pack yet; check EMI for any other source."
+		"For &dArsenic&r: TFC &aTetrahedrite&r carries &aRealgar&r. Run crushed tetrahedrite through a &3Thermal Centrifuge&r (or centrifuge pure tetrahedrite dust) for realgar dust, then &3Centrifuge&r the realgar into arsenic and sulfur."
 		""
 		"Mix one gallium and one arsenic dust for two Gallium Arsenide."
 	]
@@ -2782,6 +2820,13 @@
 		"Not much happens at MV except that the electrolyzer becomes much more powerful."
 	]
 	quest.4CFECFD85067967E.title: "&bMV&r Ore Processing"
+	quest.4D1A3CDFA01373C4.quest_desc: [
+		"Yttrium goes into yttrium barium cuprate and other superconductors."
+		""
+		"It can be obtained in &7LV&r: TFC &aCassiterite&r gives &aMonazite&r as its &3Ore Washer&r by-product. An &3Electrolyzer&r splits monazite dust into rare earth and phosphate, and a &3Centrifuge&r separates rare earth into small piles of cadmium, neodymium, samarium, cerium, yttrium and lanthanum."
+	]
+	quest.4D1A3CDFA01373C4.quest_subtitle: "Element #39"
+	quest.4D1A3CDFA01373C4.title: "Yttrium"
 	quest.4D533A724C2FCE97.quest_desc: [
 		"Congrats on making your first &6Tungsten&r! Electrolyze &bTungstic Acid&r in an &5EV&r Electrolyzer for Tungsten dust, plus some Hydrogen and Oxygen back."
 		""
@@ -2791,6 +2836,20 @@
 	]
 	quest.4D533A724C2FCE97.quest_subtitle: "Heavy metal"
 	quest.4D533A724C2FCE97.title: "Tungsten"
+	quest.4E35DAC659C5E12C.quest_desc: [
+		"Molybdenum goes into RTM alloy, molybdenum disilicide coils and several high-tier alloys."
+		""
+		"It can be obtained in &7LV&r: TFC &aMalachite&r gives &aMolybdenite&r as its &3Thermal Centrifuge&r by-product; an &3Electrolyzer&r splits it into molybdenum and sulfur."
+	]
+	quest.4E35DAC659C5E12C.quest_subtitle: "Element #42"
+	quest.4E35DAC659C5E12C.title: "Molybdenum"
+	quest.4E49CEA68BDBAFC1.quest_desc: [
+		"Arsenic goes into gallium arsenide, and with it every diode and silicon boule."
+		""
+		"It can be obtained in &7LV&r: TFC &aTetrahedrite&r carries &aRealgar&r, the &3Thermal Centrifuge&r's by-product of crushed tetrahedrite. &3Centrifuge&r realgar dust into arsenic and sulfur."
+	]
+	quest.4E49CEA68BDBAFC1.quest_subtitle: "Element #33"
+	quest.4E49CEA68BDBAFC1.title: "Arsenic"
 	quest.4E7CE1039CEF5852.quest_desc: [
 		"Fish have never been so easy to catch. Well, almost. Forge a &dFish Hook&r on an anvil and craft it into a &dFishing Rod&r with sticks and string."
 		""
@@ -3133,6 +3192,13 @@
 	]
 	quest.5689009E1F0B38BB.quest_subtitle: "Yo, wait - that's alcohol!"
 	quest.5689009E1F0B38BB.title: "Ethanol"
+	quest.5695B1A09E36E60F.quest_desc: [
+		"Tungsten makes tungstensteel, the material of &9IV&r machines, and tungsten carbide."
+		""
+		"It can be obtained in &5EV&r: TFC &aCassiterite&r gives &aScheelite&r as its &3Thermal Centrifuge&r by-product. An &5EV&r &3Chemical Bath&r turns scheelite and hydrochloric acid into tungstic acid, and an &5EV&r &3Electrolyzer&r splits that into tungsten."
+	]
+	quest.5695B1A09E36E60F.quest_subtitle: "Element #74"
+	quest.5695B1A09E36E60F.title: "Tungsten"
 	quest.56B7D5F41BC74321.quest_desc: [
 		"GregTech can make Ender Pearls from scratch."
 		""
@@ -3766,9 +3832,9 @@
 	quest.6541E6B876BB04BF.quest_subtitle: "Then I took an arrow to the knee..."
 	quest.6541E6B876BB04BF.title: "Bow and Arrow"
 	quest.65465894A2D8E709.quest_desc: [
-		"Titanium requires a slightly more &binvolved&r process than the previous materials. To get started, you'll need &aRutile&r. An &3EBF&r reduces &aIlmenite&r dust with Carbon to Rutile, and electrolyzing &aBauxite&r dust gives some too."
+		"Titanium requires a slightly more &binvolved&r process than the previous materials. To get started, you'll need &aRutile&r. An &3EBF&r reduces &aIlmenite&r dust with Carbon to Rutile."
 		""
-		"This pack has no Ilmenite or Bauxite veins: both come out of centrifuging &aMetal Mixture&r dust, a byproduct of centrifuging Stone Dust. Check EMI for the details."
+		"Ilmenite comes from TFC &aMagnetite&r: run crushed magnetite through a &3Thermal Centrifuge&r, or centrifuge pure magnetite dust, and ilmenite is the &6Byproduct&r."
 		""
 		"Once you've gotten enough &5Rutile&r, your journey to &6Titanium&r continues in the next quest. There's no need to rush things."
 	]
@@ -4556,6 +4622,15 @@
 	]
 	quest.7C105A9259BD8E39.quest_subtitle: "Element #30"
 	quest.7C105A9259BD8E39.title: "Zinc"
+	quest.7CFB25CD3E88510C.quest_desc: [
+		"&bMolybdenum&r goes into the Large Centrifugal Unit's coils, RTM alloy and several &6EV&r alloys."
+		""
+		"TFC &aMalachite&r caps copper deposits that also hold &aMolybdenite&r. Run crushed malachite through a &3Thermal Centrifuge&r, or centrifuge pure malachite dust, and molybdenite comes out as the &6Byproduct&r."
+		""
+		"An &3Electrolyzer&r splits molybdenite dust into &bMolybdenum&r and sulfur."
+	]
+	quest.7CFB25CD3E88510C.quest_subtitle: "Moly-b-done yet?"
+	quest.7CFB25CD3E88510C.title: "Molybdenum Line"
 	quest.7D3CA6CE28AD8FE3.quest_desc: [
 		"Not much new equipment is available at &7LV&r, but GregTech's &6power tools&r arrive here, and some of them make fine weapons too."
 	]

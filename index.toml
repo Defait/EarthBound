@@ -34,7 +34,7 @@ hash = "ed3f2f9741cbb744fac2a6ae6cdf907bbb7d5d36e6124aa9c816c74252b57e32"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/elements.snbt"
-hash = "8859a0baeac874fc980859f43021775cef470db91936e95f649b08d1e478c4ef"
+hash = "62c51772579a4b16766d2f1ab003af55bb37aafcec98038d2c6429904241ce0b"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/ev.snbt"
@@ -58,7 +58,7 @@ hash = "e27ee7a83cb7d519ff13e29335ef589735d78537e56c712d4e8c0b68ad0f5972"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/ore_processing.snbt"
-hash = "69bb3cee4f580a2735af56bd64302755665a6caf4c3ad2669a1a7da3c0448f7b"
+hash = "5d798062f52a7207636922a22d72feaaa17d16fc835bc755656231ede57676e6"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/power.snbt"
@@ -86,7 +86,7 @@ hash = "92909a371debd092a96b182bb9c9a79a6b9aed8ef116c34b79bd1d573b440063"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "767e60388ff2b2e1a58f52fc6426aadd0c56bda89ff2fc57dfd2ad4bc78cf261"
+hash = "3aac8445044d8f1ea9016bd7eb3c9f3f8063fa52da5145c30a991307e074af1f"
 
 [[files]]
 file = "config/tfc-server.toml"
@@ -259,6 +259,10 @@ hash = "c779bb7fb49e2fac86248087b74246bf29f4e4f66b6138f4ccdc22d8a0faefd3"
 [[files]]
 file = "kubejs/startup_scripts/main.js"
 hash = "5c4659e7bb368960801ccfce24ac3493fa14aae88a7e17b2a9cdfe1931985ffe"
+
+[[files]]
+file = "kubejs/startup_scripts/ore_byproducts.js"
+hash = "4d1af8b5de04d7df4f5f1e920346b4df4318f10145a3616d6c6d02a3ac6cf388"
 
 [[files]]
 file = "kubejs/startup_scripts/world_scale.js"
