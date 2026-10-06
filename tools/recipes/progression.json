@@ -413,6 +413,26 @@
       "#i:c:ingots/bronze",
       "#i:c:ingots/bismuth_bronze",
       "#i:c:ingots/black_bronze"
+    ],
+    "brass": [
+      "#i:c:ingots/brass",
+      "#i:c:nuggets/brass",
+      "#i:c:plates/brass",
+      "#i:c:sheets/brass",
+      "create:brass_casing"
+    ],
+    "airship_lift": [
+      "aeronautics:adjustable_burner",
+      "aeronautics:steam_vent",
+      "aeronautics:levitite",
+      "aeronautics:pearlescent_levitite"
+    ],
+    "airship_thrust": [
+      "aeronautics:propeller_bearing",
+      "aeronautics:andesite_propeller",
+      "aeronautics:wooden_propeller",
+      "aeronautics:smart_propeller",
+      "aeronautics:gyroscopic_propeller_bearing"
     ]
   },
   "gregtech": {
@@ -643,6 +663,34 @@
         "i:create:cogwheel"
       ],
       "why": "design: GregTech's LV pistons are geared with a Create cogwheel"
+    },
+    {
+      "item": "@airship_lift",
+      "requires": [
+        "@brass"
+      ],
+      "why": "design: airships unlock with brass: lift (hot-air burner, steam vent)"
+    },
+    {
+      "item": "@airship_thrust",
+      "requires": [
+        "@brass"
+      ],
+      "why": "design: airships unlock with brass: thrust (every propeller)"
+    },
+    {
+      "item": "aeronautics:*_envelope",
+      "requires": [
+        "@brass"
+      ],
+      "why": "design: airships unlock with brass: envelopes"
+    },
+    {
+      "item": "simulated:red_portable_engine",
+      "requires": [
+        "@brass"
+      ],
+      "why": "design: airships unlock with brass: portable engines"
     }
   ],
   "milestones": [
@@ -658,6 +706,12 @@
     "i:create:mechanical_press",
     "#i:c:ingots/brass",
     "i:aeronautics:propeller_bearing",
+    "i:simulated:physics_assembler",
+    "i:aeronautics:white_envelope",
+    "i:aeronautics:adjustable_burner",
+    "i:aeronautics:steam_vent",
+    "i:aeronautics:andesite_propeller",
+    "i:simulated:red_portable_engine",
     "i:gtceu:lp_steam_solid_boiler",
     "i:world:power/steam",
     "i:gtceu:lp_steam_liquid_boiler",

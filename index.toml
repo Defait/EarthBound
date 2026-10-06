@@ -41,6 +41,10 @@ file = "kubejs/config/web_server.json"
 hash = "74f01c3b886aa9dd2ebc49781ddb0541b974ad34e2f41e7a566b98d9182abd48"
 
 [[files]]
+file = "kubejs/server_scripts/aeronautics/airships.js"
+hash = "1e2a5a5e14b0b4beef928653a81b8e912119156980aeee224598e1d506d87e95"
+
+[[files]]
 file = "kubejs/server_scripts/bridges/create_gregtech.js"
 hash = "0126279db895129cb4db2f9977018789922f46131bbbc91776312f93800108ca"
 
