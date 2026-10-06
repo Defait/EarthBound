@@ -62,8 +62,8 @@
       "note": "TFC field guide page links a vanilla recipe that TFC removes"
     },
     {
-      "pattern": "^mixin: (Error loading class: (mezz/jei|net/irisshaders|org/jetbrains/annotations)/|@Mixin target (mezz\\.jei|net\\.irisshaders)\\.\\S+ was not found)",
-      "note": "optional compat mixins (GregTech, Veil) for JEI and Iris, which aren't in the pack"
+      "pattern": "^mixin: (Error loading class: (net/irisshaders|org/jetbrains/annotations)/|@Mixin target net\\.irisshaders\\.\\S+ was not found)",
+      "note": "optional compat mixins referencing classes that are not in the pack (Iris; JetBrains annotations)"
     },
     {
       "pattern": "^dev\\.ryanhcode\\.sable\\.Sable: NOTE: Sable is loaded with Flywheel",
