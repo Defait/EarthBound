@@ -85,7 +85,11 @@ ServerEvents.commandRegistry(event => {
     }
     var s = found.spot
     try {
-      player.teleportToLevel(level, s.x + 0.5, s.y, s.z + 0.5, player.yaw, player.pitch)
+      // Keep the player's facing where KubeJS exposes it (a dedicated server does, single-player
+      // doesn't); otherwise face south.
+      var yaw = typeof player.yaw === 'number' ? player.yaw : 0.0
+      var pitch = typeof player.pitch === 'number' ? player.pitch : 0.0
+      player.teleportToLevel(level, s.x + 0.5, s.y, s.z + 0.5, yaw, pitch)
       player.setRespawnPosition($Level.OVERWORLD, new $BlockPos(s.x, s.y, s.z), 0.0, true, false)
     } catch (e) {
       console.error(`[startat] moving ${player.username} to ${s.x} ${s.y} ${s.z} failed: ${e}`)
