@@ -49,6 +49,10 @@ file = "kubejs/server_scripts/create/entry.js"
 hash = "ff60db04799d54fd9ad9cfe677fd7c8e3411ab7f03a31fff4c5f3e069128d7e4"
 
 [[files]]
+file = "kubejs/server_scripts/gregtech/steam_entry.js"
+hash = "0997a740382c1ddc0d09fd6111740c6f784d715d3fb19bb1dd345756bcd9a0e3"
+
+[[files]]
 file = "kubejs/server_scripts/main.js"
 hash = "dae099ae3be7f033c0c190ee8c3b023b42f6b235d9d0591be5926e8435dbd67f"
 

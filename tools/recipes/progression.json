@@ -490,6 +490,41 @@
         "#i:c:ingots/brass"
       ],
       "why": "design: airships unlock with brass"
+    },
+    {
+      "item": "i:gtceu:lp_steam_liquid_boiler",
+      "requires": [
+        "@create_parts"
+      ],
+      "why": "design: every GregTech boiler needs a Create part, so the steam age can't skip Create"
+    },
+    {
+      "item": "i:gtceu:lp_steam_solar_boiler",
+      "requires": [
+        "@create_parts"
+      ],
+      "why": "design: every GregTech boiler needs a Create part, so the steam age can't skip Create"
+    },
+    {
+      "item": "i:gtceu:hp_steam_solid_boiler",
+      "requires": [
+        "@create_parts"
+      ],
+      "why": "design: every GregTech boiler needs a Create part, so the steam age can't skip Create"
+    },
+    {
+      "item": "i:gtceu:hp_steam_liquid_boiler",
+      "requires": [
+        "@create_parts"
+      ],
+      "why": "design: every GregTech boiler needs a Create part, so the steam age can't skip Create"
+    },
+    {
+      "item": "i:gtceu:hp_steam_solar_boiler",
+      "requires": [
+        "@create_parts"
+      ],
+      "why": "design: every GregTech boiler needs a Create part, so the steam age can't skip Create"
     }
   ],
   "milestones": [
@@ -505,6 +540,8 @@
     "#i:c:ingots/brass",
     "i:aeronautics:propeller_bearing",
     "i:gtceu:lp_steam_solid_boiler",
+    "i:gtceu:lp_steam_liquid_boiler",
+    "i:gtceu:lp_steam_macerator",
     "#i:c:ingots/pig_iron",
     "#i:c:ingots/steel",
     "i:gtceu:hp_steam_solid_boiler",

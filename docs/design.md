@@ -15,7 +15,7 @@ decisions as rules; when a rule breaks, the explorer shows the shortcut.
 | GregTech ores | **Off.** GregTech's raw materials come from TFC ores, processed in GregTech machines. GregTech-only minerals come from its processing chains, or are added later as TFC-style veins. |
 | Difficulty | **Moderate.** TFC survival as designed, GregTech at default settings, Create gated but not punishing. |
 | Create opens | **Bronze age.** Andesite alloy is made from TFC igneous extrusive rock (andesite, basalt, dacite or rhyolite, raw or cobble; chosen so Create can start in most regions of a real-geology Earth) + zinc or bronze nuggets, so water wheels, shafts and millstones arrive early. Create uses TFC sheets wherever it used metal plates, and the mechanical press takes a wrought iron double sheet, so heavy machines (press, mixer, deployer, saw) need TFC wrought iron sheets. |
-| GregTech steam | **Fire bricks + a Create part.** In GregTech's steam recipes, the vanilla furnace (uncraftable here) is replaced by TFC fire bricks plus a Create machine part, so GregTech builds on Create, which in practice means the wrought-iron age. GregTech's high-pressure steam and LV electrics need TFC steel. |
+| GregTech steam | **Fire bricks + a Create mechanical pump.** Every GregTech boiler (coal, lava, solar; low and high pressure) needs a Create mechanical pump, and the vanilla furnace in GregTech's recipes becomes TFC fire bricks, so GregTech's steam age can't skip Create. With the pump being a bronze-age part, steam starts in the late bronze age (checker: first boiler at step 15, after the pump at 14 and before wrought iron at 19). GregTech's high-pressure steam and LV electrics need TFC steel. |
 | Airships | **With Create's brass tier.** Create Aeronautics propellers and envelopes need brass (TFC brass = copper + zinc). |
 | Create ↔ GregTech | **Through recipes**, no extra mods. Create machines make GregTech's early intermediates (pressed plates, rolled wires, milled dusts); GregTech machines need Create parts. |
 | World scale | **~200 m per block, the maximum** TFC: Real World allows: map radius 100,000 × 50,000 (200,000 × 100,000 blocks). Ore and rock density per area are unchanged; climate zones and travel distances grow. |
@@ -34,9 +34,9 @@ decisions as rules; when a rule breaks, the explorer shows the shortcut.
 
 1. ~~**Unification**~~ (done): `config/almostunified/` (TFC first, iron → wrought iron, ores excluded) plus `kubejs/server_scripts/unification/gregtech.js` for GregTech's recipes (see *Upstream issues*).
 2. ~~**Create entry**~~ (done): `kubejs/server_scripts/create/entry.js` (igneous extrusive rock for andesite, bronze nuggets, TFC sheets for plates, TFC diorite/granite for Create's stone recipes, TFC stripped logs in the common tags) and `kubejs/server_scripts/compat/vanilla_substitutes.js` (TFC workbenches count as crafting tables). Checker: andesite alloy step 7, water wheel 11, press 24, deployer 30, crushing wheel 31.
-3. **GregTech steam entry**: swap the vanilla furnace for TFC fire bricks + a Create part in the ten recipes that use it, and vanilla bricks for TFC equivalents.
+3. ~~**GregTech steam entry**~~ (done): `kubejs/server_scripts/gregtech/steam_entry.js`. Checker: first boiler step 15, steam macerator 17, high-pressure boiler 30.
 4. **GregTech ore processing**: GregTech ore generation off; TFC ore items accepted by macerators, ore washers and furnaces.
-5. **Create ↔ GregTech recipe bridges**: Create press/rolling/milling recipes for GregTech plates, wires and dusts; Create parts in early GregTech machines.
+5. **Create ↔ GregTech recipe bridges**: Create press/rolling/milling recipes for GregTech plates, wires and dusts; Create parts in early GregTech machines. Known LV blocker: tin cable needs a rubber plate, and sticky resin (from GregTech rubber trees) has no steam-age route to rubber (only a centrifuge or the vanilla furnace); a Create route fits here.
 6. **Airships at brass**: brass in propellers, envelopes and engines.
 7. **World defaults**: `defaultconfigs/tfc_real_world/server.toml` with the 200 m/block scale; the `/startat` command for servers.
 
@@ -50,6 +50,5 @@ After each step: `tools/recipes/dump.py --label <step>`, compare dumps, check th
 
 ## Open questions
 
-- Which Create part goes into GregTech's first boiler (fluid tank, mechanical pump, or press)?
 - Exact Create → GregTech bridge recipes, and which GregTech LV machines require Create parts.
 - Whether GregTech-only minerals (bauxite, ilmenite, …) should become TFC-style veins later.
