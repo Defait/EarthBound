@@ -101,6 +101,10 @@ file = "config/gtceu.yaml"
 hash = "f286e355d372f1801cb19e5bdefce139904fbad36725d16b315279e110c6f36d"
 
 [[files]]
+file = "config/particular-common.toml"
+hash = "b75e52fcf4c8b1f705079f3a24db575efa6b34088bb11775ed1e4c2d32fd2497"
+
+[[files]]
 file = "config/tfc-common.toml"
 hash = "3729ca58516f4114b8f8929a89bdcfcd2f1397ac646e7da291361276a0880401"
 
@@ -159,6 +163,50 @@ hash = "ad685004cef41d6fbc9f09d4ca46b9b5d473f71226dae28a80e26d962983ab70"
 [[files]]
 file = "kubejs/data/createdeco/recipe/placard.json"
 hash = "f32f0ff27c65589c75964025745a66cf8ca5bbf4061046e7533f3c0861714da0"
+
+[[files]]
+file = "kubejs/data/fowlplay/tfc/fauna/blue_jay.json"
+hash = "11b802b0b056f2acb73ef9b48d310009564324a6c5b4f31354e2c149e1fc10ee"
+
+[[files]]
+file = "kubejs/data/fowlplay/tfc/fauna/cardinal.json"
+hash = "465cd40c3ab7197ffe9376ef2f06021f6be80ef9a1bb6a9cbdaec79f614832e8"
+
+[[files]]
+file = "kubejs/data/fowlplay/tfc/fauna/chickadee.json"
+hash = "72efec6574c48a84dfd7c538f01ef1af7376e0555e1fca3f8cd9ba6f8c86005d"
+
+[[files]]
+file = "kubejs/data/fowlplay/tfc/fauna/crow.json"
+hash = "035411ee6ff6a06e7ec8361e430eeab5dda2725d9bb8387cc68540ba6b091f29"
+
+[[files]]
+file = "kubejs/data/fowlplay/tfc/fauna/goose.json"
+hash = "9fa419dff73530999a419abb644440987efd3a1d7747135683c6b4ae6b3903b5"
+
+[[files]]
+file = "kubejs/data/fowlplay/tfc/fauna/gull.json"
+hash = "fb033f7fde097cbf27e5cd91f3d06e08c70a41a2c13699c4004915eb738ce244"
+
+[[files]]
+file = "kubejs/data/fowlplay/tfc/fauna/hawk.json"
+hash = "130984cdb73e10f74b0abcb721ac338d01d8a6a90adf36eb2b267f8c0cb85203"
+
+[[files]]
+file = "kubejs/data/fowlplay/tfc/fauna/pigeon.json"
+hash = "4a7ceac26e24070d4a30fc95476f80e0ac46834ddc82949cee738db0088748c2"
+
+[[files]]
+file = "kubejs/data/fowlplay/tfc/fauna/raven.json"
+hash = "63b05f4287ec6d5262fca571344d00113a0296717d87ad3f8259fe5678f52097"
+
+[[files]]
+file = "kubejs/data/fowlplay/tfc/fauna/robin.json"
+hash = "07cb4bcd012e22dd94b19fbbeb58ef10f487ceaed943716a729e9a01d8fa930c"
+
+[[files]]
+file = "kubejs/data/fowlplay/tfc/fauna/sparrow.json"
+hash = "8a40668bfaa6a4ee70b644bf5b681b836c0e4f48cf96d9537562329794c554b2"
 
 [[files]]
 file = "kubejs/data/tfc/recipe/crafting/clay_ball_5.json"
@@ -237,6 +285,10 @@ file = "kubejs/server_scripts/compat/create_addons.js"
 hash = "a08f4b5f928065798152638c212ea647f8326a345a1d1504b5b8727dd787febd"
 
 [[files]]
+file = "kubejs/server_scripts/compat/fowl_play.js"
+hash = "393cde9bd750e38c5797c4dc4028e5cca66304929e58c1345defafe1e11a0830"
+
+[[files]]
 file = "kubejs/server_scripts/compat/metal_gates.js"
 hash = "3f6ab58a5f1007cc2deaa309a72cf3e3b43c591591200084a80083b6637f693b"
 
@@ -273,6 +325,10 @@ file = "kubejs/server_scripts/world/startat.js"
 hash = "c779bb7fb49e2fac86248087b74246bf29f4e4f66b6138f4ccdc22d8a0faefd3"
 
 [[files]]
+file = "kubejs/startup_scripts/fowl_play.js"
+hash = "d3d53296b4dcc2aa42de9d5463f6914f901dd037d500a0286209d5046c9f1887"
+
+[[files]]
 file = "kubejs/startup_scripts/main.js"
 hash = "5c4659e7bb368960801ccfce24ac3493fa14aae88a7e17b2a9cdfe1931985ffe"
 
@@ -286,7 +342,7 @@ hash = "52715da011296bd7cb1fb707166c3cdbbbb9e0ee6bfaf45dc4c131ecb7ba6bf7"
 
 [[files]]
 file = "licenses/TerraFirmaGreg-quests.txt"
-hash = "73618509153c93e949e4dceb870d46e8eedc68741abdff66a57711d7d3cf2cf2"
+hash = "39c67929ab5e24d94c68ea3c6424f49226c43e99f493a8979bdbdced12dd1b4b"
 
 [[files]]
 file = "mods/alltheleaks.pw.toml"
@@ -304,8 +360,18 @@ hash = "657a01a86bbf8617e4726c77df08f708e43a3db12db74b837eebd8eb1d93faae"
 metafile = true
 
 [[files]]
+file = "mods/auroras.pw.toml"
+hash = "ed60e047a5a85492c3d761238524888dca729e923b6753e060fd3dc986a8e54c"
+metafile = true
+
+[[files]]
 file = "mods/better-advanced-tooltips.pw.toml"
 hash = "03084ff4f74cedc1b8ac6c85a98842f75956fb4fa811d285d8ca7caa8d54da5d"
+metafile = true
+
+[[files]]
+file = "mods/cacophony-tfc.pw.toml"
+hash = "63a52f0ebd78d546edf7a7921c0e158999207575a5890bc5a0a703b54bc67cf0"
 metafile = true
 
 [[files]]
@@ -399,6 +465,16 @@ hash = "73360e397134d238ee8fd21d33fd7f9275e9441f74f8f1b6ed92278877c0b9f1"
 metafile = true
 
 [[files]]
+file = "mods/forgified-fabric-api.pw.toml"
+hash = "31f03858b85aec4672896d0f94eb230b27b6eb359bfe5727b4706a6687296a00"
+metafile = true
+
+[[files]]
+file = "mods/fowlplay.pw.toml"
+hash = "549e72a053da13a50404bd0901b75ce25c6045e778d5a89afcf58e9b5e1945f5"
+metafile = true
+
+[[files]]
 file = "mods/ftb-filter-system.pw.toml"
 hash = "9cb8d355c77067b00a96d96db398f60db62a6ee238dabff45ade33dd8d9f9e3b"
 metafile = true
@@ -464,6 +540,11 @@ hash = "c84140c66f233909b392bd7253ca33c59903ffda51beff558d9a2a4a8c6bc269"
 metafile = true
 
 [[files]]
+file = "mods/particular-reforged.pw.toml"
+hash = "383d9891f716981f418f6e2a97a5eeeee43912975d90d9ab4ffbfe98a832e40e"
+metafile = true
+
+[[files]]
 file = "mods/patchouli.pw.toml"
 hash = "d7f360ebb9f009d6dc0b368cd8fa399bdff70c0f6ef931687b2a35137f72715d"
 metafile = true
@@ -479,6 +560,11 @@ hash = "e55ca32b338a0e0540f4fec5170675d860566255ae0f45692a00cb4ebf2eb535"
 metafile = true
 
 [[files]]
+file = "mods/roxy.pw.toml"
+hash = "436decd82e30156f5b3896583d523f7c7b3a1f9d6754d914b36dea1cede1afb1"
+metafile = true
+
+[[files]]
 file = "mods/rpl.pw.toml"
 hash = "7815e5a589de0c02a62ae83590e1f75f4d0c269e48f2435ce2ac448976ddf49f"
 metafile = true
@@ -489,13 +575,28 @@ hash = "fadb5c9cfe145e51992894fe57209fc8f1696ef892ee9702a24c6205f042e9b2"
 metafile = true
 
 [[files]]
+file = "mods/smartbrainlib.pw.toml"
+hash = "6e7ce9c2aee5bb72d2698eb89035c9b2458d20daa0782e1a03cfba7a6647621e"
+metafile = true
+
+[[files]]
 file = "mods/sodium.pw.toml"
 hash = "2a001cdb3d5ac4970d422914083c27380eba8ebd40dfd435754fe6566ba78beb"
 metafile = true
 
 [[files]]
+file = "mods/sound-physics-aeronautics.pw.toml"
+hash = "e76d9cd75c2ec1cbc520061c029d8468aaee62b58e7f0698b4094a2c56cf4b9d"
+metafile = true
+
+[[files]]
 file = "mods/spark.pw.toml"
 hash = "593fa7b30ab016aa45be07bd6bef3a9f160ed0f24689850d60bf84995d69b843"
+metafile = true
+
+[[files]]
+file = "mods/ssrd.pw.toml"
+hash = "4a4c0c54b3b38ac660b9c06d8dc8e51ed3e2efc6dd94ad3e807a48146a420873"
 metafile = true
 
 [[files]]
@@ -509,6 +610,26 @@ hash = "30bfc00ad00d932df657ab769b43411a724f103648cd3d7de2decda5a8b74241"
 metafile = true
 
 [[files]]
+file = "mods/voxy.pw.toml"
+hash = "1924382a3123d3933bf05403e7f0e4a01b7cb26f879866bd293c259c276fa9eb"
+metafile = true
+
+[[files]]
 file = "mods/woodencog.pw.toml"
 hash = "db793e202fb8723b8a56f685ea46d33d1a9e79adce20b6da593648cf90f73bb3"
+metafile = true
+
+[[files]]
+file = "mods/xaeros-minimap.pw.toml"
+hash = "aba95d9a82a7cedda4c0ce936ead9c764d0ffbc10483f0648d022213df7bb703"
+metafile = true
+
+[[files]]
+file = "mods/xaeros-world-map.pw.toml"
+hash = "f4bc20e3483a7a935b9ee674227aad73d24ecc4ea93e6c2d99955927a2197b20"
+metafile = true
+
+[[files]]
+file = "mods/yacl.pw.toml"
+hash = "539f362e9e192cf3b2813e0dfdfc51a5e6814129c6e82a9733842529beea6242"
 metafile = true

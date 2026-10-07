@@ -1,0 +1,5 @@
+{
+  "min_temperature": -8.0,
+  "max_temperature": 22.0,
+  "min_groundwater": 50.0
+}

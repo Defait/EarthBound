@@ -1,0 +1,13 @@
+name = "Cacophony-TFC"
+filename = "cacophony-0.1.3-1.21.1.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/iHFZbrne/versions/dYDbArCF/cacophony-0.1.3-1.21.1.jar"
+hash-format = "sha512"
+hash = "4a6a0560ded82492f0ebeb97fba0891abc5f8e3593a5292665fc961697d8b9e1d164e9297b57744fbfac4cca20bca357735f3901614521869c70c3c7d97fe678"
+
+[update]
+[update.modrinth]
+mod-id = "iHFZbrne"
+version = "dYDbArCF"

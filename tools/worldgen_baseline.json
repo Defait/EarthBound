@@ -34,6 +34,78 @@
      "tier": 1
     }
    ]
+  },
+  {
+   "date": "2026-10-07",
+   "reason": "Fowl Play's birds for atmosphere (docs/design.md: Atmosphere): 11 species on TFC land, shores and fresh water, each gated by a TFC fauna climate rule (kubejs/data/fowlplay/tfc/fauna, kubejs/startup_scripts/fowl_play.js); its duck and penguin get no biomes (TFC has both). They spawn in Fowl Play's own mob categories, which only spawn at runtime, so old and new chunks get them alike; they drop only feathers.",
+   "terrain": false,
+   "findings": [
+    {
+     "what": "fowlplay:blue_jay now spawns (fowlplay_ambient_birds, 1-1:2) in 104 biomes (tfc:active_shield_volcano, tfc:ancient_shield_volcano, tfc:badlands, tfc:burren_badlands and 100 more)",
+     "mod": "fowlplay (fowlplay-1.2.3+1.21.1-neoforge.jar)",
+     "tier": 1
+    },
+    {
+     "what": "fowlplay:cardinal now spawns (fowlplay_ambient_birds, 1-1:5) in 104 biomes (tfc:active_shield_volcano, tfc:ancient_shield_volcano, tfc:badlands, tfc:burren_badlands and 100 more)",
+     "mod": "fowlplay (fowlplay-1.2.3+1.21.1-neoforge.jar)",
+     "tier": 1
+    },
+    {
+     "what": "fowlplay:chickadee now spawns (fowlplay_ambient_birds, 1-1:4) in 104 biomes (tfc:active_shield_volcano, tfc:ancient_shield_volcano, tfc:badlands, tfc:burren_badlands and 100 more)",
+     "mod": "fowlplay (fowlplay-1.2.3+1.21.1-neoforge.jar)",
+     "tier": 1
+    },
+    {
+     "what": "fowlplay:crow now spawns (fowlplay_ambient_birds, 1-6:3) in 104 biomes (tfc:active_shield_volcano, tfc:ancient_shield_volcano, tfc:badlands, tfc:burren_badlands and 100 more)",
+     "mod": "fowlplay (fowlplay-1.2.3+1.21.1-neoforge.jar)",
+     "tier": 1
+    },
+    {
+     "what": "fowlplay:goose now spawns (fowlplay_birds, 1-4:4) in 18 biomes (tfc:inverted_patterned_ground, tfc:lake, tfc:lowlands, tfc:meltwater_lake and 14 more)",
+     "mod": "fowlplay (fowlplay-1.2.3+1.21.1-neoforge.jar)",
+     "tier": 1
+    },
+    {
+     "what": "fowlplay:gull now spawns (fowlplay_birds, 3-8:5) in 15 biomes (tfc:coastal_dunes, tfc:embayments, tfc:guano_island, tfc:mud_flats and 11 more)",
+     "mod": "fowlplay (fowlplay-1.2.3+1.21.1-neoforge.jar)",
+     "tier": 1
+    },
+    {
+     "what": "fowlplay:hawk now spawns (fowlplay_birds, 1-1:1) in 104 biomes (tfc:active_shield_volcano, tfc:ancient_shield_volcano, tfc:badlands, tfc:burren_badlands and 100 more)",
+     "mod": "fowlplay (fowlplay-1.2.3+1.21.1-neoforge.jar)",
+     "tier": 1
+    },
+    {
+     "what": "fowlplay:pigeon now spawns (fowlplay_birds, 1-5:3) in 104 biomes (tfc:active_shield_volcano, tfc:ancient_shield_volcano, tfc:badlands, tfc:burren_badlands and 100 more)",
+     "mod": "fowlplay (fowlplay-1.2.3+1.21.1-neoforge.jar)",
+     "tier": 1
+    },
+    {
+     "what": "fowlplay:raven now spawns (fowlplay_ambient_birds, 1-2:2) in 104 biomes (tfc:active_shield_volcano, tfc:ancient_shield_volcano, tfc:badlands, tfc:burren_badlands and 100 more)",
+     "mod": "fowlplay (fowlplay-1.2.3+1.21.1-neoforge.jar)",
+     "tier": 1
+    },
+    {
+     "what": "fowlplay:robin now spawns (fowlplay_ambient_birds, 1-2:8) in 104 biomes (tfc:active_shield_volcano, tfc:ancient_shield_volcano, tfc:badlands, tfc:burren_badlands and 100 more)",
+     "mod": "fowlplay (fowlplay-1.2.3+1.21.1-neoforge.jar)",
+     "tier": 1
+    },
+    {
+     "what": "fowlplay:sparrow now spawns (fowlplay_ambient_birds, 2-6:20) in 104 biomes (tfc:active_shield_volcano, tfc:ancient_shield_volcano, tfc:badlands, tfc:burren_badlands and 100 more)",
+     "mod": "fowlplay (fowlplay-1.2.3+1.21.1-neoforge.jar)",
+     "tier": 1
+    },
+    {
+     "what": "TFC's own mob spawns (FOWLPLAY_AMBIENT_BIRDS) differ in 104 biomes (tfc:active_shield_volcano, tfc:ancient_shield_volcano, tfc:badlands, tfc:burren_badlands and 100 more)",
+     "mod": "terrain code",
+     "tier": 1
+    },
+    {
+     "what": "TFC's own mob spawns (FOWLPLAY_BIRDS) differ in 104 biomes (tfc:active_shield_volcano, tfc:ancient_shield_volcano, tfc:badlands, tfc:burren_badlands and 100 more)",
+     "mod": "terrain code",
+     "tier": 1
+    }
+   ]
   }
  ],
  "tier0": {
@@ -54,6 +126,14 @@
     }
    },
    "patchouli": {"file": "Patchouli-1.21.1-93-NEOFORGE.jar", "version": "1.21.1-93-NEOFORGE"},
+   "ssrd": {
+    "file": "SSRD-1.8.7-1.21.1.jar",
+    "version": "1.8.7",
+    "mixins": {
+     "chunk": [2, "f85e5a053b"]
+    }
+   },
+   "smartbrainlib": {"file": "SmartBrainLib-neoforge-1.21.1-1.16.11.jar", "version": "1.16.11"},
    "tfc_real_world": {
     "file": "TFC-Real-World-NeoForge-1.21.1-4.2.0.jar",
     "version": "4.2.0",
@@ -310,6 +390,30 @@
      "chunk": [1, "ceedbb695d"]
     }
    },
+   "fowlplay": {
+    "file": "fowlplay-1.2.3+1.21.1-neoforge.jar",
+    "version": "1.2.3",
+    "data": {
+     "fowlplay:neoforge/biome_modifier": [1, "ef273c9bff"],
+     "fowlplay:tags/worldgen/biome": [13, "f83d653e85"]
+    },
+    "files": {
+     "data/fowlplay/neoforge/biome_modifier/biome_modifier.json": "f289d5",
+     "data/fowlplay/tags/worldgen/biome/spawns_blue_jays.json": "2ea894",
+     "data/fowlplay/tags/worldgen/biome/spawns_cardinals.json": "2ea894",
+     "data/fowlplay/tags/worldgen/biome/spawns_chickadees.json": "b90a26",
+     "data/fowlplay/tags/worldgen/biome/spawns_crows.json": "2ea894",
+     "data/fowlplay/tags/worldgen/biome/spawns_ducks.json": "bb4d92",
+     "data/fowlplay/tags/worldgen/biome/spawns_geese.json": "bb4d92",
+     "data/fowlplay/tags/worldgen/biome/spawns_gulls.json": "1a1b2c",
+     "data/fowlplay/tags/worldgen/biome/spawns_hawks.json": "ba4b34",
+     "data/fowlplay/tags/worldgen/biome/spawns_penguins.json": "e77e4c",
+     "data/fowlplay/tags/worldgen/biome/spawns_pigeons.json": "e07946",
+     "data/fowlplay/tags/worldgen/biome/spawns_ravens.json": "2ea894",
+     "data/fowlplay/tags/worldgen/biome/spawns_robins.json": "2ea894",
+     "data/fowlplay/tags/worldgen/biome/spawns_sparrows.json": "77bcce"
+    }
+   },
    "ftbfiltersystem": {"file": "ftb-filter-system-neoforge-21.1.4.jar", "version": "21.1.4"},
    "ftblibrary": {"file": "ftb-library-neoforge-2101.1.37.jar", "version": "2101.1.37"},
    "ftbquests": {"file": "ftb-quests-neoforge-2101.1.36.jar", "version": "2101.1.36"},
@@ -466,9 +570,35 @@
    "glsl-processor-0.2.3": {"file": "glsl-processor-0.2.3.jar", "via": "veil-neoforge-1.21.1-4.3.2.jar"},
    "molang-compiler-3.1.1.19": {"file": "molang-compiler-3.1.1.19.jar", "via": "veil-neoforge-1.21.1-4.3.2.jar"},
    "spark": {"file": "spark-1.10.124-neoforge.jar", "version": "1.10.124"},
-   "woodencog": {"file": "woodencog-1.2.19-1.21.1.jar", "version": "1.2.19"}
+   "woodencog": {"file": "woodencog-1.2.19-1.21.1.jar", "version": "1.2.19"},
+   "yet_another_config_lib_v3": {"file": "yet_another_config_lib_v3-3.8.2+1.21.1-neoforge.jar", "version": "3.8.2+1.21.1-neoforge"},
+   "common-image-3.12.0": {"file": "common-image-3.12.0.jar", "via": "yet_another_config_lib_v3-3.8.2+1.21.1-neoforge.jar"},
+   "common-io-3.12.0": {"file": "common-io-3.12.0.jar", "via": "yet_another_config_lib_v3-3.8.2+1.21.1-neoforge.jar"},
+   "common-lang-3.12.0": {"file": "common-lang-3.12.0.jar", "via": "yet_another_config_lib_v3-3.8.2+1.21.1-neoforge.jar"},
+   "gson-0.2.1": {"file": "gson-0.2.1.jar", "via": "yet_another_config_lib_v3-3.8.2+1.21.1-neoforge.jar"},
+   "imageio-core-3.12.0": {"file": "imageio-core-3.12.0.jar", "via": "yet_another_config_lib_v3-3.8.2+1.21.1-neoforge.jar"},
+   "imageio-metadata-3.12.0": {"file": "imageio-metadata-3.12.0.jar", "via": "yet_another_config_lib_v3-3.8.2+1.21.1-neoforge.jar"},
+   "imageio-webp-3.12.0": {"file": "imageio-webp-3.12.0.jar", "via": "yet_another_config_lib_v3-3.8.2+1.21.1-neoforge.jar"},
+   "json-0.2.1": {"file": "json-0.2.1.jar", "via": "yet_another_config_lib_v3-3.8.2+1.21.1-neoforge.jar"}
   },
-  "pack": {},
+  "pack": {
+   "data": {
+    "fowlplay:tfc/fauna": [11, "3796f7c25c"]
+   },
+   "files": {
+    "data/fowlplay/tfc/fauna/blue_jay.json": "d6916e",
+    "data/fowlplay/tfc/fauna/cardinal.json": "14fe46",
+    "data/fowlplay/tfc/fauna/chickadee.json": "0a2f05",
+    "data/fowlplay/tfc/fauna/crow.json": "ddbf6c",
+    "data/fowlplay/tfc/fauna/goose.json": "c90542",
+    "data/fowlplay/tfc/fauna/gull.json": "ae5bed",
+    "data/fowlplay/tfc/fauna/hawk.json": "af9d20",
+    "data/fowlplay/tfc/fauna/pigeon.json": "ff46d6",
+    "data/fowlplay/tfc/fauna/raven.json": "14b032",
+    "data/fowlplay/tfc/fauna/robin.json": "e9dc51",
+    "data/fowlplay/tfc/fauna/sparrow.json": "b71e55"
+   }
+  },
   "mixinOptions": {"lithium.properties": "97d170", "modernfix-mixins.properties": "97d170"}
  },
  "tier1": {
@@ -675,54 +805,54 @@
    "tfc:volcanic_oceanic_mountain_lake", "tfc:volcanic_oceanic_mountains", "tfc:whorled_canyons"
   ],
   "biomes": {
-   "tfc:active_shield_volcano": {"f": "530cabc1", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:ancient_shield_volcano": {"f": "bfe07dc2", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:badlands": {"f": "e5b7e882", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:burren_badlands": {"f": "6d17fdd7", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:burren_badlands_tall": {"f": "6d17fdd7", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:burren_plains": {"f": "6d17fdd7", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:burren_plateau": {"f": "6d17fdd7", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:burren_roche_moutonee": {"f": "6d17fdd7", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:buttes": {"f": "656d5e0d", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:canyons": {"f": "07bd3f00", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:cenote_canyons": {"f": "4cceb022", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:cenote_highlands": {"f": "656d5e0d", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:cenote_hills": {"f": "4cceb022", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:cenote_plains": {"f": "4cceb022", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:cenote_plateau": {"f": "656d5e0d", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:cenote_rolling_hills": {"f": "656d5e0d", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:coastal_dunes": {"f": "d0decdd1", "s": "f3cfc08c", "c": "7b839f16"},
-   "tfc:collisional_mountains": {"f": "1b28dd3d", "s": "0f3d85a1", "c": "7b839f16"},
+   "tfc:active_shield_volcano": {"f": "530cabc1", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:ancient_shield_volcano": {"f": "bfe07dc2", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:badlands": {"f": "e5b7e882", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:burren_badlands": {"f": "6d17fdd7", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:burren_badlands_tall": {"f": "6d17fdd7", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:burren_plains": {"f": "6d17fdd7", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:burren_plateau": {"f": "6d17fdd7", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:burren_roche_moutonee": {"f": "6d17fdd7", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:buttes": {"f": "656d5e0d", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:canyons": {"f": "07bd3f00", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:cenote_canyons": {"f": "4cceb022", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:cenote_highlands": {"f": "656d5e0d", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:cenote_hills": {"f": "4cceb022", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:cenote_plains": {"f": "4cceb022", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:cenote_plateau": {"f": "656d5e0d", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:cenote_rolling_hills": {"f": "656d5e0d", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:coastal_dunes": {"f": "d0decdd1", "s": "b1304e7b", "c": "7b839f16"},
+   "tfc:collisional_mountains": {"f": "1b28dd3d", "s": "c1ee1644", "c": "7b839f16"},
    "tfc:deep_ocean": {"f": "b8c45480", "s": "f3cfc08c", "c": "7b839f16"},
    "tfc:deep_ocean_atolls": {"f": "c7fca6ca", "s": "f3cfc08c", "c": "7b839f16"},
    "tfc:deep_ocean_trench": {"f": "8936eb1a", "s": "f3cfc08c", "c": "7b839f16"},
-   "tfc:doline_canyons": {"f": "4bcccb87", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:doline_highlands": {"f": "656d5e0d", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:doline_hills": {"f": "4cceb022", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:doline_plains": {"f": "4cceb022", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:doline_plateau": {"f": "656d5e0d", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:doline_rolling_hills": {"f": "656d5e0d", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:dormant_shield_volcano": {"f": "347e4196", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:drumlins": {"f": "e48760b5", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:dune_sea": {"f": "150648fb", "s": "d95d8400", "c": "7b839f16"},
-   "tfc:embayments": {"f": "aacab75b", "s": "a5d2fae4", "c": "7b839f16"},
-   "tfc:extinct_shield_volcano": {"f": "26ac55dc", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:extreme_doline_mountains": {"f": "38ef5f58", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:extreme_doline_plateau": {"f": "656d5e0d", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:glacially_carved_mountains": {"f": "8c7d198b", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:glacially_carved_oceanic_mountains": {"f": "ed868cea", "s": "a5d2fae4", "c": "7b839f16"},
-   "tfc:glacially_carved_volcanic_mountains": {"f": "e7988c61", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:glacially_carved_volcanic_oceanic_mountains": {"f": "ca4dd754", "s": "a5d2fae4", "c": "7b839f16"},
-   "tfc:glaciated_mountains": {"f": "07f59e65", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:glaciated_oceanic_mountains": {"f": "e0c7caf9", "s": "a5d2fae4", "c": "7b839f16"},
-   "tfc:glaciated_shield_volcano": {"f": "c80569dd", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:glaciated_volcanic_mountains": {"f": "4a38eaed", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:glaciated_volcanic_oceanic_mountains": {"f": "d85eb0e7", "s": "a5d2fae4", "c": "7b839f16"},
-   "tfc:grassy_dunes": {"f": "4cceb022", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:guano_island": {"f": "bb9bf59a", "s": "f3cfc08c", "c": "7b839f16"},
-   "tfc:highlands": {"f": "5302081d", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:hills": {"f": "4cceb022", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:hoodoos": {"f": "4cceb022", "s": "0f3d85a1", "c": "7b839f16"},
+   "tfc:doline_canyons": {"f": "4bcccb87", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:doline_highlands": {"f": "656d5e0d", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:doline_hills": {"f": "4cceb022", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:doline_plains": {"f": "4cceb022", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:doline_plateau": {"f": "656d5e0d", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:doline_rolling_hills": {"f": "656d5e0d", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:dormant_shield_volcano": {"f": "347e4196", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:drumlins": {"f": "e48760b5", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:dune_sea": {"f": "150648fb", "s": "f92800d3", "c": "7b839f16"},
+   "tfc:embayments": {"f": "aacab75b", "s": "6eb4ea98", "c": "7b839f16"},
+   "tfc:extinct_shield_volcano": {"f": "26ac55dc", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:extreme_doline_mountains": {"f": "38ef5f58", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:extreme_doline_plateau": {"f": "656d5e0d", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:glacially_carved_mountains": {"f": "8c7d198b", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:glacially_carved_oceanic_mountains": {"f": "ed868cea", "s": "211083fa", "c": "7b839f16"},
+   "tfc:glacially_carved_volcanic_mountains": {"f": "e7988c61", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:glacially_carved_volcanic_oceanic_mountains": {"f": "ca4dd754", "s": "211083fa", "c": "7b839f16"},
+   "tfc:glaciated_mountains": {"f": "07f59e65", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:glaciated_oceanic_mountains": {"f": "e0c7caf9", "s": "211083fa", "c": "7b839f16"},
+   "tfc:glaciated_shield_volcano": {"f": "c80569dd", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:glaciated_volcanic_mountains": {"f": "4a38eaed", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:glaciated_volcanic_oceanic_mountains": {"f": "d85eb0e7", "s": "211083fa", "c": "7b839f16"},
+   "tfc:grassy_dunes": {"f": "4cceb022", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:guano_island": {"f": "bb9bf59a", "s": "b1304e7b", "c": "7b839f16"},
+   "tfc:highlands": {"f": "5302081d", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:hills": {"f": "4cceb022", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:hoodoos": {"f": "4cceb022", "s": "c1ee1644", "c": "7b839f16"},
    "tfc:ice_sheet": {"f": "448e0b80", "s": "d95d8400", "c": "7b839f16"},
    "tfc:ice_sheet_edge": {"f": "e48760b5", "s": "0f3d85a1", "c": "7b839f16"},
    "tfc:ice_sheet_mountains": {"f": "88204015", "s": "d95d8400", "c": "7b839f16"},
@@ -736,70 +866,70 @@
    "tfc:ice_sheet_tuyas_edge": {"f": "6e58c322", "s": "0f3d85a1", "c": "7b839f16"},
    "tfc:ice_sheet_volcanic_mountains": {"f": "3f2dc5cc", "s": "d95d8400", "c": "7b839f16"},
    "tfc:ice_sheet_volcanic_oceanic_mountains": {"f": "3e9e2faf", "s": "c7accf77", "c": "7b839f16"},
-   "tfc:inverted_patterned_ground": {"f": "fab06c0b", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:knob_and_kettle": {"f": "e48760b5", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:lake": {"f": "38bcf313", "s": "0893c55c", "c": "7b839f16"},
-   "tfc:low_canyons": {"f": "9ab6b3d7", "s": "f0297805", "c": "7b839f16"},
-   "tfc:lowlands": {"f": "b4d31360", "s": "f0297805", "c": "7b839f16"},
-   "tfc:meltwater_lake": {"f": "38bcf313", "s": "0893c55c", "c": "7b839f16"},
-   "tfc:mesas": {"f": "656d5e0d", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:mountain_lake": {"f": "8c7d198b", "s": "0893c55c", "c": "7b839f16"},
-   "tfc:mountains": {"f": "8c7d198b", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:mud_flats": {"f": "150648fb", "s": "d95d8400", "c": "7b839f16"},
+   "tfc:inverted_patterned_ground": {"f": "fab06c0b", "s": "fb2ab43f", "c": "7b839f16"},
+   "tfc:knob_and_kettle": {"f": "e48760b5", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:lake": {"f": "38bcf313", "s": "d640b5c6", "c": "7b839f16"},
+   "tfc:low_canyons": {"f": "9ab6b3d7", "s": "bb6f507a", "c": "7b839f16"},
+   "tfc:lowlands": {"f": "b4d31360", "s": "cf3ceb86", "c": "7b839f16"},
+   "tfc:meltwater_lake": {"f": "38bcf313", "s": "d640b5c6", "c": "7b839f16"},
+   "tfc:mesas": {"f": "656d5e0d", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:mountain_lake": {"f": "8c7d198b", "s": "d640b5c6", "c": "7b839f16"},
+   "tfc:mountains": {"f": "8c7d198b", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:mud_flats": {"f": "150648fb", "s": "6c0ebf8f", "c": "7b839f16"},
    "tfc:ocean": {"f": "e40dfce6", "s": "f3cfc08c", "c": "7b839f16"},
    "tfc:ocean_atolls": {"f": "b4858bfd", "s": "f3cfc08c", "c": "7b839f16"},
    "tfc:ocean_reef": {"f": "5802afce", "s": "f3cfc08c", "c": "7b839f16"},
    "tfc:ocean_ridge": {"f": "d9187aff", "s": "f3cfc08c", "c": "7b839f16"},
-   "tfc:oceanic_mountain_lake": {"f": "9c6fca49", "s": "8ab2efd5", "c": "7b839f16"},
-   "tfc:oceanic_mountains": {"f": "ed868cea", "s": "a5d2fae4", "c": "7b839f16"},
-   "tfc:oceanic_volcanic_arc": {"f": "aa00dfa9", "s": "a5d2fae4", "c": "7b839f16"},
-   "tfc:old_mountain_lake": {"f": "8c7d198b", "s": "0893c55c", "c": "7b839f16"},
-   "tfc:old_mountains": {"f": "5bac1dba", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:old_shield_volcano_shore": {"f": "98f09c29", "s": "f3cfc08c", "c": "7b839f16"},
-   "tfc:patterned_ground": {"f": "fab06c0b", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:plains": {"f": "4cceb022", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:plateau": {"f": "5302081d", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:plateau_lake": {"f": "e48760b5", "s": "0893c55c", "c": "7b839f16"},
-   "tfc:plateau_wide": {"f": "5302081d", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:rift_lake": {"f": "7e531ac3", "s": "0893c55c", "c": "7b839f16"},
-   "tfc:rift_valley": {"f": "2b346b75", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:river": {"f": "38bcf313", "s": "8bd2b72a", "c": "7b839f16"},
-   "tfc:river_valley": {"f": "4cceb022", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:rocky_plateau": {"f": "1ae20088", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:rocky_shores": {"f": "918c8d52", "s": "f3cfc08c", "c": "7b839f16"},
-   "tfc:rolling_hills": {"f": "76b40151", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:salt_flats": {"f": "150648fb", "s": "d95d8400", "c": "7b839f16"},
-   "tfc:salt_marsh": {"f": "cfb91f11", "s": "28efb153", "c": "7b839f16"},
-   "tfc:sea_stacks": {"f": "aacab75b", "s": "a5d2fae4", "c": "7b839f16"},
-   "tfc:setback_cliffs": {"f": "96d0e2a6", "s": "a5d2fae4", "c": "7b839f16"},
-   "tfc:shield_volcano_shore": {"f": "98f09c29", "s": "f3cfc08c", "c": "7b839f16"},
-   "tfc:shilin_canyons": {"f": "6d17fdd7", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:shilin_highlands": {"f": "e638fa7b", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:shilin_hills": {"f": "e638fa7b", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:shilin_plains": {"f": "6d17fdd7", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:shilin_plateau": {"f": "e638fa7b", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:shore": {"f": "d0decdd1", "s": "f3cfc08c", "c": "7b839f16"},
-   "tfc:stair_step_canyons": {"f": "656d5e0d", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:stone_circles": {"f": "e48760b5", "s": "0f3d85a1", "c": "7b839f16"},
+   "tfc:oceanic_mountain_lake": {"f": "9c6fca49", "s": "3974bd7e", "c": "7b839f16"},
+   "tfc:oceanic_mountains": {"f": "ed868cea", "s": "211083fa", "c": "7b839f16"},
+   "tfc:oceanic_volcanic_arc": {"f": "aa00dfa9", "s": "211083fa", "c": "7b839f16"},
+   "tfc:old_mountain_lake": {"f": "8c7d198b", "s": "d640b5c6", "c": "7b839f16"},
+   "tfc:old_mountains": {"f": "5bac1dba", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:old_shield_volcano_shore": {"f": "98f09c29", "s": "b1304e7b", "c": "7b839f16"},
+   "tfc:patterned_ground": {"f": "fab06c0b", "s": "fb2ab43f", "c": "7b839f16"},
+   "tfc:plains": {"f": "4cceb022", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:plateau": {"f": "5302081d", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:plateau_lake": {"f": "e48760b5", "s": "d640b5c6", "c": "7b839f16"},
+   "tfc:plateau_wide": {"f": "5302081d", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:rift_lake": {"f": "7e531ac3", "s": "d640b5c6", "c": "7b839f16"},
+   "tfc:rift_valley": {"f": "2b346b75", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:river": {"f": "38bcf313", "s": "e09c0d9e", "c": "7b839f16"},
+   "tfc:river_valley": {"f": "4cceb022", "s": "fb2ab43f", "c": "7b839f16"},
+   "tfc:rocky_plateau": {"f": "1ae20088", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:rocky_shores": {"f": "918c8d52", "s": "b1304e7b", "c": "7b839f16"},
+   "tfc:rolling_hills": {"f": "76b40151", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:salt_flats": {"f": "150648fb", "s": "f92800d3", "c": "7b839f16"},
+   "tfc:salt_marsh": {"f": "cfb91f11", "s": "f2fe71f7", "c": "7b839f16"},
+   "tfc:sea_stacks": {"f": "aacab75b", "s": "6eb4ea98", "c": "7b839f16"},
+   "tfc:setback_cliffs": {"f": "96d0e2a6", "s": "6eb4ea98", "c": "7b839f16"},
+   "tfc:shield_volcano_shore": {"f": "98f09c29", "s": "b1304e7b", "c": "7b839f16"},
+   "tfc:shilin_canyons": {"f": "6d17fdd7", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:shilin_highlands": {"f": "e638fa7b", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:shilin_hills": {"f": "e638fa7b", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:shilin_plains": {"f": "6d17fdd7", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:shilin_plateau": {"f": "e638fa7b", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:shore": {"f": "d0decdd1", "s": "b1304e7b", "c": "7b839f16"},
+   "tfc:stair_step_canyons": {"f": "656d5e0d", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:stone_circles": {"f": "e48760b5", "s": "c1ee1644", "c": "7b839f16"},
    "tfc:subglacial_lake": {"f": "150648fb", "s": "202de37a", "c": "7b839f16"},
-   "tfc:sunken_shield_volcano": {"f": "3a686f36", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:terrace_lower": {"f": "aacab75b", "s": "a5d2fae4", "c": "7b839f16"},
-   "tfc:terrace_upper": {"f": "aacab75b", "s": "a5d2fae4", "c": "7b839f16"},
-   "tfc:tidal_flats": {"f": "fed1b157", "s": "f3cfc08c", "c": "7b839f16"},
-   "tfc:tower_karst_bay": {"f": "e108d08a", "s": "28efb153", "c": "7b839f16"},
-   "tfc:tower_karst_canyons": {"f": "8c7d198b", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:tower_karst_highlands": {"f": "38ef5f58", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:tower_karst_hills": {"f": "38ef5f58", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:tower_karst_lake": {"f": "f3580d26", "s": "0893c55c", "c": "7b839f16"},
-   "tfc:tower_karst_plains": {"f": "8c7d198b", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:tuyas": {"f": "6e58c322", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:volcanic_island": {"f": "ca4dd754", "s": "a5d2fae4", "c": "7b839f16"},
-   "tfc:volcanic_mountain_islands": {"f": "3cd4f2f7", "s": "a5d2fae4", "c": "7b839f16"},
-   "tfc:volcanic_mountain_lake": {"f": "e7988c61", "s": "0893c55c", "c": "7b839f16"},
-   "tfc:volcanic_mountains": {"f": "f5b0e08e", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:volcanic_oceanic_mountain_lake": {"f": "a198d015", "s": "8ab2efd5", "c": "7b839f16"},
-   "tfc:volcanic_oceanic_mountains": {"f": "aa00dfa9", "s": "a5d2fae4", "c": "7b839f16"},
-   "tfc:whorled_canyons": {"f": "4cceb022", "s": "0f3d85a1", "c": "7b839f16"}
+   "tfc:sunken_shield_volcano": {"f": "3a686f36", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:terrace_lower": {"f": "aacab75b", "s": "6eb4ea98", "c": "7b839f16"},
+   "tfc:terrace_upper": {"f": "aacab75b", "s": "6eb4ea98", "c": "7b839f16"},
+   "tfc:tidal_flats": {"f": "fed1b157", "s": "99b025eb", "c": "7b839f16"},
+   "tfc:tower_karst_bay": {"f": "e108d08a", "s": "679a8ec4", "c": "7b839f16"},
+   "tfc:tower_karst_canyons": {"f": "8c7d198b", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:tower_karst_highlands": {"f": "38ef5f58", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:tower_karst_hills": {"f": "38ef5f58", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:tower_karst_lake": {"f": "f3580d26", "s": "d640b5c6", "c": "7b839f16"},
+   "tfc:tower_karst_plains": {"f": "8c7d198b", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:tuyas": {"f": "6e58c322", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:volcanic_island": {"f": "ca4dd754", "s": "211083fa", "c": "7b839f16"},
+   "tfc:volcanic_mountain_islands": {"f": "3cd4f2f7", "s": "211083fa", "c": "7b839f16"},
+   "tfc:volcanic_mountain_lake": {"f": "e7988c61", "s": "d640b5c6", "c": "7b839f16"},
+   "tfc:volcanic_mountains": {"f": "f5b0e08e", "s": "c1ee1644", "c": "7b839f16"},
+   "tfc:volcanic_oceanic_mountain_lake": {"f": "a198d015", "s": "3974bd7e", "c": "7b839f16"},
+   "tfc:volcanic_oceanic_mountains": {"f": "aa00dfa9", "s": "211083fa", "c": "7b839f16"},
+   "tfc:whorled_canyons": {"f": "4cceb022", "s": "c1ee1644", "c": "7b839f16"}
   },
   "featureSigs": {
    "530cabc1": {
@@ -1249,14 +1379,50 @@
    "7b839f16": ["AIR:tfc:cave", "AIR:tfc:deep_cave", "AIR:tfc:canyon"]
   },
   "spawnSigs": {
-   "0f3d85a1": {
-    "n": {"CREATURE": 44, "MONSTER": 5},
-    "tfc": {"CREATURE": "b48382", "MONSTER": "97d170"},
+   "c1ee1644": {
+    "n": {"CREATURE": 44, "FOWLPLAY_AMBIENT_BIRDS": 7, "FOWLPLAY_BIRDS": 2, "MONSTER": 5},
+    "tfc": {"CREATURE": "b48382", "FOWLPLAY_AMBIENT_BIRDS": "97d170", "FOWLPLAY_BIRDS": "97d170", "MONSTER": "97d170"},
     "foreign": {
      "MONSTER": [
       "minecraft:spider*4-4:100", "minecraft:zombie*4-4:95", "minecraft:skeleton*4-4:100",
       "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
-     ]
+     ],
+     "FOWLPLAY_AMBIENT_BIRDS": [
+      "fowlplay:robin*1-2:8", "fowlplay:cardinal*1-1:5", "fowlplay:raven*1-2:2", "fowlplay:crow*1-6:3",
+      "fowlplay:sparrow*2-6:20", "fowlplay:chickadee*1-1:4", "fowlplay:blue_jay*1-1:2"
+     ],
+     "FOWLPLAY_BIRDS": ["fowlplay:hawk*1-1:1", "fowlplay:pigeon*1-5:3"]
+    }
+   },
+   "b1304e7b": {
+    "n": {
+     "CREATURE": 4,
+     "FOWLPLAY_AMBIENT_BIRDS": 7,
+     "FOWLPLAY_BIRDS": 3,
+     "MONSTER": 5,
+     "UNDERGROUND_WATER_CREATURE": 1,
+     "WATER_AMBIENT": 7,
+     "WATER_CREATURE": 3
+    },
+    "tfc": {
+     "CREATURE": "4eda7a",
+     "FOWLPLAY_AMBIENT_BIRDS": "97d170",
+     "FOWLPLAY_BIRDS": "97d170",
+     "MONSTER": "97d170",
+     "UNDERGROUND_WATER_CREATURE": "6166e2",
+     "WATER_AMBIENT": "aebd3a",
+     "WATER_CREATURE": "780060"
+    },
+    "foreign": {
+     "MONSTER": [
+      "minecraft:spider*4-4:100", "minecraft:zombie*4-4:95", "minecraft:skeleton*4-4:100",
+      "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
+     ],
+     "FOWLPLAY_AMBIENT_BIRDS": [
+      "fowlplay:robin*1-2:8", "fowlplay:cardinal*1-1:5", "fowlplay:raven*1-2:2", "fowlplay:crow*1-6:3",
+      "fowlplay:sparrow*2-6:20", "fowlplay:chickadee*1-1:4", "fowlplay:blue_jay*1-1:2"
+     ],
+     "FOWLPLAY_BIRDS": ["fowlplay:hawk*1-1:1", "fowlplay:gull*3-8:5", "fowlplay:pigeon*1-5:3"]
     }
    },
    "f3cfc08c": {
@@ -1275,6 +1441,83 @@
      ]
     }
    },
+   "f92800d3": {
+    "n": {"FOWLPLAY_AMBIENT_BIRDS": 7, "FOWLPLAY_BIRDS": 2, "MONSTER": 5},
+    "tfc": {"FOWLPLAY_AMBIENT_BIRDS": "97d170", "FOWLPLAY_BIRDS": "97d170", "MONSTER": "97d170"},
+    "foreign": {
+     "MONSTER": [
+      "minecraft:spider*4-4:100", "minecraft:zombie*4-4:95", "minecraft:skeleton*4-4:100",
+      "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
+     ],
+     "FOWLPLAY_AMBIENT_BIRDS": [
+      "fowlplay:robin*1-2:8", "fowlplay:cardinal*1-1:5", "fowlplay:raven*1-2:2", "fowlplay:crow*1-6:3",
+      "fowlplay:sparrow*2-6:20", "fowlplay:chickadee*1-1:4", "fowlplay:blue_jay*1-1:2"
+     ],
+     "FOWLPLAY_BIRDS": ["fowlplay:hawk*1-1:1", "fowlplay:pigeon*1-5:3"]
+    }
+   },
+   "6eb4ea98": {
+    "n": {
+     "CREATURE": 44,
+     "FOWLPLAY_AMBIENT_BIRDS": 7,
+     "FOWLPLAY_BIRDS": 3,
+     "MONSTER": 5,
+     "UNDERGROUND_WATER_CREATURE": 1,
+     "WATER_AMBIENT": 7,
+     "WATER_CREATURE": 3
+    },
+    "tfc": {
+     "CREATURE": "b48382",
+     "FOWLPLAY_AMBIENT_BIRDS": "97d170",
+     "FOWLPLAY_BIRDS": "97d170",
+     "MONSTER": "97d170",
+     "UNDERGROUND_WATER_CREATURE": "6166e2",
+     "WATER_AMBIENT": "aebd3a",
+     "WATER_CREATURE": "780060"
+    },
+    "foreign": {
+     "MONSTER": [
+      "minecraft:spider*4-4:100", "minecraft:zombie*4-4:95", "minecraft:skeleton*4-4:100",
+      "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
+     ],
+     "FOWLPLAY_AMBIENT_BIRDS": [
+      "fowlplay:robin*1-2:8", "fowlplay:cardinal*1-1:5", "fowlplay:raven*1-2:2", "fowlplay:crow*1-6:3",
+      "fowlplay:sparrow*2-6:20", "fowlplay:chickadee*1-1:4", "fowlplay:blue_jay*1-1:2"
+     ],
+     "FOWLPLAY_BIRDS": ["fowlplay:hawk*1-1:1", "fowlplay:gull*3-8:5", "fowlplay:pigeon*1-5:3"]
+    }
+   },
+   "211083fa": {
+    "n": {
+     "CREATURE": 44,
+     "FOWLPLAY_AMBIENT_BIRDS": 7,
+     "FOWLPLAY_BIRDS": 2,
+     "MONSTER": 5,
+     "UNDERGROUND_WATER_CREATURE": 1,
+     "WATER_AMBIENT": 7,
+     "WATER_CREATURE": 3
+    },
+    "tfc": {
+     "CREATURE": "b48382",
+     "FOWLPLAY_AMBIENT_BIRDS": "97d170",
+     "FOWLPLAY_BIRDS": "97d170",
+     "MONSTER": "97d170",
+     "UNDERGROUND_WATER_CREATURE": "6166e2",
+     "WATER_AMBIENT": "aebd3a",
+     "WATER_CREATURE": "780060"
+    },
+    "foreign": {
+     "MONSTER": [
+      "minecraft:spider*4-4:100", "minecraft:zombie*4-4:95", "minecraft:skeleton*4-4:100",
+      "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
+     ],
+     "FOWLPLAY_AMBIENT_BIRDS": [
+      "fowlplay:robin*1-2:8", "fowlplay:cardinal*1-1:5", "fowlplay:raven*1-2:2", "fowlplay:crow*1-6:3",
+      "fowlplay:sparrow*2-6:20", "fowlplay:chickadee*1-1:4", "fowlplay:blue_jay*1-1:2"
+     ],
+     "FOWLPLAY_BIRDS": ["fowlplay:hawk*1-1:1", "fowlplay:pigeon*1-5:3"]
+    }
+   },
    "d95d8400": {
     "n": {"MONSTER": 5},
     "tfc": {"MONSTER": "97d170"},
@@ -1285,15 +1528,9 @@
      ]
     }
    },
-   "a5d2fae4": {
-    "n": {"CREATURE": 44, "MONSTER": 5, "UNDERGROUND_WATER_CREATURE": 1, "WATER_AMBIENT": 7, "WATER_CREATURE": 3},
-    "tfc": {
-     "CREATURE": "b48382",
-     "MONSTER": "97d170",
-     "UNDERGROUND_WATER_CREATURE": "6166e2",
-     "WATER_AMBIENT": "aebd3a",
-     "WATER_CREATURE": "780060"
-    },
+   "0f3d85a1": {
+    "n": {"CREATURE": 44, "MONSTER": 5},
+    "tfc": {"CREATURE": "b48382", "MONSTER": "97d170"},
     "foreign": {
      "MONSTER": [
       "minecraft:spider*4-4:100", "minecraft:zombie*4-4:95", "minecraft:skeleton*4-4:100",
@@ -1327,30 +1564,137 @@
      ]
     }
    },
-   "0893c55c": {
-    "n": {"CREATURE": 44, "MONSTER": 5, "WATER_AMBIENT": 17, "WATER_CREATURE": 1},
-    "tfc": {"CREATURE": "b48382", "MONSTER": "97d170", "WATER_AMBIENT": "1ff128", "WATER_CREATURE": "9fc281"},
-    "foreign": {
-     "MONSTER": [
-      "minecraft:spider*4-4:100", "minecraft:zombie*4-4:95", "minecraft:skeleton*4-4:100",
-      "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
-     ]
-    }
-   },
-   "f0297805": {
-    "n": {"CREATURE": 44, "MONSTER": 5, "WATER_AMBIENT": 17},
-    "tfc": {"CREATURE": "b48382", "MONSTER": "97d170", "WATER_AMBIENT": "1ff128"},
-    "foreign": {
-     "MONSTER": [
-      "minecraft:spider*4-4:100", "minecraft:zombie*4-4:95", "minecraft:skeleton*4-4:100",
-      "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
-     ]
-    }
-   },
-   "8ab2efd5": {
-    "n": {"CREATURE": 44, "MONSTER": 5, "UNDERGROUND_WATER_CREATURE": 1, "WATER_AMBIENT": 17, "WATER_CREATURE": 1},
+   "a5d2fae4": {
+    "n": {"CREATURE": 44, "MONSTER": 5, "UNDERGROUND_WATER_CREATURE": 1, "WATER_AMBIENT": 7, "WATER_CREATURE": 3},
     "tfc": {
      "CREATURE": "b48382",
+     "MONSTER": "97d170",
+     "UNDERGROUND_WATER_CREATURE": "6166e2",
+     "WATER_AMBIENT": "aebd3a",
+     "WATER_CREATURE": "780060"
+    },
+    "foreign": {
+     "MONSTER": [
+      "minecraft:spider*4-4:100", "minecraft:zombie*4-4:95", "minecraft:skeleton*4-4:100",
+      "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
+     ]
+    }
+   },
+   "fb2ab43f": {
+    "n": {"CREATURE": 44, "FOWLPLAY_AMBIENT_BIRDS": 7, "FOWLPLAY_BIRDS": 3, "MONSTER": 5},
+    "tfc": {"CREATURE": "b48382", "FOWLPLAY_AMBIENT_BIRDS": "97d170", "FOWLPLAY_BIRDS": "97d170", "MONSTER": "97d170"},
+    "foreign": {
+     "MONSTER": [
+      "minecraft:spider*4-4:100", "minecraft:zombie*4-4:95", "minecraft:skeleton*4-4:100",
+      "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
+     ],
+     "FOWLPLAY_AMBIENT_BIRDS": [
+      "fowlplay:robin*1-2:8", "fowlplay:cardinal*1-1:5", "fowlplay:raven*1-2:2", "fowlplay:crow*1-6:3",
+      "fowlplay:sparrow*2-6:20", "fowlplay:chickadee*1-1:4", "fowlplay:blue_jay*1-1:2"
+     ],
+     "FOWLPLAY_BIRDS": ["fowlplay:hawk*1-1:1", "fowlplay:pigeon*1-5:3", "fowlplay:goose*1-4:4"]
+    }
+   },
+   "d640b5c6": {
+    "n": {
+     "CREATURE": 44,
+     "FOWLPLAY_AMBIENT_BIRDS": 7,
+     "FOWLPLAY_BIRDS": 3,
+     "MONSTER": 5,
+     "WATER_AMBIENT": 17,
+     "WATER_CREATURE": 1
+    },
+    "tfc": {
+     "CREATURE": "b48382",
+     "FOWLPLAY_AMBIENT_BIRDS": "97d170",
+     "FOWLPLAY_BIRDS": "97d170",
+     "MONSTER": "97d170",
+     "WATER_AMBIENT": "1ff128",
+     "WATER_CREATURE": "9fc281"
+    },
+    "foreign": {
+     "MONSTER": [
+      "minecraft:spider*4-4:100", "minecraft:zombie*4-4:95", "minecraft:skeleton*4-4:100",
+      "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
+     ],
+     "FOWLPLAY_AMBIENT_BIRDS": [
+      "fowlplay:robin*1-2:8", "fowlplay:cardinal*1-1:5", "fowlplay:raven*1-2:2", "fowlplay:crow*1-6:3",
+      "fowlplay:sparrow*2-6:20", "fowlplay:chickadee*1-1:4", "fowlplay:blue_jay*1-1:2"
+     ],
+     "FOWLPLAY_BIRDS": ["fowlplay:hawk*1-1:1", "fowlplay:pigeon*1-5:3", "fowlplay:goose*1-4:4"]
+    }
+   },
+   "bb6f507a": {
+    "n": {"CREATURE": 44, "FOWLPLAY_AMBIENT_BIRDS": 7, "FOWLPLAY_BIRDS": 2, "MONSTER": 5, "WATER_AMBIENT": 17},
+    "tfc": {
+     "CREATURE": "b48382",
+     "FOWLPLAY_AMBIENT_BIRDS": "97d170",
+     "FOWLPLAY_BIRDS": "97d170",
+     "MONSTER": "97d170",
+     "WATER_AMBIENT": "1ff128"
+    },
+    "foreign": {
+     "MONSTER": [
+      "minecraft:spider*4-4:100", "minecraft:zombie*4-4:95", "minecraft:skeleton*4-4:100",
+      "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
+     ],
+     "FOWLPLAY_AMBIENT_BIRDS": [
+      "fowlplay:robin*1-2:8", "fowlplay:cardinal*1-1:5", "fowlplay:raven*1-2:2", "fowlplay:crow*1-6:3",
+      "fowlplay:sparrow*2-6:20", "fowlplay:chickadee*1-1:4", "fowlplay:blue_jay*1-1:2"
+     ],
+     "FOWLPLAY_BIRDS": ["fowlplay:hawk*1-1:1", "fowlplay:pigeon*1-5:3"]
+    }
+   },
+   "cf3ceb86": {
+    "n": {"CREATURE": 44, "FOWLPLAY_AMBIENT_BIRDS": 7, "FOWLPLAY_BIRDS": 3, "MONSTER": 5, "WATER_AMBIENT": 17},
+    "tfc": {
+     "CREATURE": "b48382",
+     "FOWLPLAY_AMBIENT_BIRDS": "97d170",
+     "FOWLPLAY_BIRDS": "97d170",
+     "MONSTER": "97d170",
+     "WATER_AMBIENT": "1ff128"
+    },
+    "foreign": {
+     "MONSTER": [
+      "minecraft:spider*4-4:100", "minecraft:zombie*4-4:95", "minecraft:skeleton*4-4:100",
+      "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
+     ],
+     "FOWLPLAY_AMBIENT_BIRDS": [
+      "fowlplay:robin*1-2:8", "fowlplay:cardinal*1-1:5", "fowlplay:raven*1-2:2", "fowlplay:crow*1-6:3",
+      "fowlplay:sparrow*2-6:20", "fowlplay:chickadee*1-1:4", "fowlplay:blue_jay*1-1:2"
+     ],
+     "FOWLPLAY_BIRDS": ["fowlplay:hawk*1-1:1", "fowlplay:pigeon*1-5:3", "fowlplay:goose*1-4:4"]
+    }
+   },
+   "6c0ebf8f": {
+    "n": {"FOWLPLAY_AMBIENT_BIRDS": 7, "FOWLPLAY_BIRDS": 4, "MONSTER": 5},
+    "tfc": {"FOWLPLAY_AMBIENT_BIRDS": "97d170", "FOWLPLAY_BIRDS": "97d170", "MONSTER": "97d170"},
+    "foreign": {
+     "MONSTER": [
+      "minecraft:spider*4-4:100", "minecraft:zombie*4-4:95", "minecraft:skeleton*4-4:100",
+      "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
+     ],
+     "FOWLPLAY_AMBIENT_BIRDS": [
+      "fowlplay:robin*1-2:8", "fowlplay:cardinal*1-1:5", "fowlplay:raven*1-2:2", "fowlplay:crow*1-6:3",
+      "fowlplay:sparrow*2-6:20", "fowlplay:chickadee*1-1:4", "fowlplay:blue_jay*1-1:2"
+     ],
+     "FOWLPLAY_BIRDS": ["fowlplay:hawk*1-1:1", "fowlplay:gull*3-8:5", "fowlplay:pigeon*1-5:3", "fowlplay:goose*1-4:4"]
+    }
+   },
+   "3974bd7e": {
+    "n": {
+     "CREATURE": 44,
+     "FOWLPLAY_AMBIENT_BIRDS": 7,
+     "FOWLPLAY_BIRDS": 3,
+     "MONSTER": 5,
+     "UNDERGROUND_WATER_CREATURE": 1,
+     "WATER_AMBIENT": 17,
+     "WATER_CREATURE": 1
+    },
+    "tfc": {
+     "CREATURE": "b48382",
+     "FOWLPLAY_AMBIENT_BIRDS": "97d170",
+     "FOWLPLAY_BIRDS": "97d170",
      "MONSTER": "97d170",
      "UNDERGROUND_WATER_CREATURE": "6166e2",
      "WATER_AMBIENT": "1ff128",
@@ -1360,23 +1704,49 @@
      "MONSTER": [
       "minecraft:spider*4-4:100", "minecraft:zombie*4-4:95", "minecraft:skeleton*4-4:100",
       "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
-     ]
+     ],
+     "FOWLPLAY_AMBIENT_BIRDS": [
+      "fowlplay:robin*1-2:8", "fowlplay:cardinal*1-1:5", "fowlplay:raven*1-2:2", "fowlplay:crow*1-6:3",
+      "fowlplay:sparrow*2-6:20", "fowlplay:chickadee*1-1:4", "fowlplay:blue_jay*1-1:2"
+     ],
+     "FOWLPLAY_BIRDS": ["fowlplay:hawk*1-1:1", "fowlplay:pigeon*1-5:3", "fowlplay:goose*1-4:4"]
     }
    },
-   "8bd2b72a": {
-    "n": {"CREATURE": 44, "MONSTER": 5, "WATER_AMBIENT": 16},
-    "tfc": {"CREATURE": "b48382", "MONSTER": "97d170", "WATER_AMBIENT": "855d8f"},
+   "e09c0d9e": {
+    "n": {"CREATURE": 44, "FOWLPLAY_AMBIENT_BIRDS": 7, "FOWLPLAY_BIRDS": 3, "MONSTER": 5, "WATER_AMBIENT": 16},
+    "tfc": {
+     "CREATURE": "b48382",
+     "FOWLPLAY_AMBIENT_BIRDS": "97d170",
+     "FOWLPLAY_BIRDS": "97d170",
+     "MONSTER": "97d170",
+     "WATER_AMBIENT": "855d8f"
+    },
     "foreign": {
      "MONSTER": [
       "minecraft:spider*4-4:100", "minecraft:zombie*4-4:95", "minecraft:skeleton*4-4:100",
       "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
-     ]
+     ],
+     "FOWLPLAY_AMBIENT_BIRDS": [
+      "fowlplay:robin*1-2:8", "fowlplay:cardinal*1-1:5", "fowlplay:raven*1-2:2", "fowlplay:crow*1-6:3",
+      "fowlplay:sparrow*2-6:20", "fowlplay:chickadee*1-1:4", "fowlplay:blue_jay*1-1:2"
+     ],
+     "FOWLPLAY_BIRDS": ["fowlplay:hawk*1-1:1", "fowlplay:pigeon*1-5:3", "fowlplay:goose*1-4:4"]
     }
    },
-   "28efb153": {
-    "n": {"CREATURE": 44, "MONSTER": 5, "UNDERGROUND_WATER_CREATURE": 1, "WATER_AMBIENT": 4, "WATER_CREATURE": 3},
+   "f2fe71f7": {
+    "n": {
+     "CREATURE": 44,
+     "FOWLPLAY_AMBIENT_BIRDS": 7,
+     "FOWLPLAY_BIRDS": 4,
+     "MONSTER": 5,
+     "UNDERGROUND_WATER_CREATURE": 1,
+     "WATER_AMBIENT": 4,
+     "WATER_CREATURE": 3
+    },
     "tfc": {
      "CREATURE": "b48382",
+     "FOWLPLAY_AMBIENT_BIRDS": "97d170",
+     "FOWLPLAY_BIRDS": "97d170",
      "MONSTER": "97d170",
      "UNDERGROUND_WATER_CREATURE": "6166e2",
      "WATER_AMBIENT": "6e1e3d",
@@ -1386,7 +1756,12 @@
      "MONSTER": [
       "minecraft:spider*4-4:100", "minecraft:zombie*4-4:95", "minecraft:skeleton*4-4:100",
       "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
-     ]
+     ],
+     "FOWLPLAY_AMBIENT_BIRDS": [
+      "fowlplay:robin*1-2:8", "fowlplay:cardinal*1-1:5", "fowlplay:raven*1-2:2", "fowlplay:crow*1-6:3",
+      "fowlplay:sparrow*2-6:20", "fowlplay:chickadee*1-1:4", "fowlplay:blue_jay*1-1:2"
+     ],
+     "FOWLPLAY_BIRDS": ["fowlplay:hawk*1-1:1", "fowlplay:gull*3-8:5", "fowlplay:pigeon*1-5:3", "fowlplay:goose*1-4:4"]
     }
    },
    "202de37a": {
@@ -1397,6 +1772,68 @@
       "minecraft:spider*4-4:100", "minecraft:zombie*4-4:95", "minecraft:skeleton*4-4:100",
       "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
      ]
+    }
+   },
+   "99b025eb": {
+    "n": {
+     "CREATURE": 4,
+     "FOWLPLAY_AMBIENT_BIRDS": 7,
+     "FOWLPLAY_BIRDS": 4,
+     "MONSTER": 5,
+     "UNDERGROUND_WATER_CREATURE": 1,
+     "WATER_AMBIENT": 7,
+     "WATER_CREATURE": 3
+    },
+    "tfc": {
+     "CREATURE": "4eda7a",
+     "FOWLPLAY_AMBIENT_BIRDS": "97d170",
+     "FOWLPLAY_BIRDS": "97d170",
+     "MONSTER": "97d170",
+     "UNDERGROUND_WATER_CREATURE": "6166e2",
+     "WATER_AMBIENT": "aebd3a",
+     "WATER_CREATURE": "780060"
+    },
+    "foreign": {
+     "MONSTER": [
+      "minecraft:spider*4-4:100", "minecraft:zombie*4-4:95", "minecraft:skeleton*4-4:100",
+      "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
+     ],
+     "FOWLPLAY_AMBIENT_BIRDS": [
+      "fowlplay:robin*1-2:8", "fowlplay:cardinal*1-1:5", "fowlplay:raven*1-2:2", "fowlplay:crow*1-6:3",
+      "fowlplay:sparrow*2-6:20", "fowlplay:chickadee*1-1:4", "fowlplay:blue_jay*1-1:2"
+     ],
+     "FOWLPLAY_BIRDS": ["fowlplay:hawk*1-1:1", "fowlplay:gull*3-8:5", "fowlplay:pigeon*1-5:3", "fowlplay:goose*1-4:4"]
+    }
+   },
+   "679a8ec4": {
+    "n": {
+     "CREATURE": 44,
+     "FOWLPLAY_AMBIENT_BIRDS": 7,
+     "FOWLPLAY_BIRDS": 3,
+     "MONSTER": 5,
+     "UNDERGROUND_WATER_CREATURE": 1,
+     "WATER_AMBIENT": 4,
+     "WATER_CREATURE": 3
+    },
+    "tfc": {
+     "CREATURE": "b48382",
+     "FOWLPLAY_AMBIENT_BIRDS": "97d170",
+     "FOWLPLAY_BIRDS": "97d170",
+     "MONSTER": "97d170",
+     "UNDERGROUND_WATER_CREATURE": "6166e2",
+     "WATER_AMBIENT": "6e1e3d",
+     "WATER_CREATURE": "780060"
+    },
+    "foreign": {
+     "MONSTER": [
+      "minecraft:spider*4-4:100", "minecraft:zombie*4-4:95", "minecraft:skeleton*4-4:100",
+      "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
+     ],
+     "FOWLPLAY_AMBIENT_BIRDS": [
+      "fowlplay:robin*1-2:8", "fowlplay:cardinal*1-1:5", "fowlplay:raven*1-2:2", "fowlplay:crow*1-6:3",
+      "fowlplay:sparrow*2-6:20", "fowlplay:chickadee*1-1:4", "fowlplay:blue_jay*1-1:2"
+     ],
+     "FOWLPLAY_BIRDS": ["fowlplay:hawk*1-1:1", "fowlplay:gull*3-8:5", "fowlplay:pigeon*1-5:3"]
     }
    }
   },
@@ -1434,6 +1871,10 @@
      "step": "underground_ores",
      "type": "neoforge:add_features"
     },
+    "hits": 0
+   },
+   "fowlplay:biome_modifier": {
+    "json": {"type": "fowlplay:biome_modifier"},
     "hits": 0
    },
    "gtceu:raw_oil_sprout": {
@@ -1721,6 +2162,248 @@
    "c:is_windswept": {
     "total": 10,
     "tfc": ["coastal_dunes", "dune_sea", "grassy_dunes", "sea_stacks", "setback_cliffs", "whorled_canyons"]
+   },
+   "fowlplay:spawns_blue_jays": {
+    "total": 104,
+    "tfc": [
+     "active_shield_volcano", "ancient_shield_volcano", "badlands", "burren_badlands", "burren_badlands_tall",
+     "burren_plains", "burren_plateau", "burren_roche_moutonee", "buttes", "canyons", "cenote_canyons",
+     "cenote_highlands", "cenote_hills", "cenote_plains", "cenote_plateau", "cenote_rolling_hills", "coastal_dunes",
+     "collisional_mountains", "doline_canyons", "doline_highlands", "doline_hills", "doline_plains", "doline_plateau",
+     "doline_rolling_hills", "dormant_shield_volcano", "drumlins", "dune_sea", "embayments", "extinct_shield_volcano",
+     "extreme_doline_mountains", "extreme_doline_plateau", "glacially_carved_mountains",
+     "glacially_carved_oceanic_mountains", "glacially_carved_volcanic_mountains",
+     "glacially_carved_volcanic_oceanic_mountains", "glaciated_mountains", "glaciated_oceanic_mountains",
+     "glaciated_shield_volcano", "glaciated_volcanic_mountains", "glaciated_volcanic_oceanic_mountains",
+     "grassy_dunes", "guano_island", "highlands", "hills", "hoodoos", "inverted_patterned_ground", "knob_and_kettle",
+     "lake", "low_canyons", "lowlands", "meltwater_lake", "mesas", "mountain_lake", "mountains", "mud_flats",
+     "oceanic_mountain_lake", "oceanic_mountains", "oceanic_volcanic_arc", "old_mountain_lake", "old_mountains",
+     "old_shield_volcano_shore", "patterned_ground", "plains", "plateau", "plateau_lake", "plateau_wide", "rift_lake",
+     "rift_valley", "river", "river_valley", "rocky_plateau", "rocky_shores", "rolling_hills", "salt_flats",
+     "salt_marsh", "sea_stacks", "setback_cliffs", "shield_volcano_shore", "shilin_canyons", "shilin_highlands",
+     "shilin_hills", "shilin_plains", "shilin_plateau", "shore", "stair_step_canyons", "stone_circles",
+     "sunken_shield_volcano", "terrace_lower", "terrace_upper", "tidal_flats", "tower_karst_bay",
+     "tower_karst_canyons", "tower_karst_highlands", "tower_karst_hills", "tower_karst_lake", "tower_karst_plains",
+     "tuyas", "volcanic_island", "volcanic_mountain_islands", "volcanic_mountain_lake", "volcanic_mountains",
+     "volcanic_oceanic_mountain_lake", "volcanic_oceanic_mountains", "whorled_canyons"
+    ]
+   },
+   "fowlplay:spawns_cardinals": {
+    "total": 104,
+    "tfc": [
+     "active_shield_volcano", "ancient_shield_volcano", "badlands", "burren_badlands", "burren_badlands_tall",
+     "burren_plains", "burren_plateau", "burren_roche_moutonee", "buttes", "canyons", "cenote_canyons",
+     "cenote_highlands", "cenote_hills", "cenote_plains", "cenote_plateau", "cenote_rolling_hills", "coastal_dunes",
+     "collisional_mountains", "doline_canyons", "doline_highlands", "doline_hills", "doline_plains", "doline_plateau",
+     "doline_rolling_hills", "dormant_shield_volcano", "drumlins", "dune_sea", "embayments", "extinct_shield_volcano",
+     "extreme_doline_mountains", "extreme_doline_plateau", "glacially_carved_mountains",
+     "glacially_carved_oceanic_mountains", "glacially_carved_volcanic_mountains",
+     "glacially_carved_volcanic_oceanic_mountains", "glaciated_mountains", "glaciated_oceanic_mountains",
+     "glaciated_shield_volcano", "glaciated_volcanic_mountains", "glaciated_volcanic_oceanic_mountains",
+     "grassy_dunes", "guano_island", "highlands", "hills", "hoodoos", "inverted_patterned_ground", "knob_and_kettle",
+     "lake", "low_canyons", "lowlands", "meltwater_lake", "mesas", "mountain_lake", "mountains", "mud_flats",
+     "oceanic_mountain_lake", "oceanic_mountains", "oceanic_volcanic_arc", "old_mountain_lake", "old_mountains",
+     "old_shield_volcano_shore", "patterned_ground", "plains", "plateau", "plateau_lake", "plateau_wide", "rift_lake",
+     "rift_valley", "river", "river_valley", "rocky_plateau", "rocky_shores", "rolling_hills", "salt_flats",
+     "salt_marsh", "sea_stacks", "setback_cliffs", "shield_volcano_shore", "shilin_canyons", "shilin_highlands",
+     "shilin_hills", "shilin_plains", "shilin_plateau", "shore", "stair_step_canyons", "stone_circles",
+     "sunken_shield_volcano", "terrace_lower", "terrace_upper", "tidal_flats", "tower_karst_bay",
+     "tower_karst_canyons", "tower_karst_highlands", "tower_karst_hills", "tower_karst_lake", "tower_karst_plains",
+     "tuyas", "volcanic_island", "volcanic_mountain_islands", "volcanic_mountain_lake", "volcanic_mountains",
+     "volcanic_oceanic_mountain_lake", "volcanic_oceanic_mountains", "whorled_canyons"
+    ]
+   },
+   "fowlplay:spawns_chickadees": {
+    "total": 104,
+    "tfc": [
+     "active_shield_volcano", "ancient_shield_volcano", "badlands", "burren_badlands", "burren_badlands_tall",
+     "burren_plains", "burren_plateau", "burren_roche_moutonee", "buttes", "canyons", "cenote_canyons",
+     "cenote_highlands", "cenote_hills", "cenote_plains", "cenote_plateau", "cenote_rolling_hills", "coastal_dunes",
+     "collisional_mountains", "doline_canyons", "doline_highlands", "doline_hills", "doline_plains", "doline_plateau",
+     "doline_rolling_hills", "dormant_shield_volcano", "drumlins", "dune_sea", "embayments", "extinct_shield_volcano",
+     "extreme_doline_mountains", "extreme_doline_plateau", "glacially_carved_mountains",
+     "glacially_carved_oceanic_mountains", "glacially_carved_volcanic_mountains",
+     "glacially_carved_volcanic_oceanic_mountains", "glaciated_mountains", "glaciated_oceanic_mountains",
+     "glaciated_shield_volcano", "glaciated_volcanic_mountains", "glaciated_volcanic_oceanic_mountains",
+     "grassy_dunes", "guano_island", "highlands", "hills", "hoodoos", "inverted_patterned_ground", "knob_and_kettle",
+     "lake", "low_canyons", "lowlands", "meltwater_lake", "mesas", "mountain_lake", "mountains", "mud_flats",
+     "oceanic_mountain_lake", "oceanic_mountains", "oceanic_volcanic_arc", "old_mountain_lake", "old_mountains",
+     "old_shield_volcano_shore", "patterned_ground", "plains", "plateau", "plateau_lake", "plateau_wide", "rift_lake",
+     "rift_valley", "river", "river_valley", "rocky_plateau", "rocky_shores", "rolling_hills", "salt_flats",
+     "salt_marsh", "sea_stacks", "setback_cliffs", "shield_volcano_shore", "shilin_canyons", "shilin_highlands",
+     "shilin_hills", "shilin_plains", "shilin_plateau", "shore", "stair_step_canyons", "stone_circles",
+     "sunken_shield_volcano", "terrace_lower", "terrace_upper", "tidal_flats", "tower_karst_bay",
+     "tower_karst_canyons", "tower_karst_highlands", "tower_karst_hills", "tower_karst_lake", "tower_karst_plains",
+     "tuyas", "volcanic_island", "volcanic_mountain_islands", "volcanic_mountain_lake", "volcanic_mountains",
+     "volcanic_oceanic_mountain_lake", "volcanic_oceanic_mountains", "whorled_canyons"
+    ]
+   },
+   "fowlplay:spawns_crows": {
+    "total": 104,
+    "tfc": [
+     "active_shield_volcano", "ancient_shield_volcano", "badlands", "burren_badlands", "burren_badlands_tall",
+     "burren_plains", "burren_plateau", "burren_roche_moutonee", "buttes", "canyons", "cenote_canyons",
+     "cenote_highlands", "cenote_hills", "cenote_plains", "cenote_plateau", "cenote_rolling_hills", "coastal_dunes",
+     "collisional_mountains", "doline_canyons", "doline_highlands", "doline_hills", "doline_plains", "doline_plateau",
+     "doline_rolling_hills", "dormant_shield_volcano", "drumlins", "dune_sea", "embayments", "extinct_shield_volcano",
+     "extreme_doline_mountains", "extreme_doline_plateau", "glacially_carved_mountains",
+     "glacially_carved_oceanic_mountains", "glacially_carved_volcanic_mountains",
+     "glacially_carved_volcanic_oceanic_mountains", "glaciated_mountains", "glaciated_oceanic_mountains",
+     "glaciated_shield_volcano", "glaciated_volcanic_mountains", "glaciated_volcanic_oceanic_mountains",
+     "grassy_dunes", "guano_island", "highlands", "hills", "hoodoos", "inverted_patterned_ground", "knob_and_kettle",
+     "lake", "low_canyons", "lowlands", "meltwater_lake", "mesas", "mountain_lake", "mountains", "mud_flats",
+     "oceanic_mountain_lake", "oceanic_mountains", "oceanic_volcanic_arc", "old_mountain_lake", "old_mountains",
+     "old_shield_volcano_shore", "patterned_ground", "plains", "plateau", "plateau_lake", "plateau_wide", "rift_lake",
+     "rift_valley", "river", "river_valley", "rocky_plateau", "rocky_shores", "rolling_hills", "salt_flats",
+     "salt_marsh", "sea_stacks", "setback_cliffs", "shield_volcano_shore", "shilin_canyons", "shilin_highlands",
+     "shilin_hills", "shilin_plains", "shilin_plateau", "shore", "stair_step_canyons", "stone_circles",
+     "sunken_shield_volcano", "terrace_lower", "terrace_upper", "tidal_flats", "tower_karst_bay",
+     "tower_karst_canyons", "tower_karst_highlands", "tower_karst_hills", "tower_karst_lake", "tower_karst_plains",
+     "tuyas", "volcanic_island", "volcanic_mountain_islands", "volcanic_mountain_lake", "volcanic_mountains",
+     "volcanic_oceanic_mountain_lake", "volcanic_oceanic_mountains", "whorled_canyons"
+    ]
+   },
+   "fowlplay:spawns_geese": {
+    "total": 18,
+    "tfc": [
+     "inverted_patterned_ground", "lake", "lowlands", "meltwater_lake", "mountain_lake", "mud_flats",
+     "oceanic_mountain_lake", "old_mountain_lake", "patterned_ground", "plateau_lake", "rift_lake", "river",
+     "river_valley", "salt_marsh", "tidal_flats", "tower_karst_lake", "volcanic_mountain_lake",
+     "volcanic_oceanic_mountain_lake"
+    ]
+   },
+   "fowlplay:spawns_gulls": {
+    "total": 15,
+    "tfc": [
+     "coastal_dunes", "embayments", "guano_island", "mud_flats", "old_shield_volcano_shore", "rocky_shores",
+     "salt_marsh", "sea_stacks", "setback_cliffs", "shield_volcano_shore", "shore", "terrace_lower", "terrace_upper",
+     "tidal_flats", "tower_karst_bay"
+    ]
+   },
+   "fowlplay:spawns_hawks": {
+    "total": 104,
+    "tfc": [
+     "active_shield_volcano", "ancient_shield_volcano", "badlands", "burren_badlands", "burren_badlands_tall",
+     "burren_plains", "burren_plateau", "burren_roche_moutonee", "buttes", "canyons", "cenote_canyons",
+     "cenote_highlands", "cenote_hills", "cenote_plains", "cenote_plateau", "cenote_rolling_hills", "coastal_dunes",
+     "collisional_mountains", "doline_canyons", "doline_highlands", "doline_hills", "doline_plains", "doline_plateau",
+     "doline_rolling_hills", "dormant_shield_volcano", "drumlins", "dune_sea", "embayments", "extinct_shield_volcano",
+     "extreme_doline_mountains", "extreme_doline_plateau", "glacially_carved_mountains",
+     "glacially_carved_oceanic_mountains", "glacially_carved_volcanic_mountains",
+     "glacially_carved_volcanic_oceanic_mountains", "glaciated_mountains", "glaciated_oceanic_mountains",
+     "glaciated_shield_volcano", "glaciated_volcanic_mountains", "glaciated_volcanic_oceanic_mountains",
+     "grassy_dunes", "guano_island", "highlands", "hills", "hoodoos", "inverted_patterned_ground", "knob_and_kettle",
+     "lake", "low_canyons", "lowlands", "meltwater_lake", "mesas", "mountain_lake", "mountains", "mud_flats",
+     "oceanic_mountain_lake", "oceanic_mountains", "oceanic_volcanic_arc", "old_mountain_lake", "old_mountains",
+     "old_shield_volcano_shore", "patterned_ground", "plains", "plateau", "plateau_lake", "plateau_wide", "rift_lake",
+     "rift_valley", "river", "river_valley", "rocky_plateau", "rocky_shores", "rolling_hills", "salt_flats",
+     "salt_marsh", "sea_stacks", "setback_cliffs", "shield_volcano_shore", "shilin_canyons", "shilin_highlands",
+     "shilin_hills", "shilin_plains", "shilin_plateau", "shore", "stair_step_canyons", "stone_circles",
+     "sunken_shield_volcano", "terrace_lower", "terrace_upper", "tidal_flats", "tower_karst_bay",
+     "tower_karst_canyons", "tower_karst_highlands", "tower_karst_hills", "tower_karst_lake", "tower_karst_plains",
+     "tuyas", "volcanic_island", "volcanic_mountain_islands", "volcanic_mountain_lake", "volcanic_mountains",
+     "volcanic_oceanic_mountain_lake", "volcanic_oceanic_mountains", "whorled_canyons"
+    ]
+   },
+   "fowlplay:spawns_pigeons": {
+    "total": 104,
+    "tfc": [
+     "active_shield_volcano", "ancient_shield_volcano", "badlands", "burren_badlands", "burren_badlands_tall",
+     "burren_plains", "burren_plateau", "burren_roche_moutonee", "buttes", "canyons", "cenote_canyons",
+     "cenote_highlands", "cenote_hills", "cenote_plains", "cenote_plateau", "cenote_rolling_hills", "coastal_dunes",
+     "collisional_mountains", "doline_canyons", "doline_highlands", "doline_hills", "doline_plains", "doline_plateau",
+     "doline_rolling_hills", "dormant_shield_volcano", "drumlins", "dune_sea", "embayments", "extinct_shield_volcano",
+     "extreme_doline_mountains", "extreme_doline_plateau", "glacially_carved_mountains",
+     "glacially_carved_oceanic_mountains", "glacially_carved_volcanic_mountains",
+     "glacially_carved_volcanic_oceanic_mountains", "glaciated_mountains", "glaciated_oceanic_mountains",
+     "glaciated_shield_volcano", "glaciated_volcanic_mountains", "glaciated_volcanic_oceanic_mountains",
+     "grassy_dunes", "guano_island", "highlands", "hills", "hoodoos", "inverted_patterned_ground", "knob_and_kettle",
+     "lake", "low_canyons", "lowlands", "meltwater_lake", "mesas", "mountain_lake", "mountains", "mud_flats",
+     "oceanic_mountain_lake", "oceanic_mountains", "oceanic_volcanic_arc", "old_mountain_lake", "old_mountains",
+     "old_shield_volcano_shore", "patterned_ground", "plains", "plateau", "plateau_lake", "plateau_wide", "rift_lake",
+     "rift_valley", "river", "river_valley", "rocky_plateau", "rocky_shores", "rolling_hills", "salt_flats",
+     "salt_marsh", "sea_stacks", "setback_cliffs", "shield_volcano_shore", "shilin_canyons", "shilin_highlands",
+     "shilin_hills", "shilin_plains", "shilin_plateau", "shore", "stair_step_canyons", "stone_circles",
+     "sunken_shield_volcano", "terrace_lower", "terrace_upper", "tidal_flats", "tower_karst_bay",
+     "tower_karst_canyons", "tower_karst_highlands", "tower_karst_hills", "tower_karst_lake", "tower_karst_plains",
+     "tuyas", "volcanic_island", "volcanic_mountain_islands", "volcanic_mountain_lake", "volcanic_mountains",
+     "volcanic_oceanic_mountain_lake", "volcanic_oceanic_mountains", "whorled_canyons"
+    ]
+   },
+   "fowlplay:spawns_ravens": {
+    "total": 104,
+    "tfc": [
+     "active_shield_volcano", "ancient_shield_volcano", "badlands", "burren_badlands", "burren_badlands_tall",
+     "burren_plains", "burren_plateau", "burren_roche_moutonee", "buttes", "canyons", "cenote_canyons",
+     "cenote_highlands", "cenote_hills", "cenote_plains", "cenote_plateau", "cenote_rolling_hills", "coastal_dunes",
+     "collisional_mountains", "doline_canyons", "doline_highlands", "doline_hills", "doline_plains", "doline_plateau",
+     "doline_rolling_hills", "dormant_shield_volcano", "drumlins", "dune_sea", "embayments", "extinct_shield_volcano",
+     "extreme_doline_mountains", "extreme_doline_plateau", "glacially_carved_mountains",
+     "glacially_carved_oceanic_mountains", "glacially_carved_volcanic_mountains",
+     "glacially_carved_volcanic_oceanic_mountains", "glaciated_mountains", "glaciated_oceanic_mountains",
+     "glaciated_shield_volcano", "glaciated_volcanic_mountains", "glaciated_volcanic_oceanic_mountains",
+     "grassy_dunes", "guano_island", "highlands", "hills", "hoodoos", "inverted_patterned_ground", "knob_and_kettle",
+     "lake", "low_canyons", "lowlands", "meltwater_lake", "mesas", "mountain_lake", "mountains", "mud_flats",
+     "oceanic_mountain_lake", "oceanic_mountains", "oceanic_volcanic_arc", "old_mountain_lake", "old_mountains",
+     "old_shield_volcano_shore", "patterned_ground", "plains", "plateau", "plateau_lake", "plateau_wide", "rift_lake",
+     "rift_valley", "river", "river_valley", "rocky_plateau", "rocky_shores", "rolling_hills", "salt_flats",
+     "salt_marsh", "sea_stacks", "setback_cliffs", "shield_volcano_shore", "shilin_canyons", "shilin_highlands",
+     "shilin_hills", "shilin_plains", "shilin_plateau", "shore", "stair_step_canyons", "stone_circles",
+     "sunken_shield_volcano", "terrace_lower", "terrace_upper", "tidal_flats", "tower_karst_bay",
+     "tower_karst_canyons", "tower_karst_highlands", "tower_karst_hills", "tower_karst_lake", "tower_karst_plains",
+     "tuyas", "volcanic_island", "volcanic_mountain_islands", "volcanic_mountain_lake", "volcanic_mountains",
+     "volcanic_oceanic_mountain_lake", "volcanic_oceanic_mountains", "whorled_canyons"
+    ]
+   },
+   "fowlplay:spawns_robins": {
+    "total": 104,
+    "tfc": [
+     "active_shield_volcano", "ancient_shield_volcano", "badlands", "burren_badlands", "burren_badlands_tall",
+     "burren_plains", "burren_plateau", "burren_roche_moutonee", "buttes", "canyons", "cenote_canyons",
+     "cenote_highlands", "cenote_hills", "cenote_plains", "cenote_plateau", "cenote_rolling_hills", "coastal_dunes",
+     "collisional_mountains", "doline_canyons", "doline_highlands", "doline_hills", "doline_plains", "doline_plateau",
+     "doline_rolling_hills", "dormant_shield_volcano", "drumlins", "dune_sea", "embayments", "extinct_shield_volcano",
+     "extreme_doline_mountains", "extreme_doline_plateau", "glacially_carved_mountains",
+     "glacially_carved_oceanic_mountains", "glacially_carved_volcanic_mountains",
+     "glacially_carved_volcanic_oceanic_mountains", "glaciated_mountains", "glaciated_oceanic_mountains",
+     "glaciated_shield_volcano", "glaciated_volcanic_mountains", "glaciated_volcanic_oceanic_mountains",
+     "grassy_dunes", "guano_island", "highlands", "hills", "hoodoos", "inverted_patterned_ground", "knob_and_kettle",
+     "lake", "low_canyons", "lowlands", "meltwater_lake", "mesas", "mountain_lake", "mountains", "mud_flats",
+     "oceanic_mountain_lake", "oceanic_mountains", "oceanic_volcanic_arc", "old_mountain_lake", "old_mountains",
+     "old_shield_volcano_shore", "patterned_ground", "plains", "plateau", "plateau_lake", "plateau_wide", "rift_lake",
+     "rift_valley", "river", "river_valley", "rocky_plateau", "rocky_shores", "rolling_hills", "salt_flats",
+     "salt_marsh", "sea_stacks", "setback_cliffs", "shield_volcano_shore", "shilin_canyons", "shilin_highlands",
+     "shilin_hills", "shilin_plains", "shilin_plateau", "shore", "stair_step_canyons", "stone_circles",
+     "sunken_shield_volcano", "terrace_lower", "terrace_upper", "tidal_flats", "tower_karst_bay",
+     "tower_karst_canyons", "tower_karst_highlands", "tower_karst_hills", "tower_karst_lake", "tower_karst_plains",
+     "tuyas", "volcanic_island", "volcanic_mountain_islands", "volcanic_mountain_lake", "volcanic_mountains",
+     "volcanic_oceanic_mountain_lake", "volcanic_oceanic_mountains", "whorled_canyons"
+    ]
+   },
+   "fowlplay:spawns_sparrows": {
+    "total": 104,
+    "tfc": [
+     "active_shield_volcano", "ancient_shield_volcano", "badlands", "burren_badlands", "burren_badlands_tall",
+     "burren_plains", "burren_plateau", "burren_roche_moutonee", "buttes", "canyons", "cenote_canyons",
+     "cenote_highlands", "cenote_hills", "cenote_plains", "cenote_plateau", "cenote_rolling_hills", "coastal_dunes",
+     "collisional_mountains", "doline_canyons", "doline_highlands", "doline_hills", "doline_plains", "doline_plateau",
+     "doline_rolling_hills", "dormant_shield_volcano", "drumlins", "dune_sea", "embayments", "extinct_shield_volcano",
+     "extreme_doline_mountains", "extreme_doline_plateau", "glacially_carved_mountains",
+     "glacially_carved_oceanic_mountains", "glacially_carved_volcanic_mountains",
+     "glacially_carved_volcanic_oceanic_mountains", "glaciated_mountains", "glaciated_oceanic_mountains",
+     "glaciated_shield_volcano", "glaciated_volcanic_mountains", "glaciated_volcanic_oceanic_mountains",
+     "grassy_dunes", "guano_island", "highlands", "hills", "hoodoos", "inverted_patterned_ground", "knob_and_kettle",
+     "lake", "low_canyons", "lowlands", "meltwater_lake", "mesas", "mountain_lake", "mountains", "mud_flats",
+     "oceanic_mountain_lake", "oceanic_mountains", "oceanic_volcanic_arc", "old_mountain_lake", "old_mountains",
+     "old_shield_volcano_shore", "patterned_ground", "plains", "plateau", "plateau_lake", "plateau_wide", "rift_lake",
+     "rift_valley", "river", "river_valley", "rocky_plateau", "rocky_shores", "rolling_hills", "salt_flats",
+     "salt_marsh", "sea_stacks", "setback_cliffs", "shield_volcano_shore", "shilin_canyons", "shilin_highlands",
+     "shilin_hills", "shilin_plains", "shilin_plateau", "shore", "stair_step_canyons", "stone_circles",
+     "sunken_shield_volcano", "terrace_lower", "terrace_upper", "tidal_flats", "tower_karst_bay",
+     "tower_karst_canyons", "tower_karst_highlands", "tower_karst_hills", "tower_karst_lake", "tower_karst_plains",
+     "tuyas", "volcanic_island", "volcanic_mountain_islands", "volcanic_mountain_lake", "volcanic_mountains",
+     "volcanic_oceanic_mountain_lake", "volcanic_oceanic_mountains", "whorled_canyons"
+    ]
    },
    "gtceu:has_rubber_tree": {
     "total": 16,
@@ -2079,14 +2762,15 @@
     "entries": {"simulated:airship_ready": "41e46a", "simulated:end_sea": "e4bbfa"}
    },
    "neoforge:biome_modifier": {
-    "n": 9,
-    "hash": "98a6e2fbcc",
+    "n": 10,
+    "hash": "270b146dc6",
     "entries": {
      "almostunified:worldgen": "1a6956",
      "architectury:impl": "4c436a",
      "create:striated_ores_nether": "835e2b",
      "create:striated_ores_overworld": "829c08",
      "create:zinc_ore": "3830ee",
+     "fowlplay:biome_modifier": "7b76bd",
      "gtceu:raw_oil_sprout": "d21d91",
      "gtceu:rubber_tree": "cc647d",
      "gtceu:rubber_tree_swamp": "45c1ef",

@@ -26,6 +26,11 @@ API = "https://api.modrinth.com/v2"
 OPEN_SOURCE = {"EUPL-1.2", "MIT", "Apache-2.0", "BSD-2-Clause", "BSD-3-Clause", "ISC", "Zlib", "Unlicense", "CC0-1.0",
               "LGPL-2.1-only", "LGPL-3.0-only", "LGPL-2.1-or-later", "LGPL-3.0-or-later", "MPL-2.0",
               "GPL-3.0-only", "GPL-3.0-or-later", "GPL-2.0-only", "GPL-2.0-or-later", "AGPL-3.0-only", "OSL-3.0"}
+# Mods whose terms need more than the license column says, by Modrinth project id.
+TERMS = {
+    "fxxUqruK": "Voxy is All Rights Reserved: packwiz links Modrinth's file, never bundle it in an export. It's the Fabric "
+                "build for MC 1.21.11 that Roxy loads on NeoForge 1.21.1; keep the build Roxy names as verified (pinned)",
+}
 
 
 def get(path, **params):
@@ -72,16 +77,26 @@ def main():
         proj = projects.get(mr["mod-id"], {})
         versions = get(f"project/{mr['mod-id']}/version", loaders=json.dumps([ldr]), game_versions=json.dumps([mc]))
         current = next((v for v in versions if v["id"] == mr["version"]), None)
+        foreign = None
+        if current is None:
+            # A build for another loader or Minecraft version (Voxy's Fabric jar, loaded by Roxy): report it as is.
+            try:
+                foreign = get(f"version/{mr['version']}")
+            except Exception:
+                foreign = None
         cur_date = current["date_published"] if current else ""
         floor = 0 if args.prerelease or not current else rank.get(current["version_type"], 0)
         newer = [v for v in versions if v["date_published"] > cur_date and v["id"] != mr["version"]
-                 and rank.get(v["version_type"], 0) >= floor] if current else versions[:1]
+                 and rank.get(v["version_type"], 0) >= floor] if current else ([] if foreign else versions[:1])
         lic = (proj.get("license") or {}).get("id", "?")
+        shown = current or foreign
         rows.append({
-            "name": name, "version": current["version_number"] if current else f"? ({d.get('filename')})",
-            "type": current["version_type"] if current else "?", "side": d.get("side", "both"),
+            "name": name, "version": shown["version_number"] if shown else f"? ({d.get('filename')})",
+            "type": shown["version_type"] if shown else "?", "side": d.get("side", "both"),
             "client": proj.get("client_side", "?"), "server": proj.get("server_side", "?"), "license": lic,
             "newer": newer, "slug": proj.get("slug", mr["mod-id"]),
+            "foreign": f"{'/'.join(foreign['loaders'])} build for MC {', '.join(foreign['game_versions'])}" if foreign else "",
+            "pinned": d.get("pin", False), "terms": TERMS.get(mr["mod-id"], ""),
         })
         if newer:
             updates.append(rows[-1])
@@ -90,11 +105,18 @@ def main():
     print(f"{'Mod':28} {'Version':34} {'Type':7} {'Side':6} {'Modrinth client/server':24} {'License':24} Notes")
     for r in rows:
         notes = side_note(r["side"], r["client"], r["server"])
+        if r["foreign"]:
+            notes = (notes + "; " if notes else "") + r["foreign"]
+        if r["pinned"]:
+            notes = (notes + "; " if notes else "") + "pinned"
         if r["license"] not in OPEN_SOURCE:
             notes = (notes + "; " if notes else "") + "check the license before redistributing"
         if r["newer"]:
             notes = (notes + "; " if notes else "") + f"{len(r['newer'])} newer build(s)"
         print(f"{r['name'][:28]:28} {r['version'][:34]:34} {r['type']:7} {r['side']:6} {r['client'] + '/' + r['server']:24} {r['license'][:24]:24} {notes}")
+    for r in rows:
+        if r["terms"]:
+            print(f"  ! {r['name']}: {r['terms']}")
     for name, url in url_mods:
         print(f"{name[:28]:28} {'(direct URL)':34} {'':7} {'':6} {'':24} {'':24} update with tools/gt_update.py" if "gtceu" in url else f"{name[:28]:28} (direct URL) {url}")
 

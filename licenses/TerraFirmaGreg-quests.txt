@@ -8,6 +8,12 @@ licensed under the GNU Lesser General Public License version 3. The adapted ques
 descriptions, tasks and layout) are distributed under the same license. Ported quests are marked with
 their source in tools/quests/route.json; their text was edited to match this pack.
 
+Fowl Play's spawn rules in TFC (kubejs/startup_scripts/fowl_play.js, kubejs/server_scripts/compat/fowl_play.js
+and the climate ranges in kubejs/data/fowlplay/tfc/fauna/) are adapted from the same project's scripts
+(kubejs/startup_scripts/tfg/worldgen/fauna.js, kubejs/server_scripts/tfg/overworld/data.fauna.js and
+kubejs/server_scripts/fowl_play/tags.js of its 1.20.1 pack), under the same license; ranges and biomes were
+changed for TFC 4 and this pack.
+
 The license text follows: the GNU LGPL version 3, then the GNU GPL version 3, whose terms it
 incorporates.
 

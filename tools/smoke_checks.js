@@ -43,4 +43,43 @@ ServerEvents.loaded(event => {
     console.info('[smoke-checks] done')
     if (bad.length) throw new Error(`[smoke-checks] quest book: ${bad.length} broken item task(s)`)
   })
+
+  // Fowl Play's birds spawn by TFC's climate rule (kubejs/startup_scripts/fowl_play.js), which replaces
+  // Fowl Play's own rule in the same NeoForge event. If Fowl Play's registration ever ran after it, its rule
+  // would be OR'ed back in and birds would spawn in any climate. 40 blocks above the world spawn Fowl
+  // Play's own rule passes for every bird (its "mid-air spawn"), so there only the climate may decide.
+  var $SpawnPlacements = Java.loadClass('net.minecraft.world.entity.SpawnPlacements')
+  var $MobSpawnType = Java.loadClass('net.minecraft.world.entity.MobSpawnType')
+  var $Heightmap = Java.loadClass('net.minecraft.world.level.levelgen.Heightmap$Types')
+  var $BlockPos = Java.loadClass('net.minecraft.core.BlockPos')
+  var $ResourceLocation = Java.loadClass('net.minecraft.resources.ResourceLocation')
+  var $Registries = Java.loadClass('net.minecraft.core.registries.BuiltInRegistries')
+  var $Fauna = Java.loadClass('net.dries007.tfc.common.entities.Fauna')
+  var $ChunkData = Java.loadClass('net.dries007.tfc.world.chunkdata.ChunkData')
+  var $Solar = Java.loadClass('net.dries007.tfc.client.overworld.SolarCalculator')
+  var level = event.server.overworld()
+  var spawn = level.getSharedSpawnPos()
+  var pos = new $BlockPos(spawn.getX(), level.getHeight($Heightmap.WORLD_SURFACE, spawn.getX(), spawn.getZ()) + 40, spawn.getZ())
+  var chunkData = $ChunkData.get(level, pos)
+  var north = $Solar.getInNorthernHemisphere(pos, level)
+  var birdResults = []
+  var birdErrors = []
+  var climateRejects = 0
+  ;['blue_jay', 'cardinal', 'chickadee', 'crow', 'goose', 'gull', 'hawk', 'pigeon', 'raven', 'robin', 'sparrow'].forEach(bird => {
+    var id = $ResourceLocation.parse(`fowlplay:${bird}`)
+    var fauna = $Fauna.MANAGER.get(id)
+    if (fauna == null) {
+      birdErrors.push(`${id}: no TFC fauna definition`)
+      return
+    }
+    var climate = fauna.climate().isValid(chunkData, pos, level.getRandom(), north)
+    var spawns = $SpawnPlacements.checkSpawnRules($Registries.ENTITY_TYPE.get(id), level, $MobSpawnType.NATURAL, pos, level.getRandom())
+    if (!climate) climateRejects++
+    birdResults.push(`${bird} ${climate ? 'fits' : 'doesn\'t fit'}${spawns == climate ? '' : ' but ' + (spawns ? 'spawns' : 'doesn\'t spawn')}`)
+    if (spawns != climate) birdErrors.push(`${id}: the climate ${climate ? 'fits' : 'doesn\'t fit'} at ${pos.toShortString()}, but the spawn rule says ${spawns}`)
+  })
+  console.info(`[smoke-checks] Fowl Play spawn rules at ${pos.toShortString()}: ${birdResults.join(', ')}`)
+  if (climateRejects == 0) console.warn('[smoke-checks] Fowl Play: every bird fits the climate at the world spawn, so the check is inconclusive')
+  birdErrors.forEach(e => console.error(`[smoke-checks] Fowl Play: ${e}`))
+  if (birdErrors.length) throw new Error(`[smoke-checks] Fowl Play: ${birdErrors.length} bird(s) don't spawn by TFC's climate rule`)
 })
