@@ -27,3 +27,13 @@ __pycache__/
 # Dev tool state: test server, reports, dumps
 tools/.server/
 tools/.data/
+
+# The pack's own mod (mod/): Gradle and ModDevGradle build outputs and caches
+mod/build/
+mod/.gradle/
+mod/run/
+mod/runs/
+mod/out/
+mod/bin/
+mod/.idea/
+mod/*.iml

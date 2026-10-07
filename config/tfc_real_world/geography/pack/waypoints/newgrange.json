@@ -1,0 +1,14 @@
+{
+  "parent": "default:subregion/ireland",
+  "title_lang": {
+    "en_us": "Newgrange"
+  },
+  "subtitle_lang": {
+    "en_us": "Ancient site"
+  },
+  "description_lang": {
+    "en_us": "Visit the passage tomb above the Boyne"
+  },
+  "latitude": 53.6947,
+  "longitude": -6.4753
+}

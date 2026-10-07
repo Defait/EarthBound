@@ -1,0 +1,14 @@
+{
+  "parent": "default:subregion/turkey",
+  "title_lang": {
+    "en_us": "Göbekli Tepe"
+  },
+  "subtitle_lang": {
+    "en_us": "Ancient site"
+  },
+  "description_lang": {
+    "en_us": "Visit the carved pillars on the hill"
+  },
+  "latitude": 37.2231,
+  "longitude": 38.9225
+}

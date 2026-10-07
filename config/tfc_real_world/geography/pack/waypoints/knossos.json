@@ -1,0 +1,14 @@
+{
+  "parent": "default:subregion/crete",
+  "title_lang": {
+    "en_us": "Knossos"
+  },
+  "subtitle_lang": {
+    "en_us": "Ancient site"
+  },
+  "description_lang": {
+    "en_us": "Visit the palace of many rooms"
+  },
+  "latitude": 35.2981,
+  "longitude": 25.1631
+}

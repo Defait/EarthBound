@@ -1,0 +1,512 @@
+{
+  "_about": "The pack's structures (docs/lived-in.md). tools/structures/build.py turns this into kubejs/data/pack/... and config/tfc_real_world/geography/pack/...; edit this, not the generated files. Procedural variants name a builder in shapes.py; hand-built variants name a file tools/structures/templates/<structure>/<variant>.nbt (a hand-built file also replaces a procedural variant of the same name). Structures without any template yet are skipped.",
+
+  "landforms": {
+    "lowland": ["plains", "lowlands", "rolling_hills", "hills", "mud_flats", "knob_and_kettle", "drumlins", "burren_plains", "cenote_plains", "doline_plains", "shilin_plains", "tower_karst_plains"],
+    "upland": ["highlands", "plateau", "plateau_wide", "rocky_plateau", "canyons", "low_canyons", "old_mountains", "burren_plateau", "burren_roche_moutonee", "cenote_hills", "cenote_highlands", "cenote_plateau", "cenote_rolling_hills", "doline_hills", "doline_highlands", "doline_plateau", "doline_rolling_hills", "shilin_hills", "shilin_highlands", "shilin_plateau", "tower_karst_hills", "tower_karst_highlands"],
+    "mountain": ["mountains", "collisional_mountains", "oceanic_mountains", "volcanic_mountains", "volcanic_oceanic_mountains", "extreme_doline_mountains", "glacially_carved_mountains", "glacially_carved_oceanic_mountains", "glacially_carved_volcanic_mountains", "glacially_carved_volcanic_oceanic_mountains"],
+    "dry": ["badlands", "buttes", "mesas", "hoodoos", "dune_sea", "grassy_dunes", "salt_flats", "stair_step_canyons", "whorled_canyons", "rocky_plateau", "burren_badlands", "burren_badlands_tall"],
+    "cold": ["drumlins", "knob_and_kettle", "patterned_ground", "inverted_patterned_ground", "stone_circles", "tuyas"],
+    "coast": ["shore", "coastal_dunes", "embayments", "tidal_flats", "rocky_shores", "sea_stacks", "setback_cliffs", "terrace_lower", "terrace_upper", "old_shield_volcano_shore", "shield_volcano_shore"],
+    "site": "all biomes except oceans, lakes, rivers and ice sheets (computed)"
+  },
+
+  "loot_caps": {
+    "_about": "Highest progression-checker step allowed per era (tools/quests/pack_query.py); unreachable items only when listed in allow_unreachable.",
+    "stone": 6, "copper": 8, "bronze": 13,
+    "deny": ["^tfc:metal/[a-z_]+/(wrought_iron|cast_iron|pig_iron|steel|black_steel|red_steel|blue_steel|weak_steel|weak_blue_steel|weak_red_steel|high_carbon_.*)$",
+             "^tfc:(raw|refined)_iron_bloom$", "^tfc:bloomery$", "^tfc:blast_furnace$", "^create:", "^gtceu:", "^minecraft:iron_", "^minecraft:.*_iron$"],
+    "allow_unreachable": ["^tfc:seeds/", "^tfc:flower_cutting$", "^tfc:[a-z]+_(raw|sheepskin)_hide$", "^tfc:plant/.*_sapling$", "^tfc:wood/sapling/", "^tfc:jar/", "^tfc:wool", "^tfc:food/", "^tfc:candle$", "^tfc:ore/(amethyst|opal|lapis_lazuli)$"]
+  },
+
+  "structures": {
+    "hunters_camp": {
+      "era": "stone", "landforms": ["lowland", "upland"],
+      "climate": {"min_temperature": -12, "max_temperature": 24, "min_groundwater": 60, "max_groundwater": 450},
+      "spacing": 24, "separation": 8, "salt": 2026100701, "terrain_adaptation": "beard_thin",
+      "processors": {"rot": null, "local_materials": {"foundation": {"max_depth": 4, "variant": "dirt"}}},
+      "variants": [
+        {"name": "lean_to_a", "builder": "hunters_camp", "seed": 11, "args": {"shelters": 1}, "weight": 3},
+        {"name": "lean_to_b", "builder": "hunters_camp", "seed": 12, "args": {"shelters": 1}, "weight": 3},
+        {"name": "two_shelters", "builder": "hunters_camp", "seed": 13, "args": {"shelters": 2}, "weight": 2}
+      ],
+      "loot": {"rolls": [2, 4], "entries": [
+        {"item": "minecraft:flint", "weight": 20, "count": [2, 5]},
+        {"item": "tfc:straw", "weight": 15, "count": [4, 12]},
+        {"item": "minecraft:bone", "weight": 12, "count": [1, 4]},
+        {"item": "tfc:stone/knife_head/sedimentary", "weight": 8},
+        {"item": "tfc:stone/knife_head/igneous_extrusive", "weight": 8},
+        {"item": "tfc:stone/javelin_head/sedimentary", "weight": 8},
+        {"item": "tfc:stone/axe_head/igneous_intrusive", "weight": 6},
+        {"item": "tfc:firestarter", "weight": 6},
+        {"item": "tfc:small_raw_hide", "weight": 8},
+        {"item": "minecraft:feather", "weight": 6, "count": [2, 6]},
+        {"item": "tfc:food/venison", "weight": 2, "count": [1, 2], "rotten": true},
+        {"item": "tfc:food/rabbit", "weight": 2, "count": [1, 2], "rotten": true},
+        {"item": "tfc:seeds/jute", "weight": 4, "count": [1, 3]}
+      ]}
+    },
+
+    "prospector_camp": {
+      "era": "copper", "landforms": ["upland", "mountain"],
+      "climate": {"min_temperature": -10, "max_temperature": 30, "min_groundwater": 30, "max_groundwater": 450},
+      "spacing": 40, "separation": 14, "salt": 2026100702, "terrain_adaptation": "beard_thin",
+      "processors": {"rot": null, "local_materials": {"foundation": {"max_depth": 4, "variant": "dirt"}}},
+      "variants": [
+        {"name": "tent_a", "builder": "prospector_camp", "seed": 21, "weight": 1},
+        {"name": "tent_b", "builder": "prospector_camp", "seed": 22, "weight": 1}
+      ],
+      "loot": {"rolls": [2, 4], "entries": [
+        {"item": "tfc:ore/small_native_copper", "weight": 10, "count": [1, 3]},
+        {"item": "tfc:ore/small_malachite", "weight": 10, "count": [1, 3]},
+        {"item": "tfc:ore/small_cassiterite", "weight": 10, "count": [1, 3]},
+        {"item": "tfc:ore/small_tetrahedrite", "weight": 10, "count": [1, 3]},
+        {"item": "tfc:ore/small_sphalerite", "weight": 10, "count": [1, 3]},
+        {"item": "tfc:ore/small_hematite", "weight": 10, "count": [1, 3]},
+        {"item": "tfc:ore/poor_native_copper", "weight": 8, "count": [1, 4]},
+        {"item": "tfc:ore/poor_cassiterite", "weight": 8, "count": [1, 4]},
+        {"item": "tfc:ore/normal_malachite", "weight": 4, "count": [1, 2]},
+        {"item": "tfc:pan/empty", "weight": 5},
+        {"item": "tfc:ceramic/propick_head_mold", "weight": 4},
+        {"item": "tfc:ceramic/vessel", "weight": 4},
+        {"item": "minecraft:charcoal", "weight": 6, "count": [2, 6]},
+        {"item": "tfc:powder/flux", "weight": 3, "count": [1, 3]},
+        {"item": "tfc:food/barley_bread", "weight": 4, "count": [1, 2]},
+        {"item": "tfc:metal/propick_head/copper", "weight": 2},
+        {"item": "tfc:metal/propick/copper", "weight": 1}
+      ]}
+    },
+
+    "mine_adit": {
+      "era": "bronze", "landforms": ["upland", "mountain"],
+      "climate": {"min_temperature": -12, "max_temperature": 30},
+      "spacing": 48, "separation": 16, "salt": 2026100703, "terrain_adaptation": "none",
+      "processors": {"rot": null, "local_materials": {"foundation": {"max_depth": 6, "variant": "raw"}}},
+      "variants": [
+        {"name": "drift_a", "builder": "mine_adit", "seed": 31, "weight": 1},
+        {"name": "drift_b", "builder": "mine_adit", "seed": 32, "weight": 1}
+      ],
+      "loot": {"rolls": [2, 3], "entries": [
+        {"item": "tfc:ore/poor_native_copper", "weight": 10, "count": [2, 6]},
+        {"item": "tfc:ore/poor_cassiterite", "weight": 10, "count": [2, 6]},
+        {"item": "tfc:ore/poor_tetrahedrite", "weight": 10, "count": [2, 6]},
+        {"item": "tfc:torch", "weight": 8, "count": [2, 6]},
+        {"item": "minecraft:charcoal", "weight": 6, "count": [2, 6]},
+        {"item": "tfc:ceramic/pickaxe_head_mold", "weight": 4},
+        {"item": "tfc:metal/pickaxe_head/copper", "weight": 4},
+        {"item": "tfc:rope", "weight": 4, "count": [1, 3]},
+        {"item": "tfc:metal/chisel/copper", "weight": 3},
+        {"item": "minecraft:bone", "weight": 3},
+        {"item": "tfc:metal/ingot/copper", "weight": 2}
+      ]}
+    },
+
+    "bloomery_ruin": {
+      "era": "bronze", "landforms": ["lowland", "upland"],
+      "climate": {"min_temperature": -5, "max_temperature": 28, "min_groundwater": 100, "max_groundwater": 450, "min_forest": 1},
+      "spacing": 64, "separation": 20, "salt": 2026100704, "terrain_adaptation": "beard_thin",
+      "processors": {"rot": 0.85, "local_materials": {"decay": {"cracked": 0.2, "mossy": 0.25}, "foundation": {"max_depth": 6, "variant": "raw"}}},
+      "variants": [
+        {"name": "smithy_a", "builder": "bloomery_ruin", "seed": 41, "weight": 1},
+        {"name": "smithy_b", "builder": "bloomery_ruin", "seed": 42, "weight": 1}
+      ],
+      "loot": {"rolls": [2, 4], "entries": [
+        {"item": "minecraft:charcoal", "weight": 10, "count": [4, 12]},
+        {"item": "tfc:ceramic/ingot_mold", "weight": 8},
+        {"item": "tfc:powder/flux", "weight": 8, "count": [2, 6]},
+        {"item": "tfc:fire_clay", "weight": 6, "count": [2, 4]},
+        {"item": "tfc:ceramic/fire_brick", "weight": 5, "count": [2, 8]},
+        {"item": "tfc:metal/ingot/copper", "weight": 5, "count": [1, 2]},
+        {"item": "tfc:ceramic/axe_head_mold", "weight": 4},
+        {"item": "tfc:ceramic/pickaxe_head_mold", "weight": 4},
+        {"item": "tfc:ceramic/hammer_head_mold", "weight": 4},
+        {"item": "tfc:ceramic/saw_blade_mold", "weight": 4},
+        {"item": "tfc:ceramic/chisel_head_mold", "weight": 4},
+        {"item": "tfc:ore/normal_hematite", "weight": 4, "count": [1, 4]},
+        {"item": "tfc:ore/normal_limonite", "weight": 4, "count": [1, 4]},
+        {"item": "tfc:ore/normal_magnetite", "weight": 4, "count": [1, 4]},
+        {"item": "tfc:metal/ingot/bronze", "weight": 2},
+        {"item": "tfc:metal/ingot/tin", "weight": 1},
+        {"item": "tfc:crucible", "weight": 1}
+      ]}
+    },
+
+    "cairn": {
+      "era": "copper", "landforms": ["upland", "mountain", "cold"],
+      "climate": {},
+      "spacing": 20, "separation": 6, "salt": 2026100705, "terrain_adaptation": "beard_thin",
+      "processors": {"rot": null, "local_materials": {"foundation": {"max_depth": 6, "variant": "raw"}}},
+      "variants": [
+        {"name": "waymarker_a", "builder": "cairn", "seed": 51, "weight": 2},
+        {"name": "waymarker_b", "builder": "cairn", "seed": 52, "weight": 2},
+        {"name": "cist_a", "builder": "cairn", "seed": 53, "args": {"cist": true}, "weight": 2},
+        {"name": "cist_b", "builder": "cairn", "seed": 54, "args": {"cist": true}, "weight": 1}
+      ],
+      "loot": {"rolls": [1, 2], "entries": [
+        {"item": "minecraft:bone", "weight": 10, "count": [1, 3]},
+        {"item": "tfc:stone/axe_head/metamorphic", "weight": 6},
+        {"item": "tfc:stone/knife_head/igneous_intrusive", "weight": 6},
+        {"item": "tfc:ceramic/jug", "weight": 3},
+        {"item": "tfc:ceramic/bowl", "weight": 3},
+        {"item": "tfc:metal/knife/copper", "weight": 2},
+        {"item": "tfc:ore/amethyst", "weight": 1},
+        {"item": "tfc:ore/opal", "weight": 1}
+      ]}
+    },
+
+    "standing_stones": {
+      "era": "stone", "landforms": ["lowland", "upland", "cold"],
+      "climate": {"min_temperature": -10, "max_temperature": 24, "min_groundwater": 40, "max_groundwater": 450},
+      "spacing": 32, "separation": 10, "salt": 2026100706, "terrain_adaptation": "beard_thin",
+      "processors": {"rot": null, "local_materials": {}},
+      "variants": [
+        {"name": "menhir", "builder": "standing_stones", "seed": 61, "args": {"kind": "single"}, "weight": 3},
+        {"name": "pair", "builder": "standing_stones", "seed": 62, "args": {"kind": "pair"}, "weight": 2},
+        {"name": "row", "builder": "standing_stones", "seed": 63, "args": {"kind": "row"}, "weight": 2},
+        {"name": "ring", "builder": "standing_stones", "seed": 64, "args": {"kind": "ring"}, "weight": 1},
+        {"name": "ring_offering", "builder": "standing_stones", "seed": 65, "args": {"kind": "ring", "offering": true}, "weight": 1},
+        {"name": "menhir_offering", "builder": "standing_stones", "seed": 66, "args": {"kind": "single", "offering": true}, "weight": 1}
+      ],
+      "loot_table": "standing_stones_offering",
+      "loot": {"rolls": [1, 2], "entries": [
+        {"item": "tfc:ceramic/bowl", "weight": 6},
+        {"item": "tfc:seeds/barley", "weight": 4, "count": [1, 3]},
+        {"item": "tfc:seeds/oat", "weight": 4, "count": [1, 3]},
+        {"item": "tfc:seeds/rye", "weight": 4, "count": [1, 3]},
+        {"item": "minecraft:bone", "weight": 4},
+        {"item": "tfc:metal/ingot/copper", "weight": 1}
+      ]}
+    },
+
+    "wayside_shrine": {
+      "era": "copper", "landforms": ["lowland", "upland"],
+      "climate": {"min_temperature": -10, "max_temperature": 30, "min_groundwater": 40, "max_groundwater": 450},
+      "spacing": 32, "separation": 10, "salt": 2026100707, "terrain_adaptation": "beard_thin",
+      "processors": {"rot": null, "local_materials": {"decay": {"mossy": 0.2, "cracked": 0.1}, "foundation": {"max_depth": 4, "variant": "raw"}}},
+      "variants": [
+        {"name": "niche_a", "builder": "wayside_shrine", "seed": 71, "weight": 2},
+        {"name": "niche_b", "builder": "wayside_shrine", "seed": 72, "weight": 2},
+        {"name": "offering_box", "builder": "wayside_shrine", "seed": 73, "args": {"with_chest": true}, "weight": 1}
+      ],
+      "loot": {"rolls": [1, 2], "entries": [
+        {"item": "tfc:candle", "weight": 6, "count": [1, 2]},
+        {"item": "tfc:powder/salt", "weight": 6, "count": [1, 2]},
+        {"item": "tfc:seeds/barley", "weight": 4, "count": [1, 3]},
+        {"item": "tfc:seeds/onion", "weight": 4, "count": [1, 3]},
+        {"item": "tfc:seeds/cabbage", "weight": 4, "count": [1, 3]},
+        {"item": "tfc:ceramic/jug", "weight": 4},
+        {"item": "tfc:jar/cherry", "weight": 2},
+        {"item": "tfc:jar/plum", "weight": 2}
+      ]}
+    },
+
+    "barrow": {
+      "era": "copper", "landforms": ["lowland", "upland"],
+      "climate": {"min_temperature": -6, "max_temperature": 20, "min_groundwater": 100, "max_groundwater": 450},
+      "spacing": 40, "separation": 12, "salt": 2026100708, "terrain_adaptation": "beard_thin",
+      "processors": {"rot": null, "local_materials": {"foundation": {"max_depth": 10, "variant": "dirt"}}},
+      "variants": [
+        {"name": "long_barrow", "builder": "barrow", "seed": 81, "weight": 2},
+        {"name": "graveyard_a", "builder": "graveyard", "seed": 82, "weight": 1},
+        {"name": "graveyard_b", "builder": "graveyard", "seed": 83, "weight": 1}
+      ],
+      "loot": {"rolls": [2, 3], "entries": [
+        {"item": "minecraft:bone", "weight": 10, "count": [1, 4]},
+        {"item": "tfc:ceramic/jug", "weight": 6},
+        {"item": "tfc:ceramic/bowl", "weight": 6},
+        {"item": "tfc:metal/knife/copper", "weight": 5},
+        {"item": "tfc:bone_needle", "weight": 5},
+        {"item": "tfc:metal/axe_head/copper", "weight": 3},
+        {"item": "tfc:metal/javelin_head/copper", "weight": 3},
+        {"item": "tfc:metal/ingot/gold", "weight": 1},
+        {"item": "tfc:ore/amethyst", "weight": 1},
+        {"item": "tfc:ore/opal", "weight": 1},
+        {"item": "tfc:ore/lapis_lazuli", "weight": 1},
+        {"item": "tfc:metal/knife/bronze", "weight": 1}
+      ]}
+    },
+
+    "wreck": {
+      "era": "bronze", "landforms": ["coast"],
+      "climate": {"min_temperature": -5, "max_temperature": 32},
+      "spacing": 20, "separation": 6, "salt": 2026100709, "terrain_adaptation": "beard_thin", "heightmap": "OCEAN_FLOOR_WG",
+      "processors": {"rot": null, "local_materials": {}},
+      "variants": [
+        {"name": "hull_a", "builder": "wreck", "seed": 91, "weight": 1},
+        {"name": "hull_b", "builder": "wreck", "seed": 92, "weight": 1}
+      ],
+      "loot": {"rolls": [3, 5], "entries": [
+        {"item": "tfc:metal/ingot/copper", "weight": 10, "count": [1, 4]},
+        {"item": "tfc:powder/salt", "weight": 8, "count": [2, 6]},
+        {"item": "tfc:rope", "weight": 6, "count": [1, 4]},
+        {"item": "tfc:ceramic/jug", "weight": 5},
+        {"item": "tfc:burlap_cloth", "weight": 5, "count": [1, 3]},
+        {"item": "tfc:jar/olive", "weight": 4, "count": [1, 2]},
+        {"item": "tfc:jar/cherry", "weight": 4, "count": [1, 2]},
+        {"item": "tfc:jar/plum", "weight": 4, "count": [1, 2]},
+        {"item": "tfc:ceramic/large_vessel", "weight": 3},
+        {"item": "tfc:metal/fish_hook/copper", "weight": 3},
+        {"item": "tfc:glue", "weight": 2, "count": [1, 2]},
+        {"item": "tfc:metal/ingot/bronze", "weight": 2},
+        {"item": "tfc:metal/ingot/tin", "weight": 2, "count": [1, 2]},
+        {"item": "tfc:ore/lapis_lazuli", "weight": 1}
+      ]}
+    },
+
+    "homestead_temperate": {
+      "era": "bronze", "landforms": ["lowland"],
+      "climate": {"min_temperature": 2, "max_temperature": 20, "min_groundwater": 180, "max_groundwater": 450, "fuzzy": true},
+      "spacing": 40, "separation": 14, "salt": 2026100710, "terrain_adaptation": "beard_thin",
+      "processors": {"rot": 0.9, "local_materials": {"decay": {"mossy": 0.2, "cracked": 0.1}, "foundation": {"max_depth": 6, "variant": "dirt"}}},
+      "variants": [{"name": "longhouse", "template": true, "ground": 0, "weight": 1}],
+      "loot": {"rolls": [3, 5], "entries": [
+        {"item": "tfc:straw", "weight": 8, "count": [4, 16]},
+        {"item": "tfc:seeds/barley", "weight": 5, "count": [1, 4]},
+        {"item": "tfc:seeds/oat", "weight": 5, "count": [1, 4]},
+        {"item": "tfc:seeds/rye", "weight": 5, "count": [1, 4]},
+        {"item": "tfc:seeds/wheat", "weight": 5, "count": [1, 4]},
+        {"item": "tfc:seeds/beet", "weight": 5, "count": [1, 4]},
+        {"item": "tfc:seeds/cabbage", "weight": 5, "count": [1, 4]},
+        {"item": "tfc:seeds/carrot", "weight": 5, "count": [1, 4]},
+        {"item": "tfc:seeds/onion", "weight": 5, "count": [1, 4]},
+        {"item": "tfc:seeds/garlic", "weight": 5, "count": [1, 4]},
+        {"item": "tfc:seeds/potato", "weight": 5, "count": [1, 4]},
+        {"item": "tfc:seeds/green_bean", "weight": 5, "count": [1, 4]},
+        {"item": "tfc:seeds/jute", "weight": 5, "count": [1, 4]},
+        {"item": "tfc:food/barley_grain", "weight": 4, "count": [2, 6]},
+        {"item": "tfc:food/wheat_grain", "weight": 4, "count": [2, 6]},
+        {"item": "tfc:ceramic/jug", "weight": 4},
+        {"item": "tfc:ceramic/pot", "weight": 4},
+        {"item": "tfc:ceramic/bowl", "weight": 4},
+        {"item": "tfc:ceramic/vessel", "weight": 4},
+        {"item": "tfc:spindle", "weight": 3},
+        {"item": "tfc:wool_yarn", "weight": 3, "count": [2, 6]},
+        {"item": "tfc:bone_needle", "weight": 3},
+        {"item": "tfc:ceramic/spindle_head", "weight": 2},
+        {"item": "tfc:handstone", "weight": 2},
+        {"item": "tfc:plant/red_apple_sapling", "weight": 1},
+        {"item": "tfc:plant/plum_sapling", "weight": 1},
+        {"item": "tfc:plant/cherry_sapling", "weight": 1}
+      ]}
+    },
+
+    "homestead_dry": {
+      "era": "bronze", "landforms": ["lowland", "dry"],
+      "climate": {"min_temperature": 10, "max_temperature": 32, "min_groundwater": 30, "max_groundwater": 180, "fuzzy": true},
+      "spacing": 40, "separation": 14, "salt": 2026100711, "terrain_adaptation": "beard_thin",
+      "processors": {"rot": 0.9, "local_materials": {"foundation": {"max_depth": 6, "variant": "dirt"}}},
+      "variants": [{"name": "courtyard_house", "template": true, "ground": 0, "weight": 1}],
+      "loot": {"rolls": [3, 5], "entries": [
+        {"item": "tfc:seeds/maize", "weight": 5, "count": [1, 4]},
+        {"item": "tfc:seeds/squash", "weight": 5, "count": [1, 4]},
+        {"item": "tfc:seeds/soybean", "weight": 5, "count": [1, 4]},
+        {"item": "tfc:seeds/red_bell_pepper", "weight": 5, "count": [1, 4]},
+        {"item": "tfc:seeds/tomato", "weight": 5, "count": [1, 4]},
+        {"item": "tfc:seeds/onion", "weight": 5, "count": [1, 4]},
+        {"item": "tfc:seeds/papyrus", "weight": 5, "count": [1, 4]},
+        {"item": "tfc:powder/salt", "weight": 6, "count": [2, 6]},
+        {"item": "tfc:ceramic/jug", "weight": 4},
+        {"item": "tfc:ceramic/pot", "weight": 4},
+        {"item": "tfc:ceramic/large_vessel", "weight": 4},
+        {"item": "tfc:jar/olive", "weight": 3},
+        {"item": "tfc:straw", "weight": 6, "count": [4, 12]},
+        {"item": "tfc:plant/olive_sapling", "weight": 1},
+        {"item": "tfc:plant/lemon_sapling", "weight": 1},
+        {"item": "tfc:plant/orange_sapling", "weight": 1}
+      ]}
+    },
+
+    "homestead_boreal": {
+      "era": "bronze", "landforms": ["lowland", "upland", "cold"],
+      "climate": {"min_temperature": -14, "max_temperature": 4, "min_groundwater": 120, "max_groundwater": 450},
+      "spacing": 40, "separation": 14, "salt": 2026100712, "terrain_adaptation": "beard_thin",
+      "processors": {"rot": 0.9, "local_materials": {"foundation": {"max_depth": 6, "variant": "dirt"}}},
+      "variants": [{"name": "log_cabin", "template": true, "ground": 0, "weight": 1}],
+      "loot": {"rolls": [3, 4], "entries": [
+        {"item": "tfc:seeds/rye", "weight": 5, "count": [1, 3]},
+        {"item": "tfc:seeds/potato", "weight": 5, "count": [1, 3]},
+        {"item": "tfc:seeds/cabbage", "weight": 5, "count": [1, 3]},
+        {"item": "tfc:seeds/garlic", "weight": 5, "count": [1, 3]},
+        {"item": "tfc:medium_raw_hide", "weight": 5},
+        {"item": "tfc:small_sheepskin_hide", "weight": 4},
+        {"item": "tfc:food/salmon", "weight": 2, "count": [1, 3]},
+        {"item": "tfc:food/cod", "weight": 2, "count": [1, 3]},
+        {"item": "tfc:groundcover/pinecone", "weight": 4, "count": [2, 6]},
+        {"item": "minecraft:feather", "weight": 4, "count": [2, 6]},
+        {"item": "tfc:metal/fish_hook/copper", "weight": 2},
+        {"item": "tfc:wool_cloth", "weight": 2}
+      ]}
+    },
+
+    "trading_post": {
+      "era": "bronze", "landforms": ["lowland"], "inhabited": true,
+      "climate": {"min_temperature": -6, "max_temperature": 26, "min_groundwater": 80, "max_groundwater": 450},
+      "spacing": 128, "separation": 40, "salt": 2026100713, "terrain_adaptation": "beard_thin",
+      "processors": {"rot": null, "local_materials": {"foundation": {"max_depth": 6, "variant": "dirt"}}, "npc_fixup": true},
+      "variants": [{"name": "post", "template": true, "ground": 0, "weight": 1}],
+      "npcs": ["trader"],
+      "loot": {"rolls": [2, 3], "entries": [
+        {"item": "tfc:burlap_cloth", "weight": 6, "count": [1, 3]},
+        {"item": "tfc:rope", "weight": 6, "count": [1, 3]},
+        {"item": "tfc:powder/salt", "weight": 6, "count": [2, 6]},
+        {"item": "tfc:ceramic/jug", "weight": 4},
+        {"item": "tfc:straw", "weight": 6, "count": [4, 12]},
+        {"item": "tfc:seeds/barley", "weight": 4, "count": [1, 4]},
+        {"item": "tfc:seeds/jute", "weight": 4, "count": [1, 4]}
+      ]}
+    },
+
+    "hermit": {
+      "era": "copper", "landforms": ["upland", "mountain"], "inhabited": true,
+      "climate": {"min_temperature": -14, "max_temperature": 22, "min_groundwater": 100, "max_groundwater": 500, "min_forest": 2},
+      "spacing": 96, "separation": 32, "salt": 2026100714, "terrain_adaptation": "beard_thin",
+      "processors": {"rot": null, "local_materials": {"foundation": {"max_depth": 6, "variant": "raw"}}, "npc_fixup": true},
+      "variants": [{"name": "hut", "template": true, "ground": 0, "weight": 1}],
+      "npcs": ["hermit"],
+      "loot": {"rolls": [1, 2], "entries": [
+        {"item": "tfc:ceramic/jug", "weight": 4},
+        {"item": "tfc:candle", "weight": 4},
+        {"item": "tfc:flower_cutting", "weight": 3}
+      ]}
+    },
+
+    "travelling_smith": {
+      "era": "bronze", "landforms": ["lowland", "upland"], "inhabited": true,
+      "climate": {"min_temperature": -6, "max_temperature": 28, "min_groundwater": 60, "max_groundwater": 450},
+      "spacing": 112, "separation": 36, "salt": 2026100715, "terrain_adaptation": "beard_thin",
+      "processors": {"rot": null, "local_materials": {"foundation": {"max_depth": 4, "variant": "dirt"}}, "npc_fixup": true},
+      "variants": [{"name": "camp", "template": true, "ground": 0, "weight": 1}],
+      "npcs": ["smith"],
+      "loot": {"rolls": [1, 2], "entries": [
+        {"item": "minecraft:charcoal", "weight": 8, "count": [2, 8]},
+        {"item": "tfc:powder/flux", "weight": 4, "count": [1, 3]},
+        {"item": "tfc:ceramic/ingot_mold", "weight": 3}
+      ]}
+    }
+  },
+
+  "site_loot": {
+    "_about": "Default chest loot for the ancient sites by era (a site's hand-built chests get pack:chests/site_<loot_era>).",
+    "stone": {"rolls": [2, 3], "entries": [
+      {"item": "minecraft:flint", "weight": 10, "count": [2, 5]},
+      {"item": "tfc:stone/axe_head/metamorphic", "weight": 6},
+      {"item": "tfc:stone/knife_head/igneous_intrusive", "weight": 6},
+      {"item": "tfc:bone_needle", "weight": 5},
+      {"item": "minecraft:bone", "weight": 8, "count": [1, 4]},
+      {"item": "tfc:ceramic/bowl", "weight": 4},
+      {"item": "tfc:seeds/barley", "weight": 4, "count": [1, 3]},
+      {"item": "tfc:ore/amethyst", "weight": 1},
+      {"item": "tfc:ore/opal", "weight": 1}
+    ]},
+    "copper": {"rolls": [2, 4], "entries": [
+      {"item": "tfc:metal/knife/copper", "weight": 5},
+      {"item": "tfc:metal/axe_head/copper", "weight": 4},
+      {"item": "tfc:metal/ingot/copper", "weight": 6, "count": [1, 3]},
+      {"item": "tfc:ore/small_native_copper", "weight": 6, "count": [1, 3]},
+      {"item": "tfc:ore/rich_native_copper", "weight": 3, "count": [1, 2]},
+      {"item": "tfc:ceramic/jug", "weight": 5},
+      {"item": "tfc:ceramic/vessel", "weight": 4},
+      {"item": "tfc:bone_needle", "weight": 4},
+      {"item": "tfc:metal/ingot/gold", "weight": 1}
+    ]},
+    "bronze": {"rolls": [2, 4], "entries": [
+      {"item": "tfc:metal/ingot/bronze", "weight": 4, "count": [1, 2]},
+      {"item": "tfc:metal/ingot/copper", "weight": 6, "count": [1, 3]},
+      {"item": "tfc:metal/ingot/tin", "weight": 2},
+      {"item": "tfc:metal/knife/bronze", "weight": 3},
+      {"item": "tfc:metal/chisel/bronze", "weight": 2},
+      {"item": "tfc:ceramic/large_vessel", "weight": 3},
+      {"item": "tfc:jar/olive", "weight": 4},
+      {"item": "tfc:ceramic/jug", "weight": 5},
+      {"item": "tfc:metal/ingot/gold", "weight": 1},
+      {"item": "tfc:metal/ingot/silver", "weight": 1}
+    ]}
+  },
+
+  "sites": {
+    "_about": "Real ancient sites at their coordinates (pack_world:geographic). The waypoint is always written; the site's structure only once its hand-built template exists in tools/structures/templates/site/<site>/. Biomes: the computed 'site' group.",
+    "stonehenge": {"latitude": 51.1789, "longitude": -1.8262, "parent": "default:subregion/great_britain", "salt": 3001,
+                   "title": "Stonehenge", "description": "Visit the great stones on the chalk plain", "rock": "local", "loot_era": "bronze"},
+    "newgrange": {"latitude": 53.6947, "longitude": -6.4753, "parent": "default:subregion/ireland", "salt": 3002,
+                  "title": "Newgrange", "description": "Visit the passage tomb above the Boyne", "loot_era": "stone"},
+    "skara_brae": {"latitude": 59.0486, "longitude": -3.3419, "parent": "default:subregion/great_britain", "salt": 3003,
+                   "title": "Skara Brae", "description": "Visit the stone village under the dunes", "loot_era": "stone"},
+    "otzi_pass": {"latitude": 46.7790, "longitude": 10.8402, "parent": "default:subregion/italy", "salt": 3004,
+                  "title": "Tisenjoch", "description": "Visit the high pass where the iceman fell", "loot_era": "copper"},
+    "knossos": {"latitude": 35.2981, "longitude": 25.1631, "parent": "default:subregion/crete", "salt": 3005,
+                "title": "Knossos", "description": "Visit the palace of many rooms", "loot_era": "bronze"},
+    "gobekli_tepe": {"latitude": 37.2231, "longitude": 38.9225, "parent": "default:subregion/turkey", "salt": 3006,
+                     "title": "Göbekli Tepe", "description": "Visit the carved pillars on the hill", "loot_era": "stone"},
+    "catalhoyuk": {"latitude": 37.6667, "longitude": 32.8281, "parent": "default:subregion/turkey", "salt": 3007,
+                   "title": "Çatalhöyük", "description": "Visit the town of rooftop doors", "loot_era": "copper"},
+    "mohenjo_daro": {"latitude": 27.3292, "longitude": 68.1389, "parent": "default:subregion/pakistan", "salt": 3008,
+                     "title": "Mohenjo-daro", "description": "Visit the brick city by the river", "loot_era": "bronze"},
+    "keweenaw": {"latitude": 47.2466, "longitude": -88.4540, "parent": "default:subregion/michigan", "salt": 3009,
+                 "title": "Old Copper Pits", "description": "Visit the ancient copper pits of the Keweenaw", "loot_era": "copper"},
+    "caral": {"latitude": -10.8931, "longitude": -77.5203, "parent": "default:subregion/peru", "salt": 3010,
+              "title": "Caral", "description": "Visit the stepped mounds around the sunken plaza", "loot_era": "stone"}
+  },
+
+  "npcs": {
+    "_about": "Easy NPC presets (draft: author them in game with the config UI and export to tools/structures/npcs/<id>.npc.snbt, which then wins). Trades are barter in TFC goods; never food.",
+    "trader": {
+      "name": "Trader", "skin": "NOOR",
+      "greeting": "Salt, cloth, seed. Bring hides or worked copper and we'll talk. The river carries everyone past here sooner or later.",
+      "tips": [
+        "Jute grows tall where it's warm and wet. Ret it, strip it, twist it: that's your rope and your sacks.",
+        "Seed keeps; grain rots. Trade for seed if you mean to stay."
+      ],
+      "reset_minutes": 60,
+      "trades": [
+        {"buy": ["tfc:straw", 6], "sell": ["tfc:seeds/barley", 4], "max_uses": 8},
+        {"buy": ["tfc:straw", 6], "sell": ["tfc:seeds/oat", 4], "max_uses": 8},
+        {"buy": ["tfc:medium_raw_hide", 1], "sell": ["tfc:seeds/onion", 4], "max_uses": 8},
+        {"buy": ["tfc:medium_raw_hide", 1], "sell": ["tfc:seeds/jute", 4], "max_uses": 8},
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:ceramic/large_vessel", 1], "max_uses": 4},
+        {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:powder/salt", 4], "max_uses": 8},
+        {"buy": ["tfc:jute_fiber", 8], "sell": ["tfc:rope", 2], "max_uses": 8},
+        {"buy": ["tfc:jute_fiber", 8], "sell": ["tfc:burlap_cloth", 2], "max_uses": 8},
+        {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:jar/cherry", 1], "max_uses": 4},
+        {"buy": ["tfc:metal/ingot/copper", 4], "sell": ["tfc:plant/red_apple_sapling", 1], "max_uses": 1},
+        {"buy": ["tfc:metal/ingot/copper", 4], "sell": ["tfc:plant/olive_sapling", 1], "max_uses": 1}
+      ]
+    },
+    "hermit": {
+      "name": "Hermit", "skin": "ARI",
+      "greeting": "Green stain on a cliff means copper under it. Red earth, sometimes tin nearby. I stopped digging. You won't.",
+      "tips": [
+        "Fire your clay slow, in a pit of straw and logs. A pot that cracks was fired wet.",
+        "Fruit trees take years. Plant them before you need them."
+      ],
+      "reset_minutes": 120,
+      "trades": [
+        {"buy": ["tfc:metal/ingot/copper", 3], "buy_b": ["tfc:ceramic/jug", 1], "sell": ["tfc:plant/plum_sapling", 1], "max_uses": 1},
+        {"buy": ["tfc:metal/ingot/copper", 3], "buy_b": ["tfc:ceramic/jug", 1], "sell": ["tfc:plant/peach_sapling", 1], "max_uses": 1},
+        {"buy": ["tfc:metal/ingot/copper", 3], "buy_b": ["tfc:ceramic/jug", 1], "sell": ["tfc:plant/lemon_sapling", 1], "max_uses": 1},
+        {"buy": ["tfc:metal/ingot/copper", 3], "buy_b": ["tfc:ceramic/jug", 1], "sell": ["tfc:plant/orange_sapling", 1], "max_uses": 1},
+        {"buy": ["tfc:ceramic/bowl", 1], "sell": ["tfc:flower_cutting", 2], "max_uses": 4}
+      ]
+    },
+    "smith": {
+      "name": "Travelling Smith", "skin": "KNIGHT_01",
+      "greeting": "Clay first, then fire, then metal. Bring me tin and I'll show you what copper wants to be.",
+      "tips": [
+        "A mould that cracks in the fire was wet. Dry it a day.",
+        "Copper alone is soft. Add tin, about one part in nine, and it bites."
+      ],
+      "reset_minutes": 60,
+      "trades": [
+        {"buy": ["tfc:ore/normal_malachite", 12], "sell": ["tfc:metal/ingot/copper", 1], "max_uses": 6},
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:metal/knife/copper", 1], "max_uses": 2},
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:metal/chisel/copper", 1], "max_uses": 2},
+        {"buy": ["tfc:metal/ingot/copper", 3], "sell": ["tfc:metal/propick/copper", 1], "max_uses": 1},
+        {"buy": ["tfc:metal/ingot/copper", 3], "sell": ["tfc:metal/saw/copper", 1], "max_uses": 1},
+        {"buy": ["minecraft:charcoal", 4], "sell": ["tfc:ceramic/ingot_mold", 1], "max_uses": 4},
+        {"buy": ["minecraft:charcoal", 4], "sell": ["tfc:ceramic/saw_blade_mold", 1], "max_uses": 2},
+        {"buy": ["minecraft:charcoal", 4], "sell": ["tfc:ceramic/propick_head_mold", 1], "max_uses": 2},
+        {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:powder/flux", 4], "max_uses": 4},
+        {"buy": ["tfc:metal/ingot/tin", 2], "buy_b": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:metal/pickaxe/bronze", 1], "max_uses": 1}
+      ]
+    }
+  }
+}

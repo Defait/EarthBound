@@ -18,14 +18,16 @@ tools/worldgen_baseline.json. Findings come in three groups:
 Exit code 1 on any continuity-breaking or new-chunks-only finding; info alone passes.
 
 Tiers:
-  0 static     per jar (and the jars nested in it) a hash of its worldgen data entries, and its mixins into worldgen code
-               (hash of each class), plus the pack's own data overrides. Needs no server (--static runs just this, in
+  0 static     per jar (and the jars nested in it) a hash of its worldgen data entries (structure templates included), and its
+               mixins into worldgen code (hash of each class), plus the pack's own data overrides; for the pack's own structure
+               mod (pack_world) also a hash of its classes. Needs no server (--static runs just this, in
                seconds; its data findings are then classified by what the data is, as nothing says if it takes effect).
   1 effective  what the running server uses: the generator and its settings, dimension type, sea level, possible biomes
                (exactly the 125 tfc ones), per biome the ordered feature ids per decoration slot, carvers and mob spawns
                (grouped by signature; only non-TFC ids are listed, the rest is hashed per slot), every biome and structure
-               modifier and how many TFC biomes it reaches, structures that can start in a TFC biome, biome tags holding TFC
-               biomes, content hashes of the worldgen registries, GregTech ore veins that can still generate, the config
+               modifier and how many TFC biomes it reaches, structures that can start in a TFC biome and a signature of each
+               (its JSON, structure set, pools, processor lists and template files), the real-world sites' start chunks
+               (pack_world:geographic), biome tags holding TFC biomes, content hashes of the worldgen registries, GregTech ore veins that can still generate, the config
                values that gate worldgen, and the world's TFC: Real World server.toml.
   2 points     ~2,000 fixed points over land and ocean (clusters around rocksample.py's 43 places and around random land and
                sea anchors) and no chunk generation: TFC's own base height, biome, surface rock, rock at three depths and
@@ -34,7 +36,9 @@ Tiers:
                generated with Chunky (added to the test server for the run only): per chunk the biomes and tfc:chunk_data
                exactly, an underground census (below the lowest surface - 6) grouped per host rock (all its variants and ores),
                ore mineral, air and fluid with tolerances well above what same-seed runs differ by, and checks that no block,
-               structure or entity outside TFC's own appears (the baseline records what was accepted). This is the only tier
+               structure or entity outside TFC's own appears (the baseline records what was accepted). Chunks that a structure
+               reaches in either run (its references, which include its terrain adaptation's margin) are left out of the census,
+               since a structure's blocks and beard aren't terrain drift; their biomes and tfc:chunk_data are still compared. This is the only tier
                that sees code-level changes. Surface decoration is never compared: trees, grass and cave decoration differ
                run to run. A golden run keeps its census in tools/.data/worldgen/last-golden.json.
 
@@ -271,7 +275,7 @@ def tier0(srv, extra_jars):
         with open(os.path.join(kubejs, name), "rb") as f:
             return f.read()
 
-    cats, files = jarscan.scan_data(names, read)
+    cats, files = jarscan.scan_data(names, read, own=True)
     if cats:
         data = {"data": cats, "files": {n: v[:6] for n, v in files.items()}}
     return {"engine": {"minecraft": srv.pack["versions"]["minecraft"], "neoforge": srv.loader_version}, "mods": mods,
@@ -362,6 +366,52 @@ def tier1(raw):
     return out
 
 
+def walk_strings(v):
+    if isinstance(v, str):
+        yield v
+    elif isinstance(v, list):
+        for x in v:
+            yield from walk_strings(x)
+    elif isinstance(v, dict):
+        for x in v.values():
+            yield from walk_strings(x)
+
+
+def structure_sigs(raw, t0):
+    """Per structure that can start in a TFC biome: a signature of everything that decides what it places (its JSON, the
+    structure sets naming it, the template pools it reaches, their processor lists, and the template files' hashes from tier 0),
+    with a hash per part so a change says which part moved."""
+    reg = raw["registries"]
+    structs, sets = reg.get("minecraft:worldgen/structure", {}), reg.get("minecraft:worldgen/structure_set", {})
+    pools, plists = reg.get("minecraft:worldgen/template_pool", {}), reg.get("minecraft:worldgen/processor_list", {})
+    files = dict((t0.get("pack") or {}).get("files", {}))
+    for rec in t0["mods"].values():
+        files.update(rec.get("files", {}))
+    out = {}
+    for sid in sorted(raw["info"]["structures"]["hits"]):
+        doc = structs.get(sid) or {}
+        parts = {"structure": doc, "sets": {k: v.get("placement") for k, v in sorted(sets.items())
+                                             if any(e.get("structure") == sid for e in v.get("structures", []))}}
+        todo, seen, lists, templates = [doc.get("start_pool")], {}, {}, {}
+        while todo:
+            p = todo.pop()
+            if not isinstance(p, str) or p in seen or p not in pools:
+                continue
+            seen[p] = pools[p]
+            for x in walk_strings(pools[p]):
+                if x in pools:
+                    todo.append(x)
+                if x in plists:
+                    lists[x] = plists[x]
+                ns, _, path = x.partition(":")
+                f = f"data/{ns}/structure/{path}.nbt"
+                if f in files:
+                    templates[x] = files[f]
+        parts.update(pools=seen, processors=lists, templates=templates)
+        out[sid] = {"sig": h(parts), "parts": {k: h(v, 6) for k, v in parts.items()}}
+    return out
+
+
 def reachable(raw):
     """Registry entries the overworld can reach: placed features of TFC biomes, what they place, carvers and noise settings."""
     reg = raw["registries"]
@@ -436,7 +486,8 @@ def golden_fingerprint(world_dir):
         for dx in range(-half, half + 1):
             for dz in range(-half, half + 1):
                 wanted[(cx + dx, cz + dz)] = name
-    areas = {name: {"chunks": {}, "census": {}, "cells": 0, "blocks": {}, "starts": {}, "entities": {}, "biomes": {}, "blockEntities": {}, "partial": 0}
+    areas = {name: {"chunks": {}, "census": {}, "cells": 0, "blocks": {}, "starts": {}, "entities": {}, "biomes": {}, "blockEntities": {}, "partial": 0,
+                    "chunkCensus": {}, "touched": {}}
              for name, *_ in GOLDEN}
 
     def unpack(packed, n, bits_min):
@@ -464,7 +515,7 @@ def golden_fingerprint(world_dir):
             data = root["neoforge:attachments"]["tfc:chunk_data"]
             surface = data["surfaceHeight"]
             limit = int(surface.min()) - CENSUS_DEPTH
-            biome_names, cells = [], 0
+            biome_names, cells, chunk_census = [], 0, {}
             for sec in root["sections"]:
                 pal, idx = indices(sec["block_states"], 4096, 4)
                 names = [p["Name"] for p in pal]
@@ -477,6 +528,7 @@ def golden_fingerprint(world_dir):
                 for i, n in enumerate(under):
                     if n:
                         area["census"][names[i]] = area["census"].get(names[i], 0) + int(n)
+                        chunk_census[names[i]] = chunk_census.get(names[i], 0) + int(n)
                 cells += int(under.sum())
                 bpal, bidx = indices(sec["biomes"], 64, 1)
                 biome_names += [bpal[i] for i in bidx]
@@ -485,7 +537,14 @@ def golden_fingerprint(world_dir):
                 area["biomes"][b] = area["biomes"].get(b, 0) + biome_names.count(b)
             clean = {k: v for k, v in sorted(data.items()) if k not in VOLATILE_CHUNK_DATA}
             clean = {k: (v.tolist() if hasattr(v, "tolist") else v) for k, v in clean.items()}
-            area["chunks"][f"{pos[0]},{pos[1]}"] = [h(biome_names, 6), h(clean, 6)]
+            key = f"{pos[0]},{pos[1]}"
+            area["chunks"][key] = [h(biome_names, 6), h(clean, 6)]
+            area["chunkCensus"][key] = dict(sorted(census_groups(chunk_census).items()), _cells=cells)
+            structs = root.get("structures", {})
+            reached = set((structs.get("References") or {}).keys())
+            reached |= {sid for sid, st in (structs.get("starts") or {}).items() if st.get("id") != "INVALID"}
+            if reached:
+                area["touched"][key] = sorted(reached)
             for sid, s in (root.get("structures", {}).get("starts") or {}).items():
                 if s.get("id") != "INVALID":
                     area["starts"][sid] = area["starts"].get(sid, 0) + 1
@@ -518,6 +577,7 @@ def golden_record(areas):
                                     + [f"block entity {b}" for b in a["blockEntities"] if ns_of(b) not in ("tfc", "minecraft")]),
             "minecraftBlocks": sorted(b for b in a["blocks"] if b.startswith("minecraft:")),
             "structureStarts": a["starts"], "entities": dict(sorted(a["entities"].items())), "full": full,
+            "touched": dict(sorted(a["touched"].items())), "chunkCensus": dict(sorted(a["chunkCensus"].items())),
         }
     return out
 
@@ -569,9 +629,10 @@ class Findings:
         self.items = []
         self.stats = []     # lines of context printed with the verdict (e.g. how far the golden census drifted)
 
-    def add(self, group, title, lines=(), fix=None, unverified=False, tier=None, culprit=None):
+    def add(self, group, title, lines=(), fix=None, unverified=False, tier=None, culprit=None, meta=None):
+        """meta: machine-readable fields (kind, id, sig, ...) that --accept records with the finding."""
         self.items.append({"group": group, "title": title, "lines": list(lines), "fix": fix, "unverified": unverified, "tier": tier,
-                           "culprit": culprit})
+                           "culprit": culprit, "meta": meta or {}})
 
     def of(self, group):
         return [i for i in self.items if i["group"] == group]
@@ -678,6 +739,11 @@ def diff_static(cur, base, f, static_only):
             f.add("info", f"{key} updated: {b.get('file')} -> {c['file']}" + (f" ({n} worldgen mixins, unchanged)" if n else ""), tier=0)
         if cmx.get("chunk") != bmx.get("chunk") and not version_changed:
             f.add("info", f"chunk storage mixins changed in {label} (they load and save chunks; they don't generate)", tier=0)
+        if key in jarscan.STRUCTURE_CODE_MODS and b and c.get("classes") != b.get("classes"):
+            f.add("new", f"the pack's structure code changed: {label}",
+                  ["its processors and placements decide what its structures place: chunks generated from now on may differ",
+                   "check with tools/structures_test.py, then accept on purpose"], tier=0, culprit=label,
+                  meta={"kind": "structure_code", "id": key, "classes": c.get("classes")})
     cp, bp = cur.get("pack", {}), base.get("pack", {})
     added, removed, changed = diff_dict(cp.get("files", {}), bp.get("files", {}))
     if added or removed or changed:
@@ -839,8 +905,30 @@ def diff_runtime(cur, base, f, ctx):
         fix = (f"empty its biome tag: kubejs/data/{tag.split(':')[0]}/tags/worldgen/biome/{tag.split(':')[1]}.json containing "
                '{"replace": true, "values": []}') if tag else "override the structure's JSON under kubejs/data with an empty \"biomes\" list"
         f.add("new", f"structure {s} can start in {len(biomes)} TFC biomes ({short(biomes, 4)})",
-              [f"from: {mod_of_namespace(mods, ns_of(s))}", "no structure generates in TFC's overworld today"], fix=fix, tier=1,
-              culprit=mod_of_namespace(mods, ns_of(s)))
+              [f"from: {mod_of_namespace(mods, ns_of(s))}"], fix=fix, tier=1, culprit=mod_of_namespace(mods, ns_of(s)),
+              meta={"kind": "structure", "id": s, "sig": (cur.get("structureSigs") or {}).get(s, {}).get("sig")})
+    cs, bs = cur.get("structureSigs") or {}, base.get("structureSigs") or {}
+    for s in sorted(set(cs) & set(bs)):
+        if cs[s]["sig"] != bs[s]["sig"]:
+            parts = [k for k in cs[s]["parts"] if cs[s]["parts"][k] != bs[s]["parts"].get(k)]
+            f.add("new", f"structure {s} changed ({', '.join(parts) or 'definition'})",
+                  ["chunks generated from now on build it differently; one cut by the edge of explored land would join old and new halves"],
+                  fix="revert the change, or accept it on purpose", tier=1, culprit=mod_of_namespace(mods, ns_of(s)),
+                  meta={"kind": "structure", "id": s, "sig": cs[s]["sig"]})
+    csites, bsites = cur.get("sites") or {}, base.get("sites") or {}
+    for site in sorted(set(csites) | set(bsites)):
+        c, b = csites.get(site), bsites.get(site)
+        if b is None and c:
+            f.add("new", f"real-world site {site} added at chunk {c[0]}, {c[1]} (block {c[2]}, {c[3]})",
+                  ["new worlds generate it; worlds that existed before keep it off until an operator runs "
+                   f"/pack_world sites enable {site} (after checking the area is unexplored)"], tier=1, culprit="pack_world",
+                  meta={"kind": "site", "id": site, "chunk": c[:2]})
+        elif c is None:
+            f.add("info", f"real-world site {site} removed (worlds that generated it keep what was built)", tier=1)
+        elif c[:2] != b[:2]:
+            f.add("new", f"real-world site {site} moved: chunk {b[0]}, {b[1]} -> {c[0]}, {c[1]}",
+                  ["worlds that already generated it get a second copy where it now lands, or half of one; keep a site's coordinates "
+                   "and offset fixed once it has shipped"], tier=1, culprit="pack_world", meta={"kind": "site", "id": site, "chunk": c[:2]})
     for tag in sorted(set(cur["biomeTags"]) | set(base["biomeTags"])):
         c, b = cur["biomeTags"].get(tag), base["biomeTags"].get(tag)
         cs, bs = set(c["tfc"]) if c else set(), set(b["tfc"]) if b else set()
@@ -991,7 +1079,19 @@ def census_groups(census):
 
 def census_drift(cur, base, cells):
     """(share of cells moved between host rocks, what moved beyond the limits as 'group: old -> new') for two censuses."""
-    cg, bg = census_groups(cur), census_groups(base)
+    return census_drift_grouped(census_groups(cur), census_groups(base), cells)
+
+
+def sum_groups(chunk_census, keys):
+    out = {}
+    for k in keys:
+        for g, n in chunk_census[k].items():
+            if g != "_cells":
+                out[g] = out.get(g, 0) + n
+    return out
+
+
+def census_drift_grouped(cg, bg, cells):
     hosts = [k for k in set(cg) | set(bg) if k.startswith("rock:")]
     moved = sum(abs(cg.get(k, 0) - bg.get(k, 0)) for k in hosts) / 2 / max(cells, 1)
     issues = []
@@ -1040,8 +1140,9 @@ def diff_golden(cur, base, f, ctx):
             f.add("new", f"{name}: vanilla blocks TFC doesn't generate in the baseline: {short(bad_mc)}",
                   ["a vanilla feature or structure now runs in a TFC biome"], tier=3, culprit="minecraft")
         if bad_starts:
-            f.add("new", f"{name}: structure starts generated: {', '.join(bad_starts)}", ["no structure generates in TFC's overworld today"], tier=3,
-                  culprit=short((mod_of_namespace(mods, ns_of(s)) for s in bad_starts), 3))
+            f.add("new", f"{name}: structure starts generated: {', '.join(bad_starts)}", ["a structure not yet accepted starts in this golden area"], tier=3,
+                  culprit=short((mod_of_namespace(mods, ns_of(s)) for s in bad_starts), 3),
+                  meta={"kind": "structure_start", "id": bad_starts if len(bad_starts) > 1 else bad_starts[0], "area": name})
         if bad_e:
             f.add("new", f"{name}: entities outside tfc: generated: {short(bad_e)}", tier=3,
                   culprit=short((mod_of_namespace(mods, ns_of(e)) for e in bad_e), 3))
@@ -1057,7 +1158,21 @@ def diff_golden(cur, base, f, ctx):
                   [f"biomes now {dict(list(c['biomes'].items())[:6])}", f"baseline {dict(list(b['biomes'].items())[:6])}"], tier=3)
         if diff_data:
             f.add("continuity", f"{name}: tfc:chunk_data (surface heights, climate, forest type) differs in {len(diff_data)} of {len(c['chunks'])} chunks ({short(diff_data, 4, '; ')})", tier=3)
-        moved, issues = census_drift(c["census"], b["census"], c["cells"])
+        if c.get("chunkCensus") and b.get("chunkCensus"):
+            # Chunks a structure reaches in either run are left out: its blocks and terrain adaptation aren't terrain drift.
+            ct, bt = c.get("touched", {}), b.get("touched", {})
+            skip = set(ct) | set(bt)
+            keys = (set(c["chunkCensus"]) & set(b["chunkCensus"])) - skip
+            cells = sum(c["chunkCensus"][k].get("_cells", 0) for k in keys)
+            moved, issues = census_drift_grouped(sum_groups(c["chunkCensus"], keys), sum_groups(b["chunkCensus"], keys), cells)
+            if skip:
+                under = sorted({x for k in skip for x in ct.get(k, []) + bt.get(k, [])})
+                f.stats.append(f"golden {name}: {len(skip)} chunks reached by structures left out of the census ({short(under, 4)})")
+        else:
+            moved, issues = census_drift(c["census"], b["census"], c["cells"])
+            if c.get("touched"):
+                f.add("info", f"golden area {name}: the baseline has no per-chunk census, so chunks under structures can't be left out "
+                              "(run --update --golden once to record it)", tier=3)
         f.stats.append(f"golden {name}: {len(c['chunks'])} chunks, {c['cells']:,} underground cells, {moved:.4%} moved between host rocks (limit {CENSUS_HOST:.2%}), "
                        f"biomes {'same' if not diff_biome else 'DIFFER'}, chunk data {'same' if not diff_data else 'DIFFER'}")
         if issues:
@@ -1180,6 +1295,8 @@ def collect(out_dir, world_dir, server_dir):
 def fingerprint(seed, t0, raw, golden_areas):
     ctx = {"raw_registries": raw["registries"]}
     fp = {"schema": SCHEMA, "seed": seed, "tier0": t0, "tier1": tier1(raw), "tier2": tier2(raw)}
+    fp["tier1"]["structureSigs"] = structure_sigs(raw, t0)
+    fp["tier1"]["sites"] = raw["info"].get("sites") or {}
     ctx["reach"] = reachable(raw)
     ctx["cur_modifiers"] = fp["tier1"]["modifiers"]
     if golden_areas is not None:
@@ -1295,7 +1412,8 @@ def update(fp, base, ctx, args, timings, total):
         taken = (cont if args.force_terrain else []) + (new if reason else [])
         if taken:
             entries = [{"date": time.strftime("%Y-%m-%d"), "reason": reason, "terrain": bool(args.force_terrain and cont),
-                        "findings": [{"what": i["title"], "mod": i["culprit"] or "terrain code", "tier": i["tier"]} for i in taken]}]
+                        "findings": [dict({"what": i["title"], "mod": i["culprit"] or "terrain code", "tier": i["tier"]}, **i.get("meta", {}))
+                                     for i in taken]}]
         elif reason:
             print("(nothing to accept: the differences are info only)")
     if base is not None and "tier3" not in fp and "tier3" in base:

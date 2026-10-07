@@ -1,0 +1,20 @@
+{
+  "structures": [
+    {
+      "structure": "pack:hunters_camp",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "tfc:climate",
+    "salt": 2026100701,
+    "spacing": 24,
+    "separation": 8,
+    "climate": {
+      "min_temperature": -12,
+      "max_temperature": 24,
+      "min_groundwater": 60,
+      "max_groundwater": 450
+    }
+  }
+}

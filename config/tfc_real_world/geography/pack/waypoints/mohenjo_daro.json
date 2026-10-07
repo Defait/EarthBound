@@ -1,0 +1,14 @@
+{
+  "parent": "default:subregion/pakistan",
+  "title_lang": {
+    "en_us": "Mohenjo-daro"
+  },
+  "subtitle_lang": {
+    "en_us": "Ancient site"
+  },
+  "description_lang": {
+    "en_us": "Visit the brick city by the river"
+  },
+  "latitude": 27.3292,
+  "longitude": 68.1389
+}

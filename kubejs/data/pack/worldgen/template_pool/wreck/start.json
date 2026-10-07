@@ -1,0 +1,23 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:wreck/hull_a",
+        "processors": "pack:wreck",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:wreck/hull_b",
+        "processors": "pack:wreck",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

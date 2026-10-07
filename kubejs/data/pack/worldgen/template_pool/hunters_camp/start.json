@@ -1,0 +1,32 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 3,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:hunters_camp/lean_to_a",
+        "processors": "pack:hunters_camp",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:hunters_camp/lean_to_b",
+        "processors": "pack:hunters_camp",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:hunters_camp/two_shelters",
+        "processors": "pack:hunters_camp",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

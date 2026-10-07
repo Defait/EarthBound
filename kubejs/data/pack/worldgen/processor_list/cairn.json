@@ -1,0 +1,12 @@
+{
+  "processors": [
+    {
+      "processor_type": "pack_world:local_materials",
+      "foundation": {
+        "max_depth": 6,
+        "variant": "raw",
+        "ground": 0
+      }
+    }
+  ]
+}

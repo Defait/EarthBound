@@ -1,0 +1,14 @@
+{
+  "parent": "default:subregion/great_britain",
+  "title_lang": {
+    "en_us": "Skara Brae"
+  },
+  "subtitle_lang": {
+    "en_us": "Ancient site"
+  },
+  "description_lang": {
+    "en_us": "Visit the stone village under the dunes"
+  },
+  "latitude": 59.0486,
+  "longitude": -3.3419
+}

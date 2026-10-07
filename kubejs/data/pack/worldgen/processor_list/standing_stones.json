@@ -1,0 +1,7 @@
+{
+  "processors": [
+    {
+      "processor_type": "pack_world:local_materials"
+    }
+  ]
+}

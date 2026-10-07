@@ -1,0 +1,20 @@
+{
+  "structures": [
+    {
+      "structure": "pack:prospector_camp",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "tfc:climate",
+    "salt": 2026100702,
+    "spacing": 40,
+    "separation": 14,
+    "climate": {
+      "min_temperature": -10,
+      "max_temperature": 30,
+      "min_groundwater": 30,
+      "max_groundwater": 450
+    }
+  }
+}

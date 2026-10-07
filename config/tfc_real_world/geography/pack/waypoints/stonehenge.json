@@ -1,0 +1,14 @@
+{
+  "parent": "default:subregion/great_britain",
+  "title_lang": {
+    "en_us": "Stonehenge"
+  },
+  "subtitle_lang": {
+    "en_us": "Ancient site"
+  },
+  "description_lang": {
+    "en_us": "Visit the great stones on the chalk plain"
+  },
+  "latitude": 51.1789,
+  "longitude": -1.8262
+}

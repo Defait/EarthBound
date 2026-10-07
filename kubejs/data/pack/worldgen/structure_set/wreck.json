@@ -1,0 +1,18 @@
+{
+  "structures": [
+    {
+      "structure": "pack:wreck",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "tfc:climate",
+    "salt": 2026100709,
+    "spacing": 20,
+    "separation": 6,
+    "climate": {
+      "min_temperature": -5,
+      "max_temperature": 32
+    }
+  }
+}

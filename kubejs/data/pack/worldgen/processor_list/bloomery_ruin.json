@@ -1,0 +1,21 @@
+{
+  "processors": [
+    {
+      "processor_type": "minecraft:block_rot",
+      "integrity": 0.85,
+      "rottable_blocks": "#pack:ruin_rottable"
+    },
+    {
+      "processor_type": "pack_world:local_materials",
+      "decay": {
+        "cracked": 0.2,
+        "mossy": 0.25
+      },
+      "foundation": {
+        "max_depth": 6,
+        "variant": "raw",
+        "ground": 0
+      }
+    }
+  ]
+}

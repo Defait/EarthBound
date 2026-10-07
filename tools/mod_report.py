@@ -6,14 +6,18 @@ Usage (from the repo root):
 Reads every mods/*.pw.toml. Modrinth-sourced mods are checked against
 Modrinth for newer builds for this Minecraft version and loader, for the
 sides Modrinth says they need, and for their license. Direct-URL mods
-(GregTech) are listed with a pointer to tools/gt_update.py.
+(GregTech) are listed with a pointer to tools/gt_update.py. Jars kept in
+mods/ itself (the pack's own mod, built from mod/) are listed as local.
 
 Nothing is changed; `packwiz update <mod>` applies an update.
 """
 import argparse
+import glob
 import json
 import os
 import sys
+import tomllib
+import zipfile
 import urllib.parse
 import urllib.request
 
@@ -117,6 +121,18 @@ def main():
     for r in rows:
         if r["terms"]:
             print(f"  ! {r['name']}: {r['terms']}")
+    for jar in sorted(glob.glob(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "mods", "*.jar"))):
+        # A local jar shipped with the pack itself (packwiz indexes it as a plain file): no Modrinth metadata to check.
+        meta = {}
+        try:
+            with zipfile.ZipFile(jar) as z:
+                meta = tomllib.loads(z.read("META-INF/neoforge.mods.toml").decode("utf-8"))
+        except (KeyError, zipfile.BadZipFile, tomllib.TOMLDecodeError):
+            pass
+        m = (meta.get("mods") or [{}])[0]
+        name = m.get("displayName", os.path.basename(jar))
+        notes = "local jar in mods/ (built from mod/ with ./gradlew build; copy the new jar here and run packwiz refresh)"
+        print(f"{name[:28]:28} {str(m.get('version', '?'))[:34]:34} {'local':7} {'both':6} {'(shipped with the pack)':24} {meta.get('license', '?')[:24]:24} {notes}")
     for name, url in url_mods:
         print(f"{name[:28]:28} {'(direct URL)':34} {'':7} {'':6} {'':24} {'':24} update with tools/gt_update.py" if "gtceu" in url else f"{name[:28]:28} (direct URL) {url}")
 

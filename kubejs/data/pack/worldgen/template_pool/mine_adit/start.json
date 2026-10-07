@@ -1,0 +1,23 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:mine_adit/drift_a",
+        "processors": "pack:mine_adit",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:mine_adit/drift_b",
+        "processors": "pack:mine_adit",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+// The pack's own mod: local materials for structures, Easy NPC fix-ups, real-world site placement.
+// Design: docs/lived-in.md. Build: ./gradlew build (JDK 21+; the jar lands in build/libs/).
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+    }
+}
+
+rootProject.name = 'pack_world'

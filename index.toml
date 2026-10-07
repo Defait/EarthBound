@@ -117,6 +117,46 @@ file = "config/tfc_real_world/common.toml"
 hash = "59fb30e4aa341e661cc2e3aaa464e1801f6b87d71c703fed3f343e349be8b604"
 
 [[files]]
+file = "config/tfc_real_world/geography/pack/waypoints/caral.json"
+hash = "9fee788e51c878f779bf6dd926c9a5fa620adc2ca78685fe6f9177ddd8fea367"
+
+[[files]]
+file = "config/tfc_real_world/geography/pack/waypoints/catalhoyuk.json"
+hash = "19163f402a8110541a6751b232434692aaecbdb0b34eb7f547e5c72fa65e5e43"
+
+[[files]]
+file = "config/tfc_real_world/geography/pack/waypoints/gobekli_tepe.json"
+hash = "c29dba140387e6e9553c966d1a694be036d00039251160bf274e21212b532404"
+
+[[files]]
+file = "config/tfc_real_world/geography/pack/waypoints/keweenaw.json"
+hash = "2dfccc78baa114ddc32285dd1cd8d0cd3f971815042d3edc3610e77d1316a01a"
+
+[[files]]
+file = "config/tfc_real_world/geography/pack/waypoints/knossos.json"
+hash = "ef0814493395b8af802f4b352ff4f4d28af81a63d71abcfc273c7b172c61d50f"
+
+[[files]]
+file = "config/tfc_real_world/geography/pack/waypoints/mohenjo_daro.json"
+hash = "e976b8197f737d970a5c19d19a447c37192929fcc359913fe3bd8feb4ed5cd9a"
+
+[[files]]
+file = "config/tfc_real_world/geography/pack/waypoints/newgrange.json"
+hash = "b94d5c86a23b7786324b7bf6062f0375ba6ae9bf732fdc6e759de5f94cb61c43"
+
+[[files]]
+file = "config/tfc_real_world/geography/pack/waypoints/otzi_pass.json"
+hash = "70268815d9d256721fd480cda580e65a607ebc8247eb61739aebf0daaae4b174"
+
+[[files]]
+file = "config/tfc_real_world/geography/pack/waypoints/skara_brae.json"
+hash = "75bdfcb11cbadf0ff080ccd69fc420141fb4f82cc9996c6e2e481190912d7c9a"
+
+[[files]]
+file = "config/tfc_real_world/geography/pack/waypoints/stonehenge.json"
+hash = "3359a9af7acac73ec2ff9b59084f53b52b666980c0154fbbdbfaad73202403ee"
+
+[[files]]
 file = "kubejs/README.txt"
 hash = "989f3737ae4621b8ff6730bce4cbeeee756921e7e510e0c281c8a350501d98af"
 
@@ -209,12 +249,244 @@ file = "kubejs/data/fowlplay/tfc/fauna/sparrow.json"
 hash = "8a40668bfaa6a4ee70b644bf5b681b836c0e4f48cf96d9537562329794c554b2"
 
 [[files]]
+file = "kubejs/data/pack/easy_npc/preset/humanoid/hermit.npc.snbt"
+hash = "64cbffc2e51affc79cb724186059b625227ab0be01a4cf90846ffa030aad9012"
+
+[[files]]
+file = "kubejs/data/pack/easy_npc/preset/humanoid/smith.npc.snbt"
+hash = "5f9f4a8d53f5a8d421dc8724426526064fa5259980487af753d69b03a28226a9"
+
+[[files]]
+file = "kubejs/data/pack/easy_npc/preset/humanoid/trader.npc.snbt"
+hash = "eb88f4be99848de1476c18aa63993ec77ce66977d97b7316593f0b95fb2b45ce"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/chests/barrow.json"
+hash = "ab60dac90e5925e84a7ede5b7219156f84e3916a980cf481902b433347a633e5"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/chests/bloomery_ruin.json"
+hash = "901cbba50aa2f408ddcc23fcedcf91225c3f38039bc720d87b862f79d509116b"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/chests/cairn.json"
+hash = "6e986c887bff001a0df6a144c9f7ae386c2acfa47e0fe275a8b87a631b472b47"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/chests/hermit.json"
+hash = "ae83d2c2a6057fb6ff33b14ed871b4883e3b514cb437fa58e84c76ba1e936427"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/chests/homestead_boreal.json"
+hash = "12f26897769c392c1e25051fcc6a87ede57636687e535fdbda916be36e8e10da"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/chests/homestead_dry.json"
+hash = "30fa9c2d98944a69bb292529187eb739502e8d37e8518be892fd87da3739cb49"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/chests/homestead_temperate.json"
+hash = "a3ac1a755e7fe95304caeb577a03f1f2b4911f5e93bae6987f0ef61496ff6d93"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/chests/hunters_camp.json"
+hash = "15d0227b8a4a8a462da93d1a1c3562021e1076b9d1c8bb2b2fde831e05aae2f8"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/chests/mine_adit.json"
+hash = "739d4d65d13bca71601924751701d5cc98e61611295ba11038e5a180c8f91a09"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/chests/prospector_camp.json"
+hash = "2753de0ee2e237ffcad542ca73d2217704a93069276faeeb17a0d8c11f5d680a"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/chests/site_bronze.json"
+hash = "adc1fd3dd38e7d5243db23a4e7c22b08ceee9af8cfac11c6c8146df1fd2cb948"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/chests/site_copper.json"
+hash = "b2dbb8812a5e54ea3339900fb44e02e5ee66fd31d0c4bb5210e36813b9727a1b"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/chests/site_stone.json"
+hash = "39a22e8f7330a2c27520753279958c8a5b5c1805d9a8fc11b913a5fdfd8b20a1"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/chests/standing_stones_offering.json"
+hash = "b04e9c008aaad5ba2e53ce65f677882aa2f194e113af92007e1d059348e0ec11"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/chests/trading_post.json"
+hash = "7b6dd73eac05703799633c23d72d7e9a9b501d3584de04211282cf8dbe35d052"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/chests/travelling_smith.json"
+hash = "49db34b7752b00202451f89c27c34c9d4053ffea8b7665cdc2aee4b436aea06b"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/chests/wayside_shrine.json"
+hash = "da826a2e07e4b5f786830c2d56d6ee848d2b5c25db03f7b8d2a061e5be555457"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/chests/wreck.json"
+hash = "3774f0a2f5ca0196de122dff1ade562e85a86eb3caa950f7e575d7e8a386ff1c"
+
+[[files]]
 file = "kubejs/data/pack/neoforge/biome_modifier/cave_carvers.json"
 hash = "19c04d22b638577af85a5b1b835739c6f748f8a4552a191bcbafe8c73b41bab6"
 
 [[files]]
+file = "kubejs/data/pack/structure/barrow/graveyard_a.nbt"
+hash = "6c0e0983f6649033fedb8e4a409db07e686a7898ebe38ba2db40c317fdda4730"
+
+[[files]]
+file = "kubejs/data/pack/structure/barrow/graveyard_b.nbt"
+hash = "99624b674b712c3870e88f42bd18371bce7cc9da2b547cf3cb09305340ce0248"
+
+[[files]]
+file = "kubejs/data/pack/structure/barrow/long_barrow.nbt"
+hash = "eb7a77eaa8b0c651426451ad9de9b25ee4359f503a8df6bc4acac17496f67b7e"
+
+[[files]]
+file = "kubejs/data/pack/structure/bloomery_ruin/smithy_a.nbt"
+hash = "0b03c1bd6bd7ed178a682d772f7aa3efdb929e67d49a1d796b65389c952f0b30"
+
+[[files]]
+file = "kubejs/data/pack/structure/bloomery_ruin/smithy_b.nbt"
+hash = "cb4f2c7e1fd2da60f1fbbf68fe81d3dfb29bd6de5dcbfe3e616eaf8097c50f95"
+
+[[files]]
+file = "kubejs/data/pack/structure/cairn/cist_a.nbt"
+hash = "2539042b8343c8b1c521ad49568dece345b31e0deffd1083ca33c7cb1be2f25d"
+
+[[files]]
+file = "kubejs/data/pack/structure/cairn/cist_b.nbt"
+hash = "aab39de6ea051010ef775053aaaaf6996104f9bfa3b9cfe5ae2029dc466efd08"
+
+[[files]]
+file = "kubejs/data/pack/structure/cairn/waymarker_a.nbt"
+hash = "5260233c5b5000b4951c6438bb7240ceeb6da80af25cd77539f09185c7ea18c9"
+
+[[files]]
+file = "kubejs/data/pack/structure/cairn/waymarker_b.nbt"
+hash = "290b6370406143e05759fa4833ae397868e568722541fb2c72eb7d0553dac2ba"
+
+[[files]]
+file = "kubejs/data/pack/structure/hunters_camp/lean_to_a.nbt"
+hash = "41417bacc350367c2b3f5cfe85d133ddbbc3546a0b2e38e64b4a007b61d80126"
+
+[[files]]
+file = "kubejs/data/pack/structure/hunters_camp/lean_to_b.nbt"
+hash = "7c00f308be144f6bc863861e0904393cee3b64c00492c2dd92ea864b8fec7973"
+
+[[files]]
+file = "kubejs/data/pack/structure/hunters_camp/two_shelters.nbt"
+hash = "9223730d3f8cc6ba1ff7cef226a2bb2f9fa3933f48e404f36439583d95d1f14b"
+
+[[files]]
+file = "kubejs/data/pack/structure/mine_adit/drift_a.nbt"
+hash = "8aaad4d963c99e100b3f8d87e4159b994a31203dcea1b0e6522412c86ed5d90b"
+
+[[files]]
+file = "kubejs/data/pack/structure/mine_adit/drift_b.nbt"
+hash = "da21cc329f240c4a9cb4d8b026645a41021ec717443f657e6aaafd7ab982937e"
+
+[[files]]
+file = "kubejs/data/pack/structure/prospector_camp/tent_a.nbt"
+hash = "a7641922e5b506f681bf79a40fbe7c4298497099fc688029a5ce8f02060bf972"
+
+[[files]]
+file = "kubejs/data/pack/structure/prospector_camp/tent_b.nbt"
+hash = "20304b7f556be5000b54062ad45f4e3cdfff435b9f85fab19eeb22defedae735"
+
+[[files]]
+file = "kubejs/data/pack/structure/standing_stones/menhir.nbt"
+hash = "4ecd184b15347174509e614d3aedb243909a46e9ff11ed29c75a6da754622267"
+
+[[files]]
+file = "kubejs/data/pack/structure/standing_stones/menhir_offering.nbt"
+hash = "7a2abd87e86429488a2db22ad176f4542a7db878336334e97c72523d5b04c466"
+
+[[files]]
+file = "kubejs/data/pack/structure/standing_stones/pair.nbt"
+hash = "6e316bef3d7b82c7163fbf8fc63cef850be2d54a0f573612b1a100bc096cf1f0"
+
+[[files]]
+file = "kubejs/data/pack/structure/standing_stones/ring.nbt"
+hash = "447b98441714c57a89b7beca3f400c679996e7911eba6f14e1dd119866c5684b"
+
+[[files]]
+file = "kubejs/data/pack/structure/standing_stones/ring_offering.nbt"
+hash = "f059f4ad865a194cf13fbe0527b3f81921bdde7cd109cd3fa3ba22e70f89cd1b"
+
+[[files]]
+file = "kubejs/data/pack/structure/standing_stones/row.nbt"
+hash = "883b0be728a420d7d2d78589d9d10a190cb0d181b8410f79b87a9f1677c3cb7d"
+
+[[files]]
+file = "kubejs/data/pack/structure/wayside_shrine/niche_a.nbt"
+hash = "bf7f9f5cc1a1c8682b8dfd0ff845063dc72293b7be07a5cf6e932f992af1d7ff"
+
+[[files]]
+file = "kubejs/data/pack/structure/wayside_shrine/niche_b.nbt"
+hash = "a9afea9c60dc662fc5b94daa131af7659506db28578fae9c935e2c5e5c3be457"
+
+[[files]]
+file = "kubejs/data/pack/structure/wayside_shrine/offering_box.nbt"
+hash = "fc6d3ec1296413772b4b5f5d165b57a68616a04bca096dd48ee835c3bfd127e9"
+
+[[files]]
+file = "kubejs/data/pack/structure/wreck/hull_a.nbt"
+hash = "812c810d9e15e41ab86e02d84d65cc7536f8523a64170dbd50c5721ceaa880e4"
+
+[[files]]
+file = "kubejs/data/pack/structure/wreck/hull_b.nbt"
+hash = "ce3e10589854d0b5f90e4895278eb6601da2526cf324d3f2acd9b16e5082c077"
+
+[[files]]
 file = "kubejs/data/pack/tags/block/karst_cave_rock.json"
 hash = "bbfada6deb77f53d0d96e34a911e6192a7d416b35a70ee9caa4e52339f81e3ef"
+
+[[files]]
+file = "kubejs/data/pack/tags/block/ruin_rottable.json"
+hash = "56a6b448a9de494c26f3fdbeb4f295f4731dd96fa90cf2ef07e4d82c8ef4e964"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/has_structure/barrow.json"
+hash = "6c65168a50acc1ab31d54b89ea246380a5447fcd5bbbc4acec208326ad43eb74"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/has_structure/bloomery_ruin.json"
+hash = "6c65168a50acc1ab31d54b89ea246380a5447fcd5bbbc4acec208326ad43eb74"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/has_structure/cairn.json"
+hash = "e2ac8290059f8d1721e1644d51553f6a90e627dadef8cc6710fcc397575e8499"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/has_structure/hunters_camp.json"
+hash = "6c65168a50acc1ab31d54b89ea246380a5447fcd5bbbc4acec208326ad43eb74"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/has_structure/mine_adit.json"
+hash = "b41b233b1846d5bea3c089b0545925adbb23297c8acf8cda8c792d651bf22e7b"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/has_structure/prospector_camp.json"
+hash = "b41b233b1846d5bea3c089b0545925adbb23297c8acf8cda8c792d651bf22e7b"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/has_structure/standing_stones.json"
+hash = "470764c4c1cd855a9d291ec59cbc3918decb9316cf065edd88b47533bb86f3bb"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/has_structure/wayside_shrine.json"
+hash = "6c65168a50acc1ab31d54b89ea246380a5447fcd5bbbc4acec208326ad43eb74"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/has_structure/wreck.json"
+hash = "2029b254bb4903eee27ee5523fe148bbf47e98efd3d131ac00c6ff32bd13c1d5"
 
 [[files]]
 file = "kubejs/data/pack/tags/worldgen/biome/overworld.json"
@@ -343,6 +615,150 @@ hash = "28c3c0c58aef77cf15227fcc042f77c687ab808885e7e5c37384d6111fa800db"
 [[files]]
 file = "kubejs/data/pack/worldgen/placed_feature/caves/mossy_rock.json"
 hash = "c62da56fa27bc2d66efa06a4784a3c004233a383e6f145fd2e7bfcccc51d92ba"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/processor_list/barrow.json"
+hash = "591b019d00d87114e8745fc07ba3944463f5c3f6eb09ddadb7738908e9a95c69"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/processor_list/bloomery_ruin.json"
+hash = "94b24468906cae1aaae193861259990c15cb66138da2e9abe2e1345acea3e66a"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/processor_list/cairn.json"
+hash = "b38ade2b3dc86660d4b5f24d8677dcd129c6412dfff934230b19b4bf2862e8cb"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/processor_list/hunters_camp.json"
+hash = "d393ac7226cb7ac9da7e9b8f64da9c9b5f73cfa61b3de148a2991d489b5f4234"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/processor_list/mine_adit.json"
+hash = "407f7ada9e552b3eaaa8373ce92f6ea66538fd6fb0131e026d260220e07cde05"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/processor_list/prospector_camp.json"
+hash = "d393ac7226cb7ac9da7e9b8f64da9c9b5f73cfa61b3de148a2991d489b5f4234"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/processor_list/standing_stones.json"
+hash = "d825bed731271e17898180bec70777b9498022c9da1cb32fc036660424d4a7b2"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/processor_list/wayside_shrine.json"
+hash = "59e58d7e6c56fdaa9d34b4911095070e96c114072498fd688c7147de45d343e1"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/processor_list/wreck.json"
+hash = "d825bed731271e17898180bec70777b9498022c9da1cb32fc036660424d4a7b2"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure/barrow.json"
+hash = "dd37be2689ff994a7cfa11af01ecfa31b6644d188c676dc21f81ecb84e51c07a"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure/bloomery_ruin.json"
+hash = "0937de6c6d9198a49391796ec1014c80a391e65c47d0c3aab4c8f330d74e23e2"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure/cairn.json"
+hash = "8cec4d0aa3a51edb1469cab835b661503ef47eeebb75ebecb9d594703a0c3147"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure/hunters_camp.json"
+hash = "27cff1d4d5fbd847eb22306de8d505aa97315ff42ecc0f4c301c39da2d2176b1"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure/mine_adit.json"
+hash = "d15c90d2196e3531c2df4d912a99412ae93fa89ec4cdafff03de88f4ddbde41b"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure/prospector_camp.json"
+hash = "384d76b72820a042e7ddaea7fd89caf5ab7f4c31d80adf656147afbb369ada07"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure/standing_stones.json"
+hash = "760650805a12dfa5ad03589164f8dc1e485dcd10758a2297d8dd3282291c0b39"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure/wayside_shrine.json"
+hash = "4c27cffe35b59a7b29744b07f4a269be1baa52b050e4f9217ec313c4a9a40abf"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure/wreck.json"
+hash = "479dcda2c84bad26d8a18a68a9eb1d613a231c580b2586b2ab32f3b39616f071"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure_set/barrow.json"
+hash = "70d9e370fcc8d4a6a34ea567191777ac5c9973e6f235bed78f344127ad60f409"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure_set/bloomery_ruin.json"
+hash = "2a4d5289fe5d607140c19742d37945abe28e82f05829dd1cdd0258dfdc5d53b1"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure_set/cairn.json"
+hash = "8dd848b9482906105cdcbe563452d7fc7c56c69c24b19a238599bae114a099e4"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure_set/hunters_camp.json"
+hash = "4124f4c555e2c6f12319f16801e4bd2f7ddc4769261e61f1d8e6325983716b33"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure_set/mine_adit.json"
+hash = "a887b8c343033b7ac93425dfcffc784d223a07aa683200396ecc6fe2a56f3cb2"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure_set/prospector_camp.json"
+hash = "df49d59836963e2242cbf682de1142ee19409c88abe48f48c8c28968d90d7969"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure_set/standing_stones.json"
+hash = "eff3e74b497d1f5aa4c9208a1cda1ecdf514b89c1c6f924d8f6d6464c12a257e"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure_set/wayside_shrine.json"
+hash = "d2d8177f326b697e19d0880ee17af5b6f03652856a9a39e6b47715c19d796379"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure_set/wreck.json"
+hash = "d4655174b0bd93cb609ed3f3b5acc49b5379521d5740dc9cd33a0b6364b8d8cd"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/barrow/start.json"
+hash = "a4ca658dd62b6a8dda2c573e8b741efaccd16e5736fd66b5bfb5ce3a3799ca45"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/bloomery_ruin/start.json"
+hash = "499038fe7f0a57eb7227868bd349dd845555035efe8699add70d8b16f144469f"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/cairn/start.json"
+hash = "6ccc34ac648d6d7a8d544d49cd01d10177f8af6290987a835784f2cfa07af80a"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/hunters_camp/start.json"
+hash = "2daead81a1cfe94451c62c244a0c62506abb8a0e7b198e56e6dd35ccbc1c2c75"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/mine_adit/start.json"
+hash = "787d952bee9cb383a8241f4ea2943872360fbb127a663822e483219549d3832f"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/prospector_camp/start.json"
+hash = "dff98a30e147b607dff8df860b57678de941388885035819ec0779cb50201221"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/standing_stones/start.json"
+hash = "7552554a82c2f31cb6630558e62e77620f8d13deb1ba8abd6c553008a041e9d9"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/wayside_shrine/start.json"
+hash = "cef0d56849fcbfedbe080df19e5e62db56e082c747e895e95ad892d38bb8f8d5"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/wreck/start.json"
+hash = "9e5ac4d66f2b7ef200f974ea1c55f79e8423c6cce3c6ed36a1474fe87661cdaa"
 
 [[files]]
 file = "kubejs/data/tfc/recipe/crafting/clay_ball_5.json"
@@ -622,6 +1038,16 @@ hash = "ae6fd52d8bdcbeca5bbe6db840f22f92c1928fe0fda22017b19612b9b00a245a"
 metafile = true
 
 [[files]]
+file = "mods/easy-npc-config-ui.pw.toml"
+hash = "6f78b2a8761dc39680d58db1f4343204be8223a8b734d16a82fdbbd89f0cea1a"
+metafile = true
+
+[[files]]
+file = "mods/easy-npc-core.pw.toml"
+hash = "240307bd539f88529af38d0365bff3ea2b778e41bb5cbb1ba9d88557a1d4347c"
+metafile = true
+
+[[files]]
 file = "mods/emi.pw.toml"
 hash = "67bb77eae0b644960be3b1074178ceb5d54facbb42f326981b9d94625238a54a"
 metafile = true
@@ -710,6 +1136,10 @@ metafile = true
 file = "mods/modernfix.pw.toml"
 hash = "c84140c66f233909b392bd7253ca33c59903ffda51beff558d9a2a4a8c6bc269"
 metafile = true
+
+[[files]]
+file = "mods/pack_world-1.0.0.jar"
+hash = "ec75983a1e03f04bab22e3390d170179e165f0be119f8b9ce2df2d9b8c1033e5"
 
 [[files]]
 file = "mods/particular-reforged.pw.toml"

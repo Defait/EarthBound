@@ -1,0 +1,32 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:wayside_shrine/niche_a",
+        "processors": "pack:wayside_shrine",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:wayside_shrine/niche_b",
+        "processors": "pack:wayside_shrine",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:wayside_shrine/offering_box",
+        "processors": "pack:wayside_shrine",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

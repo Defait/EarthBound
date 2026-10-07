@@ -1,0 +1,23 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:prospector_camp/tent_a",
+        "processors": "pack:prospector_camp",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:prospector_camp/tent_b",
+        "processors": "pack:prospector_camp",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

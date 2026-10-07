@@ -1,0 +1,36 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+issueTrackerURL = ""
+
+[[mods]]
+modId = "pack_world"
+version = "${mod_version}"
+displayName = "Pack World"
+authors = "jdreise"
+description = '''
+The pack's structure helpers: structures built from local TFC rock, wood and soil, Easy NPC data
+cleaned up when structures place NPCs, and ancient sites at their real latitude and longitude
+(TFC: Real World).
+'''
+
+[[dependencies.pack_world]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1.255,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.pack_world]]
+modId = "tfc"
+type = "required"
+versionRange = "[4.2.11,4.3)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.pack_world]]
+modId = "tfc_real_world"
+type = "optional"
+versionRange = "[4.2.0,4.3)"
+ordering = "AFTER"
+side = "BOTH"

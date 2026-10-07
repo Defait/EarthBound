@@ -1,0 +1,20 @@
+{
+  "structures": [
+    {
+      "structure": "pack:barrow",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "tfc:climate",
+    "salt": 2026100708,
+    "spacing": 40,
+    "separation": 12,
+    "climate": {
+      "min_temperature": -6,
+      "max_temperature": 20,
+      "min_groundwater": 100,
+      "max_groundwater": 450
+    }
+  }
+}

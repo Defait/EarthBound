@@ -1,0 +1,16 @@
+{
+  "processors": [
+    {
+      "processor_type": "pack_world:local_materials",
+      "decay": {
+        "mossy": 0.2,
+        "cracked": 0.1
+      },
+      "foundation": {
+        "max_depth": 4,
+        "variant": "raw",
+        "ground": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "structures": [
+    {
+      "structure": "pack:mine_adit",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "tfc:climate",
+    "salt": 2026100703,
+    "spacing": 48,
+    "separation": 16,
+    "climate": {
+      "min_temperature": -12,
+      "max_temperature": 30
+    }
+  }
+}

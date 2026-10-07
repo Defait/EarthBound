@@ -1,0 +1,84 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 2,
+        "max": 3
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bone",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:ceramic/jug",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:ceramic/bowl",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/knife/copper",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:bone_needle",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/axe_head/copper",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/javelin_head/copper",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/ingot/gold",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:ore/amethyst",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:ore/opal",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:ore/lapis_lazuli",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/knife/bronze",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

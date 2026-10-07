@@ -1,0 +1,14 @@
+{
+  "parent": "default:subregion/michigan",
+  "title_lang": {
+    "en_us": "Old Copper Pits"
+  },
+  "subtitle_lang": {
+    "en_us": "Ancient site"
+  },
+  "description_lang": {
+    "en_us": "Visit the ancient copper pits of the Keweenaw"
+  },
+  "latitude": 47.2466,
+  "longitude": -88.454
+}

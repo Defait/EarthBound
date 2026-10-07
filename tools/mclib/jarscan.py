@@ -13,11 +13,11 @@ import tomllib
 import zipfile
 
 # data/<ns>/<rest> entries that shape generation: worldgen registries, biome and structure modifiers, worldgen tags,
-# dimensions, TFC's own data and TFC: Real World's map profiles, and the block tags worldgen predicates read.
+# dimensions, TFC's own data and TFC: Real World's map profiles, structure templates, and the block tags worldgen predicates read.
 DATA_RE = re.compile(
     r"^data/(?P<ns>[^/]+)/(?P<rest>"
     r"worldgen/.+|(?:neoforge|forge)/(?:biome_modifier|structure_modifier)/.+|tags/worldgen/.+|dimension/.+|dimension_type/.+"
-    r"|tfc/.+|profiles/.+|tags/block/(?P<tag>[^/]+)\.json)$")
+    r"|tfc/.+|profiles/.+|structure/.+\.nbt|tags/block/(?P<tag>[^/]+)\.json)$")
 # Only these data/minecraft/tags/block files matter to worldgen (what carvers and placement predicates read).
 WORLDGEN_BLOCK_TAGS = {
     "base_stone_overworld", "base_stone_nether", "overworld_carver_replaceables", "nether_carver_replaceables", "replaceable",
@@ -30,6 +30,9 @@ WORLDGEN_BLOCK_TAGS = {
 }
 # TFC and TFC: Real World are the terrain code: all of their data counts; from any other mod only these data/<ns>/tfc folders do.
 TERRAIN_MODS = {"tfc", "tfc_real_world"}
+# The pack's own structure code (mod/, docs/lived-in.md): its classes shape what its structures place, so a change to them is a
+# new-chunks-only change even when no data changed. Their class bytes are hashed.
+STRUCTURE_CODE_MODS = {"pack_world"}
 TFC_DATA_DIRS = {"worldgen", "fauna", "climate_range", "deposit"}
 
 # Mixin targets: generation proper vs chunk containers and storage (loading and saving, which don't change what is generated).
@@ -88,10 +91,11 @@ def data_category(m):
     return f"{ns}:{parts[0]}"
 
 
-def scan_data(names, read, terrain=False):
+def scan_data(names, read, terrain=False, own=False):
     """{category: [count, hash]} and {path: hash} for the worldgen-relevant data entries among names (read(name) gives the bytes).
 
     terrain: the jar is TFC or TFC: Real World, where all of data/<ns>/tfc counts, not just the worldgen-related folders.
+    own: the pack's own data (kubejs/data), whose block tags (e.g. the ones its structure processors read) count too.
     """
     cats, files = {}, {}
     for name in sorted(names):
@@ -100,10 +104,12 @@ def scan_data(names, read, terrain=False):
             continue
         ns = m.group("ns")
         parts = m.group("rest").split("/")
-        if m.group("tag") is not None and not (ns == "minecraft" and m.group("tag") in WORLDGEN_BLOCK_TAGS):
+        if m.group("tag") is not None and not (ns == "minecraft" and m.group("tag") in WORLDGEN_BLOCK_TAGS) and not (own and ns != "minecraft"):
             continue
         if parts[0] == "tfc" and not terrain and (len(parts) < 2 or parts[1] not in TFC_DATA_DIRS):
             continue
+        if parts[0] == "structure" and terrain:
+            continue    # TFC's templates are its trees (decoration); its worldgen data already covers how they're used
         if parts[0] == "profiles" and ns != "tfc_real_world":
             continue
         h = short_hash(read(name), 8)
@@ -284,5 +290,8 @@ def scan_jars(mods_dir, skip=(), detail_limit=60):
                 mixins = scan_mixins(zf)
                 if mixins:
                     rec["mixins"] = mixins
+                if mod_id in STRUCTURE_CODE_MODS:
+                    classes = sorted(n for n in zf.namelist() if n.endswith(".class"))
+                    rec["classes"] = short_hash(b"".join(n.encode() + zf.read(n) for n in classes), 10)
                 out[key] = rec
     return out

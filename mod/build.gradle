@@ -1,0 +1,59 @@
+// pack_world: built with ModDevGradle against the pack's NeoForge. Compile-only: no client run (it
+// would download Minecraft's assets), no Parchment, no Java toolchain (Gradle would download a JDK).
+// TFC and TFC: Real World come from the test server's installed mods (tools/.server/mods, kept on the
+// pack's versions by packwiz), so no Maven repository is needed for them.
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.148'
+}
+
+version = mod_version
+group = 'pack.world'
+base { archivesName = 'pack_world' }
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = 21
+    options.encoding = 'UTF-8'
+    options.compilerArgs += ['-Xlint:deprecation', '-Xlint:unchecked']
+}
+
+// ModDevGradle asks for a Java 21 toolchain (for compiling and for NeoForm Runtime, which decompiles and recompiles
+// Minecraft). None is installed and Gradle must not download one, so everything runs on the JDK that runs Gradle (21 or
+// newer; 22 here) and compiles with --release 21.
+def gradleJavaVersion = JavaLanguageVersion.of(JavaVersion.current().majorVersion as int)
+def gradleJava = new File(System.getProperty('java.home'), 'bin/java').absolutePath
+java { toolchain { languageVersion = gradleJavaVersion } }
+afterEvaluate {
+    tasks.withType(net.neoforged.nfrtgradle.NeoFormRuntimeTask).configureEach { javaExecutable = gradleJava }
+    tasks.withType(net.neoforged.nfrtgradle.CreateMinecraftArtifacts).configureEach { toolsJavaExecutable = gradleJava }
+}
+
+neoForge {
+    version = project.neo_version
+    mods {
+        pack_world {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+def serverMods = file('../tools/.server/mods')
+def compileMods = fileTree(dir: serverMods, include: ['TerraFirmaCraft-NeoForge-1.21.1-*.jar', 'TFC-Real-World-NeoForge-1.21.1-*.jar'])
+
+dependencies {
+    compileOnly compileMods
+}
+
+tasks.named('compileJava') {
+    doFirst {
+        if (compileMods.files.size() != 2) {
+            throw new GradleException("Expected TFC and TFC: Real World in ${serverMods} (run a tool that syncs the test server first); found ${compileMods.files*.name}")
+        }
+    }
+}
+
+tasks.named('processResources', ProcessResources) {
+    def props = [mod_version: project.version, neo_version: project.neo_version]
+    inputs.properties props
+    filesMatching('META-INF/neoforge.mods.toml') { expand props }
+}

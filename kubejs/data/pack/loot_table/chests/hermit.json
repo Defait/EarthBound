@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 2
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tfc:ceramic/jug",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:candle",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:flower_cutting",
+          "weight": 3
+        }
+      ]
+    }
+  ]
+}

@@ -240,6 +240,10 @@
     {
       "pattern": "^net\\.minecraft\\.server\\.MinecraftServer: Can't keep up! Is the server overloaded\\?",
       "note": "a few of these while new terrain generates (after /startat or flying far) are normal; many in a row would be a real lag problem"
+    },
+    {
+      "pattern": "^Easy NPC(: Core|: Config UI)?: \\[Debug Manager\\] (Detected debug log level|Adjusting log level) for Easy NPC",
+      "note": "Easy NPC notices its loggers default to ALL and turns them down to INFO itself; informational"
     }
   ]
 }

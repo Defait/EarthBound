@@ -1,0 +1,14 @@
+{
+  "parent": "default:subregion/italy",
+  "title_lang": {
+    "en_us": "Tisenjoch"
+  },
+  "subtitle_lang": {
+    "en_us": "Ancient site"
+  },
+  "description_lang": {
+    "en_us": "Visit the high pass where the iceman fell"
+  },
+  "latitude": 46.779,
+  "longitude": 10.8402
+}

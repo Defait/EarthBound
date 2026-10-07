@@ -188,6 +188,20 @@ function worldgenCheckTier1(server, level, generator, H, V) {
   })
   info.structures = structures
 
+  // The pack's real-world sites (pack_world:geographic, docs/lived-in.md): the chunk and block each one starts at in this
+  // world, and whether a new world enables it. A site that moves would land a second copy, or half of one, in existing worlds.
+  var PackWorldApi = worldgenCheckClass('pack.world.api.PackWorldApi')
+  if (PackWorldApi) {
+    var sites = {}
+    PackWorldApi.sites(level).entrySet().forEach(function (e) {
+      var v = e.getValue()
+      var arr = []
+      for (var k = 0; k < v.length; k++) arr.push(Number(v[k]))
+      sites[String(e.getKey())] = arr
+    })
+    info.sites = sites
+  }
+
   // Every datapack registry that can touch generation, content-encoded for hashing on the Python side.
   var wanted = function (key) {
     var ns = String(key.location().getNamespace())

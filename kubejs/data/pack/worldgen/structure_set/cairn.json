@@ -1,0 +1,15 @@
+{
+  "structures": [
+    {
+      "structure": "pack:cairn",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "tfc:climate",
+    "salt": 2026100705,
+    "spacing": 20,
+    "separation": 6,
+    "climate": {}
+  }
+}

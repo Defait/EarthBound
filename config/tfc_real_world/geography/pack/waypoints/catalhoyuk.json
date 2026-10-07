@@ -1,0 +1,14 @@
+{
+  "parent": "default:subregion/turkey",
+  "title_lang": {
+    "en_us": "Çatalhöyük"
+  },
+  "subtitle_lang": {
+    "en_us": "Ancient site"
+  },
+  "description_lang": {
+    "en_us": "Visit the town of rooftop doors"
+  },
+  "latitude": 37.6667,
+  "longitude": 32.8281
+}

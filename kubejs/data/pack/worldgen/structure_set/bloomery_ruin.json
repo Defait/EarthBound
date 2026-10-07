@@ -1,0 +1,21 @@
+{
+  "structures": [
+    {
+      "structure": "pack:bloomery_ruin",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "tfc:climate",
+    "salt": 2026100704,
+    "spacing": 64,
+    "separation": 20,
+    "climate": {
+      "min_temperature": -5,
+      "max_temperature": 28,
+      "min_groundwater": 100,
+      "max_groundwater": 450,
+      "min_forest": 1
+    }
+  }
+}
