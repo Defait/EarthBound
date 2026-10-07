@@ -1,0 +1,60 @@
+# Pinned by the pack: only the worldgen section (docs/design.md, "Overworld"), which tools/worldgen_check.py
+# watches. GregTech writes every other section back with its own defaults, so those follow GregTech updates.
+worldgen:
+  # Rubber Tree spawn chance (decimal % per chunk)
+  # Default: 0.5
+  rubberTreeSpawnChance: 0.5
+
+  # Should Sand-like ores fall?
+  # This includes gravel, sand, and red sand ores.
+  # Default: false (no falling ores)
+  sandOresFall: false
+
+  # Whether to increase number of rolls for dungeon chests. Increases dungeon loot drastically.
+  # Default: true
+  increaseDungeonLoot: true
+
+  # Allow GregTech to add additional GregTech Items as loot in various structures.
+  # Default: true
+  addLoot: true
+
+  oreVeins:
+    # The grid size (in chunks) for ore vein generation
+    # Default: 3
+    oreVeinGridSize: 3
+
+    # The maximum random offset (in blocks) from the grid for generating an ore vein.
+    # Default: 12
+    oreVeinRandomOffset: 12
+
+    # Prevents regular vanilla ores from being generated outside GregTech ore veins
+    # Default: true
+    removeVanillaOreGen: true
+
+    # Prevents vanilla's large ore veins from being generated
+    # Default: true
+    removeVanillaLargeOreVeins: true
+
+    # Distance between bedrock ore veins in chunks, if enabled.
+    # Default: 16
+    bedrockOreDistance: 16
+
+    # Make bedrock ore/fluid veins infinite?
+    # Default: false
+    infiniteBedrockOresFluids: false
+
+    # Generate ores indicators above ore veins
+    # Default: true
+    oreIndicators: true
+
+    # Sets the maximum number of chunks that may be cached for ore vein generation.
+    # Higher values may improve world generation performance, but at the cost of more RAM usage.
+    # If you substantially increase the ore vein grid size, random vein offset, or have very large (custom) veins, you may need to increase this value as well.
+    # Default: 512
+    oreGenerationChunkCacheSize: 512
+
+    # Sets the maximum number of chunks for which ore indicators may be cached.
+    # If you register any custom veins with very large indicator ranges (or modify existing ones that way), you may need to increase this value.
+    # Default: 2048
+    oreIndicatorChunkCacheSize: 2048
+

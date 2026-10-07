@@ -5,12 +5,20 @@ file = "config/almostunified/placeholders.json"
 hash = "631a901a9341a12ec937f70f48259a2bbbcf04fe7b794cfc936b2827d274b20d"
 
 [[files]]
+file = "config/almostunified/startup.json"
+hash = "37f013c49586db025c17f9fa6657c6f239e0169ebc97ef682ff114a2ede43c5e"
+
+[[files]]
 file = "config/almostunified/tags.json"
 hash = "39086313b0a157400f35fa3c1bcfb0c3fbb0b8a0f4e1e4b030c9857d739f1c21"
 
 [[files]]
 file = "config/almostunified/unification/materials.json"
 hash = "e55d4625f22184ff768d4ec44720786eb72db1da15a75693c9e39fd9a9a6d846"
+
+[[files]]
+file = "config/create-common.toml"
+hash = "220a8a2c38b12ab3e4dffa7b1ef7d1595711567698c6f1ffecd184b6d71c3b6e"
 
 [[files]]
 file = "config/ftbquests/quests/chapter_groups.snbt"
@@ -87,6 +95,14 @@ hash = "92909a371debd092a96b182bb9c9a79a6b9aed8ef116c34b79bd1d573b440063"
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
 hash = "fd6b5fe6594033d29e7686fc6bf30b9d29566a9ea9e064980c0d9e2cfc2ae81d"
+
+[[files]]
+file = "config/gtceu.yaml"
+hash = "f286e355d372f1801cb19e5bdefce139904fbad36725d16b315279e110c6f36d"
+
+[[files]]
+file = "config/tfc-common.toml"
+hash = "3729ca58516f4114b8f8929a89bdcfcd2f1397ac646e7da291361276a0880401"
 
 [[files]]
 file = "config/tfc-server.toml"
