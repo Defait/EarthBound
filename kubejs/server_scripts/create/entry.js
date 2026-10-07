@@ -2,7 +2,10 @@
 //
 // - Vanilla andesite doesn't exist in TFC worlds. Create's andesite recipes take any TFC
 //   igneous extrusive rock instead (andesite, basalt, dacite, rhyolite; raw or cobble), so
-//   Create can start wherever volcanic rock is around, not only where andesite is.
+//   Create can start wherever volcanic rock is around, not only where andesite is. Andesite
+//   alloy also takes diorite, andesite's intrusive twin: extrusive rock can be kilometres from a
+//   start, but TFC's diorite dikes are within a few hundred blocks of almost any start
+//   (docs/design.md, "Known gaps").
 // - TFC has no metal nuggets. Zinc nuggets already come from Create's ingot -> nugget recipe;
 //   bronze nuggets get the same, so andesite alloy is a bronze-age (zinc or bronze) material.
 // - Where Create used metal plates, it uses TFC sheets of the same metal (made on the anvil).
@@ -17,6 +20,9 @@
 //   (cut, polished, bricks) takes the TFC rock through Create's stone-type tags.
 
 const ANDESITE_LIKE = ['andesite', 'basalt', 'dacite', 'rhyolite']
+const ALLOY_ROCKS = ANDESITE_LIKE.concat(['diorite'])
+const ALLOY_RECIPES = ['create:crafting/materials/andesite_alloy', 'create:crafting/materials/andesite_alloy_from_zinc',
+  'create:mixing/andesite_alloy', 'create:mixing/andesite_alloy_from_zinc']
 const TFC_SHEET_METALS = ['bismuth', 'bismuth_bronze', 'black_bronze', 'black_steel', 'blue_steel', 'brass', 'bronze',
   'cast_iron', 'copper', 'gold', 'nickel', 'red_steel', 'rose_gold', 'silver', 'steel', 'sterling_silver', 'tin',
   'wrought_iron', 'zinc']
@@ -25,8 +31,7 @@ const TFC_SHEET_METALS = ['bismuth', 'bismuth_bronze', 'black_bronze', 'black_st
 const SAME_NAME_ROCKS = ['diorite', 'granite']
 // The Create recipes that ask for these stones by item (from Create's recipe files).
 const STONE_ITEM_RECIPES = {
-  andesite: ['create:crafting/materials/andesite_alloy', 'create:crafting/materials/andesite_alloy_from_zinc',
-    'create:mixing/andesite_alloy', 'create:mixing/andesite_alloy_from_zinc', 'create:milling/andesite'],
+  andesite: ['create:milling/andesite'],
   diorite: ['create:crushing/diorite'],
   granite: ['create:milling/granite']
 }
@@ -35,6 +40,10 @@ ServerEvents.tags('item', event => {
   ANDESITE_LIKE.forEach(rock => {
     event.add('pack:andesite_like', `tfc:rock/raw/${rock}`)
     event.add('pack:andesite_like', `tfc:rock/cobble/${rock}`)
+  })
+  ALLOY_ROCKS.forEach(rock => {
+    event.add('pack:andesite_alloy_rock', `tfc:rock/raw/${rock}`)
+    event.add('pack:andesite_alloy_rock', `tfc:rock/cobble/${rock}`)
   })
   SAME_NAME_ROCKS.forEach(rock => {
     event.add(`pack:${rock}_like`, `tfc:rock/raw/${rock}`)
@@ -52,6 +61,9 @@ ServerEvents.recipes(event => {
     STONE_ITEM_RECIPES[rock].forEach(id => {
       event.replaceInput({ id: id }, `minecraft:${rock}`, `#pack:${rock}_like`)
     })
+  })
+  ALLOY_RECIPES.forEach(id => {
+    event.replaceInput({ id: id }, 'minecraft:andesite', '#pack:andesite_alloy_rock')
   })
 
   event.shapeless('9x gtceu:bronze_nugget', ['#c:ingots/bronze']).id('pack:create/bronze_nugget_from_ingot')

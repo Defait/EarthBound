@@ -1384,9 +1384,17 @@
 	quest.23D84898362C0D7C.quest_subtitle: "A huge leap from wrought iron"
 	quest.23D84898362C0D7C.title: "T4 Anvil: Steel"
 	quest.244DFE17A8DDAF4A.quest_desc: [
-		"In this pack andesite alloy takes any TFC igneous extrusive rock (andesite, basalt, dacite or rhyolite; raw or cobble) plus zinc or bronze nuggets."
+		"In this pack andesite alloy takes TFC &6andesite, basalt, dacite, rhyolite or diorite&r (raw or cobble) plus zinc or bronze nuggets."
 		""
 		"Craft an ingot into nine nuggets."
+		"{@pagebreak}"
+		"&lFinding the rock&r"
+		""
+		"Loose rocks on the ground are the rock right under the soil, so they show what you're standing on."
+		""
+		"&6Volcanic regions&r (around volcanoes, volcanic islands and rifts) are mostly andesite, basalt, dacite or rhyolite. On ordinary land about one rock area in six has one of them on top; each area is about 1,000 blocks across. Mountain ranges never do, but some have diorite on top."
+		""
+		"&6Diorite dikes&r are everywhere: upright pipes of diorite about 30 blocks across and a few hundred blocks apart, usually topping out a few blocks under the soil. Look for speckled grey-white rock in cliffs, riverbanks, ravines and cave walls, or where loose rocks don't match the rock you dig into."
 	]
 	quest.244DFE17A8DDAF4A.quest_subtitle: "Create starts here"
 	quest.244DFE17A8DDAF4A.title: "Andesite Alloy"

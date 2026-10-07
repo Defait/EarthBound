@@ -86,7 +86,7 @@ hash = "92909a371debd092a96b182bb9c9a79a6b9aed8ef116c34b79bd1d573b440063"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "3aac8445044d8f1ea9016bd7eb3c9f3f8063fa52da5145c30a991307e074af1f"
+hash = "fd6b5fe6594033d29e7686fc6bf30b9d29566a9ea9e064980c0d9e2cfc2ae81d"
 
 [[files]]
 file = "config/tfc-server.toml"
@@ -114,7 +114,7 @@ hash = "45a5f56eba6066ad05c70988a32b72c50cfeb6e35857739bd582007011ea002b"
 
 [[files]]
 file = "kubejs/assets/pack/lang/en_us.json"
-hash = "a8a776c9e209084cdedaf34dd389ee46396e3d04c3802a8ab94efbc81a67697d"
+hash = "228280dcb9610dcc0cd8f9fcb40e77f8be3092f116edc64621ffe47ab747991f"
 
 [[files]]
 file = "kubejs/client_scripts/main.js"
@@ -230,7 +230,7 @@ hash = "3e6316b0a21fa3623a230faf01fe1bbbcbdaa3aaa0ec1b1a388c089a80363036"
 
 [[files]]
 file = "kubejs/server_scripts/create/entry.js"
-hash = "c79d170c48fa17e332c7af845926490d3903a89723e9cf2d7dd215a032304c84"
+hash = "18b090bd764d38a8af67d4fd01d458c76a27ae3b148c714e47542c9c24adf037"
 
 [[files]]
 file = "kubejs/server_scripts/create/stones.js"
