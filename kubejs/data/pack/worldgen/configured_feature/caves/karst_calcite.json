@@ -1,0 +1,44 @@
+{
+  "type": "minecraft:block_column",
+  "config": {
+    "allowed_placement": {
+      "type": "minecraft:matching_blocks",
+      "blocks": [
+        "minecraft:air",
+        "minecraft:cave_air"
+      ]
+    },
+    "direction": "down",
+    "prioritize_tip": true,
+    "layers": [
+      {
+        "height": {
+          "type": "minecraft:uniform",
+          "min_inclusive": 0,
+          "max_inclusive": 4
+        },
+        "provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "tfc:calcite",
+            "Properties": {
+              "tip": "false"
+            }
+          }
+        }
+      },
+      {
+        "height": 1,
+        "provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "tfc:calcite",
+            "Properties": {
+              "tip": "true"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

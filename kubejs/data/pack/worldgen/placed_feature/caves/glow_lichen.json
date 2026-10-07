@@ -1,0 +1,16 @@
+{
+  "feature": "pack:caves/glow_lichen",
+  "placement": [
+    {
+      "type": "tfc:carving_mask",
+      "step": "air",
+      "max_y": {
+        "absolute": 0
+      }
+    },
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 30
+    }
+  ]
+}

@@ -106,6 +106,266 @@
      "tier": 1
     }
    ]
+  },
+  {
+   "date": "2026-10-07",
+   "reason": "New caves (docs/design.md: Caves; docs/caves.md), landing before the first long-lived world. Shape: TFC's noise caves rewritten (spaghetti and noodles off, chambers twice the size, three regional styles of ~2 km: chambers, great caverns, shafts), TFC's carvers fewer and bigger (cave 0.005, deep_cave 0.015, canyon 0.02 and deeper), and a karst-only carver (limestone, dolomite, chalk, marble) added to all TFC biomes by pack:cave_carvers. Decoration (new-chunks-only, folded in here because the golden census sees it too): TFC mossy cobble with moss carpets and glow-berry cave vines in warm wet caves, glow lichen below y 0, calcite under karst ceilings, TFC's ice caves where it is -4 C or colder, denser TFC rock spikes and columns.",
+   "terrain": true,
+   "findings": [
+    {
+     "what": "carvers changed in 125 biomes (tfc:active_shield_volcano, tfc:ancient_shield_volcano, tfc:badlands, tfc:burren_badlands and 121 more)",
+     "mod": "terrain code",
+     "tier": 1
+    },
+    {"what": "TFC's worldgen/configured_carver changed in 1 groups", "mod": "terrain code", "tier": 1},
+    {
+     "what": "worldgen/configured_carver pack:karst_cave added (namespace 'pack')",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {"what": "TFC's worldgen/density_function changed in 1 groups", "mod": "terrain code", "tier": 1},
+    {"what": "TFC's worldgen/placed_feature changed in 1 groups", "mod": "terrain code", "tier": 1},
+    {
+     "what": "swamp: the underground rock, ore, cave or fluid census moved (2.033% of cells between host rocks)",
+     "mod": "terrain code",
+     "tier": 3
+    },
+    {
+     "what": "coast: the underground rock, ore, cave or fluid census moved (2.886% of cells between host rocks)",
+     "mod": "terrain code",
+     "tier": 3
+    },
+    {
+     "what": "volcanic: the underground rock, ore, cave or fluid census moved (0.705% of cells between host rocks)",
+     "mod": "terrain code",
+     "tier": 3
+    },
+    {
+     "what": "mountain: the underground rock, ore, cave or fluid census moved (1.551% of cells between host rocks)",
+     "mod": "terrain code",
+     "tier": 3
+    },
+    {
+     "what": "desert: the underground rock, ore, cave or fluid census moved (4.948% of cells between host rocks)",
+     "mod": "terrain code",
+     "tier": 3
+    },
+    {
+     "what": "tundra: the underground rock, ore, cave or fluid census moved (1.406% of cells between host rocks)",
+     "mod": "terrain code",
+     "tier": 3
+    },
+    {
+     "what": "karst: the underground rock, ore, cave or fluid census moved (6.824% of cells between host rocks)",
+     "mod": "terrain code",
+     "tier": 3
+    },
+    {
+     "what": "plains: the underground rock, ore, cave or fluid census moved (4.196% of cells between host rocks)",
+     "mod": "terrain code",
+     "tier": 3
+    },
+    {
+     "what": "feature pack:caves/glow_lichen now generates in 55 biomes (tfc:active_shield_volcano, tfc:badlands, tfc:buttes, tfc:canyons and 51 more), decoration slot fluid_springs",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "feature pack:caves/glow_lichen now generates in 57 biomes (tfc:burren_badlands, tfc:burren_badlands_tall, tfc:burren_plains, tfc:burren_plateau and 53 more), decoration slot underground_decoration",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "feature pack:caves/glow_lichen now generates in 13 biomes (tfc:ancient_shield_volcano, tfc:collisional_mountains, tfc:dormant_shield_volcano, tfc:extinct_shield_volcano and 9 more), decoration slot vegetal_decoration",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "feature pack:caves/ice_cave now generates in 55 biomes (tfc:active_shield_volcano, tfc:badlands, tfc:buttes, tfc:canyons and 51 more), decoration slot fluid_springs",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "feature pack:caves/ice_cave now generates in 57 biomes (tfc:burren_badlands, tfc:burren_badlands_tall, tfc:burren_plains, tfc:burren_plateau and 53 more), decoration slot underground_decoration",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "feature pack:caves/ice_cave now generates in 13 biomes (tfc:ancient_shield_volcano, tfc:collisional_mountains, tfc:dormant_shield_volcano, tfc:extinct_shield_volcano and 9 more), decoration slot vegetal_decoration",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "feature pack:caves/karst_calcite now generates in 55 biomes (tfc:active_shield_volcano, tfc:badlands, tfc:buttes, tfc:canyons and 51 more), decoration slot fluid_springs",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "feature pack:caves/karst_calcite now generates in 57 biomes (tfc:burren_badlands, tfc:burren_badlands_tall, tfc:burren_plains, tfc:burren_plateau and 53 more), decoration slot underground_decoration",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "feature pack:caves/karst_calcite now generates in 13 biomes (tfc:ancient_shield_volcano, tfc:collisional_mountains, tfc:dormant_shield_volcano, tfc:extinct_shield_volcano and 9 more), decoration slot vegetal_decoration",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "feature pack:caves/mossy_ceiling now generates in 55 biomes (tfc:active_shield_volcano, tfc:badlands, tfc:buttes, tfc:canyons and 51 more), decoration slot fluid_springs",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "feature pack:caves/mossy_ceiling now generates in 57 biomes (tfc:burren_badlands, tfc:burren_badlands_tall, tfc:burren_plains, tfc:burren_plateau and 53 more), decoration slot underground_decoration",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "feature pack:caves/mossy_ceiling now generates in 13 biomes (tfc:ancient_shield_volcano, tfc:collisional_mountains, tfc:dormant_shield_volcano, tfc:extinct_shield_volcano and 9 more), decoration slot vegetal_decoration",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "feature pack:caves/mossy_floor now generates in 55 biomes (tfc:active_shield_volcano, tfc:badlands, tfc:buttes, tfc:canyons and 51 more), decoration slot fluid_springs",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "feature pack:caves/mossy_floor now generates in 57 biomes (tfc:burren_badlands, tfc:burren_badlands_tall, tfc:burren_plains, tfc:burren_plateau and 53 more), decoration slot underground_decoration",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "feature pack:caves/mossy_floor now generates in 13 biomes (tfc:ancient_shield_volcano, tfc:collisional_mountains, tfc:dormant_shield_volcano, tfc:extinct_shield_volcano and 9 more), decoration slot vegetal_decoration",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "biome/structure modifier added: pack:cave_carvers (namespace 'pack')",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "worldgen/configured_feature pack:caves/cave_vines added (namespace 'pack')",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "worldgen/configured_feature pack:caves/glow_lichen added (namespace 'pack')",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "worldgen/configured_feature pack:caves/ice_cave added (namespace 'pack')",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "worldgen/configured_feature pack:caves/karst_calcite added (namespace 'pack')",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "worldgen/configured_feature pack:caves/moss_carpets added (namespace 'pack')",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "worldgen/configured_feature pack:caves/mossy_ceiling added (namespace 'pack')",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "worldgen/configured_feature pack:caves/mossy_floor added (namespace 'pack')",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "worldgen/configured_feature pack:caves/mossy_rock added (namespace 'pack')",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "worldgen/placed_feature pack:caves/cave_vines added (namespace 'pack')",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "worldgen/placed_feature pack:caves/glow_lichen added (namespace 'pack')",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "worldgen/placed_feature pack:caves/ice_cave added (namespace 'pack')",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "worldgen/placed_feature pack:caves/karst_calcite added (namespace 'pack')",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "worldgen/placed_feature pack:caves/moss_carpets added (namespace 'pack')",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "worldgen/placed_feature pack:caves/mossy_ceiling added (namespace 'pack')",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "worldgen/placed_feature pack:caves/mossy_floor added (namespace 'pack')",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "worldgen/placed_feature pack:caves/mossy_rock added (namespace 'pack')",
+     "mod": "namespace 'pack'",
+     "tier": 1
+    },
+    {
+     "what": "swamp: vanilla blocks TFC doesn't generate in the baseline: minecraft:cave_vines, minecraft:cave_vines_plant, minecraft:glow_lichen, minecraft:moss_carpet",
+     "mod": "minecraft",
+     "tier": 3
+    },
+    {
+     "what": "coast: vanilla blocks TFC doesn't generate in the baseline: minecraft:cave_vines, minecraft:cave_vines_plant, minecraft:glow_lichen, minecraft:moss_carpet",
+     "mod": "minecraft",
+     "tier": 3
+    },
+    {
+     "what": "volcanic: vanilla blocks TFC doesn't generate in the baseline: minecraft:glow_lichen",
+     "mod": "minecraft",
+     "tier": 3
+    },
+    {
+     "what": "mountain: vanilla blocks TFC doesn't generate in the baseline: minecraft:cave_vines, minecraft:cave_vines_plant, minecraft:glow_lichen, minecraft:moss_carpet",
+     "mod": "minecraft",
+     "tier": 3
+    },
+    {
+     "what": "desert: vanilla blocks TFC doesn't generate in the baseline: minecraft:glow_lichen",
+     "mod": "minecraft",
+     "tier": 3
+    },
+    {
+     "what": "tundra: vanilla blocks TFC doesn't generate in the baseline: minecraft:glow_lichen",
+     "mod": "minecraft",
+     "tier": 3
+    },
+    {
+     "what": "karst: vanilla blocks TFC doesn't generate in the baseline: minecraft:cave_vines, minecraft:cave_vines_plant, minecraft:glow_lichen, minecraft:moss_carpet",
+     "mod": "minecraft",
+     "tier": 3
+    },
+    {
+     "what": "plains: vanilla blocks TFC doesn't generate in the baseline: minecraft:glow_lichen",
+     "mod": "minecraft",
+     "tier": 3
+    }
+   ]
   }
  ],
  "tier0": {
@@ -583,7 +843,18 @@
   },
   "pack": {
    "data": {
-    "fowlplay:tfc/fauna": [11, "3796f7c25c"]
+    "fowlplay:tfc/fauna": [11, "3796f7c25c"],
+    "pack:neoforge/biome_modifier": [1, "26d5a18166"],
+    "pack:tags/worldgen/biome": [1, "5882cbf14f"],
+    "pack:worldgen/configured_carver": [1, "7b94d29201"],
+    "pack:worldgen/configured_feature": [9, "942329580a"],
+    "pack:worldgen/density_function": [6, "69992bb51e"],
+    "pack:worldgen/noise": [6, "2e60512763"],
+    "pack:worldgen/placed_feature": [8, "4775b6bb42"],
+    "tfc:tags/worldgen/placed_feature": [1, "92c866d2c9"],
+    "tfc:worldgen/configured_carver": [3, "0caa6dc149"],
+    "tfc:worldgen/density_function": [2, "2af5672cc9"],
+    "tfc:worldgen/placed_feature": [3, "cafbb69223"]
    },
    "files": {
     "data/fowlplay/tfc/fauna/blue_jay.json": "d6916e",
@@ -596,7 +867,48 @@
     "data/fowlplay/tfc/fauna/pigeon.json": "ff46d6",
     "data/fowlplay/tfc/fauna/raven.json": "14b032",
     "data/fowlplay/tfc/fauna/robin.json": "e9dc51",
-    "data/fowlplay/tfc/fauna/sparrow.json": "b71e55"
+    "data/fowlplay/tfc/fauna/sparrow.json": "b71e55",
+    "data/pack/neoforge/biome_modifier/cave_carvers.json": "fbf605",
+    "data/pack/tags/worldgen/biome/overworld.json": "cb1202",
+    "data/pack/worldgen/configured_carver/karst_cave.json": "7cf409",
+    "data/pack/worldgen/configured_feature/caves/cave_vine.json": "4891ac",
+    "data/pack/worldgen/configured_feature/caves/cave_vines.json": "02cb72",
+    "data/pack/worldgen/configured_feature/caves/glow_lichen.json": "371da9",
+    "data/pack/worldgen/configured_feature/caves/ice_cave.json": "2de406",
+    "data/pack/worldgen/configured_feature/caves/karst_calcite.json": "7dca06",
+    "data/pack/worldgen/configured_feature/caves/moss_carpets.json": "44c3f1",
+    "data/pack/worldgen/configured_feature/caves/mossy_ceiling.json": "9a0999",
+    "data/pack/worldgen/configured_feature/caves/mossy_floor.json": "2d4f9a",
+    "data/pack/worldgen/configured_feature/caves/mossy_rock.json": "8cdcf1",
+    "data/pack/worldgen/density_function/caves/caverns.json": "d4aba3",
+    "data/pack/worldgen/density_function/caves/chambers.json": "fb13bc",
+    "data/pack/worldgen/density_function/caves/entrances.json": "75436b",
+    "data/pack/worldgen/density_function/caves/shafts.json": "62a5e9",
+    "data/pack/worldgen/density_function/caves/style.json": "98915e",
+    "data/pack/worldgen/density_function/caves/styles.json": "f44e86",
+    "data/pack/worldgen/noise/caves/cavern.json": "8e6ea7",
+    "data/pack/worldgen/noise/caves/cheese.json": "ff9252",
+    "data/pack/worldgen/noise/caves/entrance.json": "b6d6a6",
+    "data/pack/worldgen/noise/caves/layer.json": "fee3a1",
+    "data/pack/worldgen/noise/caves/shaft.json": "8e6ea7",
+    "data/pack/worldgen/noise/caves/style.json": "b8c8f4",
+    "data/pack/worldgen/placed_feature/caves/cave_vines.json": "6a554c",
+    "data/pack/worldgen/placed_feature/caves/glow_lichen.json": "b97407",
+    "data/pack/worldgen/placed_feature/caves/ice_cave.json": "bdc922",
+    "data/pack/worldgen/placed_feature/caves/karst_calcite.json": "c57128",
+    "data/pack/worldgen/placed_feature/caves/moss_carpets.json": "aa0443",
+    "data/pack/worldgen/placed_feature/caves/mossy_ceiling.json": "58e785",
+    "data/pack/worldgen/placed_feature/caves/mossy_floor.json": "d7e3e8",
+    "data/pack/worldgen/placed_feature/caves/mossy_rock.json": "662bea",
+    "data/tfc/tags/worldgen/placed_feature/in_biome/underground_decoration.json": "f09e8b",
+    "data/tfc/worldgen/configured_carver/canyon.json": "ae5b11",
+    "data/tfc/worldgen/configured_carver/cave.json": "351258",
+    "data/tfc/worldgen/configured_carver/deep_cave.json": "2b7a0a",
+    "data/tfc/worldgen/density_function/noise_caves.json": "76abb8",
+    "data/tfc/worldgen/density_function/noodle_caves.json": "1826dd",
+    "data/tfc/worldgen/placed_feature/cave_column.json": "92305d",
+    "data/tfc/worldgen/placed_feature/cave_spike.json": "e95e24",
+    "data/tfc/worldgen/placed_feature/large_cave_spike.json": "4bbd3a"
    }
   },
   "mixinOptions": {"lithium.properties": "97d170", "modernfix-mixins.properties": "97d170"}
@@ -805,581 +1117,897 @@
    "tfc:volcanic_oceanic_mountain_lake", "tfc:volcanic_oceanic_mountains", "tfc:whorled_canyons"
   ],
   "biomes": {
-   "tfc:active_shield_volcano": {"f": "530cabc1", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:ancient_shield_volcano": {"f": "bfe07dc2", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:badlands": {"f": "e5b7e882", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:burren_badlands": {"f": "6d17fdd7", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:burren_badlands_tall": {"f": "6d17fdd7", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:burren_plains": {"f": "6d17fdd7", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:burren_plateau": {"f": "6d17fdd7", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:burren_roche_moutonee": {"f": "6d17fdd7", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:buttes": {"f": "656d5e0d", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:canyons": {"f": "07bd3f00", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:cenote_canyons": {"f": "4cceb022", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:cenote_highlands": {"f": "656d5e0d", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:cenote_hills": {"f": "4cceb022", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:cenote_plains": {"f": "4cceb022", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:cenote_plateau": {"f": "656d5e0d", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:cenote_rolling_hills": {"f": "656d5e0d", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:coastal_dunes": {"f": "d0decdd1", "s": "b1304e7b", "c": "7b839f16"},
-   "tfc:collisional_mountains": {"f": "1b28dd3d", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:deep_ocean": {"f": "b8c45480", "s": "f3cfc08c", "c": "7b839f16"},
-   "tfc:deep_ocean_atolls": {"f": "c7fca6ca", "s": "f3cfc08c", "c": "7b839f16"},
-   "tfc:deep_ocean_trench": {"f": "8936eb1a", "s": "f3cfc08c", "c": "7b839f16"},
-   "tfc:doline_canyons": {"f": "4bcccb87", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:doline_highlands": {"f": "656d5e0d", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:doline_hills": {"f": "4cceb022", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:doline_plains": {"f": "4cceb022", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:doline_plateau": {"f": "656d5e0d", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:doline_rolling_hills": {"f": "656d5e0d", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:dormant_shield_volcano": {"f": "347e4196", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:drumlins": {"f": "e48760b5", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:dune_sea": {"f": "150648fb", "s": "f92800d3", "c": "7b839f16"},
-   "tfc:embayments": {"f": "aacab75b", "s": "6eb4ea98", "c": "7b839f16"},
-   "tfc:extinct_shield_volcano": {"f": "26ac55dc", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:extreme_doline_mountains": {"f": "38ef5f58", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:extreme_doline_plateau": {"f": "656d5e0d", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:glacially_carved_mountains": {"f": "8c7d198b", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:glacially_carved_oceanic_mountains": {"f": "ed868cea", "s": "211083fa", "c": "7b839f16"},
-   "tfc:glacially_carved_volcanic_mountains": {"f": "e7988c61", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:glacially_carved_volcanic_oceanic_mountains": {"f": "ca4dd754", "s": "211083fa", "c": "7b839f16"},
-   "tfc:glaciated_mountains": {"f": "07f59e65", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:glaciated_oceanic_mountains": {"f": "e0c7caf9", "s": "211083fa", "c": "7b839f16"},
-   "tfc:glaciated_shield_volcano": {"f": "c80569dd", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:glaciated_volcanic_mountains": {"f": "4a38eaed", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:glaciated_volcanic_oceanic_mountains": {"f": "d85eb0e7", "s": "211083fa", "c": "7b839f16"},
-   "tfc:grassy_dunes": {"f": "4cceb022", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:guano_island": {"f": "bb9bf59a", "s": "b1304e7b", "c": "7b839f16"},
-   "tfc:highlands": {"f": "5302081d", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:hills": {"f": "4cceb022", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:hoodoos": {"f": "4cceb022", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:ice_sheet": {"f": "448e0b80", "s": "d95d8400", "c": "7b839f16"},
-   "tfc:ice_sheet_edge": {"f": "e48760b5", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:ice_sheet_mountains": {"f": "88204015", "s": "d95d8400", "c": "7b839f16"},
-   "tfc:ice_sheet_mountains_edge": {"f": "07f59e65", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:ice_sheet_oceanic": {"f": "150648fb", "s": "f1470174", "c": "7b839f16"},
-   "tfc:ice_sheet_oceanic_mountains": {"f": "6b650b65", "s": "c7accf77", "c": "7b839f16"},
-   "tfc:ice_sheet_oceanic_mountains_edge": {"f": "e0c7caf9", "s": "a5d2fae4", "c": "7b839f16"},
-   "tfc:ice_sheet_shield_volcano": {"f": "88204015", "s": "d95d8400", "c": "7b839f16"},
-   "tfc:ice_sheet_shore": {"f": "aacab75b", "s": "a5d2fae4", "c": "7b839f16"},
-   "tfc:ice_sheet_tuyas": {"f": "6553b899", "s": "d95d8400", "c": "7b839f16"},
-   "tfc:ice_sheet_tuyas_edge": {"f": "6e58c322", "s": "0f3d85a1", "c": "7b839f16"},
-   "tfc:ice_sheet_volcanic_mountains": {"f": "3f2dc5cc", "s": "d95d8400", "c": "7b839f16"},
-   "tfc:ice_sheet_volcanic_oceanic_mountains": {"f": "3e9e2faf", "s": "c7accf77", "c": "7b839f16"},
-   "tfc:inverted_patterned_ground": {"f": "fab06c0b", "s": "fb2ab43f", "c": "7b839f16"},
-   "tfc:knob_and_kettle": {"f": "e48760b5", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:lake": {"f": "38bcf313", "s": "d640b5c6", "c": "7b839f16"},
-   "tfc:low_canyons": {"f": "9ab6b3d7", "s": "bb6f507a", "c": "7b839f16"},
-   "tfc:lowlands": {"f": "b4d31360", "s": "cf3ceb86", "c": "7b839f16"},
-   "tfc:meltwater_lake": {"f": "38bcf313", "s": "d640b5c6", "c": "7b839f16"},
-   "tfc:mesas": {"f": "656d5e0d", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:mountain_lake": {"f": "8c7d198b", "s": "d640b5c6", "c": "7b839f16"},
-   "tfc:mountains": {"f": "8c7d198b", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:mud_flats": {"f": "150648fb", "s": "6c0ebf8f", "c": "7b839f16"},
-   "tfc:ocean": {"f": "e40dfce6", "s": "f3cfc08c", "c": "7b839f16"},
-   "tfc:ocean_atolls": {"f": "b4858bfd", "s": "f3cfc08c", "c": "7b839f16"},
-   "tfc:ocean_reef": {"f": "5802afce", "s": "f3cfc08c", "c": "7b839f16"},
-   "tfc:ocean_ridge": {"f": "d9187aff", "s": "f3cfc08c", "c": "7b839f16"},
-   "tfc:oceanic_mountain_lake": {"f": "9c6fca49", "s": "3974bd7e", "c": "7b839f16"},
-   "tfc:oceanic_mountains": {"f": "ed868cea", "s": "211083fa", "c": "7b839f16"},
-   "tfc:oceanic_volcanic_arc": {"f": "aa00dfa9", "s": "211083fa", "c": "7b839f16"},
-   "tfc:old_mountain_lake": {"f": "8c7d198b", "s": "d640b5c6", "c": "7b839f16"},
-   "tfc:old_mountains": {"f": "5bac1dba", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:old_shield_volcano_shore": {"f": "98f09c29", "s": "b1304e7b", "c": "7b839f16"},
-   "tfc:patterned_ground": {"f": "fab06c0b", "s": "fb2ab43f", "c": "7b839f16"},
-   "tfc:plains": {"f": "4cceb022", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:plateau": {"f": "5302081d", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:plateau_lake": {"f": "e48760b5", "s": "d640b5c6", "c": "7b839f16"},
-   "tfc:plateau_wide": {"f": "5302081d", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:rift_lake": {"f": "7e531ac3", "s": "d640b5c6", "c": "7b839f16"},
-   "tfc:rift_valley": {"f": "2b346b75", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:river": {"f": "38bcf313", "s": "e09c0d9e", "c": "7b839f16"},
-   "tfc:river_valley": {"f": "4cceb022", "s": "fb2ab43f", "c": "7b839f16"},
-   "tfc:rocky_plateau": {"f": "1ae20088", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:rocky_shores": {"f": "918c8d52", "s": "b1304e7b", "c": "7b839f16"},
-   "tfc:rolling_hills": {"f": "76b40151", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:salt_flats": {"f": "150648fb", "s": "f92800d3", "c": "7b839f16"},
-   "tfc:salt_marsh": {"f": "cfb91f11", "s": "f2fe71f7", "c": "7b839f16"},
-   "tfc:sea_stacks": {"f": "aacab75b", "s": "6eb4ea98", "c": "7b839f16"},
-   "tfc:setback_cliffs": {"f": "96d0e2a6", "s": "6eb4ea98", "c": "7b839f16"},
-   "tfc:shield_volcano_shore": {"f": "98f09c29", "s": "b1304e7b", "c": "7b839f16"},
-   "tfc:shilin_canyons": {"f": "6d17fdd7", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:shilin_highlands": {"f": "e638fa7b", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:shilin_hills": {"f": "e638fa7b", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:shilin_plains": {"f": "6d17fdd7", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:shilin_plateau": {"f": "e638fa7b", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:shore": {"f": "d0decdd1", "s": "b1304e7b", "c": "7b839f16"},
-   "tfc:stair_step_canyons": {"f": "656d5e0d", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:stone_circles": {"f": "e48760b5", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:subglacial_lake": {"f": "150648fb", "s": "202de37a", "c": "7b839f16"},
-   "tfc:sunken_shield_volcano": {"f": "3a686f36", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:terrace_lower": {"f": "aacab75b", "s": "6eb4ea98", "c": "7b839f16"},
-   "tfc:terrace_upper": {"f": "aacab75b", "s": "6eb4ea98", "c": "7b839f16"},
-   "tfc:tidal_flats": {"f": "fed1b157", "s": "99b025eb", "c": "7b839f16"},
-   "tfc:tower_karst_bay": {"f": "e108d08a", "s": "679a8ec4", "c": "7b839f16"},
-   "tfc:tower_karst_canyons": {"f": "8c7d198b", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:tower_karst_highlands": {"f": "38ef5f58", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:tower_karst_hills": {"f": "38ef5f58", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:tower_karst_lake": {"f": "f3580d26", "s": "d640b5c6", "c": "7b839f16"},
-   "tfc:tower_karst_plains": {"f": "8c7d198b", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:tuyas": {"f": "6e58c322", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:volcanic_island": {"f": "ca4dd754", "s": "211083fa", "c": "7b839f16"},
-   "tfc:volcanic_mountain_islands": {"f": "3cd4f2f7", "s": "211083fa", "c": "7b839f16"},
-   "tfc:volcanic_mountain_lake": {"f": "e7988c61", "s": "d640b5c6", "c": "7b839f16"},
-   "tfc:volcanic_mountains": {"f": "f5b0e08e", "s": "c1ee1644", "c": "7b839f16"},
-   "tfc:volcanic_oceanic_mountain_lake": {"f": "a198d015", "s": "3974bd7e", "c": "7b839f16"},
-   "tfc:volcanic_oceanic_mountains": {"f": "aa00dfa9", "s": "211083fa", "c": "7b839f16"},
-   "tfc:whorled_canyons": {"f": "4cceb022", "s": "c1ee1644", "c": "7b839f16"}
+   "tfc:active_shield_volcano": {"f": "e3317674", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:ancient_shield_volcano": {"f": "4044030b", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:badlands": {"f": "f21e5115", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:burren_badlands": {"f": "ca734447", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:burren_badlands_tall": {"f": "ca734447", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:burren_plains": {"f": "ca734447", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:burren_plateau": {"f": "ca734447", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:burren_roche_moutonee": {"f": "ca734447", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:buttes": {"f": "334392b8", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:canyons": {"f": "13cd806a", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:cenote_canyons": {"f": "6835a9ac", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:cenote_highlands": {"f": "334392b8", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:cenote_hills": {"f": "6835a9ac", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:cenote_plains": {"f": "6835a9ac", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:cenote_plateau": {"f": "334392b8", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:cenote_rolling_hills": {"f": "334392b8", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:coastal_dunes": {"f": "ce3b823f", "s": "cd124930", "c": "925c5d12"},
+   "tfc:collisional_mountains": {"f": "ea066838", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:deep_ocean": {"f": "5c26975f", "s": "f3cfc08c", "c": "925c5d12"},
+   "tfc:deep_ocean_atolls": {"f": "4892eeac", "s": "f3cfc08c", "c": "925c5d12"},
+   "tfc:deep_ocean_trench": {"f": "a74997e3", "s": "f3cfc08c", "c": "925c5d12"},
+   "tfc:doline_canyons": {"f": "53915fc1", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:doline_highlands": {"f": "334392b8", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:doline_hills": {"f": "6835a9ac", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:doline_plains": {"f": "6835a9ac", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:doline_plateau": {"f": "334392b8", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:doline_rolling_hills": {"f": "334392b8", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:dormant_shield_volcano": {"f": "4d9923e5", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:drumlins": {"f": "142cc764", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:dune_sea": {"f": "9fec4ddf", "s": "fe376486", "c": "925c5d12"},
+   "tfc:embayments": {"f": "d84621aa", "s": "ad6710eb", "c": "925c5d12"},
+   "tfc:extinct_shield_volcano": {"f": "671ef96c", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:extreme_doline_mountains": {"f": "4b60f6e5", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:extreme_doline_plateau": {"f": "334392b8", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:glacially_carved_mountains": {"f": "e65fce70", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:glacially_carved_oceanic_mountains": {"f": "6b1c3cfe", "s": "4fd4e8c3", "c": "925c5d12"},
+   "tfc:glacially_carved_volcanic_mountains": {"f": "2875d501", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:glacially_carved_volcanic_oceanic_mountains": {"f": "3c89d019", "s": "4fd4e8c3", "c": "925c5d12"},
+   "tfc:glaciated_mountains": {"f": "84726859", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:glaciated_oceanic_mountains": {"f": "7c3eb536", "s": "4fd4e8c3", "c": "925c5d12"},
+   "tfc:glaciated_shield_volcano": {"f": "9bcc9a38", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:glaciated_volcanic_mountains": {"f": "e0abe4fa", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:glaciated_volcanic_oceanic_mountains": {"f": "e58116d2", "s": "4fd4e8c3", "c": "925c5d12"},
+   "tfc:grassy_dunes": {"f": "6835a9ac", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:guano_island": {"f": "7c3e28af", "s": "cd124930", "c": "925c5d12"},
+   "tfc:highlands": {"f": "11f99040", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:hills": {"f": "6835a9ac", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:hoodoos": {"f": "6835a9ac", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:ice_sheet": {"f": "144b3d5d", "s": "d95d8400", "c": "925c5d12"},
+   "tfc:ice_sheet_edge": {"f": "142cc764", "s": "0f3d85a1", "c": "925c5d12"},
+   "tfc:ice_sheet_mountains": {"f": "3beffc63", "s": "d95d8400", "c": "925c5d12"},
+   "tfc:ice_sheet_mountains_edge": {"f": "84726859", "s": "0f3d85a1", "c": "925c5d12"},
+   "tfc:ice_sheet_oceanic": {"f": "9fec4ddf", "s": "f1470174", "c": "925c5d12"},
+   "tfc:ice_sheet_oceanic_mountains": {"f": "d66ef931", "s": "c7accf77", "c": "925c5d12"},
+   "tfc:ice_sheet_oceanic_mountains_edge": {"f": "7c3eb536", "s": "a5d2fae4", "c": "925c5d12"},
+   "tfc:ice_sheet_shield_volcano": {"f": "3beffc63", "s": "d95d8400", "c": "925c5d12"},
+   "tfc:ice_sheet_shore": {"f": "d84621aa", "s": "a5d2fae4", "c": "925c5d12"},
+   "tfc:ice_sheet_tuyas": {"f": "1ff1fb91", "s": "d95d8400", "c": "925c5d12"},
+   "tfc:ice_sheet_tuyas_edge": {"f": "9b840e5a", "s": "0f3d85a1", "c": "925c5d12"},
+   "tfc:ice_sheet_volcanic_mountains": {"f": "487e7eca", "s": "d95d8400", "c": "925c5d12"},
+   "tfc:ice_sheet_volcanic_oceanic_mountains": {"f": "52f97e9e", "s": "c7accf77", "c": "925c5d12"},
+   "tfc:inverted_patterned_ground": {"f": "04a6baab", "s": "85ebc894", "c": "925c5d12"},
+   "tfc:knob_and_kettle": {"f": "142cc764", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:lake": {"f": "0331049c", "s": "957562b7", "c": "925c5d12"},
+   "tfc:low_canyons": {"f": "1b82d97c", "s": "496c0818", "c": "925c5d12"},
+   "tfc:lowlands": {"f": "7d35443e", "s": "dbc63ce9", "c": "925c5d12"},
+   "tfc:meltwater_lake": {"f": "0331049c", "s": "957562b7", "c": "925c5d12"},
+   "tfc:mesas": {"f": "334392b8", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:mountain_lake": {"f": "e65fce70", "s": "957562b7", "c": "925c5d12"},
+   "tfc:mountains": {"f": "e65fce70", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:mud_flats": {"f": "9fec4ddf", "s": "288031b3", "c": "925c5d12"},
+   "tfc:ocean": {"f": "664c3789", "s": "f3cfc08c", "c": "925c5d12"},
+   "tfc:ocean_atolls": {"f": "eed6224c", "s": "f3cfc08c", "c": "925c5d12"},
+   "tfc:ocean_reef": {"f": "4a67d9ca", "s": "f3cfc08c", "c": "925c5d12"},
+   "tfc:ocean_ridge": {"f": "91f7c3f4", "s": "f3cfc08c", "c": "925c5d12"},
+   "tfc:oceanic_mountain_lake": {"f": "d743cf31", "s": "40622a8c", "c": "925c5d12"},
+   "tfc:oceanic_mountains": {"f": "6b1c3cfe", "s": "4fd4e8c3", "c": "925c5d12"},
+   "tfc:oceanic_volcanic_arc": {"f": "959aeffe", "s": "4fd4e8c3", "c": "925c5d12"},
+   "tfc:old_mountain_lake": {"f": "e65fce70", "s": "957562b7", "c": "925c5d12"},
+   "tfc:old_mountains": {"f": "a8d0e2a2", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:old_shield_volcano_shore": {"f": "8dc6f5cf", "s": "cd124930", "c": "925c5d12"},
+   "tfc:patterned_ground": {"f": "04a6baab", "s": "85ebc894", "c": "925c5d12"},
+   "tfc:plains": {"f": "6835a9ac", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:plateau": {"f": "11f99040", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:plateau_lake": {"f": "142cc764", "s": "957562b7", "c": "925c5d12"},
+   "tfc:plateau_wide": {"f": "11f99040", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:rift_lake": {"f": "2ff1518e", "s": "957562b7", "c": "925c5d12"},
+   "tfc:rift_valley": {"f": "f01b2cc1", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:river": {"f": "0331049c", "s": "ba54da7b", "c": "925c5d12"},
+   "tfc:river_valley": {"f": "6835a9ac", "s": "85ebc894", "c": "925c5d12"},
+   "tfc:rocky_plateau": {"f": "b063a305", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:rocky_shores": {"f": "7e5d0b2a", "s": "cd124930", "c": "925c5d12"},
+   "tfc:rolling_hills": {"f": "ae00cd82", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:salt_flats": {"f": "9fec4ddf", "s": "fe376486", "c": "925c5d12"},
+   "tfc:salt_marsh": {"f": "6b841610", "s": "ea529262", "c": "925c5d12"},
+   "tfc:sea_stacks": {"f": "d84621aa", "s": "ad6710eb", "c": "925c5d12"},
+   "tfc:setback_cliffs": {"f": "a8ac5384", "s": "ad6710eb", "c": "925c5d12"},
+   "tfc:shield_volcano_shore": {"f": "8dc6f5cf", "s": "cd124930", "c": "925c5d12"},
+   "tfc:shilin_canyons": {"f": "ca734447", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:shilin_highlands": {"f": "1d7084d0", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:shilin_hills": {"f": "1d7084d0", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:shilin_plains": {"f": "ca734447", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:shilin_plateau": {"f": "1d7084d0", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:shore": {"f": "ce3b823f", "s": "cd124930", "c": "925c5d12"},
+   "tfc:stair_step_canyons": {"f": "334392b8", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:stone_circles": {"f": "142cc764", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:subglacial_lake": {"f": "9fec4ddf", "s": "202de37a", "c": "925c5d12"},
+   "tfc:sunken_shield_volcano": {"f": "296a5863", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:terrace_lower": {"f": "d84621aa", "s": "ad6710eb", "c": "925c5d12"},
+   "tfc:terrace_upper": {"f": "d84621aa", "s": "ad6710eb", "c": "925c5d12"},
+   "tfc:tidal_flats": {"f": "92e5a49e", "s": "89c7c3a1", "c": "925c5d12"},
+   "tfc:tower_karst_bay": {"f": "b214c602", "s": "c13929ba", "c": "925c5d12"},
+   "tfc:tower_karst_canyons": {"f": "e65fce70", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:tower_karst_highlands": {"f": "4b60f6e5", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:tower_karst_hills": {"f": "4b60f6e5", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:tower_karst_lake": {"f": "c79dbcac", "s": "957562b7", "c": "925c5d12"},
+   "tfc:tower_karst_plains": {"f": "e65fce70", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:tuyas": {"f": "9b840e5a", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:volcanic_island": {"f": "3c89d019", "s": "4fd4e8c3", "c": "925c5d12"},
+   "tfc:volcanic_mountain_islands": {"f": "ca12347f", "s": "4fd4e8c3", "c": "925c5d12"},
+   "tfc:volcanic_mountain_lake": {"f": "2875d501", "s": "957562b7", "c": "925c5d12"},
+   "tfc:volcanic_mountains": {"f": "7c71502e", "s": "3d4b121d", "c": "925c5d12"},
+   "tfc:volcanic_oceanic_mountain_lake": {"f": "da322376", "s": "40622a8c", "c": "925c5d12"},
+   "tfc:volcanic_oceanic_mountains": {"f": "959aeffe", "s": "4fd4e8c3", "c": "925c5d12"},
+   "tfc:whorled_canyons": {"f": "6835a9ac", "s": "3d4b121d", "c": "925c5d12"}
   },
   "featureSigs": {
-   "530cabc1": {
-    "n": [1, 2, 6, 0, 0, 0, 49, 11, 13, 15, 179, 2],
+   "e3317674": {
+    "n": [1, 2, 6, 0, 0, 0, 49, 11, 18, 15, 179, 2],
     "tfc": [
      "568e9f", "7b8472", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "ec6326", "667e80", "4c7fba", "60a52e",
      "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "fluid_springs": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "bfe07dc2": {
-    "n": [1, 2, 6, 0, 0, 0, 49, 1, 11, 13, 9, 179, 2],
+   "4044030b": {
+    "n": [1, 2, 6, 0, 0, 0, 49, 1, 11, 18, 9, 179, 2],
     "tfc": [
      "568e9f", "7b8472", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "73a87d", "ec6326", "667e80", "33392f",
      "60a52e", "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "vegetal_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "e5b7e882": {
-    "n": [1, 1, 6, 0, 0, 0, 49, 1, 13, 7, 179, 2],
+   "f21e5115": {
+    "n": [1, 1, 6, 0, 0, 0, 49, 1, 18, 7, 179, 2],
     "tfc": [
      "568e9f", "43c1c9", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "73a87d", "667e80", "4be5db", "60a52e",
      "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "fluid_springs": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "6d17fdd7": {
-    "n": [1, 2, 6, 0, 0, 0, 49, 13, 6, 179, 2],
+   "ca734447": {
+    "n": [1, 2, 6, 0, 0, 0, 49, 18, 6, 179, 2],
     "tfc": ["568e9f", "7b8472", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "667e80", "09a734", "60a52e", "57e51f"],
-    "foreign": {}
+    "foreign": {
+     "underground_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "656d5e0d": {
-    "n": [1, 2, 6, 0, 0, 0, 49, 1, 13, 7, 179, 2],
+   "334392b8": {
+    "n": [1, 2, 6, 0, 0, 0, 49, 1, 18, 7, 179, 2],
     "tfc": [
      "568e9f", "7b8472", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "73a87d", "667e80", "4be5db", "60a52e",
      "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "fluid_springs": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "07bd3f00": {
-    "n": [1, 1, 6, 0, 0, 0, 49, 1, 13, 20, 179, 2],
+   "13cd806a": {
+    "n": [1, 1, 6, 0, 0, 0, 49, 1, 18, 20, 179, 2],
     "tfc": [
      "568e9f", "43c1c9", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "73a87d", "667e80", "ed2b2e", "60a52e",
      "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "fluid_springs": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "4cceb022": {
-    "n": [1, 2, 6, 0, 0, 0, 49, 13, 7, 179, 2],
+   "6835a9ac": {
+    "n": [1, 2, 6, 0, 0, 0, 49, 18, 7, 179, 2],
     "tfc": ["568e9f", "7b8472", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "667e80", "4be5db", "60a52e", "57e51f"],
-    "foreign": {}
+    "foreign": {
+     "underground_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "d0decdd1": {
-    "n": [1, 1, 0, 0, 0, 0, 49, 13, 1, 25, 2],
+   "ce3b823f": {
+    "n": [1, 1, 0, 0, 0, 0, 49, 18, 1, 25, 2],
     "tfc": ["568e9f", "43c1c9", "97d170", "97d170", "97d170", "97d170", "d82393", "667e80", "5858b3", "7e8c21", "57e51f"],
-    "foreign": {}
+    "foreign": {
+     "underground_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "1b28dd3d": {
-    "n": [1, 2, 6, 0, 0, 0, 49, 11, 1, 13, 7, 179, 2],
+   "ea066838": {
+    "n": [1, 2, 6, 0, 0, 0, 49, 11, 1, 18, 7, 179, 2],
     "tfc": [
      "568e9f", "7b8472", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "ec6326", "f3dc90", "667e80", "4be5db",
      "60a52e", "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "vegetal_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "b8c45480": {
-    "n": [1, 1, 0, 0, 0, 0, 49, 13, 1, 0, 2],
+   "5c26975f": {
+    "n": [1, 1, 0, 0, 0, 0, 49, 18, 1, 0, 2],
     "tfc": ["568e9f", "43c1c9", "97d170", "97d170", "97d170", "97d170", "d82393", "667e80", "5858b3", "97d170", "57e51f"],
-    "foreign": {}
+    "foreign": {
+     "underground_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "c7fca6ca": {
-    "n": [1, 1, 0, 0, 0, 0, 49, 13, 6, 0, 2],
+   "4892eeac": {
+    "n": [1, 1, 0, 0, 0, 0, 49, 18, 6, 0, 2],
     "tfc": ["568e9f", "43c1c9", "97d170", "97d170", "97d170", "97d170", "d82393", "667e80", "083156", "97d170", "57e51f"],
-    "foreign": {}
+    "foreign": {
+     "underground_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "8936eb1a": {
-    "n": [1, 1, 0, 0, 0, 0, 49, 13, 2, 0, 2],
+   "a74997e3": {
+    "n": [1, 1, 0, 0, 0, 0, 49, 18, 2, 0, 2],
     "tfc": ["568e9f", "43c1c9", "97d170", "97d170", "97d170", "97d170", "d82393", "667e80", "53735c", "97d170", "57e51f"],
-    "foreign": {}
+    "foreign": {
+     "underground_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "4bcccb87": {
-    "n": [1, 2, 6, 0, 0, 0, 49, 13, 13, 179, 2],
+   "53915fc1": {
+    "n": [1, 2, 6, 0, 0, 0, 49, 18, 13, 179, 2],
     "tfc": ["568e9f", "7b8472", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "667e80", "f946c8", "60a52e", "57e51f"],
-    "foreign": {}
+    "foreign": {
+     "underground_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "347e4196": {
-    "n": [1, 2, 6, 0, 0, 0, 49, 1, 11, 13, 10, 179, 2],
+   "4d9923e5": {
+    "n": [1, 2, 6, 0, 0, 0, 49, 1, 11, 18, 10, 179, 2],
     "tfc": [
      "568e9f", "7b8472", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "73a87d", "ec6326", "667e80", "4c7537",
      "60a52e", "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "vegetal_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "e48760b5": {
-    "n": [1, 2, 6, 0, 0, 0, 49, 13, 13, 179, 2],
+   "142cc764": {
+    "n": [1, 2, 6, 0, 0, 0, 49, 18, 13, 179, 2],
     "tfc": ["568e9f", "7b8472", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "667e80", "27d95c", "60a52e", "57e51f"],
-    "foreign": {}
+    "foreign": {
+     "underground_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "150648fb": {
-    "n": [1, 2, 0, 0, 0, 0, 49, 13, 1, 0, 2],
+   "9fec4ddf": {
+    "n": [1, 2, 0, 0, 0, 0, 49, 18, 1, 0, 2],
     "tfc": ["568e9f", "7b8472", "97d170", "97d170", "97d170", "97d170", "d82393", "667e80", "5858b3", "97d170", "57e51f"],
-    "foreign": {}
+    "foreign": {
+     "underground_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "aacab75b": {
-    "n": [1, 1, 6, 0, 0, 0, 49, 13, 7, 202, 2],
+   "d84621aa": {
+    "n": [1, 1, 6, 0, 0, 0, 49, 18, 7, 202, 2],
     "tfc": ["568e9f", "43c1c9", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "667e80", "4be5db", "62bb0d", "57e51f"],
-    "foreign": {}
+    "foreign": {
+     "underground_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "26ac55dc": {
-    "n": [1, 2, 6, 0, 0, 0, 49, 1, 11, 13, 10, 179, 2],
+   "671ef96c": {
+    "n": [1, 2, 6, 0, 0, 0, 49, 1, 11, 18, 10, 179, 2],
     "tfc": [
      "568e9f", "7b8472", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "73a87d", "ec6326", "667e80", "9748aa",
      "60a52e", "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "vegetal_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "38ef5f58": {
-    "n": [1, 2, 6, 0, 0, 0, 49, 1, 11, 13, 7, 179, 2],
+   "4b60f6e5": {
+    "n": [1, 2, 6, 0, 0, 0, 49, 1, 11, 18, 7, 179, 2],
     "tfc": [
      "568e9f", "7b8472", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "73a87d", "ec6326", "667e80", "4be5db",
      "60a52e", "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "vegetal_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "8c7d198b": {
-    "n": [1, 2, 6, 0, 0, 0, 49, 11, 13, 7, 179, 2],
+   "e65fce70": {
+    "n": [1, 2, 6, 0, 0, 0, 49, 11, 18, 7, 179, 2],
     "tfc": [
      "568e9f", "7b8472", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "ec6326", "667e80", "4be5db", "60a52e",
      "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "fluid_springs": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "ed868cea": {
-    "n": [1, 1, 6, 0, 0, 0, 49, 11, 13, 7, 201, 2],
+   "6b1c3cfe": {
+    "n": [1, 1, 6, 0, 0, 0, 49, 11, 18, 7, 201, 2],
     "tfc": [
      "568e9f", "43c1c9", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "ec6326", "667e80", "4be5db", "6c7154",
      "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "fluid_springs": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "e7988c61": {
-    "n": [1, 2, 6, 0, 0, 0, 49, 11, 13, 31, 179, 2],
+   "2875d501": {
+    "n": [1, 2, 6, 0, 0, 0, 49, 11, 18, 31, 179, 2],
     "tfc": [
      "568e9f", "7b8472", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "ec6326", "667e80", "570a34", "60a52e",
      "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "fluid_springs": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "ca4dd754": {
-    "n": [1, 1, 6, 0, 0, 0, 49, 11, 13, 31, 201, 2],
+   "3c89d019": {
+    "n": [1, 1, 6, 0, 0, 0, 49, 11, 18, 31, 201, 2],
     "tfc": [
      "568e9f", "43c1c9", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "ec6326", "667e80", "570a34", "6c7154",
      "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "fluid_springs": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "07f59e65": {
-    "n": [1, 2, 6, 0, 0, 0, 49, 11, 13, 8, 179, 2],
+   "84726859": {
+    "n": [1, 2, 6, 0, 0, 0, 49, 11, 18, 8, 179, 2],
     "tfc": [
      "568e9f", "7b8472", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "ec6326", "667e80", "16b68d", "60a52e",
      "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "fluid_springs": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "e0c7caf9": {
-    "n": [1, 1, 6, 0, 0, 0, 49, 11, 13, 8, 201, 2],
+   "7c3eb536": {
+    "n": [1, 1, 6, 0, 0, 0, 49, 11, 18, 8, 201, 2],
     "tfc": [
      "568e9f", "43c1c9", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "ec6326", "667e80", "4cc1de", "6c7154",
      "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "fluid_springs": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "c80569dd": {
-    "n": [1, 2, 6, 0, 0, 0, 49, 11, 13, 14, 179, 2],
+   "9bcc9a38": {
+    "n": [1, 2, 6, 0, 0, 0, 49, 11, 18, 14, 179, 2],
     "tfc": [
      "568e9f", "7b8472", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "ec6326", "667e80", "a8eafd", "60a52e",
      "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "fluid_springs": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "4a38eaed": {
-    "n": [1, 2, 6, 0, 0, 0, 49, 11, 13, 32, 179, 2],
+   "e0abe4fa": {
+    "n": [1, 2, 6, 0, 0, 0, 49, 11, 18, 32, 179, 2],
     "tfc": [
      "568e9f", "7b8472", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "ec6326", "667e80", "55772b", "60a52e",
      "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "fluid_springs": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "d85eb0e7": {
-    "n": [1, 1, 6, 0, 0, 0, 49, 11, 13, 32, 201, 2],
+   "e58116d2": {
+    "n": [1, 1, 6, 0, 0, 0, 49, 11, 18, 32, 201, 2],
     "tfc": [
      "568e9f", "43c1c9", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "ec6326", "667e80", "b121cc", "6c7154",
      "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "fluid_springs": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "bb9bf59a": {
-    "n": [1, 1, 0, 0, 0, 0, 49, 13, 2, 23, 2],
+   "7c3e28af": {
+    "n": [1, 1, 0, 0, 0, 0, 49, 18, 2, 23, 2],
     "tfc": ["568e9f", "43c1c9", "97d170", "97d170", "97d170", "97d170", "d82393", "667e80", "78dfb2", "f7e989", "57e51f"],
-    "foreign": {}
+    "foreign": {
+     "underground_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "5302081d": {
-    "n": [1, 2, 6, 0, 0, 0, 49, 1, 13, 14, 179, 2],
+   "11f99040": {
+    "n": [1, 2, 6, 0, 0, 0, 49, 1, 18, 14, 179, 2],
     "tfc": [
      "568e9f", "7b8472", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "73a87d", "667e80", "7db97b", "60a52e",
      "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "fluid_springs": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "448e0b80": {
-    "n": [1, 2, 0, 0, 0, 0, 49, 13, 7, 0, 2],
+   "144b3d5d": {
+    "n": [1, 2, 0, 0, 0, 0, 49, 18, 7, 0, 2],
     "tfc": ["568e9f", "7b8472", "97d170", "97d170", "97d170", "97d170", "d82393", "667e80", "c776d0", "97d170", "57e51f"],
-    "foreign": {}
+    "foreign": {
+     "underground_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "88204015": {
-    "n": [1, 2, 0, 0, 0, 0, 49, 11, 13, 1, 0, 2],
+   "3beffc63": {
+    "n": [1, 2, 0, 0, 0, 0, 49, 11, 18, 1, 0, 2],
     "tfc": [
      "568e9f", "7b8472", "97d170", "97d170", "97d170", "97d170", "d82393", "ec6326", "667e80", "5858b3", "97d170",
      "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "fluid_springs": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "6b650b65": {
-    "n": [1, 1, 0, 0, 0, 0, 49, 11, 13, 1, 22, 2],
+   "d66ef931": {
+    "n": [1, 1, 0, 0, 0, 0, 49, 11, 18, 1, 22, 2],
     "tfc": [
      "568e9f", "43c1c9", "97d170", "97d170", "97d170", "97d170", "d82393", "ec6326", "667e80", "5858b3", "35644d",
      "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "fluid_springs": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "6553b899": {
-    "n": [1, 2, 0, 0, 0, 0, 49, 13, 13, 0, 2],
+   "1ff1fb91": {
+    "n": [1, 2, 0, 0, 0, 0, 49, 18, 13, 0, 2],
     "tfc": ["568e9f", "7b8472", "97d170", "97d170", "97d170", "97d170", "d82393", "667e80", "f637cb", "97d170", "57e51f"],
-    "foreign": {}
+    "foreign": {
+     "underground_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "6e58c322": {
-    "n": [1, 2, 6, 0, 0, 0, 49, 13, 19, 179, 2],
+   "9b840e5a": {
+    "n": [1, 2, 6, 0, 0, 0, 49, 18, 19, 179, 2],
     "tfc": ["568e9f", "7b8472", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "667e80", "43276f", "60a52e", "57e51f"],
-    "foreign": {}
+    "foreign": {
+     "underground_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "3f2dc5cc": {
-    "n": [1, 2, 0, 0, 0, 0, 49, 11, 13, 25, 0, 2],
+   "487e7eca": {
+    "n": [1, 2, 0, 0, 0, 0, 49, 11, 18, 25, 0, 2],
     "tfc": [
      "568e9f", "7b8472", "97d170", "97d170", "97d170", "97d170", "d82393", "ec6326", "667e80", "4aabcf", "97d170",
      "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "fluid_springs": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "3e9e2faf": {
-    "n": [1, 1, 0, 0, 0, 0, 49, 11, 13, 25, 22, 2],
+   "52f97e9e": {
+    "n": [1, 1, 0, 0, 0, 0, 49, 11, 18, 25, 22, 2],
     "tfc": [
      "568e9f", "43c1c9", "97d170", "97d170", "97d170", "97d170", "d82393", "ec6326", "667e80", "4aabcf", "35644d",
      "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "fluid_springs": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "fab06c0b": {
-    "n": [1, 2, 6, 0, 0, 0, 49, 13, 13, 181, 2],
+   "04a6baab": {
+    "n": [1, 2, 6, 0, 0, 0, 49, 18, 13, 181, 2],
     "tfc": ["568e9f", "7b8472", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "667e80", "27d95c", "60a52e", "57e51f"],
     "foreign": {
+     "underground_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ],
      "vegetal_decoration": ["gtceu:rubber_tree", "gtceu:rubber_tree_swamp"]
     }
    },
-   "38bcf313": {
-    "n": [1, 2, 14, 0, 0, 0, 49, 2, 13, 7, 180, 2],
+   "0331049c": {
+    "n": [1, 2, 14, 0, 0, 0, 49, 2, 18, 7, 180, 2],
     "tfc": [
      "568e9f", "7b8472", "bd6c6e", "97d170", "97d170", "97d170", "d82393", "adef62", "667e80", "4be5db", "b5023f",
      "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "fluid_springs": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "9ab6b3d7": {
-    "n": [1, 1, 6, 0, 0, 0, 49, 13, 14, 180, 2],
+   "1b82d97c": {
+    "n": [1, 1, 6, 0, 0, 0, 49, 18, 14, 180, 2],
     "tfc": ["568e9f", "43c1c9", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "667e80", "7db97b", "b5023f", "57e51f"],
-    "foreign": {}
+    "foreign": {
+     "underground_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "b4d31360": {
-    "n": [1, 1, 6, 0, 0, 0, 49, 13, 8, 182, 2],
+   "7d35443e": {
+    "n": [1, 1, 6, 0, 0, 0, 49, 18, 8, 182, 2],
     "tfc": ["568e9f", "43c1c9", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "667e80", "85e442", "b5023f", "57e51f"],
     "foreign": {
+     "underground_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ],
      "vegetal_decoration": ["gtceu:rubber_tree", "gtceu:rubber_tree_swamp"]
     }
    },
-   "e40dfce6": {
-    "n": [1, 1, 0, 0, 0, 0, 49, 13, 1, 22, 2],
+   "664c3789": {
+    "n": [1, 1, 0, 0, 0, 0, 49, 18, 1, 22, 2],
     "tfc": ["568e9f", "43c1c9", "97d170", "97d170", "97d170", "97d170", "d82393", "667e80", "5858b3", "35644d", "57e51f"],
-    "foreign": {}
+    "foreign": {
+     "underground_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "b4858bfd": {
-    "n": [1, 1, 0, 0, 0, 0, 49, 13, 6, 22, 2],
+   "eed6224c": {
+    "n": [1, 1, 0, 0, 0, 0, 49, 18, 6, 22, 2],
     "tfc": ["568e9f", "43c1c9", "97d170", "97d170", "97d170", "97d170", "d82393", "667e80", "083156", "35644d", "57e51f"],
-    "foreign": {}
+    "foreign": {
+     "underground_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "5802afce": {
-    "n": [1, 1, 0, 0, 0, 0, 49, 13, 4, 22, 2],
+   "4a67d9ca": {
+    "n": [1, 1, 0, 0, 0, 0, 49, 18, 4, 22, 2],
     "tfc": ["568e9f", "43c1c9", "97d170", "97d170", "97d170", "97d170", "d82393", "667e80", "cf6c67", "35644d", "57e51f"],
-    "foreign": {}
+    "foreign": {
+     "underground_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "d9187aff": {
-    "n": [1, 1, 0, 0, 0, 0, 49, 13, 2, 0, 2],
+   "91f7c3f4": {
+    "n": [1, 1, 0, 0, 0, 0, 49, 18, 2, 0, 2],
     "tfc": ["568e9f", "43c1c9", "97d170", "97d170", "97d170", "97d170", "d82393", "667e80", "0c0ce1", "97d170", "57e51f"],
-    "foreign": {}
+    "foreign": {
+     "underground_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "9c6fca49": {
-    "n": [1, 1, 14, 0, 0, 0, 49, 2, 11, 13, 7, 202, 2],
+   "d743cf31": {
+    "n": [1, 1, 14, 0, 0, 0, 49, 2, 11, 18, 7, 202, 2],
     "tfc": [
      "568e9f", "43c1c9", "bd6c6e", "97d170", "97d170", "97d170", "d82393", "adef62", "ec6326", "667e80", "4be5db",
      "27d9ab", "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "vegetal_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "aa00dfa9": {
-    "n": [1, 1, 6, 0, 0, 0, 49, 11, 13, 34, 201, 2],
+   "959aeffe": {
+    "n": [1, 1, 6, 0, 0, 0, 49, 11, 18, 34, 201, 2],
     "tfc": [
      "568e9f", "43c1c9", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "ec6326", "667e80", "904762", "6c7154",
      "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "fluid_springs": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "5bac1dba": {
-    "n": [1, 2, 6, 0, 0, 0, 49, 1, 11, 13, 8, 179, 2],
+   "a8d0e2a2": {
+    "n": [1, 2, 6, 0, 0, 0, 49, 1, 11, 18, 8, 179, 2],
     "tfc": [
      "568e9f", "7b8472", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "73a87d", "ec6326", "667e80", "647f59",
      "60a52e", "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "vegetal_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "98f09c29": {
-    "n": [1, 1, 0, 0, 0, 0, 49, 11, 13, 3, 23, 2],
+   "8dc6f5cf": {
+    "n": [1, 1, 0, 0, 0, 0, 49, 11, 18, 3, 23, 2],
     "tfc": [
      "568e9f", "43c1c9", "97d170", "97d170", "97d170", "97d170", "d82393", "ec6326", "667e80", "250e05", "f7e989",
      "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "fluid_springs": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "7e531ac3": {
-    "n": [1, 2, 14, 0, 0, 0, 49, 1, 2, 13, 7, 180, 2],
+   "2ff1518e": {
+    "n": [1, 2, 14, 0, 0, 0, 49, 1, 2, 18, 7, 180, 2],
     "tfc": [
      "568e9f", "7b8472", "bd6c6e", "97d170", "97d170", "97d170", "d82393", "73a87d", "adef62", "667e80", "4be5db",
      "b5023f", "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "vegetal_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "2b346b75": {
-    "n": [1, 2, 6, 0, 0, 0, 49, 1, 13, 13, 179, 2],
+   "f01b2cc1": {
+    "n": [1, 2, 6, 0, 0, 0, 49, 1, 18, 13, 179, 2],
     "tfc": [
      "568e9f", "7b8472", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "73a87d", "667e80", "f946c8", "60a52e",
      "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "fluid_springs": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "1ae20088": {
-    "n": [1, 2, 6, 0, 0, 0, 49, 13, 14, 179, 2],
+   "b063a305": {
+    "n": [1, 2, 6, 0, 0, 0, 49, 18, 14, 179, 2],
     "tfc": ["568e9f", "7b8472", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "667e80", "7db97b", "60a52e", "57e51f"],
-    "foreign": {}
+    "foreign": {
+     "underground_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "918c8d52": {
-    "n": [1, 1, 0, 0, 0, 0, 49, 13, 1, 23, 2],
+   "7e5d0b2a": {
+    "n": [1, 1, 0, 0, 0, 0, 49, 18, 1, 23, 2],
     "tfc": ["568e9f", "43c1c9", "97d170", "97d170", "97d170", "97d170", "d82393", "667e80", "5858b3", "f7e989", "57e51f"],
-    "foreign": {}
+    "foreign": {
+     "underground_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "76b40151": {
-    "n": [1, 2, 6, 0, 0, 0, 49, 1, 13, 13, 179, 2],
+   "ae00cd82": {
+    "n": [1, 2, 6, 0, 0, 0, 49, 1, 18, 13, 179, 2],
     "tfc": [
      "568e9f", "7b8472", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "73a87d", "667e80", "27d95c", "60a52e",
      "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "fluid_springs": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "cfb91f11": {
-    "n": [1, 1, 6, 0, 0, 0, 49, 13, 7, 205, 2],
+   "6b841610": {
+    "n": [1, 1, 6, 0, 0, 0, 49, 18, 7, 205, 2],
     "tfc": ["568e9f", "43c1c9", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "667e80", "e9fb0e", "653b32", "57e51f"],
     "foreign": {
+     "underground_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ],
      "vegetal_decoration": ["gtceu:rubber_tree", "gtceu:rubber_tree_swamp"]
     }
    },
-   "96d0e2a6": {
-    "n": [1, 1, 6, 0, 0, 0, 49, 13, 7, 204, 2],
+   "a8ac5384": {
+    "n": [1, 1, 6, 0, 0, 0, 49, 18, 7, 204, 2],
     "tfc": ["568e9f", "43c1c9", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "667e80", "4be5db", "fb2b09", "57e51f"],
-    "foreign": {}
+    "foreign": {
+     "underground_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "e638fa7b": {
-    "n": [1, 2, 6, 0, 0, 0, 49, 1, 13, 6, 179, 2],
+   "1d7084d0": {
+    "n": [1, 2, 6, 0, 0, 0, 49, 1, 18, 6, 179, 2],
     "tfc": [
      "568e9f", "7b8472", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "73a87d", "667e80", "09a734", "60a52e",
      "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "fluid_springs": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "3a686f36": {
-    "n": [1, 2, 6, 0, 0, 0, 49, 11, 13, 12, 179, 2],
+   "296a5863": {
+    "n": [1, 2, 6, 0, 0, 0, 49, 11, 18, 12, 179, 2],
     "tfc": [
      "568e9f", "7b8472", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "ec6326", "667e80", "1b1f2b", "60a52e",
      "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "fluid_springs": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "fed1b157": {
-    "n": [1, 1, 0, 0, 0, 0, 49, 13, 1, 12, 2],
+   "92e5a49e": {
+    "n": [1, 1, 0, 0, 0, 0, 49, 18, 1, 12, 2],
     "tfc": ["568e9f", "43c1c9", "97d170", "97d170", "97d170", "97d170", "d82393", "667e80", "5858b3", "63da1d", "57e51f"],
     "foreign": {
+     "underground_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ],
      "vegetal_decoration": ["gtceu:rubber_tree", "gtceu:rubber_tree_swamp"]
     }
    },
-   "e108d08a": {
-    "n": [1, 1, 6, 0, 0, 0, 49, 11, 13, 7, 202, 2],
+   "b214c602": {
+    "n": [1, 1, 6, 0, 0, 0, 49, 11, 18, 7, 202, 2],
     "tfc": [
      "568e9f", "43c1c9", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "ec6326", "667e80", "4be5db", "62bb0d",
      "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "fluid_springs": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "f3580d26": {
-    "n": [1, 1, 14, 0, 0, 0, 49, 2, 11, 13, 7, 180, 2],
+   "c79dbcac": {
+    "n": [1, 1, 14, 0, 0, 0, 49, 2, 11, 18, 7, 180, 2],
     "tfc": [
      "568e9f", "43c1c9", "bd6c6e", "97d170", "97d170", "97d170", "d82393", "adef62", "ec6326", "667e80", "4be5db",
      "b5023f", "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "vegetal_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "3cd4f2f7": {
-    "n": [1, 1, 6, 0, 0, 0, 49, 1, 11, 13, 13, 201, 2],
+   "ca12347f": {
+    "n": [1, 1, 6, 0, 0, 0, 49, 1, 11, 18, 13, 201, 2],
     "tfc": [
      "568e9f", "43c1c9", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "73a87d", "ec6326", "667e80", "f946c8",
      "6c7154", "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "vegetal_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "f5b0e08e": {
-    "n": [1, 2, 6, 0, 0, 0, 49, 11, 13, 32, 179, 2],
+   "7c71502e": {
+    "n": [1, 2, 6, 0, 0, 0, 49, 11, 18, 32, 179, 2],
     "tfc": [
      "568e9f", "7b8472", "c3a7ea", "97d170", "97d170", "97d170", "d82393", "ec6326", "667e80", "8ee7f0", "60a52e",
      "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "fluid_springs": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    },
-   "a198d015": {
-    "n": [1, 1, 14, 0, 0, 0, 49, 2, 11, 13, 31, 202, 2],
+   "da322376": {
+    "n": [1, 1, 14, 0, 0, 0, 49, 2, 11, 18, 31, 202, 2],
     "tfc": [
      "568e9f", "43c1c9", "bd6c6e", "97d170", "97d170", "97d170", "d82393", "adef62", "ec6326", "667e80", "570a34",
      "27d9ab", "57e51f"
     ],
-    "foreign": {}
+    "foreign": {
+     "vegetal_decoration": [
+      "pack:caves/glow_lichen", "pack:caves/mossy_floor", "pack:caves/mossy_ceiling", "pack:caves/karst_calcite",
+      "pack:caves/ice_cave"
+     ]
+    }
    }
   },
   "carverSigs": {
-   "7b839f16": ["AIR:tfc:cave", "AIR:tfc:deep_cave", "AIR:tfc:canyon"]
+   "925c5d12": ["AIR:tfc:cave", "AIR:tfc:deep_cave", "AIR:tfc:canyon", "AIR:pack:karst_cave"]
   },
   "spawnSigs": {
-   "c1ee1644": {
+   "3d4b121d": {
     "n": {"CREATURE": 44, "FOWLPLAY_AMBIENT_BIRDS": 7, "FOWLPLAY_BIRDS": 2, "MONSTER": 5},
     "tfc": {"CREATURE": "b48382", "FOWLPLAY_AMBIENT_BIRDS": "97d170", "FOWLPLAY_BIRDS": "97d170", "MONSTER": "97d170"},
     "foreign": {
@@ -1388,13 +2016,13 @@
       "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
      ],
      "FOWLPLAY_AMBIENT_BIRDS": [
-      "fowlplay:robin*1-2:8", "fowlplay:cardinal*1-1:5", "fowlplay:raven*1-2:2", "fowlplay:crow*1-6:3",
-      "fowlplay:sparrow*2-6:20", "fowlplay:chickadee*1-1:4", "fowlplay:blue_jay*1-1:2"
+      "fowlplay:robin*1-2:8", "fowlplay:blue_jay*1-1:2", "fowlplay:raven*1-2:2", "fowlplay:chickadee*1-1:4",
+      "fowlplay:sparrow*2-6:20", "fowlplay:cardinal*1-1:5", "fowlplay:crow*1-6:3"
      ],
-     "FOWLPLAY_BIRDS": ["fowlplay:hawk*1-1:1", "fowlplay:pigeon*1-5:3"]
+     "FOWLPLAY_BIRDS": ["fowlplay:pigeon*1-5:3", "fowlplay:hawk*1-1:1"]
     }
    },
-   "b1304e7b": {
+   "cd124930": {
     "n": {
      "CREATURE": 4,
      "FOWLPLAY_AMBIENT_BIRDS": 7,
@@ -1419,10 +2047,10 @@
       "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
      ],
      "FOWLPLAY_AMBIENT_BIRDS": [
-      "fowlplay:robin*1-2:8", "fowlplay:cardinal*1-1:5", "fowlplay:raven*1-2:2", "fowlplay:crow*1-6:3",
-      "fowlplay:sparrow*2-6:20", "fowlplay:chickadee*1-1:4", "fowlplay:blue_jay*1-1:2"
+      "fowlplay:robin*1-2:8", "fowlplay:blue_jay*1-1:2", "fowlplay:raven*1-2:2", "fowlplay:chickadee*1-1:4",
+      "fowlplay:sparrow*2-6:20", "fowlplay:cardinal*1-1:5", "fowlplay:crow*1-6:3"
      ],
-     "FOWLPLAY_BIRDS": ["fowlplay:hawk*1-1:1", "fowlplay:gull*3-8:5", "fowlplay:pigeon*1-5:3"]
+     "FOWLPLAY_BIRDS": ["fowlplay:pigeon*1-5:3", "fowlplay:gull*3-8:5", "fowlplay:hawk*1-1:1"]
     }
    },
    "f3cfc08c": {
@@ -1441,7 +2069,7 @@
      ]
     }
    },
-   "f92800d3": {
+   "fe376486": {
     "n": {"FOWLPLAY_AMBIENT_BIRDS": 7, "FOWLPLAY_BIRDS": 2, "MONSTER": 5},
     "tfc": {"FOWLPLAY_AMBIENT_BIRDS": "97d170", "FOWLPLAY_BIRDS": "97d170", "MONSTER": "97d170"},
     "foreign": {
@@ -1450,13 +2078,13 @@
       "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
      ],
      "FOWLPLAY_AMBIENT_BIRDS": [
-      "fowlplay:robin*1-2:8", "fowlplay:cardinal*1-1:5", "fowlplay:raven*1-2:2", "fowlplay:crow*1-6:3",
-      "fowlplay:sparrow*2-6:20", "fowlplay:chickadee*1-1:4", "fowlplay:blue_jay*1-1:2"
+      "fowlplay:robin*1-2:8", "fowlplay:blue_jay*1-1:2", "fowlplay:raven*1-2:2", "fowlplay:chickadee*1-1:4",
+      "fowlplay:sparrow*2-6:20", "fowlplay:cardinal*1-1:5", "fowlplay:crow*1-6:3"
      ],
-     "FOWLPLAY_BIRDS": ["fowlplay:hawk*1-1:1", "fowlplay:pigeon*1-5:3"]
+     "FOWLPLAY_BIRDS": ["fowlplay:pigeon*1-5:3", "fowlplay:hawk*1-1:1"]
     }
    },
-   "6eb4ea98": {
+   "ad6710eb": {
     "n": {
      "CREATURE": 44,
      "FOWLPLAY_AMBIENT_BIRDS": 7,
@@ -1481,13 +2109,13 @@
       "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
      ],
      "FOWLPLAY_AMBIENT_BIRDS": [
-      "fowlplay:robin*1-2:8", "fowlplay:cardinal*1-1:5", "fowlplay:raven*1-2:2", "fowlplay:crow*1-6:3",
-      "fowlplay:sparrow*2-6:20", "fowlplay:chickadee*1-1:4", "fowlplay:blue_jay*1-1:2"
+      "fowlplay:robin*1-2:8", "fowlplay:blue_jay*1-1:2", "fowlplay:raven*1-2:2", "fowlplay:chickadee*1-1:4",
+      "fowlplay:sparrow*2-6:20", "fowlplay:cardinal*1-1:5", "fowlplay:crow*1-6:3"
      ],
-     "FOWLPLAY_BIRDS": ["fowlplay:hawk*1-1:1", "fowlplay:gull*3-8:5", "fowlplay:pigeon*1-5:3"]
+     "FOWLPLAY_BIRDS": ["fowlplay:pigeon*1-5:3", "fowlplay:gull*3-8:5", "fowlplay:hawk*1-1:1"]
     }
    },
-   "211083fa": {
+   "4fd4e8c3": {
     "n": {
      "CREATURE": 44,
      "FOWLPLAY_AMBIENT_BIRDS": 7,
@@ -1512,10 +2140,10 @@
       "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
      ],
      "FOWLPLAY_AMBIENT_BIRDS": [
-      "fowlplay:robin*1-2:8", "fowlplay:cardinal*1-1:5", "fowlplay:raven*1-2:2", "fowlplay:crow*1-6:3",
-      "fowlplay:sparrow*2-6:20", "fowlplay:chickadee*1-1:4", "fowlplay:blue_jay*1-1:2"
+      "fowlplay:robin*1-2:8", "fowlplay:blue_jay*1-1:2", "fowlplay:raven*1-2:2", "fowlplay:chickadee*1-1:4",
+      "fowlplay:sparrow*2-6:20", "fowlplay:cardinal*1-1:5", "fowlplay:crow*1-6:3"
      ],
-     "FOWLPLAY_BIRDS": ["fowlplay:hawk*1-1:1", "fowlplay:pigeon*1-5:3"]
+     "FOWLPLAY_BIRDS": ["fowlplay:pigeon*1-5:3", "fowlplay:hawk*1-1:1"]
     }
    },
    "d95d8400": {
@@ -1580,7 +2208,7 @@
      ]
     }
    },
-   "fb2ab43f": {
+   "85ebc894": {
     "n": {"CREATURE": 44, "FOWLPLAY_AMBIENT_BIRDS": 7, "FOWLPLAY_BIRDS": 3, "MONSTER": 5},
     "tfc": {"CREATURE": "b48382", "FOWLPLAY_AMBIENT_BIRDS": "97d170", "FOWLPLAY_BIRDS": "97d170", "MONSTER": "97d170"},
     "foreign": {
@@ -1589,13 +2217,13 @@
       "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
      ],
      "FOWLPLAY_AMBIENT_BIRDS": [
-      "fowlplay:robin*1-2:8", "fowlplay:cardinal*1-1:5", "fowlplay:raven*1-2:2", "fowlplay:crow*1-6:3",
-      "fowlplay:sparrow*2-6:20", "fowlplay:chickadee*1-1:4", "fowlplay:blue_jay*1-1:2"
+      "fowlplay:robin*1-2:8", "fowlplay:blue_jay*1-1:2", "fowlplay:raven*1-2:2", "fowlplay:chickadee*1-1:4",
+      "fowlplay:sparrow*2-6:20", "fowlplay:cardinal*1-1:5", "fowlplay:crow*1-6:3"
      ],
-     "FOWLPLAY_BIRDS": ["fowlplay:hawk*1-1:1", "fowlplay:pigeon*1-5:3", "fowlplay:goose*1-4:4"]
+     "FOWLPLAY_BIRDS": ["fowlplay:pigeon*1-5:3", "fowlplay:goose*1-4:4", "fowlplay:hawk*1-1:1"]
     }
    },
-   "d640b5c6": {
+   "957562b7": {
     "n": {
      "CREATURE": 44,
      "FOWLPLAY_AMBIENT_BIRDS": 7,
@@ -1618,13 +2246,13 @@
       "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
      ],
      "FOWLPLAY_AMBIENT_BIRDS": [
-      "fowlplay:robin*1-2:8", "fowlplay:cardinal*1-1:5", "fowlplay:raven*1-2:2", "fowlplay:crow*1-6:3",
-      "fowlplay:sparrow*2-6:20", "fowlplay:chickadee*1-1:4", "fowlplay:blue_jay*1-1:2"
+      "fowlplay:robin*1-2:8", "fowlplay:blue_jay*1-1:2", "fowlplay:raven*1-2:2", "fowlplay:chickadee*1-1:4",
+      "fowlplay:sparrow*2-6:20", "fowlplay:cardinal*1-1:5", "fowlplay:crow*1-6:3"
      ],
-     "FOWLPLAY_BIRDS": ["fowlplay:hawk*1-1:1", "fowlplay:pigeon*1-5:3", "fowlplay:goose*1-4:4"]
+     "FOWLPLAY_BIRDS": ["fowlplay:pigeon*1-5:3", "fowlplay:goose*1-4:4", "fowlplay:hawk*1-1:1"]
     }
    },
-   "bb6f507a": {
+   "496c0818": {
     "n": {"CREATURE": 44, "FOWLPLAY_AMBIENT_BIRDS": 7, "FOWLPLAY_BIRDS": 2, "MONSTER": 5, "WATER_AMBIENT": 17},
     "tfc": {
      "CREATURE": "b48382",
@@ -1639,13 +2267,13 @@
       "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
      ],
      "FOWLPLAY_AMBIENT_BIRDS": [
-      "fowlplay:robin*1-2:8", "fowlplay:cardinal*1-1:5", "fowlplay:raven*1-2:2", "fowlplay:crow*1-6:3",
-      "fowlplay:sparrow*2-6:20", "fowlplay:chickadee*1-1:4", "fowlplay:blue_jay*1-1:2"
+      "fowlplay:robin*1-2:8", "fowlplay:blue_jay*1-1:2", "fowlplay:raven*1-2:2", "fowlplay:chickadee*1-1:4",
+      "fowlplay:sparrow*2-6:20", "fowlplay:cardinal*1-1:5", "fowlplay:crow*1-6:3"
      ],
-     "FOWLPLAY_BIRDS": ["fowlplay:hawk*1-1:1", "fowlplay:pigeon*1-5:3"]
+     "FOWLPLAY_BIRDS": ["fowlplay:pigeon*1-5:3", "fowlplay:hawk*1-1:1"]
     }
    },
-   "cf3ceb86": {
+   "dbc63ce9": {
     "n": {"CREATURE": 44, "FOWLPLAY_AMBIENT_BIRDS": 7, "FOWLPLAY_BIRDS": 3, "MONSTER": 5, "WATER_AMBIENT": 17},
     "tfc": {
      "CREATURE": "b48382",
@@ -1660,13 +2288,13 @@
       "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
      ],
      "FOWLPLAY_AMBIENT_BIRDS": [
-      "fowlplay:robin*1-2:8", "fowlplay:cardinal*1-1:5", "fowlplay:raven*1-2:2", "fowlplay:crow*1-6:3",
-      "fowlplay:sparrow*2-6:20", "fowlplay:chickadee*1-1:4", "fowlplay:blue_jay*1-1:2"
+      "fowlplay:robin*1-2:8", "fowlplay:blue_jay*1-1:2", "fowlplay:raven*1-2:2", "fowlplay:chickadee*1-1:4",
+      "fowlplay:sparrow*2-6:20", "fowlplay:cardinal*1-1:5", "fowlplay:crow*1-6:3"
      ],
-     "FOWLPLAY_BIRDS": ["fowlplay:hawk*1-1:1", "fowlplay:pigeon*1-5:3", "fowlplay:goose*1-4:4"]
+     "FOWLPLAY_BIRDS": ["fowlplay:pigeon*1-5:3", "fowlplay:goose*1-4:4", "fowlplay:hawk*1-1:1"]
     }
    },
-   "6c0ebf8f": {
+   "288031b3": {
     "n": {"FOWLPLAY_AMBIENT_BIRDS": 7, "FOWLPLAY_BIRDS": 4, "MONSTER": 5},
     "tfc": {"FOWLPLAY_AMBIENT_BIRDS": "97d170", "FOWLPLAY_BIRDS": "97d170", "MONSTER": "97d170"},
     "foreign": {
@@ -1675,13 +2303,13 @@
       "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
      ],
      "FOWLPLAY_AMBIENT_BIRDS": [
-      "fowlplay:robin*1-2:8", "fowlplay:cardinal*1-1:5", "fowlplay:raven*1-2:2", "fowlplay:crow*1-6:3",
-      "fowlplay:sparrow*2-6:20", "fowlplay:chickadee*1-1:4", "fowlplay:blue_jay*1-1:2"
+      "fowlplay:robin*1-2:8", "fowlplay:blue_jay*1-1:2", "fowlplay:raven*1-2:2", "fowlplay:chickadee*1-1:4",
+      "fowlplay:sparrow*2-6:20", "fowlplay:cardinal*1-1:5", "fowlplay:crow*1-6:3"
      ],
-     "FOWLPLAY_BIRDS": ["fowlplay:hawk*1-1:1", "fowlplay:gull*3-8:5", "fowlplay:pigeon*1-5:3", "fowlplay:goose*1-4:4"]
+     "FOWLPLAY_BIRDS": ["fowlplay:pigeon*1-5:3", "fowlplay:gull*3-8:5", "fowlplay:goose*1-4:4", "fowlplay:hawk*1-1:1"]
     }
    },
-   "3974bd7e": {
+   "40622a8c": {
     "n": {
      "CREATURE": 44,
      "FOWLPLAY_AMBIENT_BIRDS": 7,
@@ -1706,13 +2334,13 @@
       "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
      ],
      "FOWLPLAY_AMBIENT_BIRDS": [
-      "fowlplay:robin*1-2:8", "fowlplay:cardinal*1-1:5", "fowlplay:raven*1-2:2", "fowlplay:crow*1-6:3",
-      "fowlplay:sparrow*2-6:20", "fowlplay:chickadee*1-1:4", "fowlplay:blue_jay*1-1:2"
+      "fowlplay:robin*1-2:8", "fowlplay:blue_jay*1-1:2", "fowlplay:raven*1-2:2", "fowlplay:chickadee*1-1:4",
+      "fowlplay:sparrow*2-6:20", "fowlplay:cardinal*1-1:5", "fowlplay:crow*1-6:3"
      ],
-     "FOWLPLAY_BIRDS": ["fowlplay:hawk*1-1:1", "fowlplay:pigeon*1-5:3", "fowlplay:goose*1-4:4"]
+     "FOWLPLAY_BIRDS": ["fowlplay:pigeon*1-5:3", "fowlplay:goose*1-4:4", "fowlplay:hawk*1-1:1"]
     }
    },
-   "e09c0d9e": {
+   "ba54da7b": {
     "n": {"CREATURE": 44, "FOWLPLAY_AMBIENT_BIRDS": 7, "FOWLPLAY_BIRDS": 3, "MONSTER": 5, "WATER_AMBIENT": 16},
     "tfc": {
      "CREATURE": "b48382",
@@ -1727,13 +2355,13 @@
       "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
      ],
      "FOWLPLAY_AMBIENT_BIRDS": [
-      "fowlplay:robin*1-2:8", "fowlplay:cardinal*1-1:5", "fowlplay:raven*1-2:2", "fowlplay:crow*1-6:3",
-      "fowlplay:sparrow*2-6:20", "fowlplay:chickadee*1-1:4", "fowlplay:blue_jay*1-1:2"
+      "fowlplay:robin*1-2:8", "fowlplay:blue_jay*1-1:2", "fowlplay:raven*1-2:2", "fowlplay:chickadee*1-1:4",
+      "fowlplay:sparrow*2-6:20", "fowlplay:cardinal*1-1:5", "fowlplay:crow*1-6:3"
      ],
-     "FOWLPLAY_BIRDS": ["fowlplay:hawk*1-1:1", "fowlplay:pigeon*1-5:3", "fowlplay:goose*1-4:4"]
+     "FOWLPLAY_BIRDS": ["fowlplay:pigeon*1-5:3", "fowlplay:goose*1-4:4", "fowlplay:hawk*1-1:1"]
     }
    },
-   "f2fe71f7": {
+   "ea529262": {
     "n": {
      "CREATURE": 44,
      "FOWLPLAY_AMBIENT_BIRDS": 7,
@@ -1758,10 +2386,10 @@
       "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
      ],
      "FOWLPLAY_AMBIENT_BIRDS": [
-      "fowlplay:robin*1-2:8", "fowlplay:cardinal*1-1:5", "fowlplay:raven*1-2:2", "fowlplay:crow*1-6:3",
-      "fowlplay:sparrow*2-6:20", "fowlplay:chickadee*1-1:4", "fowlplay:blue_jay*1-1:2"
+      "fowlplay:robin*1-2:8", "fowlplay:blue_jay*1-1:2", "fowlplay:raven*1-2:2", "fowlplay:chickadee*1-1:4",
+      "fowlplay:sparrow*2-6:20", "fowlplay:cardinal*1-1:5", "fowlplay:crow*1-6:3"
      ],
-     "FOWLPLAY_BIRDS": ["fowlplay:hawk*1-1:1", "fowlplay:gull*3-8:5", "fowlplay:pigeon*1-5:3", "fowlplay:goose*1-4:4"]
+     "FOWLPLAY_BIRDS": ["fowlplay:pigeon*1-5:3", "fowlplay:gull*3-8:5", "fowlplay:goose*1-4:4", "fowlplay:hawk*1-1:1"]
     }
    },
    "202de37a": {
@@ -1774,7 +2402,7 @@
      ]
     }
    },
-   "99b025eb": {
+   "89c7c3a1": {
     "n": {
      "CREATURE": 4,
      "FOWLPLAY_AMBIENT_BIRDS": 7,
@@ -1799,13 +2427,13 @@
       "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
      ],
      "FOWLPLAY_AMBIENT_BIRDS": [
-      "fowlplay:robin*1-2:8", "fowlplay:cardinal*1-1:5", "fowlplay:raven*1-2:2", "fowlplay:crow*1-6:3",
-      "fowlplay:sparrow*2-6:20", "fowlplay:chickadee*1-1:4", "fowlplay:blue_jay*1-1:2"
+      "fowlplay:robin*1-2:8", "fowlplay:blue_jay*1-1:2", "fowlplay:raven*1-2:2", "fowlplay:chickadee*1-1:4",
+      "fowlplay:sparrow*2-6:20", "fowlplay:cardinal*1-1:5", "fowlplay:crow*1-6:3"
      ],
-     "FOWLPLAY_BIRDS": ["fowlplay:hawk*1-1:1", "fowlplay:gull*3-8:5", "fowlplay:pigeon*1-5:3", "fowlplay:goose*1-4:4"]
+     "FOWLPLAY_BIRDS": ["fowlplay:pigeon*1-5:3", "fowlplay:gull*3-8:5", "fowlplay:goose*1-4:4", "fowlplay:hawk*1-1:1"]
     }
    },
-   "679a8ec4": {
+   "c13929ba": {
     "n": {
      "CREATURE": 44,
      "FOWLPLAY_AMBIENT_BIRDS": 7,
@@ -1830,10 +2458,10 @@
       "minecraft:creeper*4-4:100", "minecraft:slime*4-4:100"
      ],
      "FOWLPLAY_AMBIENT_BIRDS": [
-      "fowlplay:robin*1-2:8", "fowlplay:cardinal*1-1:5", "fowlplay:raven*1-2:2", "fowlplay:crow*1-6:3",
-      "fowlplay:sparrow*2-6:20", "fowlplay:chickadee*1-1:4", "fowlplay:blue_jay*1-1:2"
+      "fowlplay:robin*1-2:8", "fowlplay:blue_jay*1-1:2", "fowlplay:raven*1-2:2", "fowlplay:chickadee*1-1:4",
+      "fowlplay:sparrow*2-6:20", "fowlplay:cardinal*1-1:5", "fowlplay:crow*1-6:3"
      ],
-     "FOWLPLAY_BIRDS": ["fowlplay:hawk*1-1:1", "fowlplay:gull*3-8:5", "fowlplay:pigeon*1-5:3"]
+     "FOWLPLAY_BIRDS": ["fowlplay:pigeon*1-5:3", "fowlplay:gull*3-8:5", "fowlplay:hawk*1-1:1"]
     }
    }
   },
@@ -1912,6 +2540,10 @@
      "type": "neoforge:add_features"
     },
     "hits": 0
+   },
+   "pack:cave_carvers": {
+    "json": {"biomes": "#pack:overworld", "carvers": "pack:karst_cave", "step": "air", "type": "neoforge:add_carvers"},
+    "hits": 125
    }
   },
   "structures": {
@@ -2409,6 +3041,36 @@
     "total": 16,
     "tfc": ["inverted_patterned_ground", "lowlands", "patterned_ground", "salt_marsh", "tidal_flats"]
    },
+   "pack:overworld": {
+    "total": 125,
+    "tfc": [
+     "active_shield_volcano", "ancient_shield_volcano", "badlands", "burren_badlands", "burren_badlands_tall",
+     "burren_plains", "burren_plateau", "burren_roche_moutonee", "buttes", "canyons", "cenote_canyons",
+     "cenote_highlands", "cenote_hills", "cenote_plains", "cenote_plateau", "cenote_rolling_hills", "coastal_dunes",
+     "collisional_mountains", "deep_ocean", "deep_ocean_atolls", "deep_ocean_trench", "doline_canyons",
+     "doline_highlands", "doline_hills", "doline_plains", "doline_plateau", "doline_rolling_hills",
+     "dormant_shield_volcano", "drumlins", "dune_sea", "embayments", "extinct_shield_volcano",
+     "extreme_doline_mountains", "extreme_doline_plateau", "glacially_carved_mountains",
+     "glacially_carved_oceanic_mountains", "glacially_carved_volcanic_mountains",
+     "glacially_carved_volcanic_oceanic_mountains", "glaciated_mountains", "glaciated_oceanic_mountains",
+     "glaciated_shield_volcano", "glaciated_volcanic_mountains", "glaciated_volcanic_oceanic_mountains",
+     "grassy_dunes", "guano_island", "highlands", "hills", "hoodoos", "ice_sheet", "ice_sheet_edge",
+     "ice_sheet_mountains", "ice_sheet_mountains_edge", "ice_sheet_oceanic", "ice_sheet_oceanic_mountains",
+     "ice_sheet_oceanic_mountains_edge", "ice_sheet_shield_volcano", "ice_sheet_shore", "ice_sheet_tuyas",
+     "ice_sheet_tuyas_edge", "ice_sheet_volcanic_mountains", "ice_sheet_volcanic_oceanic_mountains",
+     "inverted_patterned_ground", "knob_and_kettle", "lake", "low_canyons", "lowlands", "meltwater_lake", "mesas",
+     "mountain_lake", "mountains", "mud_flats", "ocean", "ocean_atolls", "ocean_reef", "ocean_ridge",
+     "oceanic_mountain_lake", "oceanic_mountains", "oceanic_volcanic_arc", "old_mountain_lake", "old_mountains",
+     "old_shield_volcano_shore", "patterned_ground", "plains", "plateau", "plateau_lake", "plateau_wide", "rift_lake",
+     "rift_valley", "river", "river_valley", "rocky_plateau", "rocky_shores", "rolling_hills", "salt_flats",
+     "salt_marsh", "sea_stacks", "setback_cliffs", "shield_volcano_shore", "shilin_canyons", "shilin_highlands",
+     "shilin_hills", "shilin_plains", "shilin_plateau", "shore", "stair_step_canyons", "stone_circles",
+     "subglacial_lake", "sunken_shield_volcano", "terrace_lower", "terrace_upper", "tidal_flats", "tower_karst_bay",
+     "tower_karst_canyons", "tower_karst_highlands", "tower_karst_hills", "tower_karst_lake", "tower_karst_plains",
+     "tuyas", "volcanic_island", "volcanic_mountain_islands", "volcanic_mountain_lake", "volcanic_mountains",
+     "volcanic_oceanic_mountain_lake", "volcanic_oceanic_mountains", "whorled_canyons"
+    ]
+   },
    "tfc:has_atolls": {
     "total": 2,
     "tfc": ["deep_ocean_atolls", "ocean_atolls"]
@@ -2655,16 +3317,17 @@
     "minecraft": [64, "669357cf"]
    },
    "minecraft:worldgen/configured_carver": {
-    "n": 7,
-    "hash": "6bc33c6111",
+    "n": 8,
+    "hash": "1ecd44edac",
     "tfc": {
-     "(root)": [3, "7707c6"]
+     "(root)": [3, "e11ab1"]
     },
-    "minecraft": [4, "f9203f9f"]
+    "minecraft": [4, "f9203f9f"],
+    "entries": {"pack:karst_cave": "9a3141"}
    },
    "minecraft:worldgen/configured_feature": {
-    "n": 893,
-    "hash": "0d8d3ef2ca",
+    "n": 902,
+    "hash": "c61ea9bd7f",
     "tfc": {
      "(root)": [158, "24b4d3"],
      "plant": [379, "cf7eb8"],
@@ -2679,17 +3342,35 @@
      "gtceu:marble_blob": "e1603e",
      "gtceu:raw_oil_sprout": "1ef8ad",
      "gtceu:red_granite_blob": "89a5fa",
-     "gtceu:rubber_tree": "e6bdc1"
+     "gtceu:rubber_tree": "e6bdc1",
+     "pack:caves/cave_vine": "f8826f",
+     "pack:caves/cave_vines": "7c114b",
+     "pack:caves/glow_lichen": "4322cf",
+     "pack:caves/ice_cave": "a77eb5",
+     "pack:caves/karst_calcite": "ad0ced",
+     "pack:caves/moss_carpets": "2acf48",
+     "pack:caves/mossy_ceiling": "c04163",
+     "pack:caves/mossy_floor": "07ae24",
+     "pack:caves/mossy_rock": "7233f2"
     }
    },
    "minecraft:worldgen/density_function": {
-    "n": 42,
-    "hash": "5d9f87e73f",
+    "n": 48,
+    "hash": "947082f2e1",
     "tfc": {
-     "(root)": [5, "dfe0a5"]
+     "(root)": [5, "0a2f69"]
     },
     "minecraft": [35, "4caa1c24"],
-    "entries": {"gtceu:vein_ridged": "bcda90", "gtceu:vein_toggle": "d0b99f"}
+    "entries": {
+     "gtceu:vein_ridged": "bcda90",
+     "gtceu:vein_toggle": "d0b99f",
+     "pack:caves/caverns": "f83ce0",
+     "pack:caves/chambers": "63461d",
+     "pack:caves/entrances": "56dd09",
+     "pack:caves/shafts": "ad8d8e",
+     "pack:caves/style": "8906f1",
+     "pack:caves/styles": "73703c"
+    }
    },
    "minecraft:worldgen/flat_level_generator_preset": {
     "n": 9,
@@ -2702,9 +3383,17 @@
     "minecraft": [2, "8347cd5f"]
    },
    "minecraft:worldgen/noise": {
-    "n": 60,
-    "hash": "353c7db148",
-    "minecraft": [60, "353c7db1"]
+    "n": 66,
+    "hash": "544cf51e4c",
+    "minecraft": [60, "353c7db1"],
+    "entries": {
+     "pack:caves/cavern": "ac7b59",
+     "pack:caves/cheese": "3a48ae",
+     "pack:caves/entrance": "9898b2",
+     "pack:caves/layer": "f48ec5",
+     "pack:caves/shaft": "ac7b59",
+     "pack:caves/style": "9adbd9"
+    }
    },
    "minecraft:worldgen/noise_settings": {
     "n": 7,
@@ -2712,10 +3401,10 @@
     "minecraft": [7, "5d24ddf9"]
    },
    "minecraft:worldgen/placed_feature": {
-    "n": 915,
-    "hash": "ae7da19f69",
+    "n": 923,
+    "hash": "17095bee92",
     "tfc": {
-     "(root)": [187, "462813"],
+     "(root)": [187, "49f10c"],
      "plant": [379, "676eba"],
      "tree": [56, "369b89"],
      "vein": [52, "65696e"]
@@ -2729,7 +3418,15 @@
      "gtceu:raw_oil_sprout": "c476e6",
      "gtceu:red_granite_blob": "90f55e",
      "gtceu:rubber_tree": "745a8a",
-     "gtceu:rubber_tree_swamp": "94fd4d"
+     "gtceu:rubber_tree_swamp": "94fd4d",
+     "pack:caves/cave_vines": "2b8f3b",
+     "pack:caves/glow_lichen": "7d4f4b",
+     "pack:caves/ice_cave": "78ef3a",
+     "pack:caves/karst_calcite": "882b9a",
+     "pack:caves/moss_carpets": "e42ae4",
+     "pack:caves/mossy_ceiling": "a60843",
+     "pack:caves/mossy_floor": "5e7ba8",
+     "pack:caves/mossy_rock": "e33f3f"
     }
    },
    "minecraft:worldgen/processor_list": {
@@ -2762,8 +3459,8 @@
     "entries": {"simulated:airship_ready": "41e46a", "simulated:end_sea": "e4bbfa"}
    },
    "neoforge:biome_modifier": {
-    "n": 10,
-    "hash": "270b146dc6",
+    "n": 11,
+    "hash": "3133fd0f32",
     "entries": {
      "almostunified:worldgen": "1a6956",
      "architectury:impl": "4c436a",
@@ -2774,7 +3471,8 @@
      "gtceu:raw_oil_sprout": "d21d91",
      "gtceu:rubber_tree": "cc647d",
      "gtceu:rubber_tree_swamp": "45c1ef",
-     "gtceu:stone_blob": "c64fc6"
+     "gtceu:stone_blob": "c64fc6",
+     "pack:cave_carvers": "ffec3e"
     }
    },
    "neoforge:structure_modifier": {"n": 0, "hash": "97d170e155"},
@@ -4105,117 +4803,121 @@
      "tfc:embayments": 2112
     },
     "census": {
-     "tfc:rock/raw/marble": 605756,
-     "tfc:rock/raw/limestone": 412427,
-     "tfc:rock/raw/phyllite": 291404,
-     "tfc:rock/raw/claystone": 271652,
-     "tfc:rock/raw/gneiss": 237334,
-     "tfc:rock/raw/diorite": 189605,
-     "minecraft:air": 157447,
+     "tfc:rock/raw/marble": 584975,
+     "tfc:rock/raw/limestone": 387616,
+     "tfc:rock/raw/phyllite": 261853,
+     "minecraft:air": 248748,
+     "tfc:rock/raw/gneiss": 226305,
+     "tfc:rock/raw/claystone": 221367,
+     "tfc:rock/raw/diorite": 203595,
      "minecraft:bedrock": 72674,
-     "tfc:rock/raw/granite": 51343,
-     "minecraft:cave_air": 34827,
-     "minecraft:water": 31434,
-     "tfc:rock/gravel/limestone": 20175,
-     "tfc:fluid/salt_water": 18489,
-     "tfc:rock/hardened/limestone": 14042,
-     "tfc:dirt/oxisol": 11863,
-     "tfc:rock/gravel/claystone": 10386,
-     "tfc:rock/hardened/marble": 10354,
-     "tfc:halite": 7812,
-     "tfc:rock/hardened/claystone": 7685,
-     "tfc:ore/rich_sphalerite/diorite": 7636,
-     "minecraft:lava": 6822,
-     "tfc:bituminous_coal": 5653,
-     "tfc:rock/gravel/marble": 4567,
-     "tfc:rock/hardened/phyllite": 4362,
-     "tfc:rock/hardened/quartzite": 3970,
-     "tfc:rock/spike/limestone": 3900,
-     "tfc:ore/normal_sphalerite/diorite": 3180,
-     "tfc:ore/rich_native_gold/diorite": 2879,
-     "tfc:rock/hardened/basalt": 2819,
-     "tfc:ore/cryolite/diorite": 2666,
-     "tfc:rock/spike/claystone": 2363,
-     "tfc:ore/graphite/marble": 2276,
-     "tfc:ore/normal_tetrahedrite/marble": 1943,
-     "tfc:ore/poor_sphalerite/diorite": 1860,
-     "tfc:ore/poor_tetrahedrite/marble": 1775,
-     "tfc:rock/hardened/gneiss": 1497,
-     "tfc:rock/hardened/diorite": 1496,
-     "tfc:rock/spike/marble": 1414,
-     "tfc:rock/gravel/phyllite": 1359,
-     "tfc:rock/raw/andesite": 1300,
-     "tfc:ore/rich_tetrahedrite/marble": 1268,
-     "tfc:ore/normal_native_gold/diorite": 1103,
-     "tfc:ore/rich_sphalerite/granite": 1097,
-     "tfc:mud/oxisol": 1080,
+     "tfc:rock/raw/granite": 50848,
+     "tfc:rock/hardened/claystone": 35353,
+     "minecraft:water": 31706,
+     "tfc:rock/gravel/limestone": 21577,
+     "tfc:fluid/salt_water": 17149,
+     "tfc:rock/hardened/limestone": 14378,
+     "tfc:rock/hardened/phyllite": 13791,
+     "tfc:dirt/oxisol": 11498,
+     "minecraft:cave_air": 11454,
+     "minecraft:lava": 10616,
+     "tfc:rock/gravel/claystone": 8388,
+     "tfc:ore/rich_sphalerite/diorite": 8115,
+     "tfc:halite": 7918,
+     "tfc:rock/spike/limestone": 6068,
+     "tfc:rock/hardened/marble": 5955,
+     "tfc:bituminous_coal": 5448,
+     "tfc:rock/mossy_cobble/marble": 4444,
+     "tfc:rock/gravel/marble": 4038,
+     "tfc:rock/spike/claystone": 3946,
+     "tfc:rock/hardened/quartzite": 3852,
+     "tfc:ore/normal_sphalerite/diorite": 3403,
+     "tfc:rock/mossy_cobble/phyllite": 3283,
+     "tfc:rock/mossy_cobble/limestone": 3281,
+     "tfc:rock/mossy_cobble/claystone": 3270,
+     "tfc:ore/rich_native_gold/diorite": 3160,
+     "tfc:rock/hardened/basalt": 2779,
+     "tfc:ore/cryolite/diorite": 2685,
+     "tfc:ore/normal_tetrahedrite/marble": 2542,
+     "tfc:rock/hardened/granite": 2376,
+     "tfc:ore/graphite/marble": 2313,
+     "tfc:ore/poor_tetrahedrite/marble": 2257,
+     "tfc:ore/poor_sphalerite/diorite": 1969,
+     "tfc:rock/hardened/gneiss": 1866,
+     "tfc:ore/rich_tetrahedrite/marble": 1595,
+     "minecraft:glow_lichen": 1573,
+     "tfc:rock/raw/andesite": 1298,
+     "tfc:ore/normal_native_gold/diorite": 1214,
+     "tfc:ore/rich_sphalerite/granite": 1143,
+     "minecraft:moss_carpet": 1078,
      "tfc:ore/cinnabar/gneiss": 1045,
-     "tfc:rock/mossy_cobble/limestone": 991,
-     "tfc:rock/mossy_cobble/claystone": 938,
-     "tfc:rock/spike/phyllite": 864,
-     "tfc:ore/normal_malachite/limestone": 800,
-     "tfc:ore/sulfur/gneiss": 743,
-     "tfc:ore/poor_malachite/limestone": 743,
+     "tfc:rock/spike/marble": 978,
+     "tfc:mud/oxisol": 937,
+     "tfc:rock/gravel/phyllite": 878,
+     "tfc:rock/spike/phyllite": 800,
+     "tfc:ore/normal_malachite/limestone": 773,
+     "tfc:ore/poor_native_gold/diorite": 760,
+     "tfc:ore/poor_malachite/limestone": 715,
      "tfc:ore/amethyst/quartzite": 709,
-     "tfc:rock/hardened/granite": 688,
-     "tfc:ore/poor_native_gold/diorite": 676,
-     "tfc:rock/mossy_cobble/marble": 568,
-     "tfc:ore/rich_malachite/limestone": 565,
-     "tfc:ore/cryolite/granite": 526,
-     "tfc:raw_sandstone/red": 514,
-     "tfc:ore/normal_sphalerite/granite": 457,
-     "tfc:groundcover/guano": 406,
+     "minecraft:cave_vines_plant": 665,
+     "tfc:ore/rich_malachite/limestone": 529,
+     "tfc:ore/cryolite/granite": 508,
+     "tfc:rock/spike/gneiss": 502,
+     "tfc:raw_sandstone/red": 496,
+     "tfc:rock/mossy_cobble/gneiss": 493,
+     "tfc:ore/normal_sphalerite/granite": 484,
+     "tfc:ore/sulfur/gneiss": 467,
      "tfc:ore/normal_magnetite/claystone": 406,
-     "tfc:ore/normal_limonite/claystone": 377,
+     "minecraft:cave_vines": 398,
      "tfc:ore/poor_magnetite/claystone": 360,
-     "tfc:ore/poor_limonite/claystone": 331,
-     "tfc:rock/spike/diorite": 325,
+     "tfc:groundcover/guano": 355,
+     "tfc:calcite": 292,
+     "tfc:rock/mossy_cobble/granite": 276,
      "tfc:ore/rich_magnetite/claystone": 274,
-     "tfc:ore/poor_sphalerite/granite": 266,
-     "tfc:ore/sulfur/diorite": 265,
-     "tfc:rock/mossy_cobble/phyllite": 264,
-     "tfc:ore/normal_magnetite/limestone": 259,
-     "tfc:rock/cobble/limestone": 256,
-     "tfc:rock/spike/gneiss": 241,
-     "tfc:ore/poor_magnetite/limestone": 233,
-     "tfc:ore/rich_limonite/claystone": 221,
-     "tfc:rock/cobble/claystone": 211,
-     "tfc:ore/normal_garnierite/diorite": 185,
-     "tfc:ore/rich_magnetite/limestone": 172,
-     "tfc:ore/poor_garnierite/diorite": 169,
-     "tfc:rock/spike/granite": 156,
-     "tfc:rock/cobble/marble": 116,
-     "tfc:ore/rich_garnierite/diorite": 113,
-     "tfc:ore/rich_bismuthinite/diorite": 109,
-     "tfc:ore/cinnabar/phyllite": 98,
+     "tfc:ore/poor_sphalerite/granite": 272,
+     "tfc:ore/normal_limonite/claystone": 269,
+     "tfc:ore/poor_limonite/claystone": 255,
+     "tfc:ore/normal_magnetite/limestone": 196,
+     "tfc:ore/normal_garnierite/diorite": 190,
+     "tfc:rock/cobble/limestone": 181,
+     "tfc:ore/poor_garnierite/diorite": 174,
+     "tfc:rock/cobble/claystone": 168,
+     "tfc:ore/poor_magnetite/limestone": 167,
+     "tfc:rock/mossy_cobble/quartzite": 156,
+     "tfc:ore/rich_limonite/claystone": 146,
+     "tfc:ore/rich_magnetite/limestone": 130,
+     "tfc:ore/cinnabar/phyllite": 128,
+     "tfc:ore/rich_bismuthinite/diorite": 120,
+     "tfc:ore/rich_garnierite/diorite": 120,
+     "tfc:rock/spike/granite": 98,
      "tfc:ore/normal_limonite/limestone": 89,
      "tfc:ore/ruby/marble": 83,
-     "tfc:ore/emerald/diorite": 72,
+     "tfc:ore/emerald/diorite": 79,
      "tfc:ore/poor_limonite/limestone": 70,
-     "tfc:rock/cobble/phyllite": 63,
-     "tfc:ore/normal_bismuthinite/diorite": 60,
+     "tfc:ore/normal_bismuthinite/diorite": 66,
      "tfc:ore/rich_limonite/limestone": 58,
-     "tfc:ore/small_sphalerite": 50,
-     "tfc:ore/small_native_gold": 47,
-     "tfc:ore/poor_bismuthinite/diorite": 37,
-     "minecraft:hanging_roots": 33,
-     "minecraft:cobweb": 22,
-     "tfc:rock/mossy_cobble/granite": 16,
-     "tfc:rock/hardened/andesite": 14,
-     "tfc:rock/spike/andesite": 10,
-     "tfc:ore/small_bismuthinite": 7,
-     "tfc:rock/loose/claystone": 5,
-     "tfc:rock/cobble/granite": 4,
-     "tfc:ore/poor_tetrahedrite/phyllite": 3,
-     "tfc:ore/rich_tetrahedrite/phyllite": 3,
+     "tfc:rock/cobble/marble": 44,
+     "tfc:rock/hardened/diorite": 38,
+     "tfc:ore/poor_bismuthinite/diorite": 35,
+     "tfc:rock/mossy_cobble/basalt": 35,
+     "minecraft:hanging_roots": 30,
+     "tfc:rock/cobble/phyllite": 30,
+     "minecraft:cobweb": 28,
+     "tfc:ore/small_native_gold": 27,
+     "tfc:rock/hardened/andesite": 19,
+     "tfc:rock/loose/claystone": 6,
+     "tfc:ore/small_bismuthinite": 6,
+     "tfc:rock/spike/andesite": 6,
      "tfc:ore/normal_tetrahedrite/phyllite": 2,
      "tfc:groundcover/seaweed": 1,
-     "tfc:rock/spike/basalt": 1
+     "tfc:ore/small_sphalerite": 1,
+     "tfc:ore/rich_tetrahedrite/phyllite": 1
     },
     "foreignBlocks": ["gtceu:rubber_leaves", "gtceu:rubber_log"],
     "minecraftBlocks": [
-     "minecraft:air", "minecraft:bedrock", "minecraft:cave_air", "minecraft:cobweb", "minecraft:hanging_roots",
-     "minecraft:lava", "minecraft:water"
+     "minecraft:air", "minecraft:bedrock", "minecraft:cave_air", "minecraft:cave_vines", "minecraft:cave_vines_plant",
+     "minecraft:cobweb", "minecraft:glow_lichen", "minecraft:hanging_roots", "minecraft:lava",
+     "minecraft:moss_carpet", "minecraft:water"
     ],
     "structureStarts": {},
     "entities": {"tfc:cow": 4, "tfc:turtle": 3},
@@ -4319,90 +5021,96 @@
      "tfc:hills": 576
     },
     "census": {
-     "tfc:rock/raw/diorite": 1283450,
-     "tfc:rock/raw/andesite": 795133,
-     "minecraft:air": 198975,
+     "tfc:rock/raw/diorite": 1417264,
+     "tfc:rock/raw/andesite": 786543,
+     "minecraft:air": 123609,
      "minecraft:bedrock": 72457,
-     "tfc:fluid/salt_water": 31917,
-     "tfc:rock/raw/granite": 24817,
-     "tfc:rock/hardened/diorite": 23897,
-     "tfc:ore/rich_native_gold/diorite": 23040,
-     "tfc:rock/hardened/andesite": 12052,
-     "minecraft:water": 11808,
-     "tfc:ore/rich_native_silver/diorite": 11626,
-     "tfc:rock/raw/gneiss": 10620,
-     "minecraft:cave_air": 9886,
-     "tfc:ore/normal_native_gold/diorite": 9777,
-     "minecraft:lava": 8971,
-     "tfc:rock/raw/conglomerate": 8360,
-     "tfc:rock/gravel/andesite": 6527,
-     "tfc:ore/poor_native_gold/diorite": 5939,
-     "tfc:ore/cryolite/diorite": 5444,
-     "tfc:ore/normal_native_silver/diorite": 4920,
-     "tfc:rock/spike/andesite": 4500,
-     "tfc:ore/poor_native_silver/diorite": 2894,
-     "tfc:rock/spike/diorite": 2270,
-     "tfc:raw_sandstone/brown": 2123,
-     "tfc:rock/mossy_cobble/andesite": 1068,
-     "tfc:sand/red": 943,
-     "tfc:rock/gravel/diorite": 870,
-     "tfc:rock/mossy_cobble/diorite": 859,
+     "tfc:ore/rich_native_gold/diorite": 28745,
+     "tfc:rock/raw/granite": 26597,
+     "tfc:rock/hardened/diorite": 14175,
+     "tfc:ore/rich_native_silver/diorite": 12547,
+     "tfc:ore/normal_native_gold/diorite": 12049,
+     "tfc:rock/raw/gneiss": 10946,
+     "tfc:rock/raw/conglomerate": 10840,
+     "tfc:rock/hardened/andesite": 10330,
+     "tfc:ore/poor_native_gold/diorite": 7320,
+     "tfc:fluid/salt_water": 6778,
+     "tfc:ore/cryolite/diorite": 6198,
+     "tfc:rock/gravel/andesite": 5971,
+     "tfc:ore/normal_native_silver/diorite": 5262,
+     "tfc:rock/spike/andesite": 3460,
+     "tfc:ore/poor_native_silver/diorite": 3087,
+     "tfc:raw_sandstone/brown": 2166,
+     "minecraft:water": 2026,
+     "tfc:rock/mossy_cobble/andesite": 1999,
+     "tfc:rock/mossy_cobble/diorite": 1733,
+     "tfc:rock/gravel/diorite": 1275,
+     "tfc:sand/red": 1001,
      "tfc:ore/cinnabar/gneiss": 740,
-     "tfc:rock/hardened/granite": 712,
-     "tfc:ore/sulfur/diorite": 698,
-     "tfc:ore/pyrite/diorite": 688,
-     "tfc:dirt/oxisol": 647,
-     "tfc:ore/normal_hematite/andesite": 638,
-     "tfc:ore/poor_hematite/andesite": 591,
-     "tfc:groundcover/guano": 411,
-     "tfc:ore/rich_hematite/andesite": 382,
-     "tfc:rock/spike/granite": 350,
-     "tfc:rock/hardened/conglomerate": 310,
-     "tfc:rock/cobble/andesite": 307,
-     "tfc:mud/fluvisol": 288,
-     "tfc:ore/small_native_silver": 265,
-     "tfc:rock/cobble/diorite": 237,
-     "tfc:ore/normal_native_gold/andesite": 236,
-     "tfc:ore/pyrite/andesite": 217,
-     "tfc:ore/small_native_gold": 211,
-     "tfc:ore/poor_native_gold/andesite": 193,
-     "tfc:ore/rich_native_gold/andesite": 134,
-     "tfc:rock/mossy_cobble/conglomerate": 75,
-     "tfc:red_kaolin_clay": 58,
-     "tfc:ore/emerald/andesite": 57,
-     "tfc:rock/hardened/gneiss": 54,
-     "tfc:fluid/spring_water": 51,
-     "tfc:pink_kaolin_clay": 42,
+     "tfc:ore/normal_hematite/andesite": 698,
+     "tfc:ore/pyrite/diorite": 697,
+     "minecraft:glow_lichen": 696,
+     "tfc:rock/spike/diorite": 657,
+     "tfc:ore/poor_hematite/andesite": 624,
+     "tfc:dirt/oxisol": 592,
+     "tfc:rock/hardened/granite": 567,
+     "tfc:mud/fluvisol": 520,
+     "tfc:plant/hanging_vines_plant": 424,
+     "tfc:ore/rich_hematite/andesite": 411,
+     "tfc:groundcover/guano": 381,
+     "tfc:rock/cobble/andesite": 330,
+     "tfc:ore/pyrite/andesite": 329,
+     "tfc:rock/spike/granite": 270,
+     "tfc:ore/normal_native_gold/andesite": 237,
+     "tfc:ore/poor_native_gold/andesite": 185,
+     "tfc:ore/rich_native_gold/andesite": 137,
+     "tfc:fluid/spring_water": 104,
+     "minecraft:moss_carpet": 100,
+     "tfc:ore/emerald/andesite": 83,
+     "tfc:rock/mossy_cobble/granite": 82,
+     "minecraft:cave_vines_plant": 77,
+     "tfc:rock/cobble/diorite": 73,
+     "tfc:plant/hanging_vines": 69,
+     "tfc:plant/barnacles": 62,
+     "tfc:rock/mossy_cobble/conglomerate": 58,
+     "tfc:ore/small_native_gold": 55,
+     "tfc:ore/small_native_silver": 45,
+     "minecraft:cave_vines": 39,
      "tfc:ore/poor_sphalerite/andesite": 38,
-     "tfc:rock/mossy_cobble/granite": 30,
-     "tfc:white_kaolin_clay": 28,
-     "minecraft:hanging_roots": 27,
-     "tfc:rock/cobble/conglomerate": 26,
-     "tfc:rock/spike/gneiss": 26,
-     "tfc:rock/spike/conglomerate": 25,
-     "minecraft:cobweb": 23,
-     "tfc:grass/oxisol": 22,
-     "tfc:rock/loose/andesite": 19,
-     "tfc:plant/barnacles": 18,
+     "tfc:rock/loose/andesite": 35,
+     "minecraft:hanging_roots": 29,
+     "minecraft:cobweb": 28,
+     "tfc:ore/emerald/diorite": 27,
+     "tfc:plant/flame_vine_plant": 24,
+     "tfc:grass/oxisol": 19,
+     "tfc:rock/hardened/conglomerate": 18,
+     "tfc:plant/duckweed": 16,
+     "tfc:rock/cobble/conglomerate": 16,
      "tfc:ore/normal_sphalerite/andesite": 13,
+     "tfc:white_kaolin_clay": 12,
+     "tfc:plant/flame_vine": 9,
      "tfc:rock/cobble/granite": 9,
+     "tfc:rock/mossy_loose/andesite": 7,
+     "tfc:plant/purple_water_lily": 7,
+     "tfc:groundcover/bone": 5,
      "tfc:ore/rich_sphalerite/andesite": 5,
-     "tfc:groundcover/mussel": 4,
-     "tfc:plant/switchgrass": 2,
+     "tfc:pink_kaolin_clay": 5,
+     "tfc:plant/lotus": 4,
+     "tfc:plant/pistia": 4,
+     "tfc:plant/green_algae": 3,
+     "tfc:wood/twig/acacia": 2,
      "tfc:plant/turtle_grass": 2,
-     "tfc:ore/sulfur/gneiss": 2,
-     "tfc:groundcover/seaweed": 2,
-     "tfc:rock/mossy_loose/andesite": 2,
-     "tfc:groundcover/mollusk": 2,
-     "tfc:plant/scutch_grass": 1,
-     "tfc:ore/emerald/diorite": 1,
-     "tfc:groundcover/clam": 1,
-     "tfc:ore/poor_native_copper/andesite": 1
+     "tfc:groundcover/clam": 2,
+     "tfc:groundcover/mussel": 2,
+     "minecraft:lava": 1,
+     "tfc:ore/poor_native_copper/andesite": 1,
+     "tfc:groundcover/seaweed": 1
     },
     "foreignBlocks": [],
     "minecraftBlocks": [
-     "minecraft:air", "minecraft:bedrock", "minecraft:cave_air", "minecraft:cobweb", "minecraft:hanging_roots",
-     "minecraft:lava", "minecraft:water"
+     "minecraft:air", "minecraft:bedrock", "minecraft:cave_air", "minecraft:cave_vines", "minecraft:cave_vines_plant",
+     "minecraft:cobweb", "minecraft:glow_lichen", "minecraft:hanging_roots", "minecraft:lava",
+     "minecraft:moss_carpet", "minecraft:water"
     ],
     "structureStarts": {},
     "entities": {"tfc:cougar": 1, "tfc:panther": 1},
@@ -4500,83 +5208,91 @@
      "tfc:shore": 288
     },
     "census": {
-     "tfc:rock/raw/diorite": 840748,
-     "tfc:rock/raw/andesite": 716244,
-     "tfc:rock/raw/granite": 407897,
-     "tfc:rock/raw/basalt": 94160,
+     "tfc:rock/raw/diorite": 854363,
+     "tfc:rock/raw/andesite": 700631,
+     "tfc:rock/raw/granite": 414674,
+     "minecraft:air": 118934,
+     "tfc:rock/raw/basalt": 91880,
      "minecraft:bedrock": 72443,
-     "minecraft:cave_air": 72295,
-     "minecraft:air": 70649,
-     "tfc:ore/rich_bismuthinite/diorite": 24743,
-     "tfc:fluid/salt_water": 21625,
-     "tfc:rock/hardened/diorite": 15300,
-     "tfc:ore/rich_sphalerite/diorite": 14835,
-     "tfc:rock/hardened/andesite": 10416,
-     "tfc:ore/normal_bismuthinite/diorite": 10343,
-     "minecraft:lava": 7644,
-     "tfc:ore/rich_bismuthinite/granite": 6656,
-     "tfc:ore/poor_bismuthinite/diorite": 6098,
-     "tfc:ore/normal_sphalerite/diorite": 5974,
-     "tfc:rock/gravel/andesite": 5289,
-     "tfc:rock/spike/diorite": 5138,
-     "tfc:rock/hardened/granite": 4860,
-     "tfc:ore/rich_sphalerite/granite": 4722,
-     "tfc:ore/rich_native_silver/diorite": 4347,
-     "tfc:mud/fluvisol": 3842,
-     "tfc:ore/poor_sphalerite/diorite": 3744,
-     "minecraft:water": 3577,
-     "tfc:rock/spike/andesite": 3517,
-     "tfc:dirt/andisol": 3009,
-     "tfc:ore/normal_bismuthinite/granite": 2658,
-     "tfc:sand/green": 2155,
-     "tfc:ore/rich_native_gold/diorite": 2135,
-     "tfc:ore/normal_sphalerite/granite": 2017,
-     "tfc:rock/spike/granite": 1869,
-     "tfc:ore/normal_native_silver/diorite": 1794,
-     "tfc:ore/poor_bismuthinite/granite": 1631,
-     "tfc:ore/poor_sphalerite/granite": 1157,
-     "tfc:rock/hardened/basalt": 1131,
-     "tfc:ore/poor_native_silver/diorite": 1121,
-     "tfc:ore/cryolite/diorite": 953,
-     "tfc:ore/normal_native_gold/diorite": 888,
-     "tfc:rock/gravel/basalt": 828,
-     "tfc:ore/sulfur/granite": 783,
+     "tfc:ore/rich_bismuthinite/diorite": 29206,
+     "tfc:rock/hardened/andesite": 20739,
+     "tfc:rock/hardened/diorite": 15912,
+     "tfc:ore/rich_sphalerite/diorite": 14768,
+     "tfc:fluid/salt_water": 14509,
+     "tfc:ore/normal_bismuthinite/diorite": 12416,
+     "minecraft:water": 10811,
+     "tfc:ore/rich_bismuthinite/granite": 7324,
+     "tfc:ore/poor_bismuthinite/diorite": 7251,
+     "minecraft:cave_air": 7006,
+     "tfc:ore/normal_sphalerite/diorite": 5948,
+     "tfc:rock/gravel/andesite": 4934,
+     "tfc:ore/rich_sphalerite/granite": 4872,
+     "tfc:mud/fluvisol": 4249,
+     "tfc:ore/rich_native_silver/diorite": 3982,
+     "tfc:rock/hardened/granite": 3797,
+     "tfc:ore/poor_sphalerite/diorite": 3733,
+     "tfc:rock/spike/andesite": 3589,
+     "tfc:ore/rich_native_gold/diorite": 3578,
+     "tfc:ore/normal_bismuthinite/granite": 3030,
+     "tfc:dirt/andisol": 2958,
+     "minecraft:glow_lichen": 2312,
+     "tfc:ore/normal_sphalerite/granite": 2075,
+     "tfc:sand/green": 1984,
+     "tfc:ore/poor_bismuthinite/granite": 1890,
+     "tfc:rock/hardened/basalt": 1877,
+     "tfc:ore/normal_native_silver/diorite": 1715,
+     "tfc:rock/hardened/quartzite": 1575,
+     "tfc:ore/normal_native_gold/diorite": 1474,
+     "tfc:ore/cryolite/diorite": 1304,
+     "tfc:ore/poor_sphalerite/granite": 1242,
+     "tfc:ore/poor_native_silver/diorite": 1015,
+     "tfc:rock/spike/granite": 922,
+     "tfc:ore/poor_native_gold/diorite": 906,
+     "minecraft:lava": 816,
+     "tfc:rock/gravel/basalt": 807,
+     "minecraft:ice": 768,
+     "tfc:rock/spike/diorite": 708,
      "tfc:ore/pyrite/andesite": 690,
-     "tfc:ore/poor_native_gold/diorite": 570,
-     "tfc:rock/spike/basalt": 498,
-     "tfc:rock/hardened/quartzite": 441,
-     "tfc:ore/normal_garnierite/diorite": 358,
-     "tfc:ore/normal_garnierite/granite": 351,
-     "tfc:ore/cryolite/granite": 325,
-     "tfc:ore/poor_garnierite/diorite": 314,
-     "tfc:ore/poor_garnierite/granite": 312,
-     "tfc:ore/rich_garnierite/granite": 231,
-     "tfc:ore/rich_garnierite/diorite": 205,
-     "tfc:ore/small_bismuthinite": 154,
-     "tfc:raw_sandstone/green": 145,
-     "tfc:rock/cobble/andesite": 123,
-     "tfc:ore/pyrite/diorite": 122,
-     "tfc:rock/cobble/basalt": 109,
-     "tfc:ore/small_native_silver": 64,
-     "tfc:ore/small_native_gold": 64,
-     "tfc:ore/amethyst/quartzite": 58,
-     "tfc:ore/small_sphalerite": 44,
-     "tfc:ore/rich_native_gold/granite": 43,
-     "tfc:ore/rich_native_silver/granite": 41,
-     "tfc:ore/normal_native_silver/granite": 20,
-     "tfc:ore/normal_native_gold/granite": 14,
-     "tfc:ore/poor_native_silver/granite": 8,
-     "tfc:ore/poor_native_gold/granite": 7,
-     "tfc:wood/twig/spruce": 4,
-     "tfc:ore/sulfur/diorite": 4,
-     "tfc:wood/fallen_leaves/spruce": 2,
-     "tfc:wood/twig/aspen": 2,
-     "tfc:wood/fallen_leaves/aspen": 2
+     "tfc:ore/normal_garnierite/diorite": 458,
+     "tfc:ore/normal_garnierite/granite": 434,
+     "tfc:ore/cryolite/granite": 404,
+     "tfc:ore/poor_garnierite/diorite": 397,
+     "tfc:rock/spike/basalt": 374,
+     "tfc:ore/poor_garnierite/granite": 373,
+     "tfc:ore/sulfur/granite": 369,
+     "tfc:ore/rich_garnierite/diorite": 274,
+     "tfc:ore/amethyst/quartzite": 248,
+     "tfc:ore/rich_garnierite/granite": 234,
+     "tfc:ore/rich_native_gold/granite": 188,
+     "minecraft:packed_ice": 184,
+     "tfc:ore/pyrite/diorite": 151,
+     "tfc:rock/cobble/andesite": 141,
+     "tfc:rock/cobble/basalt": 105,
+     "minecraft:blue_ice": 90,
+     "tfc:raw_sandstone/green": 76,
+     "tfc:plant/barnacles": 67,
+     "tfc:ore/normal_native_gold/granite": 63,
+     "tfc:ore/poor_native_gold/granite": 46,
+     "tfc:ore/rich_native_silver/granite": 37,
+     "tfc:ore/small_bismuthinite": 36,
+     "tfc:ore/small_native_silver": 32,
+     "tfc:ore/small_sphalerite": 27,
+     "tfc:rock/loose/andesite": 21,
+     "tfc:plant/mussels": 21,
+     "tfc:wood/fallen_leaves/spruce": 14,
+     "tfc:wood/twig/spruce": 14,
+     "tfc:ore/poor_native_silver/granite": 14,
+     "tfc:wood/twig/aspen": 13,
+     "tfc:ore/normal_native_silver/granite": 13,
+     "tfc:wood/fallen_leaves/aspen": 12,
+     "tfc:plant/anemone_green": 9,
+     "tfc:groundcover/seaweed": 3,
+     "tfc:rock/mossy_loose/andesite": 1
     },
     "foreignBlocks": [],
     "minecraftBlocks": [
-     "minecraft:air", "minecraft:bedrock", "minecraft:blue_ice", "minecraft:cave_air", "minecraft:ice",
-     "minecraft:lava", "minecraft:packed_ice", "minecraft:snow_block", "minecraft:water"
+     "minecraft:air", "minecraft:bedrock", "minecraft:blue_ice", "minecraft:cave_air", "minecraft:glow_lichen",
+     "minecraft:ice", "minecraft:lava", "minecraft:packed_ice", "minecraft:snow_block", "minecraft:water"
     ],
     "structureStarts": {},
     "entities": {"tfc:grizzly_bear": 1, "tfc:penguin": 6},
@@ -4677,111 +5393,124 @@
      "tfc:mountains": 5280
     },
     "census": {
-     "tfc:rock/raw/slate": 886155,
-     "tfc:rock/raw/diorite": 732805,
-     "tfc:rock/raw/schist": 625701,
-     "minecraft:air": 170123,
-     "minecraft:cave_air": 111173,
+     "tfc:rock/raw/slate": 771593,
+     "tfc:rock/raw/diorite": 699984,
+     "tfc:rock/raw/schist": 581735,
+     "minecraft:air": 337541,
      "minecraft:bedrock": 72528,
-     "tfc:rock/raw/granite": 64042,
-     "minecraft:water": 51761,
-     "minecraft:lava": 18382,
-     "tfc:rock/hardened/diorite": 18177,
-     "tfc:rock/hardened/slate": 17207,
-     "tfc:rock/raw/chalk": 10285,
-     "tfc:rock/hardened/schist": 9585,
-     "tfc:rock/spike/diorite": 9053,
-     "tfc:rock/gravel/diorite": 8128,
+     "tfc:rock/hardened/slate": 62463,
+     "tfc:rock/raw/granite": 61076,
+     "minecraft:water": 54029,
+     "tfc:rock/hardened/schist": 52305,
+     "tfc:rock/hardened/diorite": 33758,
+     "minecraft:cave_air": 26803,
+     "minecraft:lava": 16030,
+     "tfc:rock/spike/diorite": 15549,
+     "tfc:rock/raw/chalk": 10007,
      "tfc:rock/raw/gneiss": 7870,
-     "tfc:rock/raw/marble": 7535,
-     "tfc:ore/cinnabar/schist": 5403,
-     "tfc:rock/spike/slate": 4722,
-     "tfc:rock/spike/schist": 3272,
-     "tfc:ore/normal_tetrahedrite/slate": 2072,
-     "tfc:plant/liana_plant": 1907,
-     "tfc:rock/mossy_cobble/slate": 1814,
-     "tfc:ore/poor_tetrahedrite/slate": 1798,
-     "tfc:deposit/cassiterite/diorite": 1673,
-     "tfc:rock/raw/phyllite": 1669,
-     "tfc:deposit/native_silver/diorite": 1654,
-     "tfc:ore/rich_sphalerite/granite": 1426,
-     "tfc:ore/rich_tetrahedrite/slate": 1303,
+     "tfc:rock/gravel/diorite": 7129,
+     "tfc:rock/mossy_cobble/slate": 5766,
+     "tfc:ore/cinnabar/schist": 4872,
+     "minecraft:glow_lichen": 4621,
+     "tfc:rock/spike/slate": 3819,
+     "tfc:rock/raw/marble": 3321,
+     "tfc:rock/mossy_cobble/schist": 2679,
+     "tfc:rock/spike/schist": 2147,
+     "tfc:plant/liana_plant": 1793,
+     "tfc:deposit/native_silver/diorite": 1711,
+     "tfc:rock/raw/phyllite": 1638,
+     "tfc:ore/normal_tetrahedrite/slate": 1603,
+     "tfc:ore/poor_tetrahedrite/slate": 1383,
      "tfc:deposit/native_copper/diorite": 1285,
-     "tfc:rock/hardened/granite": 1112,
-     "tfc:rock/mossy_cobble/diorite": 987,
-     "tfc:deposit/native_gold/diorite": 917,
+     "tfc:rock/hardened/granite": 1285,
+     "tfc:ore/rich_sphalerite/granite": 1049,
+     "tfc:ore/rich_tetrahedrite/slate": 1002,
+     "tfc:deposit/native_gold/diorite": 934,
+     "tfc:deposit/cassiterite/diorite": 907,
+     "tfc:rock/hardened/marble": 796,
      "tfc:rock/raw/gabbro": 723,
-     "tfc:dirt/oxisol": 691,
-     "tfc:ore/cryolite/diorite": 650,
-     "tfc:ore/normal_sphalerite/granite": 590,
-     "tfc:ore/rich_native_silver/schist": 456,
-     "tfc:rock/cobble/slate": 440,
-     "tfc:groundcover/guano": 430,
-     "tfc:deposit/native_gold/marble": 413,
-     "tfc:ore/poor_sphalerite/granite": 375,
-     "tfc:rock/hardened/quartzite": 354,
-     "tfc:plant/liana": 340,
-     "tfc:rock/hardened/basalt": 295,
-     "tfc:rock/hardened/marble": 264,
-     "tfc:ore/sulfur/schist": 259,
-     "tfc:ore/rich_sphalerite/diorite": 250,
-     "tfc:rock/cobble/diorite": 237,
+     "minecraft:moss_carpet": 643,
+     "tfc:rock/cobble/slate": 576,
+     "tfc:ore/cryolite/diorite": 548,
+     "tfc:groundcover/guano": 523,
+     "tfc:deposit/native_gold/marble": 448,
+     "minecraft:cave_vines_plant": 447,
+     "tfc:dirt/oxisol": 438,
+     "tfc:ore/normal_sphalerite/granite": 431,
+     "tfc:rock/mossy_cobble/diorite": 402,
+     "tfc:ore/rich_native_silver/schist": 375,
+     "tfc:rock/hardened/quartzite": 344,
+     "tfc:plant/liana": 298,
+     "tfc:ore/poor_sphalerite/granite": 297,
+     "tfc:rock/hardened/basalt": 292,
+     "minecraft:cave_vines": 244,
      "tfc:ore/pyrite/diorite": 211,
-     "tfc:plant/jungle_vines": 204,
+     "tfc:plant/jungle_vines": 200,
      "tfc:ore/normal_garnierite/diorite": 180,
-     "tfc:ore/normal_native_silver/schist": 151,
-     "tfc:grass/oxisol": 140,
+     "tfc:ore/sulfur/schist": 176,
+     "tfc:ore/normal_native_silver/schist": 142,
+     "tfc:ore/emerald/diorite": 140,
      "tfc:ore/poor_garnierite/diorite": 131,
-     "tfc:ore/emerald/diorite": 128,
-     "tfc:ore/normal_sphalerite/diorite": 110,
-     "tfc:ore/normal_tetrahedrite/marble": 106,
-     "tfc:ore/poor_tetrahedrite/marble": 102,
-     "tfc:ore/poor_native_silver/schist": 100,
+     "tfc:rock/hardened/chalk": 116,
+     "tfc:grass/oxisol": 109,
+     "tfc:ore/rich_sphalerite/diorite": 109,
+     "minecraft:hanging_roots": 100,
      "tfc:ore/rich_garnierite/diorite": 98,
-     "tfc:deposit/cassiterite/slate": 87,
-     "minecraft:cobweb": 81,
-     "minecraft:hanging_roots": 76,
+     "tfc:plant/duckweed": 90,
+     "minecraft:cobweb": 85,
+     "tfc:rock/spike/marble": 84,
+     "tfc:ore/poor_native_silver/schist": 84,
      "tfc:ore/amethyst/quartzite": 72,
-     "tfc:ore/poor_sphalerite/diorite": 69,
-     "tfc:rock/spike/marble": 68,
-     "tfc:ore/rich_tetrahedrite/marble": 66,
-     "tfc:rock/hardened/chalk": 54,
-     "tfc:rock/mossy_cobble/granite": 45,
-     "tfc:plant/duckweed": 33,
-     "tfc:dirt/alfisol": 29,
-     "tfc:plant/moss": 24,
-     "tfc:ore/small_sphalerite": 23,
-     "tfc:deposit/cassiterite/marble": 18,
-     "tfc:rock/spike/granite": 18,
-     "tfc:rock/mossy_cobble/marble": 17,
-     "tfc:wood/twig/ash": 13,
-     "tfc:wood/twig/willow": 12,
-     "tfc:wood/fallen_leaves/willow": 10,
-     "tfc:rock/loose/diorite": 9,
-     "tfc:ore/small_native_silver": 9,
-     "tfc:rock/cobble/granite": 8,
-     "tfc:wood/fallen_leaves/ash": 7,
-     "tfc:ore/normal_malachite/chalk": 6,
-     "tfc:duff/alfisol": 6,
-     "tfc:rock/mossy_loose/diorite": 5,
+     "tfc:rock/cobble/diorite": 53,
+     "tfc:ore/normal_sphalerite/diorite": 50,
+     "tfc:plant/purple_water_lily": 43,
+     "tfc:deposit/cassiterite/slate": 39,
+     "tfc:plant/yellow_water_lily": 38,
+     "tfc:calcite": 37,
+     "tfc:rock/spike/granite": 35,
+     "tfc:wood/fallen_leaves/oak": 34,
+     "tfc:rock/mossy_cobble/chalk": 33,
+     "tfc:ore/poor_tetrahedrite/marble": 27,
+     "tfc:ore/poor_sphalerite/diorite": 23,
+     "tfc:wood/twig/ash": 21,
+     "tfc:ore/small_native_silver": 21,
+     "tfc:ore/normal_tetrahedrite/marble": 20,
+     "tfc:wood/twig/oak": 19,
+     "tfc:ore/small_sphalerite": 18,
+     "tfc:rock/mossy_cobble/marble": 15,
+     "tfc:plant/lotus": 15,
+     "tfc:wood/fallen_leaves/willow": 14,
+     "tfc:wood/twig/willow": 14,
+     "tfc:plant/moss": 13,
+     "tfc:wood/fallen_leaves/ash": 12,
+     "tfc:rock/loose/diorite": 12,
+     "tfc:rock/mossy_cobble/phyllite": 11,
+     "tfc:rock/mossy_cobble/quartzite": 10,
+     "tfc:rock/hardened/phyllite": 7,
+     "tfc:ore/sulfur/granite": 6,
+     "tfc:plant/eel_grass": 5,
+     "tfc:plant/pistia": 5,
+     "tfc:deposit/cassiterite/marble": 4,
      "tfc:rock/gravel/claystone": 3,
-     "tfc:ore/poor_malachite/chalk": 3,
-     "tfc:wood/fallen_leaves/oak": 3,
+     "tfc:rock/mossy_cobble/basalt": 3,
      "tfc:plant/coontail": 3,
-     "tfc:plant/eel_grass": 3,
      "tfc:rock/gravel/marble": 3,
-     "tfc:wood/twig/oak": 3,
+     "tfc:ore/rich_tetrahedrite/marble": 3,
      "tfc:rock/raw/claystone": 2,
-     "tfc:plant/yellow_water_lily": 2,
-     "tfc:plant/marigold": 2,
-     "tfc:rock/cobble/marble": 2,
-     "tfc:plant/green_algae": 1,
-     "tfc:plant/scutch_grass": 1
+     "tfc:dirt/alfisol": 2,
+     "tfc:duff/alfisol": 2,
+     "tfc:plant/tank_bromeliad": 1,
+     "tfc:groundcover/stick": 1,
+     "tfc:groundcover/salt_lick": 1,
+     "tfc:groundcover/humus": 1,
+     "tfc:ore/small_tetrahedrite": 1,
+     "tfc:rock/mossy_loose/diorite": 1
     },
     "foreignBlocks": [],
     "minecraftBlocks": [
-     "minecraft:air", "minecraft:bedrock", "minecraft:cave_air", "minecraft:cobweb", "minecraft:hanging_roots",
-     "minecraft:lava", "minecraft:water"
+     "minecraft:air", "minecraft:bedrock", "minecraft:cave_air", "minecraft:cave_vines", "minecraft:cave_vines_plant",
+     "minecraft:cobweb", "minecraft:glow_lichen", "minecraft:hanging_roots", "minecraft:lava",
+     "minecraft:moss_carpet", "minecraft:water"
     ],
     "structureStarts": {},
     "entities": {"tfc:cougar": 1, "tfc:tiger": 1},
@@ -4881,78 +5610,77 @@
      "tfc:ocean_reef": 12096
     },
     "census": {
-     "tfc:rock/raw/chert": 817423,
-     "tfc:rock/raw/quartzite": 717918,
-     "tfc:rock/raw/gabbro": 296869,
-     "minecraft:cave_air": 218133,
-     "minecraft:air": 107933,
+     "tfc:rock/raw/chert": 861055,
+     "tfc:rock/raw/quartzite": 837117,
+     "tfc:rock/raw/gabbro": 347635,
+     "minecraft:air": 126113,
      "minecraft:bedrock": 72610,
-     "tfc:rock/raw/granite": 53910,
-     "minecraft:lava": 20868,
-     "tfc:rock/hardened/quartzite": 19407,
-     "tfc:fluid/salt_water": 17555,
-     "tfc:rock/hardened/chert": 16698,
-     "tfc:ore/cinnabar/quartzite": 12761,
-     "minecraft:water": 9516,
-     "tfc:raw_sandstone/yellow": 8827,
-     "tfc:hardened_clay": 8558,
-     "tfc:rock/spike/quartzite": 4867,
-     "tfc:rock/spike/chert": 4369,
-     "tfc:ore/graphite/quartzite": 2776,
-     "tfc:mud/fluvisol": 2634,
-     "tfc:rock/hardened/gabbro": 2597,
-     "tfc:ore/rich_garnierite/gabbro": 2155,
-     "tfc:sand/white": 2062,
-     "tfc:sand/red": 1456,
-     "tfc:rock/spike/gabbro": 1389,
-     "tfc:rock/gravel/chert": 1176,
-     "tfc:ore/normal_garnierite/gabbro": 1128,
-     "tfc:ore/normal_tetrahedrite/quartzite": 987,
-     "tfc:ore/poor_tetrahedrite/quartzite": 899,
-     "tfc:rock/hardened/basalt": 889,
-     "tfc:ore/poor_garnierite/gabbro": 784,
-     "tfc:halite": 662,
-     "tfc:ore/rich_tetrahedrite/quartzite": 557,
-     "tfc:ore/cryolite/granite": 528,
-     "tfc:rock/hardened/granite": 474,
-     "tfc:ore/sulfur/gabbro": 449,
-     "tfc:ore/normal_limonite/chert": 203,
-     "tfc:ore/poor_limonite/chert": 199,
-     "tfc:ore/amethyst/quartzite": 178,
-     "tfc:ore/rich_native_silver/granite": 149,
-     "tfc:ore/rich_limonite/chert": 123,
+     "tfc:rock/raw/granite": 50386,
+     "tfc:rock/hardened/chert": 36571,
+     "tfc:rock/hardened/quartzite": 33085,
+     "tfc:ore/cinnabar/quartzite": 15665,
+     "tfc:raw_sandstone/yellow": 8870,
+     "tfc:hardened_clay": 8155,
+     "tfc:fluid/salt_water": 5924,
+     "tfc:rock/hardened/granite": 5689,
+     "tfc:ore/rich_garnierite/gabbro": 2926,
+     "tfc:ore/graphite/quartzite": 2519,
+     "tfc:mud/fluvisol": 2169,
+     "minecraft:lava": 1611,
+     "tfc:ore/normal_garnierite/gabbro": 1595,
+     "tfc:rock/hardened/basalt": 1454,
+     "minecraft:glow_lichen": 1356,
+     "tfc:ore/normal_tetrahedrite/quartzite": 1306,
+     "tfc:sand/white": 1155,
+     "tfc:ore/poor_tetrahedrite/quartzite": 1122,
+     "tfc:sand/red": 1068,
+     "tfc:ore/poor_garnierite/gabbro": 1032,
+     "tfc:ore/rich_tetrahedrite/quartzite": 783,
+     "tfc:rock/spike/chert": 709,
+     "tfc:halite": 705,
+     "tfc:rock/gravel/chert": 642,
+     "tfc:ore/cryolite/granite": 530,
+     "tfc:ore/amethyst/quartzite": 253,
+     "tfc:ore/poor_limonite/chert": 130,
+     "tfc:ore/rich_native_silver/granite": 130,
+     "tfc:ore/normal_limonite/chert": 127,
+     "minecraft:tube_coral_block": 116,
+     "tfc:rock/spike/gabbro": 110,
+     "tfc:ore/rich_limonite/chert": 88,
+     "minecraft:fire_coral_block": 88,
      "tfc:ore/emerald/gabbro": 86,
-     "tfc:ore/small_garnierite": 80,
-     "tfc:ore/normal_native_silver/granite": 73,
-     "tfc:rock/spike/granite": 55,
-     "tfc:ore/diamond/gabbro": 53,
-     "minecraft:tube_coral_block": 47,
-     "minecraft:fire_coral_block": 36,
-     "tfc:ore/poor_native_silver/granite": 32,
-     "minecraft:horn_coral_block": 21,
-     "tfc:coral/brain_coral_wall_fan": 20,
-     "minecraft:bubble_coral_block": 16,
-     "tfc:coral/fire_coral_wall_fan": 14,
-     "tfc:coral/horn_coral_wall_fan": 13,
-     "tfc:coral/tube_coral_wall_fan": 12,
-     "tfc:coral/bubble_coral_wall_fan": 11,
-     "minecraft:brain_coral_block": 8,
+     "minecraft:bubble_coral_block": 74,
+     "tfc:ore/diamond/gabbro": 68,
+     "minecraft:brain_coral_block": 50,
+     "tfc:ore/normal_native_silver/granite": 44,
+     "tfc:rock/hardened/gabbro": 41,
+     "tfc:coral/horn_coral_wall_fan": 40,
+     "tfc:coral/fire_coral_wall_fan": 39,
+     "tfc:coral/bubble_coral_wall_fan": 36,
+     "tfc:ore/sulfur/gabbro": 32,
+     "tfc:coral/brain_coral_wall_fan": 30,
+     "tfc:coral/tube_coral_wall_fan": 29,
+     "minecraft:horn_coral_block": 23,
+     "tfc:ore/poor_native_silver/granite": 18,
+     "tfc:sea_pickle": 9,
+     "tfc:coral/horn_coral_fan": 7,
+     "tfc:coral/tube_coral_fan": 7,
+     "tfc:coral/bubble_coral_fan": 6,
+     "tfc:coral/brain_coral": 6,
+     "tfc:coral/fire_coral_fan": 6,
+     "tfc:rock/spike/quartzite": 5,
+     "tfc:coral/fire_coral": 5,
+     "tfc:coral/bubble_coral": 5,
+     "tfc:coral/horn_coral": 4,
+     "tfc:coral/brain_coral_fan": 4,
      "tfc:rock/loose/chert": 4,
-     "tfc:coral/bubble_coral_fan": 4,
-     "tfc:sea_pickle": 3,
-     "tfc:ore/small_native_silver": 3,
-     "tfc:coral/tube_coral_fan": 3,
-     "tfc:coral/horn_coral_fan": 3,
-     "tfc:ore/small_limonite": 2,
-     "tfc:coral/bubble_coral": 2,
-     "tfc:coral/tube_coral": 1,
-     "tfc:coral/horn_coral": 1,
-     "tfc:coral/brain_coral_fan": 1
+     "tfc:coral/tube_coral": 2,
+     "minecraft:water": 1
     },
     "foreignBlocks": [],
     "minecraftBlocks": [
      "minecraft:air", "minecraft:bedrock", "minecraft:brain_coral_block", "minecraft:bubble_coral_block",
-     "minecraft:cave_air", "minecraft:fire_coral_block", "minecraft:horn_coral_block", "minecraft:lava",
+     "minecraft:fire_coral_block", "minecraft:glow_lichen", "minecraft:horn_coral_block", "minecraft:lava",
      "minecraft:tube_coral_block", "minecraft:water"
     ],
     "structureStarts": {},
@@ -5052,71 +5780,70 @@
      "tfc:plateau_lake": 672
     },
     "census": {
-     "tfc:rock/raw/schist": 870925,
-     "tfc:rock/raw/gneiss": 759750,
-     "tfc:rock/raw/diorite": 578119,
-     "minecraft:air": 127277,
+     "tfc:rock/raw/schist": 936525,
+     "tfc:rock/raw/gneiss": 743890,
+     "tfc:rock/raw/diorite": 592741,
+     "minecraft:air": 133299,
      "minecraft:bedrock": 72762,
-     "minecraft:cave_air": 61004,
-     "tfc:rock/raw/gabbro": 60358,
-     "minecraft:water": 26582,
-     "tfc:rock/hardened/schist": 18980,
-     "tfc:rock/hardened/gneiss": 11966,
-     "tfc:rock/gravel/gneiss": 10525,
+     "tfc:rock/raw/gabbro": 63372,
+     "minecraft:water": 21419,
+     "tfc:rock/hardened/gneiss": 18714,
      "tfc:rock/raw/granite": 8584,
-     "tfc:ore/rich_native_silver/diorite": 7353,
-     "tfc:rock/spike/schist": 6408,
-     "tfc:ore/cinnabar/schist": 5853,
-     "tfc:ore/cryolite/diorite": 5636,
-     "tfc:ore/rich_native_silver/schist": 4982,
-     "tfc:rock/hardened/diorite": 4486,
-     "tfc:ore/graphite/schist": 4204,
-     "tfc:rock/spike/gneiss": 3471,
-     "tfc:ore/normal_native_silver/diorite": 2997,
-     "minecraft:lava": 2987,
-     "tfc:ore/rich_sphalerite/diorite": 2825,
-     "tfc:ore/normal_native_silver/schist": 2121,
-     "tfc:ore/poor_native_silver/diorite": 1874,
-     "tfc:ore/normal_tetrahedrite/schist": 1464,
-     "tfc:ore/poor_native_silver/schist": 1254,
-     "tfc:ore/poor_tetrahedrite/schist": 1250,
-     "tfc:ore/graphite/gneiss": 1250,
-     "tfc:ore/normal_sphalerite/diorite": 1194,
+     "tfc:ore/rich_native_silver/diorite": 8333,
+     "tfc:rock/gravel/gneiss": 7506,
+     "tfc:rock/hardened/schist": 6341,
+     "tfc:ore/cryolite/diorite": 6040,
+     "minecraft:cave_air": 5348,
+     "tfc:ore/cinnabar/schist": 5022,
+     "tfc:ore/graphite/schist": 4322,
+     "tfc:ore/rich_native_silver/schist": 4192,
+     "tfc:rock/hardened/diorite": 4174,
+     "tfc:rock/spike/gneiss": 4032,
+     "tfc:ore/normal_native_silver/diorite": 3414,
+     "tfc:ore/normal_tetrahedrite/schist": 2425,
+     "tfc:ore/graphite/gneiss": 2244,
+     "tfc:ore/poor_native_silver/diorite": 2140,
+     "minecraft:glow_lichen": 2139,
+     "tfc:ore/poor_tetrahedrite/schist": 2101,
+     "tfc:ore/rich_sphalerite/diorite": 2041,
+     "tfc:ore/normal_native_silver/schist": 1787,
+     "tfc:ore/rich_tetrahedrite/schist": 1514,
+     "minecraft:ice": 1406,
      "tfc:deposit/native_copper/gneiss": 1147,
-     "tfc:deposit/cassiterite/gneiss": 1027,
-     "tfc:ore/rich_tetrahedrite/schist": 959,
-     "tfc:dirt/entisol": 902,
+     "tfc:ore/poor_native_silver/schist": 1041,
+     "tfc:deposit/cassiterite/gneiss": 1026,
+     "tfc:ore/normal_sphalerite/diorite": 868,
+     "tfc:rock/spike/schist": 816,
      "tfc:deposit/native_gold/gneiss": 725,
-     "tfc:ore/poor_sphalerite/diorite": 706,
-     "tfc:rock/spike/diorite": 699,
-     "tfc:ore/normal_tetrahedrite/gneiss": 464,
-     "tfc:rock/hardened/quartzite": 450,
-     "tfc:ore/sulfur/diorite": 448,
-     "tfc:ore/poor_tetrahedrite/gneiss": 394,
-     "tfc:rock/hardened/gabbro": 332,
-     "tfc:rock/hardened/basalt": 316,
-     "tfc:ore/rich_tetrahedrite/gneiss": 302,
-     "tfc:ore/small_native_silver": 276,
-     "tfc:ore/amethyst/gneiss": 239,
+     "minecraft:lava": 583,
+     "tfc:ore/poor_sphalerite/diorite": 509,
+     "tfc:dirt/entisol": 491,
+     "tfc:ore/normal_tetrahedrite/gneiss": 465,
+     "tfc:ore/poor_tetrahedrite/gneiss": 457,
+     "tfc:rock/spike/diorite": 391,
+     "tfc:rock/hardened/quartzite": 378,
+     "tfc:ore/rich_tetrahedrite/gneiss": 297,
+     "tfc:rock/hardened/basalt": 286,
+     "tfc:ore/amethyst/gneiss": 227,
      "tfc:ore/rich_native_gold/diorite": 197,
+     "minecraft:packed_ice": 149,
+     "minecraft:blue_ice": 144,
      "tfc:ore/normal_garnierite/diorite": 136,
      "tfc:ore/emerald/diorite": 97,
      "tfc:ore/poor_garnierite/diorite": 97,
+     "tfc:ore/small_native_silver": 84,
      "tfc:ore/normal_native_gold/diorite": 78,
-     "tfc:ore/small_sphalerite": 73,
-     "tfc:ore/amethyst/quartzite": 68,
+     "tfc:ore/small_sphalerite": 67,
      "tfc:ore/rich_garnierite/diorite": 63,
+     "tfc:ore/amethyst/quartzite": 61,
      "tfc:ore/poor_native_gold/diorite": 48,
-     "tfc:grass/entisol": 39,
-     "tfc:dirt/aridisol": 30,
-     "tfc:rock/spike/gabbro": 27,
-     "minecraft:ice": 3,
-     "tfc:rock/loose/gneiss": 1
+     "tfc:ore/sulfur/diorite": 28,
+     "tfc:rock/mossy_loose/gneiss": 1
     },
     "foreignBlocks": [],
     "minecraftBlocks": [
-     "minecraft:air", "minecraft:bedrock", "minecraft:cave_air", "minecraft:ice", "minecraft:lava",
-     "minecraft:packed_ice", "minecraft:snow_block", "minecraft:water"
+     "minecraft:air", "minecraft:bedrock", "minecraft:blue_ice", "minecraft:cave_air", "minecraft:glow_lichen",
+     "minecraft:ice", "minecraft:lava", "minecraft:packed_ice", "minecraft:snow_block", "minecraft:water"
     ],
     "structureStarts": {},
     "entities": {"tfc:frog": 1},
@@ -5217,91 +5944,90 @@
      "tfc:lowlands": 1920
     },
     "census": {
-     "tfc:rock/raw/slate": 798245,
-     "tfc:rock/raw/shale": 713750,
-     "minecraft:cave_air": 304835,
-     "tfc:rock/raw/schist": 183265,
-     "minecraft:air": 111042,
-     "tfc:rock/raw/dolomite": 105861,
+     "tfc:rock/raw/slate": 986861,
+     "tfc:rock/raw/shale": 746491,
+     "tfc:rock/raw/schist": 304447,
+     "tfc:rock/raw/dolomite": 124473,
+     "minecraft:air": 112253,
      "minecraft:bedrock": 72574,
-     "minecraft:lava": 43076,
-     "tfc:rock/hardened/slate": 31938,
-     "minecraft:water": 27711,
-     "tfc:rock/gravel/shale": 22806,
-     "tfc:rock/hardened/shale": 17123,
-     "tfc:rock/raw/marble": 15949,
-     "tfc:rock/spike/slate": 14197,
-     "tfc:rock/spike/shale": 7295,
-     "tfc:rock/raw/granite": 4938,
-     "tfc:ore/rich_native_silver/schist": 4876,
-     "tfc:rock/spike/schist": 4854,
-     "tfc:rock/hardened/dolomite": 4651,
-     "tfc:rock/hardened/schist": 4643,
-     "tfc:lignite": 2105,
-     "tfc:ore/normal_native_silver/schist": 2087,
-     "tfc:rock/mossy_cobble/shale": 1601,
-     "tfc:rock/gravel/dolomite": 1501,
+     "tfc:rock/raw/marble": 33912,
+     "tfc:rock/raw/granite": 20654,
+     "tfc:rock/gravel/shale": 20418,
+     "minecraft:cave_air": 14358,
+     "minecraft:water": 13712,
+     "tfc:rock/hardened/shale": 11520,
+     "tfc:rock/hardened/slate": 9658,
+     "tfc:ore/rich_native_silver/schist": 6819,
+     "tfc:rock/spike/shale": 4915,
+     "tfc:ore/normal_native_silver/schist": 2865,
+     "tfc:rock/spike/slate": 2797,
+     "minecraft:glow_lichen": 2383,
+     "tfc:rock/mossy_cobble/shale": 2337,
+     "tfc:rock/mossy_cobble/slate": 2252,
+     "tfc:lignite": 2176,
+     "tfc:ore/cinnabar/schist": 2085,
+     "tfc:rock/hardened/dolomite": 1745,
+     "tfc:ore/poor_native_silver/schist": 1636,
      "tfc:deposit/native_silver/shale": 1476,
-     "tfc:rock/spike/dolomite": 1421,
-     "tfc:ore/sulfur/schist": 1359,
-     "tfc:dirt/oxisol": 1266,
-     "tfc:ore/poor_native_silver/schist": 1171,
-     "tfc:ore/cinnabar/schist": 928,
-     "tfc:plant/hanging_vines_plant": 701,
+     "tfc:rock/gravel/dolomite": 1406,
+     "tfc:dirt/oxisol": 1021,
+     "minecraft:lava": 982,
+     "tfc:rock/spike/dolomite": 935,
      "tfc:deposit/cassiterite/shale": 691,
-     "tfc:rock/hardened/marble": 522,
-     "tfc:rock/cobble/shale": 383,
-     "tfc:groundcover/guano": 378,
+     "tfc:rock/gravel/slate": 605,
+     "minecraft:moss_carpet": 423,
+     "tfc:rock/mossy_cobble/dolomite": 372,
      "tfc:deposit/native_gold/shale": 362,
-     "tfc:rock/spike/marble": 308,
-     "tfc:plant/liana_plant": 275,
-     "tfc:rock/hardened/quartzite": 274,
-     "tfc:rock/hardened/basalt": 246,
-     "tfc:rock/mossy_cobble/dolomite": 241,
-     "tfc:rock/mossy_cobble/slate": 235,
+     "tfc:plant/hanging_vines_plant": 346,
+     "tfc:rock/hardened/quartzite": 306,
+     "tfc:rock/hardened/basalt": 281,
+     "minecraft:cave_vines_plant": 267,
+     "tfc:rock/mossy_cobble/schist": 244,
      "tfc:ore/normal_magnetite/shale": 226,
-     "tfc:ore/poor_magnetite/shale": 220,
-     "tfc:ore/small_native_silver": 194,
+     "tfc:ore/poor_magnetite/shale": 216,
      "tfc:ore/poor_bismuthinite/shale": 186,
-     "tfc:rock/gravel/slate": 174,
-     "tfc:rock/spike/granite": 167,
-     "tfc:ore/rich_magnetite/shale": 141,
-     "tfc:ore/sulfur/slate": 97,
+     "tfc:rock/hardened/schist": 152,
+     "tfc:ore/rich_magnetite/shale": 145,
+     "minecraft:cave_vines": 144,
+     "tfc:rock/gravel/marble": 136,
+     "tfc:rock/cobble/shale": 129,
+     "tfc:plant/liana_plant": 111,
+     "tfc:groundcover/guano": 99,
+     "tfc:ore/graphite/marble": 77,
      "tfc:ore/normal_bismuthinite/shale": 71,
-     "tfc:plant/hanging_vines": 67,
+     "tfc:calcite": 66,
      "tfc:ore/borax/shale": 49,
-     "tfc:rock/hardened/granite": 48,
-     "tfc:rock/cobble/slate": 45,
      "tfc:ore/amethyst/quartzite": 45,
-     "minecraft:cobweb": 44,
-     "tfc:plant/liana": 39,
-     "tfc:rock/cobble/dolomite": 38,
-     "minecraft:hanging_roots": 34,
+     "tfc:ore/small_native_silver": 43,
+     "tfc:wood/twig/willow": 37,
+     "tfc:plant/hanging_vines": 34,
      "tfc:ore/poor_bismuthinite/dolomite": 26,
+     "tfc:wood/fallen_leaves/willow": 25,
      "tfc:ore/amethyst/shale": 22,
-     "tfc:plant/jungle_vines": 18,
-     "tfc:ore/rich_native_silver/granite": 15,
+     "tfc:ore/rich_native_silver/granite": 14,
+     "tfc:plant/liana": 12,
+     "tfc:rock/loose/shale": 12,
      "tfc:ore/rich_bismuthinite/shale": 11,
-     "tfc:ore/sulfur/granite": 10,
-     "tfc:ore/graphite/marble": 10,
      "tfc:ore/normal_bismuthinite/dolomite": 9,
-     "tfc:dirt/alfisol": 8,
-     "tfc:rock/loose/shale": 5,
+     "tfc:rock/cobble/dolomite": 8,
+     "minecraft:cobweb": 6,
+     "minecraft:hanging_roots": 6,
+     "tfc:rock/hardened/granite": 5,
      "tfc:ore/poor_native_silver/granite": 5,
      "tfc:ore/normal_native_silver/granite": 4,
-     "tfc:plant/coontail": 3,
+     "tfc:rock/cobble/slate": 3,
      "tfc:rock/mossy_loose/shale": 2,
      "tfc:rock/raw/phyllite": 2,
-     "tfc:rock/mossy_loose/dolomite": 1,
-     "tfc:rock/loose/dolomite": 1,
-     "tfc:plant/eel_grass": 1,
-     "tfc:wood/twig/willow": 1,
+     "tfc:rock/hardened/marble": 1,
+     "tfc:plant/coontail": 1,
+     "tfc:plant/jungle_vines": 1,
      "tfc:ore/rich_bismuthinite/dolomite": 1
     },
     "foreignBlocks": [],
     "minecraftBlocks": [
-     "minecraft:air", "minecraft:bedrock", "minecraft:cave_air", "minecraft:cobweb", "minecraft:hanging_roots",
-     "minecraft:lava", "minecraft:water"
+     "minecraft:air", "minecraft:bedrock", "minecraft:cave_air", "minecraft:cave_vines", "minecraft:cave_vines_plant",
+     "minecraft:cobweb", "minecraft:glow_lichen", "minecraft:hanging_roots", "minecraft:lava",
+     "minecraft:moss_carpet", "minecraft:water"
     ],
     "structureStarts": {},
     "entities": {},
@@ -5400,74 +6126,64 @@
      "tfc:river": 1440
     },
     "census": {
-     "tfc:rock/raw/shale": 465776,
-     "tfc:rock/raw/gneiss": 450669,
-     "tfc:rock/raw/phyllite": 441255,
-     "tfc:rock/raw/marble": 438101,
-     "tfc:rock/raw/limestone": 393746,
-     "minecraft:air": 215760,
+     "tfc:rock/raw/gneiss": 508901,
+     "tfc:rock/raw/phyllite": 490671,
+     "tfc:rock/raw/marble": 479994,
+     "tfc:rock/raw/shale": 477583,
+     "tfc:rock/raw/limestone": 366822,
      "minecraft:bedrock": 72465,
-     "tfc:rock/raw/slate": 24368,
-     "minecraft:cave_air": 23664,
-     "minecraft:water": 16345,
-     "tfc:rock/gravel/limestone": 15117,
-     "tfc:rock/hardened/shale": 10465,
-     "tfc:rock/hardened/phyllite": 9076,
-     "tfc:rock/hardened/marble": 8565,
-     "tfc:ore/lapis_lazuli/limestone": 6722,
-     "minecraft:lava": 6664,
-     "tfc:rock/hardened/gneiss": 6030,
-     "tfc:rock/hardened/limestone": 5718,
-     "tfc:rock/gravel/shale": 4771,
-     "tfc:rock/spike/shale": 2923,
-     "tfc:lignite": 2781,
-     "tfc:rock/gravel/marble": 1588,
-     "tfc:raw_sandstone/yellow": 1575,
-     "tfc:raw_sandstone/red": 1281,
-     "tfc:rock/spike/marble": 1198,
-     "tfc:raw_sandstone/brown": 1136,
-     "tfc:rock/spike/phyllite": 1093,
-     "tfc:rock/spike/gneiss": 1083,
-     "tfc:rock/hardened/slate": 1025,
-     "tfc:rock/spike/limestone": 1002,
-     "tfc:ore/rich_native_silver/gneiss": 763,
-     "tfc:dirt/aridisol": 568,
-     "tfc:rock/gravel/phyllite": 552,
-     "tfc:deposit/native_gold/limestone": 518,
-     "tfc:ore/lapis_lazuli/marble": 407,
-     "tfc:ore/normal_native_silver/gneiss": 331,
+     "minecraft:air": 65577,
+     "tfc:rock/hardened/shale": 40462,
+     "tfc:rock/raw/slate": 35221,
+     "tfc:rock/hardened/phyllite": 24879,
+     "minecraft:water": 14246,
+     "tfc:rock/gravel/limestone": 13962,
+     "tfc:rock/hardened/limestone": 11336,
+     "tfc:ore/lapis_lazuli/limestone": 6611,
+     "tfc:rock/spike/limestone": 4592,
+     "tfc:rock/hardened/gneiss": 4089,
+     "tfc:rock/hardened/marble": 2837,
+     "tfc:rock/gravel/shale": 2446,
+     "tfc:lignite": 2325,
+     "tfc:raw_sandstone/yellow": 1593,
+     "tfc:raw_sandstone/red": 1317,
+     "tfc:ore/rich_native_silver/gneiss": 1153,
+     "tfc:raw_sandstone/brown": 1117,
+     "tfc:rock/gravel/marble": 857,
+     "tfc:rock/gravel/phyllite": 770,
+     "tfc:rock/gravel/slate": 623,
+     "minecraft:glow_lichen": 616,
+     "tfc:rock/spike/marble": 526,
+     "tfc:ore/normal_native_silver/gneiss": 500,
+     "tfc:deposit/native_gold/limestone": 484,
+     "tfc:ore/lapis_lazuli/marble": 427,
      "tfc:rock/hardened/quartzite": 330,
      "tfc:rock/raw/schist": 328,
+     "tfc:rock/spike/shale": 321,
+     "tfc:ore/poor_native_silver/gneiss": 321,
      "tfc:rock/hardened/basalt": 301,
-     "tfc:rock/gravel/slate": 271,
      "tfc:deposit/native_copper/shale": 270,
-     "tfc:ore/sylvite/shale": 224,
-     "tfc:ore/poor_native_silver/gneiss": 221,
-     "tfc:ore/normal_malachite/limestone": 200,
-     "tfc:ore/poor_malachite/limestone": 197,
-     "tfc:ore/borax/shale": 123,
-     "tfc:rock/spike/slate": 112,
-     "tfc:ore/rich_malachite/limestone": 77,
-     "tfc:grass/aridisol": 67,
+     "tfc:calcite": 232,
+     "tfc:ore/sylvite/shale": 230,
+     "tfc:ore/borax/shale": 138,
+     "tfc:rock/hardened/slate": 130,
+     "tfc:ore/poor_malachite/limestone": 117,
+     "tfc:ore/normal_malachite/limestone": 89,
      "tfc:ore/amethyst/quartzite": 67,
-     "tfc:sand/brown": 42,
+     "tfc:ore/rich_malachite/limestone": 46,
      "tfc:ore/ruby/marble": 35,
-     "tfc:ore/small_native_silver": 33,
-     "tfc:deposit/native_gold/shale": 22,
+     "tfc:ore/graphite/marble": 34,
+     "minecraft:lava": 22,
      "tfc:raw_sandstone/white": 22,
-     "tfc:rock/spike/basalt": 13,
-     "tfc:ore/graphite/marble": 10,
-     "tfc:plant/pistia": 3,
-     "tfc:ore/sulfur/gneiss": 3,
-     "tfc:rock/loose/shale": 3,
-     "tfc:ore/sapphire/marble": 2,
-     "tfc:plant/ryegrass": 2,
-     "tfc:rock/loose/limestone": 1
+     "tfc:deposit/native_gold/shale": 21,
+     "tfc:rock/spike/phyllite": 18,
+     "tfc:rock/spike/gneiss": 3,
+     "tfc:ore/small_native_silver": 3
     },
     "foreignBlocks": [],
-    "minecraftBlocks": ["minecraft:air", "minecraft:bedrock", "minecraft:cave_air", "minecraft:lava", "minecraft:water"],
+    "minecraftBlocks": ["minecraft:air", "minecraft:bedrock", "minecraft:glow_lichen", "minecraft:lava", "minecraft:water"],
     "structureStarts": {},
-    "entities": {"tfc:donkey": 4},
+    "entities": {"tfc:donkey": 2},
     "full": 81
    }
   },

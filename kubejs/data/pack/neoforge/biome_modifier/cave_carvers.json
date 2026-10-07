@@ -1,0 +1,8 @@
+{
+  "type": "neoforge:add_carvers",
+  "biomes": "#pack:overworld",
+  "carvers": [
+    "pack:karst_cave"
+  ],
+  "step": "air"
+}

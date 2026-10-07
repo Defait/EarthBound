@@ -1,0 +1,7 @@
+{
+  "type": "tfc:if_then",
+  "config": {
+    "if": "pack:caves/mossy_rock",
+    "then": "pack:caves/cave_vines"
+  }
+}

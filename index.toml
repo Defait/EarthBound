@@ -209,6 +209,142 @@ file = "kubejs/data/fowlplay/tfc/fauna/sparrow.json"
 hash = "8a40668bfaa6a4ee70b644bf5b681b836c0e4f48cf96d9537562329794c554b2"
 
 [[files]]
+file = "kubejs/data/pack/neoforge/biome_modifier/cave_carvers.json"
+hash = "19c04d22b638577af85a5b1b835739c6f748f8a4552a191bcbafe8c73b41bab6"
+
+[[files]]
+file = "kubejs/data/pack/tags/block/karst_cave_rock.json"
+hash = "bbfada6deb77f53d0d96e34a911e6192a7d416b35a70ee9caa4e52339f81e3ef"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/overworld.json"
+hash = "23447f4459de946dfba204ac79c65b62ab88c703791f8826bb8046a0606905bb"
+
+[[files]]
+file = "kubejs/data/pack/tfc/food/glow_berries.json"
+hash = "bd595e59e7554860ed8a0620516d166ed308f3a591b9be91c05d873f16248a5f"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/configured_carver/karst_cave.json"
+hash = "bd47010c05e862b633d88275647308ec2f1fb695747b980fa17f80bd43a2b16a"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/configured_feature/caves/cave_vine.json"
+hash = "ccdf9c8ea1f9afe0b60226b7a8fe7de10df929cb43d21d8edcff9ba4f4df896b"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/configured_feature/caves/cave_vines.json"
+hash = "eda9981ed422884dc63f8c1d48a076dd1fd234593fb4b5dc9519574bfe3a57ca"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/configured_feature/caves/glow_lichen.json"
+hash = "d858acd4f8557c1058c1ac2a7807a45885b1b1feb099681453f9462b9298358e"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/configured_feature/caves/ice_cave.json"
+hash = "b958ae942bf06f26f545424a1984d9b75a10711f7f4ad7fc2909e3e99008de05"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/configured_feature/caves/karst_calcite.json"
+hash = "cc3fc86e0415a7e3054d93b8355a2cffbb2e1e5ebab1e7060077ec049d8660f1"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/configured_feature/caves/moss_carpets.json"
+hash = "8f2c767c92c8e185c1f574fb94e3526455f654ccec45eaf84f755d8b085f62ee"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/configured_feature/caves/mossy_ceiling.json"
+hash = "80bb6b37dca9e642755ced6e63f93832d08d613048308679a4218b0ae2f29e1c"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/configured_feature/caves/mossy_floor.json"
+hash = "1fbf1bbf1ce8433f40fa69f2521ef62985f782758687ac3ad067fae5d9cf2d71"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/configured_feature/caves/mossy_rock.json"
+hash = "4f7b2f4fc4ad03983abaa46d557948fbed7df8dce3c6abfeb34de9db70881816"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/density_function/caves/caverns.json"
+hash = "6e86aeec1e3b70f4ec01210d8623c6989adfe07fc26d2bb2499460149e295565"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/density_function/caves/chambers.json"
+hash = "d4ecb4c0e83a1e37dd75350289051c47adde012da6432a2c12fe941fd399f9fb"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/density_function/caves/entrances.json"
+hash = "f937b8752941e6016c3801a4c511cdcee09965a2bf03a7766a57495e47c20c63"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/density_function/caves/shafts.json"
+hash = "1c7a873cf55d84dcd04e598cdf7fd97af3485746d1c9f6952378adf2fb9a9bee"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/density_function/caves/style.json"
+hash = "b08702126bac3ade700c24a1b6036f694ad8f99c0e223e5596e8fc204726634c"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/density_function/caves/styles.json"
+hash = "693bee042cfc23751d84c647c94237e98228669751806f2a5ce4631efbfdbf7a"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/noise/caves/cavern.json"
+hash = "a3c7d0ed68b4242c114e2704bcbba7ef99592ec77688e44dde96e2f0e9f8f707"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/noise/caves/cheese.json"
+hash = "e8c99e496727b5fc00312c753bb7ee34ac64ea2b384ed12981dc5198230a6c00"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/noise/caves/entrance.json"
+hash = "f7f1b5909a2ec58991bca2e45f6207d1ada480c4393ee90441a0a1add2452e68"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/noise/caves/layer.json"
+hash = "baaec7643c4c5e74d50a4bedad614eff7353c34db302a4bcf14cb4ff5f518f10"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/noise/caves/shaft.json"
+hash = "a3c7d0ed68b4242c114e2704bcbba7ef99592ec77688e44dde96e2f0e9f8f707"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/noise/caves/style.json"
+hash = "53bf433c1939e4a6c121c4058fc2d07ecf55f9382034e7aac8f23dd46767122d"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/placed_feature/caves/cave_vines.json"
+hash = "dce76751cd6e93a6e7120acf66a1afa47eabdf8ce997f731bdbf1a9815b2d613"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/placed_feature/caves/glow_lichen.json"
+hash = "acc801ee851a0a64d80d2b1286b15ff97c7e66c2978110ab751ec25ece82578f"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/placed_feature/caves/ice_cave.json"
+hash = "0f5bd27ff1ca224fd49964a67b612d3227c08fbaa8e4f84c1be9a2d603d4a145"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/placed_feature/caves/karst_calcite.json"
+hash = "b24b7fe90095cf3a607f30073ac362de053ca04e8d5cd6bfd4436b96af3ec3a6"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/placed_feature/caves/moss_carpets.json"
+hash = "9fe0a3e8a4ceaeada5d40cdddebfa412c36e5554a3388fdf01b33d19ba740bf6"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/placed_feature/caves/mossy_ceiling.json"
+hash = "caceb4115293223f3459a3c07109782065c2bb00aa14904ba547eb833f9e61b3"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/placed_feature/caves/mossy_floor.json"
+hash = "28c3c0c58aef77cf15227fcc042f77c687ab808885e7e5c37384d6111fa800db"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/placed_feature/caves/mossy_rock.json"
+hash = "c62da56fa27bc2d66efa06a4784a3c004233a383e6f145fd2e7bfcccc51d92ba"
+
+[[files]]
 file = "kubejs/data/tfc/recipe/crafting/clay_ball_5.json"
 hash = "5f5056da3174f4bfd139698b2bc3b7a68b60856c9bef177423dd8ae5c44f8a85"
 
@@ -223,6 +359,42 @@ hash = "5f5056da3174f4bfd139698b2bc3b7a68b60856c9bef177423dd8ae5c44f8a85"
 [[files]]
 file = "kubejs/data/tfc/recipe/crafting/clay_ball_8.json"
 hash = "5f5056da3174f4bfd139698b2bc3b7a68b60856c9bef177423dd8ae5c44f8a85"
+
+[[files]]
+file = "kubejs/data/tfc/tags/worldgen/placed_feature/in_biome/underground_decoration.json"
+hash = "099532231505cf95d1073afe0aae591e9dc9eca75358b4e719f802f69fda72d7"
+
+[[files]]
+file = "kubejs/data/tfc/worldgen/configured_carver/canyon.json"
+hash = "7dc428728079bb25e7927db6d061154958795b703eb2069bebd21ff4b650a9fa"
+
+[[files]]
+file = "kubejs/data/tfc/worldgen/configured_carver/cave.json"
+hash = "e2036cbabb4099c34049cdd86973a2cb7797f0c1eec7275beb1c357000fb49bd"
+
+[[files]]
+file = "kubejs/data/tfc/worldgen/configured_carver/deep_cave.json"
+hash = "dd5d2a23f2a71123b467e091d78b1ccf26902aa0c9979f30892fef7c4d391dcb"
+
+[[files]]
+file = "kubejs/data/tfc/worldgen/density_function/noise_caves.json"
+hash = "df35e433765abb56072a3b85e09c81e0b291dd68098c5d12b3a719c56343a74a"
+
+[[files]]
+file = "kubejs/data/tfc/worldgen/density_function/noodle_caves.json"
+hash = "cc5482e475410bb3c8bc75037a4b490a8010102c3ff55a5cf6f4c89c999a5b11"
+
+[[files]]
+file = "kubejs/data/tfc/worldgen/placed_feature/cave_column.json"
+hash = "4533141945e8ad261bce2d75d2261404684ebe1862526b3be8703ca9f70dfc4a"
+
+[[files]]
+file = "kubejs/data/tfc/worldgen/placed_feature/cave_spike.json"
+hash = "47d4eca4280dbe78dc06c26c6ea2f57b410b5771332828a8b21c7c30375a8a46"
+
+[[files]]
+file = "kubejs/data/tfc/worldgen/placed_feature/large_cave_spike.json"
+hash = "8784ba30f10d82b4ed0c8f20909e0b7960ac5efcc72d1153ef20e6d110873749"
 
 [[files]]
 file = "kubejs/data/woodencog/recipe/cutting/slab/loam_brick_slab.json"

@@ -1,0 +1,465 @@
+{
+  "type": "minecraft:disk",
+  "config": {
+    "radius": {
+      "type": "minecraft:uniform",
+      "min_inclusive": 4,
+      "max_inclusive": 7
+    },
+    "half_height": 2,
+    "target": {
+      "type": "minecraft:all_of",
+      "predicates": [
+        {
+          "type": "minecraft:matching_blocks",
+          "blocks": [
+            "tfc:rock/raw/granite",
+            "tfc:rock/hardened/granite",
+            "tfc:rock/raw/diorite",
+            "tfc:rock/hardened/diorite",
+            "tfc:rock/raw/gabbro",
+            "tfc:rock/hardened/gabbro",
+            "tfc:rock/raw/shale",
+            "tfc:rock/hardened/shale",
+            "tfc:rock/raw/claystone",
+            "tfc:rock/hardened/claystone",
+            "tfc:rock/raw/limestone",
+            "tfc:rock/hardened/limestone",
+            "tfc:rock/raw/conglomerate",
+            "tfc:rock/hardened/conglomerate",
+            "tfc:rock/raw/dolomite",
+            "tfc:rock/hardened/dolomite",
+            "tfc:rock/raw/chert",
+            "tfc:rock/hardened/chert",
+            "tfc:rock/raw/chalk",
+            "tfc:rock/hardened/chalk",
+            "tfc:rock/raw/tuff",
+            "tfc:rock/hardened/tuff",
+            "tfc:rock/raw/rhyolite",
+            "tfc:rock/hardened/rhyolite",
+            "tfc:rock/raw/basalt",
+            "tfc:rock/hardened/basalt",
+            "tfc:rock/raw/andesite",
+            "tfc:rock/hardened/andesite",
+            "tfc:rock/raw/dacite",
+            "tfc:rock/hardened/dacite",
+            "tfc:rock/raw/quartzite",
+            "tfc:rock/hardened/quartzite",
+            "tfc:rock/raw/slate",
+            "tfc:rock/hardened/slate",
+            "tfc:rock/raw/phyllite",
+            "tfc:rock/hardened/phyllite",
+            "tfc:rock/raw/schist",
+            "tfc:rock/hardened/schist",
+            "tfc:rock/raw/gneiss",
+            "tfc:rock/hardened/gneiss",
+            "tfc:rock/raw/marble",
+            "tfc:rock/hardened/marble"
+          ]
+        },
+        {
+          "type": "minecraft:any_of",
+          "predicates": [
+            {
+              "type": "minecraft:matching_blocks",
+              "offset": [
+                0,
+                1,
+                0
+              ],
+              "blocks": [
+                "minecraft:air",
+                "minecraft:cave_air"
+              ]
+            },
+            {
+              "type": "minecraft:matching_blocks",
+              "offset": [
+                0,
+                -1,
+                0
+              ],
+              "blocks": [
+                "minecraft:air",
+                "minecraft:cave_air"
+              ]
+            },
+            {
+              "type": "minecraft:matching_blocks",
+              "offset": [
+                1,
+                0,
+                0
+              ],
+              "blocks": [
+                "minecraft:air",
+                "minecraft:cave_air"
+              ]
+            },
+            {
+              "type": "minecraft:matching_blocks",
+              "offset": [
+                -1,
+                0,
+                0
+              ],
+              "blocks": [
+                "minecraft:air",
+                "minecraft:cave_air"
+              ]
+            },
+            {
+              "type": "minecraft:matching_blocks",
+              "offset": [
+                0,
+                0,
+                1
+              ],
+              "blocks": [
+                "minecraft:air",
+                "minecraft:cave_air"
+              ]
+            },
+            {
+              "type": "minecraft:matching_blocks",
+              "offset": [
+                0,
+                0,
+                -1
+              ],
+              "blocks": [
+                "minecraft:air",
+                "minecraft:cave_air"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "state_provider": {
+      "fallback": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "tfc:rock/mossy_cobble/granite"
+        }
+      },
+      "rules": [
+        {
+          "if_true": {
+            "type": "minecraft:matching_blocks",
+            "blocks": [
+              "tfc:rock/raw/granite",
+              "tfc:rock/hardened/granite"
+            ]
+          },
+          "then": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "tfc:rock/mossy_cobble/granite"
+            }
+          }
+        },
+        {
+          "if_true": {
+            "type": "minecraft:matching_blocks",
+            "blocks": [
+              "tfc:rock/raw/diorite",
+              "tfc:rock/hardened/diorite"
+            ]
+          },
+          "then": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "tfc:rock/mossy_cobble/diorite"
+            }
+          }
+        },
+        {
+          "if_true": {
+            "type": "minecraft:matching_blocks",
+            "blocks": [
+              "tfc:rock/raw/gabbro",
+              "tfc:rock/hardened/gabbro"
+            ]
+          },
+          "then": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "tfc:rock/mossy_cobble/gabbro"
+            }
+          }
+        },
+        {
+          "if_true": {
+            "type": "minecraft:matching_blocks",
+            "blocks": [
+              "tfc:rock/raw/shale",
+              "tfc:rock/hardened/shale"
+            ]
+          },
+          "then": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "tfc:rock/mossy_cobble/shale"
+            }
+          }
+        },
+        {
+          "if_true": {
+            "type": "minecraft:matching_blocks",
+            "blocks": [
+              "tfc:rock/raw/claystone",
+              "tfc:rock/hardened/claystone"
+            ]
+          },
+          "then": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "tfc:rock/mossy_cobble/claystone"
+            }
+          }
+        },
+        {
+          "if_true": {
+            "type": "minecraft:matching_blocks",
+            "blocks": [
+              "tfc:rock/raw/limestone",
+              "tfc:rock/hardened/limestone"
+            ]
+          },
+          "then": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "tfc:rock/mossy_cobble/limestone"
+            }
+          }
+        },
+        {
+          "if_true": {
+            "type": "minecraft:matching_blocks",
+            "blocks": [
+              "tfc:rock/raw/conglomerate",
+              "tfc:rock/hardened/conglomerate"
+            ]
+          },
+          "then": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "tfc:rock/mossy_cobble/conglomerate"
+            }
+          }
+        },
+        {
+          "if_true": {
+            "type": "minecraft:matching_blocks",
+            "blocks": [
+              "tfc:rock/raw/dolomite",
+              "tfc:rock/hardened/dolomite"
+            ]
+          },
+          "then": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "tfc:rock/mossy_cobble/dolomite"
+            }
+          }
+        },
+        {
+          "if_true": {
+            "type": "minecraft:matching_blocks",
+            "blocks": [
+              "tfc:rock/raw/chert",
+              "tfc:rock/hardened/chert"
+            ]
+          },
+          "then": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "tfc:rock/mossy_cobble/chert"
+            }
+          }
+        },
+        {
+          "if_true": {
+            "type": "minecraft:matching_blocks",
+            "blocks": [
+              "tfc:rock/raw/chalk",
+              "tfc:rock/hardened/chalk"
+            ]
+          },
+          "then": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "tfc:rock/mossy_cobble/chalk"
+            }
+          }
+        },
+        {
+          "if_true": {
+            "type": "minecraft:matching_blocks",
+            "blocks": [
+              "tfc:rock/raw/tuff",
+              "tfc:rock/hardened/tuff"
+            ]
+          },
+          "then": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "tfc:rock/mossy_cobble/tuff"
+            }
+          }
+        },
+        {
+          "if_true": {
+            "type": "minecraft:matching_blocks",
+            "blocks": [
+              "tfc:rock/raw/rhyolite",
+              "tfc:rock/hardened/rhyolite"
+            ]
+          },
+          "then": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "tfc:rock/mossy_cobble/rhyolite"
+            }
+          }
+        },
+        {
+          "if_true": {
+            "type": "minecraft:matching_blocks",
+            "blocks": [
+              "tfc:rock/raw/basalt",
+              "tfc:rock/hardened/basalt"
+            ]
+          },
+          "then": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "tfc:rock/mossy_cobble/basalt"
+            }
+          }
+        },
+        {
+          "if_true": {
+            "type": "minecraft:matching_blocks",
+            "blocks": [
+              "tfc:rock/raw/andesite",
+              "tfc:rock/hardened/andesite"
+            ]
+          },
+          "then": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "tfc:rock/mossy_cobble/andesite"
+            }
+          }
+        },
+        {
+          "if_true": {
+            "type": "minecraft:matching_blocks",
+            "blocks": [
+              "tfc:rock/raw/dacite",
+              "tfc:rock/hardened/dacite"
+            ]
+          },
+          "then": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "tfc:rock/mossy_cobble/dacite"
+            }
+          }
+        },
+        {
+          "if_true": {
+            "type": "minecraft:matching_blocks",
+            "blocks": [
+              "tfc:rock/raw/quartzite",
+              "tfc:rock/hardened/quartzite"
+            ]
+          },
+          "then": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "tfc:rock/mossy_cobble/quartzite"
+            }
+          }
+        },
+        {
+          "if_true": {
+            "type": "minecraft:matching_blocks",
+            "blocks": [
+              "tfc:rock/raw/slate",
+              "tfc:rock/hardened/slate"
+            ]
+          },
+          "then": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "tfc:rock/mossy_cobble/slate"
+            }
+          }
+        },
+        {
+          "if_true": {
+            "type": "minecraft:matching_blocks",
+            "blocks": [
+              "tfc:rock/raw/phyllite",
+              "tfc:rock/hardened/phyllite"
+            ]
+          },
+          "then": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "tfc:rock/mossy_cobble/phyllite"
+            }
+          }
+        },
+        {
+          "if_true": {
+            "type": "minecraft:matching_blocks",
+            "blocks": [
+              "tfc:rock/raw/schist",
+              "tfc:rock/hardened/schist"
+            ]
+          },
+          "then": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "tfc:rock/mossy_cobble/schist"
+            }
+          }
+        },
+        {
+          "if_true": {
+            "type": "minecraft:matching_blocks",
+            "blocks": [
+              "tfc:rock/raw/gneiss",
+              "tfc:rock/hardened/gneiss"
+            ]
+          },
+          "then": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "tfc:rock/mossy_cobble/gneiss"
+            }
+          }
+        },
+        {
+          "if_true": {
+            "type": "minecraft:matching_blocks",
+            "blocks": [
+              "tfc:rock/raw/marble",
+              "tfc:rock/hardened/marble"
+            ]
+          },
+          "then": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "tfc:rock/mossy_cobble/marble"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "type": "minecraft:random_patch",
+  "config": {
+    "tries": 96,
+    "xz_spread": 6,
+    "y_spread": 2,
+    "feature": {
+      "feature": {
+        "type": "minecraft:simple_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "minecraft:moss_carpet"
+            }
+          }
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:all_of",
+            "predicates": [
+              {
+                "type": "minecraft:matching_blocks",
+                "blocks": [
+                  "minecraft:air",
+                  "minecraft:cave_air"
+                ]
+              },
+              {
+                "type": "minecraft:matching_blocks",
+                "offset": [
+                  0,
+                  -1,
+                  0
+                ],
+                "blocks": [
+                  "tfc:rock/mossy_cobble/granite",
+                  "tfc:rock/mossy_cobble/diorite",
+                  "tfc:rock/mossy_cobble/gabbro",
+                  "tfc:rock/mossy_cobble/shale",
+                  "tfc:rock/mossy_cobble/claystone",
+                  "tfc:rock/mossy_cobble/limestone",
+                  "tfc:rock/mossy_cobble/conglomerate",
+                  "tfc:rock/mossy_cobble/dolomite",
+                  "tfc:rock/mossy_cobble/chert",
+                  "tfc:rock/mossy_cobble/chalk",
+                  "tfc:rock/mossy_cobble/tuff",
+                  "tfc:rock/mossy_cobble/rhyolite",
+                  "tfc:rock/mossy_cobble/basalt",
+                  "tfc:rock/mossy_cobble/andesite",
+                  "tfc:rock/mossy_cobble/dacite",
+                  "tfc:rock/mossy_cobble/quartzite",
+                  "tfc:rock/mossy_cobble/slate",
+                  "tfc:rock/mossy_cobble/phyllite",
+                  "tfc:rock/mossy_cobble/schist",
+                  "tfc:rock/mossy_cobble/gneiss",
+                  "tfc:rock/mossy_cobble/marble"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

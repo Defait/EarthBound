@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "pack:caves/glow_lichen",
+    "pack:caves/mossy_floor",
+    "pack:caves/mossy_ceiling",
+    "pack:caves/karst_calcite",
+    "pack:caves/ice_cave"
+  ]
+}

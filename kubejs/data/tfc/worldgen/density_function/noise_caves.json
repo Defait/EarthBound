@@ -1,0 +1,48 @@
+{
+  "type": "minecraft:add",
+  "argument1": {
+    "type": "minecraft:mul",
+    "argument1": {
+      "type": "minecraft:clamp",
+      "input": {
+        "type": "minecraft:min",
+        "argument1": "pack:caves/styles",
+        "argument2": "pack:caves/entrances"
+      },
+      "min": -1.0,
+      "max": 1.0
+    },
+    "argument2": {
+      "type": "minecraft:add",
+      "argument1": 1.0,
+      "argument2": {
+        "type": "minecraft:mul",
+        "argument1": -1.0,
+        "argument2": {
+          "type": "minecraft:cache_once",
+          "argument": {
+            "type": "minecraft:y_clamped_gradient",
+            "from_y": 20,
+            "to_y": 320,
+            "from_value": 0.0,
+            "to_value": 1.0
+          }
+        }
+      }
+    }
+  },
+  "argument2": {
+    "type": "minecraft:mul",
+    "argument1": 2.5,
+    "argument2": {
+      "type": "minecraft:cache_once",
+      "argument": {
+        "type": "minecraft:y_clamped_gradient",
+        "from_y": 20,
+        "to_y": 320,
+        "from_value": 0.0,
+        "to_value": 1.0
+      }
+    }
+  }
+}

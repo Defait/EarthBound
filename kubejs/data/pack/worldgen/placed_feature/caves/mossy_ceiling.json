@@ -1,0 +1,49 @@
+{
+  "feature": "pack:caves/mossy_ceiling",
+  "placement": [
+    {
+      "type": "minecraft:noise_threshold_count",
+      "noise_level": 0.0,
+      "below_noise": 0,
+      "above_noise": 60
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:uniform",
+        "min_inclusive": {
+          "absolute": -50
+        },
+        "max_inclusive": {
+          "absolute": 60
+        }
+      }
+    },
+    {
+      "type": "minecraft:environment_scan",
+      "direction_of_search": "up",
+      "max_steps": 12,
+      "target_condition": {
+        "type": "minecraft:solid"
+      },
+      "allowed_search_condition": {
+        "type": "minecraft:matching_blocks",
+        "blocks": [
+          "minecraft:air",
+          "minecraft:cave_air"
+        ]
+      }
+    },
+    {
+      "type": "tfc:climate",
+      "min_temperature": 10,
+      "max_temperature": 40,
+      "min_groundwater": 250,
+      "max_groundwater": 500,
+      "fuzzy": true
+    }
+  ]
+}

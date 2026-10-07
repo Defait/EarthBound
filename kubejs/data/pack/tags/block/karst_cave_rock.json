@@ -1,0 +1,16 @@
+{
+  "values": [
+    "tfc:rock/raw/limestone",
+    "tfc:rock/hardened/limestone",
+    "tfc:rock/gravel/limestone",
+    "tfc:rock/raw/dolomite",
+    "tfc:rock/hardened/dolomite",
+    "tfc:rock/gravel/dolomite",
+    "tfc:rock/raw/chalk",
+    "tfc:rock/hardened/chalk",
+    "tfc:rock/gravel/chalk",
+    "tfc:rock/raw/marble",
+    "tfc:rock/hardened/marble",
+    "tfc:rock/gravel/marble"
+  ]
+}

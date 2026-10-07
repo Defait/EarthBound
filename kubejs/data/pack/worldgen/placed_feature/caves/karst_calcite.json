@@ -1,0 +1,65 @@
+{
+  "feature": "pack:caves/karst_calcite",
+  "placement": [
+    {
+      "type": "minecraft:count",
+      "count": 48
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:uniform",
+        "min_inclusive": {
+          "absolute": -50
+        },
+        "max_inclusive": {
+          "absolute": 60
+        }
+      }
+    },
+    {
+      "type": "minecraft:environment_scan",
+      "direction_of_search": "up",
+      "max_steps": 12,
+      "target_condition": {
+        "type": "minecraft:solid"
+      },
+      "allowed_search_condition": {
+        "type": "minecraft:matching_blocks",
+        "blocks": [
+          "minecraft:air",
+          "minecraft:cave_air"
+        ]
+      }
+    },
+    {
+      "type": "minecraft:random_offset",
+      "xz_spread": 0,
+      "y_spread": -1
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:matching_blocks",
+        "offset": [
+          0,
+          1,
+          0
+        ],
+        "blocks": [
+          "tfc:rock/raw/limestone",
+          "tfc:rock/hardened/limestone",
+          "tfc:rock/raw/dolomite",
+          "tfc:rock/hardened/dolomite",
+          "tfc:rock/raw/chalk",
+          "tfc:rock/hardened/chalk",
+          "tfc:rock/raw/marble",
+          "tfc:rock/hardened/marble"
+        ]
+      }
+    }
+  ]
+}
