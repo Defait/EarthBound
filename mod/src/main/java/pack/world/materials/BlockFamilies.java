@@ -54,13 +54,21 @@ public final class BlockFamilies
     public enum Kind { ROCK, ORE, WOOD, SOIL, SAND }
 
     /**
-     * A TFC block id split around its material: {@code prefix + "/" + material + shape}.
+     * A block id split around its material: {@code namespace:prefix + joiner + material + shape}.
      *
-     * @param prefix the path before the last segment, e.g. "rock/cobble", "wood/hanging_sign/copper", "mud_bricks"
-     * @param shape  "", "_stairs", "_slab" or "_wall"
+     * @param namespace "tfc", or "rnr" (Roads and Roofs) for {@link #parseLocal}
+     * @param prefix    the path before the last segment, e.g. "rock/cobble", "wood/hanging_sign/copper", "mud_bricks"
+     * @param joiner    "/" between prefix and material; "_" for Roads and Roofs' {@code tamped_<soil>}
+     * @param shape     "", "_stairs", "_slab" or "_wall" ("_mud" for tamped soil)
      */
-    public record Parsed(Kind kind, String prefix, String material, String shape)
+    public record Parsed(Kind kind, String namespace, String prefix, String joiner, String material, String shape)
     {
+        /** A TFC id: {@code tfc:prefix/material shape}. */
+        public Parsed(Kind kind, String prefix, String material, String shape)
+        {
+            this(kind, "tfc", prefix, "/", material, shape);
+        }
+
         /** The rock variant ("cobble", "bricks", ...) for rock ids, else the first path segment. */
         public String variant()
         {
@@ -70,13 +78,13 @@ public final class BlockFamilies
 
         public ResourceLocation with(String newMaterial)
         {
-            return ResourceLocation.fromNamespaceAndPath("tfc", prefix + "/" + newMaterial + shape);
+            return ResourceLocation.fromNamespaceAndPath(namespace, prefix + joiner + newMaterial + shape);
         }
 
         /** A rock id with another variant and material, e.g. rock/cobble/granite_stairs -> rock/cracked_bricks/basalt_stairs. */
         public ResourceLocation withRock(String variant, String rock)
         {
-            return ResourceLocation.fromNamespaceAndPath("tfc", "rock/" + variant + "/" + rock + shape);
+            return ResourceLocation.fromNamespaceAndPath(namespace, "rock/" + variant + "/" + rock + shape);
         }
     }
 
@@ -88,6 +96,61 @@ public final class BlockFamilies
         long seed = (long) (x * 3129871) ^ (long) z * 116129781L ^ (long) y;
         seed = seed * seed * 42317861L + seed * 11L;
         return seed >> 16;
+    }
+
+    /** Roads and Roofs' rock families: {@code rnr:rock/<variant>/<rock>[_stairs|_slab]}. */
+    static final Set<String> RNR_ROAD_VARIANTS = Set.of("cobbled_road", "flagstones", "gravel_road", "macadam_road", "sett_road", "over_height_gravel");
+
+    /**
+     * {@link #parse}, and Roads and Roofs blocks as well: shingles {@code rnr:wood/shingles/<wood>[_stairs|_slab]}, road rock
+     * {@code rnr:rock/<variant>/<rock>[_stairs|_slab]} and tamped soil {@code rnr:tamped_<soil>[_mud]}. Kept apart from
+     * {@link #parse} so that the structure skin's implicit rules (alloy rock and the like) stay about TFC's own blocks.
+     */
+    @Nullable
+    public static Parsed parseLocal(ResourceLocation id)
+    {
+        if (!"rnr".equals(id.getNamespace()))
+        {
+            return parse(id);
+        }
+        final String path = id.getPath();
+        if (path.startsWith("tamped_"))
+        {
+            String base = path.substring("tamped_".length());
+            String shape = "";
+            if (base.endsWith("_mud"))
+            {
+                shape = "_mud";
+                base = base.substring(0, base.length() - 4);
+            }
+            return SOILS.contains(base) ? new Parsed(Kind.SOIL, "rnr", "tamped", "_", base, shape) : null;
+        }
+        final int last = path.lastIndexOf('/');
+        if (last < 0)
+        {
+            return null;
+        }
+        final String prefix = path.substring(0, last);
+        String base = path.substring(last + 1);
+        String shape = "";
+        for (String s : List.of("_stairs", "_slab"))
+        {
+            if (base.endsWith(s))
+            {
+                shape = s;
+                base = base.substring(0, base.length() - s.length());
+                break;
+            }
+        }
+        if (prefix.equals("wood/shingles") && WOODS.contains(base))
+        {
+            return new Parsed(Kind.WOOD, "rnr", prefix, "/", base, shape);
+        }
+        if (prefix.startsWith("rock/") && prefix.indexOf('/', 5) < 0 && RNR_ROAD_VARIANTS.contains(prefix.substring(5)) && ROCKS.contains(base))
+        {
+            return new Parsed(Kind.ROCK, "rnr", prefix, "/", base, shape);
+        }
+        return null;
     }
 
     @Nullable

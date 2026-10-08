@@ -672,13 +672,14 @@
 
   "villages": {
     "settings": {
-      "mode": "off",
-      "_note": "off = the villages are checked but nothing is written; climate = written with tfc:climate placement and plain jigsaw, loads on the pack's current jar; region = pack_world:region and pack_world:guarded_jigsaw (needs the new jar: SPEC.md). build.py --villages MODE overrides it."
+      "mode": "region",
+      "_note": "off = the villages are checked but nothing is written; climate = written with tfc:climate placement and plain jigsaw, loads on the pack's current jar; region (the live setting) = pack_world:region and pack_world:guarded_jigsaw (pack_world 1.2.0 or later). build.py --villages MODE overrides it."
     },
     "lint": {
       "namespaces": ["framedblocks", "rnr"],
-      "vanilla": ["minecraft:water", "minecraft:torch", "minecraft:wall_torch"],
-      "_note": "Besides TFC's blocks the villages may hold Framed Blocks and Roads and Roofs (the pack keeps both), vanilla water and torches (TFC's own torch burns out in a template). Remove an entry to forbid it."
+      "vanilla": ["minecraft:water", "minecraft:torch", "minecraft:wall_torch",
+        "minecraft:white_carpet", "minecraft:orange_carpet", "minecraft:magenta_carpet", "minecraft:light_blue_carpet", "minecraft:yellow_carpet", "minecraft:lime_carpet", "minecraft:pink_carpet", "minecraft:gray_carpet", "minecraft:light_gray_carpet", "minecraft:cyan_carpet", "minecraft:purple_carpet", "minecraft:blue_carpet", "minecraft:brown_carpet", "minecraft:green_carpet", "minecraft:red_carpet", "minecraft:black_carpet"],
+      "_note": "Besides TFC's blocks the villages may hold Framed Blocks and Roads and Roofs (the pack keeps both), vanilla water and torches (TFC's own torch burns out in a template) and the sixteen vanilla carpets (floor decoration, left as they are). Remove an entry to forbid it."
     },
     "defaults": {
       "era": "bronze",
@@ -697,7 +698,7 @@
         "landforms": ["lowland", "upland", "cold"],
         "climate": {"min_temperature": -14, "max_temperature": 16, "min_groundwater": 200, "ignore_rivers": true}
       },
-      "guard": {"max_height_difference": 9},
+      "guard": {"max_height_difference": 12, "max_water_fraction": 0.2},
       "npcs": {
         "norse_farmer": {
           "name": "Farmer",
@@ -820,9 +821,10 @@
           "processors": {
             "structures": {
               "marker": "plain",
-              "foundation": {"max_depth": 6, "variant": "dirt"}
+              "foundation": {"max_depth": 10, "variant": "dirt"}
             },
             "paths": {
+              "foundation": {"max_depth": 10, "variant": "dirt"},
               "marker": "street",
               "street": {"gravel": 0.1, "path": 0.15, "grass": 0.1}
             }
@@ -870,9 +872,10 @@
               "local_materials": {
                 "decay": {"cracked": 0.15, "mossy": 0.25}
               },
-              "foundation": {"max_depth": 6, "variant": "dirt"}
+              "foundation": {"max_depth": 10, "variant": "dirt"}
             },
             "paths": {
+              "foundation": {"max_depth": 10, "variant": "dirt"},
               "marker": "street",
               "street": {"gravel": 0.1, "path": 0.15, "grass": 0.1},
               "rot": 1.0,
@@ -922,9 +925,10 @@
               "local_materials": {
                 "decay": {"cracked": 0.2, "mossy": 0.1}
               },
-              "foundation": {"max_depth": 6, "variant": "dirt"}
+              "foundation": {"max_depth": 10, "variant": "dirt"}
             },
             "paths": {
+              "foundation": {"max_depth": 10, "variant": "dirt"},
               "marker": "street",
               "street": {"gravel": 0.1, "path": 0.15, "grass": 0.1},
               "rot": 0.85,
@@ -975,7 +979,7 @@
         "climate": {"min_temperature": 10, "max_temperature": 36, "min_groundwater": 30}
       },
       "materials": {"sand": "local"},
-      "guard": {"max_height_difference": 8},
+      "guard": {"max_height_difference": 14},
       "npcs": {
         "arabic_potter": {
           "name": "Potter",
@@ -1129,9 +1133,10 @@
           "processors": {
             "structures": {
               "marker": "plain",
-              "foundation": {"max_depth": 6, "variant": "dirt"}
+              "foundation": {"max_depth": 10, "variant": "dirt"}
             },
             "paths": {
+              "foundation": {"max_depth": 10, "variant": "dirt"},
               "marker": "street",
               "street": {"gravel": 0.1, "path": 0.15, "grass": 0.0}
             }
@@ -1188,9 +1193,9 @@
         "climate": {"min_temperature": 22, "max_temperature": 36, "min_groundwater": 380, "ignore_rivers": true}
       },
       "materials": {
-        "foundation": {"max_depth": 8, "variant": "dirt"}
+        "foundation": {"max_depth": 10, "variant": "dirt"}
       },
-      "guard": {"max_height_difference": 6, "max_water_fraction": 0.45},
+      "guard": {"max_height_difference": 10, "max_water_fraction": 0.45},
       "npcs": {
         "malay_cook": {
           "name": "Cook",
@@ -1312,9 +1317,10 @@
           "processors": {
             "structures": {
               "marker": "plain",
-              "foundation": {"max_depth": 6, "variant": "dirt"}
+              "foundation": {"max_depth": 10, "variant": "dirt"}
             },
             "paths": {
+              "foundation": {"max_depth": 10, "variant": "dirt"},
               "marker": "street",
               "street": {"gravel": 0.1, "path": 0.15, "grass": 0.1}
             }
@@ -1366,13 +1372,13 @@
         "separation": 40,
         "salt": 2026101004,
         "spread_type": "linear",
-        "landforms": ["lowland", "upland"],
+        "landforms": ["lowland", "upland", "mountain"],
         "climate": {"min_temperature": 18, "max_temperature": 36, "min_groundwater": 380, "ignore_rivers": true}
       },
       "materials": {
-        "foundation": {"max_depth": 8, "variant": "dirt"}
+        "foundation": {"max_depth": 10, "variant": "dirt"}
       },
-      "guard": {"max_height_difference": 8, "max_water_fraction": 0.2},
+      "guard": {"max_height_difference": 14, "max_water_fraction": 0.2},
       "loot": {
         "house": {
           "rolls": [2, 4],
@@ -1423,9 +1429,10 @@
           "processors": {
             "structures": {
               "marker": "plain",
-              "foundation": {"max_depth": 6, "variant": "dirt"}
+              "foundation": {"max_depth": 10, "variant": "dirt"}
             },
             "paths": {
+              "foundation": {"max_depth": 10, "variant": "dirt"},
               "marker": "street",
               "street": {"gravel": 0.1, "path": 0.15, "grass": 0.1}
             }
@@ -1480,7 +1487,7 @@
         "landforms": ["lowland", "upland"],
         "climate": {"min_temperature": -10, "max_temperature": 16, "min_groundwater": 20, "max_groundwater": 300, "max_forest": 2, "ignore_rivers": true}
       },
-      "guard": {"max_height_difference": 6},
+      "guard": {"max_height_difference": 12},
       "npcs": {
         "steppe_herder": {
           "name": "Herder",
@@ -1593,9 +1600,10 @@
           "processors": {
             "structures": {
               "marker": "plain",
-              "foundation": {"max_depth": 6, "variant": "dirt"}
+              "foundation": {"max_depth": 10, "variant": "dirt"}
             },
             "paths": {
+              "foundation": {"max_depth": 10, "variant": "dirt"},
               "marker": "street",
               "street": {"gravel": 0.05, "path": 0.25, "grass": 0.25}
             }
@@ -1646,10 +1654,10 @@
         "separation": 24,
         "salt": 2026101006,
         "spread_type": "linear",
-        "landforms": ["lowland"],
+        "landforms": ["lowland", "upland"],
         "climate": {"min_temperature": 2, "max_temperature": 17, "min_groundwater": 200, "max_groundwater": 450, "ignore_rivers": true}
       },
-      "guard": {"radius": 24, "max_height_difference": 5},
+      "guard": {"radius": 24, "max_height_difference": 7, "max_water_fraction": 0.2},
       "npcs": {
         "temperate_farmer": {
           "name": "Farmer",
@@ -1737,9 +1745,10 @@
           "processors": {
             "structures": {
               "marker": "plain",
-              "foundation": {"max_depth": 6, "variant": "dirt"}
+              "foundation": {"max_depth": 10, "variant": "dirt"}
             },
             "paths": {
+              "foundation": {"max_depth": 10, "variant": "dirt"},
               "marker": "street",
               "street": {"gravel": 0.2, "path": 0.2, "grass": 0.1}
             }

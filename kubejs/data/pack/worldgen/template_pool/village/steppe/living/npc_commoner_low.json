@@ -1,0 +1,29 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 10,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/steppe/npc/steppe_elder_low",
+        "processors": "pack:village/npc",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 15,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/steppe/npc/steppe_feltmaker_low",
+        "processors": "pack:village/npc",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 75,
+      "element": {
+        "element_type": "minecraft:empty_pool_element"
+      }
+    }
+  ]
+}

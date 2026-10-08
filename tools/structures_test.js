@@ -44,7 +44,7 @@ const STRUCT_TEST_ROCK_LEAK = /^tfc:rock\/(smooth|cobble|bricks|cracked_bricks|m
 const STRUCT_TEST_WOOD_LEAK = /^tfc:wood\/(planks|chest|trapped_chest|fence|fence_gate|log_fence|vertical_support|horizontal_support|door|trapdoor|stripped_log)\/oak(_stairs|_slab)?$/
 // Natural blocks a structure's box can contain besides its own (ground, fluids, plants).
 const STRUCT_TEST_VANILLA_OK = { 'minecraft:air': 1, 'minecraft:cave_air': 1, 'minecraft:water': 1, 'minecraft:lava': 1, 'minecraft:bedrock': 1,
-  'minecraft:ice': 1, 'minecraft:packed_ice': 1, 'minecraft:blue_ice': 1, 'minecraft:snow_block': 1, 'minecraft:cobweb': 1, 'minecraft:hanging_roots': 1 }
+  'minecraft:ice': 1, 'minecraft:packed_ice': 1, 'minecraft:blue_ice': 1, 'minecraft:snow_block': 1, 'minecraft:cobweb': 1, 'minecraft:hanging_roots': 1, 'minecraft:bamboo': 1, 'minecraft:bamboo_sapling': 1 }
 
 ServerEvents.loaded(event => {
   var server = event.server
@@ -63,16 +63,23 @@ ServerEvents.loaded(event => {
     return String($StructTestBuiltIn.BLOCK.getKey(level.getBlockState(new $StructTestBlockPos(x, y, z)).getBlock()))
   }
   try {
-    structTestPalette(STRUCT_TEST_JOB, check, blockExists)
-    // natural starts first: the /place copies would overwrite natural ones that happen to lie in the same spots
-    structTestNatural(level, STRUCT_TEST_JOB, results, check, idAt)
-    if (!STRUCT_TEST_JOB.naturalOnly) structTestPlacements(server, level, STRUCT_TEST_JOB, results, check, idAt)
-    structTestNpcs(server, level, STRUCT_TEST_JOB, results, check)
-    structTestLoot(server, level, STRUCT_TEST_JOB, results, check)
-    structTestSites(level, results, check)
-    structTestDensity(level, STRUCT_TEST_JOB, results)
+    if (!STRUCT_TEST_JOB.villagesOnly) {
+      structTestPalette(STRUCT_TEST_JOB, check, blockExists)
+      // natural starts first: the /place copies would overwrite natural ones that happen to lie in the same spots
+      structTestNatural(level, STRUCT_TEST_JOB, results, check, idAt)
+      if (!STRUCT_TEST_JOB.naturalOnly) structTestPlacements(server, level, STRUCT_TEST_JOB, results, check, idAt)
+      structTestNpcs(server, level, STRUCT_TEST_JOB, results, check)
+      structTestLoot(server, level, STRUCT_TEST_JOB, results, check)
+      structTestSites(level, results, check)
+      structTestDensity(level, STRUCT_TEST_JOB, results)
+    }
   } catch (e) {
     check('script', false, String(e) + (e && e.stack ? ' ' + String(e.stack).replace(/\s+/g, ' ') : ''))
+  }
+  try {
+    if (STRUCT_TEST_JOB.villageJob) structTestVillages(server, level, STRUCT_TEST_JOB, results, check, idAt)
+  } catch (e) {
+    check('villages script', false, String(e) + (e && e.stack ? ' ' + String(e.stack).replace(/\s+/g, ' ') : ''))
   }
   JsonIO.write(STRUCT_TEST_OUT + 'results.json', results)
   console.info(`[structures-test] done: ${failures} failed`)
@@ -455,4 +462,684 @@ function structTestDensity(level, job, results) {
     results.density[id] = { hits: hits, perMillionBlocks2: hits / (area / 1e6), spacing: spacing }
     console.info(`[structures-test] density ${id}: ${(hits / (area / 1e6)).toFixed(2)} per 1000x1000 blocks (${hits} in ${job.places.length} areas)`)
   })
+}
+
+// ---------------------------------------------------------------------------------------------------------------------------------
+// Villages (docs/lived-in.md, "Settlements"): pack_world:region placement, pack_world:guarded_jigsaw, wood ranks, camouflage, NPCs.
+// The job (STRUCT_TEST_JOB.villageJob) comes from tools/structures_test.py: sets, structures, templates (non-air blocks, jigsaws left out),
+// region reference points, test places per culture, the catalogue's NPCs.
+
+const $VtStructurePlacement = Java.loadClass('net.minecraft.world.level.levelgen.structure.placement.StructurePlacement')
+const $VtStructure = Java.loadClass('net.minecraft.world.level.levelgen.structure.Structure')
+const $VtJsonOps = Java.loadClass('com.mojang.serialization.JsonOps')
+const $VtChunkStatus = Java.loadClass('net.minecraft.world.level.chunk.status.ChunkStatus')
+const $VtHeightmap = Java.loadClass('net.minecraft.world.level.levelgen.Heightmap$Types')
+const $VtMaterials = Java.loadClass('pack.world.api.PackWorldApi')
+
+function vtList(l) {
+  var out = []
+  l.forEach(function (x) { out.push(x) })
+  return out
+}
+
+function vtStrings(l) {
+  return vtList(l).map(function (x) { return String(x) })
+}
+
+function structTestVillages(server, level, job, results, check, idAt) {
+  var vj = job.villageJob
+  results.villages = { regions: {}, guard: {}, found: [], placed: [] }
+  $VtMaterials.setGuard(true)
+  $VtMaterials.guardReset()
+  // a stage that throws is a failure of its own and the others still run
+  var stage = function (name, fn) {
+    try { fn() } catch (e) { check('villages: ' + name, false, String(e) + (e && e.stack ? ' ' + String(e.stack).replace(/\s+/g, ' ') : '')) }
+  }
+  stage('regions', function () { vtRegions(level, vj, results, check) })
+  stage('guard', function () { vtGuard(level, vj, results, check) })
+  stage('codecs', function () { vtCodec(level, vj, results, check) })
+  stage('equivalence with tfc:climate', function () { vtEquivalence(level, vj, results, check) })
+  stage('wood palette', function () { vtWoodPalette(vj, check) })
+  if (vj.acceptance) stage('acceptance census', function () { vtAcceptance(level, vj, results, check) })
+  stage('locate', function () { vtLocate(level, vj, results, check) })
+  stage('natural villages', function () { vtNatural(server, level, vj, results, check) })
+  stage('placed villages', function () { vtPlaced(server, level, vj, results, check) })
+  var stats = $VtMaterials.guardStats()
+  var s = {}
+  stats.forEach(function (k, v) { s[String(k)] = Number(v) })
+  results.villages.guardStats = s
+  console.info(`[structures-test] guard: ${s.attempts} attempts, ${s.passed} passed, ${s.refusedBiome} wrong biome, ${s.refusedWater} water, ${s.refusedSlope} slope; ` +
+    `${s.attempts ? (s.nanos / s.attempts / 1e6).toFixed(1) : 0} ms per attempt`)
+}
+
+// ---- regions: loaded, projected as declared, reference points inside the right set and no other, blockOf equal to the Python projection
+function vtRegions(level, vj, results, check) {
+  var sets = $VtMaterials.regionSets(level)
+  vj.sets.forEach(function (s) {
+    var row = sets.get('pack:' + s.id)
+    if (!row) {
+      check(`region set ${s.id} is a pack_world:region placement`, false, 'not registered or not a region placement')
+      return
+    }
+    var inc = vtList(row.get('regions').keySet()).map(String)
+    var exc = vtList(row.get('exclude').keySet()).map(String)
+    var ok = inc.length === s.regions.length && exc.length === s.exclude.length
+    check(`region set ${s.id}: every region projects`, ok, `declared ${s.regions.length}+${s.exclude.length}, projected ${inc.length}+${exc.length}`)
+    var areas = {}
+    inc.forEach(function (n) { areas[n] = Math.round(row.get('regions').get(n).get(1)) })
+    results.villages.regions[s.id] = { spacing: Number(row.get('spacing')), regions: areas, exclude: exc }
+  })
+  var bad = []
+  vj.regionChecks.forEach(function (rc) {
+    var xz = $VtMaterials.blockOf(rc.lat, rc.lon)
+    var dx = Math.abs(xz[0] - rc.block[0])
+    var dz = Math.abs(xz[1] - rc.block[1])
+    if (dx > 1 || dz > 1) bad.push(`${rc.name} block ${xz[0]},${xz[1]} vs ${rc.block[0]},${rc.block[1]}`)
+    vj.sets.forEach(function (s) {
+      var names = vtStrings($VtMaterials.regionsAt(level, 'pack:' + s.id, rc.lat, rc.lon))
+      var inside = names.some(function (n) { return n.charAt(0) !== '!' }) && !names.some(function (n) { return n.charAt(0) === '!' })
+      var want = rc.sets.indexOf(s.id) >= 0
+      if (inside !== want) bad.push(`${rc.name} ${inside ? 'is' : 'is not'} in ${s.id} (${names})`)
+    })
+    // the placement step agrees at the chunk of the point
+    vj.sets.forEach(function (s) {
+      var step = $VtMaterials.placementAt(level, 'pack:' + s.id, xz[0] >> 4, xz[1] >> 4)
+      var inside = step.get('region') === true
+      if (inside !== (rc.sets.indexOf(s.id) >= 0)) bad.push(`${rc.name}: placement region step ${inside} for ${s.id}`)
+    })
+  })
+  check(`region reference points (${vj.regionChecks.length} places x ${vj.sets.length} sets)`, bad.length === 0, bad.length ? `${bad.length} wrong: ${bad.slice(0, 6).join('; ')}` : 'all inside their set and outside the others; blockOf equals the Python projection')
+}
+
+// ---- the guard: sample layout, determinism, a mid-ocean point and a mountain are refused, flat ground passes
+function vtGuard(level, vj, results, check) {
+  var server_runCommand = function (c) { level.getServer().getCommands().performPrefixedCommand(level.getServer().createCommandSourceStack(), c) }
+  var offsets = $VtMaterials.guardOffsets(48, 13)
+  var got = vtList(offsets).map(function (o) { return `(${o.get(0)},${o.get(1)})` }).join(' ')
+  var want = '(0,0) (-10,9) (2,-20) (15,19) (-27,-5) (26,-17) (-9,33) (-17,-33) (37,13) (-38,16) (19,-40) (14,44) (-42,-24)'
+  check('guard sample layout (13 columns, radius 48)', got === want, got === want ? 'as specified' : got)
+  var sid = vj.guardStructure
+  var ocean = $VtMaterials.blockOf(48.0, -30.0)
+  var r1 = $VtMaterials.guardAt(level, 'pack:' + sid, ocean[0], ocean[1])
+  check('guard refuses the open sea', r1.size() > 0 && r1.get('pass') === false && String(r1.get('reason')) === 'water', String(r1))
+  var alps = $VtMaterials.blockOf(46.55, 10.1)
+  var r2 = $VtMaterials.guardAt(level, 'pack:' + sid, alps[0], alps[1])
+  check('guard refuses mountains (Alps)', r2.size() > 0 && r2.get('pass') === false, String(r2))
+  var found = vj.guardFlat
+  var flats = []
+  found.forEach(function (p) {
+    var xz = $VtMaterials.blockOf(p[1], p[2])
+    var a = $VtMaterials.guardAt(level, 'pack:' + sid, xz[0], xz[1])
+    var b = $VtMaterials.guardAt(level, 'pack:' + sid, xz[0], xz[1])
+    var c = $VtMaterials.guardAt(level, 'pack:' + sid, xz[0], xz[1])
+    var same = String(a) === String(b) && String(b) === String(c)
+    flats.push(`${p[0]} ${a.get('pass') ? 'pass' : 'refused ' + a.get('reason')} (${a.get('min')}..${a.get('max')}, wet ${a.get('wet')})${same ? '' : ' UNSTABLE'}`)
+    results.villages.guard[p[0]] = String(a)
+    if (!same) check(`guard is stable at ${p[0]}`, false, `${a} / ${b} / ${c}`)
+  })
+  console.info(`[structures-test] NOTE guard at flat candidates: ${flats.join('; ')}`)
+  // the switch: /pack_world guard off lets /place put a village on the Alps, on brings the refusal back
+  var structure = structTestStructure(level.registryAccess().registryOrThrow($StructTestRegistries.STRUCTURE), sid)
+  var generator = level.getChunkSource().getGenerator()
+  var tryAt = function () {
+    var start = structure.generate(level.registryAccess(), generator, generator.getBiomeSource(), level.getChunkSource().randomState(),
+      level.getStructureManager(), level.getSeed(), new $StructTestChunkPos(alps[0] >> 4, alps[1] >> 4), 0, level, function (h) { return true })
+    return start.isValid()
+  }
+  server_runCommand('pack_world guard on')
+  var on = tryAt()
+  server_runCommand('pack_world guard off')
+  var off = tryAt()
+  server_runCommand('pack_world guard on')
+  var again = tryAt()
+  check('/pack_world guard off places on rough ground, on refuses it', !on && off && !again, `on ${on}, off ${off}, on again ${again}`)
+}
+
+// ---- codecs: every village set and structure survives encode/decode, with its fields
+function vtCodec(level, vj, results, check) {
+  var setReg = level.registryAccess().registryOrThrow($StructTestRegistries.STRUCTURE_SET)
+  var structReg = level.registryAccess().registryOrThrow($StructTestRegistries.STRUCTURE)
+  var ops = level.registryAccess().createSerializationContext($VtJsonOps.INSTANCE)   // registry ops: pools and biomes encode as ids (plain JsonOps recurses through the pool graph)
+  var bad = []
+  vj.sets.forEach(function (s) {
+    var set = structTestStructure(setReg, s.id)
+    var placement = set.placement()
+    var json = $VtStructurePlacement.CODEC.encodeStart(ops, placement).getOrThrow()
+    var again = $VtStructurePlacement.CODEC.parse(ops, json).getOrThrow()
+    var json2 = $VtStructurePlacement.CODEC.encodeStart(ops, again).getOrThrow()
+    if (String(json) !== String(json2)) bad.push(`${s.id} placement does not round-trip`)
+    if (Number(json.get('salt').getAsInt()) !== s.salt || Number(json.get('spacing').getAsInt()) !== s.spacing) bad.push(`${s.id} salt/spacing`)
+    if (String(json.get('type').getAsString()) !== 'pack_world:region') bad.push(`${s.id} type ${json.get('type')}`)
+    if (json.get('regions').size() !== s.regions.length) bad.push(`${s.id} region count`)
+    s.structures.forEach(function (st) {
+      var structure = structTestStructure(structReg, st.id)
+      var sj = $VtStructure.DIRECT_CODEC.encodeStart(ops, structure).getOrThrow()
+      var sj2 = $VtStructure.DIRECT_CODEC.encodeStart(ops, $VtStructure.DIRECT_CODEC.parse(ops, sj).getOrThrow()).getOrThrow()
+      if (String(sj) !== String(sj2)) bad.push(`${st.id} structure does not round-trip`)
+      var g = sj.get('guard')
+      // fields equal to the codec's defaults (radius 48, 13 samples, difference 8, water 0.1) are not written back
+      var gi = function (k, d) { return g && g.has(k) ? Number(g.get(k).getAsDouble()) : d }
+      if (String(sj.get('type').getAsString()) !== 'pack_world:guarded_jigsaw' || !g || gi('radius', 48) !== st.guard.radius ||
+        gi('max_height_difference', 8) !== st.guard.max_height_difference || gi('samples', 13) !== st.guard.samples) bad.push(`${st.id} guard fields`)
+    })
+  })
+  check('village sets and structures round-trip through their codecs', bad.length === 0, bad.length ? bad.join('; ') : `${vj.sets.length} sets, ${vj.structures.length} structures`)
+}
+
+// ---- equivalence with TFC: the same grid, salt and climate under tfc:climate give the same answer as pack_world:region's grid + climate
+function vtEquivalence(level, vj, results, check) {
+  var setReg = level.registryAccess().registryOrThrow($StructTestRegistries.STRUCTURE_SET)
+  var state = level.getChunkSource().getGeneratorState()
+  var seed = level.getSeed()
+  var ops = level.registryAccess().createSerializationContext($VtJsonOps.INSTANCE)
+  var bad = []
+  var summary = []
+  vj.sets.forEach(function (s) {
+    var set = structTestStructure(setReg, s.id)
+    var placement = set.placement()
+    var json = $VtStructurePlacement.CODEC.encodeStart(ops, placement).getOrThrow().deepCopy()
+    json.addProperty('type', 'tfc:climate')
+    json.remove('regions')
+    json.remove('exclude')
+    json.remove('outside')
+    var tfc = $VtStructurePlacement.CODEC.parse(ops, json).getOrThrow()
+    var spacing = placement.spacing()
+    var n = 0
+    var yes = 0
+    var outsideYes = 0
+    var places = vj.places[s.culture] || []
+    places.forEach(function (p) {
+      var xz = $VtMaterials.blockOf(p[1], p[2])
+      var cx0 = Math.floor(xz[0] / 16)
+      var cz0 = Math.floor(xz[1] / 16)
+      for (var a = -6; a <= 6; a++) {
+        for (var b = -6; b <= 6; b++) {
+          var c = placement.getPotentialStructureChunk(seed, cx0 + a * spacing, cz0 + b * spacing)
+          var region = placement.regionContains(c.x, c.z)
+          var ours = placement.isStructureChunk(state, c.x, c.z)
+          var theirs = tfc.isStructureChunk(state, c.x, c.z)
+          n++
+          if (region) {
+            if (ours !== theirs) bad.push(`${s.id} ${c.x},${c.z}: region ${ours} vs tfc:climate ${theirs}`)
+            if (ours) yes++
+          } else if (ours) {
+            outsideYes++
+          }
+        }
+      }
+    })
+    if (outsideYes) bad.push(`${s.id}: ${outsideYes} placements outside the region`)
+    summary.push(`${s.culture} ${n} cells ${yes} placed`)
+  })
+  check('region placement equals tfc:climate inside the region, and places nothing outside', bad.length === 0, bad.length ? bad.slice(0, 5).join('; ') : summary.join(', '))
+}
+
+// ---- wood ranks and Roads and Roofs / Framed materials through the mod's own mapping, for every rock, wood (TFC and ArborFirmaCraft), soil
+function vtWoodPalette(vj, check) {
+  var bad = []
+  var n = 0
+  var woodSets = vj.woodSets
+  vj.placeholders.wood.forEach(function (id) {
+    woodSets.forEach(function (ws) {
+      var out = String($VtMaterials.mapIdRanked(id, 'gabbro', ws, 'alfisol', 'yellow', 'work'))
+      n++
+      if (!vtBlockExists(out)) bad.push(`${id} -> ${out} (${ws})`)
+    })
+  })
+  vj.placeholders.rnrRock.forEach(function (id) {
+    STRUCT_TEST_ROCKS.forEach(function (rock) {
+      var out = String($VtMaterials.mapIdRanked(id, rock, ['oak'], 'alfisol', 'yellow', 'work'))
+      n++
+      if (!vtBlockExists(out) || (rock !== 'granite' && out === id)) bad.push(`${id} -> ${out} (${rock})`)
+      if (/\/(raw|cobble|loose)\//.test(out) && STRUCT_TEST_ROUGH.test(out)) bad.push(`${id} -> ${out}: alloy rock`)
+    })
+  })
+  vj.placeholders.rnrSoil.forEach(function (id) {
+    STRUCT_TEST_SOILS.forEach(function (soil) {
+      var out = String($VtMaterials.mapIdRanked(id, 'gabbro', ['oak'], soil, 'yellow', 'work'))
+      n++
+      if (!vtBlockExists(out) || (soil !== 'alfisol' && out === id)) bad.push(`${id} -> ${out} (${soil})`)
+    })
+  })
+  // ranks: three trees, fewer trees (clamped), and a rank that is not a placeholder is left alone
+  var m3 = String($VtMaterials.mapIdRanked('tfc:wood/planks/spruce_stairs', 'gabbro', ['maple', 'ash', 'pine'], 'alfisol', 'yellow', 'work'))
+  var m1 = String($VtMaterials.mapIdRanked('tfc:wood/planks/birch', 'gabbro', ['maple'], 'alfisol', 'yellow', 'work'))
+  var mafc = String($VtMaterials.mapIdRanked('rnr:wood/shingles/oak_slab', 'gabbro', ['afc:mahogany', 'oak', 'ash'], 'alfisol', 'yellow', 'work'))
+  var mafc2 = String($VtMaterials.mapIdRanked('tfc:wood/door/oak', 'gabbro', ['afc:teak', 'oak', 'ash'], 'alfisol', 'yellow', 'work'))
+  var keep = String($VtMaterials.mapIdRanked('tfc:wood/planks/acacia', 'gabbro', ['maple', 'ash', 'pine'], 'alfisol', 'yellow', 'work'))
+  if (m3 !== 'tfc:wood/planks/ash_stairs') bad.push(`rank 1 of maple,ash,pine gave ${m3}`)
+  if (m1 !== 'tfc:wood/planks/maple') bad.push(`clamped rank gave ${m1}`)
+  if (mafc !== 'rnr:wood/shingles/mahogany_slab') bad.push(`afc shingles gave ${mafc}`)
+  if (mafc2 !== 'afc:wood/door/teak') bad.push(`afc door gave ${mafc2}`)
+  if (keep !== 'tfc:wood/planks/acacia') bad.push(`a non-placeholder wood changed: ${keep}`)
+  check('wood ranks, Roads and Roofs and AFC woods map to existing blocks', bad.length === 0, `${n} mappings` + (bad.length ? `; ${bad.length} bad: ${bad.slice(0, 10).join('; ')}` : ''))
+}
+
+function vtBlockExists(id) {
+  return id === 'minecraft:air' || $StructTestBuiltIn.BLOCK.containsKey($StructTestRL.parse(id))
+}
+
+// ---- natural villages: the nearest valid starts to the test places, chunks generated normally
+function vtNatural(server, level, vj, results, check) {
+  var structReg = level.registryAccess().registryOrThrow($StructTestRegistries.STRUCTURE)
+  var setReg = level.registryAccess().registryOrThrow($StructTestRegistries.STRUCTURE_SET)
+  var state = level.getChunkSource().getGeneratorState()
+  var seed = level.getSeed()
+  var generator = level.getChunkSource().getGenerator()
+  var sampler = level.getChunkSource().randomState().sampler()
+  vj.sets.forEach(function (s) {
+    var set = structTestStructure(setReg, s.id)
+    var placement = set.placement()
+    var spacing = placement.spacing()
+    var structures = s.structures.map(function (st) { return { id: st.id, variant: st.variant, structure: structTestStructure(structReg, st.id), ground: st.ground } })
+    var scan = { cells: 0, region: 0, placed: 0, noStart: 0, valid: 0, why: {} }
+    var wanted = vj.perSet
+    var foundHere = 0
+    var places = vj.places[s.culture] || []
+    for (var pi = 0; pi < places.length && foundHere < wanted; pi++) {
+      var p = places[pi]
+      var xz = $VtMaterials.blockOf(p[1], p[2])
+      var cx0 = Math.floor(xz[0] / 16)
+      var cz0 = Math.floor(xz[1] / 16)
+      var perPlace = 0
+      for (var r = 0; r <= vj.maxRing && perPlace < Math.ceil(wanted / places.length) && foundHere < wanted; r++) {
+        for (var a = -r; a <= r; a++) {
+          for (var b = -r; b <= r; b++) {
+            if (Math.max(Math.abs(a), Math.abs(b)) !== r) continue
+            var c = placement.getPotentialStructureChunk(seed, cx0 + a * spacing, cz0 + b * spacing)
+            scan.cells++
+            if (!placement.regionContains(c.x, c.z)) continue
+            scan.region++
+            if (!placement.isStructureChunk(state, c.x, c.z)) continue
+            scan.placed++
+            var chunk = level.getChunk(c.x, c.z, $VtChunkStatus.STRUCTURE_STARTS)
+            var start = null
+            var which = null
+            structures.forEach(function (st) {
+              var found = chunk.getStartForStructure(st.structure)
+              if (found !== null && found.isValid() && start === null) { start = found; which = st }
+            })
+            if (start === null) {
+              scan.noStart++
+              var bx = c.getMiddleBlockX()
+              var bz = c.getMiddleBlockZ()
+              var biome = generator.getBiomeSource().getNoiseBiome($StructTestQuart.fromBlock(bx), $StructTestQuart.fromBlock(64), $StructTestQuart.fromBlock(bz), sampler)
+              var why
+              if (!structures[0].structure.biomes().contains(biome)) {
+                why = 'biome ' + String(biome.unwrapKey().get().location())
+              } else {
+                var gr = $VtMaterials.guardAt(level, 'pack:' + structures[0].id, bx, bz)
+                why = gr.size() ? (gr.get('pass') ? 'guard passes at the chunk centre (start piece elsewhere)' : String(gr.get('reason')) + (String(gr.get('reason')) === 'slope' ? ' ' + (Number(gr.get('max')) - Number(gr.get('min'))) : '')) : 'guard n/a'
+              }
+              scan.why[why] = (scan.why[why] || 0) + 1
+              continue
+            }
+            scan.valid++
+            if (perPlace >= Math.ceil(wanted / places.length) || foundHere >= wanted) continue
+            var t0 = Date.now()
+            var box = start.getBoundingBox()
+            for (var gx = (box.minX() >> 4) - 1; gx <= (box.maxX() >> 4) + 1; gx++) {
+              for (var gz = (box.minZ() >> 4) - 1; gz <= (box.maxZ() >> 4) + 1; gz++) level.getChunk(gx, gz)
+            }
+            var rec = { kind: 'natural', place: p[0], structure: which.id, at: [box.getCenter().getX(), box.getCenter().getZ()], placed: true, genMs: Date.now() - t0 }
+            vtInspect(level, start, which, rec, vj)
+            results.villages.found.push(rec)
+            check(`${which.id} natural near ${p[0]} at ${rec.at}`, vtOk(rec), vtDetail(rec))
+            perPlace++
+            foundHere++
+          }
+        }
+      }
+    }
+    results.villages.found.push({ kind: 'scan', set: s.id, scan: scan })
+    console.info(`[structures-test] NOTE ${s.id} scan: ${scan.cells} grid cells, ${scan.region} in region, ${scan.placed} with climate, ${scan.valid} with a valid start (${scan.noStart} refused by biome or guard), ${foundHere} generated; refused for: ${JSON.stringify(scan.why)}`)
+    if (!foundHere) console.info(`[structures-test] NOTE ${s.id}: no natural village within ${vj.maxRing} cells of the places`)
+  })
+}
+
+// ---- every structure placed the way /place does (guard off): all variants get looked at, whether or not one happens to be near
+function vtPlaced(server, level, vj, results, check) {
+  var structReg = level.registryAccess().registryOrThrow($StructTestRegistries.STRUCTURE)
+  var generator = level.getChunkSource().getGenerator()
+  $VtMaterials.setGuard(false)
+  var i = 0
+  vj.structures.forEach(function (st) {
+    var places = vj.places[st.culture] || []
+    var p = places[0]
+    var found = startAtFind(level, p[1], p[2])
+    if (!found.spot) {
+      check(`dry ground at ${p[0]}`, false, `point ${found.point.x},${found.point.z}`)
+      return
+    }
+    var x = found.spot.x + 150 * (i % 3)
+    var z = found.spot.z + 150 * Math.floor(i / 3) + 400
+    i++
+    var structure = structTestStructure(structReg, st.id)
+    var t0 = Date.now()
+    var start = structure.generate(level.registryAccess(), generator, generator.getBiomeSource(), level.getChunkSource().randomState(),
+      level.getStructureManager(), level.getSeed(), new $StructTestChunkPos(x >> 4, z >> 4), 0, level, function (h) { return true })
+    var rec = { kind: 'placed', place: p[0], structure: st.id, at: [x, z], placed: start.isValid() }
+    if (rec.placed) {
+      var box = start.getBoundingBox()
+      for (var cx = box.minX() >> 4; cx <= box.maxX() >> 4; cx++) {
+        for (var cz = box.minZ() >> 4; cz <= box.maxZ() >> 4; cz++) {
+          level.getChunk(cx, cz)
+          start.placeInChunk(level, level.structureManager(), generator, level.getRandom(),
+            new $StructTestBox(cx << 4, level.getMinBuildHeight(), cz << 4, (cx << 4) + 15, level.getMaxBuildHeight(), (cz << 4) + 15), new $StructTestChunkPos(cx, cz))
+        }
+      }
+      rec.genMs = Date.now() - t0
+      vtInspect(level, start, st, rec, vj)
+    }
+    results.villages.placed.push(rec)
+    check(`${st.id} placed at ${p[0]}`, vtOk(rec), vtDetail(rec))
+  })
+  $VtMaterials.setGuard(true)
+}
+
+function vtOk(rec) {
+  return rec.placed && !rec.leaks.length && !rec.vanilla.length && !rec.alloy.length && rec.npcExpected === rec.npcCount &&
+    rec.npcs.every(function (n) { return !n.owner && n.trades > 0 && n.drop === 0 }) &&
+    (rec.kind === 'placed' || rec.floatColumns <= Math.max(2, rec.columns * 0.02))
+}
+
+function vtDetail(rec) {
+  if (!rec.placed) return 'did not place'
+  return `${rec.pieces} pieces (${rec.npcPieces} NPC), ${rec.templateBlocks} template blocks (${rec.missing} gone), NPCs ${rec.npcCount}/${rec.npcExpected} ${JSON.stringify(rec.npcNames)} (trades ${rec.npcs.map(function (n) { return n.trades }).join(',')}, ${rec.npcs.filter(function (n) { return n.invulnerable }).length} invulnerable, ${rec.npcs.filter(function (n) { return n.noGravity }).length} without gravity, ${rec.npcs.filter(function (n) { return n.drop > 0 }).length} above the floor), ` +
+    `leaks [${rec.leaks}], vanilla [${rec.vanilla}], alloy [${rec.alloy}], other rocks [${rec.otherRock}], other woods [${rec.otherWood}], ` +
+    `rock ${rec.rockSet}, woods ${rec.woodSet}${rec.mixed ? ' MIXED' : ''}, chests ${rec.chests} (loot ${rec.lootChests}), framed ${rec.framed} (camo ${JSON.stringify(rec.camoTop)}), ` +
+    `floating ${rec.floatColumns}/${rec.columns} (max gap ${rec.maxGap}), ground offset ${JSON.stringify(rec.groundOffset)}, terrain pieces ${rec.terrainPieces || 0}, ${rec.genMs} ms` +
+    (rec.details.length ? `; details: ${rec.details.slice(0, 4).join(' | ')}` : '')
+}
+
+// What a placed village holds, checked at exactly the spots its templates place blocks, per piece (each piece resolves its own materials
+// at its own position, so rock and wood are expected per piece). The wood a placeholder rank becomes is what the mod resolves for that piece.
+function vtInspect(level, start, st, rec, vj) {
+  var pieces = start.getPieces()
+  var box = start.getBoundingBox()
+  var generator = level.getChunkSource().getGenerator()
+  var randomState = level.getChunkSource().randomState()
+  rec.box = [box.minX(), box.minY(), box.minZ(), box.maxX(), box.maxY(), box.maxZ()]
+  rec.size = [box.getXSpan(), box.getYSpan(), box.getZSpan()]
+  rec.pieces = pieces.size()
+  rec.npcPieces = 0
+  rec.byPiece = {}
+  rec.leaks = []
+  rec.vanilla = []
+  rec.alloy = []
+  rec.otherRock = []
+  rec.otherWood = []
+  rec.rocks = {}
+  rec.woods = {}
+  rec.chests = 0
+  rec.lootChests = 0
+  rec.lootTables = {}
+  rec.framed = 0
+  rec.camo = {}
+  rec.columns = 0
+  rec.floatColumns = 0
+  rec.maxGap = 0
+  rec.templateBlocks = 0
+  rec.missing = 0
+  rec.details = []
+  rec.groundOffset = { buried3: 0, buried1: 0, flush: 0, raised1: 0, raised3: 0 }
+  var counts = {}
+  var sampleN = 0
+  function add(list, v) { if (list.indexOf(v) < 0) list.push(v) }
+  pieces.forEach(function (piece) {
+    var m = /(pack[a-z_]*:[a-z0-9_\/]+)/.exec(String(piece.getElement()))
+    var tid = m ? m[1] : null
+    if (!tid) return
+    var short = tid.replace('pack:village/', '')
+    rec.byPiece[short] = (rec.byPiece[short] || 0) + 1
+    if (tid.indexOf('/npc/') > 0) {
+      rec.npcPieces++
+      return
+    }
+    var blocks = vj.templates[tid]
+    if (!blocks) return
+    // terrain-matching pieces (streets) are bent to the ground block by block: their cells are not where the template puts them
+    if (String(piece.getElement().getProjection()).toLowerCase().indexOf('terrain') >= 0) {
+      rec.terrainPieces = (rec.terrainPieces || 0) + 1
+      return
+    }
+    var origin = piece.getPosition()
+    var mat = $VtMaterials.materialsAt(level, origin.getX(), origin.getY(), origin.getZ())
+    var rock = String(mat.get('rock'))
+    var woods = vtStrings($VtMaterials.woodsAt(level, origin.getX(), origin.getY(), origin.getZ(), 3, true))
+    rec.rocks[rock] = (rec.rocks[rock] || 0) + 1
+    rec.woods[woods.join('/')] = (rec.woods[woods.join('/')] || 0) + 1
+    var settings = new $StructTestPlaceSettings().setRotation(piece.getRotation())
+    blocks.forEach(function (b) {
+      var rel = $StructTestTemplate.calculateRelativePosition(settings, new $StructTestBlockPos(b[0], b[1], b[2]))
+      var pos = rel.offset(origin)
+      var id = String($StructTestBuiltIn.BLOCK.getKey(level.getBlockState(pos).getBlock()))
+      var want = vtWoodTarget(b[3], woods)
+      rec.templateBlocks++
+      counts[id] = (counts[id] || 0) + 1
+      if (id === 'minecraft:air' || id === 'minecraft:cave_air') rec.missing++
+      // placeholders that the mapping should have replaced
+      if (want !== null && want !== b[3] && id === b[3]) {
+        add(rec.leaks, `${id} (wood rank ${woods.join('/')})`)
+        if (rec.details.length < 20) rec.details.push(`unmapped ${id} (should be ${want}), piece ${short} at ${pos.getX()},${pos.getY()},${pos.getZ()}`)
+      }
+      if (rock !== 'granite' && STRUCT_TEST_ROCK_LEAK.test(id)) add(rec.leaks, id)
+      if (rock !== 'granite' && /^rnr:rock\/[a-z_]+\/granite/.test(id)) add(rec.leaks, id)
+      if (/^rnr:tamped_alfisol/.test(b[3]) && false) add(rec.leaks, id)
+      if (id.indexOf('minecraft:') === 0 && !STRUCT_TEST_VANILLA_OK[id] && vj.vanillaOk.indexOf(id) < 0) {
+        add(rec.vanilla, id)
+        if (rec.details.length < 20) rec.details.push(`vanilla ${id} where ${b[3]} should be, piece ${short} at ${pos.getX()},${pos.getY()},${pos.getZ()}`)
+      }
+      if (STRUCT_TEST_ROUGH.test(id) && /^tfc:rock\//.test(b[3])) {
+        add(rec.kind === 'natural' ? rec.overwritten || (rec.overwritten = []) : rec.alloy, id)
+        if (rec.details.length < 20) rec.details.push(`rough ${id} where ${b[3]} should be, piece ${short} rock ${rock} at ${pos.getX()},${pos.getY()},${pos.getZ()}`)
+      }
+      var r = /^(?:tfc|rnr):rock\/(smooth|cobble|bricks|cracked_bricks|mossy_bricks|mossy_cobble|chiseled|raw|loose|mossy_loose|anvil|gravel_road|sett_road|cobbled_road)\/([a-z]+)/.exec(id)
+      if (r && r[2] !== rock && !(r[1] === 'anvil' && STRUCT_TEST_ALLOY[rock])) {
+        add(rec.otherRock, r[2])
+        if (rec.details.length < 20) rec.details.push(`rock ${id} where ${b[3]} should be (${rock}), piece ${short} at ${pos.getX()},${pos.getY()},${pos.getZ()}`)
+      }
+      var w = /^(?:tfc|afc):wood\/(planks|chest|fence|fence_gate|log_fence|log|vertical_support|horizontal_support|door|stripped_log|trapdoor)\/([a-z_]+?)(_stairs|_slab)?$/.exec(id)
+      var rs = /^rnr:wood\/shingles\/([a-z_]+?)(_stairs|_slab)?$/.exec(id)
+      var wname = w ? w[2] : rs ? rs[1] : null
+      if (wname && b[3].indexOf('palm_mosaic') < 0) {
+        var okWood = woods.some(function (x) { return x.replace('afc:', '') === wname })
+        if (!okWood) {
+          add(rec.otherWood, wname)
+          if (rec.details.length < 20) rec.details.push(`wood ${id} where ${b[3]} should be (${woods.join('/')}), piece ${short} at ${pos.getX()},${pos.getY()},${pos.getZ()}`)
+        }
+      }
+      if (/^tfc:wood\/chest\/|^afc:wood\/chest\/|^lootr:/.test(id)) {
+        rec.chests++
+        var be = level.getBlockEntity(pos)
+        if (be) {
+          var tag = be.saveWithoutMetadata(level.registryAccess())
+          var lt = String(tag.getString('LootTable'))
+          if (lt) { rec.lootChests++; rec.lootTables[lt] = (rec.lootTables[lt] || 0) + 1 }
+        }
+      }
+      if (id.indexOf('framedblocks:') === 0 && sampleN < 600) {
+        sampleN++
+        rec.framed++
+        var fbe = level.getBlockEntity(pos)
+        if (fbe) {
+          var ftag = fbe.saveWithoutMetadata(level.registryAccess())
+          var camo = ftag.contains('camo') ? String(ftag.getCompound('camo').getCompound('state').getString('Name')) : '(none)'
+          rec.camo[camo] = (rec.camo[camo] || 0) + 1
+        } else {
+          rec.camo['(no block entity)'] = (rec.camo['(no block entity)'] || 0) + 1
+        }
+      }
+      // ground layer: floating over air, and how far from the natural surface (TFC's own base height at the column)
+      if (b[1] === st.ground && !b[4] && id !== 'minecraft:air') {
+        rec.columns++
+        var gap = 0
+        for (var dy = pos.getY() - 1; dy > pos.getY() - 24; dy--) {
+          var below = level.getBlockState(new $StructTestBlockPos(pos.getX(), dy, pos.getZ()))
+          if (!(below.isAir() || below.canBeReplaced()) || !below.getFluidState().isEmpty()) break
+          gap++
+        }
+        if (gap >= 2) {
+          rec.floatColumns++
+          if (rec.details.length < 12) rec.details.push(`${tid} ${b[3]} @${b[0]},${b[1]},${b[2]} floats ${gap} at ${pos.getX()},${pos.getY()},${pos.getZ()}`)
+        }
+        if (gap > rec.maxGap) rec.maxGap = gap
+        if (rec.columns % 6 === 0) {
+          var h = generator.getBaseHeight(pos.getX(), pos.getZ(), $VtHeightmap.WORLD_SURFACE_WG, level, randomState)
+          var off = pos.getY() - (h - 1)
+          var g = rec.groundOffset
+          if (off <= -3) g.buried3++; else if (off < 0) g.buried1++; else if (off === 0) g.flush++; else if (off <= 2) g.raised1++; else g.raised3++
+        }
+      }
+    })
+  })
+  rec.blocks = counts
+  rec.rockSet = Object.keys(rec.rocks).join('/')
+  rec.woodSet = Object.keys(rec.woods).join(' | ')
+  rec.mixed = Object.keys(rec.rocks).length > 1 || Object.keys(rec.woods).length > 1
+  rec.camoTop = {}
+  Object.keys(rec.camo).sort(function (a, b) { return rec.camo[b] - rec.camo[a] }).slice(0, 4).forEach(function (k) { rec.camoTop[k] = rec.camo[k] })
+  // Easy NPCs standing in the village
+  var aabb = new $StructTestAABB(box.minX() - 2, box.minY() - 8, box.minZ() - 2, box.maxX() + 3, box.maxY() + 16, box.maxZ() + 3)
+  var near = level.getEntitiesOfClass($StructTestEntity, aabb)
+  rec.npcs = []
+  near.forEach(function (en) {
+    var tag = en.saveWithoutId(new $StructTestCompound())
+    if (!tag.contains('EasyNPCVersion')) return
+    var offers = tag.getCompound('Offers')
+    var recipes = offers.contains('Recipes', 9) ? offers.getList('Recipes', 10).size() : (offers.contains('Recipes', 10) ? offers.getCompound('Recipes').getList('Recipes', 10).size() : 0)
+    // air between its feet and what it would stand on (0 = it stands)
+    var fx = Math.floor(en.getX()), fy = Math.floor(en.getY()), fz = Math.floor(en.getZ())
+    var drop = 0
+    while (drop < 8) {
+      var under = level.getBlockState(new $StructTestBlockPos(fx, fy - 1 - drop, fz))
+      if (!(under.isAir() || under.canBeReplaced()) || !under.getFluidState().isEmpty()) break
+      drop++
+    }
+    rec.npcs.push({ drop: drop, name: String(en.getName().getString()), uuid: String(tag.getUUID('UUID')), owner: tag.contains('Owner'), trades: recipes,
+      invulnerable: tag.getBoolean('Invulnerable'), noGravity: tag.getBoolean('NoGravity') || en.isNoGravity(), at: [Math.floor(en.getX()), Math.floor(en.getY()), Math.floor(en.getZ())],
+      dialogs: tag.getCompound('DialogData').getList('DialogDataSet', 10).size() })
+  })
+  rec.npcCount = rec.npcs.length
+  rec.npcExpected = rec.npcPieces
+  rec.npcNames = {}
+  rec.npcs.forEach(function (n) { rec.npcNames[n.name] = (rec.npcNames[n.name] || 0) + 1 })
+}
+
+// The block a placeholder wood block becomes with the piece's woods (best first): tfc:wood/<v>/oak -> tfc:wood/<v>/<woods[0]>; ArborFirmaCraft
+// woods swap the namespace; shingles keep rnr. null for anything that is not a ranked placeholder.
+function vtWoodTarget(tid, woods) {
+  var m = /^(tfc:wood\/[a-z_]+\/|rnr:wood\/shingles\/)(oak|spruce|birch)(_stairs|_slab)?$/.exec(tid)
+  if (!m) return null
+  var rank = m[2] === 'oak' ? 0 : m[2] === 'spruce' ? 1 : 2
+  var w = woods[Math.min(rank, woods.length - 1)]
+  var shape = m[3] || ''
+  if (w.indexOf(':') > 0) {
+    var parts = w.split(':')
+    return m[1].indexOf('tfc:') === 0 ? parts[0] + ':' + m[1].substring(4) + parts[1] + shape : m[1] + parts[1] + shape
+  }
+  return m[1] + w + shape
+}
+
+// ---- acceptance census (--acceptance): every placement cell of each village set across its regions that passes the region and climate
+// tests, with the biome at its centre and what a guard of radius 48 and of radius 24 sees (heights and wet columns), written to the results
+// so that tools can try other biome sets and guard limits without a server (docs/lived-in.md, *Tuning a village*)
+function vtAcceptance(level, vj, results, check) {
+  var setReg = level.registryAccess().registryOrThrow($StructTestRegistries.STRUCTURE_SET)
+  var state = level.getChunkSource().getGeneratorState()
+  var seed = level.getSeed()
+  var sets = $VtMaterials.regionSets(level)
+  results.villages.acceptance = {}
+  vj.sets.forEach(function (s) {
+    var set = structTestStructure(setReg, s.id)
+    var placement = set.placement()
+    var spacing = placement.spacing()
+    var row = sets.get('pack:' + s.id)
+    var x0 = 1e18, z0 = 1e18, x1 = -1e18, z1 = -1e18
+    row.get('regions').forEach(function (name, v) {
+      x0 = Math.min(x0, Number(v.get(2))); z0 = Math.min(z0, Number(v.get(3))); x1 = Math.max(x1, Number(v.get(4))); z1 = Math.max(z1, Number(v.get(5)))
+    })
+    var ax0 = Math.floor(x0 / 16 / spacing) - 1, ax1 = Math.floor(x1 / 16 / spacing) + 1
+    var az0 = Math.floor(z0 / 16 / spacing) - 1, az1 = Math.floor(z1 / 16 / spacing) + 1
+    var total = (ax1 - ax0 + 1) * (az1 - az0 + 1)
+    var stride = Math.max(1, Math.ceil(Math.sqrt(total / vj.acceptanceCells)))
+    var recs = []
+    var inRegion = 0
+    var considered = 0
+    for (var a = ax0; a <= ax1; a += stride) {
+      for (var b = az0; b <= az1; b += stride) {
+        var c = placement.getPotentialStructureChunk(seed, a * spacing, b * spacing)
+        considered++
+        if (!placement.regionContains(c.x, c.z)) continue
+        inRegion++
+        if (!placement.isStructureChunk(state, c.x, c.z)) continue
+        var bx = c.getMiddleBlockX()
+        var bz = c.getMiddleBlockZ()
+        var p48 = $VtMaterials.guardProbe(level, bx, bz, 48, 13)
+        var p24 = $VtMaterials.guardProbe(level, bx, bz, 24, 13)
+        recs.push([c.x, c.z, String($VtMaterials.biomeAt(level, bx, bz)), Number(p48.get('min')), Number(p48.get('max')), Number(p48.get('wet')),
+          Number(p24.get('min')), Number(p24.get('max')), Number(p24.get('wet'))])
+      }
+    }
+    results.villages.acceptance[s.id] = { spacing: spacing, stride: stride, considered: considered, inRegion: inRegion, climate: recs.length, cells: recs }
+    console.info(`[structures-test] NOTE acceptance ${s.id}: ${considered} cells sampled (stride ${stride}), ${inRegion} in region, ${recs.length} with climate`)
+  })
+}
+
+// ---- /locate: what the command's search (ChunkGenerator.findNearestMapStructure, radius 100 cells) answers from each test place, how long it
+// takes, and whether the answer is a real village (its cell passes the placement, its chunk holds a valid start)
+const $VtHolderSet = Java.loadClass('net.minecraft.core.HolderSet')
+function vtLocate(level, vj, results, check) {
+  var generator = level.getChunkSource().getGenerator()
+  var structReg = level.registryAccess().registryOrThrow($StructTestRegistries.STRUCTURE)
+  var setReg = level.registryAccess().registryOrThrow($StructTestRegistries.STRUCTURE_SET)
+  var state = level.getChunkSource().getGeneratorState()
+  results.villages.locate = []
+  var bad = []
+  var lines = []
+  vj.sets.forEach(function (s) {
+    var placement = structTestStructure(setReg, s.id).placement()
+    s.structures.forEach(function (st, i) {
+      if (i > 0) return                                   // the variants share the placement; the first one is enough for the search
+      var holder = null
+      structReg.holders().forEach(function (h) { if (String(h.key().location()) === 'pack:' + st.id) holder = h })
+      var places = vj.places[s.culture] || []
+      places.forEach(function (p) {
+        var xz = $VtMaterials.blockOf(p[1], p[2])
+        var t0 = Date.now()
+        var res = generator.findNearestMapStructure(level, $VtHolderSet['direct(java.util.List)'](Java.loadClass('java.util.List').of(holder)), new $StructTestBlockPos(xz[0], 64, xz[1]), 100, false)
+        var ms = Date.now() - t0
+        var rec = { structure: st.id, from: p[0], ms: ms }
+        if (res === null) {
+          rec.found = false
+          lines.push(`${st.id} from ${p[0]}: nothing within 100 cells (${ms} ms)`)
+        } else {
+          var pos = res.getFirst()
+          var cx = pos.getX() >> 4
+          var cz = pos.getZ() >> 4
+          var d = Math.round(Math.hypot(pos.getX() - xz[0], pos.getZ() - xz[1]))
+          var region = placement.regionContains(cx, cz)
+          var placed = placement.isStructureChunk(state, cx, cz)
+          var chunk = level.getChunk(cx, cz, $VtChunkStatus.STRUCTURE_STARTS)
+          var real = false
+          s.structures.forEach(function (o) {
+            var start = chunk.getStartForStructure(structTestStructure(structReg, o.id))
+            if (start !== null && start.isValid()) real = true
+          })
+          rec.found = true
+          rec.at = [pos.getX(), pos.getZ()]
+          rec.distance = d
+          rec.region = region
+          rec.climate = placed
+          rec.real = real
+          lines.push(`${st.id} from ${p[0]}: ${pos.getX()},${pos.getZ()} (${d} blocks, ${ms} ms)${region ? '' : ' OUTSIDE THE REGION'}${placed ? '' : ' climate fails'}${real ? '' : ' no start there'}`)
+          if (!region) bad.push(`${st.id} from ${p[0]}: outside the region`)
+          if (!real) bad.push(`${st.id} from ${p[0]}: ${pos.getX()},${pos.getZ()} holds no village`)
+        }
+        results.villages.locate.push(rec)
+      })
+    })
+  })
+  console.info(`[structures-test] NOTE locate: ${lines.join('; ')}`)
+  check('/locate answers real villages inside the regions', bad.length === 0, bad.length ? bad.join('; ') : lines.length + ' searches')
 }

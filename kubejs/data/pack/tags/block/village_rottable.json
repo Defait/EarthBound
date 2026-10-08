@@ -1,0 +1,71 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "rnr:thatch_roof",
+      "required": false
+    },
+    {
+      "id": "rnr:thatch_roof_slab",
+      "required": false
+    },
+    {
+      "id": "rnr:thatch_roof_stairs",
+      "required": false
+    },
+    {
+      "id": "rnr:wood/shingles/birch",
+      "required": false
+    },
+    {
+      "id": "rnr:wood/shingles/birch_slab",
+      "required": false
+    },
+    {
+      "id": "rnr:wood/shingles/birch_stairs",
+      "required": false
+    },
+    {
+      "id": "rnr:wood/shingles/oak",
+      "required": false
+    },
+    {
+      "id": "rnr:wood/shingles/oak_slab",
+      "required": false
+    },
+    {
+      "id": "rnr:wood/shingles/oak_stairs",
+      "required": false
+    },
+    {
+      "id": "rnr:wood/shingles/spruce",
+      "required": false
+    },
+    {
+      "id": "rnr:wood/shingles/spruce_slab",
+      "required": false
+    },
+    {
+      "id": "rnr:wood/shingles/spruce_stairs",
+      "required": false
+    },
+    "tfc:thatch",
+    "tfc:wattle/unstained",
+    "tfc:wattle/white",
+    "tfc:wood/fence/birch",
+    "tfc:wood/fence/oak",
+    "tfc:wood/fence/spruce",
+    "tfc:wood/log_fence/birch",
+    "tfc:wood/log_fence/oak",
+    "tfc:wood/log_fence/spruce",
+    "tfc:wood/planks/birch",
+    "tfc:wood/planks/birch_slab",
+    "tfc:wood/planks/birch_stairs",
+    "tfc:wood/planks/oak",
+    "tfc:wood/planks/oak_slab",
+    "tfc:wood/planks/oak_stairs",
+    "tfc:wood/planks/spruce",
+    "tfc:wood/planks/spruce_slab",
+    "tfc:wood/planks/spruce_stairs"
+  ]
+}

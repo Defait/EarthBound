@@ -1,0 +1,109 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 2,
+        "max": 3
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:charcoal",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 4,
+                "max": 10
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:powder/flux",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:ceramic/ingot_mold",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:ceramic/axe_head_mold",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:ceramic/hammer_head_mold",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:ceramic/knife_blade_mold",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:fire_clay",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/ingot/copper",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/hammer/copper",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/axe/copper",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/ingot/bronze",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

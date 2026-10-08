@@ -1,0 +1,28 @@
+{
+  "replace": false,
+  "values": [
+    "tfc:burren_plains",
+    "tfc:cenote_plains",
+    "tfc:coastal_dunes",
+    "tfc:doline_plains",
+    "tfc:drumlins",
+    "tfc:embayments",
+    "tfc:hills",
+    "tfc:knob_and_kettle",
+    "tfc:lowlands",
+    "tfc:mud_flats",
+    "tfc:old_shield_volcano_shore",
+    "tfc:plains",
+    "tfc:rocky_shores",
+    "tfc:rolling_hills",
+    "tfc:sea_stacks",
+    "tfc:setback_cliffs",
+    "tfc:shield_volcano_shore",
+    "tfc:shilin_plains",
+    "tfc:shore",
+    "tfc:terrace_lower",
+    "tfc:terrace_upper",
+    "tfc:tidal_flats",
+    "tfc:tower_karst_plains"
+  ]
+}

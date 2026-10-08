@@ -1,0 +1,115 @@
+{
+  "structures": [
+    {
+      "structure": "pack:village/steppe_living",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "pack_world:region",
+    "salt": 2026101005,
+    "spacing": 64,
+    "separation": 40,
+    "spread_type": "linear",
+    "regions": [
+      {
+        "name": "steppe",
+        "polygon": [
+          [
+            51.5,
+            50.5
+          ],
+          [
+            54.0,
+            62.0
+          ],
+          [
+            52.5,
+            71.0
+          ],
+          [
+            54.0,
+            80.0
+          ],
+          [
+            53.5,
+            88.0
+          ],
+          [
+            51.7,
+            98.0
+          ],
+          [
+            51.5,
+            104.5
+          ],
+          [
+            50.5,
+            115.0
+          ],
+          [
+            49.5,
+            120.5
+          ],
+          [
+            47.0,
+            123.5
+          ],
+          [
+            43.0,
+            122.0
+          ],
+          [
+            41.0,
+            114.0
+          ],
+          [
+            40.5,
+            108.0
+          ],
+          [
+            38.5,
+            104.0
+          ],
+          [
+            37.5,
+            97.0
+          ],
+          [
+            39.5,
+            90.0
+          ],
+          [
+            42.0,
+            80.5
+          ],
+          [
+            41.0,
+            72.0
+          ],
+          [
+            43.5,
+            66.0
+          ],
+          [
+            45.0,
+            58.0
+          ],
+          [
+            46.0,
+            52.0
+          ]
+        ]
+      }
+    ],
+    "climate": {
+      "min_temperature": -10,
+      "max_temperature": 16,
+      "min_groundwater": 20,
+      "max_groundwater": 300,
+      "max_forest": 2,
+      "ignore_rivers": true
+    },
+    "outside": "never"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/minang/living/t_junction",
+        "processors": "pack:village/minang/living/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/minang/living/fork_left",
+        "processors": "pack:village/minang/living/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/minang/living/fork_right",
+        "processors": "pack:village/minang/living/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/minang/living/cross",
+        "processors": "pack:village/minang/living/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 40,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/minang/living/straight_short",
+        "processors": "pack:village/minang/living/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 40,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/minang/living/straight_medium",
+        "processors": "pack:village/minang/living/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 40,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/minang/living/bend_left",
+        "processors": "pack:village/minang/living/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 40,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/minang/living/bend_right",
+        "processors": "pack:village/minang/living/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 5,
+      "element": {
+        "element_type": "minecraft:empty_pool_element"
+      }
+    }
+  ]
+}

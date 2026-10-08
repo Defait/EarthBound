@@ -1,0 +1,14 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/malay/living/smithy",
+        "processors": "pack:village/malay/living/paths",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

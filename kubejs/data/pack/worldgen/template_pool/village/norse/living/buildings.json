@@ -1,0 +1,65 @@
+{
+  "fallback": "pack:village/norse/living/paths",
+  "elements": [
+    {
+      "weight": 60,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/living/longhouse",
+        "processors": "pack:village/norse/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 25,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/living/smithy",
+        "processors": "pack:village/norse/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 25,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/living/burial_mound",
+        "processors": "pack:village/norse/living/structures",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 80,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/living/large_farmhouse",
+        "processors": "pack:village/norse/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/living/farmhouse",
+        "processors": "pack:village/norse/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/living/turf_house",
+        "processors": "pack:village/norse/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "element_type": "minecraft:empty_pool_element"
+      }
+    }
+  ]
+}

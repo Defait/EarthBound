@@ -1,0 +1,14 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/ruined/gathering_shelter",
+        "processors": "pack:village/norse/ruined/paths",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

@@ -270,7 +270,7 @@
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/norse/living/npc_commoner",
+       "pool": "pack:village/norse/living/npc_commoner_low",
        "count": 2
       },
       {
@@ -298,7 +298,13 @@
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
        "pool": "pack:village/norse/living/npc_commoner",
-       "count": 2
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/norse/living/npc_commoner_low",
+       "count": 1
       },
       {
        "name": "pack:connector",
@@ -363,13 +369,13 @@
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/norse/living/npc_commoner",
+       "pool": "pack:village/norse/living/npc_commoner_low",
        "count": 1
       },
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/norse/living/npc_smith",
+       "pool": "pack:village/norse/living/npc_smith_low",
        "count": 1
       },
       {
@@ -1449,8 +1455,8 @@
       18,
       21
      ],
-     "blocks": 1369,
-     "dropped": 38,
+     "blocks": 1401,
+     "dropped": 6,
      "unmapped": 0,
      "dropped_entities": [],
      "npc_spot": null,
@@ -1465,18 +1471,24 @@
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
        "pool": "pack:village/arabic/living/npc_commoner",
-       "count": 4
-      },
-      {
-       "name": "minecraft:empty",
-       "target": "pack:npc_connector",
-       "pool": "pack:village/arabic/living/npc_merchant",
        "count": 2
       },
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/arabic/living/npc_outdoors",
+       "pool": "pack:village/arabic/living/npc_commoner_low",
+       "count": 2
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/arabic/living/npc_merchant_low",
+       "count": 2
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/arabic/living/npc_outdoors_low",
        "count": 1
       },
       {
@@ -1650,7 +1662,7 @@
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/arabic/living/npc_commoner",
+       "pool": "pack:village/arabic/living/npc_commoner_low",
        "count": 2
       },
       {
@@ -1668,8 +1680,8 @@
       11,
       14
      ],
-     "blocks": 611,
-     "dropped": 45,
+     "blocks": 639,
+     "dropped": 17,
      "unmapped": 0,
      "dropped_entities": [],
      "npc_spot": null,
@@ -1689,7 +1701,7 @@
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/arabic/living/npc_commoner",
+       "pool": "pack:village/arabic/living/npc_commoner_low",
        "count": 2
       },
       {
@@ -1728,7 +1740,7 @@
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/arabic/living/npc_commoner",
+       "pool": "pack:village/arabic/living/npc_commoner_low",
        "count": 2
       },
       {
@@ -1746,8 +1758,8 @@
       9,
       14
      ],
-     "blocks": 592,
-     "dropped": 15,
+     "blocks": 606,
+     "dropped": 1,
      "unmapped": 0,
      "dropped_entities": [],
      "npc_spot": null,
@@ -1767,7 +1779,7 @@
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/arabic/living/npc_commoner",
+       "pool": "pack:village/arabic/living/npc_commoner_low",
        "count": 2
       },
       {
@@ -1806,7 +1818,7 @@
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/arabic/living/npc_outdoors",
+       "pool": "pack:village/arabic/living/npc_outdoors_low",
        "count": 3
       },
       {
@@ -1845,13 +1857,13 @@
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/arabic/living/npc_commoner",
+       "pool": "pack:village/arabic/living/npc_commoner_low",
        "count": 1
       },
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/arabic/living/npc_smith",
+       "pool": "pack:village/arabic/living/npc_smith_low",
        "count": 1
       },
       {
@@ -1869,8 +1881,8 @@
       5,
       5
      ],
-     "blocks": 46,
-     "dropped": 20,
+     "blocks": 60,
+     "dropped": 6,
      "unmapped": 0,
      "dropped_entities": [],
      "npc_spot": null,
@@ -1890,8 +1902,8 @@
       5,
       5
      ],
-     "blocks": 46,
-     "dropped": 20,
+     "blocks": 60,
+     "dropped": 6,
      "unmapped": 0,
      "dropped_entities": [],
      "npc_spot": null,
@@ -1911,8 +1923,8 @@
       5,
       5
      ],
-     "blocks": 46,
-     "dropped": 20,
+     "blocks": 60,
+     "dropped": 6,
      "unmapped": 0,
      "dropped_entities": [],
      "npc_spot": null,
@@ -2155,8 +2167,8 @@
       16,
       13
      ],
-     "blocks": 583,
-     "dropped": 8,
+     "blocks": 589,
+     "dropped": 2,
      "unmapped": 0,
      "dropped_entities": [],
      "npc_spot": null,
@@ -2170,7 +2182,7 @@
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/malay/living/npc_commoner",
+       "pool": "pack:village/malay/living/npc_commoner_low",
        "count": 1
       },
       {
@@ -2188,8 +2200,8 @@
       16,
       13
      ],
-     "blocks": 582,
-     "dropped": 8,
+     "blocks": 588,
+     "dropped": 2,
      "unmapped": 0,
      "dropped_entities": [],
      "npc_spot": null,
@@ -2203,7 +2215,7 @@
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/malay/living/npc_commoner",
+       "pool": "pack:village/malay/living/npc_commoner_low",
        "count": 1
       },
       {
@@ -2221,8 +2233,8 @@
       16,
       13
      ],
-     "blocks": 582,
-     "dropped": 8,
+     "blocks": 588,
+     "dropped": 2,
      "unmapped": 0,
      "dropped_entities": [],
      "npc_spot": null,
@@ -2236,7 +2248,7 @@
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/malay/living/npc_commoner",
+       "pool": "pack:village/malay/living/npc_commoner_low",
        "count": 1
       },
       {
@@ -2254,8 +2266,8 @@
       16,
       16
      ],
-     "blocks": 728,
-     "dropped": 8,
+     "blocks": 734,
+     "dropped": 2,
      "unmapped": 0,
      "dropped_entities": [],
      "npc_spot": null,
@@ -2275,7 +2287,7 @@
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/malay/living/npc_commoner",
+       "pool": "pack:village/malay/living/npc_commoner_low",
        "count": 2
       },
       {
@@ -2293,8 +2305,8 @@
       16,
       16
      ],
-     "blocks": 727,
-     "dropped": 8,
+     "blocks": 733,
+     "dropped": 2,
      "unmapped": 0,
      "dropped_entities": [],
      "npc_spot": null,
@@ -2314,7 +2326,7 @@
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/malay/living/npc_commoner",
+       "pool": "pack:village/malay/living/npc_commoner_low",
        "count": 2
       },
       {
@@ -2332,8 +2344,8 @@
       16,
       16
      ],
-     "blocks": 727,
-     "dropped": 8,
+     "blocks": 733,
+     "dropped": 2,
      "unmapped": 0,
      "dropped_entities": [],
      "npc_spot": null,
@@ -2353,7 +2365,7 @@
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/malay/living/npc_commoner",
+       "pool": "pack:village/malay/living/npc_commoner_low",
        "count": 2
       },
       {
@@ -2755,8 +2767,8 @@
       16,
       13
      ],
-     "blocks": 583,
-     "dropped": 8,
+     "blocks": 589,
+     "dropped": 2,
      "unmapped": 0,
      "dropped_entities": [],
      "npc_spot": null,
@@ -2770,7 +2782,7 @@
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/minang/living/npc_commoner",
+       "pool": "pack:village/minang/living/npc_commoner_low",
        "count": 1
       },
       {
@@ -2788,8 +2800,8 @@
       16,
       13
      ],
-     "blocks": 582,
-     "dropped": 8,
+     "blocks": 588,
+     "dropped": 2,
      "unmapped": 0,
      "dropped_entities": [],
      "npc_spot": null,
@@ -2803,7 +2815,7 @@
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/minang/living/npc_commoner",
+       "pool": "pack:village/minang/living/npc_commoner_low",
        "count": 1
       },
       {
@@ -2821,8 +2833,8 @@
       16,
       13
      ],
-     "blocks": 582,
-     "dropped": 8,
+     "blocks": 588,
+     "dropped": 2,
      "unmapped": 0,
      "dropped_entities": [],
      "npc_spot": null,
@@ -2836,7 +2848,7 @@
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/minang/living/npc_commoner",
+       "pool": "pack:village/minang/living/npc_commoner_low",
        "count": 1
       },
       {
@@ -2854,8 +2866,8 @@
       16,
       16
      ],
-     "blocks": 728,
-     "dropped": 8,
+     "blocks": 734,
+     "dropped": 2,
      "unmapped": 0,
      "dropped_entities": [],
      "npc_spot": null,
@@ -2875,7 +2887,7 @@
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/minang/living/npc_commoner",
+       "pool": "pack:village/minang/living/npc_commoner_low",
        "count": 2
       },
       {
@@ -2893,8 +2905,8 @@
       16,
       16
      ],
-     "blocks": 727,
-     "dropped": 8,
+     "blocks": 733,
+     "dropped": 2,
      "unmapped": 0,
      "dropped_entities": [],
      "npc_spot": null,
@@ -2914,7 +2926,7 @@
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/minang/living/npc_commoner",
+       "pool": "pack:village/minang/living/npc_commoner_low",
        "count": 2
       },
       {
@@ -2932,8 +2944,8 @@
       16,
       16
      ],
-     "blocks": 727,
-     "dropped": 8,
+     "blocks": 733,
+     "dropped": 2,
      "unmapped": 0,
      "dropped_entities": [],
      "npc_spot": null,
@@ -2953,7 +2965,7 @@
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/minang/living/npc_commoner",
+       "pool": "pack:village/minang/living/npc_commoner_low",
        "count": 2
       },
       {
@@ -3073,7 +3085,7 @@
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/minang/living/npc_commoner",
+       "pool": "pack:village/minang/living/npc_commoner_low",
        "count": 1
       },
       {
@@ -3482,7 +3494,7 @@
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/steppe/living/npc_commoner",
+       "pool": "pack:village/steppe/living/npc_commoner_low",
        "count": 2
       },
       {
@@ -3500,8 +3512,8 @@
       8,
       13
      ],
-     "blocks": 645,
-     "dropped": 31,
+     "blocks": 675,
+     "dropped": 1,
      "unmapped": 0,
      "dropped_entities": [],
      "npc_spot": null,
@@ -3515,7 +3527,7 @@
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/steppe/living/npc_commoner",
+       "pool": "pack:village/steppe/living/npc_commoner_low",
        "count": 3
       },
       {
@@ -3533,8 +3545,8 @@
       8,
       13
      ],
-     "blocks": 679,
-     "dropped": 13,
+     "blocks": 691,
+     "dropped": 1,
      "unmapped": 0,
      "dropped_entities": [],
      "npc_spot": null,
@@ -3554,7 +3566,7 @@
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/steppe/living/npc_commoner",
+       "pool": "pack:village/steppe/living/npc_commoner_low",
        "count": 2
       },
       {
@@ -3572,8 +3584,8 @@
       5,
       8
      ],
-     "blocks": 86,
-     "dropped": 5,
+     "blocks": 90,
+     "dropped": 1,
      "unmapped": 0,
      "dropped_entities": [],
      "npc_spot": null,
@@ -3587,7 +3599,7 @@
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/steppe/living/npc_outdoors",
+       "pool": "pack:village/steppe/living/npc_outdoors_low",
        "count": 1
       },
       {
@@ -3620,7 +3632,7 @@
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/steppe/living/npc_outdoors",
+       "pool": "pack:village/steppe/living/npc_outdoors_low",
        "count": 1
       },
       {
@@ -3653,13 +3665,13 @@
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/steppe/living/npc_bowyer",
+       "pool": "pack:village/steppe/living/npc_bowyer_low",
        "count": 1
       },
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/steppe/living/npc_outdoors",
+       "pool": "pack:village/steppe/living/npc_outdoors_low",
        "count": 1
       },
       {
@@ -3833,7 +3845,7 @@
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/steppe/living/npc_outdoors",
+       "pool": "pack:village/steppe/living/npc_outdoors_low",
        "count": 1
       }
      ]
@@ -3893,7 +3905,7 @@
       {
        "name": "minecraft:empty",
        "target": "pack:npc_connector",
-       "pool": "pack:village/steppe/living/npc_outdoors",
+       "pool": "pack:village/steppe/living/npc_outdoors_low",
        "count": 1
       },
       {
@@ -4558,10 +4570,19 @@
     "firmalife:wood/stomping_barrel/palm -> tfc:wood/barrel/oak": 1,
     "firmalife:wood/stomping_barrel/blackwood -> tfc:wood/barrel/birch": 1
    },
+   "carpet": {
+    "domum_ornamentum:white_floating_carpet -> minecraft:white_carpet": 54,
+    "minecraft:light_gray_carpet -> minecraft:light_gray_carpet": 40,
+    "domum_ornamentum:green_floating_carpet -> minecraft:green_carpet": 16,
+    "minecraft:brown_carpet -> minecraft:brown_carpet": 12,
+    "domum_ornamentum:light_gray_floating_carpet -> minecraft:light_gray_carpet": 12,
+    "minecraft:red_carpet -> minecraft:red_carpet": 8,
+    "domum_ornamentum:yellow_floating_carpet -> minecraft:yellow_carpet": 8
+   },
    "carpeted": {
     "carpeted:carpet_slab -> tfc:smooth_sandstone/yellow_slab": 38
    },
-   "drop": 173,
+   "drop": 57,
    "exact": {
     "minecraft:cave_air -> minecraft:air": 5247,
     "domum_ornamentum:sand_stone_bricks -> tfc:cut_sandstone/yellow": 921,
@@ -4684,7 +4705,15 @@
     "afc:wood/big_barrel/mahogany -> tfc:wood/barrel/birch": 8,
     "firmalife:wood/big_barrel/mangrove -> tfc:wood/barrel/birch": 8
    },
-   "drop": 51,
+   "carpet": {
+    "minecraft:magenta_carpet -> minecraft:magenta_carpet": 12,
+    "minecraft:red_carpet -> minecraft:red_carpet": 9,
+    "minecraft:blue_carpet -> minecraft:blue_carpet": 6,
+    "minecraft:pink_carpet -> minecraft:pink_carpet": 5,
+    "minecraft:white_carpet -> minecraft:white_carpet": 2,
+    "minecraft:light_blue_carpet -> minecraft:light_blue_carpet": 2
+   },
+   "drop": 15,
    "exact": {
     "minecraft:cave_air -> minecraft:air": 3274,
     "tfg:grass/oxisol -> tfc:grass/alfisol": 6
@@ -4785,7 +4814,15 @@
     "afc:wood/big_barrel/mahogany -> tfc:wood/barrel/spruce": 8,
     "firmalife:wood/big_barrel/mangrove -> tfc:wood/barrel/birch": 8
    },
-   "drop": 55,
+   "carpet": {
+    "minecraft:magenta_carpet -> minecraft:magenta_carpet": 12,
+    "minecraft:red_carpet -> minecraft:red_carpet": 9,
+    "minecraft:blue_carpet -> minecraft:blue_carpet": 6,
+    "minecraft:pink_carpet -> minecraft:pink_carpet": 5,
+    "minecraft:white_carpet -> minecraft:white_carpet": 2,
+    "minecraft:light_blue_carpet -> minecraft:light_blue_carpet": 2
+   },
+   "drop": 19,
    "exact": {
     "minecraft:cave_air -> minecraft:air": 4462,
     "tfg:grass/oxisol -> tfc:grass/alfisol": 6
@@ -4901,7 +4938,12 @@
     "firmalife:wood/stomping_barrel/white_cedar -> tfc:wood/barrel/birch": 1,
     "firmalife:wood/stomping_barrel/ash -> tfc:wood/barrel/birch": 1
    },
-   "drop": 61,
+   "carpet": {
+    "minecraft:red_carpet -> minecraft:red_carpet": 40,
+    "minecraft:light_gray_carpet -> minecraft:light_gray_carpet": 4,
+    "minecraft:white_carpet -> minecraft:white_carpet": 2
+   },
+   "drop": 15,
    "exact": {
     "minecraft:cave_air -> minecraft:air": 4555,
     "minecraft:bricks -> tfc:rock/bricks/granite": 8,

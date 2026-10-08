@@ -1,0 +1,23 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/temperate/living/track_a",
+        "processors": "pack:village/temperate/living/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/temperate/living/track_b",
+        "processors": "pack:village/temperate/living/paths",
+        "projection": "terrain_matching"
+      }
+    }
+  ]
+}

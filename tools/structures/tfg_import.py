@@ -169,7 +169,13 @@ ROAD_MARKER = "tfc:rock/bricks/andesite"   # TFG's marker for every road tile; t
 DROP = {"create:black_seat", "minecraft:white_wall_banner", "minecraft:white_banner", "minecraft:flower_pot", "minecraft:potted_cornflower", "create:white_table_cloth",
         "createaddition:chocolate_cake", "tfc:placed_item", "tfc:scraping", "tfc:ingot_pile", "tfc:double_ingot_pile", "firmalife:wood/hanger",
         "tfc:tree_roots"}
-DROP_RE = [r"^chalk:", r".*_carpet$", r"^domum_ornamentum:.*floating_carpet$", r"^firmalife:wood/hanger/"]
+DROP_RE = [r"^chalk:", r"^tfg:.*_carpet$", r"^firmalife:wood/hanger/"]
+# Vanilla carpets stay (floor decoration: the pack has them and the lint allows them); Domum Ornamentum's floating carpets become the carpet
+# of their colour. A carpet that would hang in the air (nothing under it in the template, and not on the bottom layer) is dropped in convert():
+# vanilla carpets pop off without support.
+CARPET_COLOURS = {"white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray", "cyan", "purple", "blue", "brown", "green",
+                  "red", "black"}
+FLOATING_CARPET_RE = re.compile(r"^domum_ornamentum:(?P<c>[a-z_]+)_floating_carpet$")
 # 1:1 renames after the soil/wood/rock folding (None = air)
 EXACT = {
     "minecraft:cave_air": "minecraft:air", "minecraft:void_air": "minecraft:air",
@@ -279,6 +285,12 @@ class Culture:
             return Result(None, None, how="drop")
         if name == ROAD_MARKER:
             return Result(name, props, how="keep")
+        m = FLOATING_CARPET_RE.match(name)
+        if m and m.group("c") in CARPET_COLOURS:
+            return Result(f"minecraft:{m.group('c')}_carpet", {}, how="carpet")
+        m = re.match(r"^minecraft:(?P<c>[a-z_]+)_carpet$", name)
+        if m and m.group("c") in CARPET_COLOURS:
+            return Result(name, {}, how="carpet")
         if name in VANILLA_KEEP:
             return Result(name, props, nbt, how="keep")
         # Additional Placements: `additionalplacements:<ns>.<path with slashes>` is a placeable variant of the block it names
@@ -639,12 +651,16 @@ class Importer:
         out_palette, index, blocks = [], {}, []
         stats = collections.Counter()
         jig = collections.Counter()
+        not_solid = ("minecraft:air", "minecraft:cave_air", "minecraft:void_air", "minecraft:structure_void", "minecraft:jigsaw")
+        solid_src = {tuple(int(v) for v in b["pos"]) for b in root["blocks"] if states[int(b["state"])][0] not in not_solid}
         for b in root["blocks"]:
             name, props = states[int(b["state"])]
             nbt = b.get("nbt")
             pos = [int(v) for v in b["pos"]]
             if name == "minecraft:jigsaw":
-                j = self.jigsaw(cult, variant, piece, props, nbt, jig)
+                # TFG put most of its mob jigsaws in the air cell right above a floor: the piece hung on one is a cell too high, so those name the `_low` twin of the pool
+                low = (pos[0], pos[1] - 1, pos[2]) in solid_src
+                j = self.jigsaw(cult, variant, piece, props, nbt, jig, low)
                 res = Result("minecraft:jigsaw", {"orientation": props.get("orientation", "up_north")}, j, how="jigsaw")
             else:
                 res = c.block(name, props, nbt)
@@ -677,6 +693,21 @@ class Importer:
             if res.name not in ("minecraft:air", "minecraft:structure_void", "minecraft:jigsaw"):
                 stats["blocks"] += 1
             stats["total"] += 1
+        # carpets need something to lie on (vanilla pops them off otherwise): drop the ones over air inside the template
+        solid_at = {tuple(int(v) for v in nb_["pos"]) for nb_ in blocks
+                    if out_palette[int(nb_["state"])]["Name"] not in ("minecraft:air", "minecraft:structure_void", "minecraft:jigsaw")
+                    and not out_palette[int(nb_["state"])]["Name"].endswith("_carpet")}
+        kept = []
+        for nb_ in blocks:
+            p_ = tuple(int(v) for v in nb_["pos"])
+            if out_palette[int(nb_["state"])]["Name"].endswith("_carpet") and p_[1] > 0 and (p_[0], p_[1] - 1, p_[2]) not in solid_at:
+                stats["dropped"] += 1
+                stats["blocks"] -= 1
+                stats["total"] -= 1
+                c.report["drop"]["minecraft:*_carpet (nothing under it)"] += 1
+                continue
+            kept.append(nb_)
+        blocks = kept
         spot_pool = cfg.get("npc_spots", {}).get(piece)
         if spot_pool and variant == "living":
             spot_pool, spot_mode = spot_pool if isinstance(spot_pool, (list, tuple)) else (spot_pool, "room")
@@ -704,7 +735,7 @@ class Importer:
         dropped_entities = [str(e["nbt"].get("id")) for e in root.get("entities", [])]
         return template, stats, jig, dropped_entities
 
-    def jigsaw(self, cult, variant, piece, props, nbt, counter):
+    def jigsaw(self, cult, variant, piece, props, nbt, counter, low=False):
         cfg = CULTURES[cult]
         nbt = nbt or {}
         pool = nbt.get("pool", "minecraft:empty")
@@ -719,6 +750,8 @@ class Importer:
         fn, fp = parse_state(final)
         r = self.cultures[cult].block(fn, fp, None)
         final_state = "minecraft:air" if r.name is None else fmt_state(r.name, r.props)
+        if low and final_state == "minecraft:air" and new_pool != "minecraft:empty" and pool.split("/")[-1].startswith("mob_"):
+            new_pool += "_low"
         counter[(new_name, new_target, new_pool)] += 1
         return {"id": "minecraft:jigsaw", "name": new_name, "target": new_target, "pool": new_pool, "joint": nbt.get("joint", "rollable"),
                 "final_state": final_state}

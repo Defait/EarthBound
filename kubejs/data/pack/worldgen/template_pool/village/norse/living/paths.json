@@ -1,0 +1,92 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/living/straight_short",
+        "processors": "pack:village/norse/living/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/living/straight_medium",
+        "processors": "pack:village/norse/living/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/living/straight_long",
+        "processors": "pack:village/norse/living/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/living/bend_left",
+        "processors": "pack:village/norse/living/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/living/bend_right",
+        "processors": "pack:village/norse/living/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/living/t_junction",
+        "processors": "pack:village/norse/living/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/living/fork_left",
+        "processors": "pack:village/norse/living/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/living/fork_right",
+        "processors": "pack:village/norse/living/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 80,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/living/cross",
+        "processors": "pack:village/norse/living/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "element_type": "minecraft:empty_pool_element"
+      }
+    }
+  ]
+}

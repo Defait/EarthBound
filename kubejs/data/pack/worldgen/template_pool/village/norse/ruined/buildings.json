@@ -1,0 +1,83 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 40,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/ruined/burial_mound",
+        "processors": "pack:village/norse/ruined/structures",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 80,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/ruined/large_farmhouse",
+        "processors": "pack:village/norse/ruined/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/ruined/farmhouse",
+        "processors": "pack:village/norse/ruined/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/ruined/longhouse",
+        "processors": "pack:village/norse/ruined/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 50,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/ruined/turf_house",
+        "processors": "pack:village/norse/ruined/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 50,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/ruined/turf_house_burned",
+        "processors": "pack:village/norse/ruined/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 50,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/ruined/smithy",
+        "processors": "pack:village/norse/ruined/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 50,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/ruined/smithy_burned",
+        "processors": "pack:village/norse/ruined/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "element_type": "minecraft:empty_pool_element"
+      }
+    }
+  ]
+}

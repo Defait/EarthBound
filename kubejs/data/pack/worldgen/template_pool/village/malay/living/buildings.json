@@ -1,0 +1,83 @@
+{
+  "fallback": "pack:village/malay/living/paths",
+  "elements": [
+    {
+      "weight": 60,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/malay/living/kitchen",
+        "processors": "pack:village/malay/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 70,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/malay/living/rumah_bujang_a",
+        "processors": "pack:village/malay/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 70,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/malay/living/rumah_bujang_b",
+        "processors": "pack:village/malay/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 70,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/malay/living/rumah_bujang_c",
+        "processors": "pack:village/malay/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/malay/living/rumah_bujang_dual_a",
+        "processors": "pack:village/malay/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/malay/living/rumah_bujang_dual_b",
+        "processors": "pack:village/malay/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/malay/living/rumah_bujang_dual_c",
+        "processors": "pack:village/malay/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 40,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/malay/living/sloop",
+        "processors": "pack:village/malay/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "element_type": "minecraft:empty_pool_element"
+      }
+    }
+  ]
+}

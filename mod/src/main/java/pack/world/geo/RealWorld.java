@@ -19,6 +19,12 @@ final class RealWorld
         return WaypointCoordinates.toBlockXZ(latitude, longitude);
     }
 
+    /** Half the map's width in blocks: no projected point lies further from the centre (Real World clamps to it). */
+    static int horizontalScale()
+    {
+        return TFCRealWorldConfig.HORIZONTAL_SCALE.get();
+    }
+
     /** What the projection depends on: the world's scale and the map profile's edges. */
     static String configKey()
     {

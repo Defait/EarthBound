@@ -19,6 +19,8 @@ Catalogue shape (JSON; "//" notes are not part of it):
   "villages": {"settings": {"mode": "off"|"climate"|"region"}, "defaults": {...merged into every village...},
     "<id>": {
       "title", "era" (loot era: stone, copper or bronze), "kind": "village"|"monument",
+      "step": the generation step the pieces are placed in (default "surface_structures"; "top_layer_modification" places them after the
+              forest, so the template's air clears the trees inside the village instead of the trees growing over it),
       "set": {"regions": [names], "exclude": [names], "climate": {...tfc:climate's climate object...},
               "spacing", "separation", "salt", "spread_type", "landforms": [groups of "landforms"], "biomes": [extra TFC biome names]},
       "guard": {...pack_world:guarded_jigsaw's guard...},               // used in mode "region"
@@ -31,7 +33,7 @@ Catalogue shape (JSON; "//" notes are not part of it):
         "pools": {"<pool>": {"fallback": "<pool>" or "minecraft:empty" (default),
                   "elements": [{"piece": "<name>", "weight": n, "processors": "<list>", "projection": "rigid"|"terrain_matching"},
                                {"empty": true, "weight": n},
-                               {"npc": "<npc id>", "weight": n, "spawner": false}]}}}}}}
+                               {"npc": "<npc id>", "weight": n, "spawner": false}]}}}}}}   (every pool with NPCs also exists as `<pool>_low`, generated)
 Pieces are templates/village/<id>/<variant>/<piece>.nbt (written by tfg_import.py or saved by hand); their jigsaw blocks name the
 pools `pack:village/<id>/<variant>/<pool>`. Pools here are weights and fallbacks only (vanilla has no limit elements, and Lithostitched is
 not in the pack): `build.py --simulate N --layout` places villages with vanilla's jigsaw rules on flat ground and prints how many of each
@@ -49,6 +51,8 @@ NS = "pack"
 MARKER = "tfc:rock/bricks/andesite"            # tfg_import.py's road marker: the processor lists turn it into paths
 WATER = ["minecraft:water", "tfc:fluid/river_water", "tfc:fluid/salt_water"]
 ERAS = ("stone", "copper", "bronze")
+STEPS = ("raw_generation", "lakes", "local_modifications", "underground_structures", "surface_structures", "strongholds", "underground_ores",
+         "underground_decoration", "fluid_springs", "vegetal_decoration", "top_layer_modification")
 MODES = ("off", "climate", "region")
 CLIMATE_KEYS = {"min_temperature", "max_temperature", "min_groundwater", "max_groundwater", "min_rain_variance", "max_rain_variance",
                 "rain_variance_absolute", "min_forest", "max_forest", "forest_types", "fuzzy", "ignore_rivers"}
@@ -137,9 +141,11 @@ def point_in_polygon(poly, lat, lon):
 
 
 # ------------------------------------------------------------------------------------------------------- NPC pieces
-def npc_piece(ctx, data, spawner):
+def npc_piece(ctx, data, spawner, low=False):
     """A one-block piece that hangs on a village's `pack:npc_connector` jigsaw (on a floor, facing up): its own jigsaw faces down and is
     replaced by air, an Easy NPC entity stands in that cell. With `spawner`, a single spawner sits two blocks lower, under the floor.
+    With `low` the entity stands one cell lower, in the parent jigsaw's own cell: TFG put most of its mob jigsaws in the air cell above the floor,
+    so the child (one cell further up) would hold the NPC a block above the floor.
     The processor list `pack:village/npc` (npc_fixup) gives every placed copy its own NPC."""
     N, spawner_block_nbt = ctx.N, ctx.spawner_block_nbt
     jig = {"id": "minecraft:jigsaw", "name": f"{NS}:npc_connector", "target": "minecraft:empty", "pool": "minecraft:empty", "joint": "rollable",
@@ -153,7 +159,8 @@ def npc_piece(ctx, data, spawner):
     else:
         blocks = [{"pos": N.List([N.Int(0), N.Int(0), N.Int(0)]), "state": N.Int(0), "nbt": jig}]
         size = [1, 1, 1]
-        entities = [{"pos": N.List([N.Double(0.5), N.Double(0.0), N.Double(0.5)]), "blockPos": N.List([N.Int(0), N.Int(0), N.Int(0)]),
+        dy = -1 if low else 0
+        entities = [{"pos": N.List([N.Double(0.5), N.Double(float(dy)), N.Double(0.5)]), "blockPos": N.List([N.Int(0), N.Int(dy), N.Int(0)]),
                      "nbt": dict(data)}]
     return {"DataVersion": N.Int(3955), "size": N.List([N.Int(v) for v in size]), "palette": N.List(palette, kind=N.COMPOUND),
             "blocks": N.List(blocks, kind=N.COMPOUND), "entities": N.List(entities, kind=N.COMPOUND)}
@@ -238,6 +245,8 @@ def emit_one(cid, vc, regions, ctx, mode, put, put_json, allow, rottable, owners
     era = vc.get("era", "bronze")
     if era not in ERAS:
         problems.add(where, f"era {era!r} is not one of {ERAS}")
+    if vc.get("step", "surface_structures") not in STEPS:
+        problems.add(where, f"step {vc.get('step')!r} is not a generation step ({', '.join(STEPS)})")
     templates = os.path.join(ctx.TEMPLATES, "village", cid)
     # ---- NPCs of this village
     npcs = {}
@@ -288,6 +297,9 @@ def emit_one(cid, vc, regions, ctx, mode, put, put_json, allow, rottable, owners
         if not (1 <= v["max_distance"] <= 128):
             problems.add(vwhere, f"max_distance {v['max_distance']} must be 1..128")
         pools = v["pools"] = expand(v["pools"])
+        for pname in [k for k, pool in pools.items() if any("npc" in e and not e.get("spawner") for e in pool["elements"])]:
+            # every NPC pool has a `_low` twin whose pieces stand one cell lower (jigsaws the importer found in the air above a floor name it)
+            pools[pname + "_low"] = dict(pools[pname], elements=[dict(e, low=True) if "npc" in e else e for e in pools[pname]["elements"]])
         if v["start"] not in pools:
             problems.add(vwhere, f"start pool {v['start']!r} is not defined")
         # processor lists
@@ -330,8 +342,9 @@ def emit_one(cid, vc, regions, ctx, mode, put, put_json, allow, rottable, owners
                         problems.add(f"{vwhere}/{pname}", f"NPC {nid!r} is not defined in this village's npcs")
                         continue
                     spawner = bool(e.get("spawner"))
-                    pid = f"{nid}_spawner" if spawner else nid
-                    used.setdefault(("npc", pid, nid, spawner), []).append(pname)
+                    low = bool(e.get("low"))
+                    pid = f"{nid}_spawner" if spawner else f"{nid}_low" if low else nid
+                    used.setdefault(("npc", pid, nid, spawner, low), []).append(pname)
                     elements.append({"weight": w, "element": {"element_type": "minecraft:single_pool_element",
                                                               "location": f"{NS_}:village/{cid}/npc/{pid}", "processors": f"{NS_}:village/npc",
                                                               "projection": "rigid"}})
@@ -355,8 +368,8 @@ def emit_one(cid, vc, regions, ctx, mode, put, put_json, allow, rottable, owners
         marker_pieces = set()
         for key in used:
             if key[0] == "npc":
-                _, pid, nid, spawner = key
-                put(os.path.join(DATA, "structure", "village", cid, "npc", f"{pid}.nbt"), N.dumps(npc_piece(ctx, npcs[nid], spawner)))
+                _, pid, nid, spawner, low = key
+                put(os.path.join(DATA, "structure", "village", cid, "npc", f"{pid}.nbt"), N.dumps(npc_piece(ctx, npcs[nid], spawner, low)))
                 continue
             piece = key[1]
             path = os.path.join(templates, vid, f"{piece}.nbt")
@@ -400,7 +413,7 @@ def emit_one(cid, vc, regions, ctx, mode, put, put_json, allow, rottable, owners
                 if "piece" in e and e["piece"] not in {k[1] for k in used if k[0] == "piece"}:
                     problems.add(f"{vwhere}/{pname}", f"piece {e['piece']} unresolved")
         structure_ids.append((sid, v["weight"]))
-        shared = {"biomes": f"#{NS_}:has_structure/village/{cid}", "step": "surface_structures", "spawn_overrides": {},
+        shared = {"biomes": f"#{NS_}:has_structure/village/{cid}", "step": vc.get("step", "surface_structures"), "spawn_overrides": {},
                   "terrain_adaptation": v["terrain_adaptation"], "start_pool": f"{NS_}:village/{cid}/{vid}/{v['start']}", "size": v["size"],
                   "start_height": {"absolute": -v["start_ground"]}, "project_start_to_heightmap": v["heightmap"],
                   "max_distance_from_center": v["max_distance"], "use_expansion_hack": False}

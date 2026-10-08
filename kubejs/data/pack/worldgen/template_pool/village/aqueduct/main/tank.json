@@ -1,0 +1,14 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/aqueduct/main/aqueduct_tank_0_0",
+        "processors": "pack:village/aqueduct/main/structures",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

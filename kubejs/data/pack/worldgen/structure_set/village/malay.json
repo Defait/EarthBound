@@ -1,0 +1,142 @@
+{
+  "structures": [
+    {
+      "structure": "pack:village/malay_living",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "pack_world:region",
+    "salt": 2026101003,
+    "spacing": 96,
+    "separation": 64,
+    "spread_type": "linear",
+    "regions": [
+      {
+        "name": "malay_peninsula",
+        "polygon": [
+          [
+            6.8,
+            99.6
+          ],
+          [
+            6.8,
+            102.2
+          ],
+          [
+            2.5,
+            104.5
+          ],
+          [
+            1.2,
+            104.2
+          ],
+          [
+            1.2,
+            102.4
+          ],
+          [
+            4.0,
+            100.0
+          ],
+          [
+            6.0,
+            99.3
+          ]
+        ]
+      },
+      {
+        "name": "sumatra_east",
+        "polygon": [
+          [
+            5.2,
+            98.2
+          ],
+          [
+            3.5,
+            99.5
+          ],
+          [
+            0.0,
+            102.0
+          ],
+          [
+            -1.0,
+            104.5
+          ],
+          [
+            -3.0,
+            106.2
+          ],
+          [
+            -5.9,
+            105.8
+          ],
+          [
+            -5.6,
+            104.6
+          ],
+          [
+            -3.0,
+            103.0
+          ],
+          [
+            0.3,
+            101.5
+          ],
+          [
+            3.5,
+            98.5
+          ]
+        ]
+      },
+      {
+        "name": "borneo_coast",
+        "box": [
+          0.5,
+          109.0,
+          7.2,
+          119.5
+        ]
+      }
+    ],
+    "exclude": [
+      {
+        "name": "minang_west_sumatra",
+        "polygon": [
+          [
+            0.8,
+            99.4
+          ],
+          [
+            0.8,
+            101.8
+          ],
+          [
+            -1.5,
+            101.9
+          ],
+          [
+            -3.0,
+            101.3
+          ],
+          [
+            -2.2,
+            100.4
+          ],
+          [
+            -0.5,
+            99.6
+          ]
+        ]
+      }
+    ],
+    "climate": {
+      "min_temperature": 22,
+      "max_temperature": 36,
+      "min_groundwater": 380,
+      "ignore_rivers": true
+    },
+    "outside": "never"
+  }
+}

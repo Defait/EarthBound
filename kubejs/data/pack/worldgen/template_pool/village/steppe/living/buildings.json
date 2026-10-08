@@ -1,0 +1,92 @@
+{
+  "fallback": "pack:village/steppe/living/paths",
+  "elements": [
+    {
+      "weight": 50,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/steppe/living/larder",
+        "processors": "pack:village/steppe/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 50,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/steppe/living/workshop",
+        "processors": "pack:village/steppe/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 30,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/steppe/living/lookout",
+        "processors": "pack:village/steppe/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/steppe/living/yurt_1",
+        "processors": "pack:village/steppe/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/steppe/living/yurt_2",
+        "processors": "pack:village/steppe/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/steppe/living/yurt_3",
+        "processors": "pack:village/steppe/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 60,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/steppe/living/stable",
+        "processors": "pack:village/steppe/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 40,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/steppe/living/archery_ground",
+        "processors": "pack:village/steppe/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 30,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/steppe/living/deer_stones",
+        "processors": "pack:village/steppe/living/paths",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "element_type": "minecraft:empty_pool_element"
+      }
+    }
+  ]
+}

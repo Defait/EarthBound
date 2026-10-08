@@ -21,9 +21,10 @@ Templates come from two places:
     also replaces a procedural variant of the same name. A structure with no template yet is skipped (listed at the end).
 Villages (multi-piece jigsaw structures, catalogue sections "regions" and "villages": streets, buildings, NPC spots, per-piece
 processors, real-region placement) are handled by villages.py; their templates come from tfg_import.py, which converts TerraFirmaGreg's
-settlements into tools/structures/templates/village/<culture>/<variant>/<piece>.nbt. `--villages off` (the catalogue's default)
-checks them without writing, `climate` writes them for the pack's current jar, `region` writes the final form (pack_world:region and
-pack_world:guarded_jigsaw, which need the jar described in the placement spec). `--simulate [N] [--layout]` places villages on flat ground
+settlements into tools/structures/templates/village/<culture>/<variant>/<piece>.nbt. The catalogue's villages.settings.mode picks what
+is written, `--villages MODE` overrides it: `region` (the live setting) writes pack_world:region placement and pack_world:guarded_jigsaw
+structures (pack_world 1.2.0 or later), `climate` writes tfc:climate placement and plain jigsaw structures (loads without the new
+placement and structure types, for /place and /locate tests), `off` only checks. `--simulate [N] [--layout]` places villages on flat ground
 the way vanilla's jigsaw placement does and prints piece and NPC counts.
 The post-pass, for every template: empty TFC chests get the structure's loot table; a DATA structure block whose metadata
 is "npc:<id>" becomes that Easy NPC (an entity; "npc:<id>:spawner" a single spawner); Easy NPC entity data loses Owner,

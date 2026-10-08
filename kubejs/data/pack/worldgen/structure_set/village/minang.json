@@ -1,0 +1,53 @@
+{
+  "structures": [
+    {
+      "structure": "pack:village/minang_living",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "pack_world:region",
+    "salt": 2026101004,
+    "spacing": 64,
+    "separation": 40,
+    "spread_type": "linear",
+    "regions": [
+      {
+        "name": "minang_west_sumatra",
+        "polygon": [
+          [
+            0.8,
+            99.4
+          ],
+          [
+            0.8,
+            101.8
+          ],
+          [
+            -1.5,
+            101.9
+          ],
+          [
+            -3.0,
+            101.3
+          ],
+          [
+            -2.2,
+            100.4
+          ],
+          [
+            -0.5,
+            99.6
+          ]
+        ]
+      }
+    ],
+    "climate": {
+      "min_temperature": 18,
+      "max_temperature": 36,
+      "min_groundwater": 380,
+      "ignore_rivers": true
+    },
+    "outside": "never"
+  }
+}

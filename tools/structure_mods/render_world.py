@@ -3,7 +3,7 @@
 Usage (from the repo root):
     tools/.venv/Scripts/python tools/structure_mods/render_world.py WORLD_DIR OUT_DIR ID [ID ...] [--n 1] [--views sw,ne]
 
-ID is a structure id (towns_and_towers:village_grove) or a namespace followed by "*" (mvs:*). For each, the first N starts found in
+ID is a structure id (towns_and_towers:village_grove, pack:village/norse_living) or a prefix followed by "*" (mvs:*, pack:village/*). For each, the first N starts found in
 the world (in region order; the same seed gives the same starts in a `before` and an `after` world, so the same call on both
 gives a before/after pair) are cut out of the world together with a margin and ground, and drawn from two corners.
 """
@@ -66,7 +66,7 @@ def main():
             tpl = cut_template(world, boxes)
             stats, imgs = renderer.render(tpl, tuple(args.views.split(",")), 900, None, False, R.guess_tint(name))
             for view, im in imgs.items():
-                path = os.path.join(args.out, f"{os.path.basename(args.world)}_{name.replace(':', '_')}_{chunk[0]}_{chunk[1]}_{view}.png")
+                path = os.path.join(args.out, f"{os.path.basename(args.world)}_{name.replace(':', '_').replace('/', '_')}_{chunk[0]}_{chunk[1]}_{view}.png")
                 with open(path, "wb") as f:
                     f.write(R.png_encode(im, 256))
                 print(path)

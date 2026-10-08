@@ -1,0 +1,14 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/arabic/living/well",
+        "processors": "pack:village/arabic/living/paths",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

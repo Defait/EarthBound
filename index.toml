@@ -1405,12 +1405,92 @@ file = "kubejs/data/neoforge/loot_modifiers/global_loot_modifiers.json"
 hash = "2d349a2dc03e3cbaa95723269b0f1d94b8b5a1ab12d10e020442337deb89802f"
 
 [[files]]
+file = "kubejs/data/pack/easy_npc/preset/humanoid/arabic_dyer.npc.snbt"
+hash = "22c35b39513d8cf6cecb83a08fee31f1b9db257c1d6db53e70a8f1f578aa0595"
+
+[[files]]
+file = "kubejs/data/pack/easy_npc/preset/humanoid/arabic_merchant.npc.snbt"
+hash = "2053022e50a66fa9772fbed863d42ef3f0c63b816c14f4c669060f45fadae0dc"
+
+[[files]]
+file = "kubejs/data/pack/easy_npc/preset/humanoid/arabic_potter.npc.snbt"
+hash = "099a866ec3b3ec0e8a82674b85eaae11ad84f26075181d53711df1ec3a7082d7"
+
+[[files]]
+file = "kubejs/data/pack/easy_npc/preset/humanoid/arabic_smith.npc.snbt"
+hash = "d32d77f5b0031e44ee8b80368282fdb8b395695fc46a52c4398e839b0f4c6816"
+
+[[files]]
+file = "kubejs/data/pack/easy_npc/preset/humanoid/arabic_well_keeper.npc.snbt"
+hash = "babc62d0dbea9d641ff92dd6a3ffb688a10f3866c913a276a8ced68d2dba96a9"
+
+[[files]]
 file = "kubejs/data/pack/easy_npc/preset/humanoid/hermit.npc.snbt"
 hash = "64cbffc2e51affc79cb724186059b625227ab0be01a4cf90846ffa030aad9012"
 
 [[files]]
+file = "kubejs/data/pack/easy_npc/preset/humanoid/malay_boatwright.npc.snbt"
+hash = "0e374ccd0887a360c4ac59c069408cc0af59a445cfd05983fccede5ae9c1c5c0"
+
+[[files]]
+file = "kubejs/data/pack/easy_npc/preset/humanoid/malay_cook.npc.snbt"
+hash = "3d15b8062df7be0989609dc420769e30c09bf6c175b82a54998994c9318a7630"
+
+[[files]]
+file = "kubejs/data/pack/easy_npc/preset/humanoid/malay_smith.npc.snbt"
+hash = "46061fecde1285407174ad2d00c02ea39b39f7dab80e81d74bd7961af9ebad5c"
+
+[[files]]
+file = "kubejs/data/pack/easy_npc/preset/humanoid/malay_weaver.npc.snbt"
+hash = "cb00770876ebd1c1b4d2e89e027c8582e19cb686b73b380d2b6d2d72b117cc13"
+
+[[files]]
+file = "kubejs/data/pack/easy_npc/preset/humanoid/norse_farmer.npc.snbt"
+hash = "5cceee9086e844a514d2205d5d8acbd324bcc1f7e7fb65b6d2ab1ac4534d36ef"
+
+[[files]]
+file = "kubejs/data/pack/easy_npc/preset/humanoid/norse_herder.npc.snbt"
+hash = "0e0316984cb9b7556c15ad9e15509c7823d98061eb0a45bbd4b272d09e306013"
+
+[[files]]
+file = "kubejs/data/pack/easy_npc/preset/humanoid/norse_smith.npc.snbt"
+hash = "78883f798936893a158768108959ae4f7b331da0f3b9fb1dc904a141add5cc53"
+
+[[files]]
+file = "kubejs/data/pack/easy_npc/preset/humanoid/norse_weaver.npc.snbt"
+hash = "a43a03b9a80e3976512d9128f2109a61f587cfdc3ef9eb336dccf0312fe157c9"
+
+[[files]]
 file = "kubejs/data/pack/easy_npc/preset/humanoid/smith.npc.snbt"
 hash = "5f9f4a8d53f5a8d421dc8724426526064fa5259980487af753d69b03a28226a9"
+
+[[files]]
+file = "kubejs/data/pack/easy_npc/preset/humanoid/steppe_bowyer.npc.snbt"
+hash = "2ccfefcf8167f330a5b6b1834638587000ddaff7177699824d29ff96eb71e7e2"
+
+[[files]]
+file = "kubejs/data/pack/easy_npc/preset/humanoid/steppe_elder.npc.snbt"
+hash = "3a650beed7c832d1cd7124b2864c8fd274687cc2fc724e11c1f162fd4ed049f1"
+
+[[files]]
+file = "kubejs/data/pack/easy_npc/preset/humanoid/steppe_feltmaker.npc.snbt"
+hash = "6c2040536cdab06bc765dbc328fd1c78b01a3d9b7712e4d6336ed030225763e5"
+
+[[files]]
+file = "kubejs/data/pack/easy_npc/preset/humanoid/steppe_herder.npc.snbt"
+hash = "c00af183a26980d54958f80c1ec5e8c9a238c65e8aa5279abac2c17885780f0f"
+
+[[files]]
+file = "kubejs/data/pack/easy_npc/preset/humanoid/temperate_farmer.npc.snbt"
+hash = "7510022d15a157c1bb51e05c1ee1e6d611e3f1996d5b5ddd3a68b1c40ab5788c"
+
+[[files]]
+file = "kubejs/data/pack/easy_npc/preset/humanoid/temperate_orchardist.npc.snbt"
+hash = "8d273205363853c145cdad0e4d5c31831f30ffbe2df9cf65a362563112112340"
+
+[[files]]
+file = "kubejs/data/pack/easy_npc/preset/humanoid/temperate_shepherd.npc.snbt"
+hash = "b7540d9879e69798f76a4a0f10b4163e38e5e5a4b6f4c2e6119bf9afe3d4ec00"
 
 [[files]]
 file = "kubejs/data/pack/easy_npc/preset/humanoid/trader.npc.snbt"
@@ -1479,6 +1559,54 @@ hash = "7b6dd73eac05703799633c23d72d7e9a9b501d3584de04211282cf8dbe35d052"
 [[files]]
 file = "kubejs/data/pack/loot_table/chests/travelling_smith.json"
 hash = "49db34b7752b00202451f89c27c34c9d4053ffea8b7665cdc2aee4b436aea06b"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/chests/village/arabic/caravanserai.json"
+hash = "0e065c1e9dbea0f68eaa43aa6b9dce45d10569a21167ac50a347cdd52be79a14"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/chests/village/arabic/house.json"
+hash = "500454290b5c906bd160e92df2fda0179bed0ae3af12a11984fec4d4e3cb202d"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/chests/village/arabic/smithy.json"
+hash = "39711bdea0dd8a7d954c7e928f645dcc0a72aa6ce2daed85da3562269108c640"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/chests/village/malay/house.json"
+hash = "b860e23d2a80510c9e31b3e55e120d41ab6d2b2e0fcf97fad241fc36dcd15a03"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/chests/village/malay/smithy.json"
+hash = "a127143335dad87d6055c644adfff392be191395b77b58b0ee787eeaa4c082b4"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/chests/village/minang/house.json"
+hash = "b860e23d2a80510c9e31b3e55e120d41ab6d2b2e0fcf97fad241fc36dcd15a03"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/chests/village/minang/smithy.json"
+hash = "a127143335dad87d6055c644adfff392be191395b77b58b0ee787eeaa4c082b4"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/chests/village/norse/house.json"
+hash = "07b327ec6750d4ed9a0e581f5e982f5f7b933d222d9451652a6930ac5f4f1c1d"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/chests/village/norse/smithy.json"
+hash = "1c73e4e7af50b13daaae564a6ad2cb96238839242c7eea461b3a97988b0d0c63"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/chests/village/steppe/archery.json"
+hash = "19fa9a580085d3efd7c88666cd933fd78a4ba0dfe73346b06ade59d599d23e20"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/chests/village/steppe/house.json"
+hash = "4a92a9351f1805745f03e4196efac67a5640769eb7bcf8e9c9200f6001984727"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/chests/village/temperate/house.json"
+hash = "e0cf986edd4f0acbcc351e74a9fabb512eb2cf4eebbd888194e019be2b6d5103"
 
 [[files]]
 file = "kubejs/data/pack/loot_table/chests/wayside_shrine.json"
@@ -1593,6 +1721,758 @@ file = "kubejs/data/pack/structure/standing_stones/row.nbt"
 hash = "883b0be728a420d7d2d78589d9d10a190cb0d181b8410f79b87a9f1677c3cb7d"
 
 [[files]]
+file = "kubejs/data/pack/structure/village/aqueduct/main/aqueduct_0_0.nbt"
+hash = "c9f7a4fd9e1e92594821783fd656de01b4280820ea9c60c8119e873a3b1f42d0"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/aqueduct/main/aqueduct_0_1.nbt"
+hash = "22096bf4b9afc4437ca56c832c6e816bdc3bf82740ad44e209a5537888f8308a"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/aqueduct/main/aqueduct_connector_0_0.nbt"
+hash = "0ff2fb0b2033360492dd644a5cc5aeba56c9744ff9240350680367386c947eff"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/aqueduct/main/aqueduct_connector_0_1.nbt"
+hash = "e9d2c7a7da8bb3c7194bab17751834b2c9ea191bca59f31cdd901753fca6f498"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/aqueduct/main/aqueduct_connector_1_0.nbt"
+hash = "6a277328de90c62c630af55701ac4095c80f1f2b2c833b4443ff8098a8ab714d"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/aqueduct/main/aqueduct_connector_1_1.nbt"
+hash = "ed8e79d0ba78c497142c8ca5971ef8cfe1cff40c98f798cf912d20d0bcad76b7"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/aqueduct/main/aqueduct_connector_2_0.nbt"
+hash = "c007e34d7f47415fc759cfda4bb6224f4d3911dbf11015a7639cbee4ca6af308"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/aqueduct/main/aqueduct_connector_2_1.nbt"
+hash = "3567398a985442e6c7a321b4b8135096c17a9a3c426fce2814f2b4ff2e303136"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/aqueduct/main/aqueduct_leg_0_0.nbt"
+hash = "20c3f887cf1b5f1a8babb431ee7eb93c0227f4319677fda9e23565c05edace06"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/aqueduct/main/aqueduct_leg_0_1.nbt"
+hash = "33aa53500b7892a1c3edd67aee9eacd339b112ff9e14376b674d32f5b1ff915f"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/aqueduct/main/aqueduct_leg_0_2.nbt"
+hash = "19a4e1eecf3b1dc4a36c82eb664dd12e3a2fb89a4eb068d91d8f3aa8ae8d6438"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/aqueduct/main/aqueduct_leg_0_3.nbt"
+hash = "fec1541555cb8ed6a821c6e4786f2efd47c3ad33631969be78e859eb70a4eaa3"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/aqueduct/main/aqueduct_tank_0_0.nbt"
+hash = "5c5d805d673c9557d1503034714017ea1c6bd400644bb29c78c8d7b33fe821fd"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/arabic/living/bend_left.nbt"
+hash = "9d3bb479ae39dd85a2dc8139f19ac30f6e16e1ac4ecda175f684802cc2eab6f4"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/arabic/living/bend_right.nbt"
+hash = "20edbc55e2fd22f93705ef7b1f19729395aacbd978436a5719e3d21ff4983bfd"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/arabic/living/caravanserai.nbt"
+hash = "d7d38e072949fe9a376464d108b62bc72c179cd2bcef75db2183403bfc86a8ab"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/arabic/living/courtyard_house_1.nbt"
+hash = "7730ccae6cf837a106c7c9b8909930d12eec8616b14d614d94266e228a490d58"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/arabic/living/courtyard_house_2.nbt"
+hash = "826ba4a8de5a93b74fed323f980521fc97d855a64f843824e904321e29c72b18"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/arabic/living/courtyard_house_3.nbt"
+hash = "b256d6c70482096fe46f3366d71a31ed94c557dfe801b64455eb3479eeb285cf"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/arabic/living/courtyard_house_4.nbt"
+hash = "12742cb853ab235d81fd237dc936f1c388e08427bf9be7330bb1a2230fc3b7e6"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/arabic/living/cross.nbt"
+hash = "4fcbaa3db0e7d7b731f80d028839b6eda8a2604412ec0292adb8407c753775e6"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/arabic/living/fork_left.nbt"
+hash = "f0b12582f4f16432b632d90cfb18bc5a5f90c0dc06c00b10722417248b2023df"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/arabic/living/fork_right.nbt"
+hash = "766f18a73be3a18e2186fb20ad6f037a673381d11843424c3dff67d74e994645"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/arabic/living/garden_house.nbt"
+hash = "8d1032b2b1870e1ccff03d08103d213aea54c2176b7cab9839864123b54ffaaf"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/arabic/living/smithy.nbt"
+hash = "fe3c06f43b8a941d728b4e3fefa5a9defd5838423838a01829911597187a9872"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/arabic/living/stall_green.nbt"
+hash = "2aa9e9304f7b572a491f31b3818851cbdd61684e9d2337a6471168cdda1418ea"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/arabic/living/stall_grey.nbt"
+hash = "00e46039af01ec1f58b38972f918b35581235e34714ebe2e8b9df17196cfc52e"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/arabic/living/stall_yellow.nbt"
+hash = "421527604f9dd7c36e14612be501a02ed82c59fcd68d48ae1c6a09c2eec0d850"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/arabic/living/straight_long.nbt"
+hash = "4dca3489c98270597a4de13aa1be19c9aeb72090df04f82ebc8b68ad244d937a"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/arabic/living/straight_medium.nbt"
+hash = "ff4de94e2199e266face8c3639d26434cad3ea20f906c25f8bb583b0e60d93b6"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/arabic/living/straight_short.nbt"
+hash = "92787a25a6ac362cd062b9cf848f6b3d65e0b6b4b9aa2e0ec343f1d9a008a98e"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/arabic/living/t_junction.nbt"
+hash = "26b93fbb9b9397ca4f59de62aa93df3c3cab13bbf6bae4321782f0316b2a042b"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/arabic/living/well.nbt"
+hash = "486d473707abf47455eabcf008579a8a65e5bab959ee5036a78fc6f4bf0f271f"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/arabic/npc/arabic_dyer.nbt"
+hash = "2b7642b67c2b0b5e69ab55ccd86560c790f3bbdcfff15e6c57e7390d9f73373f"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/arabic/npc/arabic_dyer_low.nbt"
+hash = "6220ed146562db8df1fa3598181beb5ce4aeeb285cf75f3c678e71754ef984ce"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/arabic/npc/arabic_merchant.nbt"
+hash = "4f9ced59d5e46147b12e8efe333571cd126dea112524cf911193799b6cba3752"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/arabic/npc/arabic_merchant_low.nbt"
+hash = "612b272bd90646e424536a109c75c54047d2ec553fe57f80c6551b9526532730"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/arabic/npc/arabic_potter.nbt"
+hash = "3cb9c7f1faf9388d0a76b252a7c5018702c83c723d369fb6d0c8d6188f354305"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/arabic/npc/arabic_potter_low.nbt"
+hash = "bb648ff03af463c8ba9de0b56b6076f9a73c49a00fbb2599181cd645b266a0ac"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/arabic/npc/arabic_smith.nbt"
+hash = "4a05ce8310c539e0c769e628130414b7cb8244d4ba15217becf6ab910e667df9"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/arabic/npc/arabic_smith_low.nbt"
+hash = "bcced518b3ff27aa180857d2f1fd22ffd0d6227b0828a0e4fbc9ec8e815530d1"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/arabic/npc/arabic_well_keeper.nbt"
+hash = "0228ea90168d31cdfadcae12522a4e2b2598bec789d05467233e15923adef583"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/arabic/npc/arabic_well_keeper_low.nbt"
+hash = "36685d4152ec893b52bd4068a7cf28c70fa670a044a6298a0b2f6016fc6b6ad3"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/malay/living/bend_left.nbt"
+hash = "5b2ab0b973ee0802952dc9c524ec7c649c7d997e209821add64e4b944163c33b"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/malay/living/bend_right.nbt"
+hash = "c24920d957bcb6118251995b9d26c55f2bde0209dc25acd5cf706b99752d594a"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/malay/living/cross.nbt"
+hash = "9a96e3f7ba75b8ed45a8897a402a85aaf9119439d0b71d621d203001e427ad90"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/malay/living/fork_left.nbt"
+hash = "b91d42055eda8cda235165f931e34ad27c8d5b8c88fdc9c5df97e37400f2b054"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/malay/living/fork_right.nbt"
+hash = "e34179b798a8ca453483ab6da20e71d05358b024a8d428fac4cfb5b55b153f55"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/malay/living/kitchen.nbt"
+hash = "3e77b5825941de47bb0f5b8de804327e9de67e6bf589036ac41b64ff3ad14d08"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/malay/living/rumah_bujang_a.nbt"
+hash = "7133803a746c59126fba3b42688ab3f9dce2a2bdd3d170566148e042b707d382"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/malay/living/rumah_bujang_b.nbt"
+hash = "8182c653d62bd07612b5a594b4b6acf0397494ad4e3d432da5c6c93d4a20ddeb"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/malay/living/rumah_bujang_c.nbt"
+hash = "f4aa13dbcd321b35756e309aea22bda010755de47ddbcfe33a255c89ed05c0a4"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/malay/living/rumah_bujang_dual_a.nbt"
+hash = "f2e272e21a3eca9bd1540daffb88253a31db679bae563aa5187ab9db12be73e7"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/malay/living/rumah_bujang_dual_b.nbt"
+hash = "27670558437c6ebb643f5ef9cf296cb405c809f6c5c56bf0c80e861f76066e41"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/malay/living/rumah_bujang_dual_c.nbt"
+hash = "034ae1881de5e59a59e367284ed23ae1ad3c92845a969c2bf99181096af08063"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/malay/living/sloop.nbt"
+hash = "0af686c7e683158cf372a61496f6c8119aa68ad6917349a93dd3081e465d106f"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/malay/living/smithy.nbt"
+hash = "19bbfc6b1c66f04076932bf977926c004aa8ee25276d967b8a221a790ec0d142"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/malay/living/straight_long.nbt"
+hash = "27f8c939bbff1707840744a38f520a27f99b095e9d6f7048be95ac91c5a11945"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/malay/living/straight_medium.nbt"
+hash = "5091b5fc566610d08b41da88826c4059bd26031035104c07a162c5d42cff154d"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/malay/living/straight_short.nbt"
+hash = "14b0f4e25a03ed76ffde7ced5e8c103f271c3099bdd5bd6b39e825a044d44536"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/malay/living/t_junction.nbt"
+hash = "fd6ab17bdb17dcc893246699d34a6b1fb897050566e20c37c1d046582f9b36bc"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/malay/npc/malay_boatwright.nbt"
+hash = "7339fe6bd23318f4940ddfa18737c2748d27c029a3cc5dd6208d561666599103"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/malay/npc/malay_boatwright_low.nbt"
+hash = "fb050b0e4b33c50bfdb19b89d605eec13beb5dab15d20c0746f51f6afff78901"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/malay/npc/malay_cook.nbt"
+hash = "20c9334beb8ad1be696ff036a3a951b6a517e05a23df15e935d26182bfd7dfcc"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/malay/npc/malay_cook_low.nbt"
+hash = "1569fed7d88d3f9a2a919d59029d30fe1f7d49ad3f2fadb81b22bebb3c1748b0"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/malay/npc/malay_smith.nbt"
+hash = "ec1f90a43a7bd3524741bc42f214ac71330d491bdd1bf6bb58f98340db5049c6"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/malay/npc/malay_smith_low.nbt"
+hash = "4e7d871bad53cec2918a0fa463764933929f42751ef6d39cab3693e4f056e3c5"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/malay/npc/malay_weaver.nbt"
+hash = "373867bea360f49ebef544a46525fdaa89887bd8223fb30faa8e2c79b6f5b3ab"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/malay/npc/malay_weaver_low.nbt"
+hash = "cd7178290f351df3df506fcd45639e6c73831addd24650c30d61c42a64153316"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/minang/living/bend_left.nbt"
+hash = "17d31591ad7b874c52203851cda1543f74d16dcaf6664a41146d58eee552ff8e"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/minang/living/bend_right.nbt"
+hash = "274339ea996e371008d56cfa20e46a43ce29e74e0e79beba1e65a755ddecc8d1"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/minang/living/cross.nbt"
+hash = "226fc631733d89a73affe82befe4982912e7c6089e91e69d82fe4c744d7f5861"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/minang/living/fork_left.nbt"
+hash = "1018a335e633b5dbe8036b07826d931d69e4a3795e3cc5b0c2c39d304dc6110f"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/minang/living/fork_right.nbt"
+hash = "0a0e519e7973d3d0344a424417cf2c88e20a32df348d94ed1de8a411164d544c"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/minang/living/kitchen.nbt"
+hash = "f54dc08ae2471dffd1cf135d05acbdb66fc0c6fd9a8b00bff0afd5fb60900513"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/minang/living/rumah_bujang_a.nbt"
+hash = "1df4eaa98c3065f168a816d0b5ee86cfa55d5e632cbdad0027d5f303bfbcca44"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/minang/living/rumah_bujang_b.nbt"
+hash = "1f24326dc9abd6206ef3e6e80fdf6a3ab6f9a2c0781e2dee6c2a647897c1a1c0"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/minang/living/rumah_bujang_c.nbt"
+hash = "0bd068506378df5890b237d46248d8cfc944ba0b74269ca7b53558ab2564db57"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/minang/living/rumah_bujang_dual_a.nbt"
+hash = "e058f4a5845a4f554f0114801f4051db10983e44ebc926e8860e8f9dab38a018"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/minang/living/rumah_bujang_dual_b.nbt"
+hash = "f856896a1a7046ef3186c74f24101abe5231f2f7f498fb38a28d8ad2b7b04eba"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/minang/living/rumah_bujang_dual_c.nbt"
+hash = "e245f6a1bf50f3e0f50afbe9c57715d41102bbbb61c3aee0e8b1d4ab25fbcd8c"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/minang/living/rumah_gadang.nbt"
+hash = "3a6c2d2aad8de701d8b05978c3684b5174e289f736db6b9f328ca2af94a4afbf"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/minang/living/smithy.nbt"
+hash = "b8412694d952227a571d45c038c562180db05436689ef16ff34eb542105b070f"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/minang/living/straight_medium.nbt"
+hash = "3f399495d588d183539521977801f55734173c478a5f205783a466bc75c850f7"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/minang/living/straight_short.nbt"
+hash = "b42510caf11c0fa54a3a1b6aa217826798de575b515de9e34c835c183b78cb43"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/minang/living/t_junction.nbt"
+hash = "8ad48028e1110a05827a41f1bcad2aa8a94089617bb782557b818a636c32d144"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/minang/npc/malay_cook.nbt"
+hash = "20c9334beb8ad1be696ff036a3a951b6a517e05a23df15e935d26182bfd7dfcc"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/minang/npc/malay_cook_low.nbt"
+hash = "1569fed7d88d3f9a2a919d59029d30fe1f7d49ad3f2fadb81b22bebb3c1748b0"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/minang/npc/malay_smith.nbt"
+hash = "ec1f90a43a7bd3524741bc42f214ac71330d491bdd1bf6bb58f98340db5049c6"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/minang/npc/malay_smith_low.nbt"
+hash = "4e7d871bad53cec2918a0fa463764933929f42751ef6d39cab3693e4f056e3c5"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/minang/npc/malay_weaver.nbt"
+hash = "373867bea360f49ebef544a46525fdaa89887bd8223fb30faa8e2c79b6f5b3ab"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/minang/npc/malay_weaver_low.nbt"
+hash = "cd7178290f351df3df506fcd45639e6c73831addd24650c30d61c42a64153316"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/burned/bend_left.nbt"
+hash = "250f95967fd5424c667ce092eee83444919dd4a8dae142e6f827f9e1bc84d4ee"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/burned/bend_right.nbt"
+hash = "3f5244b2caa5e9e978efe09ad8d13ca636e11901864f32a2c462f19795a970df"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/burned/cross.nbt"
+hash = "6dddb75649a9f13df83d60dc0a5ed9c1f812d1a4f63cf144725f45792c33691e"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/burned/farmhouse.nbt"
+hash = "23c80712cd4b966387a4a1c8ec3093e434b773d866bdbf037b82e4be83c6d0d3"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/burned/fork_left.nbt"
+hash = "90835d5119b58e769fa1d12aff11ae8a50d38be5388a8eb18e6139e3ceec0812"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/burned/fork_right.nbt"
+hash = "8c29a6fea15eefac3ed33ef8bcba50772db8f2d5dcbe3f2fc12741296a5a3e60"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/burned/gathering_shelter.nbt"
+hash = "b214884cf50439ccab48264a48aab74bcb5e4c95e17c6dd3da653072cbb62f6c"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/burned/large_farmhouse.nbt"
+hash = "63535124b07139d434a43ba21562d2e3a8819753a741d8775437ffa0ee734b32"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/burned/longhouse.nbt"
+hash = "f99e255b06986f6a912c0b484f1df63885404bc4f9ffe6aeb8845c3597957278"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/burned/smithy_burned.nbt"
+hash = "35c1eea5a37a4a0145c9d3538874d0d314b86c7005bba662f4b637e69c2bee7e"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/burned/straight_long.nbt"
+hash = "dc17599be6d53061a0f38fcc898d020db8ad709d8132b32392bc85a0cd09ffc8"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/burned/straight_medium.nbt"
+hash = "e0b2c75b66f21418f31e97402d40c56d3c445e01fa7f1570382b4359cf0a744e"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/burned/straight_short.nbt"
+hash = "8e3ae1135db4939ef91c3fd65ff85d9338fcce484166e1fbab03424bb3e25048"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/burned/t_junction.nbt"
+hash = "4cc4856bfcfbd01ad0a4ab7927ba1b46e115b77a20f470e31da454074b594352"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/burned/turf_house.nbt"
+hash = "f293b62d3104e9539a6c5a2f405ee193201bcbb7ea7102eb95363243f315659c"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/burned/turf_house_burned.nbt"
+hash = "d673d61961639d808ecbc55b19a58799f33e03a60c860a35f3360e28e1e292c2"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/living/bend_left.nbt"
+hash = "4614afdb92b84e1601a9fa3b7383de0a350b0adfb306ffba5749c1cf66836167"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/living/bend_right.nbt"
+hash = "8289ee7dcf4df544ffeb0711b060fcf7abb4f9ee285ea9ee2d5cd6b70b4478aa"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/living/burial_mound.nbt"
+hash = "4386f442f047e0583e52afdf7a1f789a3ac33bef75638a83bd7c32b486d77d14"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/living/cross.nbt"
+hash = "977d6d5e017a9be328a4634f303f52d90e7ca68cf8446b2473cca9366e3decdf"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/living/farmhouse.nbt"
+hash = "faa4668252340b0fa7374d5c775a186530abf1958fe632ee15689b4003cdc8d4"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/living/fork_left.nbt"
+hash = "d309763a809fbfb63feb45d2a4b4c7205477ef462f47ac10e0f62b63a605871b"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/living/fork_right.nbt"
+hash = "1ed593096e59fb8836b65b90eab53c9f09d3347b4a0e1dcb9311be84b0307083"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/living/gathering_shelter.nbt"
+hash = "61af268f5e86f77917982194fabab5b3106cc7e6d7f0d639aa7a4d0bea373c80"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/living/large_farmhouse.nbt"
+hash = "ae336a620e856754d737413bbd5bac736368f8ff0f3dc27829784116d8cbb634"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/living/longhouse.nbt"
+hash = "33baabab9787caa643a2992acac3afcc3eed44851652b0730b78f143a0c9d6e8"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/living/smithy.nbt"
+hash = "1117e85677dcaa683b7be4c37fb2f412aba52c7b882577cd98352eb6d63ad3ba"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/living/straight_long.nbt"
+hash = "c25e20fc7dec0fec66ce60bf05f7cb427fda9f0313397fcd11db73570d367ff1"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/living/straight_medium.nbt"
+hash = "902c76e86c184541ee739e0c87f986acea8f382f4b6c7ebaefd9f0e97364fed2"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/living/straight_short.nbt"
+hash = "e4172c06d36d3cb40276dbc7e75d3cd086ce1118d41c40e4627e4d66c7efc52f"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/living/t_junction.nbt"
+hash = "ce072a3737b2424c4e0cad546ab5d0ecd92a57e0e792fb62078f2533e462bb62"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/living/turf_house.nbt"
+hash = "04db34077ccb1ee4a7ed12f11ef23d3ee93f177932e9bc10a513de8e9c2b5175"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/npc/norse_farmer.nbt"
+hash = "d7e9c9a2a62fa92185f97242da39b42034f23aa93b2ca1c66d846b66b28eda5e"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/npc/norse_farmer_low.nbt"
+hash = "e72c59b0e48c280242ad6657dba249460aea13648e38e80d737854a5fd478eb3"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/npc/norse_herder.nbt"
+hash = "910d16ce4a0d4348dafdb25f4ff9be11889beaf7a9af83aa05ce059a4f453f22"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/npc/norse_herder_low.nbt"
+hash = "a4efba98f950ee03c566c932552d2c7b4d05d401d9c17135429a8e053bfe525a"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/npc/norse_smith.nbt"
+hash = "0bbdc9b8d62b684df479eccc330ea0bf14032f4c2bfd83cee5d2ed1365ed35c6"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/npc/norse_smith_low.nbt"
+hash = "2018e33391a0fca452fdce96ae10768e355b8c8b2f630f1e08673da7f32cc75d"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/npc/norse_weaver.nbt"
+hash = "e4fa08ebcd3c765ff25e7e60af266c07a3afcca3b1c8b30685e88738a1aac9fe"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/npc/norse_weaver_low.nbt"
+hash = "c18c5f2521bb4f6bd4bf7a4da6e0216b5d2d07ad9f1be446b248c3fc71d93520"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/ruined/bend_left.nbt"
+hash = "0e8d663ac726ffcc8f929195f6a1bd7f0e33792e4698ae4cc098a816f0abe908"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/ruined/bend_right.nbt"
+hash = "116081b68a15d272a9c6f7ad7f3044ca31bbea40e286f44ac1b4478590da07a1"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/ruined/burial_mound.nbt"
+hash = "26f503e9e0492891c6c041f7da4ec20d945ecee0c4f2b67817a2bb4a4ba12ec9"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/ruined/cross.nbt"
+hash = "42a06db2f712d1e21777baac238fb25c283f615dd7a826a4eb677bbefa005351"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/ruined/farmhouse.nbt"
+hash = "a90edcff666794282359b899906a41abae828a9e57b34508edae52ccf065156b"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/ruined/fork_left.nbt"
+hash = "c4d74698c9af14c56bd3e427efa967d2585b71a7e7b9292b7dda8f81acf12869"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/ruined/fork_right.nbt"
+hash = "16d12356b91044c058f3755321c5089eea8682a41497920820a8af41c7f645c8"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/ruined/gathering_shelter.nbt"
+hash = "1d309dd06bca063eb7f3a39137434dc579f7085caf3d207c0a9126ee1c8b4030"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/ruined/large_farmhouse.nbt"
+hash = "63535124b07139d434a43ba21562d2e3a8819753a741d8775437ffa0ee734b32"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/ruined/longhouse.nbt"
+hash = "4c862ac8ef628b2fea7362a6056b5d1e5a713a8f4d25f5949eeb9fb53dcc1345"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/ruined/smithy.nbt"
+hash = "68ec4cd16c86c53f94abc4c8ce8e06825db94354751596638eeba111a193c12b"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/ruined/smithy_burned.nbt"
+hash = "460dab7a4e2696c115ca1e9e2087d183fd1e65797909fab31b80eba672c4e9d8"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/ruined/straight_long.nbt"
+hash = "04398e223a57c343038aa3160fd1b3d2fefa42c1c6c75f10a7f4fc56c1e869c7"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/ruined/straight_medium.nbt"
+hash = "7172f2a54900421c416cc2291e687937e709ff439979497922ec6954ccd8ffac"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/ruined/straight_short.nbt"
+hash = "1852406a7cf41979797dd6354dfcbffb44a8cf0b5ea6dff288eef325f83b7693"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/ruined/t_junction.nbt"
+hash = "4f8eff21309c8897243fc1fcf2338d58915a065959d035f75c36f72d529afb93"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/ruined/turf_house.nbt"
+hash = "f293b62d3104e9539a6c5a2f405ee193201bcbb7ea7102eb95363243f315659c"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/norse/ruined/turf_house_burned.nbt"
+hash = "d673d61961639d808ecbc55b19a58799f33e03a60c860a35f3360e28e1e292c2"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/steppe/living/archery_ground.nbt"
+hash = "39fbed698661858038838cc66782ff8ff149f42a388b3071fe9bcf468220a043"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/steppe/living/bend_left.nbt"
+hash = "928d3084a47b3f1336d10e008bea9f3b02a32d84c30cf46cb8a7b063d943d8ce"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/steppe/living/bend_right.nbt"
+hash = "53eb83df970aee06988b3f582e34421819f2e7ffcba1a89d84ed7eeaf1d10921"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/steppe/living/cross.nbt"
+hash = "465f021b8003e005865db7b72f0b318fab94720c450c5132ca2d95a68b1faf3f"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/steppe/living/deer_stones.nbt"
+hash = "db8a7e8611c4a888d228416474edfa9d9b229204699a61f90ae3d6703310039d"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/steppe/living/fork_left.nbt"
+hash = "fef53a81ab03b35a2dd890c73abe8ea014c93b4f2ec20e943e42d3962467240c"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/steppe/living/fork_right.nbt"
+hash = "93d9d46a9c9d9f265207449b2b58e5a71320733f5f91b72e20c0516e9492d9f6"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/steppe/living/gathering_tent.nbt"
+hash = "b49c1d536ea660d41d83150dddcde79b232b12e0c81e0552561dcaf6dced2cb3"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/steppe/living/larder.nbt"
+hash = "59b5d398763c10234c9beed2e7e2f3490b2d069547118bac3bb408034e4faf4b"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/steppe/living/lookout.nbt"
+hash = "6091555bd200aa70f433deb4741a60706aca88dc7f1cdf56fbe4cb63957638be"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/steppe/living/stable.nbt"
+hash = "fe075ceac7e0df75fe8e7b191aed68b35ff17408a41d9708fac68365cbc6038a"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/steppe/living/straight_long.nbt"
+hash = "38628d83958a3304b99c96caa67e18b215c0b46f6ad6571fdca5c359a8131772"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/steppe/living/straight_medium.nbt"
+hash = "e18495e667d41cc7381254d9efd077754d26517a25513630f40ca28346baef13"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/steppe/living/straight_short.nbt"
+hash = "880ddb579107ad3f476bea5f886fa215af59efccfcb935329266ed4c59e5db80"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/steppe/living/t_junction.nbt"
+hash = "2ad61e609b5bd8547b577b4aaae4aefb4588e7ba094c311beb8389d3e4f4f3ba"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/steppe/living/workshop.nbt"
+hash = "84fc9cabee385a0d4f4d95fb1209490289a02752fa068e85cb8e076e08e06f3a"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/steppe/living/yurt_1.nbt"
+hash = "c21a8165091f2ecb2614257c370363fdb7666a7a7cb11f546d119592b3dfe786"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/steppe/living/yurt_2.nbt"
+hash = "33a6bb08baae22ea0874654c5beb8e0b78493b4852c8a3632ba588fd1754b8c5"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/steppe/living/yurt_3.nbt"
+hash = "878418a47b6602fda93dd00379a5a448d380e7ee10dfa6f6a9ceddff880e4ad6"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/steppe/npc/steppe_bowyer.nbt"
+hash = "c3b217401fc75c6fbf93653cc74f480a314b5a2f0937325d715ccafa5c8eddf7"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/steppe/npc/steppe_bowyer_low.nbt"
+hash = "859c6c1ed52080e0b9f2711d87c5b95d99f7a57867863a47d2c2501d6b5f1e20"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/steppe/npc/steppe_elder.nbt"
+hash = "da074ce8694af45f3fc189a62b7db1d5232aec2c3fb6ad6cc9e2dfa20845cce2"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/steppe/npc/steppe_elder_low.nbt"
+hash = "0d257d791674f76fc6ec2b9a179d0a38b6e52dcdbefca48c2ffc252e1417c054"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/steppe/npc/steppe_feltmaker.nbt"
+hash = "b83401bfa815ec7985e61a66d8456f3138c2d87854e2723f8369cfb2ed8bc690"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/steppe/npc/steppe_feltmaker_low.nbt"
+hash = "ac37fed91081986f9185b44df0c7f9d510452e005ed91752a3a9893e7532b15f"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/steppe/npc/steppe_herder.nbt"
+hash = "daceef1299b05d0d19599bf9297cec472a58d676c4287db5720100b9c70daa0c"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/steppe/npc/steppe_herder_low.nbt"
+hash = "630095a9f6fc7d0f49c2bc1b645f66767ae0e0b4a6e207f83560ee96974c660f"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/temperate/living/farmhouse_a.nbt"
+hash = "d9f829535464e466a338108324404275ee9b8937f8880822be4069ea9a0bfdeb"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/temperate/living/farmhouse_b.nbt"
+hash = "1e91bcc2cf6dd01dc52d412701a0dbca220a294922f1a774c8c795033101dba3"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/temperate/living/farmhouse_c.nbt"
+hash = "44db6cc9ed21496d1ad7a5d852f29b0bdc38b27ba20dd307c1bfb6e2f78ca2de"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/temperate/living/track_a.nbt"
+hash = "7d4a91b03497570f8b3e20fa74e00a961acb62854ad4a64bb0cc8064e5d84785"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/temperate/living/track_b.nbt"
+hash = "1e7f4fe2a3ec5a8d29f9728f97bec95076fd167fa476f12badd265f00033f0f2"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/temperate/npc/temperate_farmer.nbt"
+hash = "cbd20f1321b0e6421520eca7ae1a739bc1c1cb02557c0c351fd9376a46aa3f39"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/temperate/npc/temperate_farmer_low.nbt"
+hash = "718a0b2366c3f86f9a35590857a2c266a48bf4fbacc137baf3c66306686711ce"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/temperate/npc/temperate_orchardist.nbt"
+hash = "9f39a6ff5b67791d691254c70cf39f3804dab9ecb017213579e08baccf7d436c"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/temperate/npc/temperate_orchardist_low.nbt"
+hash = "e261c57d6c396a2b8d85571bd11d80d965e849509b8e02dc8b7b6aebd50d0dbe"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/temperate/npc/temperate_shepherd.nbt"
+hash = "4262a2f891dfa94fabc0b407b9a70fac4abf42c902f5825aec33f234360a2184"
+
+[[files]]
+file = "kubejs/data/pack/structure/village/temperate/npc/temperate_shepherd_low.nbt"
+hash = "2ef6e3836c94e3416eba1a5ec8945c720a558517d55ae005966386725a2abe6b"
+
+[[files]]
 file = "kubejs/data/pack/structure/wayside_shrine/niche_a.nbt"
 hash = "bf7f9f5cc1a1c8682b8dfd0ff845063dc72293b7be07a5cf6e932f992af1d7ff"
 
@@ -1621,6 +2501,10 @@ file = "kubejs/data/pack/tags/block/ruin_rottable.json"
 hash = "56a6b448a9de494c26f3fdbeb4f295f4731dd96fa90cf2ef07e4d82c8ef4e964"
 
 [[files]]
+file = "kubejs/data/pack/tags/block/village_rottable.json"
+hash = "cf2288815fe81ad308341ac24b39d0b41ab302f675fc2e2cf09d4a7af4b77902"
+
+[[files]]
 file = "kubejs/data/pack/tags/worldgen/biome/has_structure/barrow.json"
 hash = "6c65168a50acc1ab31d54b89ea246380a5447fcd5bbbc4acec208326ad43eb74"
 
@@ -1647,6 +2531,34 @@ hash = "b41b233b1846d5bea3c089b0545925adbb23297c8acf8cda8c792d651bf22e7b"
 [[files]]
 file = "kubejs/data/pack/tags/worldgen/biome/has_structure/standing_stones.json"
 hash = "470764c4c1cd855a9d291ec59cbc3918decb9316cf065edd88b47533bb86f3bb"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/has_structure/village/aqueduct.json"
+hash = "6c65168a50acc1ab31d54b89ea246380a5447fcd5bbbc4acec208326ad43eb74"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/has_structure/village/arabic.json"
+hash = "80b85a243c0152249ca1a4a29e2b5e344d19965ff03b4381f6ad1532b801d5ac"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/has_structure/village/malay.json"
+hash = "c6a329df6b4f140b40c879f5e6bab45a990f181004e25e56b928a13149bed11f"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/has_structure/village/minang.json"
+hash = "fc45d07ab123dc58c4dc057d1b4f500a3827f43d9df18dfc30284aa63a04a806"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/has_structure/village/norse.json"
+hash = "470764c4c1cd855a9d291ec59cbc3918decb9316cf065edd88b47533bb86f3bb"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/has_structure/village/steppe.json"
+hash = "6c65168a50acc1ab31d54b89ea246380a5447fcd5bbbc4acec208326ad43eb74"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/has_structure/village/temperate.json"
+hash = "6c65168a50acc1ab31d54b89ea246380a5447fcd5bbbc4acec208326ad43eb74"
 
 [[files]]
 file = "kubejs/data/pack/tags/worldgen/biome/has_structure/wayside_shrine.json"
@@ -1865,6 +2777,78 @@ file = "kubejs/data/pack/worldgen/processor_list/standing_stones.json"
 hash = "d825bed731271e17898180bec70777b9498022c9da1cb32fc036660424d4a7b2"
 
 [[files]]
+file = "kubejs/data/pack/worldgen/processor_list/village/aqueduct/main/structures.json"
+hash = "553de5065c2bdc3efe19d126726fbe5d1bc7e2b86aeb434e8fd355b889acf21a"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/processor_list/village/arabic/living/paths.json"
+hash = "a86b5a1225a1cd6a1edebd5eef088a9bc374df3d3e87662dbdb9ba13609f5d79"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/processor_list/village/arabic/living/structures.json"
+hash = "47db7d6602c37a5105186248447f013d58d9e9a814cf1f1393bb7082b4d4cfcf"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/processor_list/village/malay/living/paths.json"
+hash = "c5d90ce393ba8fbc6a38787396f26344e870063effab5916554f3c3366277eb6"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/processor_list/village/malay/living/structures.json"
+hash = "90ce77fdaed9377043a159c0e8256aa77c900cfd4f1a9e0d576762ccdde3c162"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/processor_list/village/minang/living/paths.json"
+hash = "c5d90ce393ba8fbc6a38787396f26344e870063effab5916554f3c3366277eb6"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/processor_list/village/minang/living/structures.json"
+hash = "90ce77fdaed9377043a159c0e8256aa77c900cfd4f1a9e0d576762ccdde3c162"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/processor_list/village/norse/burned/paths.json"
+hash = "4b43147ccd8b9b70e0e2925e407b8a982a0aedfe049d23929e7236c88308f8a7"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/processor_list/village/norse/burned/structures.json"
+hash = "3512b5a46a1e451435f625dfdd213a04a8c3410ce45ee7162f2febed2706e5f3"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/processor_list/village/norse/living/paths.json"
+hash = "c5d90ce393ba8fbc6a38787396f26344e870063effab5916554f3c3366277eb6"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/processor_list/village/norse/living/structures.json"
+hash = "90ce77fdaed9377043a159c0e8256aa77c900cfd4f1a9e0d576762ccdde3c162"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/processor_list/village/norse/ruined/paths.json"
+hash = "9ffe4599a7b0ccea49fcde72ec32bd6000f1545c469b3fecad185beaa7098f20"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/processor_list/village/norse/ruined/structures.json"
+hash = "a504046a18ba6983d33e781983eae840705db234480edae51257012ed211a3cc"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/processor_list/village/npc.json"
+hash = "1fe5cf1894939d3c1905edfe8740d8c72ecbeaae4b4e1ade7267d4b40c925c82"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/processor_list/village/steppe/living/paths.json"
+hash = "b094a20d7df24175060ed762b6f7345059f5f4059bdc8ecbda4aba337273a5bf"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/processor_list/village/steppe/living/structures.json"
+hash = "90ce77fdaed9377043a159c0e8256aa77c900cfd4f1a9e0d576762ccdde3c162"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/processor_list/village/temperate/living/paths.json"
+hash = "57fadd8f7ff794dc32a5999c474e62241d8490a93f0e71eaa047a5ce3dfcaf19"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/processor_list/village/temperate/living/structures.json"
+hash = "90ce77fdaed9377043a159c0e8256aa77c900cfd4f1a9e0d576762ccdde3c162"
+
+[[files]]
 file = "kubejs/data/pack/worldgen/processor_list/wayside_shrine.json"
 hash = "59e58d7e6c56fdaa9d34b4911095070e96c114072498fd688c7147de45d343e1"
 
@@ -1899,6 +2883,42 @@ hash = "384d76b72820a042e7ddaea7fd89caf5ab7f4c31d80adf656147afbb369ada07"
 [[files]]
 file = "kubejs/data/pack/worldgen/structure/standing_stones.json"
 hash = "760650805a12dfa5ad03589164f8dc1e485dcd10758a2297d8dd3282291c0b39"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure/village/aqueduct_main.json"
+hash = "73409bde70e8f265c7878ababebcfb9ae48b6dfb8d6572946b660ec960b1ba0b"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure/village/arabic_living.json"
+hash = "3f80dd07088ca495cc768654e876793ed97aeb2b43244a020fe5827c27baf1ac"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure/village/malay_living.json"
+hash = "1b2389cb8c77d393290b06aec1c8cabc67b356a97d91173d484db927537c5880"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure/village/minang_living.json"
+hash = "9dc13059c68670224c53d72b5655892d985d7572644584662570332cd4130d09"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure/village/norse_burned.json"
+hash = "986b6c26ee1aaaa8b9d6e624c71e424046bf32cdc7fea4c3294028380d7301e3"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure/village/norse_living.json"
+hash = "c8c67c0680cbbb370a35ec1ddc23763a161f25016849074102ba31b5af68049b"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure/village/norse_ruined.json"
+hash = "2ee5f082b2a3dcac9cf9a2cdc58512e422465d29b4fc3b4b67bb6e09b92d28cc"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure/village/steppe_living.json"
+hash = "d1fd10c04e47a0d5524341d529be486cf90d261ef9059da9a602e765c7cb1443"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure/village/temperate_living.json"
+hash = "5b4b994bb9e0402e20340f9af577f5556ce990874af9144d4247e77ad2f8688d"
 
 [[files]]
 file = "kubejs/data/pack/worldgen/structure/wayside_shrine.json"
@@ -1937,6 +2957,34 @@ file = "kubejs/data/pack/worldgen/structure_set/standing_stones.json"
 hash = "eff3e74b497d1f5aa4c9208a1cda1ecdf514b89c1c6f924d8f6d6464c12a257e"
 
 [[files]]
+file = "kubejs/data/pack/worldgen/structure_set/village/aqueduct.json"
+hash = "b44f91cde8e0c7352a8fee87755de0d4f3f3ed282ac9f5b713123c4b6b3f2a0e"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure_set/village/arabic.json"
+hash = "c19f470a91ac26c81cc6604acfce835084399610cd92a85335501263709a3ab6"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure_set/village/malay.json"
+hash = "21025b17c7aa1ac66bdd87190ebb8d17c703fca918b2ddae72f81b2354080b66"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure_set/village/minang.json"
+hash = "3caa10f6839ee0aaa42ae3f18aac640ca05bea0ddd84b52f8eae4e4c07d29737"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure_set/village/norse.json"
+hash = "fc4b172107cc266dda5a17203b7604c4973a219d2971775fec0121ba741fe42e"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure_set/village/steppe.json"
+hash = "f772496118864287c635a6034568c3b1ca4317bffe511ca746a4ecbcf08d22d2"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/structure_set/village/temperate.json"
+hash = "fa0f69c5736248b90f2772cdb8faf75342a647b40fd50124cd5948df655021b6"
+
+[[files]]
 file = "kubejs/data/pack/worldgen/structure_set/wayside_shrine.json"
 hash = "d2d8177f326b697e19d0880ee17af5b6f03652856a9a39e6b47715c19d796379"
 
@@ -1971,6 +3019,282 @@ hash = "dff98a30e147b607dff8df860b57678de941388885035819ec0779cb50201221"
 [[files]]
 file = "kubejs/data/pack/worldgen/template_pool/standing_stones/start.json"
 hash = "7552554a82c2f31cb6630558e62e77620f8d13deb1ba8abd6c553008a041e9d9"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/aqueduct/main/connector.json"
+hash = "82c18fd31da817bf00790ce75cfa034862fefa246c169c55d4c134c486a3f2ea"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/aqueduct/main/leg.json"
+hash = "015198aa39c4dfe8e3c7ccd61512fca465c8c0f13b9154601b66483a140fa01c"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/aqueduct/main/start.json"
+hash = "c9d9841d2b1bf23605af4b8f7a39517150befe6c3f07380ba287fdfd13f50b6d"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/aqueduct/main/tank.json"
+hash = "628f16f8b4c2bf09e40138c0a141a523651afbc65f1dd8c59032587ff0848a44"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/arabic/living/buildings.json"
+hash = "ad95a78b6042ae8125922e0981c6b5ccfc782845b009719368003f15bff853d0"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/arabic/living/npc_commoner.json"
+hash = "b741badfc8d44ba3579621b6c9dd1b2f6a5c23c8b763c0575c82c495b38dd036"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/arabic/living/npc_commoner_low.json"
+hash = "96f245645e4422af224c0cd31b302c4273f1c45c2d41c3e39c1acd867036d93c"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/arabic/living/npc_merchant.json"
+hash = "c54671e142d35e1feaee851d97ebb887eb97e23f5351b2a1401d2477c43e21c7"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/arabic/living/npc_merchant_low.json"
+hash = "616ebafbbbbaba05da0fa38812d97f124afbc064394aeb9d63b5ba6bc1873f3a"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/arabic/living/npc_outdoors.json"
+hash = "15367f6e398ee60802757728c8a9da2003842a29fdbc7f69becca4a6c43e44ca"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/arabic/living/npc_outdoors_low.json"
+hash = "dd4a2281bf896722a68f735a44e419d58203d977b46777dfff8feadc8185b07d"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/arabic/living/npc_smith.json"
+hash = "ed159f7b866068f3b5fa0023c300f52aa1f37ad9ff5fcdf429a7fc9126f80de6"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/arabic/living/npc_smith_low.json"
+hash = "9424da5780e6f17850b900c7bc00a470f6c747395d21fa745f35129c337b96c8"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/arabic/living/paths.json"
+hash = "53d2d62c12918557c7ea03a7916d66da01248d7f53e309aa22dbbfa26927bc61"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/arabic/living/start.json"
+hash = "045b2be024a38de81c453def0af6d9f50b8b52713bca3e317b084c21893b1e96"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/malay/living/buildings.json"
+hash = "c75398933cdcae64bbb8946cfd800c05fff06d1fb1d3168bd800ddc3568f44d3"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/malay/living/npc_boatwright.json"
+hash = "19efa63ff0a3c48a3bdba46bb2b70d3759b8a079d29cf72275c986ea371ba0d5"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/malay/living/npc_boatwright_low.json"
+hash = "8ae0c14b186b17fa95352ecfb8bd7f9e30f2a5865ff68139a9dad39592c570d0"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/malay/living/npc_commoner.json"
+hash = "0e2ce6c9d03fe513ce4e95b949b40452738ce940fe8a53212524aa669c37dd38"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/malay/living/npc_commoner_low.json"
+hash = "1c8049de79ec3baca2c017925916d49e4ecfe558c16d6f969b692fb149826c2d"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/malay/living/npc_cook.json"
+hash = "cb860dd1ec1bead3e7547b3e603c3c594cabd98d90ea0eff24a8cf299e6d00be"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/malay/living/npc_cook_low.json"
+hash = "e459f04d4427d5be43909a7302a729e3a8b3bebfae216198b2bff07a967d4396"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/malay/living/npc_outdoors.json"
+hash = "0c205d84555d2c3be56c1913be97003ae4648ba58ef39db19530a9326bcb82d8"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/malay/living/npc_outdoors_low.json"
+hash = "270bc15e0d7a099db3e48c01e3d11d95ac08c9cb25feb63991caa668a322c516"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/malay/living/npc_smith.json"
+hash = "35a65a2c13205c4a473e83afbd802b4a351ccbfe8db2015b9acfde5aef481556"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/malay/living/npc_smith_low.json"
+hash = "3cb783f8af36f32ead50f4fb96887bed50999159963ff8eeaf3a03b2294a1a6d"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/malay/living/paths.json"
+hash = "2e0ddc592ae071764e8531e89aef0bcc4c14ffe2ff0998d295bfad6473118430"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/malay/living/start.json"
+hash = "43b0addcbaa8c10b23d53aa65a430a0708c128164dd70387016c285aec9ee59a"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/minang/living/buildings.json"
+hash = "2afc4d35d4a52b26d917ac761904b7dc1bc01e7d4145e99f897ae901d4b46ac0"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/minang/living/npc_boatwright.json"
+hash = "e9d684cae1612b65242a8b42a98719aab557c1c19fb771a8f7e9bc8bd6fd2337"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/minang/living/npc_commoner.json"
+hash = "1a8e8987de1e3e08f99707ea0098330be462ab49c6f376f33f011275fcfa086e"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/minang/living/npc_commoner_low.json"
+hash = "1e79ba6016b4a0401d297fd22a35c422958e21f08112467da56d7a78743d3fef"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/minang/living/npc_cook.json"
+hash = "98d9d8f79bec1a5019fd162e3e0bcee4e1b1de6a646e994c427123448e9e5748"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/minang/living/npc_cook_low.json"
+hash = "a6e4699ff6fa2ad3067e731511d0e75e53e6751122e1a4cebc6a59ca31a7e65b"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/minang/living/npc_outdoors.json"
+hash = "e9d684cae1612b65242a8b42a98719aab557c1c19fb771a8f7e9bc8bd6fd2337"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/minang/living/npc_smith.json"
+hash = "cde5e704687832af06f732447b5a8cc672ec8ce69f2ffcafe6c657d7884d0fdf"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/minang/living/npc_smith_low.json"
+hash = "57d2281d9eea482e4a8973108f0801b325e8aaff292eb57ddbb8b9efa67b8bc0"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/minang/living/paths.json"
+hash = "f61e2f10d89fd547e176029226c174f26695e2a4697e87d35a4f9cea6ce6b054"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/minang/living/start.json"
+hash = "5ee89c15825978c80f16ab2987c6e253331ffa541175818db154919f6808810b"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/norse/burned/buildings.json"
+hash = "9c367c54d4bf286978cd3725e415d9d7257a6dedc31c85dbd13ab9555c4486a6"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/norse/burned/paths.json"
+hash = "7230895ae00735a267380dceee9eb7fb11c03a7fdcefe1cc96c57354e350d613"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/norse/burned/start.json"
+hash = "e4c62d33e14b2d2301c69caac9378876b501862e95d0fa544800071cde261a62"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/norse/living/buildings.json"
+hash = "f1d3fae054c268f6cb163d15771a3949da8c63c685da81248620ff73d824c42a"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/norse/living/npc_commoner.json"
+hash = "a127aae337589e1d0cf18c12a55baadd903e39da62efcddd6be8ccf081c6ccf2"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/norse/living/npc_commoner_low.json"
+hash = "47a3d10afdf2daf4ab6798bc0272a355559653a0f6366746ca24e04f10f4e9ce"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/norse/living/npc_outdoors.json"
+hash = "2a27911a7bea14adf7be5f3222761a302385c0a37602201e43d70bbb31429aea"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/norse/living/npc_outdoors_low.json"
+hash = "15c8676d9e0200233e83c09cdaa2c23c6802e33577babf3880389cd064dc24ca"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/norse/living/npc_smith.json"
+hash = "c00be2ef1b336ed98e3da650454cc5029363fd7dcdd6a6e83ffb1dd52b56cbf6"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/norse/living/npc_smith_low.json"
+hash = "ff574b58ab16636d6207ae2009f7c5b13fb5ac470c2423532371f8abaa0d9cc2"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/norse/living/paths.json"
+hash = "80b1eeeaa087cff5865bf71684cd5695c182e93da3a90a958b7dd666f0855bf4"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/norse/living/start.json"
+hash = "6e8bb47799b81cc009828c918f0bfa15ffafbc1e46caa25d9153d9452d4d82ce"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/norse/ruined/buildings.json"
+hash = "f7fff021a171d66b39a0a2a4d2cb4fd620bf26e87ae6eadf8021c90426e93db4"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/norse/ruined/paths.json"
+hash = "7bd06f550e10648965c5c5fab488b3e188f77edd7c4d438dedbb559819b811d5"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/norse/ruined/start.json"
+hash = "b7844d8c007581ec08ee697b1dbb4d111bc9a86e5aaf680dad9c8f7408116f4a"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/steppe/living/buildings.json"
+hash = "bc313a79a1a6eaf3cb4fa951e623c1ac07a3c7978a68cc8d6136ac4697e41c17"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/steppe/living/npc_bowyer.json"
+hash = "f9ed25a5a687fd64ffe9e16b16134b83fe7bc8dbea50e876fa4eddfa764f00fe"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/steppe/living/npc_bowyer_low.json"
+hash = "d4bcb046a9b4d3c8846d510cec2c3d517e44a53a51547416ac3dc0da4d888a09"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/steppe/living/npc_commoner.json"
+hash = "3e55671b042a09bc75470e4d0e2f3d912d58af3db35cd8c3c0662bbe1a9e66b2"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/steppe/living/npc_commoner_low.json"
+hash = "8fd80468c15ea7b9ff0b73588df4c9467d8c8724f9bf1a1966286580a43b7998"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/steppe/living/npc_feltmaker.json"
+hash = "75646f20607528067e2fa8d0023e31677cf20217f902f4980cf362ddfd824aaf"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/steppe/living/npc_feltmaker_low.json"
+hash = "8c602e3bfb75517961e498dca1010c2487f4df1b28a5eed57a679a7deeb91075"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/steppe/living/npc_outdoors.json"
+hash = "e7cab18918dad6f11c0334b31a0f95ed0f282e5689cc5aec79f81ddcb9945212"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/steppe/living/npc_outdoors_low.json"
+hash = "58217d55ab08aa7529ae7ecc402c511fbdcb5a0dd0c7706e0eeaea9bad842b3f"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/steppe/living/paths.json"
+hash = "05a88b44d9fea7b50ca3a36a81053f789287b731d9faedf7f22b844932ff7386"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/steppe/living/start.json"
+hash = "e3945c8fb209f71806e8c77ab5d3a395bc58537583f87ebcbf0fc1e9364d1d58"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/temperate/living/npc_farmer.json"
+hash = "c4e63b10bd6cd572d40a6f614369b56bf1a0807d5ed438333c90dec7e7a6d320"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/temperate/living/npc_farmer_low.json"
+hash = "0eceaf47f2651c47c57903e0acf018fd7ddd4e4fb5219a412ed144564129e780"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/temperate/living/start.json"
+hash = "2498f03c872c28b63cf2b8a67cc0f09947b97cb2867f36fbed440a8df1967805"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/template_pool/village/temperate/living/track.json"
+hash = "51d88419e3fe320919ec682c085e28cee53325218d11e83be263441a5f127ce8"
 
 [[files]]
 file = "kubejs/data/pack/worldgen/template_pool/wayside_shrine/start.json"
@@ -2704,8 +4028,8 @@ hash = "13227010564aa5ffe806ece39e8024efbf3ea5a55034e6216577d5027f1996c3"
 metafile = true
 
 [[files]]
-file = "mods/pack_world-1.1.0.jar"
-hash = "f6c390da61ae0d5995e5552364683f38c35d455190c7e9df303687c37513a7a4"
+file = "mods/pack_world-1.2.0.jar"
+hash = "818591df3ac3299c3edc98f6708800260556b404f38a7bdd9ec4a34311f47012"
 
 [[files]]
 file = "mods/particular-reforged.pw.toml"

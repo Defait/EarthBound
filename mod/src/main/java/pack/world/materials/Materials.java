@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import net.dries007.tfc.client.overworld.SolarCalculator;
 import net.dries007.tfc.util.EnvironmentHelpers;
@@ -21,8 +22,10 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.neoforged.fml.ModList;
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -35,6 +38,13 @@ import org.jetbrains.annotations.Nullable;
 public record Materials(String rock, String wood, String sand, boolean fromTfc)
 {
     public static final ResourceLocation FOREST = ResourceLocation.fromNamespaceAndPath("tfc", "forest");
+    /**
+     * ArborFirmaCraft's woods that come with the full set of TFC's wood blocks ({@code afc:wood/<variant>/<wood>} for every
+     * {@code tfc:wood/<variant>/<wood>}) and Roads and Roofs shingles. A wood string is a bare name for TFC's ("oak") and
+     * {@code "afc:mahogany"} for these.
+     */
+    public static final List<String> AFC_WOODS = List.of("araucaria", "baobab", "beech", "cypress", "eucalyptus", "fig", "ginkgo", "hevea", "ipe",
+        "ironwood", "mahoe", "mahogany", "teak", "tualang");
 
     /** The fixed and fallback choices a processor carries. "local" means: ask TFC. */
     public record Choice(String rock, String wood, String sand, int woodVariety, AlloyPolicy policy, String substituteRock)
@@ -100,6 +110,15 @@ public record Materials(String rock, String wood, String sand, boolean fromTfc)
 
     public static Ranked resolveRanked(ServerLevel level, BlockPos anchor, int woodRanks)
     {
+        return resolveRanked(level, anchor, woodRanks, false);
+    }
+
+    /**
+     * As above; with {@code modded}, ArborFirmaCraft's trees count too (when that mod is loaded): ArborFirmaCraft replaces TFC's
+     * forest list, so most forests are its species, and a structure in a mahogany forest is then built of mahogany.
+     */
+    public static Ranked resolveRanked(ServerLevel level, BlockPos anchor, int woodRanks, boolean modded)
+    {
         final ChunkGenerator generator = level.getChunkSource().getGenerator();
         final ChunkGeneratorExtension ext = generator instanceof ChunkGeneratorExtension e ? e : null;
         String rock = null;
@@ -110,7 +129,7 @@ public record Materials(String rock, String wood, String sand, boolean fromTfc)
             final RockSettings settings = ext.chunkDataGenerator().generateSurfaceRock(anchor.getX(), anchor.getZ());
             rock = lastSegment(settings.raw(), "rock/raw/", BlockFamilies.ROCKS);
             sand = lastSegment(settings.sand(), "sand/", BlockFamilies.SANDS);
-            woods = forestWoods(level, ext, anchor, woodRanks);
+            woods = forestWoods(level, ext, anchor, woodRanks, modded);
         }
         return new Ranked(rock == null ? "granite" : rock, sand == null ? "yellow" : sand, woods.isEmpty() ? List.of("oak") : woods, ext != null);
     }
@@ -135,6 +154,15 @@ public record Materials(String rock, String wood, String sand, boolean fromTfc)
     /** The first {@code count} distinct woods that fit the climate, best first; if none fit, the single nearest. */
     static List<String> forestWoods(ServerLevel level, ChunkGeneratorExtension ext, BlockPos anchor, int count)
     {
+        return forestWoods(level, ext, anchor, count, false);
+    }
+
+    /**
+     * As above. With {@code modded}, an entry's wood is the one its fallen log (else its bush log) is made of: TFC's, or one of
+     * {@link #AFC_WOODS} (as {@code "afc:name"}); an entry of a species that can't be built with (its log has no planks) is skipped.
+     */
+    static List<String> forestWoods(ServerLevel level, ChunkGeneratorExtension ext, BlockPos anchor, int count, boolean modded)
+    {
         final ConfiguredFeature<?, ?> forest = level.registryAccess().registryOrThrow(Registries.CONFIGURED_FEATURE).get(FOREST);
         if (forest == null || !(forest.config() instanceof ForestConfig config))
         {
@@ -155,7 +183,7 @@ public record Materials(String rock, String wood, String sand, boolean fromTfc)
             {
                 continue;
             }
-            final String wood = holder.unwrapKey().map(ResourceKey::location).map(Materials::woodOfEntry).orElse(null);
+            final String wood = modded && ModList.get().isLoaded("afc") ? moddedWood(holder, entry) : holder.unwrapKey().map(ResourceKey::location).map(Materials::woodOfEntry).orElse(null);
             if (wood == null)
             {
                 continue;
@@ -195,6 +223,29 @@ public record Materials(String rock, String wood, String sand, boolean fromTfc)
     private static float outside(float value, float min, float max)
     {
         return value < min ? min - value : value > max ? value - max : 0f;
+    }
+
+    /** The wood of a forest entry by its log: tfc:wood/log/oak -> oak, afc:wood/log/mahogany -> afc:mahogany, a log without planks -> null. */
+    @Nullable
+    static String moddedWood(Holder<ConfiguredFeature<?, ?>> holder, ForestConfig.Entry entry)
+    {
+        final Optional<BlockState> log = entry.fallenLog().or(entry::bushLog);
+        if (log.isEmpty())
+        {
+            return holder.unwrapKey().map(ResourceKey::location).map(Materials::woodOfEntry).orElse(null);
+        }
+        final ResourceLocation id = BuiltInRegistries.BLOCK.getKey(log.get().getBlock());
+        final String path = id.getPath();
+        final String name = path.startsWith("wood/log/") ? path.substring(9) : path.startsWith("wood/wood/") ? path.substring(10) : null;
+        if (name == null)
+        {
+            return null;
+        }
+        if ("tfc".equals(id.getNamespace()) && BlockFamilies.WOODS.contains(name))
+        {
+            return name;
+        }
+        return "afc".equals(id.getNamespace()) && AFC_WOODS.contains(name) ? "afc:" + name : null;
     }
 
     /** tfc:tree/oak_entry -> oak */

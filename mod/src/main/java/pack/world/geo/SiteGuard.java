@@ -25,6 +25,7 @@ import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.event.level.LevelEvent;
 import org.jetbrains.annotations.Nullable;
 import pack.world.PackWorld;
+import pack.world.structure.GuardedJigsawStructure;
 
 /**
  * Fixed sites land on their coordinates whether that land was explored or not: an explored start chunk means no site, an
@@ -112,7 +113,26 @@ public final class SiteGuard extends SavedData
                     .executes(ctx -> toggle(ctx, true))))
                 .then(Commands.literal("disable").then(Commands.argument("site", StringArgumentType.word())
                     .suggests((ctx, builder) -> SharedSuggestionProvider.suggest(enabledSites(), builder))
-                    .executes(ctx -> toggle(ctx, false))))));
+                    .executes(ctx -> toggle(ctx, false)))))
+            .then(Commands.literal("guard")
+                .executes(ctx -> guard(ctx, null))
+                .then(Commands.literal("on").executes(ctx -> guard(ctx, true)))
+                .then(Commands.literal("off").executes(ctx -> guard(ctx, false)))));
+    }
+
+    /**
+     * {@code /pack_world guard [on|off]}: the slope and water guard of {@code pack_world:guarded_jigsaw} (villages). Off, a village can be
+     * placed anywhere with {@code /place structure}; it is not saved, so it is on again after a restart.
+     */
+    private static int guard(CommandContext<CommandSourceStack> ctx, Boolean state)
+    {
+        if (state != null)
+        {
+            GuardedJigsawStructure.enabled = state;
+        }
+        final boolean on = GuardedJigsawStructure.enabled;
+        ctx.getSource().sendSuccess(() -> Component.literal("The village guard (slope and water) is " + (on ? "on" : "off") + (state == null ? "." : " now.")), state != null);
+        return on ? 1 : 0;
     }
 
     private static int list(CommandContext<CommandSourceStack> ctx)

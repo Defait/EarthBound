@@ -1,0 +1,14 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/minang/living/rumah_gadang",
+        "processors": "pack:village/minang/living/paths",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

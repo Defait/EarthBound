@@ -1,0 +1,20 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 10,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/malay/npc/malay_boatwright",
+        "processors": "pack:village/npc",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 90,
+      "element": {
+        "element_type": "minecraft:empty_pool_element"
+      }
+    }
+  ]
+}

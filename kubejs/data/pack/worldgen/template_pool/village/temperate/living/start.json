@@ -1,0 +1,32 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/temperate/living/farmhouse_a",
+        "processors": "pack:village/temperate/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/temperate/living/farmhouse_b",
+        "processors": "pack:village/temperate/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/temperate/living/farmhouse_c",
+        "processors": "pack:village/temperate/living/structures",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

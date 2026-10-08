@@ -14,6 +14,9 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtUtils;
+import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.LevelReader;
@@ -36,6 +39,11 @@ import pack.world.PackWorld;
  * <p>
  * Everything happens in {@link #finalizeProcessing}, once per template per chunk being placed, after every processor's
  * {@code processBlock} (so vanilla {@code block_rot} or {@code rule} decay runs first, on placeholders).
+ * <p>
+ * Besides TFC's blocks it maps Roads and Roofs' ({@code rnr:}): shingles to the wood, road rock to the rock, tamped soil to the soil;
+ * and the camouflage of Framed Blocks (the {@code camo} and {@code camo_two} of their block entities), so a framed wall looks like the
+ * local wood or rock. With {@code wood_ranks} a structure uses several woods at once: the placeholder woods are the climate's
+ * best-fitting tree, its second and its third (a village of one oak and two stand-ins), see {@link Materials.Ranked}.
  */
 public final class LocalMaterialsProcessor extends StructureProcessor
 {
@@ -86,7 +94,9 @@ public final class LocalMaterialsProcessor extends StructureProcessor
         AlloyPolicy.CODEC.optionalFieldOf("alloy_rock", AlloyPolicy.WORK).forGetter(p -> p.choice.policy()),
         name(BlockFamilies.ROCKS, false).optionalFieldOf("substitute_rock", "granite").forGetter(p -> p.choice.substituteRock()),
         Decay.CODEC.optionalFieldOf("decay").forGetter(p -> p.decay),
-        Foundation.CODEC.optionalFieldOf("foundation").forGetter(p -> p.foundation)
+        Foundation.CODEC.optionalFieldOf("foundation").forGetter(p -> p.foundation),
+        name(BlockFamilies.WOODS, false).listOf().validate(LocalMaterialsProcessor::checkRanks).optionalFieldOf("wood_ranks", List.of()).forGetter(p -> p.woodRanks),
+        Codec.STRING.listOf().validate(LocalMaterialsProcessor::checkModded).optionalFieldOf("modded_woods").forGetter(p -> p.moddedWoods)
     ).apply(i, LocalMaterialsProcessor::new));
 
     private static final int CACHE_LIMIT = 1024;
@@ -97,16 +107,39 @@ public final class LocalMaterialsProcessor extends StructureProcessor
     private final String soil;
     private final Optional<Decay> decay;
     private final Optional<Foundation> foundation;
+    private final List<String> woodRanks;
+    private final Optional<List<String>> moddedWoods;
+    private final boolean modded;
     private final Map<Long, Materials> cache = new ConcurrentHashMap<>();
+    private final Map<Long, Materials.Ranked> rankCache = new ConcurrentHashMap<>();
 
     public LocalMaterialsProcessor(Placeholders placeholders, String rock, String wood, String soil, String sand, int woodVariety,
-                                   AlloyPolicy policy, String substituteRock, Optional<Decay> decay, Optional<Foundation> foundation)
+                                   AlloyPolicy policy, String substituteRock, Optional<Decay> decay, Optional<Foundation> foundation,
+                                   List<String> woodRanks, Optional<List<String>> moddedWoods)
     {
         this.placeholders = placeholders;
         this.choice = new Materials.Choice(rock, wood, sand, woodVariety, policy, substituteRock);
         this.soil = soil;
         this.decay = decay;
         this.foundation = foundation;
+        this.woodRanks = List.copyOf(woodRanks);
+        this.moddedWoods = moddedWoods;
+        // ArborFirmaCraft's trees count for ranked woods unless the processor says otherwise (the wood of one tree is TFC's either way)
+        this.modded = !woodRanks.isEmpty() && moddedWoods.map(l -> l.contains("afc")).orElse(true);
+    }
+
+    private static DataResult<List<String>> checkRanks(List<String> ranks)
+    {
+        if (ranks.size() > 8 || ranks.stream().distinct().count() != ranks.size())
+        {
+            return DataResult.error(() -> "wood_ranks: up to 8 distinct woods: " + ranks);
+        }
+        return DataResult.success(ranks);
+    }
+
+    private static DataResult<List<String>> checkModded(List<String> mods)
+    {
+        return mods.stream().allMatch("afc"::equals) ? DataResult.success(mods) : DataResult.error(() -> "modded_woods: only afc is known: " + mods);
     }
 
     @Override
@@ -119,7 +152,8 @@ public final class LocalMaterialsProcessor extends StructureProcessor
     public List<StructureBlockInfo> finalizeProcessing(ServerLevelAccessor level, BlockPos offset, BlockPos pos, List<StructureBlockInfo> originals,
                                                        List<StructureBlockInfo> processed, StructurePlaceSettings settings)
     {
-        final Materials materials = materials(level.getLevel(), offset);
+        final Materials.Ranked ranked = woodRanks.isEmpty() ? null : ranked(level.getLevel(), offset);
+        final Materials materials = ranked != null ? ranked.at(0) : materials(level.getLevel(), offset);
         final BoundingBox box = settings.getBoundingBox();
         final SoilSampler soils = new SoilSampler(level, box, soil.equals("local") ? placeholders.soil() : soil);
         final Map<ResourceLocation, Optional<Block>> blocks = new HashMap<>();
@@ -136,15 +170,15 @@ public final class LocalMaterialsProcessor extends StructureProcessor
         {
             final BlockState state = info.state();
             final ResourceLocation id = BuiltInRegistries.BLOCK.getKey(state.getBlock());
-            final BlockFamilies.Parsed parsed = BlockFamilies.parse(id);
-            if (parsed == null || !parsed.material().equals(placeholderFor(parsed.kind())))
+            final BlockFamilies.Parsed parsed = BlockFamilies.parseLocal(id);
+            if (parsed == null || !isPlaceholder(parsed))
             {
-                out.add(info);
+                out.add("framedblocks".equals(id.getNamespace()) && info.nbt() != null ? camo(info, ranked, materials, soils, blocks) : info);
                 continue;
             }
             final String soilHere = parsed.kind() == BlockFamilies.Kind.SOIL ? (soil.equals("local") ? soils.at(info.pos()) : soil) : null;
             final String variant = parsed.kind() == BlockFamilies.Kind.ROCK ? decayed(parsed.variant(), info.pos()) : null;
-            final BlockState mapped = map(state, id, parsed, materials, soilHere, variant, choice.policy(), choice.substituteRock(), blocks);
+            final BlockState mapped = map(state, id, parsed, materialsFor(parsed, ranked, materials), soilHere, variant, choice.policy(), choice.substituteRock(), blocks);
             out.add(mapped == state ? info : new StructureBlockInfo(info.pos(), mapped, mapped.hasBlockEntity() ? info.nbt() : null));
         }
         if (foundation.isPresent() && box != null && minY != Integer.MAX_VALUE)
@@ -152,6 +186,74 @@ public final class LocalMaterialsProcessor extends StructureProcessor
             addFoundation(level, box, out, minY, offset.getY(), materials, soils, blocks);
         }
         return out;
+    }
+
+    /** With wood ranks, a wood block is a placeholder when its wood is one of the ranks; else when it is the placeholder wood. */
+    private boolean isPlaceholder(BlockFamilies.Parsed parsed)
+    {
+        if (parsed.kind() == BlockFamilies.Kind.WOOD && !woodRanks.isEmpty())
+        {
+            return woodRanks.contains(parsed.material());
+        }
+        return parsed.material().equals(placeholderFor(parsed.kind()));
+    }
+
+    /** The materials for one block: its rank's wood with wood ranks, else the structure's. */
+    private Materials materialsFor(BlockFamilies.Parsed parsed, @Nullable Materials.Ranked ranked, Materials materials)
+    {
+        return ranked != null && parsed.kind() == BlockFamilies.Kind.WOOD ? ranked.at(woodRanks.indexOf(parsed.material())) : materials;
+    }
+
+    private static final String[] CAMO_KEYS = {"camo", "camo_two"};
+
+    /**
+     * Framed Blocks keep their camouflage block in the block entity ({@code camo}, and {@code camo_two} for double blocks) as a block
+     * state: when that block is a placeholder it becomes the local one, by the same mapping as a placed block. The template's own tag is
+     * shared between placements, so it is copied before it is changed.
+     */
+    private StructureBlockInfo camo(StructureBlockInfo info, @Nullable Materials.Ranked ranked, Materials materials, SoilSampler soils,
+                                    Map<ResourceLocation, Optional<Block>> blocks)
+    {
+        final CompoundTag tag = info.nbt();
+        CompoundTag copy = null;
+        for (String key : CAMO_KEYS)
+        {
+            if (!tag.contains(key, Tag.TAG_COMPOUND))
+            {
+                continue;
+            }
+            final CompoundTag camo = tag.getCompound(key);
+            if (!"framedblocks:block".equals(camo.getString("type")) || !camo.contains("state", Tag.TAG_COMPOUND))
+            {
+                continue;
+            }
+            final BlockState before = NbtUtils.readBlockState(BuiltInRegistries.BLOCK.asLookup(), camo.getCompound("state"));
+            if (before.isAir())
+            {
+                continue;
+            }
+            final ResourceLocation id = BuiltInRegistries.BLOCK.getKey(before.getBlock());
+            final BlockFamilies.Parsed parsed = BlockFamilies.parseLocal(id);
+            if (parsed == null || !isPlaceholder(parsed))
+            {
+                continue;
+            }
+            final String soilHere = parsed.kind() == BlockFamilies.Kind.SOIL ? (soil.equals("local") ? soils.at(info.pos()) : soil) : null;
+            BlockState after = map(before, id, parsed, materialsFor(parsed, ranked, materials), soilHere, null, choice.policy(), choice.substituteRock(), blocks);
+            if (after.isAir())
+            {
+                after = block(ResourceLocation.fromNamespaceAndPath("tfc", "rock/smooth/" + materials.rock()), blocks).map(Block::defaultBlockState).orElse(before);
+            }
+            if (after != before)
+            {
+                if (copy == null)
+                {
+                    copy = tag.copy();
+                }
+                copy.getCompound(key).put("state", NbtUtils.writeBlockState(after));
+            }
+        }
+        return copy == null ? info : new StructureBlockInfo(info.pos(), info.state(), copy);
     }
 
     private String placeholderFor(BlockFamilies.Kind kind)
@@ -179,6 +281,32 @@ public final class LocalMaterialsProcessor extends StructureProcessor
                 warnOnce("no TFC generator in " + level.dimension().location() + ": local_materials uses its fallbacks there");
             }
             return m;
+        });
+    }
+
+    /**
+     * The structure's materials with wood ranks: the surface rock and sand at the anchor, the climate's trees best first, and the
+     * processor's own fixed choices and alloy policy applied.
+     */
+    Materials.Ranked ranked(ServerLevel level, BlockPos anchor)
+    {
+        if (rankCache.size() > CACHE_LIMIT)
+        {
+            rankCache.clear();
+        }
+        final long key = anchor.asLong() * 31 + level.dimension().location().hashCode();
+        return rankCache.computeIfAbsent(key, k -> {
+            final Materials.Ranked r = Materials.resolveRanked(level, anchor, woodRanks.size(), modded);
+            if (!r.fromTfc())
+            {
+                warnOnce("no TFC generator in " + level.dimension().location() + ": local_materials uses its fallbacks there");
+            }
+            String rock = choice.localRock() ? (r.fromTfc() ? r.rock() : choice.substituteRock()) : choice.rock();
+            if (choice.policy() == AlloyPolicy.SUBSTITUTE && BlockFamilies.ALLOY_ROCKS.contains(rock))
+            {
+                rock = choice.substituteRock();
+            }
+            return new Materials.Ranked(rock, choice.localSand() ? r.sand() : choice.sand(), choice.localWood() ? r.woods() : List.of(choice.wood()), r.fromTfc());
         });
     }
 
@@ -259,18 +387,49 @@ public final class LocalMaterialsProcessor extends StructureProcessor
                 target = candidate;
             }
             case ORE -> target = parsed.with(m.rock());
-            case WOOD -> target = parsed.with(m.wood());
+            case WOOD -> target = woodTarget(parsed, m.wood());
             case SOIL -> target = parsed.with(soilHere == null ? parsed.material() : soilHere);
             case SAND -> target = parsed.with(m.sand());
             default -> throw new IllegalStateException();
         }
-        final Optional<Block> block = block(target, blocks);
+        Optional<Block> block = block(target, blocks);
+        if (block.isEmpty() && parsed.kind() == BlockFamilies.Kind.WOOD && m.wood().indexOf(':') >= 0)
+        {
+            // a modded wood lacking this block: the TFC wood of about the same climate
+            final String bare = m.wood().substring(m.wood().indexOf(':') + 1);
+            final ResourceLocation fallback = parsed.with(AFC_TO_TFC.getOrDefault(bare, "oak"));
+            warnOnce("local_materials: " + target + " doesn't exist; using " + fallback);
+            block = block(fallback, blocks);
+        }
         if (block.isEmpty())
         {
             warnOnce("local_materials: " + target + " doesn't exist; kept " + id);
             return state;
         }
         return block.get() == state.getBlock() ? state : BlockFamilies.copyProperties(state, block.get().defaultBlockState());
+    }
+
+    /** What a modded wood falls back to where one of its blocks is missing (the TFC wood of about the same climate window). */
+    static final Map<String, String> AFC_TO_TFC = Map.ofEntries(Map.entry("araucaria", "pine"), Map.entry("baobab", "acacia"), Map.entry("beech", "hickory"),
+        Map.entry("cypress", "willow"), Map.entry("eucalyptus", "ash"), Map.entry("fig", "kapok"), Map.entry("ginkgo", "maple"), Map.entry("hevea", "kapok"),
+        Map.entry("ipe", "rosewood"), Map.entry("ironwood", "blackwood"), Map.entry("mahoe", "kapok"), Map.entry("mahogany", "rosewood"),
+        Map.entry("teak", "rosewood"), Map.entry("tualang", "kapok"));
+
+    /**
+     * The block id of a wood family block for a wood string: {@code "oak"} is TFC's; {@code "afc:mahogany"} swaps TFC's namespace for
+     * ArborFirmaCraft's (the same path with the wood replaced), and Roads and Roofs' shingles stay in {@code rnr} with the bare name.
+     */
+    static ResourceLocation woodTarget(BlockFamilies.Parsed parsed, String wood)
+    {
+        final int colon = wood.indexOf(':');
+        if (colon < 0)
+        {
+            return parsed.with(wood);
+        }
+        final String bare = wood.substring(colon + 1);
+        return "tfc".equals(parsed.namespace())
+            ? ResourceLocation.fromNamespaceAndPath(wood.substring(0, colon), parsed.prefix() + parsed.joiner() + bare + parsed.shape())
+            : parsed.with(bare);
     }
 
     private void addFoundation(LevelReader level, BoundingBox box, List<StructureBlockInfo> out, int minY, int originY, Materials m, SoilSampler soils,

@@ -1,0 +1,92 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/malay/living/straight_short",
+        "processors": "pack:village/malay/living/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/malay/living/straight_medium",
+        "processors": "pack:village/malay/living/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/malay/living/straight_long",
+        "processors": "pack:village/malay/living/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/malay/living/bend_left",
+        "processors": "pack:village/malay/living/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/malay/living/bend_right",
+        "processors": "pack:village/malay/living/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/malay/living/t_junction",
+        "processors": "pack:village/malay/living/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/malay/living/fork_left",
+        "processors": "pack:village/malay/living/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/malay/living/fork_right",
+        "processors": "pack:village/malay/living/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 80,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/malay/living/cross",
+        "processors": "pack:village/malay/living/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "element_type": "minecraft:empty_pool_element"
+      }
+    }
+  ]
+}

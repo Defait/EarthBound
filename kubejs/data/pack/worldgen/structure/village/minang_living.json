@@ -1,0 +1,21 @@
+{
+  "type": "pack_world:guarded_jigsaw",
+  "biomes": "#pack:has_structure/village/minang",
+  "step": "surface_structures",
+  "spawn_overrides": {},
+  "terrain_adaptation": "none",
+  "start_pool": "pack:village/minang/living/start",
+  "size": 7,
+  "start_height": {
+    "absolute": 0
+  },
+  "project_start_to_heightmap": "WORLD_SURFACE_WG",
+  "max_distance_from_center": 96,
+  "use_expansion_hack": false,
+  "guard": {
+    "radius": 48,
+    "samples": 13,
+    "max_height_difference": 14,
+    "max_water_fraction": 0.2
+  }
+}

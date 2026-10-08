@@ -1,0 +1,101 @@
+{
+  "fallback": "pack:village/arabic/living/paths",
+  "elements": [
+    {
+      "weight": 70,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/arabic/living/garden_house",
+        "processors": "pack:village/arabic/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 30,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/arabic/living/smithy",
+        "processors": "pack:village/arabic/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 25,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/arabic/living/caravanserai",
+        "processors": "pack:village/arabic/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/arabic/living/courtyard_house_1",
+        "processors": "pack:village/arabic/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/arabic/living/courtyard_house_2",
+        "processors": "pack:village/arabic/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/arabic/living/courtyard_house_3",
+        "processors": "pack:village/arabic/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/arabic/living/courtyard_house_4",
+        "processors": "pack:village/arabic/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 30,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/arabic/living/stall_grey",
+        "processors": "pack:village/arabic/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 30,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/arabic/living/stall_green",
+        "processors": "pack:village/arabic/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 30,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/arabic/living/stall_yellow",
+        "processors": "pack:village/arabic/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "element_type": "minecraft:empty_pool_element"
+      }
+    }
+  ]
+}

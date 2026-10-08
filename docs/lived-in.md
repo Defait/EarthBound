@@ -21,14 +21,14 @@ marked *unverified*.
 
 | Part | Where | State |
 |---|---|---|
-| The mod, `pack_world` 1.1.0 | source in `mod/`, jar in `mods/pack_world-1.1.0.jar` (both sides) | `local_materials` and `npc_fixup` processors, `geographic` placement with `SiteGuard` and `/pack_world sites`, the `climate` loot condition, `PackWorldApi` for tests, and (1.1.0) the structure skin for other mods' structures (below): one mixin, into `StructureStart.placeInChunk`. About 2,600 lines, no blocks or items. |
-| Generator | `tools/structures/` (`catalogue.json`, `build.py`, `shapes.py`, `nbt.py`) | 15 structures, 3 NPCs and 10 sites in the catalogue. 9 structures generate today, from 24 procedural variants; 6 structures and the 10 sites wait for hand-built templates. |
+| The mod, `pack_world` 1.2.0 | source in `mod/`, jar in `mods/pack_world-1.2.0.jar` (both sides) | `local_materials` and `npc_fixup` processors, `geographic` placement with `SiteGuard` and `/pack_world sites`, the `climate` loot condition, `PackWorldApi` for tests, (1.1.0) the structure skin for other mods' structures (below): one mixin, into `StructureStart.placeInChunk`, and (1.2.0) the settlements' side (*Settlements*, below): the `pack_world:region` placement, the `pack_world:guarded_jigsaw` structure type with `/pack_world guard`, wood ranks (ArborFirmaCraft's trees included), Roads and Roofs and Framed Blocks camouflage in `local_materials`. About 3,600 lines, no blocks or items. |
+| Generator | `tools/structures/` (`catalogue.json`, `build.py`, `shapes.py`, `nbt.py`, and for the settlements `villages.py`, `tfg_import.py`, `village_tune.py`) | 15 structures, 3 NPCs and 10 sites in the catalogue, and 7 villages (9 structures, 146 templates, 20 NPCs). 9 structures generate today, from 24 procedural variants; 6 structures and the 10 sites wait for hand-built templates. |
 | Generated data | `kubejs/data/pack/`: `worldgen/{structure,structure_set,template_pool,processor_list}/`, `structure/`, `loot_table/chests/`, `tags/worldgen/biome/has_structure/`, `tags/block/ruin_rottable.json`, `easy_npc/preset/humanoid/`; `config/tfc_real_world/geography/pack/waypoints/` | written by `build.py`; edit the catalogue, not these. The cave files in the same namespace are never touched. |
 | Easy NPC 7.14.0 | `mods/easy-npc-core.pw.toml`, `mods/easy-npc-config-ui.pw.toml` (both sides) | draft presets for the trader, smith and hermit, generated from the catalogue |
-| Tests | `tools/structures_test.py` + `.js`; `tools/worldgen_check.py`, `.js` and `tools/mclib/jarscan.py` (§6); `tools/mod_report.py` lists the local jar | see below |
+| Tests | `tools/structures_test.py` + `.js` (the villages too); `tools/structure_mods/village_census.py` (villages in a generated world); `mod/checks/RegionGeometryCheck.java` (the region geometry, no server); `tools/worldgen_check.py`, `.js` and `tools/mclib/jarscan.py` (§6); `tools/mod_report.py` lists the local jar | see below |
 
 Live: hunters' camp, prospector's camp, mine adit, bloomery ruin, cairn, standing stones, wayside shrine,
-barrow, wreck. Waiting for templates: the three homesteads, the trading post, the hermit and the
+barrow, wreck, and the seven villages of *Settlements* (below). Waiting for templates: the three homesteads, the trading post, the hermit and the
 travelling smith (the inhabited spots), and the ten sites; `build.py` lists them and writes their
 structure, set, pool and tag as soon as a template is there. The sites' waypoints are already in TFC:
 Real World's geography screen ("Ancient site"), so they show on the map before anything stands there.
@@ -108,6 +108,8 @@ The first build downloaded about 433 MB: the Gradle 9.2.1 bin zip (135.5 MB, ser
 plugins.gradle.org 9, nothing from Maven Central), and from Mojang the Minecraft 1.21.1 client and
 server jars (26.8 and 51.6 MB), client mappings (9.6 MB) and version manifests (0.3 MB). `~/.gradle` is
 about 700 MB afterwards. Later builds download nothing.
+
+The region geometry has an offline check that needs no server: after `./gradlew compileJava`, `"$JAVA_HOME/bin/java" -cp build/classes/java/main checks/RegionGeometryCheck.java` (an L-shaped polygon, densifying across the antimeridian, a box over it, a region over the map's seam, a shape the projection clamps to a sliver).
 
 After a code change: build, copy the jar from `mod/build/libs/` into `mods/` (with a new version,
 delete the old jar from `mods/` and from `tools/.server/mods`, since packwiz-installer never removes
@@ -279,6 +281,160 @@ houses on slopes; (2) open chests: TFC loot only (and Lootr's chest model); (3) 
 in the walls; (4) villagers: unemployed in the
 structures, trades in TFC goods once they have a vanilla job site block; wandering traders carry the pack's offers; (5) iron-age
 metal blocks (chains, bars) in structures should be copper.
+
+### Settlements: villages by real region (2026-10-08)
+
+Seven kinds of village, converted from TerraFirmaGreg's settlements (LGPL-3.0; `licenses/TerraFirmaGreg-structures.txt`; 146 templates in
+`tools/structures/templates/village/<culture>/<variant>/<piece>.nbt`, made by `tools/structures/tfg_import.py`, which rewrites their blocks to
+TFC 4, the placeholder materials, Framed Blocks and Roads and Roofs) and generated from the catalogue's `regions` and `villages` sections by
+`tools/structures/villages.py` (called by `build.py`). They are new-chunks-only like the rest, switched on by `villages.settings.mode` =
+`region` in `catalogue.json` (`pack_world` 1.2.0 is needed: the structure sets name its two new types).
+
+| Village | Where (catalogue `regions`) | Climate window | Spacing / separation (chunks) | Variants (weight) | Easy NPCs | Loot |
+|---|---|---|---|---|---|---|
+| `norse` | Scandinavia, Iceland, the Faroes, the Northern Isles, the Hebrides and Caithness | -14 to 16 °C, rainfall 200+ | 96 / 64 | living 65, ruined 22, burned 13 | farmer, weaver, herder, smith | house, smithy |
+| `arabic` | the Maghreb to Arabia | 10 to 36 °C, groundwater 30+ (rivers count: valley and oasis towns) | 96 / 64 | living | potter, merchant, dyer, well keeper, smith | house, smithy, caravanserai |
+| `malay` | the Malay peninsula, east and south Sumatra, the Borneo coast (not West Sumatra) | 22 to 36 °C, rainfall 380+ | 96 / 64 | living | cook, boatwright, weaver, smith | house, smithy |
+| `minang` | West Sumatra (the rumah gadang) | 18 to 36 °C, rainfall 380+ | 64 / 40 | living | the Malay NPCs | house, smithy |
+| `steppe` | Kazakh steppe, Mongolia, Inner Mongolia, northern Xinjiang, Altai | -10 to 16 °C, rainfall 20 to 300, forest 2 at most | 64 / 40 | living (yurt camps) | herder, feltmaker, bowyer, elder | house, archery |
+| `temperate` | Atlantic Europe | 2 to 17 °C, rainfall 200 to 450 | 48 / 24 | living (a farmhouse and a track) | farmer, shepherd, orchardist | house |
+| `aqueduct` | the Mediterranean basin | 8 to 26 °C, rainfall up to 450 | 192 / 160 | main (an aqueduct) | none | none |
+
+**Placement: `pack_world:region`.** A random-spread placement (one candidate chunk per spacing × spacing cell, vanilla's grid, with its own salt per
+village: `2026101001` to `07`) that only accepts a candidate whose chunk centre lies inside one of the set's `regions` and outside every `exclude`
+(Malay excludes West Sumatra, which belongs to the Minangkabau), and whose chunk passes TFC's climate test (the same code as `tfc:climate`: the
+set's `climate` object is TFC's, tested at the chunk with `ignore_rivers` where the window is about rain). A region is a polygon of `[latitude,
+longitude]` vertices or a `box` `[south, west, north, east]` (west greater than east crosses the antimeridian). Edges are densified to one degree
+in latitude and longitude, every vertex goes through TFC: Real World's own `WaypointCoordinates.toBlockXZ` (so a region lies where its cities lie in
+this world, whatever the map's scale or profile), and containment is tested in block space; the projected shapes are cached per world
+configuration. Edges that span half the map or shapes narrower than 16 blocks (a map profile that doesn't contain the region) are dropped with one
+error in the log. Without TFC: Real World `outside` says what happens (`never`, the default: nothing; `anywhere`: the climate decides alone).
+`/locate structure pack:village/norse_living` asks the grid and then `applyAdditionalChunkRestrictions`, where the region test also sits, so a
+search outside a region costs a compare per cell, not a chunk load. Nothing in the placement reads chunks except TFC's chunk data for the climate:
+the result doesn't depend on generation order. Checked by `structures_test.py`: 21 reference cities inside their set only, the block
+coordinates equal to `tools/worldview/geo.py`'s projection, and, in every region, the same cells as `tfc:climate` would give.
+
+**The guard: `pack_world:guarded_jigsaw`.** `JigsawStructure` is final, so this structure type wraps one (every vanilla field, flat in the same JSON
+object, plus a `guard`) and takes its settings; the vanilla structure runs untouched and decides where the pieces go. Before it is accepted the guard
+looks at 13 columns on a golden-angle spiral of `radius` blocks around the start piece's centre (the biome there must be in the village's biome tag,
+which `build.py` makes from the catalogue's `landforms` groups): refused when more than `max_water_fraction` of them are water (a lake, river or ocean
+biome, or below sea level) or when their highest and lowest surface differ by more than `max_height_difference`. Pure function of the world seed and
+the chunk (no random numbers, heights and biomes from the generator), so chunk generation, `/locate` and `/place structure` agree; about 0.8 ms per
+attempt. `/pack_world guard off` (permission 2, not saved) switches it off to place a village by hand with `/place structure pack:village/norse_living`;
+`on` brings it back. The guard judges only the disc, not the whole village (`max_distance_from_center` is 80 to 100): the outer streets follow the
+ground (`terrain_matching`) and every rigid piece, the start piece included, gets a foundation of the column's own soil, up to 10 blocks.
+
+**Materials: `local_materials` 1.2.0.** The village processors list `wood_ranks: ["oak", "spruce", "birch"]`: the three placeholder woods are the climate's
+best-fitting tree, its second and its third (a culture's most used wood became `oak` in the importer, the next `spruce`, every other one `birch`), clamped
+when the climate has fewer trees. Besides TFC's blocks the processor maps Roads and Roofs: `rnr:wood/shingles/*` take the wood, `rnr:rock/<variant>/*`
+(gravel, sett and cobbled roads) the rock, `rnr:tamped_alfisol` the soil of the column; and the camouflage of Framed Blocks (`camo` and `camo_two` in
+the block entity, 4,500 of them in the templates), which becomes the local wood, rock or soil too, so a framed wall is the same wood as the plank wall next
+to it. **ArborFirmaCraft:** its forests replace TFC's, so most of the trees around a village are its species. `modded_woods` (default `["afc"]` whenever
+ranks are used; `[]` restricts them to TFC's trees) lets the ranks draw on the forest entries as they are: an entry's wood is the one its fallen log is
+made of (`afc:tree/live_oak` is TFC's oak, `afc:tree/mahogany` is `afc:wood/log/mahogany`), and the 14 ArborFirmaCraft woods that come with the whole set of TFC's
+wood blocks and shingles (araucaria, baobab, beech, cypress, eucalyptus, fig, ginkgo, hevea, ipe, ironwood, mahoe, mahogany, teak, tualang) are used as
+`afc:wood/<variant>/<wood>`; other species (kauri, poplar, rubber fig ...) have no planks and are skipped. A Malay village in a tualang and hevea forest is
+built of tualang and hevea; one beside a Bergen fjord of araucaria and cypress if those are the trees that grow there (ArborFirmaCraft gives them TFC's
+climate windows, not their real ranges). The structure skin of other mods' structures (above) still uses TFC's trees only. Each piece resolves rock and woods at its own position,
+so a village that straddles a rock boundary or a change of tree is built of both, and a piece that is outside every tree's window uses the nearest one.
+
+**Inhabitants, loot, decoration.** Twenty Easy NPC presets (generated drafts with default skins, `Invulnerable`, no owner; export an edited one into
+`tools/structures/npcs/<id>.npc.snbt` to replace its draft): each has a greeting, two tips and three to six barter trades in TFC goods inside the bronze cap, and stands on a
+`pack:npc_connector` jigsaw spot where TFG's illagers stood (TFG's spots are mostly in the air cell above a floor: those name a `_low` twin of the pool, generated for every pool with NPCs, whose pieces
+place the NPC one cell lower, so it stands on the floor); about half the spots stay empty (a pool says so), the ruined and burned Norse variants have none. Chests keep their
+`LootTable` (the era-capped tables `pack:chests/village/<culture>/<class>`); Lootr turns them into per-player chests when they are opened. Streets are `rnr:hoggin`
+and road gravel, trodden path and grass mixed by a rule processor over the road marker (`tfc:rock/bricks/andesite` in the templates), planks over water. The vanilla
+blocks left in the templates are water, torches (TFC's own burns out in a template) and the sixteen carpets TFG used (about 190, in the Arabic, Malay and steppe
+pieces; a carpet with nothing under it in its template was dropped, Domum Ornamentum's floating carpets became carpets of their colour). Banners, flower pots and
+Chalk marks are gone, ladders are Framed ladders, Firmalife and Macaw's furniture is TFC planks and slabs, Macaw's roofs (Malay) are Roads and Roofs shingle stairs
+and slabs.
+
+**Tuning a village.** Everything is in `tools/structures/catalogue.json`; rebuild with `build.py --strict` and `packwiz refresh`.
+
+- *Spacing*: `villages.<id>.set.spacing` and `separation` (chunks; vanilla's random spread: one candidate chunk per spacing × spacing cell, at most spacing minus separation chunks from the cell's corner, so
+  neighbours are never closer than separation; separation below spacing), `salt` (unique), `spread_type`. A smaller spacing is more cells, not more villages per cell: how many cells pass is the next two points.
+- *Regions*: the top-level `regions` (`polygon` of `[latitude, longitude]`, or `box`), listed in `set.regions` and `set.exclude`. `anchors` and `outside` name cities that
+  must be inside and outside; the lint checks them (it caught two polygons that missed Malacca and Alexandria). `tools/structures/villages.py` has a Python mirror of
+  the polygon test, `tools/worldview/geo.py` of the projection.
+- *Climate and biome*: `set.climate` (TFC's climate fields: temperature, groundwater, rain variance, forest; `ignore_rivers` makes groundwater mean rainfall; elevation bounds
+  don't work in structure placement) and `set.landforms` (groups from the top-level `landforms`, which become the biome tag `pack:has_structure/village/<id>`) and `set.biomes`.
+- *Guard*: `villages.defaults.guard`, a village's `guard` or a variant's: `radius`, `samples`, `max_height_difference`, `max_water_fraction`.
+- *How many survive*: `tools/structures_test.py --villages --per-set 0 --acceptance` records, for every placement cell across a set's regions, the biome and what the guard sees
+  (no chunks are generated, about three minutes), and `tools/structures/village_tune.py` replays the catalogue's biome groups and guard on it, or yours (`--max-diff 14
+  --landforms +coast --water 0.2`), and prints the villages per million blocks squared and the mean distance between neighbours with the reasons for refusals. The numbers
+  in the catalogue now come from it (a first guess had refused nine cells in ten in Norway).
+- *Foundations and the rest*: the processor lists' `foundation`, `rot` and `decay`, the variants' `size`, `max_distance`, `terrain_adaptation`, and the pools' weights
+  (`build.py --simulate 100 --layout` shows how many of each building one gets).
+
+**Adding hand-built templates for a culture.** Build in creative from the placeholder materials (TFC granite for the rock, alfisol for the soil, yellow sand, oak, spruce and birch
+for the three ranked woods; Framed Blocks, Roads and Roofs, vanilla torches and carpets are allowed; the road marker is `tfc:rock/bricks/andesite`), connect pieces with jigsaw
+blocks (name and target `pack:connector`, pool `pack:village/<culture>/<variant>/<pool>`; an NPC spot is a jigsaw on a floor facing up that targets `pack:npc_connector` and names
+an `npc_*` pool), save with a structure block (up to 96 wide and 128 tall, because a structure's references reach eight chunks) and copy the file to
+`tools/structures/templates/village/<culture>/<variant>/<piece>.nbt`. Add the piece to a pool of that variant in the catalogue (`pools.<pool>.elements`, with a weight, a
+processor list and optionally `projection: terrain_matching` for streets and a `loot` class under `pieces`); `build.py --strict` says what is missing (a jigsaw naming a pool that
+doesn't exist, a target no piece offers, a block the lint doesn't allow). `tfg_import.py` rewrites the folders of the cultures it converts, so don't run it again over hand-built
+pieces: it is only needed when its tables change. A new culture is a `regions` entry (with anchors), a `villages` entry (copy a similar one) and a template folder.
+`build.py --simulate 100 --layout` draws the layouts before anything is generated.
+
+**How many, and where.** `tools/structures_test.py --villages --per-set 0 --acceptance` over each set's regions (cells that pass the region and climate tests, then the biome
+at the cell's centre and the guard; sea, mountains and desert are most of what is refused): villages per million blocks squared of a region's area (sea and mountains
+included) and the mean distance between neighbours, with the catalogue's biome groups and guards.
+
+| Village | Cells passing region and climate | Biome in the tag | Guard passes | Per 10^6 blocks² | Mean gap | Mostly refused for |
+|---|---:|---:|---:|---:|---:|---|
+| `temperate` | 894 of 2,040 | 632 | 361 | 0.67 | 1,200 | ocean, water in the disc, canyons |
+| `minang` | 198 | 153 | 46 | 0.23 | 2,100 | ocean reef and atolls, slope |
+| `steppe` | 901 | 512 | 198 | 0.11 | 3,000 | slope, water, collisional mountains, badlands |
+| `norse` | 1,107 | 514 | 253 | 0.10 | 3,200 | ocean, lakes, oceanic mountains, slope |
+| `malay` | 338 | 76 | 27 | 0.03 | 5,500 | ocean atolls, mountains, slope |
+| `aqueduct` | 1,158 | 309 | 244 | 0.02 | 6,700 | deep ocean, ocean, mountains |
+| `arabic` | 338 of 2,652 (every third cell) | 87 | 33 | 0.01 | 9,400 | dune sea, buttes and mesas, slope |
+
+The first guesses (norse 9 blocks, steppe and Malay 6, temperate 5) refused nine cells in ten; the census made the limits (12 to 14, Malay 10, temperate 7) and took biome groups only
+where a culture lives there (the minang highlands are volcanic mountains, so that set takes the `mountain` group; temperate takes `upland`). Eight 2,048 × 2,048 block areas generated with
+`pregen.py` (seed `pregen`; 59 to 65 chunks per second with the villages in the pack, 64.9 averaged over four other areas before them: no measurable cost) around Bergen, Fes (Morocco),
+Ulaanbaatar, Cairo, Kuala Lumpur, Padang (West Sumatra), Normandy and Provence: one Norse village near Bergen (17 pieces, 6 NPCs), one Minangkabau village in West Sumatra (14 pieces,
+5 NPCs), six farmsteads in Normandy (2 to 3 pieces, 1 NPC each) and none in the other five, which is what the table says (a village every 1,000 to 9,000 blocks of its region is rarely
+inside a 2,000 block square). `/locate` from the same places (seed `structures`, a test world) answers in 12 to 200 ms with a real village 200 to 9,200 blocks away (Stockholm 214, Bergen 423,
+Padang 588, Fes 826, Kuala Lumpur 1,601, Ulaanbaatar 1,862, Normandy 352, Provence 5,112, Cairo 9,156). The guard costs about 0.8 ms an attempt.
+
+**Measured on generated villages** (`structures_test.py`: the three nearest natural villages to each culture's test places, and every variant placed with `/place`'s method and the guard off; 21 natural and 9 placed):
+
+| | pieces (NPC spots) | NPCs standing | Rock, wood | Floating ground columns | Notes |
+|---|---|---|---|---|---|
+| Norse living | 15 to 28 (4 to 11) | all | gneiss, dacite, chalk; araucaria, cypress, pine, sycamore, willow, birch | 0 of 578 to 1,777 | ruined 11 pieces, burned 9, no NPCs (placed) |
+| Arabic | 30 to 53 (3 to 10) | all | chert, andesite, shale, basalt (smooth, never raw: the alloy rule); pine, araucaria, cypress, baobab | 0 of 1,212 to 2,216 | Framed camo is local brick or sandstone |
+| Malay | 20 to 39 (4 to 10) | all | conglomerate, shale, dolomite; kapok, tualang, hevea, fig, mahogany | 0 of 186 to 392 | Roads and Roofs roofs in the local woods |
+| Minang | 6 to 45 (0 to 6) | all | diorite (smooth), chert; kapok, tualang, hevea, fig, mahogany | 0 of 65 to 224 | the rumah gadang start piece |
+| Steppe | 5 to 22 (0 to 5) | all | shale, conglomerate, dolomite; pine, chestnut, ginkgo | 0 of 524 to 1,139 | wattle camouflage kept on every yurt wall (346 white, 224 black of 600 sampled) |
+| Temperate | 2 to 3 (1) | all | shale, claystone; araucaria, mahogany | 0 of 245 to 249 | a farmhouse and a track |
+| Aqueduct | 15 to 16 (0) | none | conglomerate, claystone, limestone | 0 of 98 to 108 | the legs stand in the ground (their ground layer is the footing) |
+
+No placeholder (oak, spruce, birch, granite, alfisol, yellow) is left where a local material was expected, no vanilla block other than water, torches and carpets, no rough andesite-alloy
+rock, every chest has its loot table (ArborFirmaCraft's chests take them too: a Norse village of araucaria has 10 of 10), the Easy NPCs are all invulnerable, ownerless and have 3 to 6
+trades. `tools/loot/lint.py` rolled all 268 chest tables 300 times each (the 12 village tables with them): nothing deny-listed or over the caps. `worldgen_check.py --golden` records the new
+structures, the processors and the pack_world classes as new-chunks-only. What the tests found and the pack now does about it: TFG's NPC jigsaws sit in the air above the floor, so the NPC
+piece one cell further up would hold its NPC a block above it: those spots name a `_low` pool whose pieces place the NPC one cell lower (every pool with NPCs has one, generated); the start
+pieces and the plaza pieces used the street processor list, which has no foundation (a yurt hung 3 blocks over a slope), so every list has one now (10 blocks of the column's own soil).
+
+**Known gaps.** Each piece resolves rock and woods at its own position, so a village across a change of tree has houses of two accent woods (about half of them; the main wood is the same). Villages in dense forest are overgrown: TFC's trees grow around and over them (placing the structure after the vegetation, step `top_layer_modification`, was tried and made it
+worse, the template's air only clears its own box; `villages.<id>.step` stays as an option). Neighbouring structures of other mods overlap them (`tools/structure_mods/village_census.py` on
+the 14 villages of the test areas: Moog's Voyager Structures in 5 (a fire camp, a windmill, a well tower, a house, palm trees), Better Mineshafts' boxes in 2 below them, a pack hunters' camp in
+1; Towns and Towers and TFC Huts in none): no structure set avoids another in this pack. Framed Blocks' camouflage axes are not rotated with a rotated piece. A giant ArborFirmaCraft tree
+can still grow through a roof now and then (one block in 4,000).
+
+**In game: what to look at.** In a *new* world (structures only generate in new chunks; cheats on):
+
+1. `/locate structure pack:village/norse_living`, then `norse_ruined`, `norse_burned`, `arabic_living`, `malay_living`, `minang_living`, `steppe_living`, `temperate_living`
+   and `aqueduct_main` (all `pack:village/...`). The search answers from anywhere in 10 to 200 ms (a village near the place `/startat` put you at, or a
+   few thousand blocks away; nothing at all if no region is in reach). To arrive near one: `/startat 60.4 5.3` (Bergen), `34.0 -5.0` (Fes), `47.9 106.9` (Mongolia),
+   `3.1 101.7` (Malay peninsula), `-0.9 100.4` (West Sumatra), `49.2 -0.4` (Normandy), `43.9 4.6` (Provence).
+2. In a village: is the rock and wood the local one (compare with the cliffs and the forest, ArborFirmaCraft's trees included; never granite, oak, spruce and birch by default, and no raw
+   andesite-alloy rock), do Framed walls match the planks next to them, are streets hoggin, gravel and path (planks over water), are the NPCs on the floor, do their trades
+   (`Open the NPC`) make sense for the era, do chests roll the village's loot (Lootr shows its own chest), do the Malay roofs (shingle stairs and slabs) and the yurts (wattle felt)
+   look right, do the torches stay lit.
+3. The variants by hand: `/pack_world guard off`, `/place structure pack:village/norse_ruined` (and `norse_burned`, `arabic_living` ...), `/pack_world guard on`. With the guard on a `/place` on steep ground refuses.
+4. What to judge: villages in forests are overgrown, other mods' structures overlapping them, and how far apart villages feel (the table above).
 
 ---
 

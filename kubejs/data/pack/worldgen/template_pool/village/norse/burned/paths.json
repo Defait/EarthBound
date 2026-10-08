@@ -1,0 +1,92 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/burned/straight_short",
+        "processors": "pack:village/norse/burned/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/burned/straight_medium",
+        "processors": "pack:village/norse/burned/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/burned/straight_long",
+        "processors": "pack:village/norse/burned/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/burned/bend_left",
+        "processors": "pack:village/norse/burned/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/burned/bend_right",
+        "processors": "pack:village/norse/burned/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/burned/t_junction",
+        "processors": "pack:village/norse/burned/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/burned/fork_left",
+        "processors": "pack:village/norse/burned/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/burned/fork_right",
+        "processors": "pack:village/norse/burned/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 80,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/norse/burned/cross",
+        "processors": "pack:village/norse/burned/paths",
+        "projection": "terrain_matching"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "element_type": "minecraft:empty_pool_element"
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 5,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/aqueduct/main/aqueduct_leg_0_0",
+        "processors": "pack:village/aqueduct/main/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/aqueduct/main/aqueduct_leg_0_1",
+        "processors": "pack:village/aqueduct/main/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/aqueduct/main/aqueduct_leg_0_2",
+        "processors": "pack:village/aqueduct/main/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/aqueduct/main/aqueduct_leg_0_3",
+        "processors": "pack:village/aqueduct/main/structures",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "fallback": "pack:village/minang/living/paths",
+  "elements": [
+    {
+      "weight": 25,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/minang/living/smithy",
+        "processors": "pack:village/minang/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 60,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/minang/living/kitchen",
+        "processors": "pack:village/minang/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 70,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/minang/living/rumah_bujang_a",
+        "processors": "pack:village/minang/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 70,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/minang/living/rumah_bujang_b",
+        "processors": "pack:village/minang/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 70,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/minang/living/rumah_bujang_c",
+        "processors": "pack:village/minang/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/minang/living/rumah_bujang_dual_a",
+        "processors": "pack:village/minang/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/minang/living/rumah_bujang_dual_b",
+        "processors": "pack:village/minang/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "pack:village/minang/living/rumah_bujang_dual_c",
+        "processors": "pack:village/minang/living/structures",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "element_type": "minecraft:empty_pool_element"
+      }
+    }
+  ]
+}
