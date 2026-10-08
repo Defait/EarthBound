@@ -19,6 +19,12 @@ Templates come from two places:
     <world>/generated/minecraft/structure/<name>.nbt) or Create's schematic and quill (schematics/<name>.nbt), built from
     the placeholder materials (rock granite, wood oak, soil alfisol, sand yellow), and copy them there. A hand-built file
     also replaces a procedural variant of the same name. A structure with no template yet is skipped (listed at the end).
+Villages (multi-piece jigsaw structures, catalogue sections "regions" and "villages": streets, buildings, NPC spots, per-piece
+processors, real-region placement) are handled by villages.py; their templates come from tfg_import.py, which converts TerraFirmaGreg's
+settlements into tools/structures/templates/village/<culture>/<variant>/<piece>.nbt. `--villages off` (the catalogue's default)
+checks them without writing, `climate` writes them for the pack's current jar, `region` writes the final form (pack_world:region and
+pack_world:guarded_jigsaw, which need the jar described in the placement spec). `--simulate [N] [--layout]` places villages on flat ground
+the way vanilla's jigsaw placement does and prints piece and NPC counts.
 The post-pass, for every template: empty TFC chests get the structure's loot table; a DATA structure block whose metadata
 is "npc:<id>" becomes that Easy NPC (an entity; "npc:<id>:spawner" a single spawner); Easy NPC entity data loses Owner,
 Navigation.Home and UUID. The lint checks every block and item against the newest recipe dump, loot against the era caps
@@ -43,6 +49,7 @@ sys.path.insert(0, os.path.join(TOOLS, "quests"))
 
 import nbt as N  # noqa: E402
 import shapes  # noqa: E402
+import villages  # noqa: E402
 
 NS = "pack"
 CATALOGUE = os.path.join(HERE, "catalogue.json")
@@ -56,7 +63,7 @@ OWNED_DIRS = [os.path.join(DATA, *p.split("/")) for p in (
     "worldgen/structure", "worldgen/structure_set", "worldgen/template_pool", "worldgen/processor_list", "structure",
     "loot_table/chests", "tags/worldgen/biome/has_structure", "easy_npc/preset/humanoid")] + [
     os.path.join("config", "tfc_real_world", "geography", NS)]
-OWNED_FILES = [os.path.join(DATA, "tags", "block", "ruin_rottable.json")]
+OWNED_FILES = [os.path.join(DATA, "tags", "block", "ruin_rottable.json"), os.path.join(DATA, "tags", "block", "village_rottable.json")]
 VANILLA_OK = {"minecraft:air", "minecraft:structure_void", "minecraft:jigsaw"}
 CHESTS = re.compile(r"^tfc:wood/(trapped_)?chest/[a-z_]+$")
 SITE_EXCLUDE_TAGS = ["is_ocean", "is_ice_sheet", "is_river"]
@@ -164,6 +171,8 @@ def npc_data(npc_id, spec):
                                                                                    {"Prio": N.Int(9), "Type": "LOOK_AT_RESET"}])},
         "Status": {"finalized": N.Byte(1)},
     }
+    if spec.get("invulnerable"):       # village shopkeepers: no spawner brings them back, so nothing may kill them
+        data["Invulnerable"] = N.Byte(1)
     preset = {"PresetMetadata": {"author": "pack", "category": "Pack", "name": name, "entityTypeId": "easy_npc:humanoid",
                                  "description": f"{name} for the pack's structures (generated draft; edit in game and export to tools/structures/npcs/{npc_id}.npc.snbt).",
                                  "version": "1.0.0", "created": N.Long(0), "modified": N.Long(0)},
@@ -230,9 +239,7 @@ def post_pass(sid, root, loot, npcs, problems):
                 sp = len(palette)
                 palette.append({"Name": "easy_npc:single_spawner"})
                 b["state"] = N.Int(sp)
-                b["nbt"] = {"id": "easy_npc:easy_npc_spawner_entity", "SpawnData": {"entity": dict(data)}, "StoredPresetData": dict(data),
-                            "Delay": N.Short(20), "MinSpawnDelay": N.Short(200), "MaxSpawnDelay": N.Short(800), "SpawnCount": N.Short(1),
-                            "MaxNearbyEntities": N.Short(1), "RequiredPlayerRange": N.Short(32), "SpawnRange": N.Short(2)}
+                b["nbt"] = spawner_block_nbt(data)
             else:
                 air = _palette_index(palette, {"Name": "minecraft:air"})
                 b["state"] = N.Int(air)
@@ -256,6 +263,13 @@ def post_pass(sid, root, loot, npcs, problems):
     return root
 
 
+def spawner_block_nbt(data):
+    """The block entity of an Easy NPC single spawner holding one NPC preset (npc_fixup gives each placed copy its own UUIDs)."""
+    return {"id": "easy_npc:easy_npc_spawner_entity", "SpawnData": {"entity": dict(data)}, "StoredPresetData": dict(data),
+            "Delay": N.Short(20), "MinSpawnDelay": N.Short(200), "MaxSpawnDelay": N.Short(800), "SpawnCount": N.Short(1),
+            "MaxNearbyEntities": N.Short(1), "RequiredPlayerRange": N.Short(32), "SpawnRange": N.Short(2)}
+
+
 def _palette_index(palette, entry):
     for i, p in enumerate(palette):
         if p.get("Name") == entry["Name"] and not p.get("Properties"):
@@ -264,14 +278,21 @@ def _palette_index(palette, entry):
     return len(palette) - 1
 
 
-def lint_template(sid, root, blocks_known, problems):
+def lint_template(sid, root, blocks_known, problems, allow=None):
+    """Blocks in a template: only TFC's, air, structure void and jigsaw. `allow` (villages) adds {"namespaces": [...], "vanilla": [...]}:
+    mods the pack keeps for these buildings, and a short list of vanilla blocks."""
     names = {p["Name"] for p in root["palette"]}
+    extra_ns = set((allow or {}).get("namespaces", ()))
+    extra_vanilla = set((allow or {}).get("vanilla", ()))
     for n in sorted(names):
         ns = n.split(":")[0]
-        if ns == "minecraft" and n not in VANILLA_OK:
+        if ns == "minecraft" and n not in VANILLA_OK and n not in extra_vanilla:
             problems.add(sid, f"vanilla block {n} (the golden check flags vanilla blocks; use the TFC one)")
         elif ns == "easy_npc":
             continue
+        elif ns in extra_ns:
+            if blocks_known is not None and n not in blocks_known:
+                problems.add(sid, f"unknown block {n}")
         elif ns not in ("minecraft", "tfc"):
             problems.add(sid, f"block from another mod: {n}")
         elif blocks_known is not None and ns == "tfc" and n not in blocks_known:
@@ -335,6 +356,13 @@ def main():
     ap.add_argument("--out", default=REPO, help="root to write under (default: the repo); use a staging folder to review")
     ap.add_argument("--no-lint", action="store_true", help="skip the checks against the recipe dump and TFC's jar")
     ap.add_argument("--strict", action="store_true", help="exit 1 when the lint finds anything")
+    ap.add_argument("--villages", choices=list(villages.MODES), help="the ported villages (catalogue 'villages'): off = check them, write nothing "
+                    "(default: villages.settings.mode in the catalogue); climate = write them with tfc:climate placement and plain jigsaw "
+                    "(loads on the pack's current jar); region = write them with pack_world:region and pack_world:guarded_jigsaw (needs the jar "
+                    "that has them: SPEC.md)")
+    ap.add_argument("--simulate", type=int, nargs="?", const=60, metavar="N", help="place N villages of each variant on flat ground the way vanilla's jigsaw "
+                    "placement does and print the mean pieces, NPCs and extent (default 60)")
+    ap.add_argument("--layout", action="store_true", help="with --simulate, also sketch one village per variant")
     args = ap.parse_args()
     try:
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -479,6 +507,13 @@ def main():
         emit_structure(f"site/{site}", spec, f"#{NS}:has_structure/site", placement, s.get("loot_era", "bronze"),
                        f"{NS}:chests/site_{s.get('loot_era', 'bronze')}")
 
+    vmode = args.villages or (cat.get("villages") or {}).get("settings", {}).get("mode", "off")
+    vctx = villages.Ctx(put=put, put_json=put_json, problems=problems, N=N, spawner_block_nbt=spawner_block_nbt, npc_data=npc_data, post_pass=post_pass,
+                        lint_template=lint_template if not args.no_lint else (lambda *a, **k: None), loot_table=loot_table, lint_items=lint_items,
+                        DATA=DATA, NS=NS, TEMPLATES=TEMPLATES, REPO=REPO, caps=caps, items_known=items_known, steps=steps, blocks_known=blocks_known,
+                        landforms=landforms, biomes=biomes, npcs=npcs, lint=not args.no_lint)
+    vsummary = villages.emit(cat, vctx, vmode)
+
     if any(sid.startswith("site/") for sid, _ in built):
         put_json(os.path.join(DATA, "tags", "worldgen", "biome", "has_structure", "site.json"),
                  {"replace": False, "values": [f"tfc:{b}" for b in landforms.get("site", [])]})
@@ -496,6 +531,19 @@ def main():
     print(f"\nStructures generated ({len(built)}):")
     for sid, sources in built:
         print(f"  {sid}: " + "; ".join(sources))
+    if vsummary:
+        print(f"\nVillages (mode {vmode}{'' if vmode != 'off' else ': checked, nothing written'}):")
+        for st in vsummary:
+            print(f"  {st['id']}: " + "; ".join(f"{v} {len(d['pieces'])} pieces" for v, d in st["variants"].items())
+                  + f"; NPCs {', '.join(st['npcs']) or '-'}; {st['biomes']} biomes")
+        if args.simulate:
+            for st in vsummary:
+                for vid in st["variants"]:
+                    pieces, npcn, ext, sample = villages.simulate(cat, st["id"], vid, vctx, n=args.simulate, layout=args.layout)
+                    print(f"  {st['id']}/{vid}, per village (flat-ground jigsaw simulation, mean {ext[0]} x {ext[1]} blocks): "
+                          + ", ".join(f"{k} {n}" for k, n in pieces.items()) + ("; NPCs: " + ", ".join(f"{k} {n}" for k, n in npcn.items()) if npcn else ""))
+                    if args.layout and sample:
+                        print(villages.ascii_layout(sample))
     if waiting:
         print(f"\nWaiting for hand-built templates ({len(waiting)}), skipped:")
         for sid, sources in waiting:

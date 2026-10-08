@@ -508,5 +508,1326 @@
         {"buy": ["tfc:metal/ingot/tin", 2], "buy_b": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:metal/pickaxe/bronze", 1], "max_uses": 1}
       ]
     }
+  },
+
+  "_ported_begin": "Sections below this line were added for the settlements port (tools/structures/villages.py, tfg_import.py).",
+  "regions": {
+    "_about": "Hand-drawn culture zones as [latitude, longitude] polygons (or boxes [south, west, north, east]), read by pack_world:region through TFC: Real World's own projection (docs: tools/structures/villages.py, the placement spec). Ocean inside a polygon is harmless: the biome tag keeps structures on land. Starting points to edit, not borders; zones.png in the research folder draws them.",
+    "scandinavia": {
+      "polygon": [
+        [54.6, 8.1], [57.7, 8.0], [58.0, 6.2], [60.2, 4.8], [62.5, 5.5], [64.5, 9.5], [66.6, 12.5], [66.6, 16.5], [64.8, 21.5], [62.4, 18.2],
+        [60.7, 17.5], [59.3, 19.0], [57.5, 17.0], [56.5, 16.5], [55.4, 14.3], [54.8, 12.0]
+      ],
+      "note": "Denmark, Norway south of the Arctic coast, Sweden's coast and south. Not Finland, not the Sami interior.",
+      "anchors": [
+        ["Oslo", 59.91, 10.75],
+        ["Stockholm", 59.33, 18.07],
+        ["Copenhagen", 55.68, 12.57],
+        ["Bergen", 60.39, 5.32]
+      ],
+      "outside": [
+        ["Helsinki", 60.17, 24.94],
+        ["Tallinn", 59.44, 24.75],
+        ["Edinburgh", 55.95, -3.19]
+      ]
+    },
+    "iceland": {"box": [63.2, -24.6, 66.6, -13.3], "anchors": [["Reykjavik", 64.15, -21.94]], "outside": [["Tromso", 69.65, 18.96]]},
+    "faroe": {"box": [61.3, -7.8, 62.5, -6.1], "anchors": [["Torshavn", 62.01, -6.77]], "outside": []},
+    "northern_isles": {"box": [58.7, -3.5, 60.95, -0.6], "anchors": [["Lerwick", 60.15, -1.15], ["Kirkwall", 58.98, -2.96]], "outside": []},
+    "hebrides_caithness": {"box": [56.9, -7.8, 58.7, -3.3], "anchors": [["Inverness", 57.48, -4.22], ["Stornoway", 58.21, -6.39]], "outside": [["Glasgow", 55.86, -4.25]]},
+    "steppe": {
+      "polygon": [
+        [51.5, 50.5], [54.0, 62.0], [52.5, 71.0], [54.0, 80.0], [53.5, 88.0], [51.7, 98.0], [51.5, 104.5], [50.5, 115.0], [49.5, 120.5],
+        [47.0, 123.5], [43.0, 122.0], [41.0, 114.0], [40.5, 108.0], [38.5, 104.0], [37.5, 97.0], [39.5, 90.0], [42.0, 80.5], [41.0, 72.0],
+        [43.5, 66.0], [45.0, 58.0], [46.0, 52.0]
+      ],
+      "note": "Kazakh steppe, Mongolia, Inner Mongolia, northern Xinjiang, the Altai and Tuva. Not the Tibetan plateau, not Uzbekistan's oases.",
+      "anchors": [
+        ["Ulaanbaatar", 47.92, 106.92],
+        ["Astana", 51.17, 71.43],
+        ["Hohhot", 40.84, 111.75],
+        ["Karaganda", 49.8, 73.1]
+      ],
+      "outside": [
+        ["Tashkent", 41.3, 69.24],
+        ["Lhasa", 29.65, 91.1],
+        ["Beijing", 39.9, 116.4],
+        ["Moscow", 55.75, 37.62]
+      ]
+    },
+    "arab_world": {
+      "polygon": [
+        [35.8, -5.9], [36.9, 2.0], [37.3, 10.0], [33.2, 13.0], [32.9, 20.0], [31.3, 25.0], [31.3, 32.0], [33.5, 35.5], [36.3, 36.5], [37.0, 41.0],
+        [37.0, 44.5], [32.0, 47.5], [30.0, 48.5], [27.5, 51.0], [25.5, 56.5], [22.5, 59.8], [16.5, 53.5], [12.8, 45.0], [12.7, 43.3], [16.0, 42.7],
+        [20.0, 40.0], [24.5, 37.2], [22.0, 36.0], [21.0, 25.0], [21.0, 10.0], [21.0, -2.0], [20.8, -17.0], [27.6, -13.2], [30.0, -9.8]
+      ],
+      "note": "Maghreb to Mashriq and the Arabian peninsula. Not Iran, Turkey or the Sahel. The Amazigh highlands and Nubia are left to styles that don't exist yet.",
+      "anchors": [
+        ["Cairo", 30.04, 31.24],
+        ["Baghdad", 33.31, 44.37],
+        ["Riyadh", 24.71, 46.68],
+        ["Marrakesh", 31.63, -8.0],
+        ["Damascus", 33.51, 36.29],
+        ["Tunis", 36.8, 10.18]
+      ],
+      "outside": [
+        ["Tehran", 35.69, 51.39],
+        ["Istanbul", 41.01, 28.98],
+        ["Khartoum", 15.5, 32.56]
+      ]
+    },
+    "malay_peninsula": {
+      "polygon": [
+        [6.8, 99.6], [6.8, 102.2], [2.5, 104.5], [1.2, 104.2], [1.2, 102.4], [4.0, 100.0], [6.0, 99.3]
+      ],
+      "note": "The Malay peninsula south of the Thai border.",
+      "anchors": [
+        ["Kuala Lumpur", 3.14, 101.69],
+        ["Malacca", 2.2, 102.25]
+      ],
+      "outside": [
+        ["Bangkok", 13.75, 100.5]
+      ]
+    },
+    "sumatra_east": {
+      "polygon": [
+        [5.2, 98.2], [3.5, 99.5], [0.0, 102.0], [-1.0, 104.5], [-3.0, 106.2], [-5.9, 105.8], [-5.6, 104.6], [-3.0, 103.0], [0.3, 101.5],
+        [3.5, 98.5]
+      ],
+      "note": "The east and south coast of Sumatra (Malay Riau, Jambi, Palembang).",
+      "anchors": [
+        ["Palembang", -2.98, 104.76],
+        ["Pekanbaru", 0.51, 101.45]
+      ],
+      "outside": [
+        ["Padang", -0.95, 100.35]
+      ]
+    },
+    "borneo_coast": {
+      "box": [0.5, 109.0, 7.2, 119.5],
+      "anchors": [
+        ["Kuching", 1.55, 110.35],
+        ["Bandar Seri Begawan", 4.89, 114.94],
+        ["Kota Kinabalu", 5.98, 116.07]
+      ],
+      "outside": [
+        ["Manila", 14.6, 120.98]
+      ]
+    },
+    "minang_west_sumatra": {
+      "polygon": [
+        [0.8, 99.4], [0.8, 101.8], [-1.5, 101.9], [-3.0, 101.3], [-2.2, 100.4], [-0.5, 99.6]
+      ],
+      "note": "The Minangkabau highlands of West Sumatra, the only home of the rumah gadang.",
+      "anchors": [
+        ["Padang", -0.95, 100.35],
+        ["Bukittinggi", -0.3, 100.37]
+      ],
+      "outside": [
+        ["Palembang", -2.98, 104.76]
+      ]
+    },
+    "atlantic_europe": {
+      "polygon": [
+        [51.2, -10.5], [55.3, -8.0], [58.6, -5.0], [58.6, -3.0], [55.0, -1.5], [52.9, 1.7], [51.2, 1.5], [51.0, 2.5], [53.5, 8.0], [54.8, 8.6],
+        [54.7, 14.0], [54.5, 19.5], [54.4, 23.5], [51.0, 24.0], [49.0, 22.5], [47.5, 19.0], [47.5, 16.0], [47.8, 13.0], [47.5, 9.5], [46.0, 6.5],
+        [46.2, 1.5], [43.4, -1.5], [43.4, -8.0], [46.5, -4.5], [48.5, -5.0], [50.0, -5.5], [51.0, -5.0]
+      ],
+      "note": "Ireland and Britain, northern France, the Low Countries, Germany, Poland, the Alps' northern foothills.",
+      "anchors": [
+        ["Paris", 48.86, 2.35],
+        ["London", 51.51, -0.13],
+        ["Berlin", 52.52, 13.4],
+        ["Dublin", 53.35, -6.26],
+        ["Warsaw", 52.23, 21.01],
+        ["Zurich", 47.37, 8.54]
+      ],
+      "outside": [
+        ["Rome", 41.9, 12.5],
+        ["Madrid", 40.42, -3.7],
+        ["Oslo", 59.91, 10.75]
+      ]
+    },
+    "mediterranean": {
+      "polygon": [
+        [36.0, -9.7], [43.9, -9.5], [43.5, -1.5], [45.5, 3.0], [46.0, 7.0], [46.5, 13.5], [45.5, 18.0], [44.0, 21.0], [42.0, 22.5], [41.0, 26.5],
+        [41.5, 33.0], [41.5, 36.5], [37.5, 41.0], [36.5, 36.5], [33.5, 35.5], [31.0, 34.3], [30.9, 29.5], [32.8, 21.5], [33.5, 11.0], [37.2, 10.0],
+        [37.0, 2.0], [35.8, -1.0], [35.8, -5.9]
+      ],
+      "note": "The Roman Mediterranean: Iberia, southern France, Italy, the Balkan coast, Greece, Anatolia's coasts, the Levant, North Africa's coast.",
+      "anchors": [
+        ["Rome", 41.9, 12.5],
+        ["Athens", 37.98, 23.73],
+        ["Tunis", 36.8, 10.18],
+        ["Lisbon", 38.72, -9.14],
+        ["Marseille", 43.3, 5.37],
+        ["Alexandria", 31.2, 29.92]
+      ],
+      "outside": [
+        ["Paris", 48.86, 2.35],
+        ["Riyadh", 24.71, 46.68]
+      ]
+    }
+  },
+
+  "villages": {
+    "settings": {
+      "mode": "off",
+      "_note": "off = the villages are checked but nothing is written; climate = written with tfc:climate placement and plain jigsaw, loads on the pack's current jar; region = pack_world:region and pack_world:guarded_jigsaw (needs the new jar: SPEC.md). build.py --villages MODE overrides it."
+    },
+    "lint": {
+      "namespaces": ["framedblocks", "rnr"],
+      "vanilla": ["minecraft:water", "minecraft:torch", "minecraft:wall_torch"],
+      "_note": "Besides TFC's blocks the villages may hold Framed Blocks and Roads and Roofs (the pack keeps both), vanilla water and torches (TFC's own torch burns out in a template). Remove an entry to forbid it."
+    },
+    "defaults": {
+      "era": "bronze",
+      "materials": {"wood_ranks": ["oak", "spruce", "birch"], "alloy_rock": "work", "substitute_rock": "granite"},
+      "guard": {"radius": 48, "samples": 13, "max_height_difference": 9, "max_water_fraction": 0.1}
+    },
+    "norse": {
+      "title": "Norse farmsteads",
+      "kind": "village",
+      "set": {
+        "regions": ["scandinavia", "iceland", "faroe", "northern_isles", "hebrides_caithness"],
+        "spacing": 96,
+        "separation": 64,
+        "salt": 2026101001,
+        "spread_type": "linear",
+        "landforms": ["lowland", "upland", "cold"],
+        "climate": {"min_temperature": -14, "max_temperature": 16, "min_groundwater": 200, "ignore_rivers": true}
+      },
+      "guard": {"max_height_difference": 9},
+      "npcs": {
+        "norse_farmer": {
+          "name": "Farmer",
+          "skin": "FARMER_01",
+          "greeting": "Rye and barley and a short summer. We take what the ground gives and hope the frost holds off.",
+          "tips": [
+            "Rye takes the cold that barley can't. Sow it early and keep the best ears back for seed.",
+            "Hay before the first snow, or the cattle won't see spring."
+          ],
+          "reset_minutes": 60,
+          "invulnerable": true,
+          "trades": [
+            {"buy": ["tfc:straw", 6], "sell": ["tfc:seeds/potato", 4], "max_uses": 8},
+            {"buy": ["tfc:straw", 6], "sell": ["tfc:seeds/cabbage", 4], "max_uses": 8},
+            {"buy": ["tfc:straw", 6], "sell": ["tfc:seeds/onion", 4], "max_uses": 8},
+            {"buy": ["tfc:medium_raw_hide", 1], "sell": ["tfc:seeds/beet", 4], "max_uses": 8},
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:ceramic/jug", 1], "max_uses": 4},
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:ceramic/bowl", 2], "max_uses": 4}
+          ]
+        },
+        "norse_weaver": {
+          "name": "Weaver",
+          "skin": "ARI",
+          "greeting": "Wool on the spindle all winter. By spring there's a bolt of cloth, if the light holds.",
+          "tips": ["Spin first; yarn weaves, raw fleece doesn't.", "A bone needle outlasts silver. You'll see why in January."],
+          "reset_minutes": 60,
+          "invulnerable": true,
+          "trades": [
+            {"buy": ["tfc:wool", 4], "sell": ["tfc:wool_yarn", 4], "max_uses": 6},
+            {"buy": ["tfc:wool_yarn", 8], "sell": ["tfc:wool_cloth", 1], "max_uses": 6},
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:bone_needle", 2], "max_uses": 4},
+            {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:spindle", 1], "max_uses": 2},
+            {"buy": ["tfc:medium_raw_hide", 1], "sell": ["tfc:wool_yarn", 6], "max_uses": 4}
+          ]
+        },
+        "norse_herder": {
+          "name": "Herder",
+          "skin": "KAI",
+          "greeting": "Sheep and goats on the high pasture. They find the way home if you let them.",
+          "tips": ["Goats go where sheep won't. Keep both and nothing is wasted.", "Trade in what keeps: hides, wool, bone. Meat doesn't."],
+          "reset_minutes": 60,
+          "invulnerable": true,
+          "trades": [
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:medium_raw_hide", 2], "max_uses": 6},
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:small_raw_hide", 3], "max_uses": 6},
+            {"buy": ["tfc:straw", 8], "sell": ["tfc:wool", 3], "max_uses": 6},
+            {"buy": ["tfc:ceramic/bowl", 1], "sell": ["tfc:wool", 2], "max_uses": 4},
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["minecraft:bone", 6], "max_uses": 6}
+          ]
+        },
+        "norse_smith": {
+          "name": "Smith",
+          "skin": "KNIGHT_01",
+          "greeting": "Copper and tin I know. The cold doesn't trouble a good fire.",
+          "tips": ["Copper alone is soft. A ninth part tin and it holds an edge.", "A mould that cracks in the fire was wet. Dry it a day."],
+          "reset_minutes": 60,
+          "invulnerable": true,
+          "trades": [
+            {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:metal/knife/copper", 1], "max_uses": 2},
+            {"buy": ["tfc:metal/ingot/copper", 3], "sell": ["tfc:metal/axe/copper", 1], "max_uses": 2},
+            {"buy": ["tfc:metal/ingot/copper", 3], "sell": ["tfc:metal/hammer/copper", 1], "max_uses": 1},
+            {"buy": ["tfc:metal/ingot/copper", 3], "sell": ["tfc:metal/saw/copper", 1], "max_uses": 1},
+            {"buy": ["minecraft:charcoal", 4], "sell": ["tfc:ceramic/axe_head_mold", 1], "max_uses": 3},
+            {"buy": ["minecraft:charcoal", 4], "sell": ["tfc:ceramic/ingot_mold", 1], "max_uses": 4},
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:powder/flux", 4], "max_uses": 4},
+            {"buy": ["tfc:metal/ingot/tin", 2], "sell": ["tfc:metal/axe/bronze", 1], "max_uses": 1, "buy_b": ["tfc:metal/ingot/copper", 1]}
+          ]
+        }
+      },
+      "loot": {
+        "house": {
+          "rolls": [2, 4],
+          "entries": [
+            {"item": "tfc:straw", "weight": 10, "count": [4, 12]},
+            {"item": "tfc:seeds/potato", "weight": 4, "count": [1, 3]},
+            {"item": "tfc:seeds/cabbage", "weight": 4, "count": [1, 3]},
+            {"item": "tfc:seeds/onion", "weight": 4, "count": [1, 3]},
+            {"item": "tfc:seeds/beet", "weight": 4, "count": [1, 3]},
+            {"item": "tfc:wool_yarn", "weight": 6, "count": [2, 6]},
+            {"item": "tfc:bone_needle", "weight": 4},
+            {"item": "tfc:ceramic/jug", "weight": 4},
+            {"item": "tfc:ceramic/bowl", "weight": 4},
+            {"item": "tfc:ceramic/pot", "weight": 3},
+            {"item": "minecraft:bone", "weight": 6, "count": [1, 4]},
+            {"item": "minecraft:feather", "weight": 4, "count": [2, 6]},
+            {"item": "tfc:small_raw_hide", "weight": 5},
+            {"item": "tfc:medium_raw_hide", "weight": 3},
+            {"item": "tfc:powder/salt", "weight": 4, "count": [1, 3]},
+            {"item": "tfc:metal/knife/copper", "weight": 1}
+          ]
+        },
+        "smithy": {
+          "rolls": [2, 3],
+          "entries": [
+            {"item": "minecraft:charcoal", "weight": 10, "count": [4, 10]},
+            {"item": "tfc:powder/flux", "weight": 6, "count": [2, 5]},
+            {"item": "tfc:ceramic/ingot_mold", "weight": 5},
+            {"item": "tfc:ceramic/axe_head_mold", "weight": 4},
+            {"item": "tfc:ceramic/hammer_head_mold", "weight": 3},
+            {"item": "tfc:ceramic/knife_blade_mold", "weight": 4},
+            {"item": "tfc:fire_clay", "weight": 4, "count": [1, 3]},
+            {"item": "tfc:metal/ingot/copper", "weight": 5, "count": [1, 3]},
+            {"item": "tfc:metal/hammer/copper", "weight": 2},
+            {"item": "tfc:metal/axe/copper", "weight": 2},
+            {"item": "tfc:metal/ingot/bronze", "weight": 1}
+          ]
+        }
+      },
+      "default_loot": "house",
+      "pieces": {
+        "smithy": {"loot": "smithy"},
+        "smithy_burned": {"loot": "smithy"}
+      },
+      "variants": {
+        "living": {
+          "weight": 65,
+          "size": 6,
+          "max_distance": 96,
+          "start": "start",
+          "processors": {
+            "structures": {
+              "marker": "plain",
+              "foundation": {"max_depth": 6, "variant": "dirt"}
+            },
+            "paths": {
+              "marker": "street",
+              "street": {"gravel": 0.1, "path": 0.15, "grass": 0.1}
+            }
+          },
+          "pools": {
+            "start": {"elements": [{"piece": "gathering_shelter", "weight": 1, "processors": "paths"}]},
+            "buildings": {
+              "fallback": "paths",
+              "elements": [
+                {"piece": "longhouse", "weight": 60, "processors": "structures"},
+                {"piece": "smithy", "weight": 25, "processors": "structures"},
+                {"piece": "burial_mound", "weight": 25, "processors": "structures", "projection": "terrain_matching"},
+                {"piece": "large_farmhouse", "weight": 80, "processors": "structures"},
+                {"piece": "farmhouse", "weight": 100, "processors": "structures"},
+                {"piece": "turf_house", "weight": 100, "processors": "structures"},
+                {"empty": true, "weight": 10}
+              ]
+            },
+            "paths": {
+              "elements": [
+                {
+                  "pieces": ["straight_short", "straight_medium", "straight_long", "bend_left", "bend_right", "t_junction", "fork_left", "fork_right"],
+                  "weight": 100,
+                  "projection": "terrain_matching",
+                  "processors": "paths"
+                },
+                {"piece": "cross", "weight": 80, "projection": "terrain_matching", "processors": "paths"},
+                {"empty": true, "weight": 10}
+              ]
+            },
+            "npc_commoner": {"elements": [{"npc": "norse_farmer", "weight": 25}, {"npc": "norse_weaver", "weight": 20}, {"empty": true, "weight": 55}]},
+            "npc_outdoors": {"elements": [{"npc": "norse_herder", "weight": 35}, {"empty": true, "weight": 65}]},
+            "npc_smith": {"elements": [{"npc": "norse_smith", "weight": 1}]}
+          }
+        },
+        "ruined": {
+          "weight": 22,
+          "size": 6,
+          "max_distance": 96,
+          "start": "start",
+          "processors": {
+            "structures": {
+              "marker": "plain",
+              "rot": 0.92,
+              "local_materials": {
+                "decay": {"cracked": 0.15, "mossy": 0.25}
+              },
+              "foundation": {"max_depth": 6, "variant": "dirt"}
+            },
+            "paths": {
+              "marker": "street",
+              "street": {"gravel": 0.1, "path": 0.15, "grass": 0.1},
+              "rot": 1.0,
+              "local_materials": {
+                "decay": {"cracked": 0.15, "mossy": 0.25}
+              }
+            }
+          },
+          "pools": {
+            "start": {"elements": [{"piece": "gathering_shelter", "weight": 1, "processors": "paths"}]},
+            "buildings": {
+              "elements": [
+                {"piece": "burial_mound", "weight": 40, "processors": "structures", "projection": "terrain_matching"},
+                {"piece": "large_farmhouse", "weight": 80, "processors": "structures"},
+                {"piece": "farmhouse", "weight": 100, "processors": "structures"},
+                {"piece": "longhouse", "weight": 100, "processors": "structures"},
+                {"piece": "turf_house", "weight": 50, "processors": "structures"},
+                {"piece": "turf_house_burned", "weight": 50, "processors": "structures"},
+                {"piece": "smithy", "weight": 50, "processors": "structures"},
+                {"piece": "smithy_burned", "weight": 50, "processors": "structures"},
+                {"empty": true, "weight": 10}
+              ]
+            },
+            "paths": {
+              "elements": [
+                {
+                  "pieces": ["straight_short", "straight_medium", "straight_long", "bend_left", "bend_right", "t_junction", "fork_left", "fork_right"],
+                  "weight": 100,
+                  "projection": "terrain_matching",
+                  "processors": "paths"
+                },
+                {"piece": "cross", "weight": 80, "projection": "terrain_matching", "processors": "paths"},
+                {"empty": true, "weight": 10}
+              ]
+            }
+          }
+        },
+        "burned": {
+          "weight": 13,
+          "size": 6,
+          "max_distance": 96,
+          "start": "start",
+          "processors": {
+            "structures": {
+              "marker": "plain",
+              "rot": 0.75,
+              "local_materials": {
+                "decay": {"cracked": 0.2, "mossy": 0.1}
+              },
+              "foundation": {"max_depth": 6, "variant": "dirt"}
+            },
+            "paths": {
+              "marker": "street",
+              "street": {"gravel": 0.1, "path": 0.15, "grass": 0.1},
+              "rot": 0.85,
+              "local_materials": {
+                "decay": {"cracked": 0.2, "mossy": 0.1}
+              }
+            }
+          },
+          "pools": {
+            "start": {"elements": [{"piece": "gathering_shelter", "weight": 1, "processors": "paths"}]},
+            "buildings": {
+              "elements": [
+                {"piece": "turf_house_burned", "weight": 90, "processors": "structures"},
+                {"piece": "smithy_burned", "weight": 60, "processors": "structures"},
+                {"piece": "longhouse", "weight": 50, "processors": "structures"},
+                {"piece": "farmhouse", "weight": 50, "processors": "structures"},
+                {"piece": "large_farmhouse", "weight": 30, "processors": "structures"},
+                {"piece": "turf_house", "weight": 20, "processors": "structures"},
+                {"empty": true, "weight": 10}
+              ]
+            },
+            "paths": {
+              "elements": [
+                {
+                  "pieces": ["straight_short", "straight_medium", "straight_long", "bend_left", "bend_right", "t_junction", "fork_left", "fork_right"],
+                  "weight": 100,
+                  "projection": "terrain_matching",
+                  "processors": "paths"
+                },
+                {"piece": "cross", "weight": 80, "projection": "terrain_matching", "processors": "paths"},
+                {"empty": true, "weight": 10}
+              ]
+            }
+          }
+        }
+      }
+    },
+    "arabic": {
+      "title": "Arab courtyard towns",
+      "kind": "village",
+      "set": {
+        "regions": ["arab_world"],
+        "spacing": 96,
+        "separation": 64,
+        "salt": 2026101002,
+        "spread_type": "linear",
+        "landforms": ["lowland", "upland", "coast"],
+        "climate": {"min_temperature": 10, "max_temperature": 36, "min_groundwater": 30}
+      },
+      "materials": {"sand": "local"},
+      "guard": {"max_height_difference": 8},
+      "npcs": {
+        "arabic_potter": {
+          "name": "Potter",
+          "skin": "NOOR",
+          "greeting": "Clay from the river bank, a day in the sun, a night in the kiln. Nothing else holds water like it.",
+          "tips": ["Dry the clay slowly in the shade. A pot that dries too fast cracks in the fire.", "Fire clay for the kiln, plain clay for the pots."],
+          "reset_minutes": 60,
+          "invulnerable": true,
+          "trades": [
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:ceramic/jug", 2], "max_uses": 6},
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:ceramic/bowl", 3], "max_uses": 6},
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:ceramic/pot", 1], "max_uses": 4},
+            {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:ceramic/large_vessel", 1], "max_uses": 4},
+            {"buy": ["tfc:straw", 6], "sell": ["tfc:fire_clay", 2], "max_uses": 4},
+            {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:ceramic/vessel", 1], "max_uses": 3}
+          ]
+        },
+        "arabic_merchant": {
+          "name": "Merchant",
+          "skin": "EFE",
+          "greeting": "Salt from the pans, rope from the oasis, cloth from further than you've been. Sit; the shade is free.",
+          "tips": [
+            "Salt keeps everything, including your goods. Never buy a long road without it.",
+            "A caravan that follows the wells outlives one that follows the map."
+          ],
+          "reset_minutes": 90,
+          "invulnerable": true,
+          "trades": [
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:powder/salt", 4], "max_uses": 8},
+            {"buy": ["tfc:jute_fiber", 8], "sell": ["tfc:rope", 2], "max_uses": 6},
+            {"buy": ["tfc:jute_fiber", 8], "sell": ["tfc:burlap_cloth", 2], "max_uses": 6},
+            {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:burlap_cloth", 2], "max_uses": 4},
+            {"buy": ["tfc:medium_raw_hide", 1], "sell": ["tfc:powder/salt", 6], "max_uses": 6},
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:seeds/papyrus", 4], "max_uses": 4}
+          ]
+        },
+        "arabic_dyer": {
+          "name": "Dyer",
+          "skin": "ZURI",
+          "greeting": "Madder for the red, indigo for the blue, and a vat that never dries. Cloth takes colour better than people do.",
+          "tips": ["Wet the cloth well first or the colour goes on in patches.", "Fix a dye with salt and it will outlast the cloth."],
+          "reset_minutes": 60,
+          "invulnerable": true,
+          "trades": [
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["minecraft:red_dye", 2], "max_uses": 4},
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["minecraft:blue_dye", 2], "max_uses": 4},
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["minecraft:yellow_dye", 2], "max_uses": 4},
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["minecraft:white_dye", 2], "max_uses": 4},
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["minecraft:black_dye", 2], "max_uses": 4},
+            {"buy": ["tfc:wool_cloth", 1], "sell": ["tfc:metal/ingot/copper", 1], "max_uses": 3}
+          ]
+        },
+        "arabic_well_keeper": {
+          "name": "Well Keeper",
+          "skin": "MAKENA",
+          "greeting": "Water is shared here, and counted. Draw what you need and leave the rope where it hangs.",
+          "tips": ["Dig where the green grows in the dry season. The water is under it.", "A jug in the shade keeps the water cool all afternoon."],
+          "reset_minutes": 60,
+          "invulnerable": true,
+          "trades": [
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:ceramic/jug", 1], "max_uses": 4},
+            {"buy": ["tfc:jute_fiber", 6], "sell": ["tfc:rope", 1], "max_uses": 6},
+            {"buy": ["tfc:straw", 6], "sell": ["tfc:seeds/onion", 4], "max_uses": 6},
+            {"buy": ["tfc:straw", 6], "sell": ["tfc:seeds/squash", 4], "max_uses": 6}
+          ]
+        },
+        "arabic_smith": {
+          "name": "Smith",
+          "skin": "ALEX",
+          "greeting": "Bronze for the bowls and the blades. Bring tin; copper alone is only half a thing.",
+          "tips": [
+            "Nine parts copper to one of tin makes bronze, and bronze hardens under the hammer.",
+            "Charcoal burns hotter when the fire is fed air; keep the bellows moving."
+          ],
+          "reset_minutes": 60,
+          "invulnerable": true,
+          "trades": [
+            {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:metal/knife/copper", 1], "max_uses": 2},
+            {"buy": ["tfc:metal/ingot/copper", 3], "sell": ["tfc:metal/chisel/copper", 1], "max_uses": 2},
+            {"buy": ["tfc:metal/ingot/copper", 3], "sell": ["tfc:metal/hoe/copper", 1], "max_uses": 2},
+            {"buy": ["minecraft:charcoal", 4], "sell": ["tfc:ceramic/knife_blade_mold", 1], "max_uses": 3},
+            {"buy": ["minecraft:charcoal", 4], "sell": ["tfc:ceramic/ingot_mold", 1], "max_uses": 4},
+            {"buy": ["tfc:metal/ingot/tin", 2], "sell": ["tfc:metal/knife/bronze", 1], "max_uses": 1, "buy_b": ["tfc:metal/ingot/copper", 1]}
+          ]
+        }
+      },
+      "loot": {
+        "house": {
+          "rolls": [2, 4],
+          "entries": [
+            {"item": "tfc:seeds/onion", "weight": 4, "count": [1, 3]},
+            {"item": "tfc:seeds/squash", "weight": 4, "count": [1, 3]},
+            {"item": "tfc:seeds/tomato", "weight": 3, "count": [1, 3]},
+            {"item": "tfc:seeds/papyrus", "weight": 3, "count": [1, 3]},
+            {"item": "tfc:powder/salt", "weight": 6, "count": [1, 4]},
+            {"item": "tfc:ceramic/jug", "weight": 6},
+            {"item": "tfc:ceramic/bowl", "weight": 5},
+            {"item": "tfc:ceramic/pot", "weight": 4},
+            {"item": "tfc:ceramic/large_vessel", "weight": 3},
+            {"item": "tfc:rope", "weight": 3, "count": [1, 2]},
+            {"item": "tfc:burlap_cloth", "weight": 3, "count": [1, 2]},
+            {"item": "tfc:straw", "weight": 6, "count": [4, 10]},
+            {"item": "tfc:wool_yarn", "weight": 4, "count": [2, 4]},
+            {"item": "tfc:bone_needle", "weight": 3},
+            {"item": "tfc:jar/olive", "weight": 2}
+          ]
+        },
+        "smithy": {
+          "rolls": [2, 3],
+          "entries": [
+            {"item": "minecraft:charcoal", "weight": 10, "count": [4, 10]},
+            {"item": "tfc:powder/flux", "weight": 6, "count": [2, 5]},
+            {"item": "tfc:ceramic/ingot_mold", "weight": 5},
+            {"item": "tfc:ceramic/knife_blade_mold", "weight": 4},
+            {"item": "tfc:ceramic/chisel_head_mold", "weight": 3},
+            {"item": "tfc:fire_clay", "weight": 4, "count": [1, 3]},
+            {"item": "tfc:metal/ingot/copper", "weight": 5, "count": [1, 3]},
+            {"item": "tfc:metal/ingot/tin", "weight": 2},
+            {"item": "tfc:metal/knife/copper", "weight": 2},
+            {"item": "tfc:metal/ingot/bronze", "weight": 1}
+          ]
+        },
+        "caravanserai": {
+          "rolls": [3, 5],
+          "entries": [
+            {"item": "tfc:powder/salt", "weight": 8, "count": [2, 6]},
+            {"item": "tfc:rope", "weight": 5, "count": [1, 3]},
+            {"item": "tfc:burlap_cloth", "weight": 5, "count": [1, 3]},
+            {"item": "tfc:ceramic/jug", "weight": 5},
+            {"item": "tfc:ceramic/large_vessel", "weight": 4},
+            {"item": "tfc:seeds/papyrus", "weight": 4, "count": [1, 4]},
+            {"item": "tfc:seeds/onion", "weight": 4, "count": [1, 4]},
+            {"item": "tfc:wool_cloth", "weight": 3},
+            {"item": "tfc:jar/olive", "weight": 3, "count": [1, 2]},
+            {"item": "tfc:metal/ingot/copper", "weight": 4, "count": [1, 3]},
+            {"item": "tfc:metal/ingot/tin", "weight": 1}
+          ]
+        }
+      },
+      "default_loot": "house",
+      "pieces": {
+        "smithy": {"loot": "smithy"},
+        "caravanserai": {"loot": "caravanserai"}
+      },
+      "variants": {
+        "living": {
+          "weight": 1,
+          "size": 5,
+          "max_distance": 96,
+          "start": "start",
+          "processors": {
+            "structures": {
+              "marker": "plain",
+              "foundation": {"max_depth": 6, "variant": "dirt"}
+            },
+            "paths": {
+              "marker": "street",
+              "street": {"gravel": 0.1, "path": 0.15, "grass": 0.0}
+            }
+          },
+          "pools": {
+            "start": {"elements": [{"piece": "well", "weight": 1, "processors": "paths"}]},
+            "buildings": {
+              "fallback": "paths",
+              "elements": [
+                {"piece": "garden_house", "weight": 70, "processors": "structures"},
+                {"piece": "smithy", "weight": 30, "processors": "structures"},
+                {"piece": "caravanserai", "weight": 25, "processors": "structures"},
+                {"piece": "courtyard_house_1", "weight": 100, "processors": "structures"},
+                {"piece": "courtyard_house_2", "weight": 100, "processors": "structures"},
+                {"piece": "courtyard_house_3", "weight": 100, "processors": "structures"},
+                {"piece": "courtyard_house_4", "weight": 100, "processors": "structures"},
+                {"piece": "stall_grey", "weight": 30, "processors": "structures"},
+                {"piece": "stall_green", "weight": 30, "processors": "structures"},
+                {"piece": "stall_yellow", "weight": 30, "processors": "structures"},
+                {"empty": true, "weight": 10}
+              ]
+            },
+            "paths": {
+              "elements": [
+                {
+                  "pieces": ["straight_short", "straight_medium", "straight_long", "bend_left", "bend_right", "t_junction", "fork_left", "fork_right"],
+                  "weight": 100,
+                  "projection": "terrain_matching",
+                  "processors": "paths"
+                },
+                {"piece": "cross", "weight": 80, "projection": "terrain_matching", "processors": "paths"},
+                {"empty": true, "weight": 10}
+              ]
+            },
+            "npc_commoner": {"elements": [{"npc": "arabic_potter", "weight": 15}, {"npc": "arabic_dyer", "weight": 12}, {"empty": true, "weight": 73}]},
+            "npc_outdoors": {"elements": [{"npc": "arabic_well_keeper", "weight": 20}, {"empty": true, "weight": 80}]},
+            "npc_merchant": {"elements": [{"npc": "arabic_merchant", "weight": 30}, {"empty": true, "weight": 70}]},
+            "npc_smith": {"elements": [{"npc": "arabic_smith", "weight": 1}]}
+          }
+        }
+      }
+    },
+    "malay": {
+      "title": "Malay stilt villages",
+      "kind": "village",
+      "set": {
+        "regions": ["malay_peninsula", "sumatra_east", "borneo_coast"],
+        "exclude": ["minang_west_sumatra"],
+        "spacing": 96,
+        "separation": 64,
+        "salt": 2026101003,
+        "spread_type": "linear",
+        "landforms": ["lowland", "coast"],
+        "climate": {"min_temperature": 22, "max_temperature": 36, "min_groundwater": 380, "ignore_rivers": true}
+      },
+      "materials": {
+        "foundation": {"max_depth": 8, "variant": "dirt"}
+      },
+      "guard": {"max_height_difference": 6, "max_water_fraction": 0.45},
+      "npcs": {
+        "malay_cook": {
+          "name": "Cook",
+          "skin": "SUNNY",
+          "greeting": "Rice on the fire, fish on the rack, chilli in the pot. Whatever you bring, there's room for it.",
+          "tips": [
+            "Wet rice wants flooded ground. Dry rice wants nothing but rain.",
+            "Salt the fish the day you catch it and it will keep until the monsoon."
+          ],
+          "reset_minutes": 60,
+          "invulnerable": true,
+          "trades": [
+            {"buy": ["tfc:straw", 6], "sell": ["tfc:seeds/rice", 4], "max_uses": 8},
+            {"buy": ["tfc:straw", 6], "sell": ["tfc:seeds/soybean", 4], "max_uses": 8},
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:powder/salt", 4], "max_uses": 8},
+            {"buy": ["tfc:straw", 6], "sell": ["tfc:seeds/red_bell_pepper", 4], "max_uses": 6},
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:ceramic/pot", 1], "max_uses": 4},
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:ceramic/bowl", 2], "max_uses": 6}
+          ]
+        },
+        "malay_boatwright": {
+          "name": "Boatwright",
+          "skin": "KAI",
+          "greeting": "The tide takes what it likes and gives back what floats. Build for the second kind.",
+          "tips": ["Pitch and rope are half a boat. Wood is the rest.", "Read the water before you leave the shore, not after."],
+          "reset_minutes": 60,
+          "invulnerable": true,
+          "trades": [
+            {"buy": ["tfc:jute_fiber", 8], "sell": ["tfc:rope", 2], "max_uses": 6},
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:glue", 2], "max_uses": 4},
+            {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:metal/saw/copper", 1], "max_uses": 1},
+            {"buy": ["tfc:metal/ingot/copper", 3], "sell": ["tfc:metal/axe/copper", 1], "max_uses": 1},
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:metal/fish_hook/copper", 2], "max_uses": 4}
+          ]
+        },
+        "malay_weaver": {
+          "name": "Weaver",
+          "skin": "ZURI",
+          "greeting": "Cotton is for the dry months, the loom is for the wet ones. The cloth tells what the year was like.",
+          "tips": ["Spin the yarn tight and weave it slack; the other way round it tears.", "Dye after weaving, not before."],
+          "reset_minutes": 60,
+          "invulnerable": true,
+          "trades": [
+            {"buy": ["tfc:wool", 4], "sell": ["tfc:wool_yarn", 4], "max_uses": 6},
+            {"buy": ["tfc:wool_yarn", 8], "sell": ["tfc:wool_cloth", 1], "max_uses": 6},
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:bone_needle", 2], "max_uses": 4},
+            {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:spindle", 1], "max_uses": 2},
+            {"buy": ["tfc:jute_fiber", 8], "sell": ["tfc:burlap_cloth", 2], "max_uses": 6}
+          ]
+        },
+        "malay_smith": {
+          "name": "Smith",
+          "skin": "ARI",
+          "greeting": "A kris takes a month. A fishhook takes an afternoon. I'll start with the hook.",
+          "tips": [
+            "Make the blade, then temper it; the other order only gets you a crooked knife.",
+            "Charcoal from hardwood, never softwood. It burns slower and hotter."
+          ],
+          "reset_minutes": 60,
+          "invulnerable": true,
+          "trades": [
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:metal/fish_hook/copper", 2], "max_uses": 4},
+            {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:metal/knife/copper", 1], "max_uses": 2},
+            {"buy": ["tfc:metal/ingot/copper", 3], "sell": ["tfc:metal/javelin/copper", 1], "max_uses": 2},
+            {"buy": ["minecraft:charcoal", 4], "sell": ["tfc:ceramic/javelin_head_mold", 1], "max_uses": 3},
+            {"buy": ["minecraft:charcoal", 4], "sell": ["tfc:ceramic/ingot_mold", 1], "max_uses": 4},
+            {"buy": ["tfc:metal/ingot/tin", 2], "sell": ["tfc:metal/hoe/bronze", 1], "max_uses": 1, "buy_b": ["tfc:metal/ingot/copper", 1]}
+          ]
+        }
+      },
+      "loot": {
+        "house": {
+          "rolls": [2, 4],
+          "entries": [
+            {"item": "tfc:seeds/rice", "weight": 6, "count": [1, 4]},
+            {"item": "tfc:seeds/cassava", "weight": 4, "count": [1, 3]},
+            {"item": "tfc:seeds/soybean", "weight": 4, "count": [1, 3]},
+            {"item": "tfc:seeds/red_bell_pepper", "weight": 3, "count": [1, 3]},
+            {"item": "tfc:powder/salt", "weight": 5, "count": [1, 4]},
+            {"item": "tfc:ceramic/jug", "weight": 5},
+            {"item": "tfc:ceramic/bowl", "weight": 5},
+            {"item": "tfc:ceramic/pot", "weight": 4},
+            {"item": "tfc:ceramic/large_vessel", "weight": 3},
+            {"item": "tfc:rope", "weight": 4, "count": [1, 3]},
+            {"item": "tfc:burlap_cloth", "weight": 4, "count": [1, 2]},
+            {"item": "tfc:jute_fiber", "weight": 4, "count": [2, 6]},
+            {"item": "tfc:wool_yarn", "weight": 3, "count": [2, 4]},
+            {"item": "tfc:metal/fish_hook/copper", "weight": 2},
+            {"item": "tfc:plant/banana_sapling", "weight": 1}
+          ]
+        },
+        "smithy": {
+          "rolls": [2, 3],
+          "entries": [
+            {"item": "minecraft:charcoal", "weight": 10, "count": [4, 10]},
+            {"item": "tfc:powder/flux", "weight": 5, "count": [2, 4]},
+            {"item": "tfc:ceramic/ingot_mold", "weight": 5},
+            {"item": "tfc:ceramic/javelin_head_mold", "weight": 4},
+            {"item": "tfc:ceramic/knife_blade_mold", "weight": 4},
+            {"item": "tfc:fire_clay", "weight": 4, "count": [1, 3]},
+            {"item": "tfc:metal/ingot/copper", "weight": 5, "count": [1, 3]},
+            {"item": "tfc:metal/fish_hook/copper", "weight": 3},
+            {"item": "tfc:metal/ingot/tin", "weight": 2}
+          ]
+        }
+      },
+      "default_loot": "house",
+      "pieces": {
+        "smithy": {"loot": "smithy"}
+      },
+      "marker_wood": "oak",
+      "variants": {
+        "living": {
+          "weight": 1,
+          "size": 6,
+          "max_distance": 96,
+          "start": "start",
+          "terrain_adaptation": "none",
+          "processors": {
+            "structures": {
+              "marker": "plain",
+              "foundation": {"max_depth": 6, "variant": "dirt"}
+            },
+            "paths": {
+              "marker": "street",
+              "street": {"gravel": 0.1, "path": 0.15, "grass": 0.1}
+            }
+          },
+          "pools": {
+            "start": {"elements": [{"piece": "smithy", "weight": 1, "processors": "paths"}]},
+            "buildings": {
+              "fallback": "paths",
+              "elements": [
+                {"piece": "kitchen", "weight": 60, "processors": "structures"},
+                {"piece": "rumah_bujang_a", "weight": 70, "processors": "structures"},
+                {"piece": "rumah_bujang_b", "weight": 70, "processors": "structures"},
+                {"piece": "rumah_bujang_c", "weight": 70, "processors": "structures"},
+                {"piece": "rumah_bujang_dual_a", "weight": 100, "processors": "structures"},
+                {"piece": "rumah_bujang_dual_b", "weight": 100, "processors": "structures"},
+                {"piece": "rumah_bujang_dual_c", "weight": 100, "processors": "structures"},
+                {"piece": "sloop", "weight": 40, "processors": "structures"},
+                {"empty": true, "weight": 10}
+              ]
+            },
+            "paths": {
+              "elements": [
+                {
+                  "pieces": ["straight_short", "straight_medium", "straight_long", "bend_left", "bend_right", "t_junction", "fork_left", "fork_right"],
+                  "weight": 100,
+                  "projection": "terrain_matching",
+                  "processors": "paths"
+                },
+                {"piece": "cross", "weight": 80, "projection": "terrain_matching", "processors": "paths"},
+                {"empty": true, "weight": 10}
+              ]
+            },
+            "npc_commoner": {"elements": [{"npc": "malay_weaver", "weight": 20}, {"empty": true, "weight": 80}]},
+            "npc_cook": {"elements": [{"npc": "malay_cook", "weight": 70}, {"empty": true, "weight": 30}]},
+            "npc_boatwright": {"elements": [{"npc": "malay_boatwright", "weight": 70}, {"empty": true, "weight": 30}]},
+            "npc_outdoors": {"elements": [{"npc": "malay_boatwright", "weight": 10}, {"empty": true, "weight": 90}]},
+            "npc_smith": {"elements": [{"npc": "malay_smith", "weight": 1}]}
+          }
+        }
+      }
+    },
+    "minang": {
+      "title": "Minangkabau villages (rumah gadang)",
+      "kind": "village",
+      "npcs_from": ["malay"],
+      "set": {
+        "regions": ["minang_west_sumatra"],
+        "spacing": 64,
+        "separation": 40,
+        "salt": 2026101004,
+        "spread_type": "linear",
+        "landforms": ["lowland", "upland"],
+        "climate": {"min_temperature": 18, "max_temperature": 36, "min_groundwater": 380, "ignore_rivers": true}
+      },
+      "materials": {
+        "foundation": {"max_depth": 8, "variant": "dirt"}
+      },
+      "guard": {"max_height_difference": 8, "max_water_fraction": 0.2},
+      "loot": {
+        "house": {
+          "rolls": [2, 4],
+          "entries": [
+            {"item": "tfc:seeds/rice", "weight": 6, "count": [1, 4]},
+            {"item": "tfc:seeds/cassava", "weight": 4, "count": [1, 3]},
+            {"item": "tfc:seeds/soybean", "weight": 4, "count": [1, 3]},
+            {"item": "tfc:seeds/red_bell_pepper", "weight": 3, "count": [1, 3]},
+            {"item": "tfc:powder/salt", "weight": 5, "count": [1, 4]},
+            {"item": "tfc:ceramic/jug", "weight": 5},
+            {"item": "tfc:ceramic/bowl", "weight": 5},
+            {"item": "tfc:ceramic/pot", "weight": 4},
+            {"item": "tfc:ceramic/large_vessel", "weight": 3},
+            {"item": "tfc:rope", "weight": 4, "count": [1, 3]},
+            {"item": "tfc:burlap_cloth", "weight": 4, "count": [1, 2]},
+            {"item": "tfc:jute_fiber", "weight": 4, "count": [2, 6]},
+            {"item": "tfc:wool_yarn", "weight": 3, "count": [2, 4]},
+            {"item": "tfc:metal/fish_hook/copper", "weight": 2},
+            {"item": "tfc:plant/banana_sapling", "weight": 1}
+          ]
+        },
+        "smithy": {
+          "rolls": [2, 3],
+          "entries": [
+            {"item": "minecraft:charcoal", "weight": 10, "count": [4, 10]},
+            {"item": "tfc:powder/flux", "weight": 5, "count": [2, 4]},
+            {"item": "tfc:ceramic/ingot_mold", "weight": 5},
+            {"item": "tfc:ceramic/javelin_head_mold", "weight": 4},
+            {"item": "tfc:ceramic/knife_blade_mold", "weight": 4},
+            {"item": "tfc:fire_clay", "weight": 4, "count": [1, 3]},
+            {"item": "tfc:metal/ingot/copper", "weight": 5, "count": [1, 3]},
+            {"item": "tfc:metal/fish_hook/copper", "weight": 3},
+            {"item": "tfc:metal/ingot/tin", "weight": 2}
+          ]
+        }
+      },
+      "default_loot": "house",
+      "pieces": {
+        "smithy": {"loot": "smithy"}
+      },
+      "variants": {
+        "living": {
+          "weight": 1,
+          "size": 7,
+          "max_distance": 96,
+          "start": "start",
+          "terrain_adaptation": "none",
+          "processors": {
+            "structures": {
+              "marker": "plain",
+              "foundation": {"max_depth": 6, "variant": "dirt"}
+            },
+            "paths": {
+              "marker": "street",
+              "street": {"gravel": 0.1, "path": 0.15, "grass": 0.1}
+            }
+          },
+          "pools": {
+            "start": {"elements": [{"piece": "rumah_gadang", "weight": 1, "processors": "paths"}]},
+            "buildings": {
+              "fallback": "paths",
+              "elements": [
+                {"piece": "smithy", "weight": 25, "processors": "structures"},
+                {"piece": "kitchen", "weight": 60, "processors": "structures"},
+                {"piece": "rumah_bujang_a", "weight": 70, "processors": "structures"},
+                {"piece": "rumah_bujang_b", "weight": 70, "processors": "structures"},
+                {"piece": "rumah_bujang_c", "weight": 70, "processors": "structures"},
+                {"piece": "rumah_bujang_dual_a", "weight": 100, "processors": "structures"},
+                {"piece": "rumah_bujang_dual_b", "weight": 100, "processors": "structures"},
+                {"piece": "rumah_bujang_dual_c", "weight": 100, "processors": "structures"},
+                {"empty": true, "weight": 10}
+              ]
+            },
+            "paths": {
+              "elements": [
+                {"pieces": ["t_junction", "fork_left", "fork_right"], "weight": 100, "projection": "terrain_matching", "processors": "paths"},
+                {"piece": "cross", "weight": 100, "projection": "terrain_matching", "processors": "paths"},
+                {
+                  "pieces": ["straight_short", "straight_medium", "bend_left", "bend_right"],
+                  "weight": 40,
+                  "projection": "terrain_matching",
+                  "processors": "paths"
+                },
+                {"empty": true, "weight": 5}
+              ]
+            },
+            "npc_commoner": {"elements": [{"npc": "malay_weaver", "weight": 20}, {"empty": true, "weight": 80}]},
+            "npc_cook": {"elements": [{"npc": "malay_cook", "weight": 70}, {"empty": true, "weight": 30}]},
+            "npc_boatwright": {"elements": [{"empty": true, "weight": 100}]},
+            "npc_outdoors": {"elements": [{"empty": true, "weight": 100}]},
+            "npc_smith": {"elements": [{"npc": "malay_smith", "weight": 1}]}
+          }
+        }
+      }
+    },
+    "steppe": {
+      "title": "Steppe camps",
+      "kind": "village",
+      "set": {
+        "regions": ["steppe"],
+        "spacing": 64,
+        "separation": 40,
+        "salt": 2026101005,
+        "spread_type": "linear",
+        "landforms": ["lowland", "upland"],
+        "climate": {"min_temperature": -10, "max_temperature": 16, "min_groundwater": 20, "max_groundwater": 300, "max_forest": 2, "ignore_rivers": true}
+      },
+      "guard": {"max_height_difference": 6},
+      "npcs": {
+        "steppe_herder": {
+          "name": "Herder",
+          "skin": "KAI",
+          "greeting": "The flocks move; so do we. Today the grass is here.",
+          "tips": [
+            "Mares' milk, sheep's wool, horse hides. A herd gives more than meat if you let it live.",
+            "Camp on the lee of a rise: the wind is the enemy before the wolf is."
+          ],
+          "reset_minutes": 60,
+          "invulnerable": true,
+          "trades": [
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:medium_raw_hide", 2], "max_uses": 6},
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:large_raw_hide", 1], "max_uses": 4},
+            {"buy": ["tfc:straw", 8], "sell": ["tfc:wool", 3], "max_uses": 6},
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["minecraft:bone", 6], "max_uses": 6},
+            {"buy": ["tfc:ceramic/bowl", 1], "sell": ["tfc:wool", 2], "max_uses": 4}
+          ]
+        },
+        "steppe_feltmaker": {
+          "name": "Feltmaker",
+          "skin": "ZURI",
+          "greeting": "Wool, water, and everyone's feet. That's all felt is, and the tents stand on it.",
+          "tips": ["Beat the wool wet, roll it tight and keep rolling. It's the rolling that makes it hold.", "Felt turns rain; grass doesn't."],
+          "reset_minutes": 60,
+          "invulnerable": true,
+          "trades": [
+            {"buy": ["tfc:wool", 6], "sell": ["tfc:wool_cloth", 2], "max_uses": 6},
+            {"buy": ["tfc:wool", 4], "sell": ["tfc:wool_yarn", 4], "max_uses": 6},
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:bone_needle", 2], "max_uses": 4},
+            {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:spindle", 1], "max_uses": 2},
+            {"buy": ["tfc:medium_raw_hide", 1], "sell": ["tfc:wool_yarn", 6], "max_uses": 4}
+          ]
+        },
+        "steppe_bowyer": {
+          "name": "Bowyer",
+          "skin": "ALEX",
+          "greeting": "Horn, sinew and wood, held together with glue and patience. The glue is the secret.",
+          "tips": ["Glue a bow in the dry season; the damp will undo it.", "Straight arrows fly straight. There is no other secret."],
+          "reset_minutes": 60,
+          "invulnerable": true,
+          "trades": [
+            {"buy": ["tfc:metal/ingot/copper", 3], "sell": ["minecraft:bow", 1], "max_uses": 2},
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["minecraft:arrow", 8], "max_uses": 4},
+            {"buy": ["minecraft:feather", 6], "sell": ["minecraft:arrow", 8], "max_uses": 4},
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:glue", 2], "max_uses": 4},
+            {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:metal/javelin/copper", 1], "max_uses": 2}
+          ]
+        },
+        "steppe_elder": {
+          "name": "Elder",
+          "skin": "STEVE",
+          "greeting": "Sit by the fire. The road is long and you've only seen the part in front of you.",
+          "tips": [
+            "Water is the only border out here. Learn where it is and you won't need another map.",
+            "A guest is a guest for three days. After that, a neighbour."
+          ],
+          "reset_minutes": 120,
+          "invulnerable": true,
+          "trades": [
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:ceramic/bowl", 2], "max_uses": 4},
+            {"buy": ["tfc:straw", 6], "sell": ["tfc:seeds/onion", 4], "max_uses": 6},
+            {"buy": ["tfc:medium_raw_hide", 1], "sell": ["tfc:powder/salt", 6], "max_uses": 6}
+          ]
+        }
+      },
+      "loot": {
+        "house": {
+          "rolls": [2, 4],
+          "entries": [
+            {"item": "tfc:straw", "weight": 8, "count": [4, 10]},
+            {"item": "tfc:wool", "weight": 6, "count": [2, 6]},
+            {"item": "tfc:wool_yarn", "weight": 5, "count": [2, 6]},
+            {"item": "tfc:medium_raw_hide", "weight": 5},
+            {"item": "tfc:small_raw_hide", "weight": 5},
+            {"item": "tfc:large_raw_hide", "weight": 3},
+            {"item": "minecraft:bone", "weight": 6, "count": [1, 4]},
+            {"item": "minecraft:feather", "weight": 4, "count": [2, 6]},
+            {"item": "tfc:ceramic/bowl", "weight": 4},
+            {"item": "tfc:ceramic/jug", "weight": 4},
+            {"item": "tfc:powder/salt", "weight": 4, "count": [1, 3]},
+            {"item": "tfc:bone_needle", "weight": 3},
+            {"item": "tfc:seeds/onion", "weight": 3, "count": [1, 3]},
+            {"item": "tfc:metal/knife/copper", "weight": 1}
+          ]
+        },
+        "archery": {
+          "rolls": [2, 3],
+          "entries": [
+            {"item": "minecraft:feather", "weight": 8, "count": [2, 8]},
+            {"item": "minecraft:string", "weight": 6, "count": [1, 4]},
+            {"item": "minecraft:flint", "weight": 6, "count": [2, 5]},
+            {"item": "minecraft:bone", "weight": 4, "count": [1, 3]},
+            {"item": "tfc:glue", "weight": 3, "count": [1, 2]},
+            {"item": "tfc:metal/javelin/copper", "weight": 1},
+            {"item": "minecraft:arrow", "weight": 3, "count": [2, 6]}
+          ]
+        }
+      },
+      "default_loot": "house",
+      "pieces": {
+        "archery_ground": {"loot": "archery"}
+      },
+      "variants": {
+        "living": {
+          "weight": 1,
+          "size": 5,
+          "max_distance": 80,
+          "start": "start",
+          "processors": {
+            "structures": {
+              "marker": "plain",
+              "foundation": {"max_depth": 6, "variant": "dirt"}
+            },
+            "paths": {
+              "marker": "street",
+              "street": {"gravel": 0.05, "path": 0.25, "grass": 0.25}
+            }
+          },
+          "pools": {
+            "start": {"elements": [{"piece": "gathering_tent", "weight": 1, "processors": "paths"}]},
+            "buildings": {
+              "fallback": "paths",
+              "elements": [
+                {"piece": "larder", "weight": 50, "processors": "structures"},
+                {"piece": "workshop", "weight": 50, "processors": "structures"},
+                {"piece": "lookout", "weight": 30, "processors": "structures"},
+                {"piece": "yurt_1", "weight": 100, "processors": "structures"},
+                {"piece": "yurt_2", "weight": 100, "processors": "structures"},
+                {"piece": "yurt_3", "weight": 100, "processors": "structures"},
+                {"piece": "stable", "weight": 60, "processors": "structures"},
+                {"piece": "archery_ground", "weight": 40, "processors": "structures"},
+                {"piece": "deer_stones", "weight": 30, "processors": "paths"},
+                {"empty": true, "weight": 10}
+              ]
+            },
+            "paths": {
+              "elements": [
+                {
+                  "pieces": ["straight_short", "straight_medium", "straight_long", "bend_left", "bend_right", "t_junction", "fork_left", "fork_right"],
+                  "weight": 100,
+                  "projection": "terrain_matching",
+                  "processors": "paths"
+                },
+                {"piece": "cross", "weight": 80, "projection": "terrain_matching", "processors": "paths"},
+                {"empty": true, "weight": 10}
+              ]
+            },
+            "npc_commoner": {"elements": [{"npc": "steppe_elder", "weight": 10}, {"npc": "steppe_feltmaker", "weight": 15}, {"empty": true, "weight": 75}]},
+            "npc_outdoors": {"elements": [{"npc": "steppe_herder", "weight": 30}, {"empty": true, "weight": 70}]},
+            "npc_feltmaker": {"elements": [{"npc": "steppe_feltmaker", "weight": 60}, {"empty": true, "weight": 40}]},
+            "npc_bowyer": {"elements": [{"npc": "steppe_bowyer", "weight": 70}, {"empty": true, "weight": 30}]}
+          }
+        }
+      }
+    },
+    "temperate": {
+      "title": "Temperate farmsteads",
+      "kind": "village",
+      "set": {
+        "regions": ["atlantic_europe"],
+        "spacing": 48,
+        "separation": 24,
+        "salt": 2026101006,
+        "spread_type": "linear",
+        "landforms": ["lowland"],
+        "climate": {"min_temperature": 2, "max_temperature": 17, "min_groundwater": 200, "max_groundwater": 450, "ignore_rivers": true}
+      },
+      "guard": {"radius": 24, "max_height_difference": 5},
+      "npcs": {
+        "temperate_farmer": {
+          "name": "Farmer",
+          "skin": "FARMER_01",
+          "greeting": "Wheat, rye and a field of beans. Come in if you've a mind to; there's water in the jug.",
+          "tips": [
+            "Rotate your crops. Beans put back what the wheat takes out.",
+            "Straw for the roof, straw for the beds, straw for the barn. You'll never have enough."
+          ],
+          "reset_minutes": 60,
+          "invulnerable": true,
+          "trades": [
+            {"buy": ["tfc:straw", 6], "sell": ["tfc:seeds/carrot", 4], "max_uses": 8},
+            {"buy": ["tfc:straw", 6], "sell": ["tfc:seeds/cabbage", 4], "max_uses": 8},
+            {"buy": ["tfc:straw", 6], "sell": ["tfc:seeds/green_bean", 4], "max_uses": 8},
+            {"buy": ["tfc:medium_raw_hide", 1], "sell": ["tfc:seeds/potato", 4], "max_uses": 8},
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:ceramic/jug", 1], "max_uses": 4}
+          ]
+        },
+        "temperate_shepherd": {
+          "name": "Shepherd",
+          "skin": "KAI",
+          "greeting": "The ewes are lambing. Mind the dog.",
+          "tips": ["Wool at midsummer, lambs in spring. Everything else is weather.", "A flock turned into the stubble does the field a favour."],
+          "reset_minutes": 60,
+          "invulnerable": true,
+          "trades": [
+            {"buy": ["tfc:straw", 8], "sell": ["tfc:wool", 3], "max_uses": 6},
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:small_raw_hide", 3], "max_uses": 6},
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:medium_raw_hide", 2], "max_uses": 6},
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:wool_yarn", 4], "max_uses": 6}
+          ]
+        },
+        "temperate_orchardist": {
+          "name": "Orchardist",
+          "skin": "ARI",
+          "greeting": "Apples take eight years to be worth the wait. I started early.",
+          "tips": [
+            "Plant the sapling where it will have sun and room; it won't forgive a bad choice.",
+            "Graft or buy: seeds from a good apple make a poor tree."
+          ],
+          "reset_minutes": 120,
+          "invulnerable": true,
+          "trades": [
+            {"buy": ["tfc:metal/ingot/copper", 4], "sell": ["tfc:plant/red_apple_sapling", 1], "max_uses": 1},
+            {"buy": ["tfc:metal/ingot/copper", 4], "sell": ["tfc:plant/plum_sapling", 1], "max_uses": 1},
+            {"buy": ["tfc:metal/ingot/copper", 4], "sell": ["tfc:plant/cherry_sapling", 1], "max_uses": 1},
+            {"buy": ["tfc:metal/ingot/copper", 4], "sell": ["tfc:plant/peach_sapling", 1], "max_uses": 1},
+            {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:jar_lid", 4], "max_uses": 4}
+          ]
+        }
+      },
+      "loot": {
+        "house": {
+          "rolls": [3, 5],
+          "entries": [
+            {"item": "tfc:straw", "weight": 8, "count": [4, 16]},
+            {"item": "tfc:seeds/carrot", "weight": 4, "count": [1, 4]},
+            {"item": "tfc:seeds/cabbage", "weight": 4, "count": [1, 4]},
+            {"item": "tfc:seeds/green_bean", "weight": 4, "count": [1, 4]},
+            {"item": "tfc:seeds/potato", "weight": 4, "count": [1, 4]},
+            {"item": "tfc:seeds/onion", "weight": 4, "count": [1, 4]},
+            {"item": "tfc:seeds/garlic", "weight": 3, "count": [1, 3]},
+            {"item": "tfc:wool_yarn", "weight": 4, "count": [2, 6]},
+            {"item": "tfc:bone_needle", "weight": 3},
+            {"item": "tfc:ceramic/jug", "weight": 4},
+            {"item": "tfc:ceramic/pot", "weight": 4},
+            {"item": "tfc:ceramic/bowl", "weight": 4},
+            {"item": "tfc:ceramic/vessel", "weight": 3},
+            {"item": "tfc:spindle", "weight": 2},
+            {"item": "tfc:handstone", "weight": 1},
+            {"item": "tfc:plant/red_apple_sapling", "weight": 1},
+            {"item": "tfc:plant/plum_sapling", "weight": 1},
+            {"item": "tfc:plant/cherry_sapling", "weight": 1}
+          ]
+        }
+      },
+      "default_loot": "house",
+      "variants": {
+        "living": {
+          "weight": 1,
+          "size": 2,
+          "max_distance": 48,
+          "start": "start",
+          "processors": {
+            "structures": {
+              "marker": "plain",
+              "foundation": {"max_depth": 6, "variant": "dirt"}
+            },
+            "paths": {
+              "marker": "street",
+              "street": {"gravel": 0.2, "path": 0.2, "grass": 0.1}
+            }
+          },
+          "pools": {
+            "start": {
+              "elements": [
+                {"piece": "farmhouse_a", "weight": 1, "processors": "structures"},
+                {"piece": "farmhouse_b", "weight": 1, "processors": "structures"},
+                {"piece": "farmhouse_c", "weight": 1, "processors": "structures"}
+              ]
+            },
+            "track": {
+              "elements": [
+                {"piece": "track_a", "weight": 1, "processors": "paths", "projection": "terrain_matching"},
+                {"piece": "track_b", "weight": 1, "processors": "paths", "projection": "terrain_matching"}
+              ]
+            },
+            "npc_farmer": {
+              "elements": [
+                {"npc": "temperate_farmer", "weight": 45},
+                {"npc": "temperate_shepherd", "weight": 25},
+                {"npc": "temperate_orchardist", "weight": 15},
+                {"empty": true, "weight": 15}
+              ]
+            }
+          }
+        }
+      }
+    },
+    "aqueduct": {
+      "title": "Roman aqueducts",
+      "kind": "monument",
+      "set": {
+        "regions": ["mediterranean"],
+        "spacing": 192,
+        "separation": 160,
+        "salt": 2026101007,
+        "spread_type": "linear",
+        "landforms": ["lowland", "upland"],
+        "climate": {"min_temperature": 8, "max_temperature": 26, "max_groundwater": 450, "ignore_rivers": true}
+      },
+      "guard": {"radius": 64, "samples": 13, "max_height_difference": 24, "max_water_fraction": 0.2},
+      "loot": {},
+      "variants": {
+        "main": {
+          "weight": 1,
+          "size": 7,
+          "max_distance": 100,
+          "start": "start",
+          "terrain_adaptation": "none",
+          "processors": {
+            "structures": {
+              "marker": null,
+              "local_materials": {
+                "foundation": {"max_depth": 12, "variant": "bricks"}
+              }
+            }
+          },
+          "pools": {
+            "start": {
+              "elements": [
+                {"piece": "aqueduct_0_0", "weight": 1, "processors": "structures"},
+                {"piece": "aqueduct_0_1", "weight": 1, "processors": "structures"}
+              ]
+            },
+            "connector": {
+              "elements": [
+                {"piece": "aqueduct_connector_0_0", "weight": 20, "processors": "structures"},
+                {"piece": "aqueduct_connector_1_0", "weight": 1, "processors": "structures"},
+                {"piece": "aqueduct_connector_2_0", "weight": 1, "processors": "structures"},
+                {"piece": "aqueduct_connector_0_1", "weight": 10, "processors": "structures"},
+                {"piece": "aqueduct_connector_1_1", "weight": 1, "processors": "structures"},
+                {"piece": "aqueduct_connector_2_1", "weight": 1, "processors": "structures"}
+              ]
+            },
+            "leg": {
+              "elements": [
+                {"piece": "aqueduct_leg_0_0", "weight": 5, "processors": "structures"},
+                {"piece": "aqueduct_leg_0_1", "weight": 1, "processors": "structures"},
+                {"piece": "aqueduct_leg_0_2", "weight": 1, "processors": "structures"},
+                {"piece": "aqueduct_leg_0_3", "weight": 3, "processors": "structures"}
+              ]
+            },
+            "tank": {"elements": [{"piece": "aqueduct_tank_0_0", "weight": 1, "processors": "structures"}]}
+          }
+        }
+      }
+    }
   }
 }

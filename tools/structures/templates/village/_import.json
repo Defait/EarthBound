@@ -1,0 +1,5089 @@
+{
+ "tfg_commit": "1be1a1c4bb64c50807ff8f0988830b122557aac2",
+ "data_version": 3955,
+ "cultures": {
+  "norse": {
+   "woods": {
+    "hickory": {
+     "blocks": 2364,
+     "rank": "oak"
+    },
+    "willow": {
+     "blocks": 1437,
+     "rank": "spruce"
+    },
+    "cypress": {
+     "blocks": 547,
+     "rank": "birch"
+    }
+   },
+   "pieces": {
+    "living/bend_left": {
+     "source": "kubejs/data/tfg/structures/norse/baseline/bend_left.nbt",
+     "size": [
+      10,
+      4,
+      10
+     ],
+     "blocks": 54,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/living/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/bend_right": {
+     "source": "kubejs/data/tfg/structures/norse/baseline/bend_right.nbt",
+     "size": [
+      10,
+      4,
+      10
+     ],
+     "blocks": 54,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/living/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/cross": {
+     "source": "kubejs/data/tfg/structures/norse/baseline/cross.nbt",
+     "size": [
+      15,
+      4,
+      15
+     ],
+     "blocks": 87,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/living/buildings",
+       "count": 3
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/fork_left": {
+     "source": "kubejs/data/tfg/structures/norse/baseline/fork_left.nbt",
+     "size": [
+      15,
+      4,
+      9
+     ],
+     "blocks": 67,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/living/buildings",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/fork_right": {
+     "source": "kubejs/data/tfg/structures/norse/baseline/fork_right.nbt",
+     "size": [
+      15,
+      4,
+      10
+     ],
+     "blocks": 70,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/living/buildings",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/burial_mound": {
+     "source": "kubejs/data/tfg/structures/norse/baseline/norse_burial_base.nbt",
+     "size": [
+      7,
+      4,
+      10
+     ],
+     "blocks": 141,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/farmhouse": {
+     "source": "kubejs/data/tfg/structures/norse/baseline/norse_farmhouse_base.nbt",
+     "size": [
+      18,
+      13,
+      12
+     ],
+     "blocks": 819,
+     "dropped": 1,
+     "unmapped": 0,
+     "dropped_entities": [
+      "tfcastikorcarts:plow/hickory"
+     ],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/living/paths",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/norse/living/npc_commoner",
+       "count": 2
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/norse/living/npc_outdoors",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/large_farmhouse": {
+     "source": "kubejs/data/tfg/structures/norse/baseline/norse_farmhousebig_base.nbt",
+     "size": [
+      11,
+      11,
+      12
+     ],
+     "blocks": 518,
+     "dropped": 1,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/norse/living/npc_commoner",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/longhouse": {
+     "source": "kubejs/data/tfg/structures/norse/baseline/norse_longhouse_base.nbt",
+     "size": [
+      25,
+      14,
+      15
+     ],
+     "blocks": 1706,
+     "dropped": 3,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/living/paths",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "minecraft:empty",
+       "count": 2
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/norse/living/npc_commoner",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/turf_house": {
+     "source": "kubejs/data/tfg/structures/norse/baseline/norse_mosshouse_base.nbt",
+     "size": [
+      13,
+      8,
+      12
+     ],
+     "blocks": 541,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/norse/living/npc_commoner",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/gathering_shelter": {
+     "source": "kubejs/data/tfg/structures/norse/baseline/norse_root_base.nbt",
+     "size": [
+      5,
+      7,
+      5
+     ],
+     "blocks": 59,
+     "dropped": 1,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/living/paths",
+       "count": 4
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "minecraft:empty",
+       "count": 3
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/norse/living/npc_outdoors",
+       "count": 2
+      }
+     ]
+    },
+    "living/smithy": {
+     "source": "kubejs/data/tfg/structures/norse/baseline/norse_smithy_base.nbt",
+     "size": [
+      14,
+      12,
+      12
+     ],
+     "blocks": 693,
+     "dropped": 1,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/living/paths",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/norse/living/npc_commoner",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/norse/living/npc_smith",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/straight_long": {
+     "source": "kubejs/data/tfg/structures/norse/baseline/straight_long.nbt",
+     "size": [
+      20,
+      4,
+      3
+     ],
+     "blocks": 60,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/living/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/straight_medium": {
+     "source": "kubejs/data/tfg/structures/norse/baseline/straight_medium.nbt",
+     "size": [
+      15,
+      4,
+      3
+     ],
+     "blocks": 45,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/living/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/straight_short": {
+     "source": "kubejs/data/tfg/structures/norse/baseline/straight_short.nbt",
+     "size": [
+      10,
+      4,
+      3
+     ],
+     "blocks": 30,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/living/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/t_junction": {
+     "source": "kubejs/data/tfg/structures/norse/baseline/t_junction.nbt",
+     "size": [
+      10,
+      4,
+      13
+     ],
+     "blocks": 64,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/living/buildings",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "ruined/bend_left": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/bend_left.nbt",
+     "size": [
+      10,
+      4,
+      10
+     ],
+     "blocks": 54,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/ruined/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "ruined/bend_right": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/bend_right.nbt",
+     "size": [
+      10,
+      4,
+      10
+     ],
+     "blocks": 54,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/ruined/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "ruined/cross": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/cross.nbt",
+     "size": [
+      15,
+      4,
+      15
+     ],
+     "blocks": 87,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/ruined/buildings",
+       "count": 3
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "ruined/fork_left": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/fork_left.nbt",
+     "size": [
+      15,
+      4,
+      9
+     ],
+     "blocks": 67,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/ruined/buildings",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "ruined/fork_right": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/fork_right.nbt",
+     "size": [
+      15,
+      4,
+      10
+     ],
+     "blocks": 70,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/ruined/buildings",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "ruined/burial_mound": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/norse_burial_ruin.nbt",
+     "size": [
+      7,
+      4,
+      10
+     ],
+     "blocks": 126,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "ruined/farmhouse": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/norse_farmhouse_ruin.nbt",
+     "size": [
+      18,
+      13,
+      11
+     ],
+     "blocks": 766,
+     "dropped": 1,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/ruined/paths",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "ruined/large_farmhouse": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/norse_farmhousebig_ruin.nbt",
+     "size": [
+      11,
+      11,
+      12
+     ],
+     "blocks": 490,
+     "dropped": 1,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "ruined/longhouse": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/norse_longhouse_ruin.nbt",
+     "size": [
+      25,
+      12,
+      15
+     ],
+     "blocks": 1551,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/ruined/paths",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "ruined/turf_house": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/norse_mosshouse_ruin.nbt",
+     "size": [
+      13,
+      8,
+      11
+     ],
+     "blocks": 487,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "ruined/gathering_shelter": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/norse_root_ruin.nbt",
+     "size": [
+      5,
+      6,
+      5
+     ],
+     "blocks": 51,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/ruined/paths",
+       "count": 4
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "ruined/smithy": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/norse_smithy_ruin.nbt",
+     "size": [
+      14,
+      12,
+      12
+     ],
+     "blocks": 673,
+     "dropped": 1,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/ruined/paths",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "ruined/straight_long": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/straight_long.nbt",
+     "size": [
+      20,
+      4,
+      3
+     ],
+     "blocks": 60,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/ruined/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "ruined/straight_medium": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/straight_medium.nbt",
+     "size": [
+      15,
+      4,
+      3
+     ],
+     "blocks": 45,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/ruined/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "ruined/straight_short": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/straight_short.nbt",
+     "size": [
+      10,
+      4,
+      3
+     ],
+     "blocks": 30,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/ruined/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "ruined/t_junction": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/t_junction.nbt",
+     "size": [
+      10,
+      4,
+      13
+     ],
+     "blocks": 64,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/ruined/buildings",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "ruined/turf_house_burned": {
+     "source": "kubejs/data/tfg/structures/norse/burned/norse_mosshouse_burn.nbt",
+     "size": [
+      11,
+      6,
+      12
+     ],
+     "blocks": 340,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "ruined/smithy_burned": {
+     "source": "kubejs/data/tfg/structures/norse/burned/norse_smithy_burn.nbt",
+     "size": [
+      14,
+      9,
+      12
+     ],
+     "blocks": 507,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/ruined/paths",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "burned/bend_left": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/bend_left.nbt",
+     "size": [
+      10,
+      4,
+      10
+     ],
+     "blocks": 54,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/burned/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "burned/bend_right": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/bend_right.nbt",
+     "size": [
+      10,
+      4,
+      10
+     ],
+     "blocks": 54,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/burned/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "burned/cross": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/cross.nbt",
+     "size": [
+      15,
+      4,
+      15
+     ],
+     "blocks": 87,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/burned/buildings",
+       "count": 3
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "burned/fork_left": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/fork_left.nbt",
+     "size": [
+      15,
+      4,
+      9
+     ],
+     "blocks": 67,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/burned/buildings",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "burned/fork_right": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/fork_right.nbt",
+     "size": [
+      15,
+      4,
+      10
+     ],
+     "blocks": 70,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/burned/buildings",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "burned/burial_mound": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/norse_burial_ruin.nbt",
+     "size": [
+      7,
+      4,
+      10
+     ],
+     "blocks": 126,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "burned/farmhouse": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/norse_farmhouse_ruin.nbt",
+     "size": [
+      18,
+      13,
+      11
+     ],
+     "blocks": 766,
+     "dropped": 1,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/burned/paths",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "burned/large_farmhouse": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/norse_farmhousebig_ruin.nbt",
+     "size": [
+      11,
+      11,
+      12
+     ],
+     "blocks": 490,
+     "dropped": 1,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "burned/longhouse": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/norse_longhouse_ruin.nbt",
+     "size": [
+      25,
+      12,
+      15
+     ],
+     "blocks": 1551,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/burned/paths",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "burned/turf_house": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/norse_mosshouse_ruin.nbt",
+     "size": [
+      13,
+      8,
+      11
+     ],
+     "blocks": 487,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "burned/gathering_shelter": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/norse_root_ruin.nbt",
+     "size": [
+      5,
+      6,
+      5
+     ],
+     "blocks": 51,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/burned/paths",
+       "count": 4
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "burned/smithy": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/norse_smithy_ruin.nbt",
+     "size": [
+      14,
+      12,
+      12
+     ],
+     "blocks": 673,
+     "dropped": 1,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/burned/paths",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "burned/straight_long": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/straight_long.nbt",
+     "size": [
+      20,
+      4,
+      3
+     ],
+     "blocks": 60,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/burned/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "burned/straight_medium": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/straight_medium.nbt",
+     "size": [
+      15,
+      4,
+      3
+     ],
+     "blocks": 45,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/burned/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "burned/straight_short": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/straight_short.nbt",
+     "size": [
+      10,
+      4,
+      3
+     ],
+     "blocks": 30,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/burned/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "burned/t_junction": {
+     "source": "kubejs/data/tfg/structures/norse/ruins/t_junction.nbt",
+     "size": [
+      10,
+      4,
+      13
+     ],
+     "blocks": 64,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/burned/buildings",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "burned/turf_house_burned": {
+     "source": "kubejs/data/tfg/structures/norse/burned/norse_mosshouse_burn.nbt",
+     "size": [
+      11,
+      6,
+      12
+     ],
+     "blocks": 340,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "burned/smithy_burned": {
+     "source": "kubejs/data/tfg/structures/norse/burned/norse_smithy_burn.nbt",
+     "size": [
+      14,
+      9,
+      12
+     ],
+     "blocks": 507,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/norse/burned/paths",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    }
+   }
+  },
+  "arabic": {
+   "woods": {
+    "palm": {
+     "blocks": 514,
+     "rank": "oak"
+    },
+    "acacia": {
+     "blocks": 249,
+     "rank": "spruce"
+    },
+    "blackwood": {
+     "blocks": 238,
+     "rank": "birch"
+    },
+    "ironwood": {
+     "blocks": 182,
+     "rank": "birch"
+    },
+    "baobab": {
+     "blocks": 129,
+     "rank": "birch"
+    },
+    "gum_arabic": {
+     "blocks": 69,
+     "rank": "birch"
+    }
+   },
+   "pieces": {
+    "living/caravanserai": {
+     "source": "kubejs/data/tfg/structures/arabic/baseline/barracks.nbt",
+     "size": [
+      16,
+      18,
+      21
+     ],
+     "blocks": 1369,
+     "dropped": 38,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/arabic/living/paths",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/arabic/living/npc_commoner",
+       "count": 4
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/arabic/living/npc_merchant",
+       "count": 2
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/arabic/living/npc_outdoors",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/bend_left": {
+     "source": "kubejs/data/tfg/structures/arabic/baseline/bend_left.nbt",
+     "size": [
+      10,
+      4,
+      10
+     ],
+     "blocks": 54,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/arabic/living/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/bend_right": {
+     "source": "kubejs/data/tfg/structures/arabic/baseline/bend_right.nbt",
+     "size": [
+      10,
+      4,
+      10
+     ],
+     "blocks": 54,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/arabic/living/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/cross": {
+     "source": "kubejs/data/tfg/structures/arabic/baseline/cross.nbt",
+     "size": [
+      15,
+      4,
+      15
+     ],
+     "blocks": 87,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/arabic/living/buildings",
+       "count": 3
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/fork_left": {
+     "source": "kubejs/data/tfg/structures/arabic/baseline/fork_left.nbt",
+     "size": [
+      15,
+      4,
+      9
+     ],
+     "blocks": 67,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/arabic/living/buildings",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/fork_right": {
+     "source": "kubejs/data/tfg/structures/arabic/baseline/fork_right.nbt",
+     "size": [
+      15,
+      4,
+      10
+     ],
+     "blocks": 70,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/arabic/living/buildings",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/courtyard_house_1": {
+     "source": "kubejs/data/tfg/structures/arabic/baseline/house1.nbt",
+     "size": [
+      11,
+      8,
+      15
+     ],
+     "blocks": 672,
+     "dropped": 2,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/arabic/living/paths",
+       "count": 2
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "minecraft:empty",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/arabic/living/npc_commoner",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 4
+      }
+     ]
+    },
+    "living/courtyard_house_2": {
+     "source": "kubejs/data/tfg/structures/arabic/baseline/house2.nbt",
+     "size": [
+      11,
+      11,
+      14
+     ],
+     "blocks": 611,
+     "dropped": 45,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/arabic/living/paths",
+       "count": 3
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "minecraft:empty",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/arabic/living/npc_commoner",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 2
+      }
+     ]
+    },
+    "living/courtyard_house_3": {
+     "source": "kubejs/data/tfg/structures/arabic/baseline/house3.nbt",
+     "size": [
+      11,
+      8,
+      15
+     ],
+     "blocks": 673,
+     "dropped": 2,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/arabic/living/paths",
+       "count": 2
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "minecraft:empty",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/arabic/living/npc_commoner",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 4
+      }
+     ]
+    },
+    "living/courtyard_house_4": {
+     "source": "kubejs/data/tfg/structures/arabic/baseline/house4.nbt",
+     "size": [
+      11,
+      9,
+      14
+     ],
+     "blocks": 592,
+     "dropped": 15,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/arabic/living/paths",
+       "count": 3
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "minecraft:empty",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/arabic/living/npc_commoner",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 2
+      }
+     ]
+    },
+    "living/garden_house": {
+     "source": "kubejs/data/tfg/structures/arabic/baseline/house_garden.nbt",
+     "size": [
+      18,
+      8,
+      14
+     ],
+     "blocks": 1026,
+     "dropped": 9,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/arabic/living/paths",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "minecraft:empty",
+       "count": 3
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/arabic/living/npc_outdoors",
+       "count": 3
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/smithy": {
+     "source": "kubejs/data/tfg/structures/arabic/baseline/smithy.nbt",
+     "size": [
+      9,
+      11,
+      18
+     ],
+     "blocks": 751,
+     "dropped": 2,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/arabic/living/paths",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "minecraft:empty",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/arabic/living/npc_commoner",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/arabic/living/npc_smith",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/stall_grey": {
+     "source": "kubejs/data/tfg/structures/arabic/baseline/stall_gray.nbt",
+     "size": [
+      5,
+      5,
+      5
+     ],
+     "blocks": 46,
+     "dropped": 20,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/stall_green": {
+     "source": "kubejs/data/tfg/structures/arabic/baseline/stall_green.nbt",
+     "size": [
+      5,
+      5,
+      5
+     ],
+     "blocks": 46,
+     "dropped": 20,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/stall_yellow": {
+     "source": "kubejs/data/tfg/structures/arabic/baseline/stall_yellow.nbt",
+     "size": [
+      5,
+      5,
+      5
+     ],
+     "blocks": 46,
+     "dropped": 20,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/straight_long": {
+     "source": "kubejs/data/tfg/structures/arabic/baseline/straight_long.nbt",
+     "size": [
+      20,
+      4,
+      3
+     ],
+     "blocks": 60,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/arabic/living/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/straight_medium": {
+     "source": "kubejs/data/tfg/structures/arabic/baseline/straight_medium.nbt",
+     "size": [
+      15,
+      4,
+      3
+     ],
+     "blocks": 45,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/arabic/living/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/straight_short": {
+     "source": "kubejs/data/tfg/structures/arabic/baseline/straight_short.nbt",
+     "size": [
+      10,
+      4,
+      3
+     ],
+     "blocks": 30,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/arabic/living/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/t_junction": {
+     "source": "kubejs/data/tfg/structures/arabic/baseline/t_junction.nbt",
+     "size": [
+      10,
+      4,
+      13
+     ],
+     "blocks": 64,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/arabic/living/buildings",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/well": {
+     "source": "kubejs/data/tfg/structures/arabic/baseline/well.nbt",
+     "size": [
+      9,
+      8,
+      9
+     ],
+     "blocks": 281,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/arabic/living/paths",
+       "count": 4
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/arabic/living/npc_outdoors",
+       "count": 4
+      }
+     ]
+    }
+   }
+  },
+  "malay": {
+   "woods": {
+    "kapok": {
+     "blocks": 1740,
+     "rank": "oak"
+    },
+    "cypress": {
+     "blocks": 462,
+     "rank": "spruce"
+    },
+    "mangrove": {
+     "blocks": 418,
+     "rank": "birch"
+    },
+    "mahogany": {
+     "blocks": 373,
+     "rank": "birch"
+    },
+    "rosewood": {
+     "blocks": 257,
+     "rank": "birch"
+    },
+    "chestnut": {
+     "blocks": 175,
+     "rank": "birch"
+    },
+    "teak": {
+     "blocks": 72,
+     "rank": "birch"
+    }
+   },
+   "pieces": {
+    "living/bend_left": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/bend_left.nbt",
+     "size": [
+      10,
+      4,
+      10
+     ],
+     "blocks": 54,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/malay/living/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/bend_right": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/bend_right.nbt",
+     "size": [
+      10,
+      4,
+      10
+     ],
+     "blocks": 54,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/malay/living/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/rumah_bujang_a": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/bujang_basic.nbt",
+     "size": [
+      11,
+      16,
+      13
+     ],
+     "blocks": 583,
+     "dropped": 8,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "minecraft:empty",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/malay/living/npc_commoner",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/rumah_bujang_b": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/bujang_basic1.nbt",
+     "size": [
+      11,
+      16,
+      13
+     ],
+     "blocks": 582,
+     "dropped": 8,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "minecraft:empty",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/malay/living/npc_commoner",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/rumah_bujang_c": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/bujang_basic2.nbt",
+     "size": [
+      11,
+      16,
+      13
+     ],
+     "blocks": 582,
+     "dropped": 8,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "minecraft:empty",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/malay/living/npc_commoner",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/rumah_bujang_dual_a": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/bujang_two_way.nbt",
+     "size": [
+      11,
+      16,
+      16
+     ],
+     "blocks": 728,
+     "dropped": 8,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/malay/living/paths",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "minecraft:empty",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/malay/living/npc_commoner",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/rumah_bujang_dual_b": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/bujang_two_way1.nbt",
+     "size": [
+      11,
+      16,
+      16
+     ],
+     "blocks": 727,
+     "dropped": 8,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/malay/living/paths",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "minecraft:empty",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/malay/living/npc_commoner",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/rumah_bujang_dual_c": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/bujang_two_way2.nbt",
+     "size": [
+      11,
+      16,
+      16
+     ],
+     "blocks": 727,
+     "dropped": 8,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/malay/living/paths",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "minecraft:empty",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/malay/living/npc_commoner",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/cross": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/cross.nbt",
+     "size": [
+      15,
+      4,
+      15
+     ],
+     "blocks": 87,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/malay/living/buildings",
+       "count": 3
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/fork_left": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/fork_left.nbt",
+     "size": [
+      15,
+      4,
+      9
+     ],
+     "blocks": 67,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/malay/living/buildings",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/fork_right": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/fork_right.nbt",
+     "size": [
+      15,
+      4,
+      10
+     ],
+     "blocks": 70,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/malay/living/buildings",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/kitchen": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/kitchen.nbt",
+     "size": [
+      11,
+      5,
+      7
+     ],
+     "blocks": 74,
+     "dropped": 1,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": [
+      4,
+      1,
+      3
+     ],
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/malay/living/paths",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/malay/living/npc_cook",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/sloop": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/sloop.nbt",
+     "size": [
+      9,
+      4,
+      6
+     ],
+     "blocks": 103,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": [
+      4,
+      0,
+      0
+     ],
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/malay/living/npc_boatwright",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 2
+      }
+     ]
+    },
+    "living/smithy": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/smithy_start_pool.nbt",
+     "size": [
+      11,
+      11,
+      11
+     ],
+     "blocks": 258,
+     "dropped": 2,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": [
+      4,
+      0,
+      7
+     ],
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/malay/living/paths",
+       "count": 4
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/malay/living/npc_smith",
+       "count": 1
+      }
+     ]
+    },
+    "living/straight_long": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/straight_long.nbt",
+     "size": [
+      20,
+      4,
+      3
+     ],
+     "blocks": 60,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/malay/living/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/straight_medium": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/straight_medium.nbt",
+     "size": [
+      15,
+      4,
+      3
+     ],
+     "blocks": 45,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/malay/living/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/straight_short": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/straight_short.nbt",
+     "size": [
+      10,
+      4,
+      3
+     ],
+     "blocks": 30,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/malay/living/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/t_junction": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/t_junction.nbt",
+     "size": [
+      10,
+      4,
+      13
+     ],
+     "blocks": 64,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/malay/living/buildings",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    }
+   }
+  },
+  "minang": {
+   "woods": {
+    "kapok": {
+     "blocks": 1744,
+     "rank": "oak"
+    },
+    "mahogany": {
+     "blocks": 1287,
+     "rank": "spruce"
+    },
+    "cypress": {
+     "blocks": 1236,
+     "rank": "birch"
+    },
+    "mangrove": {
+     "blocks": 418,
+     "rank": "birch"
+    },
+    "chestnut": {
+     "blocks": 378,
+     "rank": "birch"
+    },
+    "teak": {
+     "blocks": 360,
+     "rank": "birch"
+    },
+    "rosewood": {
+     "blocks": 257,
+     "rank": "birch"
+    },
+    "douglas_fir": {
+     "blocks": 8,
+     "rank": "birch"
+    },
+    "maple": {
+     "blocks": 8,
+     "rank": "birch"
+    }
+   },
+   "pieces": {
+    "living/bend_left": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/bend_left.nbt",
+     "size": [
+      10,
+      4,
+      10
+     ],
+     "blocks": 54,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/minang/living/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/bend_right": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/bend_right.nbt",
+     "size": [
+      10,
+      4,
+      10
+     ],
+     "blocks": 54,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/minang/living/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/rumah_bujang_a": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/bujang_basic.nbt",
+     "size": [
+      11,
+      16,
+      13
+     ],
+     "blocks": 583,
+     "dropped": 8,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "minecraft:empty",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/minang/living/npc_commoner",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/rumah_bujang_b": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/bujang_basic1.nbt",
+     "size": [
+      11,
+      16,
+      13
+     ],
+     "blocks": 582,
+     "dropped": 8,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "minecraft:empty",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/minang/living/npc_commoner",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/rumah_bujang_c": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/bujang_basic2.nbt",
+     "size": [
+      11,
+      16,
+      13
+     ],
+     "blocks": 582,
+     "dropped": 8,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "minecraft:empty",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/minang/living/npc_commoner",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/rumah_bujang_dual_a": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/bujang_two_way.nbt",
+     "size": [
+      11,
+      16,
+      16
+     ],
+     "blocks": 728,
+     "dropped": 8,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/minang/living/paths",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "minecraft:empty",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/minang/living/npc_commoner",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/rumah_bujang_dual_b": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/bujang_two_way1.nbt",
+     "size": [
+      11,
+      16,
+      16
+     ],
+     "blocks": 727,
+     "dropped": 8,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/minang/living/paths",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "minecraft:empty",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/minang/living/npc_commoner",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/rumah_bujang_dual_c": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/bujang_two_way2.nbt",
+     "size": [
+      11,
+      16,
+      16
+     ],
+     "blocks": 727,
+     "dropped": 8,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/minang/living/paths",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "minecraft:empty",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/minang/living/npc_commoner",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/cross": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/cross.nbt",
+     "size": [
+      15,
+      4,
+      15
+     ],
+     "blocks": 87,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/minang/living/buildings",
+       "count": 3
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/fork_left": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/fork_left.nbt",
+     "size": [
+      15,
+      4,
+      9
+     ],
+     "blocks": 67,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/minang/living/buildings",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/fork_right": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/fork_right.nbt",
+     "size": [
+      15,
+      4,
+      10
+     ],
+     "blocks": 70,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/minang/living/buildings",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/rumah_gadang": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/gadang.nbt",
+     "size": [
+      25,
+      26,
+      25
+     ],
+     "blocks": 2130,
+     "dropped": 4,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 2
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "minecraft:empty",
+       "count": 3
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/minang/living/npc_commoner",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "pack:connector",
+       "pool": "pack:village/minang/living/paths",
+       "count": 1
+      }
+     ]
+    },
+    "living/kitchen": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/kitchen.nbt",
+     "size": [
+      11,
+      5,
+      7
+     ],
+     "blocks": 74,
+     "dropped": 1,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": [
+      4,
+      1,
+      3
+     ],
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/minang/living/paths",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/minang/living/npc_cook",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/sloop": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/sloop.nbt",
+     "size": [
+      9,
+      4,
+      6
+     ],
+     "blocks": 103,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": [
+      4,
+      0,
+      0
+     ],
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/minang/living/npc_boatwright",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 2
+      }
+     ]
+    },
+    "living/smithy": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/smithy_start_pool.nbt",
+     "size": [
+      11,
+      11,
+      11
+     ],
+     "blocks": 258,
+     "dropped": 2,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": [
+      4,
+      0,
+      7
+     ],
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/minang/living/paths",
+       "count": 4
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/minang/living/npc_smith",
+       "count": 1
+      }
+     ]
+    },
+    "living/straight_long": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/straight_long.nbt",
+     "size": [
+      20,
+      4,
+      3
+     ],
+     "blocks": 60,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/minang/living/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/straight_medium": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/straight_medium.nbt",
+     "size": [
+      15,
+      4,
+      3
+     ],
+     "blocks": 45,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/minang/living/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/straight_short": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/straight_short.nbt",
+     "size": [
+      10,
+      4,
+      3
+     ],
+     "blocks": 30,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/minang/living/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/t_junction": {
+     "source": "kubejs/data/tfg/structures/malay/baseline/t_junction.nbt",
+     "size": [
+      10,
+      4,
+      13
+     ],
+     "blocks": 64,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/minang/living/buildings",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    }
+   }
+  },
+  "steppe": {
+   "woods": {
+    "chestnut": {
+     "blocks": 902,
+     "rank": "oak"
+    },
+    "pine": {
+     "blocks": 123,
+     "rank": "spruce"
+    },
+    "white_cedar": {
+     "blocks": 106,
+     "rank": "birch"
+    },
+    "ash": {
+     "blocks": 55,
+     "rank": "birch"
+    },
+    "rosewood": {
+     "blocks": 6,
+     "rank": "birch"
+    },
+    "poplar": {
+     "blocks": 2,
+     "rank": "birch"
+    },
+    "hickory": {
+     "blocks": 1,
+     "rank": "birch"
+    }
+   },
+   "pieces": {
+    "living/bend_left": {
+     "source": "kubejs/data/tfg/structures/yurts/baseline/bend_left.nbt",
+     "size": [
+      10,
+      4,
+      10
+     ],
+     "blocks": 54,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/steppe/living/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/bend_right": {
+     "source": "kubejs/data/tfg/structures/yurts/baseline/bend_right.nbt",
+     "size": [
+      10,
+      4,
+      10
+     ],
+     "blocks": 54,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/steppe/living/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/cross": {
+     "source": "kubejs/data/tfg/structures/yurts/baseline/cross.nbt",
+     "size": [
+      15,
+      4,
+      15
+     ],
+     "blocks": 87,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/steppe/living/buildings",
+       "count": 3
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/fork_left": {
+     "source": "kubejs/data/tfg/structures/yurts/baseline/fork_left.nbt",
+     "size": [
+      15,
+      4,
+      9
+     ],
+     "blocks": 67,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/steppe/living/buildings",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/fork_right": {
+     "source": "kubejs/data/tfg/structures/yurts/baseline/fork_right.nbt",
+     "size": [
+      15,
+      4,
+      10
+     ],
+     "blocks": 70,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/steppe/living/buildings",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/yurt_1": {
+     "source": "kubejs/data/tfg/structures/yurts/baseline/house1.nbt",
+     "size": [
+      13,
+      8,
+      13
+     ],
+     "blocks": 683,
+     "dropped": 2,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/steppe/living/npc_commoner",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/yurt_2": {
+     "source": "kubejs/data/tfg/structures/yurts/baseline/house2.nbt",
+     "size": [
+      12,
+      8,
+      13
+     ],
+     "blocks": 645,
+     "dropped": 31,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/steppe/living/paths",
+       "count": 2
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/steppe/living/npc_commoner",
+       "count": 3
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 2
+      }
+     ]
+    },
+    "living/yurt_3": {
+     "source": "kubejs/data/tfg/structures/yurts/baseline/house3.nbt",
+     "size": [
+      12,
+      8,
+      13
+     ],
+     "blocks": 679,
+     "dropped": 13,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/steppe/living/paths",
+       "count": 2
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "minecraft:empty",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/steppe/living/npc_commoner",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 2
+      }
+     ]
+    },
+    "living/larder": {
+     "source": "kubejs/data/tfg/structures/yurts/baseline/larder.nbt",
+     "size": [
+      8,
+      5,
+      8
+     ],
+     "blocks": 86,
+     "dropped": 5,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/steppe/living/paths",
+       "count": 2
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/steppe/living/npc_outdoors",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/deer_stones": {
+     "source": "kubejs/data/tfg/structures/yurts/baseline/monument.nbt",
+     "size": [
+      10,
+      5,
+      5
+     ],
+     "blocks": 108,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/steppe/living/paths",
+       "count": 4
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/steppe/living/npc_outdoors",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 4
+      }
+     ]
+    },
+    "living/archery_ground": {
+     "source": "kubejs/data/tfg/structures/yurts/baseline/shooting_range.nbt",
+     "size": [
+      8,
+      7,
+      18
+     ],
+     "blocks": 488,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/steppe/living/paths",
+       "count": 2
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/steppe/living/npc_bowyer",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/steppe/living/npc_outdoors",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/stable": {
+     "source": "kubejs/data/tfg/structures/yurts/baseline/stable.nbt",
+     "size": [
+      9,
+      5,
+      11
+     ],
+     "blocks": 267,
+     "dropped": 2,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/steppe/living/npc_outdoors",
+       "count": 3
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/straight_long": {
+     "source": "kubejs/data/tfg/structures/yurts/baseline/straight_long.nbt",
+     "size": [
+      20,
+      4,
+      3
+     ],
+     "blocks": 60,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/steppe/living/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/straight_medium": {
+     "source": "kubejs/data/tfg/structures/yurts/baseline/straight_medium.nbt",
+     "size": [
+      15,
+      4,
+      3
+     ],
+     "blocks": 45,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/steppe/living/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/straight_short": {
+     "source": "kubejs/data/tfg/structures/yurts/baseline/straight_short.nbt",
+     "size": [
+      10,
+      4,
+      3
+     ],
+     "blocks": 30,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/steppe/living/buildings",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/t_junction": {
+     "source": "kubejs/data/tfg/structures/yurts/baseline/t_junction.nbt",
+     "size": [
+      10,
+      4,
+      13
+     ],
+     "blocks": 64,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/steppe/living/buildings",
+       "count": 2
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/gathering_tent": {
+     "source": "kubejs/data/tfg/structures/yurts/baseline/throne_house.nbt",
+     "size": [
+      17,
+      10,
+      20
+     ],
+     "blocks": 1429,
+     "dropped": 4,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/steppe/living/paths",
+       "count": 3
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "minecraft:empty",
+       "count": 4
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/steppe/living/npc_outdoors",
+       "count": 1
+      }
+     ]
+    },
+    "living/lookout": {
+     "source": "kubejs/data/tfg/structures/yurts/baseline/tower.nbt",
+     "size": [
+      7,
+      11,
+      7
+     ],
+     "blocks": 179,
+     "dropped": 4,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/steppe/living/paths",
+       "count": 2
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/steppe/living/npc_outdoors",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 2
+      }
+     ]
+    },
+    "living/workshop": {
+     "source": "kubejs/data/tfg/structures/yurts/baseline/workshop.nbt",
+     "size": [
+      7,
+      5,
+      10
+     ],
+     "blocks": 125,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:connector",
+       "pool": "pack:village/steppe/living/paths",
+       "count": 2
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/steppe/living/npc_outdoors",
+       "count": 1
+      },
+      {
+       "name": "pack:connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 2
+      }
+     ]
+    }
+   }
+  },
+  "temperate": {
+   "woods": {
+    "birch": {
+     "blocks": 185,
+     "rank": "oak"
+    }
+   },
+   "pieces": {
+    "living/farmhouse_a": {
+     "source": "kubejs/data/tfg/structures/temperate/plains_temperate_house_0_0.nbt",
+     "size": [
+      17,
+      10,
+      17
+     ],
+     "blocks": 689,
+     "dropped": 18,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": [
+      10,
+      0,
+      10
+     ],
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/temperate/living/npc_farmer",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:road_0_connector",
+       "pool": "pack:village/temperate/living/track",
+       "count": 1
+      }
+     ]
+    },
+    "living/farmhouse_b": {
+     "source": "kubejs/data/tfg/structures/temperate/plains_temperate_house_0_1.nbt",
+     "size": [
+      17,
+      10,
+      17
+     ],
+     "blocks": 585,
+     "dropped": 17,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": [
+      12,
+      0,
+      10
+     ],
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/temperate/living/npc_farmer",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:road_0_connector",
+       "pool": "pack:village/temperate/living/track",
+       "count": 1
+      }
+     ]
+    },
+    "living/farmhouse_c": {
+     "source": "kubejs/data/tfg/structures/temperate/plains_temperate_house_0_2.nbt",
+     "size": [
+      17,
+      11,
+      17
+     ],
+     "blocks": 575,
+     "dropped": 3,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": [
+      5,
+      0,
+      8
+     ],
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:npc_connector",
+       "pool": "pack:village/temperate/living/npc_farmer",
+       "count": 1
+      }
+     ]
+    },
+    "living/track_a": {
+     "source": "kubejs/data/tfg/structures/temperate/plains_temperate_road_0_0.nbt",
+     "size": [
+      10,
+      2,
+      6
+     ],
+     "blocks": 35,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "pack:road_0_connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "living/track_b": {
+     "source": "kubejs/data/tfg/structures/temperate/plains_temperate_road_0_1.nbt",
+     "size": [
+      10,
+      2,
+      6
+     ],
+     "blocks": 28,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "pack:road_0_connector",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    }
+   }
+  },
+  "aqueduct": {
+   "woods": {
+    "maple": {
+     "blocks": 37,
+     "rank": "oak"
+    }
+   },
+   "pieces": {
+    "main/aqueduct_0_0": {
+     "source": "kubejs/data/tfg/structures/aqueduct/aqueduct_0_0.nbt",
+     "size": [
+      16,
+      9,
+      1
+     ],
+     "blocks": 56,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:aqueduct_east",
+       "pool": "pack:village/aqueduct/main/connector",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:aqueduct_leg_0_0",
+       "pool": "pack:village/aqueduct/main/leg",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:aqueduct_tank",
+       "pool": "pack:village/aqueduct/main/tank",
+       "count": 1
+      }
+     ]
+    },
+    "main/aqueduct_0_1": {
+     "source": "kubejs/data/tfg/structures/aqueduct/aqueduct_0_1.nbt",
+     "size": [
+      16,
+      9,
+      1
+     ],
+     "blocks": 53,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:aqueduct_east",
+       "pool": "pack:village/aqueduct/main/connector",
+       "count": 1
+      },
+      {
+       "name": "minecraft:empty",
+       "target": "pack:aqueduct_leg_0_0",
+       "pool": "pack:village/aqueduct/main/leg",
+       "count": 1
+      }
+     ]
+    },
+    "main/aqueduct_connector_0_0": {
+     "source": "kubejs/data/tfg/structures/aqueduct/aqueduct_connector_0_0.nbt",
+     "size": [
+      32,
+      9,
+      1
+     ],
+     "blocks": 112,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:aqueduct_leg_0_1",
+       "pool": "pack:village/aqueduct/main/leg",
+       "count": 1
+      },
+      {
+       "name": "pack:aqueduct_east",
+       "target": "pack:aqueduct_west",
+       "pool": "pack:village/aqueduct/main/connector",
+       "count": 1
+      },
+      {
+       "name": "pack:aqueduct_west",
+       "target": "pack:aqueduct_east",
+       "pool": "pack:village/aqueduct/main/connector",
+       "count": 1
+      }
+     ]
+    },
+    "main/aqueduct_connector_0_1": {
+     "source": "kubejs/data/tfg/structures/aqueduct/aqueduct_connector_0_1.nbt",
+     "size": [
+      32,
+      9,
+      1
+     ],
+     "blocks": 99,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:aqueduct_leg_0_1",
+       "pool": "pack:village/aqueduct/main/leg",
+       "count": 1
+      },
+      {
+       "name": "pack:aqueduct_east",
+       "target": "pack:aqueduct_west",
+       "pool": "pack:village/aqueduct/main/connector",
+       "count": 1
+      },
+      {
+       "name": "pack:aqueduct_west",
+       "target": "pack:aqueduct_east",
+       "pool": "pack:village/aqueduct/main/connector",
+       "count": 1
+      }
+     ]
+    },
+    "main/aqueduct_connector_1_0": {
+     "source": "kubejs/data/tfg/structures/aqueduct/aqueduct_connector_1_0.nbt",
+     "size": [
+      20,
+      9,
+      10
+     ],
+     "blocks": 100,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:aqueduct_leg_0_2",
+       "pool": "pack:village/aqueduct/main/leg",
+       "count": 1
+      },
+      {
+       "name": "pack:aqueduct_east",
+       "target": "pack:aqueduct_west",
+       "pool": "pack:village/aqueduct/main/connector",
+       "count": 1
+      },
+      {
+       "name": "pack:aqueduct_west",
+       "target": "pack:aqueduct_east",
+       "pool": "pack:village/aqueduct/main/connector",
+       "count": 2
+      }
+     ]
+    },
+    "main/aqueduct_connector_1_1": {
+     "source": "kubejs/data/tfg/structures/aqueduct/aqueduct_connector_1_1.nbt",
+     "size": [
+      20,
+      9,
+      10
+     ],
+     "blocks": 94,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:aqueduct_leg_0_2",
+       "pool": "pack:village/aqueduct/main/leg",
+       "count": 1
+      },
+      {
+       "name": "pack:aqueduct_east",
+       "target": "pack:aqueduct_west",
+       "pool": "pack:village/aqueduct/main/connector",
+       "count": 1
+      },
+      {
+       "name": "pack:aqueduct_west",
+       "target": "pack:aqueduct_east",
+       "pool": "pack:village/aqueduct/main/connector",
+       "count": 2
+      }
+     ]
+    },
+    "main/aqueduct_connector_2_0": {
+     "source": "kubejs/data/tfg/structures/aqueduct/aqueduct_connector_2_0.nbt",
+     "size": [
+      11,
+      9,
+      10
+     ],
+     "blocks": 70,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:aqueduct_leg_0_3",
+       "pool": "pack:village/aqueduct/main/leg",
+       "count": 1
+      },
+      {
+       "name": "pack:aqueduct_east",
+       "target": "pack:aqueduct_west",
+       "pool": "pack:village/aqueduct/main/connector",
+       "count": 1
+      },
+      {
+       "name": "pack:aqueduct_west",
+       "target": "pack:aqueduct_east",
+       "pool": "pack:village/aqueduct/main/connector",
+       "count": 1
+      }
+     ]
+    },
+    "main/aqueduct_connector_2_1": {
+     "source": "kubejs/data/tfg/structures/aqueduct/aqueduct_connector_2_1.nbt",
+     "size": [
+      11,
+      9,
+      10
+     ],
+     "blocks": 63,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "minecraft:empty",
+       "target": "pack:aqueduct_leg_0_3",
+       "pool": "pack:village/aqueduct/main/leg",
+       "count": 1
+      },
+      {
+       "name": "pack:aqueduct_east",
+       "target": "pack:aqueduct_west",
+       "pool": "pack:village/aqueduct/main/connector",
+       "count": 1
+      },
+      {
+       "name": "pack:aqueduct_west",
+       "target": "pack:aqueduct_east",
+       "pool": "pack:village/aqueduct/main/connector",
+       "count": 1
+      }
+     ]
+    },
+    "main/aqueduct_leg_0_0": {
+     "source": "kubejs/data/tfg/structures/aqueduct/aqueduct_leg_0_0.nbt",
+     "size": [
+      16,
+      32,
+      1
+     ],
+     "blocks": 128,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "pack:aqueduct_leg_0_0",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "main/aqueduct_leg_0_1": {
+     "source": "kubejs/data/tfg/structures/aqueduct/aqueduct_leg_0_1.nbt",
+     "size": [
+      32,
+      32,
+      1
+     ],
+     "blocks": 256,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "pack:aqueduct_leg_0_1",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "main/aqueduct_leg_0_2": {
+     "source": "kubejs/data/tfg/structures/aqueduct/aqueduct_leg_0_2.nbt",
+     "size": [
+      20,
+      32,
+      10
+     ],
+     "blocks": 224,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "pack:aqueduct_leg_0_2",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "main/aqueduct_leg_0_3": {
+     "source": "kubejs/data/tfg/structures/aqueduct/aqueduct_leg_0_3.nbt",
+     "size": [
+      11,
+      32,
+      10
+     ],
+     "blocks": 160,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "pack:aqueduct_leg_0_3",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    },
+    "main/aqueduct_tank_0_0": {
+     "source": "kubejs/data/tfg/structures/aqueduct/aqueduct_tank_0_0.nbt",
+     "size": [
+      3,
+      10,
+      3
+     ],
+     "blocks": 60,
+     "dropped": 0,
+     "unmapped": 0,
+     "dropped_entities": [],
+     "npc_spot": null,
+     "jigsaws": [
+      {
+       "name": "pack:aqueduct_tank",
+       "target": "minecraft:empty",
+       "pool": "minecraft:empty",
+       "count": 1
+      }
+     ]
+    }
+   }
+  }
+ },
+ "unmapped": {
+  "norse": {},
+  "arabic": {},
+  "malay": {},
+  "minang": {},
+  "steppe": {},
+  "temperate": {},
+  "aqueduct": {}
+ },
+ "missing_targets": {
+  "norse": [],
+  "arabic": [],
+  "malay": [],
+  "minang": [],
+  "steppe": [],
+  "temperate": [],
+  "aqueduct": []
+ },
+ "substitutions": {
+  "norse": {
+   "additionalplacements": {
+    "additionalplacements:rnr.wood/shingles/willow_stairs -> rnr:wood/shingles/spruce_stairs": 34,
+    "additionalplacements:rnr.wood/shingles/willow_slab -> rnr:wood/shingles/spruce_slab": 8,
+    "additionalplacements:tfc.wood/planks/hickory_stairs -> tfc:wood/planks/oak_stairs": 6,
+    "additionalplacements:tfc.wood/planks/willow_slab -> tfc:wood/planks/spruce_slab": 2,
+    "additionalplacements:tfc.wood/planks/willow_stairs -> tfc:wood/planks/spruce_stairs": 2
+   },
+   "barrel": {
+    "afc:wood/big_barrel/cypress -> tfc:wood/barrel/birch": 8,
+    "firmalife:wood/stomping_barrel/hickory -> tfc:wood/barrel/oak": 3,
+    "firmalife:wood/stomping_barrel/willow -> tfc:wood/barrel/spruce": 1
+   },
+   "drop": 13,
+   "exact": {
+    "minecraft:cave_air -> minecraft:air": 7688,
+    "minecraft:moss_block -> tfc:grass/alfisol": 152,
+    "tfg:gabbro_support -> tfc:rock/bricks/granite_wall": 7,
+    "minecraft:campfire -> tfc:firepit": 4
+   },
+   "framed": {
+    "framedblocks:framed_slab -> framedblocks:framed_slab": 211,
+    "framedblocks:framed_stairs -> framedblocks:framed_stairs": 128,
+    "framedblocks:framed_wall -> framedblocks:framed_wall": 66,
+    "framedblocks:framed_slab_edge -> framedblocks:framed_slab_edge": 60,
+    "framedblocks:framed_pillar -> framedblocks:framed_pillar": 20,
+    "framedblocks:framed_double_slab -> framedblocks:framed_double_slab": 8,
+    "framedblocks:framed_half_pillar -> framedblocks:framed_half_pillar": 2,
+    "framedblocks:framed_post -> framedblocks:framed_post": 2,
+    "framedblocks:framed_cube -> framedblocks:framed_cube": 1
+   },
+   "ladder": {
+    "minecraft:ladder -> framedblocks:framed_ladder": 38
+   },
+   "lootr": {
+    "lootr:lootr_chest -> tfc:wood/chest/oak": 18
+   },
+   "map": {
+    "tfg:charred_log -> tfc:wood/log/oak": 208,
+    "tfg:ash_pile -> tfc:charcoal_pile": 182
+   },
+   "mcw-chair": {
+    "mcw_tfc_aio:furniture/hickory_furniture/stripped_hickory_chair -> tfc:wood/planks/oak_stairs": 2
+   },
+   "mcw-table": {
+    "mcw_tfc_aio:furniture/willow_furniture/stripped_willow_coffee_table -> tfc:wood/planks/spruce_slab": 2,
+    "mcw_tfc_aio:furniture/willow_furniture/willow_coffee_table -> tfc:wood/planks/spruce_slab": 1,
+    "mcw_tfc_aio:furniture/hickory_furniture/hickory_table -> tfc:wood/planks/oak_slab": 1
+   },
+   "rock": {
+    "tfc:rock/raw/gabbro -> tfc:rock/raw/granite": 193,
+    "rnr:rock/gravel_road/gabbro_slab -> rnr:rock/gravel_road/granite_slab": 104,
+    "rnr:rock/gravel_road/gabbro -> rnr:rock/gravel_road/granite": 40,
+    "tfc:rock/spike/gabbro -> tfc:rock/spike/granite": 30,
+    "rnr:rock/sett_road/gabbro -> rnr:rock/sett_road/granite": 22,
+    "tfc:rock/gravel/gabbro -> tfc:rock/gravel/granite": 12,
+    "tfc:rock/raw/gabbro_slab -> tfc:rock/raw/granite_slab": 7,
+    "tfc:rock/raw/gabbro_wall -> tfc:rock/raw/granite_wall": 6,
+    "tfc:rock/raw/gabbro_stairs -> tfc:rock/raw/granite_stairs": 6,
+    "tfc:rock/anvil/gabbro -> tfc:rock/anvil/granite": 3
+   },
+   "shingles": {
+    "rnr:wood/shingles/willow_stairs -> rnr:wood/shingles/spruce_stairs": 1176,
+    "rnr:wood/shingles/willow -> rnr:wood/shingles/spruce": 377,
+    "rnr:wood/shingles/willow_slab -> rnr:wood/shingles/spruce_slab": 143
+   },
+   "soil": {
+    "tfc:mud_bricks/sandy_loam -> tfc:mud_bricks/alfisol": 3359,
+    "tfc:grass/sandy_loam -> tfc:grass/alfisol": 1047,
+    "tfc:dirt/sandy_loam -> tfc:dirt/alfisol": 738,
+    "tfc:mud_bricks/silty_loam -> tfc:mud_bricks/alfisol": 203,
+    "tfc:farmland/loam -> tfc:farmland/alfisol": 48
+   },
+   "tfc3-wood": {
+    "tfc:wood/planks/hickory_fence -> tfc:wood/fence/oak": 18,
+    "afc:wood/planks/cypress_door -> tfc:wood/door/birch": 14,
+    "tfc:wood/planks/hickory_tool_rack -> tfc:wood/tool_rack/oak": 10,
+    "tfc:wood/planks/willow_tool_rack -> tfc:wood/tool_rack/spruce": 2,
+    "tfc:wood/planks/willow_workbench -> tfc:wood/workbench/spruce": 2,
+    "afc:wood/planks/cypress_loom -> tfc:wood/loom/birch": 1
+   },
+   "thatch-bed": {
+    "tfc:thatch_bed -> tfc:thatch_bed": 26
+   },
+   "vase": {
+    "tfg:decorative_vase/generated/light_blue -> tfc:ceramic/large_vessel/light_blue": 9,
+    "tfg:decorative_vase/generated/light_gray -> tfc:ceramic/large_vessel/light_gray": 8,
+    "tfg:decorative_vase/generated/purple -> tfc:ceramic/large_vessel/purple": 8,
+    "tfg:decorative_vase/generated/green -> tfc:ceramic/large_vessel/green": 7,
+    "tfg:decorative_vase/generated/gray -> tfc:ceramic/large_vessel/gray": 5,
+    "tfg:decorative_vase/generated/cyan -> tfc:ceramic/large_vessel/cyan": 3,
+    "tfg:decorative_vase/generated/black -> tfc:ceramic/large_vessel/black": 2,
+    "tfg:decorative_vase/generated/white -> tfc:ceramic/large_vessel/white": 1
+   },
+   "wood": {
+    "tfc:wood/stripped_wood/hickory -> tfc:wood/stripped_wood/oak": 1345,
+    "tfc:wood/planks/hickory_stairs -> tfc:wood/planks/oak_stairs": 911,
+    "tfc:wood/planks/hickory -> tfc:wood/planks/oak": 755,
+    "afc:wood/planks/cypress -> tfc:wood/planks/birch": 520,
+    "tfc:wood/planks/willow_stairs -> tfc:wood/planks/spruce_stairs": 267,
+    "afc:wood/planks/cypress_slab -> tfc:wood/planks/birch_slab": 248,
+    "tfc:wood/vertical_support/hickory -> tfc:wood/vertical_support/oak": 206,
+    "tfc:wood/planks/willow_slab -> tfc:wood/planks/spruce_slab": 51,
+    "tfc:wood/planks/willow -> tfc:wood/planks/spruce": 44,
+    "tfc:wood/barrel/willow -> tfc:wood/barrel/spruce": 7,
+    "afc:wood/barrel/cypress -> tfc:wood/barrel/birch": 5,
+    "afc:wood/planks/cypress_stairs -> tfc:wood/planks/birch_stairs": 2,
+    "tfc:wood/barrel/hickory -> tfc:wood/barrel/oak": 1,
+    "tfc:wood/jar_shelf/willow -> tfc:wood/shelf/spruce": 1
+   }
+  },
+  "arabic": {
+   "additionalplacements": {
+    "additionalplacements:minecraft.sandstone_slab -> tfc:cut_sandstone/yellow_slab": 3
+   },
+   "barrel": {
+    "firmalife:wood/big_barrel/blackwood -> tfc:wood/barrel/birch": 8,
+    "firmalife:wood/stomping_barrel/palm -> tfc:wood/barrel/oak": 1,
+    "firmalife:wood/stomping_barrel/blackwood -> tfc:wood/barrel/birch": 1
+   },
+   "carpeted": {
+    "carpeted:carpet_slab -> tfc:smooth_sandstone/yellow_slab": 38
+   },
+   "drop": 173,
+   "exact": {
+    "minecraft:cave_air -> minecraft:air": 5247,
+    "domum_ornamentum:sand_stone_bricks -> tfc:cut_sandstone/yellow": 921,
+    "minecraft:moss_block -> tfc:grass/alfisol": 69,
+    "domum_ornamentum:blockpaperwall -> tfc:wattle/white": 55,
+    "minecraft:hay_block -> tfc:thatch": 1,
+    "minecraft:campfire -> tfc:firepit": 1
+   },
+   "framed": {
+    "framedblocks:framed_corner_pillar -> framedblocks:framed_corner_pillar": 138,
+    "framedblocks:framed_slab_edge -> framedblocks:framed_slab_edge": 87,
+    "framedblocks:framed_ladder -> framedblocks:framed_ladder": 20,
+    "framedblocks:framed_fence -> framedblocks:framed_fence": 19,
+    "framedblocks:framed_slab -> framedblocks:framed_slab": 7,
+    "framedblocks:framed_panel -> framedblocks:framed_panel": 7,
+    "framedblocks:framed_floor_board -> framedblocks:framed_floor_board": 5
+   },
+   "lootr": {
+    "lootr:lootr_chest -> tfc:wood/chest/oak": 8
+   },
+   "map": {
+    "firmaciv:wood/blackwood_roofing -> tfc:wood/planks/birch_slab": 11,
+    "domum_ornamentum:panel -> tfc:wood/planks/spruce_slab": 4
+   },
+   "mcw-chair": {
+    "mcw_tfc_aio:furniture/palm_furniture/palm_chair -> tfc:wood/planks/oak_stairs": 8,
+    "mcw_tfc_aio:furniture/acacia_furniture/acacia_chair -> tfc:wood/planks/spruce_stairs": 8,
+    "mcw_tfc_aio:furniture/blackwood_furniture/blackwood_chair -> tfc:wood/planks/birch_stairs": 3
+   },
+   "mcw-table": {
+    "mcw_tfc_aio:furniture/palm_furniture/palm_table -> tfc:wood/planks/oak_slab": 8,
+    "mcw_tfc_aio:furniture/palm_furniture/palm_coffee_table -> tfc:wood/planks/oak_slab": 8,
+    "mcw_tfc_aio:furniture/acacia_furniture/stripped_acacia_coffee_table -> tfc:wood/planks/spruce_slab": 7
+   },
+   "rock": {
+    "tfc:rock/bricks/limestone -> tfc:rock/bricks/granite": 185,
+    "tfc:rock/bricks/basalt -> tfc:rock/bricks/granite": 71,
+    "rnr:rock/gravel_road/slate -> rnr:rock/gravel_road/granite": 16,
+    "tfc:rock/bricks/basalt_wall -> tfc:rock/bricks/granite_wall": 6,
+    "tfc:rock/anvil/rhyolite -> tfc:rock/anvil/granite": 1
+   },
+   "soil": {
+    "tfc:mud_bricks/sandy_loam -> tfc:mud_bricks/alfisol": 1329,
+    "tfc:mud_bricks/loam -> tfc:mud_bricks/alfisol": 70,
+    "tfc:grass/sandy_loam -> tfc:grass/alfisol": 6
+   },
+   "tfc3-wood": {
+    "tfc:wood/planks/palm_log_fence -> tfc:wood/log_fence/oak": 128,
+    "tfc:wood/planks/blackwood_log_fence -> tfc:wood/log_fence/birch": 44,
+    "tfc:wood/planks/palm_trapdoor -> tfc:wood/trapdoor/oak": 29,
+    "afc:wood/planks/baobab_trapdoor -> tfc:wood/trapdoor/birch": 20,
+    "tfc:wood/planks/palm_door -> tfc:wood/door/oak": 18,
+    "tfc:wood/planks/douglas_fir_trapdoor -> tfc:wood/trapdoor/birch": 16,
+    "tfc:wood/planks/palm_tool_rack -> tfc:wood/tool_rack/oak": 13,
+    "afc:wood/planks/ironwood_door -> tfc:wood/door/birch": 12,
+    "tfc:wood/planks/acacia_trapdoor -> tfc:wood/trapdoor/spruce": 12,
+    "afc:wood/planks/baobab_door -> tfc:wood/door/birch": 10,
+    "tfc:wood/planks/douglas_fir_door -> tfc:wood/door/birch": 10,
+    "tfc:wood/planks/blackwood_trapdoor -> tfc:wood/trapdoor/birch": 9,
+    "tfc:wood/planks/blackwood_door -> tfc:wood/door/birch": 8,
+    "tfc:wood/planks/acacia_door -> tfc:wood/door/spruce": 8,
+    "tfc:wood/planks/palm_bookshelf -> tfc:wood/bookshelf/oak": 8,
+    "tfc:wood/planks/blackwood_fence -> tfc:wood/fence/birch": 6,
+    "afc:wood/planks/ironwood_trapdoor -> tfc:wood/trapdoor/birch": 5,
+    "tfc:wood/planks/acacia_tool_rack -> tfc:wood/tool_rack/spruce": 4,
+    "tfc:wood/planks/blackwood_tool_rack -> tfc:wood/tool_rack/birch": 3,
+    "tfc:wood/planks/palm_workbench -> tfc:wood/workbench/oak": 2,
+    "afc:wood/planks/ironwood_log_fence -> tfc:wood/log_fence/birch": 2,
+    "afc:wood/planks/baobab_bookshelf -> tfc:wood/bookshelf/birch": 2,
+    "tfc:wood/planks/blackwood_loom -> tfc:wood/loom/birch": 1,
+    "afc:wood/planks/ironwood_workbench -> tfc:wood/workbench/birch": 1,
+    "afc:wood/planks/baobab_workbench -> tfc:wood/workbench/birch": 1
+   },
+   "thatch-bed": {
+    "tfc:thatch_bed -> tfc:thatch_bed": 28
+   },
+   "vase": {
+    "tfg:decorative_vase/generated/red -> tfc:ceramic/large_vessel/red": 3,
+    "tfg:decorative_vase/generated/lime -> tfc:ceramic/large_vessel/lime": 3,
+    "tfg:decorative_vase/generated/white -> tfc:ceramic/large_vessel/white": 2,
+    "tfg:decorative_vase/generated/orange -> tfc:ceramic/large_vessel/orange": 2,
+    "tfg:decorative_vase/generated/yellow -> tfc:ceramic/large_vessel/yellow": 2
+   },
+   "wood": {
+    "afc:wood/planks/ironwood -> tfc:wood/planks/birch": 130,
+    "tfc:wood/planks/acacia -> tfc:wood/planks/spruce": 115,
+    "tfc:wood/planks/blackwood_slab -> tfc:wood/planks/birch_slab": 96,
+    "afc:wood/planks/baobab -> tfc:wood/planks/birch": 88,
+    "tfc:wood/planks/palm -> tfc:wood/planks/oak": 83,
+    "tfc:wood/log/acacia -> tfc:wood/log/spruce": 72,
+    "afc:wood/log/gum_arabic -> tfc:wood/log/birch": 69,
+    "tfc:wood/log/blackwood -> tfc:wood/log/birch": 56,
+    "afc:wood/log/ironwood -> tfc:wood/log/birch": 42,
+    "tfc:wood/log/palm -> tfc:wood/log/oak": 41,
+    "afc:wood/log/baobab -> tfc:wood/log/birch": 30,
+    "tfc:wood/planks/palm_slab -> tfc:wood/planks/oak_slab": 24,
+    "tfc:wood/planks/palm_stairs -> tfc:wood/planks/oak_stairs": 16,
+    "tfc:wood/barrel/palm -> tfc:wood/barrel/oak": 7,
+    "tfc:wood/stripped_log/blackwood -> tfc:wood/stripped_log/birch": 7,
+    "firmalife:wood/food_shelf/acacia -> tfc:wood/shelf/spruce": 6,
+    "afc:wood/barrel/baobab -> tfc:wood/barrel/birch": 6,
+    "tfc:wood/scribing_table/acacia -> tfc:wood/scribing_table/spruce": 5,
+    "tfc:wood/barrel/blackwood -> tfc:wood/barrel/birch": 4,
+    "tfc:wood/barrel/acacia -> tfc:wood/barrel/spruce": 4,
+    "afc:wood/barrel/ironwood -> tfc:wood/barrel/birch": 3,
+    "tfc:wood/planks/blackwood_stairs -> tfc:wood/planks/birch_stairs": 3,
+    "tfc:wood/scribing_table/palm -> tfc:wood/scribing_table/oak": 1,
+    "tfc:wood/stripped_log/acacia -> tfc:wood/stripped_log/spruce": 1,
+    "tfc:wood/sewing_table/palm -> tfc:wood/sewing_table/oak": 1
+   }
+  },
+  "malay": {
+   "additionalplacements": {
+    "additionalplacements:afc.wood/planks/cypress_slab -> tfc:wood/planks/spruce_slab": 1,
+    "additionalplacements:tfc.wood/planks/kapok_slab -> tfc:wood/planks/oak_slab": 1,
+    "additionalplacements:tfc.wood/planks/mangrove_slab -> tfc:wood/planks/birch_slab": 1
+   },
+   "barrel": {
+    "firmalife:wood/big_barrel/kapok -> tfc:wood/barrel/oak": 8,
+    "afc:wood/big_barrel/mahogany -> tfc:wood/barrel/birch": 8,
+    "firmalife:wood/big_barrel/mangrove -> tfc:wood/barrel/birch": 8
+   },
+   "drop": 51,
+   "exact": {
+    "minecraft:cave_air -> minecraft:air": 3274,
+    "tfg:grass/oxisol -> tfc:grass/alfisol": 6
+   },
+   "firmaciv": {
+    "firmaciv:wood/watercraft_frame/angled/rosewood -> tfc:wood/planks/birch_stairs": 7,
+    "firmaciv:wood/watercraft_frame/flat/rosewood -> tfc:wood/planks/birch_slab": 3
+   },
+   "framed": {
+    "framedblocks:framed_thick_lattice -> framedblocks:framed_thick_lattice": 414,
+    "framedblocks:framed_slab_edge -> framedblocks:framed_slab_edge": 220,
+    "framedblocks:framed_panel -> framedblocks:framed_panel": 56,
+    "framedblocks:framed_slab -> framedblocks:framed_slab": 44,
+    "framedblocks:framed_corner_pillar -> framedblocks:framed_corner_pillar": 8
+   },
+   "lootr": {
+    "lootr:lootr_chest -> tfc:wood/chest/oak": 14
+   },
+   "macaw-roof->shingle slab": {
+    "mcw_tfc_aio:roofs/kapok_roofs/kapok_upper_lower_roof -> rnr:wood/shingles/oak_slab": 687
+   },
+   "macaw-roof->shingle stairs": {
+    "mcw_tfc_aio:roofs/kapok_roofs/kapok_lower_roof -> rnr:wood/shingles/oak_stairs": 375,
+    "mcw_tfc_aio:roofs/kapok_roofs/kapok_roof -> rnr:wood/shingles/oak_stairs": 132
+   },
+   "macaw-top->shingle slab": {
+    "mcw_tfc_aio:roofs/kapok_roofs/kapok_top_roof -> rnr:wood/shingles/oak_slab": 66
+   },
+   "map": {
+    "firmaciv:watercraft_frame_angled -> tfc:wood/planks/oak_stairs": 10,
+    "domum_ornamentum:panel -> tfc:wood/planks/birch_slab": 3,
+    "firmaciv:watercraft_frame_flat -> tfc:wood/planks/oak_slab": 3
+   },
+   "mcw-table": {
+    "mcw_tfc_aio:furniture/kapok_furniture/stripped_kapok_table -> tfc:wood/planks/oak_slab": 6
+   },
+   "rock": {
+    "tfc:rock/bricks/granite -> tfc:rock/bricks/granite": 18,
+    "tfc:rock/bricks/slate -> tfc:rock/bricks/granite": 13,
+    "tfc:rock/cracked_bricks/granite -> tfc:rock/cracked_bricks/granite": 2,
+    "tfc:rock/anvil/granite -> tfc:rock/anvil/granite": 1
+   },
+   "tfc3-wood": {
+    "afc:wood/planks/teak_fence -> tfc:wood/fence/birch": 16,
+    "afc:wood/planks/mahogany_fence -> tfc:wood/fence/birch": 16,
+    "tfc:wood/planks/rosewood_fence -> tfc:wood/fence/birch": 16,
+    "afc:wood/planks/mahogany_tool_rack -> tfc:wood/tool_rack/birch": 7,
+    "afc:wood/planks/cypress_fence -> tfc:wood/fence/spruce": 6,
+    "afc:wood/planks/cypress_fence_gate -> tfc:wood/fence_gate/spruce": 6,
+    "tfc:wood/planks/kapok_fence_gate -> tfc:wood/fence_gate/oak": 6,
+    "tfc:wood/planks/mangrove_fence_gate -> tfc:wood/fence_gate/birch": 6,
+    "afc:wood/planks/teak_fence_gate -> tfc:wood/fence_gate/birch": 4,
+    "tfc:wood/planks/kapok_tool_rack -> tfc:wood/tool_rack/oak": 4,
+    "afc:wood/planks/mahogany_fence_gate -> tfc:wood/fence_gate/birch": 4,
+    "tfc:wood/planks/rosewood_fence_gate -> tfc:wood/fence_gate/birch": 4,
+    "tfc:wood/planks/rosewood_tool_rack -> tfc:wood/tool_rack/birch": 3,
+    "tfc:wood/planks/kapok_fence -> tfc:wood/fence/oak": 2,
+    "tfc:wood/planks/blackwood_fence -> tfc:wood/fence/birch": 1
+   },
+   "thatch-bed": {
+    "tfc:thatch_bed -> tfc:thatch_bed": 12
+   },
+   "vase": {
+    "tfg:decorative_vase/generated/blue -> tfc:ceramic/large_vessel/blue": 8,
+    "tfg:decorative_vase/generated/lime -> tfc:ceramic/large_vessel/lime": 6,
+    "tfg:decorative_vase/blue -> tfc:ceramic/large_vessel/blue": 3
+   },
+   "wood": {
+    "tfc:wood/stripped_log/chestnut -> tfc:wood/stripped_log/birch": 175,
+    "afc:wood/stripped_log/mahogany -> tfc:wood/stripped_log/birch": 175,
+    "tfc:wood/stripped_log/rosewood -> tfc:wood/stripped_log/birch": 175,
+    "tfc:wood/planks/kapok -> tfc:wood/planks/oak": 140,
+    "afc:wood/planks/cypress -> tfc:wood/planks/spruce": 138,
+    "tfc:wood/planks/mangrove -> tfc:wood/planks/birch": 134,
+    "tfc:wood/stripped_log/kapok -> tfc:wood/stripped_log/oak": 106,
+    "afc:wood/stripped_log/cypress -> tfc:wood/stripped_log/spruce": 105,
+    "tfc:wood/stripped_log/mangrove -> tfc:wood/stripped_log/birch": 105,
+    "afc:wood/planks/cypress_slab -> tfc:wood/planks/spruce_slab": 53,
+    "tfc:wood/planks/kapok_slab -> tfc:wood/planks/oak_slab": 53,
+    "tfc:wood/planks/mangrove_slab -> tfc:wood/planks/birch_slab": 53,
+    "afc:wood/planks/mahogany -> tfc:wood/planks/birch": 43,
+    "tfc:wood/scribing_table/kapok -> tfc:wood/scribing_table/oak": 6,
+    "afc:wood/planks/cypress_stairs -> tfc:wood/planks/spruce_stairs": 2,
+    "tfc:wood/planks/kapok_stairs -> tfc:wood/planks/oak_stairs": 2,
+    "tfc:wood/planks/mangrove_stairs -> tfc:wood/planks/birch_stairs": 2,
+    "tfc:wood/barrel/kapok -> tfc:wood/barrel/oak": 1,
+    "afc:wood/barrel/mahogany -> tfc:wood/barrel/birch": 1
+   }
+  },
+  "minang": {
+   "additionalplacements": {
+    "additionalplacements:afc.wood/planks/cypress_slab -> tfc:wood/planks/birch_slab": 1,
+    "additionalplacements:tfc.wood/planks/kapok_slab -> tfc:wood/planks/oak_slab": 1,
+    "additionalplacements:tfc.wood/planks/mangrove_slab -> tfc:wood/planks/birch_slab": 1
+   },
+   "barrel": {
+    "firmalife:wood/big_barrel/kapok -> tfc:wood/barrel/oak": 8,
+    "afc:wood/big_barrel/mahogany -> tfc:wood/barrel/spruce": 8,
+    "firmalife:wood/big_barrel/mangrove -> tfc:wood/barrel/birch": 8
+   },
+   "drop": 55,
+   "exact": {
+    "minecraft:cave_air -> minecraft:air": 4462,
+    "tfg:grass/oxisol -> tfc:grass/alfisol": 6
+   },
+   "firmaciv": {
+    "firmaciv:wood/watercraft_frame/angled/rosewood -> tfc:wood/planks/birch_stairs": 7,
+    "firmaciv:wood/watercraft_frame/flat/rosewood -> tfc:wood/planks/birch_slab": 3
+   },
+   "framed": {
+    "framedblocks:framed_thick_lattice -> framedblocks:framed_thick_lattice": 414,
+    "framedblocks:framed_slab -> framedblocks:framed_slab": 343,
+    "framedblocks:framed_slab_edge -> framedblocks:framed_slab_edge": 248,
+    "framedblocks:framed_panel -> framedblocks:framed_panel": 222,
+    "framedblocks:framed_fence_gate -> framedblocks:framed_fence_gate": 70,
+    "framedblocks:framed_double_slab -> framedblocks:framed_double_slab": 52,
+    "framedblocks:framed_vertical_double_stairs -> framedblocks:framed_vertical_double_stairs": 52,
+    "framedblocks:framed_fence -> framedblocks:framed_fence": 36,
+    "framedblocks:framed_wall -> framedblocks:framed_wall": 32,
+    "framedblocks:framed_sliced_stairs_panel -> framedblocks:framed_sliced_stairs_panel": 24,
+    "framedblocks:framed_trapdoor -> framedblocks:framed_trapdoor": 24,
+    "framedblocks:framed_double_stairs -> framedblocks:framed_double_stairs": 24,
+    "framedblocks:framed_stairs -> framedblocks:framed_stairs": 8,
+    "framedblocks:framed_corner_pillar -> framedblocks:framed_corner_pillar": 8
+   },
+   "lootr": {
+    "lootr:lootr_chest -> tfc:wood/chest/oak": 16
+   },
+   "macaw-roof->shingle slab": {
+    "mcw_tfc_aio:roofs/kapok_roofs/kapok_upper_lower_roof -> rnr:wood/shingles/oak_slab": 687
+   },
+   "macaw-roof->shingle stairs": {
+    "mcw_tfc_aio:roofs/kapok_roofs/kapok_lower_roof -> rnr:wood/shingles/oak_stairs": 375,
+    "mcw_tfc_aio:roofs/kapok_roofs/kapok_roof -> rnr:wood/shingles/oak_stairs": 132
+   },
+   "macaw-top->shingle slab": {
+    "mcw_tfc_aio:roofs/kapok_roofs/kapok_top_roof -> rnr:wood/shingles/oak_slab": 66
+   },
+   "map": {
+    "firmaciv:watercraft_frame_angled -> tfc:wood/planks/oak_stairs": 10,
+    "domum_ornamentum:panel -> tfc:wood/planks/spruce_slab": 3,
+    "firmaciv:watercraft_frame_flat -> tfc:wood/planks/oak_slab": 3
+   },
+   "mcw-chair": {
+    "mcw_tfc_aio:furniture/kapok_furniture/kapok_stool_chair -> tfc:wood/planks/oak_stairs": 1
+   },
+   "mcw-table": {
+    "mcw_tfc_aio:furniture/kapok_furniture/stripped_kapok_table -> tfc:wood/planks/oak_slab": 7
+   },
+   "rock": {
+    "tfc:rock/bricks/granite -> tfc:rock/bricks/granite": 18,
+    "tfc:rock/bricks/slate -> tfc:rock/bricks/granite": 13,
+    "tfc:rock/cracked_bricks/granite -> tfc:rock/cracked_bricks/granite": 2,
+    "tfc:rock/anvil/granite -> tfc:rock/anvil/granite": 1
+   },
+   "tfc3-wood": {
+    "afc:wood/planks/teak_fence -> tfc:wood/fence/birch": 16,
+    "afc:wood/planks/mahogany_fence -> tfc:wood/fence/spruce": 16,
+    "tfc:wood/planks/rosewood_fence -> tfc:wood/fence/birch": 16,
+    "tfc:wood/planks/kapok_tool_rack -> tfc:wood/tool_rack/oak": 12,
+    "afc:wood/planks/mahogany_tool_rack -> tfc:wood/tool_rack/spruce": 7,
+    "afc:wood/planks/cypress_fence -> tfc:wood/fence/birch": 6,
+    "afc:wood/planks/cypress_fence_gate -> tfc:wood/fence_gate/birch": 6,
+    "tfc:wood/planks/kapok_fence_gate -> tfc:wood/fence_gate/oak": 6,
+    "tfc:wood/planks/mangrove_fence_gate -> tfc:wood/fence_gate/birch": 6,
+    "afc:wood/planks/teak_fence_gate -> tfc:wood/fence_gate/birch": 4,
+    "afc:wood/planks/mahogany_fence_gate -> tfc:wood/fence_gate/spruce": 4,
+    "tfc:wood/planks/rosewood_fence_gate -> tfc:wood/fence_gate/birch": 4,
+    "tfc:wood/planks/rosewood_tool_rack -> tfc:wood/tool_rack/birch": 3,
+    "tfc:wood/planks/kapok_fence -> tfc:wood/fence/oak": 2,
+    "tfc:wood/planks/blackwood_fence -> tfc:wood/fence/birch": 1
+   },
+   "thatch-bed": {
+    "tfc:thatch_bed -> tfc:thatch_bed": 16
+   },
+   "vase": {
+    "tfg:decorative_vase/generated/blue -> tfc:ceramic/large_vessel/blue": 10,
+    "tfg:decorative_vase/generated/lime -> tfc:ceramic/large_vessel/lime": 7,
+    "tfg:decorative_vase/blue -> tfc:ceramic/large_vessel/blue": 5,
+    "tfg:decorative_vase/lime -> tfc:ceramic/large_vessel/lime": 1
+   },
+   "wood": {
+    "afc:wood/stripped_log/cypress -> tfc:wood/stripped_log/birch": 484,
+    "afc:wood/planks/mahogany -> tfc:wood/planks/spruce": 377,
+    "afc:wood/stripped_log/mahogany -> tfc:wood/stripped_log/spruce": 374,
+    "tfc:wood/stripped_log/chestnut -> tfc:wood/stripped_log/birch": 372,
+    "tfc:wood/stripped_log/rosewood -> tfc:wood/stripped_log/birch": 175,
+    "tfc:wood/planks/kapok -> tfc:wood/planks/oak": 140,
+    "afc:wood/planks/cypress -> tfc:wood/planks/birch": 138,
+    "tfc:wood/planks/mangrove -> tfc:wood/planks/birch": 134,
+    "tfc:wood/stripped_log/kapok -> tfc:wood/stripped_log/oak": 106,
+    "tfc:wood/stripped_log/mangrove -> tfc:wood/stripped_log/birch": 105,
+    "afc:wood/stripped_log/teak -> tfc:wood/stripped_log/birch": 102,
+    "afc:wood/planks/cypress_slab -> tfc:wood/planks/birch_slab": 53,
+    "tfc:wood/planks/kapok_slab -> tfc:wood/planks/oak_slab": 53,
+    "tfc:wood/planks/mangrove_slab -> tfc:wood/planks/birch_slab": 53,
+    "afc:wood/planks/teak -> tfc:wood/planks/birch": 12,
+    "tfc:wood/scribing_table/kapok -> tfc:wood/scribing_table/oak": 6,
+    "tfc:wood/stripped_log/maple -> tfc:wood/stripped_log/birch": 4,
+    "afc:wood/planks/cypress_stairs -> tfc:wood/planks/birch_stairs": 2,
+    "tfc:wood/planks/kapok_stairs -> tfc:wood/planks/oak_stairs": 2,
+    "tfc:wood/planks/mangrove_stairs -> tfc:wood/planks/birch_stairs": 2,
+    "tfc:wood/planks/douglas_fir -> tfc:wood/planks/birch": 2,
+    "tfc:wood/sewing_table/kapok -> tfc:wood/sewing_table/oak": 1,
+    "tfc:wood/barrel/kapok -> tfc:wood/barrel/oak": 1,
+    "afc:wood/barrel/mahogany -> tfc:wood/barrel/spruce": 1
+   }
+  },
+  "steppe": {
+   "additionalplacements": {
+    "additionalplacements:tfc.mud_bricks/loam_slab -> tfc:mud_bricks/alfisol_slab": 8
+   },
+   "barrel": {
+    "firmalife:wood/stomping_barrel/white_cedar -> tfc:wood/barrel/birch": 1,
+    "firmalife:wood/stomping_barrel/ash -> tfc:wood/barrel/birch": 1
+   },
+   "drop": 61,
+   "exact": {
+    "minecraft:cave_air -> minecraft:air": 4555,
+    "minecraft:bricks -> tfc:rock/bricks/granite": 8,
+    "minecraft:target -> tfc:thatch": 4,
+    "tfc:torch -> minecraft:torch": 4,
+    "firmalife:cured_oven_chimney -> tfc:mud_bricks/alfisol_wall": 4,
+    "minecraft:brick_stairs -> tfc:rock/bricks/granite_stairs": 3,
+    "minecraft:brick_slab -> tfc:rock/bricks/granite_slab": 2,
+    "minecraft:bone_block -> tfc:rock/chiseled/granite": 1,
+    "minecraft:campfire -> tfc:firepit": 1,
+    "firmalife:cured_oven_bottom -> tfc:mud_bricks/alfisol": 1,
+    "firmalife:cured_oven_top -> tfc:mud_bricks/alfisol": 1
+   },
+   "framed": {
+    "framedblocks:framed_cube -> framedblocks:framed_cube": 573,
+    "framedblocks:framed_slope_slab -> framedblocks:framed_slope_slab": 250,
+    "framedblocks:framed_elevated_slope_slab -> framedblocks:framed_elevated_slope_slab": 210,
+    "framedblocks:framed_slope -> framedblocks:framed_slope": 141,
+    "framedblocks:framed_slab -> framedblocks:framed_slab": 50,
+    "framedblocks:framed_wall_sign -> framedblocks:framed_wall_sign": 49,
+    "framedblocks:framed_inner_prism_corner -> framedblocks:framed_inner_prism_corner": 30,
+    "framedblocks:framed_flat_slope_slab_corner -> framedblocks:framed_flat_slope_slab_corner": 28,
+    "framedblocks:framed_flat_elev_slope_slab_corner -> framedblocks:framed_flat_elev_slope_slab_corner": 24,
+    "framedblocks:framed_corner_slope -> framedblocks:framed_corner_slope": 12,
+    "framedblocks:framed_ladder -> framedblocks:framed_ladder": 7,
+    "framedblocks:framed_corner_strip -> framedblocks:framed_corner_strip": 6,
+    "framedblocks:framed_elevated_double_slope_edge -> framedblocks:framed_elevated_double_slope_edge": 2,
+    "framedblocks:framed_elevated_slope_edge -> framedblocks:framed_elevated_slope_edge": 1,
+    "framedblocks:framed_pyramid_slab -> framedblocks:framed_pyramid_slab": 1,
+    "framedblocks:framed_mini_cube -> framedblocks:framed_mini_cube": 1
+   },
+   "lootr": {
+    "lootr:lootr_chest -> tfc:wood/chest/oak": 9
+   },
+   "mcw-chair": {
+    "mcw_tfc_aio:furniture/chestnut_furniture/chestnut_chair -> tfc:wood/planks/oak_stairs": 1
+   },
+   "mcw-pier": {
+    "mcw_tfc_aio:bridges/chestnut_bridges/chestnut_bridge_pier -> tfc:wood/log/oak": 6
+   },
+   "mcw-table": {
+    "mcw_tfc_aio:furniture/pine_furniture/pine_table -> tfc:wood/planks/spruce_slab": 9
+   },
+   "rock": {
+    "tfc:rock/gravel/rhyolite -> tfc:rock/gravel/granite": 22,
+    "tfc:rock/hardened/rhyolite -> tfc:rock/hardened/granite": 10,
+    "rnr:rock/gravel_road/slate -> rnr:rock/gravel_road/granite": 8,
+    "tfc:rock/raw/rhyolite -> tfc:rock/raw/granite": 8,
+    "tfc:rock/anvil/rhyolite -> tfc:rock/anvil/granite": 1
+   },
+   "soil": {
+    "tfc:mud_bricks/silt -> tfc:mud_bricks/alfisol": 1045,
+    "tfc:mud_bricks/loam -> tfc:mud_bricks/alfisol": 94,
+    "tfc:mud_bricks/sandy_loam -> tfc:mud_bricks/alfisol": 36,
+    "tfc:mud_bricks/loam_stairs -> tfc:mud_bricks/alfisol_stairs": 20,
+    "tfc:mud_bricks/loam_slab -> tfc:mud_bricks/alfisol_slab": 13,
+    "tfc:grass/silty_loam -> tfc:grass/alfisol": 6,
+    "tfc:mud_bricks/sandy_loam_slab -> tfc:mud_bricks/alfisol_slab": 1
+   },
+   "tfc3-wood": {
+    "tfc:wood/planks/chestnut_fence -> tfc:wood/fence/oak": 36,
+    "tfc:wood/planks/chestnut_trapdoor -> tfc:wood/trapdoor/oak": 18,
+    "tfc:wood/planks/white_cedar_door -> tfc:wood/door/birch": 8,
+    "tfc:wood/planks/pine_door -> tfc:wood/door/spruce": 8,
+    "tfc:wood/planks/hickory_tool_rack -> tfc:wood/tool_rack/birch": 7,
+    "tfc:wood/planks/pine_fence -> tfc:wood/fence/spruce": 6,
+    "tfc:wood/planks/pine_loom -> tfc:wood/loom/spruce": 5,
+    "tfc:wood/planks/chestnut_tool_rack -> tfc:wood/tool_rack/oak": 4,
+    "tfc:wood/planks/chestnut_fence_gate -> tfc:wood/fence_gate/oak": 4,
+    "tfc:wood/planks/ash_workbench -> tfc:wood/workbench/birch": 2,
+    "tfc:wood/planks/ash_door -> tfc:wood/door/birch": 2,
+    "tfc:wood/planks/pine_workbench -> tfc:wood/workbench/spruce": 1
+   },
+   "thatch-bed": {
+    "tfc:thatch_bed -> tfc:thatch_bed": 18
+   },
+   "vase": {
+    "tfg:decorative_vase/generated/gray -> tfc:ceramic/large_vessel/gray": 3,
+    "tfg:decorative_vase/generated/light_blue -> tfc:ceramic/large_vessel/light_blue": 1,
+    "tfg:decorative_vase/generated/black -> tfc:ceramic/large_vessel/black": 1,
+    "tfg:decorative_vase/generated/blue -> tfc:ceramic/large_vessel/blue": 1,
+    "tfg:decorative_vase/generated/purple -> tfc:ceramic/large_vessel/purple": 1
+   },
+   "wood": {
+    "tfc:wood/planks/chestnut -> tfc:wood/planks/oak": 556,
+    "tfc:wood/stripped_log/chestnut -> tfc:wood/stripped_log/oak": 180,
+    "tfc:wood/log/chestnut -> tfc:wood/log/oak": 124,
+    "tfc:wood/log/pine -> tfc:wood/log/spruce": 73,
+    "tfc:wood/log/white_cedar -> tfc:wood/log/birch": 44,
+    "tfc:wood/log/ash -> tfc:wood/log/birch": 42,
+    "tfc:wood/stripped_log/white_cedar -> tfc:wood/stripped_log/birch": 38,
+    "tfc:wood/stripped_log/pine -> tfc:wood/stripped_log/spruce": 37,
+    "tfc:wood/planks/white_cedar -> tfc:wood/planks/birch": 11,
+    "tfc:wood/planks/chestnut_slab -> tfc:wood/planks/oak_slab": 6,
+    "tfc:wood/planks/ash -> tfc:wood/planks/birch": 6,
+    "tfc:wood/planks/chestnut_stairs -> tfc:wood/planks/oak_stairs": 4,
+    "firmalife:wood/food_shelf/pine -> tfc:wood/shelf/spruce": 4,
+    "tfc:wood/planks/white_cedar_slab -> tfc:wood/planks/birch_slab": 4,
+    "tfc:wood/barrel/ash -> tfc:wood/barrel/birch": 3,
+    "tfc:wood/barrel/chestnut -> tfc:wood/barrel/oak": 2,
+    "tfc:wood/barrel/hickory -> tfc:wood/barrel/birch": 1,
+    "tfc:wood/barrel/white_cedar -> tfc:wood/barrel/birch": 1
+   }
+  },
+  "temperate": {
+   "additionalplacements": {
+    "additionalplacements:tfc.mud_bricks/silt_slab -> tfc:mud_bricks/alfisol_slab": 1
+   },
+   "drop": 38,
+   "exact": {
+    "minecraft:cave_air -> minecraft:air": 1176,
+    "tfc:drying_bricks/silt -> tfc:mud_bricks/alfisol": 5,
+    "rnr:tamped_loam -> rnr:tamped_alfisol": 5
+   },
+   "map": {
+    "tfc:log_pile -> tfc:wood/log/oak": 5,
+    "domum_ornamentum:vanilla_slab_compat -> tfc:wood/planks/oak_slab": 4
+   },
+   "rock": {
+    "tfc:rock/hardened/limestone -> tfc:rock/hardened/granite": 392,
+    "tfc:rock/gravel/limestone -> tfc:rock/gravel/granite": 116,
+    "tfc:rock/cobble/limestone -> tfc:rock/cobble/granite": 40,
+    "rnr:rock/gravel_road/limestone -> rnr:rock/gravel_road/granite": 25,
+    "rnr:rock/cobbled_road/limestone -> rnr:rock/cobbled_road/granite": 25
+   },
+   "soil": {
+    "tfc:mud_bricks/silt -> tfc:mud_bricks/alfisol": 234,
+    "tfc:grass/loam -> tfc:grass/alfisol": 188,
+    "tfc:mud_bricks/silt_slab -> tfc:mud_bricks/alfisol_slab": 39,
+    "tfc:mud_bricks/silty_loam -> tfc:mud_bricks/alfisol": 30,
+    "tfc:mud/silt -> tfc:mud/alfisol": 24,
+    "tfc:mud_bricks/silt_stairs -> tfc:mud_bricks/alfisol_stairs": 17,
+    "tfc:dirt/loam -> tfc:dirt/alfisol": 5,
+    "tfc:mud_bricks/silt_wall -> tfc:mud_bricks/alfisol_wall": 2
+   },
+   "tfc3-wood": {
+    "tfc:wood/planks/birch_trapdoor -> tfc:wood/trapdoor/oak": 63
+   },
+   "vase": {
+    "tfg:decorative_vase/generated/orange -> tfc:ceramic/large_vessel/orange": 1,
+    "tfg:decorative_vase/generated/brown -> tfc:ceramic/large_vessel/brown": 1,
+    "tfg:decorative_vase/generated/white -> tfc:ceramic/large_vessel/white": 1,
+    "tfg:decorative_vase/generated/light_blue -> tfc:ceramic/large_vessel/light_blue": 1,
+    "tfg:decorative_vase/generated/green -> tfc:ceramic/large_vessel/green": 1
+   },
+   "wood": {
+    "tfc:wood/leaves/birch -> tfc:wood/leaves/oak": 93,
+    "tfc:wood/planks/birch_slab -> tfc:wood/planks/oak_slab": 55,
+    "tfc:wood/vertical_support/birch -> tfc:wood/vertical_support/oak": 24,
+    "tfc:wood/wood/birch -> tfc:wood/wood/oak": 6,
+    "tfc:wood/log/birch -> tfc:wood/log/oak": 5,
+    "tfc:wood/stripped_log/birch -> tfc:wood/stripped_log/oak": 2
+   }
+  },
+  "aqueduct": {
+   "rock": {
+    "tfc:rock/bricks/chalk -> tfc:rock/bricks/granite": 455,
+    "tfc:rock/cracked_bricks/chalk -> tfc:rock/cracked_bricks/granite": 251,
+    "tfc:rock/mossy_bricks/chalk -> tfc:rock/mossy_bricks/granite": 241,
+    "tfc:rock/aqueduct/chalk -> tfc:rock/aqueduct/granite": 177,
+    "tfc:rock/chiseled/chalk -> tfc:rock/chiseled/granite": 139,
+    "tfc:rock/bricks/chalk_stairs -> tfc:rock/bricks/granite_stairs": 45,
+    "tfc:rock/cracked_bricks/chalk_stairs -> tfc:rock/cracked_bricks/granite_stairs": 28,
+    "tfc:rock/mossy_bricks/chalk_stairs -> tfc:rock/mossy_bricks/granite_stairs": 23,
+    "tfc:rock/gravel/chalk -> tfc:rock/gravel/granite": 18,
+    "tfc:rock/mossy_cobble/chalk -> tfc:rock/mossy_cobble/granite": 18,
+    "tfc:rock/cobble/chalk -> tfc:rock/cobble/granite": 12,
+    "tfc:rock/cracked_bricks/chalk_wall -> tfc:rock/cracked_bricks/granite_wall": 4,
+    "tfc:rock/mossy_bricks/chalk_wall -> tfc:rock/mossy_bricks/granite_wall": 2,
+    "tfc:rock/bricks/chalk_slab -> tfc:rock/bricks/granite_slab": 1,
+    "tfc:rock/mossy_bricks/chalk_slab -> tfc:rock/mossy_bricks/granite_slab": 1
+   },
+   "tfc3-wood": {
+    "tfc:wood/planks/maple_fence -> tfc:wood/fence/oak": 16,
+    "tfc:wood/planks/maple_trapdoor -> tfc:wood/trapdoor/oak": 5
+   },
+   "wood": {
+    "tfc:wood/stripped_wood/maple -> tfc:wood/stripped_wood/oak": 24,
+    "tfc:wood/vertical_support/maple -> tfc:wood/vertical_support/oak": 12,
+    "tfc:wood/planks/maple_slab -> tfc:wood/planks/oak_slab": 1
+   }
+  }
+ },
+ "unknown_pools": []
+}
