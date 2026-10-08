@@ -322,9 +322,14 @@ def registry_fp(entries):
     return out
 
 
+def slot_name(i):
+    """Name of decoration list i. TFC's biomes carry 11 to 13 lists, so a mod's features can sit at an index past the 11 named steps."""
+    return SLOTS[i] if i < len(SLOTS) else f"extra_{i}"
+
+
 def feature_sig(slots):
     """Signature of a biome's feature lists: a hash per slot of the TFC ids, and the other ids spelled out."""
-    foreign = {SLOTS[i]: [f for f in s if ns_of(f) != "tfc"] for i, s in enumerate(slots) if any(ns_of(f) != "tfc" for f in s)}
+    foreign = {slot_name(i): [f for f in s if ns_of(f) != "tfc"] for i, s in enumerate(slots) if any(ns_of(f) != "tfc" for f in s)}
     return {"n": [len(s) for s in slots], "tfc": [h([f for f in s if ns_of(f) == "tfc"], 6) for s in slots], "foreign": foreign}
 
 
@@ -823,13 +828,17 @@ def diff_runtime(cur, base, f, ctx):
             cs, bs = cur["featureSigs"][cb["f"]], base["featureSigs"].get(bb["f"])
             if bs is None:
                 continue
-            for slot in SLOTS:
+            for slot in sorted(set(cs["foreign"]) | set(bs["foreign"])):
                 cf, bf = set(cs["foreign"].get(slot, [])), set(bs["foreign"].get(slot, []))
                 for feat in sorted(cf - bf):
                     feature_findings.setdefault(("added", feat, slot), []).append(b)
                 for feat in sorted(bf - cf):
                     feature_findings.setdefault(("removed", feat, slot), []).append(b)
-            for i, slot in enumerate(SLOTS):
+            for i in range(max(len(cs["tfc"]), len(bs["tfc"]))):
+                if i >= len(cs["tfc"]) or i >= len(bs["tfc"]):    # one side has more decoration lists: that is a difference too
+                    tfc_findings.setdefault(slot_name(i), []).append(b)
+                    continue
+                slot = slot_name(i)
                 if cs["tfc"][i] != bs["tfc"][i] or cs["n"][i] - len(cs["foreign"].get(slot, [])) != bs["n"][i] - len(bs["foreign"].get(slot, [])):
                     tfc_findings.setdefault(slot, []).append(b)
         if cb["c"] != bb["c"]:

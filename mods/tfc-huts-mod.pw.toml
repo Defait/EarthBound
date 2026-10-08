@@ -1,0 +1,13 @@
+name = "TFC Huts"
+filename = "TFCHuts-1.5.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "29b878ca55514c0648df9e29cb56a0347b8d9fca"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8733662
+project-id = 1347711

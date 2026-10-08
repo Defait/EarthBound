@@ -104,7 +104,11 @@ class Progression:
             for si, s in enumerate(slots):
                 for n in s:
                     self.index[n].append((ri, si))
-        self.seeds = frozenset(seeds or ())
+        # A seed may be a glob ("i:afc:wood/log/*"): every matching node is a starting resource.
+        expanded = set()
+        for s in seeds or ():
+            expanded |= self.match(s, quiet=True) if any(c in s for c in "*?[") else {s}
+        self.seeds = frozenset(expanded)
         self.seed_info = seed_info or {}
         self.base = self.closure()
 

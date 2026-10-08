@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tfc:brass_bell",
+          "weight": 38
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:bronze_bell",
+          "weight": 38
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bell",
+          "weight": 25
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,597 @@
+{
+ "_about": "Source of tools/loot/gen.py. themes: weighted item lists; archetypes: pools (rolls + theme shares) like the originals' pools; tables: archetype + era (stone/copper/bronze cap) + stacks (mean stacks per roll of the original table; scales the rolls) + tilt (theme shares added to the first pool, or a list for several pools; 'empty' is a share too). Items above a table's era cap are dropped from its pools. See gen.py.",
+ "keep_global_loot_modifiers": [],
+ "themes": {
+  "junk": [
+   ["minecraft:cobweb", 3],
+   ["minecraft:string", 3, [1, 3]],
+   ["minecraft:stick", 4, [1, 4]],
+   ["minecraft:rotten_flesh", 3, [1, 3]],
+   ["minecraft:bone", 4, [1, 3]],
+   ["minecraft:flint", 2, [1, 2]],
+   ["tfc:straw", 2, [2, 5]],
+   ["tfc:groundcover/guano", 1, [1, 2]],
+   ["minecraft:spider_eye", 1]
+  ],
+  "webs": [
+   ["minecraft:cobweb", 6],
+   ["minecraft:string", 6, [2, 5]],
+   ["minecraft:spider_eye", 2],
+   ["tfc:groundcover/guano", 1]
+  ],
+  "bones": [
+   ["minecraft:bone", 8, [1, 4]],
+   ["minecraft:bone_meal", 3, [1, 3]],
+   ["tfc:bone_needle", 1],
+   ["minecraft:spider_eye", 1]
+  ],
+  "old_food": [
+   {"item": "tfc:food/{wheat_bread,barley_bread,oat_bread,rye_bread}", "weight": 6, "count": [1, 2], "rotten": true},
+   {"item": "tfc:food/{potato,carrot,cabbage,onion,beet}", "weight": 5, "count": [1, 3], "rotten": true},
+   {"item": "tfc:food/{beef,pork,chicken,mutton,venison}", "weight": 3, "rotten": true}
+  ],
+  "bread": [
+   ["tfc:food/{wheat_bread,barley_bread,oat_bread,rye_bread}", 10, [1, 3]]
+  ],
+  "veg": [
+   ["tfc:food/{potato,carrot,cabbage,onion,beet,garlic,squash,tomato,green_bean,red_bell_pepper,yellow_bell_pepper,soybean,cassava,radish}", 10, [1, 4]],
+   ["tfc:food/baked_potato", 3, [1, 2]],
+   ["tfc:food/cooked_egg", 2],
+   ["tfc:food/boiled_egg", 2]
+  ],
+  "fruit": [
+   ["tfc:food/{red_apple,green_apple,plum,cherry,peach,orange,lemon,banana,blackberry,blueberry,raspberry,strawberry,elderberry,cranberry,cloudberry,gooseberry,snowberry,wintergreen_berry,bunchberry}", 10, [1, 4]]
+  ],
+  "grain": [
+   ["tfc:food/{wheat_grain,barley_grain,oat_grain,rye_grain,maize_grain,rice_grain}", 10, [2, 6]]
+  ],
+  "seeds": [
+   ["tfc:seeds/{wheat,barley,oat,rye,maize,rice,beet,cabbage,carrot,garlic,green_bean,onion,potato,soybean,squash,tomato,red_bell_pepper,yellow_bell_pepper,sugarcane,jute,papyrus,radish,pumpkin,melon,lentil,cassava,peanut,canola,alfalfa}", 10, [1, 4]]
+  ],
+  "meat_raw": [
+   ["tfc:food/{beef,pork,chicken,mutton,venison,rabbit,horse_meat,duck,quail,pheasant,turkey,grouse,chevon}", 10, [1, 3]]
+  ],
+  "meat_cooked": [
+   ["tfc:food/{cooked_beef,cooked_pork,cooked_chicken,cooked_mutton,cooked_venison,cooked_rabbit,cooked_duck,cooked_quail,cooked_pheasant,cooked_turkey,cooked_chevon}", 10, [1, 3]]
+  ],
+  "fish": [
+   ["tfc:food/{cod,salmon,bluegill,largemouth_bass,rainbow_trout,smallmouth_bass,tilapia,crappie,lake_trout,northern_pike,shellfish}", 10, [1, 3]],
+   ["tfc:food/{cooked_cod,cooked_salmon,cooked_bluegill,cooked_largemouth_bass,cooked_rainbow_trout,cooked_tilapia}", 6, [1, 3]],
+   ["tfc:food/dried_seaweed", 2, [1, 3]]
+  ],
+  "jars": [
+   ["tfc:jar/{cherry,plum,peach,red_apple,green_apple,orange,lemon,strawberry,raspberry,blackberry,blueberry,olive,cranberry,elderberry,gooseberry,banana}", 10, [1, 2]],
+   ["tfc:empty_jar", 3, [1, 3]]
+  ],
+  "salt_flux": [
+   ["tfc:powder/salt", 6, [1, 4]],
+   ["tfc:powder/flux", 3, [1, 3]],
+   ["tfc:powder/charcoal", 2, [1, 3]]
+  ],
+  "pottery": [
+   ["tfc:ceramic/{jug,bowl,pot,vessel,large_vessel}", 10],
+   ["minecraft:flower_pot", 3],
+   ["tfc:ceramic/fire_brick", 2, [1, 3]],
+   ["tfc:ceramic/unfired_{jug,bowl,pot,vessel}", 3]
+  ],
+  "molds": [
+   ["tfc:ceramic/{ingot_mold,axe_head_mold,pickaxe_head_mold,hammer_head_mold,hoe_head_mold,javelin_head_mold,knife_blade_mold,mace_head_mold,sword_blade_mold,saw_blade_mold,chisel_head_mold,propick_head_mold,shovel_head_mold,scythe_blade_mold,bell_mold}", 10]
+  ],
+  "clay": [
+   ["minecraft:clay_ball", 6, [2, 6]],
+   ["minecraft:brick", 6, [2, 6]],
+   ["tfc:fire_clay", 2, [1, 3]],
+   ["tfc:kaolin_clay", 1, [1, 3]],
+   ["tfc:daub", 2, [2, 6]]
+  ],
+  "stone_heads": [
+   ["tfc:stone/{axe_head,knife_head,hammer_head,javelin_head,hoe_head,shovel_head}/{igneous_extrusive,igneous_intrusive,metamorphic,sedimentary}", 10]
+  ],
+  "stone_tools": [
+   ["tfc:stone/{axe,knife,hammer,javelin,hoe,shovel}/{igneous_extrusive,igneous_intrusive,metamorphic,sedimentary}", 10]
+  ],
+  "copper_heads": [
+   ["tfc:metal/{axe_head,hammer_head,hoe_head,javelin_head,knife_blade,pickaxe_head,propick_head,saw_blade,shovel_head,chisel_head,mace_head,sword_blade,scythe_blade}/copper", 10]
+  ],
+  "copper_tools": [
+   ["tfc:metal/{axe,hammer,hoe,javelin,knife,pickaxe,propick,saw,shovel,chisel,mace,sword,scythe}/copper", 10]
+  ],
+  "bronze_tools": [
+   ["tfc:metal/{axe,hammer,hoe,javelin,knife,pickaxe,propick,saw,shovel,chisel,mace,sword,scythe}/{bronze,bismuth_bronze,black_bronze}", 10]
+  ],
+  "weapons": [
+   ["tfc:metal/{sword,mace,javelin,knife,axe}/{copper,bronze,bismuth_bronze,black_bronze}", 10]
+  ],
+  "farm_tools": [
+   ["tfc:metal/{hoe,scythe,shovel,axe,shears}/{copper,bronze,bismuth_bronze,black_bronze}", 10]
+  ],
+  "mining_tools": [
+   ["tfc:metal/{pickaxe,propick,shovel,hammer,chisel}/{copper,bronze,bismuth_bronze,black_bronze}", 10],
+   ["tfc:metal/pickaxe_head/{copper,bronze}", 3]
+  ],
+  "smith_tools": [
+   ["tfc:metal/{hammer,chisel,saw}/{copper,bronze}", 6],
+   ["tfc:ceramic/ingot_mold", 3],
+   ["tfc:crucible", 2],
+   ["tfc:metal/anvil/copper", 1],
+   ["tfc:metal/anvil/bronze", 0.5]
+  ],
+  "ingots": [
+   ["tfc:metal/ingot/{copper,tin}", 8, [1, 3]],
+   ["tfc:metal/ingot/{bronze,bismuth_bronze,black_bronze,brass}", 5, [1, 2]],
+   ["tfc:metal/ingot/{zinc,bismuth}", 3]
+  ],
+  "precious": [
+   ["tfc:metal/ingot/{gold,silver}", 6],
+   ["tfc:metal/ingot/{rose_gold,sterling_silver}", 3],
+   ["tfc:metal/double_ingot/{copper,gold,silver}", 2]
+  ],
+  "sheet_metal": [
+   ["tfc:metal/{sheet,rod}/copper", 5, [1, 2]],
+   ["tfc:metal/chain/copper", 3],
+   ["tfc:metal/double_sheet/{gold,silver,tin,zinc,brass}", 2]
+  ],
+  "bells": [
+   ["tfc:{brass_bell,bronze_bell}", 3],
+   ["minecraft:bell", 1]
+  ],
+  "ore_copper": [
+   ["tfc:ore/small_native_copper", 10, [1, 3]],
+   ["tfc:ore/small_malachite", 8, [1, 3]],
+   ["tfc:ore/small_tetrahedrite", 5, [1, 3]],
+   ["tfc:ore/poor_native_copper", 8, [1, 4]],
+   ["tfc:ore/poor_malachite", 6, [1, 3]],
+   ["tfc:ore/poor_tetrahedrite", 4, [1, 3]],
+   ["tfc:ore/normal_native_copper", 4, [1, 2]],
+   ["tfc:ore/normal_malachite", 3, [1, 2]],
+   ["tfc:ore/rich_native_copper", 1, [1, 2]]
+  ],
+  "ore_tin": [
+   ["tfc:ore/small_cassiterite", 8, [1, 3]],
+   ["tfc:ore/poor_cassiterite", 6, [1, 3]],
+   ["tfc:ore/normal_cassiterite", 3, [1, 2]],
+   ["tfc:ore/small_bismuthinite", 3, [1, 2]],
+   ["tfc:ore/small_sphalerite", 4, [1, 3]],
+   ["tfc:ore/poor_sphalerite", 3, [1, 3]]
+  ],
+  "ore_precious": [
+   ["tfc:ore/small_native_gold", 3, [1, 2]],
+   ["tfc:ore/small_native_silver", 3, [1, 2]],
+   ["tfc:ore/poor_native_gold", 1],
+   ["tfc:ore/poor_native_silver", 1]
+  ],
+  "ore_iron": [
+   ["tfc:ore/small_hematite", 3, [1, 3]],
+   ["tfc:ore/small_limonite", 3, [1, 3]],
+   ["tfc:ore/small_magnetite", 3, [1, 3]],
+   ["tfc:ore/poor_hematite", 2],
+   ["tfc:ore/poor_limonite", 2]
+  ],
+  "coal": [
+   ["tfc:ore/bituminous_coal", 6, [1, 3]],
+   ["tfc:ore/lignite", 3, [1, 2]],
+   ["minecraft:charcoal", 6, [1, 4]],
+   ["tfc:ore/graphite", 1, [1, 2]]
+  ],
+  "minerals": [
+   ["tfc:ore/{gypsum,sulfur,saltpeter,sylvite,borax,cinnabar,cryolite,graphite}", 8, [1, 2]],
+   ["tfc:powder/flux", 3, [1, 3]],
+   ["tfc:powder/salt", 4, [1, 4]]
+  ],
+  "gems_minor": [
+   ["tfc:ore/{amethyst,opal,lapis_lazuli}", 10]
+  ],
+  "gems_major": [
+   ["tfc:ore/{ruby,sapphire,emerald,diamond}", 10]
+  ],
+  "light": [
+   ["tfc:torch", 8, [1, 4]],
+   ["tfc:candle", 5, [1, 2]],
+   ["tfc:metal/lamp/copper", 1]
+  ],
+  "stationery": [
+   ["tfc:papyrus", 4, [1, 3]],
+   ["tfc:papyrus_strip", 4, [1, 4]],
+   ["tfc:unrefined_paper", 4, [1, 3]],
+   ["minecraft:compass", 1],
+   ["minecraft:clock", 1],
+   ["minecraft:spyglass", 1]
+  ],
+  "cloth": [
+   ["tfc:burlap_cloth", 5, [1, 2]],
+   ["tfc:silk_cloth", 1],
+   ["tfc:rope", 5, [1, 2]],
+   ["tfc:jute_net", 2],
+   ["tfc:jute_fiber", 3, [1, 3]],
+   ["tfc:glue", 2],
+   ["tfc:bone_needle", 2],
+   ["tfc:spindle", 1],
+   ["minecraft:string", 3, [1, 3]],
+   ["tfc:wool_cloth", 3, [1, 2]],
+   ["tfc:wool_yarn", 4, [1, 4]]
+  ],
+  "wool": [
+   ["tfc:wool", 5, [1, 3]],
+   ["tfc:wool_yarn", 4, [1, 4]],
+   ["tfc:wool_cloth", 3, [1, 2]],
+   ["minecraft:white_wool", 3, [1, 2]],
+   ["tfc:spindle", 1]
+  ],
+  "hides": [
+   ["tfc:{small,medium,large}_raw_hide", 6],
+   ["tfc:{small,medium,large}_soaked_hide", 3],
+   ["tfc:{small,medium,large}_sheepskin_hide", 3],
+   ["minecraft:leather", 4, [1, 3]]
+  ],
+  "leather_armor": [
+   ["minecraft:leather_{helmet,chestplate,leggings,boots}", 10]
+  ],
+  "chain_armor": [
+   ["minecraft:chainmail_{helmet,chestplate,leggings,boots}", 10]
+  ],
+  "saddlery": [
+   ["minecraft:saddle", 4],
+   ["minecraft:leather_horse_armor", 3],
+   ["minecraft:lead", 3]
+  ],
+  "bows": [
+   ["minecraft:bow", 3],
+   ["minecraft:arrow", 6, [2, 6]]
+  ],
+  "fletching": [
+   ["minecraft:arrow", 6, [2, 6]],
+   ["minecraft:feather", 6, [2, 5]],
+   ["minecraft:flint", 5, [1, 3]],
+   ["minecraft:stick", 5, [1, 4]],
+   ["minecraft:string", 3, [1, 2]],
+   ["minecraft:bow", 2]
+  ],
+  "timber": [
+   ["tfc:wood/log/{acacia,ash,aspen,birch,blackwood,douglas_fir,hickory,mangrove,maple,oak,palm,pine,rosewood,sequoia,spruce,sycamore,willow}", 5, [1, 4]],
+   ["tfc:wood/lumber/{acacia,ash,aspen,birch,blackwood,chestnut,douglas_fir,hickory,kapok,mangrove,maple,oak,palm,pine,rosewood,sequoia,spruce,sycamore,white_cedar,willow}", 5, [2, 6]],
+   ["tfc:stick_bunch", 3],
+   ["minecraft:stick", 3, [2, 6]]
+  ],
+  "building": [
+   ["tfc:mortar", 2, [2, 6]],
+   ["tfc:daub", 2, [2, 6]],
+   ["tfc:thatch", 2, [2, 6]],
+   ["minecraft:brick", 4, [2, 6]],
+   ["minecraft:clay_ball", 3, [2, 6]]
+  ],
+  "shells": [
+   ["tfc:groundcover/{clam,mussel,mollusk,sea_urchin}", 6, [1, 3]],
+   ["tfc:groundcover/seaweed", 3],
+   ["tfc:groundcover/driftwood", 3],
+   ["tfc:sea_pickle", 2],
+   ["tfc:food/fresh_seaweed", 3]
+  ],
+  "fish_gear": [
+   ["tfc:metal/fish_hook/copper", 2],
+   ["tfc:rope", 3, [1, 3]],
+   ["tfc:jute_net", 2],
+   ["tfc:wooden_bucket", 1]
+  ],
+  "flowers": [
+   ["tfc:plant/{allium,dandelion,poppy,rose,sunflower,tulip_red,tulip_white,tulip_pink,tulip_orange,oxeye_daisy,marigold,lilac,primrose,cornflower,lily_of_the_valley,hibiscus,anthurium,calendula,foxglove,buttercup,blue_orchid,black_orchid}", 10, [1, 3]]
+  ],
+  "saplings": [
+   ["tfc:plant/{red_apple,green_apple,plum,cherry,peach,orange,lemon,olive,banana}_sapling", 3],
+   ["tfc:wood/sapling/{oak,birch,maple,pine,spruce,willow,ash,hickory,sycamore,white_cedar,douglas_fir,kapok,acacia}", 5]
+  ],
+  "marsh": [
+   ["tfc:plant/{cattail,arrowhead,duckweed,pickerelweed,water_taro,phragmite,bur_reed,yellow_water_lily,purple_water_lily}", 8, [1, 3]],
+   ["tfc:food/cattail_root", 3, [1, 3]],
+   ["tfc:peat", 2, [1, 3]],
+   ["tfc:papyrus", 2]
+  ],
+  "cactus": [
+   ["tfc:plant/{silken_pincushion_cactus,tank_bromeliad}", 3],
+   ["tfc:food/dried_kelp", 0]
+  ]
+ },
+ "archetypes": {
+  "junk_pile": {"pools": [
+   {"rolls": [1, 3], "themes": {"junk": 1}}
+  ]},
+  "dungeon": {"pools": [
+   {"rolls": [1, 3], "themes": {"stone_tools": 3, "copper_tools": 3, "ingots": 3, "ore_copper": 2, "coal": 2, "light": 2, "pottery": 2, "hides": 1, "saddlery": 1, "gems_minor": 1}},
+   {"rolls": [1, 3], "themes": {"bread": 2, "veg": 2, "meat_cooked": 1, "old_food": 3, "seeds": 2, "jars": 1, "fruit": 1}},
+   {"rolls": [1, 3], "themes": {"junk": 1}}
+  ]},
+  "crypt": {"pools": [
+   {"rolls": [0, 2], "themes": {"gems_minor": 2, "precious": 3, "bells": 1, "sheet_metal": 1, "bronze_tools": 2, "weapons": 2, "empty": 0.8}},
+   {"rolls": [1, 2], "themes": {"stone_tools": 3, "stone_heads": 2, "copper_tools": 3, "ingots": 2, "ore_copper": 1, "pottery": 2}},
+   {"rolls": [3, 4], "themes": {"light": 3, "coal": 2, "seeds": 2, "flowers": 2, "old_food": 2, "jars": 1}},
+   {"rolls": [1, 3], "themes": {"old_food": 4, "bones": 3, "veg": 1}}
+  ]},
+  "skeleton": {"pools": [
+   {"rolls": [2, 4], "themes": {"bows": 4, "bones": 4, "light": 2, "coal": 2, "stone_tools": 2, "copper_tools": 2, "ingots": 2, "precious": 0.5}},
+   {"rolls": [1, 3], "themes": {"ore_copper": 2, "ore_tin": 1, "coal": 2, "hides": 1, "cloth": 1, "gems_minor": 0.5}},
+   {"rolls": [2, 2], "themes": {"bones": 1, "junk": 1}}
+  ]},
+  "spider": {"pools": [
+   {"rolls": [1, 2], "themes": {"jars": 3, "seeds": 2, "cloth": 2, "hides": 1, "light": 1, "ingots": 1, "gems_minor": 0.5}},
+   {"rolls": [3, 6], "themes": {"webs": 4, "junk": 1}},
+   {"rolls": [3, 4], "themes": {"ore_copper": 1, "coal": 1, "minerals": 1, "molds": 1, "pottery": 1}},
+   {"rolls": [3, 3], "themes": {"webs": 1}}
+  ]},
+  "tomb": {"pools": [
+   {"rolls": [4, 6], "themes": {"bones": 5, "old_food": 2, "pottery": 2, "stone_tools": 1, "copper_tools": 1, "ingots": 1, "gems_minor": 1, "precious": 1}}
+  ]},
+  "cache": {"pools": [
+   {"rolls": [3, 5], "themes": {"light": 4, "coal": 4, "junk": 1, "minerals": 2, "ore_copper": 2, "ore_tin": 1, "gems_minor": 1, "gems_major": 0.3}}
+  ]},
+  "mineshaft": {"pools": [
+   {"rolls": [0, 1], "themes": {"mining_tools": 3, "gems_minor": 1, "precious": 1, "empty": 0.6}},
+   {"rolls": [2, 4], "themes": {"ore_copper": 4, "ore_tin": 2, "ore_iron": 0.7, "coal": 3, "minerals": 2, "bread": 1, "veg": 1}},
+   {"rolls": [2, 3], "themes": {"light": 5, "cloth": 3, "junk": 2, "timber": 1}}
+  ]},
+  "mineshaft_rare": {"pools": [
+   {"rolls": [1, 2], "themes": {"mining_tools": 3, "ingots": 3, "gems_minor": 2, "gems_major": 0.5, "precious": 1, "smith_tools": 0.5}},
+   {"rolls": [2, 3], "themes": {"ore_copper": 3, "ore_tin": 2, "ore_precious": 2, "ore_iron": 1, "coal": 2, "minerals": 1}}
+  ]},
+  "cart": {"pools": [
+   {"rolls": [1, 3], "themes": {"ore_copper": 3, "ore_tin": 1, "coal": 3, "light": 2, "cloth": 1, "junk": 1, "bread": 1}}
+  ]},
+  "house": {"pools": [
+   {"rolls": [3, 6], "themes": {"bread": 3, "veg": 3, "fruit": 1, "seeds": 2, "pottery": 2, "cloth": 1, "hides": 1, "flowers": 1, "junk": 0.5, "light": 1, "stone_tools": 1, "copper_tools": 1}}
+  ]},
+  "house_rare": {"pools": [
+   {"rolls": [1, 2], "themes": {"ingots": 3, "precious": 2, "pottery": 2, "gems_minor": 2, "bells": 1, "copper_tools": 2, "bronze_tools": 2, "light": 1}},
+   {"rolls": [2, 4], "themes": {"bread": 2, "meat_cooked": 2, "jars": 2, "cloth": 2, "salt_flux": 1, "stationery": 1}}
+  ]},
+  "smith_weapon": {"pools": [
+   {"rolls": [3, 6], "themes": {"weapons": 6, "ingots": 3, "bows": 2, "leather_armor": 2, "chain_armor": 1, "hides": 1, "bread": 2, "meat_cooked": 1, "light": 1, "coal": 1}}
+  ]},
+  "smith_armor": {"pools": [
+   {"rolls": [2, 5], "themes": {"leather_armor": 4, "chain_armor": 3, "ingots": 3, "sheet_metal": 2, "hides": 2, "cloth": 1, "bread": 2, "copper_tools": 1}}
+  ]},
+  "smith_tool": {"pools": [
+   {"rolls": [3, 6], "themes": {"mining_tools": 4, "farm_tools": 3, "smith_tools": 2, "ingots": 3, "copper_heads": 2, "timber": 2, "coal": 1, "bread": 2}}
+  ]},
+  "smith_general": {"pools": [
+   {"rolls": [3, 6], "themes": {"ingots": 4, "weapons": 2, "mining_tools": 2, "farm_tools": 1, "sheet_metal": 1, "coal": 2, "bread": 3, "molds": 1, "ore_copper": 1, "hides": 1, "saddlery": 1}}
+  ]},
+  "fletcher": {"pools": [
+   {"rolls": [2, 5], "themes": {"fletching": 6, "hides": 1, "bows": 1, "bread": 1}}
+  ]},
+  "butcher": {"pools": [
+   {"rolls": [2, 5], "themes": {"meat_raw": 5, "meat_cooked": 3, "hides": 2, "bones": 2, "salt_flux": 2, "copper_tools": 1}}
+  ]},
+  "library": {"pools": [
+   {"rolls": [2, 5], "themes": {"stationery": 6, "cloth": 1, "bread": 2, "light": 1, "jars": 0.5}}
+  ]},
+  "fisher": {"pools": [
+   {"rolls": [2, 5], "themes": {"fish": 5, "fish_gear": 3, "cloth": 2, "shells": 2, "veg": 1}}
+  ]},
+  "shepherd": {"pools": [
+   {"rolls": [2, 5], "themes": {"wool": 5, "cloth": 2, "hides": 2, "bread": 2, "veg": 1, "farm_tools": 1}}
+  ]},
+  "mason": {"pools": [
+   {"rolls": [2, 5], "themes": {"clay": 4, "building": 4, "pottery": 2, "stone_heads": 2, "copper_tools": 2, "bread": 2}}
+  ]},
+  "tannery": {"pools": [
+   {"rolls": [2, 5], "themes": {"hides": 6, "leather_armor": 3, "saddlery": 2, "bread": 2, "cloth": 1}}
+  ]},
+  "chapel": {"pools": [
+   {"rolls": [2, 5], "themes": {"light": 4, "bells": 1, "cloth": 2, "bread": 3, "old_food": 1, "gems_minor": 1, "precious": 1, "bones": 1}}
+  ]},
+  "farm": {"pools": [
+   {"rolls": [3, 7], "themes": {"grain": 4, "seeds": 4, "veg": 4, "bread": 3, "fruit": 1, "farm_tools": 2}}
+  ]},
+  "treasure": {"pools": [
+   {"rolls": [2, 4], "themes": {"ingots": 3, "precious": 4, "gems_minor": 3, "gems_major": 1, "bells": 1, "sheet_metal": 2, "bronze_tools": 2, "weapons": 2, "smith_tools": 1, "pottery": 1}}
+  ]},
+  "treasure_big": {"pools": [
+   {"rolls": [1, 4], "themes": {"ingots": 3, "precious": 4, "gems_minor": 2, "gems_major": 1, "bronze_tools": 3, "weapons": 3, "mining_tools": 2, "saddlery": 2, "leather_armor": 1, "chain_armor": 1, "bells": 1}}
+  ]},
+  "pot": {"pools": [
+   {"rolls": [1, 1], "themes": {"gems_minor": 2, "precious": 3, "ingots": 3, "ore_precious": 2, "pottery": 2, "stationery": 1, "bells": 1, "gems_major": 0.5}}
+  ]},
+  "pond": {"pools": [
+   {"rolls": [2, 5], "themes": {"fish": 4, "shells": 3, "marsh": 2, "fish_gear": 1}}
+  ]},
+  "garden": {"pools": [
+   {"rolls": [2, 4], "themes": {"flowers": 4, "saplings": 3, "seeds": 3, "fruit": 2, "marsh": 1, "gems_minor": 0.5}}
+  ]},
+  "temple": {"pools": [
+   {"rolls": [3, 6], "themes": {"ingots": 3, "ore_copper": 2, "coal": 2, "bread": 2, "meat_cooked": 1, "copper_tools": 2, "bronze_tools": 1, "pottery": 2, "hides": 1, "light": 2}}
+  ]},
+  "temple_treasure": {"pools": [
+   {"rolls": [2, 4], "themes": {"precious": 4, "ingots": 3, "gems_minor": 3, "gems_major": 1, "bells": 1, "bronze_tools": 2, "weapons": 2, "sheet_metal": 1, "saddlery": 1}},
+   {"rolls": [1, 2], "themes": {"stationery": 2, "jars": 2, "cloth": 2, "pottery": 2, "salt_flux": 1}}
+  ]},
+  "barrel_store": {"pools": [
+   {"rolls": [3, 8], "themes": {"bread": 3, "veg": 3, "grain": 3, "meat_cooked": 1, "salt_flux": 2, "jars": 2, "fruit": 1, "seeds": 1}}
+  ]},
+  "dig": {"pools": [
+   {"rolls": [1, 1], "themes": {"pottery": 4, "bones": 2, "clay": 2, "stone_heads": 2, "copper_heads": 1, "ingots": 1, "gems_minor": 1, "ore_copper": 1}}
+  ]},
+  "outpost": {"pools": [
+   {"rolls": [2, 5], "themes": {"bows": 3, "weapons": 2, "leather_armor": 2, "chain_armor": 1, "bread": 2, "meat_cooked": 1, "light": 1, "cloth": 1, "stationery": 0.5}}
+  ]},
+  "armory": {"pools": [
+   {"rolls": [1, 3], "themes": {"weapons": 5, "leather_armor": 4, "chain_armor": 3, "bows": 2, "ore_iron": 1, "coal": 1}}
+  ]},
+  "gift": {"pools": [
+   {"rolls": [1, 1], "themes": {}}
+  ]},
+  "wreck": {"pools": [
+   {"rolls": [3, 8], "themes": {"fish_gear": 2, "cloth": 3, "salt_flux": 2, "ingots": 2, "jars": 2, "shells": 1, "pottery": 1, "bread": 2, "meat_cooked": 1, "stationery": 1}}
+  ]}
+ },
+ "tables": {
+  "betterdungeons:skeleton_dungeon/chests/common": {"arch": "skeleton", "era": "copper", "stacks": 7.0},
+  "betterdungeons:skeleton_dungeon/chests/middle": {"arch": "cache", "era": "bronze", "stacks": 4.0},
+  "betterdungeons:small_dungeon/chests/loot_piles": {"arch": "junk_pile", "era": "stone", "stacks": 2.5},
+  "betterdungeons:small_nether_dungeon/chests/common": {"arch": "dungeon", "era": "bronze", "tilt": [{"precious": 2, "ore_precious": 2, "coal": 3}], "note": "Nether: cannot generate (portals are off); kept in case a nether-like dimension arrives", "stacks": 8.0},
+  "betterdungeons:spider_dungeon/chests/egg_room": {"arch": "spider", "era": "copper", "stacks": 12.5},
+  "betterdungeons:zombie_dungeon/chests/common": {"arch": "crypt", "era": "copper", "stacks": 8.0},
+  "betterdungeons:zombie_dungeon/chests/special": {"arch": "crypt", "era": "bronze", "stacks": 8.0},
+  "betterdungeons:zombie_dungeon/chests/tombstone": {"arch": "tomb", "era": "copper", "stacks": 5.0},
+  "gtceu:chests/extra/abandoned_mineshaft": {"empty": true, "note": "GregTech's own loot for this vanilla table (steel, silver, chromium ... ); only its global loot modifier uses it"},
+  "gtceu:chests/extra/desert_pyramid": {"empty": true, "note": "GregTech's own loot for this vanilla table (steel, silver, chromium ... ); only its global loot modifier uses it"},
+  "gtceu:chests/extra/jungle_temple": {"empty": true, "note": "GregTech's own loot for this vanilla table (steel, silver, chromium ... ); only its global loot modifier uses it"},
+  "gtceu:chests/extra/jungle_temple_dispenser": {"empty": true, "note": "GregTech's own loot for this vanilla table (steel, silver, chromium ... ); only its global loot modifier uses it"},
+  "gtceu:chests/extra/simple_dungeon": {"empty": true, "note": "GregTech's own loot for this vanilla table (steel, silver, chromium ... ); only its global loot modifier uses it"},
+  "gtceu:chests/extra/spawn_bonus_chest": {"empty": true, "note": "GregTech's own loot for this vanilla table (steel, silver, chromium ... ); only its global loot modifier uses it"},
+  "gtceu:chests/extra/stronghold_corridor": {"empty": true, "note": "GregTech's own loot for this vanilla table (steel, silver, chromium ... ); only its global loot modifier uses it"},
+  "gtceu:chests/extra/stronghold_crossing": {"empty": true, "note": "GregTech's own loot for this vanilla table (steel, silver, chromium ... ); only its global loot modifier uses it"},
+  "gtceu:chests/extra/village_weaponsmith": {"empty": true, "note": "GregTech's own loot for this vanilla table (steel, silver, chromium ... ); only its global loot modifier uses it"},
+  "kaisyn:archeology/forest_ruins_common": {"arch": "dig", "era": "copper", "type": "archaeology", "stacks": 1.0},
+  "kaisyn:archeology/forest_ruins_rare": {"arch": "dig", "era": "bronze", "tilt": {"gems_minor": 3, "ingots": 2, "precious": 1}, "type": "archaeology", "stacks": 1.0},
+  "kaisyn:outpost/common/armory": {"arch": "armory", "era": "bronze", "stacks": 2.0},
+  "kaisyn:outpost/common/food": {"arch": "barrel_store", "era": "copper", "tilt": {"meat_cooked": 2, "bread": 3}, "stacks": 6.0},
+  "kaisyn:outpost/exclusives/outpost_beach_barrel": {"arch": "pond", "era": "copper", "tilt": {"fish": 5, "shells": 3}, "stacks": 5.5},
+  "kaisyn:outpost/exclusives/outpost_mediterranean_barrel": {"arch": "barrel_store", "era": "copper", "tilt": {"fruit": 4, "jars": 4, "salt_flux": 1}, "stacks": 5.5},
+  "kaisyn:outpost/exclusives/outpost_rustic_barrel": {"arch": "barrel_store", "era": "copper", "tilt": {"jars": 3, "light": 3, "fruit": 2}, "stacks": 5.5},
+  "kaisyn:village/exclusives/village_classic_blacksmith": {"arch": "smith_general", "era": "bronze", "stacks": 5.5},
+  "kaisyn:village/exclusives/village_mediterranean_house": {"arch": "house", "era": "copper", "tilt": {"pottery": 3, "fish": 2, "fruit": 2}, "stacks": 5.5},
+  "kaisyn:village/exclusives/village_piglin_barrel": {"arch": "barrel_store", "era": "copper", "tilt": {"meat_raw": 3, "ingots": 1, "precious": 1}, "stacks": 4.5},
+  "kaisyn:village/exclusives/village_piglin_house": {"arch": "house", "era": "bronze", "tilt": {"meat_cooked": 3, "precious": 2, "ingots": 2}, "stacks": 6.5},
+  "kaisyn:village/exclusives/village_wandering_trader_hut": {"arch": "house", "era": "copper", "tilt": {"fruit": 2, "ore_precious": 2, "gems_minor": 1, "cloth": 2}, "stacks": 5.5},
+  "kaisyn:village/village_badlands_house": {"arch": "house", "era": "copper", "tilt": {"pottery": 3, "clay": 2}, "stacks": 6.2},
+  "kaisyn:village/village_birch_forest_house": {"arch": "house", "era": "copper", "note": "the template names this table but T&T ships none (empty chests)"},
+  "kaisyn:village/village_forest_ruins/forest_ruins_butcher": {"arch": "butcher", "era": "copper", "note": "named by a template, not shipped by T&T"},
+  "kaisyn:village/village_forest_ruins/forest_ruins_library": {"arch": "library", "era": "bronze", "note": "named by a template, not shipped by T&T"},
+  "kaisyn:village/village_forest_ruins/forest_ruins_temple": {"arch": "chapel", "era": "copper", "note": "named by a template, not shipped by T&T"},
+  "kaisyn:village/village_jungle_house": {"arch": "house", "era": "copper", "tilt": {"fruit": 3, "saplings": 1}, "stacks": 6.5},
+  "kaisyn:village/village_mushroom_house": {"arch": "house", "era": "copper", "tilt": {"marsh": 2, "bread": 2, "jars": 2}, "stacks": 6.2},
+  "kaisyn:village/village_swamp_house": {"arch": "house", "era": "copper", "tilt": {"marsh": 3, "fish": 1}, "stacks": 5.5},
+  "minecraft:archaeology/desert_pyramid": {"arch": "dig", "era": "copper", "type": "archaeology", "stacks": 1.0},
+  "minecraft:archaeology/desert_well": {"arch": "dig", "era": "copper", "tilt": {"clay": 3}, "type": "archaeology", "stacks": 1.0},
+  "minecraft:archaeology/ocean_ruin_cold": {"arch": "dig", "era": "copper", "tilt": {"shells": 3}, "type": "archaeology", "stacks": 1.0},
+  "minecraft:archaeology/ocean_ruin_warm": {"arch": "dig", "era": "copper", "tilt": {"shells": 3}, "type": "archaeology", "stacks": 1.0},
+  "minecraft:archaeology/trail_ruins_common": {"arch": "dig", "era": "copper", "type": "archaeology", "stacks": 1.0},
+  "minecraft:archaeology/trail_ruins_rare": {"arch": "dig", "era": "bronze", "tilt": {"gems_minor": 3, "ingots": 2}, "type": "archaeology", "stacks": 1.0},
+  "minecraft:chests/abandoned_mineshaft": {"arch": "mineshaft", "era": "bronze", "stacks": 9.0},
+  "minecraft:chests/buried_treasure": {"arch": "treasure", "era": "bronze", "tilt": {"gems_minor": 4, "precious": 4, "shells": 2}, "stacks": 13.0},
+  "minecraft:chests/desert_pyramid": {"arch": "temple_treasure", "era": "bronze", "stacks": 6.9},
+  "minecraft:chests/end_city_treasure": {"arch": "treasure_big", "era": "bronze", "note": "End: cannot generate; MVS's end structures name it", "stacks": 4.1},
+  "minecraft:chests/igloo_chest": {"arch": "house", "era": "copper", "tilt": {"meat_cooked": 2, "hides": 2, "coal": 2}, "stacks": 6.0},
+  "minecraft:chests/jungle_temple": {"arch": "temple", "era": "bronze", "stacks": 4.3},
+  "minecraft:chests/pillager_outpost": {"arch": "outpost", "era": "bronze", "stacks": 8.2},
+  "minecraft:chests/ruined_portal": {"arch": "treasure", "era": "bronze", "tilt": {"precious": 4, "coal": 2}, "stacks": 6.0},
+  "minecraft:chests/shipwreck_map": {"arch": "library", "era": "bronze", "tilt": {"stationery": 8}, "stacks": 4.2},
+  "minecraft:chests/shipwreck_supply": {"arch": "wreck", "era": "copper", "stacks": 6.7},
+  "minecraft:chests/shipwreck_treasure": {"arch": "treasure", "era": "bronze", "tilt": {"precious": 5, "ingots": 3, "salt_flux": 1}, "stacks": 8.2},
+  "minecraft:chests/simple_dungeon": {"arch": "dungeon", "era": "copper", "stacks": 7.5},
+  "minecraft:chests/spawn_bonus_chest": {"arch": "junk_pile", "era": "stone", "tilt": {"stone_tools": 4, "timber": 3, "bread": 2, "veg": 1, "junk": 0.5}, "note": "the bonus-chest world option: a TFC starter kit", "stacks": 9.0},
+  "minecraft:chests/stronghold_corridor": {"arch": "temple", "era": "bronze", "stacks": 2.6},
+  "minecraft:chests/stronghold_crossing": {"arch": "temple", "era": "copper", "stacks": 2.5},
+  "minecraft:chests/stronghold_library": {"arch": "library", "era": "bronze", "stacks": 7.0},
+  "minecraft:chests/underwater_ruin_big": {"arch": "wreck", "era": "copper", "tilt": {"shells": 3, "gems_minor": 1}, "stacks": 6.0},
+  "minecraft:chests/underwater_ruin_small": {"arch": "wreck", "era": "copper", "tilt": {"shells": 3}, "stacks": 6.0},
+  "minecraft:chests/village/village_armorer": {"arch": "smith_armor", "era": "bronze", "stacks": 3.0},
+  "minecraft:chests/village/village_butcher": {"arch": "butcher", "era": "copper", "stacks": 3.0},
+  "minecraft:chests/village/village_cartographer": {"arch": "library", "era": "bronze", "stacks": 3.0},
+  "minecraft:chests/village/village_desert_house": {"arch": "house", "era": "copper", "tilt": {"salt_flux": 1, "fruit": 2, "pottery": 3}, "stacks": 5.5},
+  "minecraft:chests/village/village_fisher": {"arch": "fisher", "era": "copper", "stacks": 3.0},
+  "minecraft:chests/village/village_fletcher": {"arch": "fletcher", "era": "copper", "stacks": 3.0},
+  "minecraft:chests/village/village_leatherworker": {"arch": "tannery", "era": "copper", "note": "T&T names this table; vanilla calls it village_tannery"},
+  "minecraft:chests/village/village_mason": {"arch": "mason", "era": "copper", "stacks": 3.0},
+  "minecraft:chests/village/village_plains_house": {"arch": "house", "era": "copper", "stacks": 5.5},
+  "minecraft:chests/village/village_savanna_house": {"arch": "house", "era": "copper", "tilt": {"fruit": 2, "seeds": 3}, "stacks": 5.5},
+  "minecraft:chests/village/village_shepherd": {"arch": "shepherd", "era": "copper", "stacks": 3.0},
+  "minecraft:chests/village/village_snowy_house": {"arch": "house", "era": "copper", "tilt": {"meat_cooked": 2, "hides": 2, "fish": 1}, "stacks": 5.5},
+  "minecraft:chests/village/village_taiga_house": {"arch": "house", "era": "copper", "tilt": {"timber": 2, "fruit": 2, "hides": 1}, "stacks": 5.5},
+  "minecraft:chests/village/village_tannery": {"arch": "tannery", "era": "copper", "stacks": 3.0},
+  "minecraft:chests/village/village_temple": {"arch": "chapel", "era": "copper", "stacks": 5.5},
+  "minecraft:chests/village/village_toolsmith": {"arch": "smith_tool", "era": "bronze", "stacks": 5.5},
+  "minecraft:chests/village/village_weaponsmith": {"arch": "smith_weapon", "era": "bronze", "stacks": 5.5},
+  "minecraft:chests/woodland_mansion": {"arch": "treasure", "era": "bronze", "tilt": {"cloth": 2, "stationery": 2}, "stacks": 8.0},
+  "minecraft:gameplay/hero_of_the_village/armorer_gift": {"arch": "gift", "era": "bronze", "tilt": [{"chain_armor": 3, "leather_armor": 3}], "type": "gift", "stacks": 1.0},
+  "minecraft:gameplay/hero_of_the_village/butcher_gift": {"arch": "gift", "era": "copper", "tilt": [{"meat_cooked": 1}], "type": "gift", "stacks": 1.0},
+  "minecraft:gameplay/hero_of_the_village/cartographer_gift": {"arch": "gift", "era": "bronze", "tilt": [{"stationery": 1}], "type": "gift", "stacks": 1.0},
+  "minecraft:gameplay/hero_of_the_village/cleric_gift": {"arch": "gift", "era": "copper", "tilt": [{"light": 2, "jars": 2, "salt_flux": 1}], "type": "gift", "stacks": 1.0},
+  "minecraft:gameplay/hero_of_the_village/farmer_gift": {"arch": "gift", "era": "copper", "tilt": [{"bread": 2, "veg": 2}], "type": "gift", "stacks": 1.0},
+  "minecraft:gameplay/hero_of_the_village/fisherman_gift": {"arch": "gift", "era": "copper", "tilt": [{"fish": 1}], "type": "gift", "stacks": 1.0},
+  "minecraft:gameplay/hero_of_the_village/fletcher_gift": {"arch": "gift", "era": "copper", "tilt": [{"fletching": 1}], "type": "gift", "stacks": 1.0},
+  "minecraft:gameplay/hero_of_the_village/leatherworker_gift": {"arch": "gift", "era": "copper", "tilt": [{"hides": 1}], "type": "gift", "stacks": 1.0},
+  "minecraft:gameplay/hero_of_the_village/librarian_gift": {"arch": "gift", "era": "bronze", "tilt": [{"stationery": 1}], "type": "gift", "stacks": 1.0},
+  "minecraft:gameplay/hero_of_the_village/mason_gift": {"arch": "gift", "era": "copper", "tilt": [{"clay": 1, "building": 1}], "type": "gift", "stacks": 1.0},
+  "minecraft:gameplay/hero_of_the_village/shepherd_gift": {"arch": "gift", "era": "copper", "tilt": [{"wool": 1}], "type": "gift", "stacks": 1.0},
+  "minecraft:gameplay/hero_of_the_village/toolsmith_gift": {"arch": "gift", "era": "bronze", "tilt": [{"copper_tools": 2, "bronze_tools": 2, "stone_tools": 1}], "type": "gift", "stacks": 1.0},
+  "minecraft:gameplay/hero_of_the_village/weaponsmith_gift": {"arch": "gift", "era": "bronze", "tilt": [{"weapons": 1}], "type": "gift", "stacks": 1.0},
+  "minecraft:mvs/cathedral_common": {"arch": null, "era": null, "alias": "mvs:cathedral_common", "note": "MVS's cathedral templates name this table with the wrong namespace (it does not exist, so those chests stayed empty)"},
+  "mmv:village_dark_oak_archer": {"arch": "fletcher", "era": "copper", "stacks": 4.0},
+  "mmv:village_dark_oak_blacksmith": {"arch": "smith_general", "era": "bronze", "stacks": 5.5},
+  "mmv:village_dark_oak_cartographer": {"arch": "library", "era": "bronze", "stacks": 3.5},
+  "mmv:village_dark_oak_church": {"arch": "chapel", "era": "copper", "stacks": 3.5},
+  "mmv:village_dark_oak_farm": {"arch": "farm", "era": "copper", "stacks": 5.5},
+  "mmv:village_dark_oak_house": {"arch": "house", "era": "copper", "stacks": 5.5},
+  "mmv:village_dark_oak_librarian": {"arch": "library", "era": "bronze", "stacks": 3.5},
+  "mmv:village_dark_oak_stonecutter": {"arch": "mason", "era": "copper", "stacks": 4.0},
+  "mmv:village_jungle_house": {"arch": "house", "era": "copper", "tilt": {"fruit": 3, "saplings": 1}, "stacks": 5.5},
+  "mmv:village_swamp_house": {"arch": "house", "era": "copper", "tilt": {"marsh": 3, "fish": 1}, "stacks": 5.5},
+  "mtr:badlands_temple_common": {"arch": "temple", "era": "copper", "stacks": 4.5},
+  "mtr:badlands_temple_decorated_pot": {"arch": "pot", "era": "copper", "stacks": 1.0},
+  "mtr:badlands_temple_rare": {"arch": "temple_treasure", "era": "bronze", "stacks": 3.0},
+  "mtr:desert_temple_crypt_chest": {"arch": "temple_treasure", "era": "bronze", "stacks": 5.0},
+  "mtr:desert_temple_decorated_pot": {"arch": "pot", "era": "bronze", "stacks": 3.0},
+  "mtr:desert_temple_lower_chamber": {"arch": "temple_treasure", "era": "bronze", "tilt": [{"precious": 4, "bones": 2}, {}], "stacks": 9.0},
+  "mtr:desert_temple_pillar_chest": {"arch": "temple_treasure", "era": "bronze", "stacks": 9.0},
+  "mtr:desert_temple_suspicious_sand": {"arch": "dig", "era": "bronze", "tilt": {"gems_minor": 2, "ingots": 2}, "type": "archaeology", "stacks": 1.0},
+  "mtr:desert_temple_wall_chest": {"arch": "temple", "era": "bronze", "tilt": {"precious": 2, "weapons": 2}, "stacks": 8.0},
+  "mtr:empty": {"arch": "junk_pile", "era": "stone", "stacks": 1.7},
+  "mtr:jungle_temple_corridor": {"arch": "temple", "era": "copper", "stacks": 4.0},
+  "mtr:jungle_temple_crypt_barrel_empty": {"arch": "junk_pile", "era": "stone", "stacks": 2.3},
+  "mtr:jungle_temple_crypt_barrel_full": {"arch": "barrel_store", "era": "copper", "tilt": {"ore_precious": 2, "fruit": 3}, "stacks": 5.5},
+  "mtr:jungle_temple_crypt_chest": {"arch": "temple_treasure", "era": "bronze", "stacks": 4.5},
+  "mtr:jungle_temple_decorated_pot": {"arch": "pot", "era": "copper", "tilt": {"seeds": 3, "fruit": 3, "flowers": 2}, "stacks": 3.0},
+  "mtr:jungle_temple_lava_chamber": {"arch": "temple_treasure", "era": "bronze", "tilt": [{"gems_major": 2, "weapons": 3}, {}], "stacks": 5.0},
+  "mtr:jungle_temple_main_common": {"arch": "temple", "era": "bronze", "stacks": 5.0},
+  "mtr:jungle_temple_main_double": {"arch": "temple_treasure", "era": "bronze", "stacks": 7.5},
+  "mtr:jungle_temple_puzzle_treasure": {"arch": "temple_treasure", "era": "bronze", "tilt": [{"gems_major": 2, "precious": 5}, {}], "stacks": 10.5},
+  "mtr:jungle_temple_suspicious_gravel": {"arch": "dig", "era": "copper", "tilt": {"seeds": 3, "gems_minor": 2}, "type": "archaeology", "stacks": 1.0},
+  "mtr:jungle_temple_upper_chest": {"arch": "temple", "era": "bronze", "stacks": 5.0},
+  "mtr:jungle_temple_upper_double": {"arch": "temple_treasure", "era": "bronze", "stacks": 9.5},
+  "mtr:nether_temple_common": {"arch": "temple", "era": "bronze", "tilt": {"coal": 3, "precious": 2}, "note": "Nether: cannot generate", "stacks": 6.5},
+  "mtr:nether_temple_rare": {"arch": "temple_treasure", "era": "bronze", "note": "Nether: cannot generate", "stacks": 7.6},
+  "mtr:nether_temple_uncommon": {"arch": "temple_treasure", "era": "bronze", "note": "Nether: cannot generate", "stacks": 7.0},
+  "mtr:ocean_temple_common": {"arch": "wreck", "era": "bronze", "tilt": {"shells": 3, "precious": 1}, "stacks": 4.0},
+  "mtr:ocean_temple_treasure": {"arch": "temple_treasure", "era": "bronze", "tilt": [{"gems_minor": 4, "gems_major": 2}, {"shells": 2}], "stacks": 4.0},
+  "mtr:stronghold_barracks_barrel": {"arch": "barrel_store", "era": "copper", "tilt": {"meat_cooked": 2, "hides": 1}, "stacks": 3.5},
+  "mtr:stronghold_barracks_chest": {"arch": "armory", "era": "bronze", "stacks": 5.5},
+  "mtr:stronghold_corridor_common": {"arch": "temple", "era": "copper", "stacks": 5.0},
+  "mtr:stronghold_corridor_empty": {"arch": "junk_pile", "era": "stone", "stacks": 2.0},
+  "mtr:stronghold_corridor_rare": {"arch": "treasure_big", "era": "bronze", "stacks": 7.5},
+  "mtr:stronghold_corridor_uncommon": {"arch": "temple_treasure", "era": "bronze", "stacks": 6.0},
+  "mtr:stronghold_decorated_pot": {"arch": "pot", "era": "copper", "stacks": 1.0},
+  "mtr:stronghold_library_chest": {"arch": "library", "era": "bronze", "stacks": 7.0},
+  "mtr:stronghold_library_trapped_chest": {"arch": "library", "era": "bronze", "tilt": {"stationery": 5, "precious": 1, "gems_minor": 1}, "stacks": 10.0},
+  "mtr:stronghold_mossy_special": {"arch": "garden", "era": "copper", "tilt": {"flowers": 3, "saplings": 3, "ingots": 1, "light": 1}, "stacks": 4.5},
+  "mtr:stronghold_suspicious_gravel": {"arch": "dig", "era": "copper", "tilt": {"bones": 4, "stone_heads": 2}, "type": "archaeology", "stacks": 1.0},
+  "mvs:abandoned": {"arch": "junk_pile", "era": "stone", "tilt": {"junk": 1, "ingots": 0.5, "pottery": 0.5}, "stacks": 4.0},
+  "mvs:cart": {"arch": "cart", "era": "copper", "tilt": {"bread": 2, "hides": 1}, "stacks": 12.0},
+  "mvs:cartographer_tower": {"arch": "library", "era": "bronze", "tilt": {"stationery": 8}, "stacks": 5.5},
+  "mvs:cathedral_base": {"arch": "chapel", "era": "copper", "tilt": {"cloth": 3, "stationery": 1, "light": 4}, "stacks": 6.0},
+  "mvs:cathedral_common": {"arch": "chapel", "era": "copper", "stacks": 3.5},
+  "mvs:cathedral_rare": {"arch": "chapel", "era": "bronze", "tilt": {"precious": 3, "gems_minor": 2, "bells": 2}, "stacks": 6.5},
+  "mvs:crystal": {"arch": "treasure", "era": "bronze", "tilt": {"gems_minor": 5, "gems_major": 2}, "stacks": 4.5},
+  "mvs:empty": {"arch": "junk_pile", "era": "stone", "stacks": 1.0},
+  "mvs:end_scraps": {"arch": "cache", "era": "bronze", "tilt": {"stationery": 2, "minerals": 3}, "stacks": 3.0},
+  "mvs:floating_islands": {"arch": "garden", "era": "copper", "stacks": 2.5},
+  "mvs:general": {"arch": "house", "era": "copper", "stacks": 5.0},
+  "mvs:houses_books": {"arch": "library", "era": "bronze", "stacks": 2.5},
+  "mvs:houses_common": {"arch": "house", "era": "copper", "stacks": 4.5},
+  "mvs:houses_desert": {"arch": "house", "era": "copper", "tilt": {"salt_flux": 1, "fruit": 2, "pottery": 3}, "stacks": 5.5},
+  "mvs:houses_flower": {"arch": "garden", "era": "copper", "tilt": {"flowers": 8}, "stacks": 5.5},
+  "mvs:houses_rare": {"arch": "house_rare", "era": "bronze", "stacks": 2.0},
+  "mvs:houses_uncommon": {"arch": "house", "era": "copper", "tilt": {"ingots": 1, "coal": 1}, "stacks": 3.0},
+  "mvs:jungle_tower": {"arch": "temple", "era": "bronze", "tilt": {"gems_minor": 1, "ore_precious": 1}, "stacks": 4.0},
+  "mvs:large_carts": {"arch": "cart", "era": "bronze", "tilt": {"ingots": 3, "precious": 1}, "stacks": 5.5},
+  "mvs:large_carts_2": {"arch": "cart", "era": "bronze", "tilt": {"ingots": 2, "precious": 1}, "stacks": 4.5},
+  "mvs:mineshaft/common": {"arch": "mineshaft", "era": "copper", "stacks": 3.0},
+  "mvs:mineshaft/pot": {"arch": "pot", "era": "bronze", "stacks": 1.0},
+  "mvs:mineshaft/rare": {"arch": "mineshaft_rare", "era": "bronze", "stacks": 6.5},
+  "mvs:mineshaft/uncommon": {"arch": "mineshaft", "era": "copper", "tilt": {"ingots": 1}, "stacks": 3.0},
+  "mvs:mushroom_pond": {"arch": "pond", "era": "copper", "tilt": {"marsh": 3, "shells": 0}, "stacks": 5.5},
+  "mvs:pillager": {"arch": "outpost", "era": "bronze", "stacks": 8.2},
+  "mvs:pond": {"arch": "pond", "era": "copper", "stacks": 3.5},
+  "mvs:rare": {"arch": "treasure_big", "era": "bronze", "stacks": 2.5},
+  "mvs:swamps": {"arch": "house", "era": "copper", "tilt": {"marsh": 4, "bones": 2}, "stacks": 4.0},
+  "wythers:chests/village/forest_ruins_big_house": {"arch": "house_rare", "era": "bronze", "note": "named by a T&T template (another mod's namespace), not shipped by anyone"}
+ }
+}

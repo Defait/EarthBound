@@ -1,0 +1,13 @@
+name = "Roads and Roofs TFC"
+filename = "rnr-1.0.4-1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/ca9X1Phr/versions/xbtrNvLp/rnr-1.0.4-1.21.1.jar"
+hash-format = "sha512"
+hash = "e8ac6a4438ff9d77c8456439539ae47c97bec8b334607a7b00736799947cee9b0be9726f6d9ce234bb567a079775fac4010f7c3612931db6c5a24692fcd6030d"
+
+[update]
+[update.modrinth]
+mod-id = "ca9X1Phr"
+version = "xbtrNvLp"

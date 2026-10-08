@@ -1,0 +1,21 @@
+{
+  "values": [
+    "tfc:inverted_patterned_ground",
+    "tfc:lake",
+    "tfc:lowlands",
+    "tfc:meltwater_lake",
+    "tfc:mountain_lake",
+    "tfc:mud_flats",
+    "tfc:oceanic_mountain_lake",
+    "tfc:old_mountain_lake",
+    "tfc:patterned_ground",
+    "tfc:plateau_lake",
+    "tfc:river",
+    "tfc:salt_marsh",
+    "tfc:subglacial_lake",
+    "tfc:tidal_flats",
+    "tfc:tower_karst_lake",
+    "tfc:volcanic_mountain_lake",
+    "tfc:volcanic_oceanic_mountain_lake"
+  ]
+}

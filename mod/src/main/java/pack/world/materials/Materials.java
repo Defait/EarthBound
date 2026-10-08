@@ -2,7 +2,9 @@ package pack.world.materials;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 import net.dries007.tfc.client.overworld.SolarCalculator;
 import net.dries007.tfc.util.EnvironmentHelpers;
 import net.dries007.tfc.world.ChunkGeneratorExtension;
@@ -79,6 +81,41 @@ public record Materials(String rock, String wood, String sand, boolean fromTfc)
     }
 
     /**
+     * The materials of a whole structure: the surface rock and sand at its anchor and the climate's trees in order of fit, best
+     * first (rank 0 is the tree {@link #resolve} would pick with a variety of 1). Soil is per column ({@link SoilSampler}).
+     */
+    public record Ranked(String rock, String sand, List<String> woods, boolean fromTfc)
+    {
+        /** The wood of a rank; ranks past the end use the last (the climate has fewer trees than the structure wants). */
+        public String wood(int rank)
+        {
+            return woods.get(Math.min(Math.max(rank, 0), woods.size() - 1));
+        }
+
+        public Materials at(int rank)
+        {
+            return new Materials(rock, wood(rank), sand, fromTfc);
+        }
+    }
+
+    public static Ranked resolveRanked(ServerLevel level, BlockPos anchor, int woodRanks)
+    {
+        final ChunkGenerator generator = level.getChunkSource().getGenerator();
+        final ChunkGeneratorExtension ext = generator instanceof ChunkGeneratorExtension e ? e : null;
+        String rock = null;
+        String sand = null;
+        List<String> woods = List.of();
+        if (ext != null)
+        {
+            final RockSettings settings = ext.chunkDataGenerator().generateSurfaceRock(anchor.getX(), anchor.getZ());
+            rock = lastSegment(settings.raw(), "rock/raw/", BlockFamilies.ROCKS);
+            sand = lastSegment(settings.sand(), "sand/", BlockFamilies.SANDS);
+            woods = forestWoods(level, ext, anchor, woodRanks);
+        }
+        return new Ranked(rock == null ? "granite" : rock, sand == null ? "yellow" : sand, woods.isEmpty() ? List.of("oak") : woods, ext != null);
+    }
+
+    /**
      * The tree TFC's forests would grow at this position: entries whose climate is valid, ordered by TFC's own
      * {@code distanceFromMean} (as {@code ForestFeature.getTrees} does), one of the first {@code variety} picked by position.
      * Where no tree grows (grassland, desert, tundra), the entry whose climate window is nearest: timber from the nearest woods.
@@ -86,10 +123,22 @@ public record Materials(String rock, String wood, String sand, boolean fromTfc)
     @Nullable
     static String forestWood(ServerLevel level, ChunkGeneratorExtension ext, BlockPos anchor, int variety)
     {
+        final List<String> woods = forestWoods(level, ext, anchor, variety);
+        if (woods.isEmpty())
+        {
+            return null;
+        }
+        final int index = Math.floorMod(BlockFamilies.positionSeed(anchor.getX(), 0, anchor.getZ()), woods.size());
+        return woods.get(index);
+    }
+
+    /** The first {@code count} distinct woods that fit the climate, best first; if none fit, the single nearest. */
+    static List<String> forestWoods(ServerLevel level, ChunkGeneratorExtension ext, BlockPos anchor, int count)
+    {
         final ConfiguredFeature<?, ?> forest = level.registryAccess().registryOrThrow(Registries.CONFIGURED_FEATURE).get(FOREST);
         if (forest == null || !(forest.config() instanceof ForestConfig config))
         {
-            return null;
+            return List.of();
         }
         final ChunkData data = ext.chunkDataGenerator().createAndGenerate(new ChunkPos(anchor));
         final int y = anchor.getY();
@@ -120,11 +169,18 @@ public record Materials(String rock, String wood, String sand, boolean fromTfc)
         if (!valid.isEmpty())
         {
             valid.sort(Comparator.comparingDouble(Candidate::distance));
-            final int n = Math.min(Math.max(variety, 1), valid.size());
-            final int index = Math.floorMod(BlockFamilies.positionSeed(anchor.getX(), 0, anchor.getZ()), n);
-            return valid.get(index).wood();
+            final Set<String> woods = new LinkedHashSet<>();
+            for (Candidate c : valid)
+            {
+                woods.add(c.wood());
+                if (woods.size() >= Math.max(count, 1))
+                {
+                    break;
+                }
+            }
+            return List.copyOf(woods);
         }
-        return all.stream().min(Comparator.comparingDouble(Candidate::distance)).map(Candidate::wood).orElse(null);
+        return all.stream().min(Comparator.comparingDouble(Candidate::distance)).map(c -> List.of(c.wood())).orElse(List.of());
     }
 
     /** How far a climate lies outside an entry's window, in rough units of 10 °C, 100 of groundwater, 1 of rain variance. */

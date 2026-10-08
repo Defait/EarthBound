@@ -1,0 +1,120 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tfc:wood/sapling/acacia",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:wood/sapling/ash",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:wood/sapling/birch",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:wood/sapling/douglas_fir",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:wood/sapling/hickory",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:wood/sapling/kapok",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:wood/sapling/maple",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:wood/sapling/oak",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:wood/sapling/pine",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:wood/sapling/spruce",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:wood/sapling/sycamore",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:wood/sapling/white_cedar",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:wood/sapling/willow",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:plant/banana_sapling",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:plant/cherry_sapling",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:plant/green_apple_sapling",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:plant/lemon_sapling",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:plant/olive_sapling",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:plant/orange_sapling",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:plant/peach_sapling",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:plant/plum_sapling",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:plant/red_apple_sapling",
+          "weight": 4
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,396 @@
+{
+  "_about": "Trades of vanilla villagers and the wandering trader, applied by kubejs/startup_scripts/villager_trades.js (docs/design.md, 'Villagers'). Replaces every vanilla and modded trade list: no emeralds, no vanilla iron or diamond gear, no enchanted books, no maps. Barter in TFC goods (there is no coin: copper ingots are the hard currency, as with the pack's Easy NPC traders). Each level of a profession lists the offers it can show; a villager picks 2 of them per level (the wandering trader 5 generic + 1 rare), as in vanilla. Era caps by level come from tools/structures/catalogue.json loot_caps: levels 1-2 stone, 3 copper (no bronze), 4-5 bronze. A profession missing here, or a villager level without a list, has no trades. Check with tools/villagers_test.py.",
+  "levels": {"1": "stone", "2": "stone", "3": "copper", "4": "bronze", "5": "bronze"},
+  "wanderer_eras": {"generic": "copper", "rare": "bronze"},
+  "xp": {"1": 2, "2": 8, "3": 15, "4": 20, "5": 30},
+  "price_multiplier": 0.05,
+  "professions": {
+    "minecraft:armorer": {
+      "note": "Leather and sheet metal. Armour proper (copper armour is step 15, a shield 14) is above the bronze cap, so the armorer sells padding, horse armour and the stock a smith turns into plate.",
+      "1": [
+        {"buy": ["tfc:medium_raw_hide", 2], "sell": ["minecraft:leather_helmet", 1], "max_uses": 6},
+        {"buy": ["tfc:medium_raw_hide", 2], "sell": ["minecraft:leather_boots", 1], "max_uses": 6}
+      ],
+      "2": [
+        {"buy": ["tfc:medium_raw_hide", 3], "sell": ["minecraft:leather_leggings", 1], "max_uses": 6},
+        {"buy": ["tfc:large_raw_hide", 3], "sell": ["minecraft:leather_chestplate", 1], "max_uses": 6}
+      ],
+      "3": [
+        {"buy": ["tfc:large_raw_hide", 3], "buy_b": ["minecraft:string", 2], "sell": ["minecraft:leather_horse_armor", 1], "max_uses": 4},
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:metal/hammer/copper", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:metal/chisel/copper", 1], "max_uses": 3}
+      ],
+      "4": [
+        {"buy": ["tfc:metal/ingot/copper", 3], "sell": ["tfc:metal/sheet/copper", 1], "max_uses": 4},
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:metal/chain/copper", 2], "max_uses": 4},
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:metal/rod/copper", 2], "max_uses": 4}
+      ],
+      "5": [
+        {"buy": ["tfc:metal/ingot/copper", 5], "sell": ["tfc:metal/double_sheet/copper", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/copper", 3], "sell": ["tfc:metal/bars/copper", 4], "max_uses": 4},
+        {"buy": ["tfc:metal/ingot/copper", 3], "buy_b": ["minecraft:glass", 2], "sell": ["tfc:metal/lamp/copper", 1], "max_uses": 3}
+      ]
+    },
+    "minecraft:butcher": {
+      "note": "Takes meat and bone, pays in salt; knives and saws once there is copper.",
+      "1": [
+        {"buy": ["tfc:food/beef", 4], "sell": ["tfc:powder/salt", 4], "max_uses": 10},
+        {"buy": ["tfc:food/pork", 4], "sell": ["tfc:powder/salt", 4], "max_uses": 10},
+        {"buy": ["tfc:food/mutton", 4], "sell": ["tfc:powder/salt", 4], "max_uses": 10}
+      ],
+      "2": [
+        {"buy": ["minecraft:bone", 3], "buy_b": ["minecraft:flint", 2], "sell": ["tfc:stone/knife/metamorphic", 1], "max_uses": 6},
+        {"buy": ["tfc:food/chicken", 6], "sell": ["tfc:powder/salt", 5], "max_uses": 8},
+        {"buy": ["tfc:food/venison", 4], "sell": ["tfc:powder/salt", 5], "max_uses": 8}
+      ],
+      "3": [
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:metal/knife/copper", 1], "max_uses": 4},
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:metal/saw/copper", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:ceramic/jug", 1], "max_uses": 6}
+      ],
+      "4": [
+        {"buy": ["tfc:metal/ingot/bronze", 2], "sell": ["tfc:metal/knife/bronze", 1], "max_uses": 4},
+        {"buy": ["tfc:metal/ingot/bronze", 2], "sell": ["tfc:metal/saw/bronze", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:ceramic/large_vessel", 1], "max_uses": 4}
+      ],
+      "5": [
+        {"buy": ["tfc:metal/ingot/bronze", 3], "sell": ["tfc:metal/axe/bronze", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/bronze", 3], "sell": ["tfc:metal/hammer/bronze", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/copper", 3], "sell": ["tfc:wooden_bucket", 1], "max_uses": 4}
+      ]
+    },
+    "minecraft:cartographer": {
+      "note": "No maps: TFC: Real World has its own. A surveyor instead: torches, fire, prospecting picks, compass and spyglass.",
+      "1": [
+        {"buy": ["minecraft:charcoal", 4], "sell": ["tfc:torch", 6], "max_uses": 10},
+        {"buy": ["minecraft:stick", 8], "sell": ["tfc:torch", 4], "max_uses": 10}
+      ],
+      "2": [
+        {"buy": ["minecraft:flint", 6], "sell": ["tfc:firestarter", 1], "max_uses": 6},
+        {"buy": ["tfc:papyrus", 6], "sell": ["tfc:papyrus_strip", 6], "max_uses": 8}
+      ],
+      "3": [
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:metal/propick/copper", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:flint_and_pyrite", 1], "max_uses": 4},
+        {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:ceramic/propick_head_mold", 1], "max_uses": 3}
+      ],
+      "4": [
+        {"buy": ["tfc:metal/ingot/bronze", 2], "sell": ["tfc:metal/propick/bronze", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/copper", 3], "sell": ["minecraft:compass", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/copper", 3], "sell": ["tfc:anemometer", 1], "max_uses": 3}
+      ],
+      "5": [
+        {"buy": ["tfc:metal/ingot/copper", 4], "buy_b": ["minecraft:glass", 2], "sell": ["minecraft:spyglass", 1], "max_uses": 2},
+        {"buy": ["tfc:metal/ingot/gold", 2], "buy_b": ["tfc:metal/ingot/bronze", 2], "sell": ["minecraft:clock", 1], "max_uses": 2},
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:unrefined_paper", 4], "max_uses": 4}
+      ]
+    },
+    "minecraft:cleric": {
+      "note": "Bone, candles, lime and bells; the few precious things (a gold bell) are bought with the gold itself.",
+      "1": [
+        {"buy": ["minecraft:bone", 3], "sell": ["tfc:candle", 2], "max_uses": 8},
+        {"buy": ["minecraft:bone", 4], "sell": ["tfc:powder/lime", 4], "max_uses": 8}
+      ],
+      "2": [
+        {"buy": ["minecraft:charcoal", 6], "sell": ["tfc:powder/flux", 4], "max_uses": 8},
+        {"buy": ["tfc:food/fresh_seaweed", 6], "sell": ["tfc:powder/soda_ash", 4], "max_uses": 8}
+      ],
+      "3": [
+        {"buy": ["tfc:metal/ingot/gold", 1], "buy_b": ["tfc:metal/ingot/copper", 1], "sell": ["minecraft:bell", 1], "max_uses": 2},
+        {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:candle", 6], "max_uses": 6},
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:powder/lime", 8], "max_uses": 6}
+      ],
+      "4": [
+        {"buy": ["tfc:metal/ingot/bronze", 2], "sell": ["tfc:bronze_bell", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:empty_jar_with_lid", 1], "max_uses": 4},
+        {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:jar_lid", 1], "max_uses": 6}
+      ],
+      "5": [
+        {"buy": ["tfc:metal/ingot/brass", 2], "sell": ["tfc:brass_bell", 1], "max_uses": 2},
+        {"buy": ["tfc:metal/ingot/copper", 3], "sell": ["tfc:candle", 16], "max_uses": 4},
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:ceramic/large_vessel", 1], "max_uses": 4}
+      ]
+    },
+    "minecraft:farmer": {
+      "note": "Seed for straw and for other crops; copper hoes and scythes; at the top fruit trees.",
+      "1": [
+        {"buy": ["tfc:straw", 8], "sell": ["tfc:seeds/barley", 4], "max_uses": 12},
+        {"buy": ["tfc:straw", 8], "sell": ["tfc:seeds/oat", 4], "max_uses": 12},
+        {"buy": ["tfc:straw", 8], "sell": ["tfc:seeds/rye", 4], "max_uses": 12},
+        {"buy": ["tfc:straw", 8], "sell": ["tfc:seeds/wheat", 4], "max_uses": 12}
+      ],
+      "2": [
+        {"buy": ["tfc:food/potato", 6], "sell": ["tfc:seeds/onion", 4], "max_uses": 10},
+        {"buy": ["tfc:food/carrot", 6], "sell": ["tfc:seeds/cabbage", 4], "max_uses": 10},
+        {"buy": ["tfc:food/beet", 6], "sell": ["tfc:seeds/radish", 4], "max_uses": 10}
+      ],
+      "3": [
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:metal/hoe/copper", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:metal/scythe/copper", 1], "max_uses": 3},
+        {"buy": ["tfc:food/tomato", 6], "sell": ["tfc:seeds/squash", 4], "max_uses": 8}
+      ],
+      "4": [
+        {"buy": ["tfc:metal/ingot/bronze", 2], "sell": ["tfc:metal/scythe/bronze", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/bronze", 2], "sell": ["tfc:metal/hoe/bronze", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:seeds/sugarcane", 4], "max_uses": 6}
+      ],
+      "5": [
+        {"buy": ["tfc:metal/ingot/copper", 4], "sell": ["tfc:plant/red_apple_sapling", 1], "max_uses": 2},
+        {"buy": ["tfc:metal/ingot/copper", 4], "sell": ["tfc:plant/cherry_sapling", 1], "max_uses": 2},
+        {"buy": ["tfc:metal/ingot/copper", 4], "sell": ["tfc:plant/plum_sapling", 1], "max_uses": 2}
+      ]
+    },
+    "minecraft:fisherman": {
+      "note": "Takes fish and weed, pays in ceramics and line; hooks, nets and boats once there is copper.",
+      "1": [
+        {"buy": ["tfc:food/cod", 4], "sell": ["tfc:ceramic/jug", 1], "max_uses": 6},
+        {"buy": ["tfc:food/salmon", 4], "sell": ["tfc:ceramic/bowl", 1], "max_uses": 6},
+        {"buy": ["tfc:food/fresh_seaweed", 6], "sell": ["minecraft:string", 6], "max_uses": 8}
+      ],
+      "2": [
+        {"buy": ["tfc:food/bluegill", 6], "sell": ["tfc:ceramic/pot", 1], "max_uses": 6},
+        {"buy": ["tfc:sea_pickle", 4], "sell": ["tfc:ceramic/vessel", 1], "max_uses": 6},
+        {"buy": ["minecraft:feather", 6], "sell": ["minecraft:string", 8], "max_uses": 8}
+      ],
+      "3": [
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:metal/javelin/copper", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:metal/knife/copper", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:ceramic/pot", 1], "max_uses": 4}
+      ],
+      "4": [
+        {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:metal/fish_hook/copper", 2], "max_uses": 6},
+        {"buy": ["tfc:metal/ingot/copper", 3], "sell": ["tfc:jute_net", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/copper", 3], "sell": ["tfc:basket", 1], "max_uses": 4}
+      ],
+      "5": [
+        {"buy": ["tfc:metal/ingot/copper", 5], "sell": ["tfc:wood/boat/willow", 1], "max_uses": 2},
+        {"buy": ["tfc:metal/ingot/copper", 5], "sell": ["tfc:wood/boat/oak", 1], "max_uses": 2},
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:paddle", 1], "max_uses": 4}
+      ]
+    },
+    "minecraft:fletcher": {
+      "note": "Javelins in stone, copper and bronze; string; at the top bows and arrows.",
+      "1": [
+        {"buy": ["minecraft:flint", 4], "buy_b": ["minecraft:feather", 2], "sell": ["tfc:stone/javelin/igneous_intrusive", 1], "max_uses": 6},
+        {"buy": ["minecraft:flint", 6], "sell": ["tfc:stone/javelin_head/metamorphic", 2], "max_uses": 8},
+        {"buy": ["tfc:small_raw_hide", 1], "sell": ["minecraft:string", 6], "max_uses": 8}
+      ],
+      "2": [
+        {"buy": ["minecraft:charcoal", 4], "sell": ["tfc:ceramic/javelin_head_mold", 1], "max_uses": 4},
+        {"buy": ["tfc:small_raw_hide", 2], "sell": ["minecraft:string", 12], "max_uses": 8},
+        {"buy": ["minecraft:flint", 4], "buy_b": ["minecraft:feather", 2], "sell": ["tfc:stone/javelin/metamorphic", 1], "max_uses": 6}
+      ],
+      "3": [
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:metal/javelin/copper", 1], "max_uses": 4},
+        {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:metal/javelin_head/copper", 2], "max_uses": 4},
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:metal/axe/copper", 1], "max_uses": 3}
+      ],
+      "4": [
+        {"buy": ["tfc:metal/ingot/bronze", 2], "sell": ["tfc:metal/javelin/bronze", 1], "max_uses": 4},
+        {"buy": ["minecraft:string", 6], "buy_b": ["minecraft:stick", 6], "sell": ["minecraft:bow", 1], "max_uses": 3},
+        {"buy": ["minecraft:flint", 4], "buy_b": ["minecraft:feather", 4], "sell": ["minecraft:arrow", 8], "max_uses": 6}
+      ],
+      "5": [
+        {"buy": ["tfc:metal/ingot/bronze", 3], "sell": ["tfc:metal/sword/bronze", 1], "max_uses": 2},
+        {"buy": ["tfc:metal/ingot/bronze", 2], "sell": ["minecraft:arrow", 16], "max_uses": 4},
+        {"buy": ["tfc:metal/ingot/copper", 3], "buy_b": ["minecraft:string", 6], "sell": ["minecraft:bow", 1], "max_uses": 3}
+      ]
+    },
+    "minecraft:leatherworker": {
+      "note": "Hides to leather, saddles, needles and rope.",
+      "1": [
+        {"buy": ["minecraft:bone", 3], "sell": ["tfc:bone_needle", 1], "max_uses": 8},
+        {"buy": ["tfc:medium_raw_hide", 2], "sell": ["minecraft:string", 10], "max_uses": 8}
+      ],
+      "2": [
+        {"buy": ["tfc:large_raw_hide", 4], "sell": ["minecraft:saddle", 1], "max_uses": 3},
+        {"buy": ["tfc:large_raw_hide", 3], "sell": ["minecraft:leather_horse_armor", 1], "max_uses": 3},
+        {"buy": ["tfc:small_raw_hide", 4], "sell": ["tfc:bone_needle", 1], "max_uses": 6}
+      ],
+      "3": [
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:metal/knife/copper", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:spindle", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:metal/scythe/copper", 1], "max_uses": 2}
+      ],
+      "4": [
+        {"buy": ["tfc:large_raw_hide", 2], "buy_b": ["tfc:metal/ingot/copper", 1], "sell": ["minecraft:leather", 3], "max_uses": 6},
+        {"buy": ["tfc:medium_raw_hide", 3], "sell": ["minecraft:leather", 2], "max_uses": 6},
+        {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["minecraft:lead", 2], "max_uses": 6}
+      ],
+      "5": [
+        {"buy": ["tfc:large_raw_hide", 4], "buy_b": ["tfc:metal/ingot/copper", 2], "sell": ["minecraft:leather", 6], "max_uses": 4},
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:rope", 4], "max_uses": 6},
+        {"buy": ["tfc:metal/ingot/copper", 3], "sell": ["tfc:burlap_cloth", 4], "max_uses": 4}
+      ]
+    },
+    "minecraft:librarian": {
+      "note": "No enchanted books (vanilla enchanting isn't a pack gate and a book would skip eras). Papyrus, candles, glass, jars and lenses instead.",
+      "1": [
+        {"buy": ["tfc:papyrus", 6], "sell": ["tfc:papyrus_strip", 6], "max_uses": 10},
+        {"buy": ["minecraft:charcoal", 4], "sell": ["tfc:candle", 2], "max_uses": 8}
+      ],
+      "2": [
+        {"buy": ["minecraft:charcoal", 4], "sell": ["minecraft:glass", 2], "max_uses": 8},
+        {"buy": ["minecraft:charcoal", 6], "sell": ["tfc:lens", 1], "max_uses": 6},
+        {"buy": ["minecraft:clay_ball", 6], "sell": ["tfc:empty_jar", 1], "max_uses": 6}
+      ],
+      "3": [
+        {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:lens", 2], "max_uses": 6},
+        {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["minecraft:glass", 4], "max_uses": 6},
+        {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:empty_jar", 4], "max_uses": 6}
+      ],
+      "4": [
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:unrefined_paper", 6], "max_uses": 6},
+        {"buy": ["tfc:metal/ingot/copper", 3], "sell": ["tfc:blowpipe", 1], "max_uses": 2},
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:lamp_glass", 4], "max_uses": 4}
+      ],
+      "5": [
+        {"buy": ["tfc:metal/ingot/copper", 4], "buy_b": ["tfc:lens", 1], "sell": ["minecraft:spyglass", 1], "max_uses": 2},
+        {"buy": ["tfc:metal/ingot/copper", 3], "sell": ["tfc:unrefined_paper", 12], "max_uses": 4},
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:jute_net", 1], "max_uses": 3}
+      ]
+    },
+    "minecraft:mason": {
+      "note": "Bricks from clay, rock bricks, lime and mortar; chisels and hammers in copper then bronze.",
+      "1": [
+        {"buy": ["minecraft:clay_ball", 6], "sell": ["minecraft:brick", 4], "max_uses": 10},
+        {"buy": ["tfc:kaolin_clay", 4], "sell": ["minecraft:brick", 3], "max_uses": 8}
+      ],
+      "2": [
+        {"buy": ["tfc:fire_clay", 4], "sell": ["tfc:ceramic/fire_brick", 3], "max_uses": 8},
+        {"buy": ["minecraft:charcoal", 4], "sell": ["tfc:ceramic/chisel_head_mold", 1], "max_uses": 4},
+        {"buy": ["minecraft:charcoal", 4], "sell": ["tfc:ceramic/hammer_head_mold", 1], "max_uses": 4}
+      ],
+      "3": [
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:metal/chisel/copper", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:metal/hammer/copper", 1], "max_uses": 3},
+        {"buy": ["tfc:rock/loose/granite", 6], "sell": ["tfc:brick/granite", 4], "max_uses": 8}
+      ],
+      "4": [
+        {"buy": ["tfc:metal/ingot/bronze", 2], "sell": ["tfc:metal/chisel/bronze", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:mortar", 4], "max_uses": 6},
+        {"buy": ["tfc:metal/ingot/copper", 3], "sell": ["tfc:aggregate", 8], "max_uses": 6}
+      ],
+      "5": [
+        {"buy": ["tfc:metal/ingot/bronze", 3], "sell": ["tfc:metal/hammer/bronze", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/copper", 3], "sell": ["tfc:alabaster_brick", 6], "max_uses": 6},
+        {"buy": ["tfc:metal/ingot/bronze", 2], "sell": ["tfc:metal/pickaxe/bronze", 1], "max_uses": 3}
+      ]
+    },
+    "minecraft:shepherd": {
+      "note": "Wool, yarn and cloth, shears, then dyes and silk.",
+      "1": [
+        {"buy": ["tfc:straw", 8], "sell": ["tfc:wool", 2], "max_uses": 10},
+        {"buy": ["tfc:food/wheat", 6], "sell": ["tfc:wool", 3], "max_uses": 8}
+      ],
+      "2": [
+        {"buy": ["tfc:wool", 4], "sell": ["tfc:wool_yarn", 3], "max_uses": 10},
+        {"buy": ["minecraft:clay_ball", 4], "sell": ["tfc:ceramic/spindle_head", 1], "max_uses": 4},
+        {"buy": ["minecraft:charcoal", 4], "sell": ["tfc:ceramic/scythe_blade_mold", 1], "max_uses": 3}
+      ],
+      "3": [
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:metal/shears/copper", 1], "max_uses": 3},
+        {"buy": ["tfc:wool_yarn", 4], "sell": ["tfc:wool_cloth", 2], "max_uses": 8},
+        {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:spindle", 1], "max_uses": 4}
+      ],
+      "4": [
+        {"buy": ["tfc:metal/ingot/bronze", 2], "sell": ["tfc:metal/shears/bronze", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["minecraft:red_dye", 4], "max_uses": 6},
+        {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["minecraft:blue_dye", 4], "max_uses": 6}
+      ],
+      "5": [
+        {"buy": ["tfc:metal/ingot/copper", 3], "sell": ["tfc:silk_cloth", 2], "max_uses": 4},
+        {"buy": ["tfc:metal/ingot/copper", 3], "sell": ["tfc:burlap_cloth", 4], "max_uses": 4},
+        {"buy": ["tfc:metal/ingot/copper", 2], "buy_b": ["tfc:wool_cloth", 4], "sell": ["minecraft:white_banner", 1], "max_uses": 3}
+      ]
+    },
+    "minecraft:toolsmith": {
+      "note": "Stone, copper and bronze tools. Nothing past the bronze cap.",
+      "1": [
+        {"buy": ["tfc:rock/loose/granite", 3], "sell": ["tfc:stone/axe/igneous_intrusive", 1], "max_uses": 6},
+        {"buy": ["tfc:rock/loose/gabbro", 3], "sell": ["tfc:stone/hoe/igneous_intrusive", 1], "max_uses": 6},
+        {"buy": ["tfc:rock/loose/marble", 3], "sell": ["tfc:stone/shovel/metamorphic", 1], "max_uses": 6}
+      ],
+      "2": [
+        {"buy": ["minecraft:charcoal", 4], "sell": ["tfc:ceramic/axe_head_mold", 1], "max_uses": 4},
+        {"buy": ["minecraft:charcoal", 4], "sell": ["tfc:ceramic/pickaxe_head_mold", 1], "max_uses": 4},
+        {"buy": ["minecraft:charcoal", 4], "sell": ["tfc:ceramic/shovel_head_mold", 1], "max_uses": 4},
+        {"buy": ["minecraft:charcoal", 4], "sell": ["tfc:ceramic/hoe_head_mold", 1], "max_uses": 4}
+      ],
+      "3": [
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:metal/axe/copper", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:metal/pickaxe/copper", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:metal/shovel/copper", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:metal/saw/copper", 1], "max_uses": 3}
+      ],
+      "4": [
+        {"buy": ["tfc:metal/ingot/bronze", 3], "sell": ["tfc:metal/axe/bronze", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/bronze", 3], "sell": ["tfc:metal/pickaxe/bronze", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/bronze", 3], "sell": ["tfc:metal/shovel/bronze", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/bronze", 3], "sell": ["tfc:metal/saw/bronze", 1], "max_uses": 3}
+      ],
+      "5": [
+        {"buy": ["tfc:metal/ingot/bronze", 4], "sell": ["tfc:metal/hammer/bronze", 1], "max_uses": 2},
+        {"buy": ["tfc:metal/ingot/bronze", 4], "sell": ["tfc:metal/propick/bronze", 1], "max_uses": 2},
+        {"buy": ["tfc:metal/ingot/copper", 14], "sell": ["tfc:metal/anvil/copper", 1], "max_uses": 1}
+      ]
+    },
+    "minecraft:weaponsmith": {
+      "note": "Stone, copper and bronze weapons. No iron.",
+      "1": [
+        {"buy": ["tfc:rock/loose/granite", 3], "buy_b": ["minecraft:stick", 1], "sell": ["tfc:stone/knife/igneous_intrusive", 1], "max_uses": 6},
+        {"buy": ["tfc:rock/loose/gabbro", 3], "sell": ["tfc:stone/javelin/igneous_intrusive", 1], "max_uses": 6}
+      ],
+      "2": [
+        {"buy": ["minecraft:charcoal", 4], "sell": ["tfc:ceramic/sword_blade_mold", 1], "max_uses": 4},
+        {"buy": ["minecraft:charcoal", 4], "sell": ["tfc:ceramic/mace_head_mold", 1], "max_uses": 4},
+        {"buy": ["minecraft:charcoal", 4], "sell": ["tfc:ceramic/knife_blade_mold", 1], "max_uses": 4}
+      ],
+      "3": [
+        {"buy": ["tfc:metal/ingot/copper", 3], "sell": ["tfc:metal/sword/copper", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/copper", 3], "sell": ["tfc:metal/mace/copper", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/copper", 2], "sell": ["tfc:metal/javelin/copper", 1], "max_uses": 3}
+      ],
+      "4": [
+        {"buy": ["tfc:metal/ingot/bronze", 3], "sell": ["tfc:metal/sword/bronze", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/bronze", 3], "sell": ["tfc:metal/mace/bronze", 1], "max_uses": 3},
+        {"buy": ["tfc:metal/ingot/bronze", 2], "sell": ["tfc:metal/javelin/bronze", 1], "max_uses": 3}
+      ],
+      "5": [
+        {"buy": ["tfc:metal/ingot/bronze", 4], "buy_b": ["tfc:medium_raw_hide", 1], "sell": ["tfc:metal/sword/bronze", 1], "max_uses": 2},
+        {"buy": ["tfc:metal/ingot/bronze", 4], "buy_b": ["tfc:medium_raw_hide", 1], "sell": ["tfc:metal/mace/bronze", 1], "max_uses": 2},
+        {"buy": ["tfc:metal/ingot/bronze", 2], "sell": ["tfc:metal/knife/bronze", 1], "max_uses": 3}
+      ]
+    }
+  },
+  "wandering_trader": {
+    "note": "Far-travelled goods: seeds and saplings of things that don't grow here, cloth, dyes. Paid in the metals and hides that travel well.",
+    "generic": [
+      {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:seeds/rice", 4], "max_uses": 6},
+      {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:seeds/soybean", 4], "max_uses": 6},
+      {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:seeds/cassava", 4], "max_uses": 6},
+      {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:seeds/peanut", 4], "max_uses": 6},
+      {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:seeds/red_bell_pepper", 4], "max_uses": 6},
+      {"buy": ["tfc:medium_raw_hide", 2], "sell": ["tfc:seeds/tomato", 4], "max_uses": 6},
+      {"buy": ["tfc:medium_raw_hide", 2], "sell": ["tfc:seeds/melon", 4], "max_uses": 6},
+      {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:plant/rose", 3], "max_uses": 6},
+      {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:plant/hibiscus", 3], "max_uses": 6},
+      {"buy": ["tfc:medium_raw_hide", 1], "sell": ["tfc:flower_cutting", 2], "max_uses": 6},
+      {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:wood/sapling/palm", 1], "max_uses": 4},
+      {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:wood/sapling/mangrove", 1], "max_uses": 4},
+      {"buy": ["tfc:metal/ingot/copper", 1], "sell": ["tfc:wood/sapling/rosewood", 1], "max_uses": 4},
+      {"buy": ["tfc:metal/ingot/tin", 1], "sell": ["tfc:wool_yarn", 4], "max_uses": 6},
+      {"buy": ["tfc:metal/ingot/tin", 1], "sell": ["tfc:wool_cloth", 2], "max_uses": 6},
+      {"buy": ["tfc:large_raw_hide", 1], "sell": ["tfc:powder/salt", 6], "max_uses": 6}
+    ],
+    "rare": [
+      {"buy": ["tfc:metal/ingot/copper", 4], "sell": ["tfc:plant/lemon_sapling", 1], "max_uses": 1},
+      {"buy": ["tfc:metal/ingot/copper", 4], "sell": ["tfc:plant/orange_sapling", 1], "max_uses": 1},
+      {"buy": ["tfc:metal/ingot/copper", 4], "sell": ["tfc:plant/peach_sapling", 1], "max_uses": 1},
+      {"buy": ["tfc:metal/ingot/copper", 4], "sell": ["tfc:plant/banana_sapling", 1], "max_uses": 1},
+      {"buy": ["tfc:metal/ingot/silver", 1], "sell": ["tfc:ore/opal", 1], "max_uses": 1},
+      {"buy": ["tfc:metal/ingot/silver", 1], "sell": ["tfc:ore/amethyst", 1], "max_uses": 1},
+      {"buy": ["tfc:metal/ingot/gold", 1], "sell": ["tfc:silk_cloth", 2], "max_uses": 3}
+    ]
+  }
+}

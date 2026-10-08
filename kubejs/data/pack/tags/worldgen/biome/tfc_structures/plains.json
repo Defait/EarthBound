@@ -1,0 +1,21 @@
+{
+  "values": [
+    "tfc:burren_plains",
+    "tfc:cenote_plains",
+    "tfc:cenote_rolling_hills",
+    "tfc:doline_plains",
+    "tfc:doline_rolling_hills",
+    "tfc:drumlins",
+    "tfc:grassy_dunes",
+    "tfc:inverted_patterned_ground",
+    "tfc:lowlands",
+    "tfc:mud_flats",
+    "tfc:patterned_ground",
+    "tfc:plains",
+    "tfc:rolling_hills",
+    "tfc:salt_flats",
+    "tfc:shilin_plains",
+    "tfc:stone_circles",
+    "tfc:tower_karst_plains"
+  ]
+}

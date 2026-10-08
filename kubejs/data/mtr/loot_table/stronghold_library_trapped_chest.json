@@ -1,0 +1,49 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 6,
+        "max": 14
+      },
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:stationery/bronze",
+          "weight": 50
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:bread/stone",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:cloth/bronze",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:gems_minor/stone",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:light/bronze",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:precious/copper",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:jars/stone",
+          "weight": 5
+        }
+      ]
+    }
+  ]
+}

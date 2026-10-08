@@ -1,0 +1,40 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tfc:large_raw_hide",
+          "weight": 22
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:medium_raw_hide",
+          "weight": 22
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:small_raw_hide",
+          "weight": 22
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:large_sheepskin_hide",
+          "weight": 11
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:medium_sheepskin_hide",
+          "weight": 11
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:small_sheepskin_hide",
+          "weight": 11
+        }
+      ]
+    }
+  ]
+}

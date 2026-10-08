@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:gift",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:building/stone",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:clay/stone",
+          "weight": 10
+        }
+      ]
+    }
+  ]
+}

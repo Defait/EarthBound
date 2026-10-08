@@ -1,0 +1,59 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 3,
+        "max": 9
+      },
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:light/stone",
+          "weight": 40
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:bread/stone",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:cloth/stone",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:bells/copper",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:bones/stone",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:gems_minor/stone",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:old_food/stone",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:precious/copper",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:stationery/stone",
+          "weight": 10
+        }
+      ]
+    }
+  ]
+}

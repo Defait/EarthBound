@@ -1,0 +1,60 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tfc:ceramic/ingot_mold",
+          "weight": 24
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:crucible",
+          "weight": 16
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/anvil/copper",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/chisel/bronze",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/chisel/copper",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/hammer/bronze",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/hammer/copper",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/saw/bronze",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/saw/copper",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/anvil/bronze",
+          "weight": 4
+        }
+      ]
+    }
+  ]
+}

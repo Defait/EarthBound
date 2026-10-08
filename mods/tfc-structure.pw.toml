@@ -1,0 +1,13 @@
+name = "TFC Structure Compat"
+filename = "tfc_str_compat-0_3_1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/hkSI55bR/versions/dYagl2Zg/tfc_str_compat-0_3_1.jar"
+hash-format = "sha512"
+hash = "a0e88be2b3c8c7b9c36a76ab70328e882eb173c04f1cac0febbab0d1c98cd547993d1af321c1c99ebc13a82364f0c12dda215e9d34f4b3fb8d83e25d280e61bf"
+
+[update]
+[update.modrinth]
+mod-id = "hkSI55bR"
+version = "dYagl2Zg"

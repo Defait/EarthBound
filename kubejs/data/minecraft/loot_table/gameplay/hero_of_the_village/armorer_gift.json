@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:gift",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:chain_armor/bronze",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:leather_armor/stone",
+          "weight": 30
+        }
+      ]
+    }
+  ]
+}

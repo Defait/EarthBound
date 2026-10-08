@@ -1,0 +1,44 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 2,
+        "max": 4
+      },
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:building/stone",
+          "weight": 40
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:clay/stone",
+          "weight": 40
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:bread/stone",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:copper_tools/copper",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:pottery/stone",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:stone_heads/stone",
+          "weight": 20
+        }
+      ]
+    }
+  ]
+}

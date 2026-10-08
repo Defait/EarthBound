@@ -1,0 +1,93 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 2,
+        "max": 4
+      },
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:precious/copper",
+          "weight": 40
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:gems_minor/stone",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:ingots/copper",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:weapons/copper",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:bronze_tools/copper",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:gems_major/stone",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:bells/copper",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:saddlery/bronze",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:sheet_metal/bronze",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 2
+      },
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:cloth/bronze",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:jars/stone",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:pottery/stone",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:stationery/bronze",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:salt_flux/bronze",
+          "weight": 10
+        }
+      ]
+    }
+  ]
+}

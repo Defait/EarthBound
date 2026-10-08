@@ -1,0 +1,30 @@
+Structure mods and their companions: licences and terms
+========================================================
+
+None of these mods is bundled in the pack: packwiz stores a download link and a hash for each (mods/*.pw.toml), and the
+launcher fetches the author's own file. The pack's own code and data that work with them (mod/, kubejs/data/pack/pack_world/,
+tools/structure_mods/, tools/loot/, the villager trade table) are the pack's. Licences are as the authors state them on Modrinth
+or CurseForge and in the jars (not legal advice); where the two disagree both are given.
+
+| Mod | Version | Licence | Terms that matter for this pack | Source |
+|---|---|---|---|---|
+| TFC Structure Compat | 0.3.1 | MIT | credit EasyShotzz and claustra01; see TFC-Structure-Compat.txt for the data adapted from it | https://modrinth.com/project/hkSI55bR |
+| YUNG's API | 5.1.6 | LGPL-3.0 | use unmodified | https://modrinth.com/project/Ua7DFN59 |
+| YUNG's Better Dungeons | 5.1.4 | LGPL-3.0 | use unmodified | https://modrinth.com/project/o1C1Dkj5 |
+| YUNG's Better Mineshafts | 5.1.1 | LGPL-3.0 | use unmodified | https://modrinth.com/project/HjmxVlSr |
+| Moog's Structure Lib | 3.4.2 | LGPL-3.0 (Modrinth) | jar as it is | https://modrinth.com/project/1oUDhxuy |
+| Moog's Voyager Structures | 5.0.11 | MIT on Modrinth; the repository says code and data LGPL-3.0 and every .nbt structure file All Rights Reserved | use the jar unmodified; never extract, convert or republish the structure files (the pack's structure skin rewrites blocks while they are placed and ships no copy of them) | https://modrinth.com/project/OQAgZMH1 |
+| Moog's Missing Villages | 2.2.0 | AGPL-3.0 on Modrinth; same repository terms for the .nbt files | as above | https://modrinth.com/project/spZb29SD |
+| Moog's Temples Reimagined | 2.0.4 | LGPL-3.0 on Modrinth; same repository terms for the .nbt files | as above | https://modrinth.com/project/UNanzCXS |
+| Towns and Towers | 1.13.9 | CC BY-NC-SA 4.0 | credit and link; NonCommercial: the pack may not be sold or monetised; modpacks are allowed, with an unmodified copy of the mod | https://modrinth.com/project/DjLobEOy |
+| Cristel Lib | 3.1.7 | CC BY-NC-ND 4.0 | NonCommercial, NoDerivatives: unmodified library only; its configs (config/cristellib) are the supported way to change what it manages | https://modrinth.com/project/cl223EMc |
+| Cloth Config API | 15.0.140 | LGPL-3.0 | dependency of Cristel Lib | https://modrinth.com/project/9s6osm5g |
+| TFC Huts | 1.5.1 | LGPL-3.0 (the jar) | CurseForge file; unmodified | https://www.curseforge.com/minecraft/mc-mods/tfc-huts-mod |
+| Lootr | 1.11.38.127 | MIT | | https://modrinth.com/project/EltpO5cN |
+| Framed Blocks | 10.6.1 | LGPL-3.0 | | https://modrinth.com/project/wbgfS34j |
+| Roads and Roofs TFC | 1.0.4 | MIT on Modrinth, EUPL-1.2 in the jar | both permit use in a pack | https://modrinth.com/project/ca9X1Phr |
+| Block Runner, Puzzles Lib | 21.1.2, 21.1.62 | MPL-2.0 | dependencies of Roads and Roofs | https://modrinth.com/project/1VSGxqkt, https://modrinth.com/project/QAGBst4M |
+| ArborFirmaCraft | 2.1.3 | MIT | | https://modrinth.com/project/9q4wtMjp |
+
+The pack therefore carries two non-commercial licences (Towns and Towers, Cristel Lib): it can be shared, but not sold, run for
+money or put behind a paywall. Removing both ends that restriction (they are the only ones with such terms among the mods listed here).

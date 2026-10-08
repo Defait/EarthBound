@@ -6,7 +6,7 @@
     "Station rules and starter rules below are a first pass; tune them to the progression you design."
   ],
   "seeds": {
-    "_comment": "Starting resources: blocks found in the scanned world (their loot-table drops) plus fluids in it, plus extras. Mob drops aren't in block loot tables, so common animal and mob drops are listed here.",
+    "_comment": "Starting resources: blocks found in the scanned world (their loot-table drops) plus fluids in it, plus extras. Mob drops aren't in block loot tables, so common animal and mob drops are listed here. ArborFirmaCraft's trees (globs, expanded to every matching item) grow in forests but the scanned test world may predate the mod, so they are listed too.",
     "from_world": true,
     "extra": [
       "tfc:small_raw_hide",
@@ -18,7 +18,12 @@
       "minecraft:egg",
       "minecraft:rotten_flesh",
       "minecraft:gunpowder",
-      "minecraft:spider_eye"
+      "minecraft:spider_eye",
+      "afc:wood/log/*",
+      "afc:wood/leaves/*",
+      "afc:wood/fallen_leaves/*",
+      "afc:wood/sapling/*",
+      "afc:wood/twig/*"
     ],
     "exclude": [
       "minecraft:bedrock"
@@ -123,17 +128,20 @@
     ],
     "tfc:barrel_sealed": [
       [
-        "tfc:wood/barrel/*"
+        "tfc:wood/barrel/*",
+        "afc:wood/barrel/*"
       ]
     ],
     "tfc:barrel_instant": [
       [
-        "tfc:wood/barrel/*"
+        "tfc:wood/barrel/*",
+        "afc:wood/barrel/*"
       ]
     ],
     "tfc:barrel_instant_fluid": [
       [
-        "tfc:wood/barrel/*"
+        "tfc:wood/barrel/*",
+        "afc:wood/barrel/*"
       ]
     ],
     "tfc:pot": [
@@ -146,6 +154,7 @@
     "tfc:loom": [
       [
         "tfc:wood/loom/*",
+        "afc:wood/loom/*",
         "tfc:power_loom"
       ]
     ],
@@ -171,12 +180,28 @@
     ],
     "tfc:sewing": [
       [
-        "tfc:wood/sewing_table/*"
+        "tfc:wood/sewing_table/*",
+        "afc:wood/sewing_table/*"
       ]
     ],
     "tfc:casting": [],
     "tfc:knapping": [],
     "tfc:scraping": [],
+    "afc:tree_tapping": [
+      "afc:tree_tap"
+    ],
+    "framedblocks:frame": [
+      [
+        "framedblocks:framing_saw",
+        "framedblocks:powered_framing_saw"
+      ],
+      "framedblocks:framed_cube"
+    ],
+    "rnr:mattock": [
+      "#i:rnr:tools_mattocks"
+    ],
+    "rnr:block_mod": [],
+    "rnr:fluid_block_mod": [],
     "create:pressing": [
       "create:mechanical_press",
       "@create_power"
@@ -366,7 +391,8 @@
       "id": "strip_log",
       "inputs": [
         [
-          "#i:minecraft:logs"
+          "tfc:wood/log/*",
+          "tfc:wood/wood/*"
         ],
         [
           "#i:minecraft:axes",
@@ -378,7 +404,26 @@
         "tfc:wood/stripped_log/*",
         "tfc:wood/stripped_wood/*"
       ],
-      "why": "use an axe on a placed log or wood block"
+      "why": "use an axe on a placed TFC log or wood block"
+    },
+    {
+      "id": "strip_log_afc",
+      "inputs": [
+        [
+          "afc:wood/log/*",
+          "afc:wood/wood/*"
+        ],
+        [
+          "#i:minecraft:axes",
+          "tfc:stone/axe/*",
+          "tfc:metal/axe/*"
+        ]
+      ],
+      "outputs": [
+        "afc:wood/stripped_log/*",
+        "afc:wood/stripped_wood/*"
+      ],
+      "why": "use an axe on a placed ArborFirmaCraft log or wood block"
     },
     {
       "id": "boil_water",
@@ -724,6 +769,34 @@
         "@brass"
       ],
       "why": "design: airships unlock with brass: portable engines"
+    },
+    {
+      "item": "i:afc:tree_tap",
+      "requires": [
+        "#i:c:sheets/wrought_iron"
+      ],
+      "why": "design: ArborFirmaCraft's tree tap is a wrought iron sheet, so sap, syrup, sugar and latex are iron-age and AFC gives no early glue or sugar"
+    },
+    {
+      "item": "i:framedblocks:framing_saw",
+      "requires": [
+        "#i:c:ingots/wrought_iron"
+      ],
+      "why": "design: Framed Blocks' saw takes an iron ingot, which is TFC wrought iron here, so framed blocks are iron-age"
+    },
+    {
+      "item": "i:rnr:metal/mattock/wrought_iron",
+      "requires": [
+        "#i:c:ingots/wrought_iron"
+      ],
+      "why": "design: Roads and Roofs mattocks follow TFC's tool tiers (wrought iron mattock needs wrought iron)"
+    },
+    {
+      "item": "i:rnr:metal/mattock/steel",
+      "requires": [
+        "#i:c:ingots/steel"
+      ],
+      "why": "design: Roads and Roofs mattocks follow TFC's tool tiers (steel mattock needs TFC steel)"
     }
   ],
   "milestones": [

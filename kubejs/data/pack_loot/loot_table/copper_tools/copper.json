@@ -1,0 +1,75 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/axe/copper",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/chisel/copper",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/hammer/copper",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/hoe/copper",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/javelin/copper",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/knife/copper",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/mace/copper",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/pickaxe/copper",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/propick/copper",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/saw/copper",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/scythe/copper",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/shovel/copper",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/sword/copper",
+          "weight": 8
+        }
+      ]
+    }
+  ]
+}

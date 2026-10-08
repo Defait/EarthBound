@@ -1,0 +1,14 @@
+name = "MVS - Moog's Voyager Structures"
+filename = "MoogsVoyagerStructures-1.21-5.0.11.jar"
+side = "both"
+pin = true
+
+[download]
+url = "https://cdn.modrinth.com/data/OQAgZMH1/versions/cvepxaBC/MoogsVoyagerStructures-1.21-5.0.11.jar"
+hash-format = "sha512"
+hash = "e20a72cd1cea21470ca3107df8a5686c5820a8a57e631d34d35fcde30c256c10a00d2b7e3ad7c29a933f5e51cbaad7157fa166ca3730f94a6febf62b5f91ac26"
+
+[update]
+[update.modrinth]
+mod-id = "OQAgZMH1"
+version = "cvepxaBC"

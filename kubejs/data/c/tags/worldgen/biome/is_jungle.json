@@ -1,0 +1,26 @@
+{
+  "values": [],
+  "remove": [
+    "tfc:cenote_canyons",
+    "tfc:cenote_highlands",
+    "tfc:cenote_hills",
+    "tfc:cenote_plains",
+    "tfc:cenote_plateau",
+    "tfc:cenote_rolling_hills",
+    "tfc:lowlands",
+    "tfc:shilin_canyons",
+    "tfc:shilin_highlands",
+    "tfc:shilin_hills",
+    "tfc:shilin_plains",
+    "tfc:shilin_plateau",
+    "tfc:tower_karst_bay",
+    "tfc:tower_karst_canyons",
+    "tfc:tower_karst_highlands",
+    "tfc:tower_karst_hills",
+    "tfc:tower_karst_lake",
+    "tfc:tower_karst_plains",
+    "tfc:volcanic_mountains",
+    "tfc:volcanic_oceanic_mountain_lake",
+    "tfc:volcanic_oceanic_mountains"
+  ]
+}

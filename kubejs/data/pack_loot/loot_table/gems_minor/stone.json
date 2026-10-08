@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tfc:ore/amethyst",
+          "weight": 33
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:ore/lapis_lazuli",
+          "weight": 33
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:ore/opal",
+          "weight": 33
+        }
+      ]
+    }
+  ]
+}

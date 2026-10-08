@@ -1,0 +1,222 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tfc:food/barley_bread",
+          "weight": 11,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            },
+            {
+              "function": "tfc:rotten"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:food/oat_bread",
+          "weight": 11,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            },
+            {
+              "function": "tfc:rotten"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:food/rye_bread",
+          "weight": 11,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            },
+            {
+              "function": "tfc:rotten"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:food/wheat_bread",
+          "weight": 11,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            },
+            {
+              "function": "tfc:rotten"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:food/beet",
+          "weight": 7,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            },
+            {
+              "function": "tfc:rotten"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:food/cabbage",
+          "weight": 7,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            },
+            {
+              "function": "tfc:rotten"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:food/carrot",
+          "weight": 7,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            },
+            {
+              "function": "tfc:rotten"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:food/onion",
+          "weight": 7,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            },
+            {
+              "function": "tfc:rotten"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:food/potato",
+          "weight": 7,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            },
+            {
+              "function": "tfc:rotten"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:food/beef",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "tfc:rotten"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:food/chicken",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "tfc:rotten"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:food/mutton",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "tfc:rotten"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:food/pork",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "tfc:rotten"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:food/venison",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "tfc:rotten"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

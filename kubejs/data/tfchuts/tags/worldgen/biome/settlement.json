@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "tfc:plateau_wide",
+    "tfc:burren_plains",
+    "tfc:burren_plateau",
+    "tfc:cenote_plains",
+    "tfc:cenote_hills",
+    "tfc:cenote_rolling_hills",
+    "tfc:cenote_plateau",
+    "tfc:doline_plains",
+    "tfc:doline_hills",
+    "tfc:doline_rolling_hills",
+    "tfc:doline_plateau",
+    "tfc:shilin_plains",
+    "tfc:shilin_hills",
+    "tfc:shilin_plateau",
+    "tfc:tower_karst_plains",
+    "tfc:tower_karst_hills"
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/axe/bismuth_bronze",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/axe/black_bronze",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/axe/bronze",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/axe/copper",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/hoe/bismuth_bronze",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/hoe/black_bronze",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/hoe/bronze",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/hoe/copper",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/scythe/bismuth_bronze",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/scythe/black_bronze",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/scythe/bronze",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/scythe/copper",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/shears/copper",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/shovel/bismuth_bronze",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/shovel/black_bronze",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/shovel/bronze",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/shovel/copper",
+          "weight": 6
+        }
+      ]
+    }
+  ]
+}

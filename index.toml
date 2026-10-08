@@ -189,8 +189,92 @@ file = "kubejs/config/common.json"
 hash = "e00a67922942660d77c213379b5128a46c5abc894178b0be04006d325ff5f6b3"
 
 [[files]]
+file = "kubejs/config/villager_trades.json"
+hash = "07146d7055461e91d4544e83bf748619203bf28315025534dfe9f6ddef2e8ca1"
+
+[[files]]
 file = "kubejs/config/web_server.json"
 hash = "74f01c3b886aa9dd2ebc49781ddb0541b974ad34e2f41e7a566b98d9182abd48"
+
+[[files]]
+file = "kubejs/data/betterdungeons/loot_table/skeleton_dungeon/chests/common.json"
+hash = "c4e7d379cc61556f0e1940cde3353673ccc29200d3dffb0b5651f1b093f1dd0a"
+
+[[files]]
+file = "kubejs/data/betterdungeons/loot_table/skeleton_dungeon/chests/middle.json"
+hash = "1b1fd2ab359463be57b8c65022c41d4300499eef8dca7f8528ea20a3d1d7229b"
+
+[[files]]
+file = "kubejs/data/betterdungeons/loot_table/small_dungeon/chests/loot_piles.json"
+hash = "87c725f12465710c11d0ca0c13bddb626a5f5abd4b308bf4a39c904c0bc9db3b"
+
+[[files]]
+file = "kubejs/data/betterdungeons/loot_table/small_nether_dungeon/chests/common.json"
+hash = "cd6f7c59891656b83f261409fccd44afd6d9ac4533f599289b057f973625b301"
+
+[[files]]
+file = "kubejs/data/betterdungeons/loot_table/spider_dungeon/chests/egg_room.json"
+hash = "a8ffee3e03debc0850f4eeb694084f4942a9e513a88d99bd3cce42edc07d42db"
+
+[[files]]
+file = "kubejs/data/betterdungeons/loot_table/zombie_dungeon/chests/common.json"
+hash = "814b3f4480ba5517c81974b85be7706e67a83e2829c3f835fa7422b37fae2ef9"
+
+[[files]]
+file = "kubejs/data/betterdungeons/loot_table/zombie_dungeon/chests/special.json"
+hash = "6298561e8b8598ed34cc087d283a40feb67a9b9ff6ee339cf0137b922f7a8251"
+
+[[files]]
+file = "kubejs/data/betterdungeons/loot_table/zombie_dungeon/chests/tombstone.json"
+hash = "c56086ed370e05a2fa33142a6c51cac3eab31e5966ee44b31d41525cd0351845"
+
+[[files]]
+file = "kubejs/data/c/tags/worldgen/biome/is_birch_forest.json"
+hash = "b7e053451c87623b67dd169471a88bd323a131da96dfd49ca87e6a7a1d01bee0"
+
+[[files]]
+file = "kubejs/data/c/tags/worldgen/biome/is_deep_ocean.json"
+hash = "b45b9da59720aff2248105f5ecfd7f17ebe06d8f8dbba1badaedc864484768b5"
+
+[[files]]
+file = "kubejs/data/c/tags/worldgen/biome/is_desert.json"
+hash = "bf40800280907daabba84bfc8b4e823405227b89a0e9e3f4667578fd359cf4b2"
+
+[[files]]
+file = "kubejs/data/c/tags/worldgen/biome/is_forest.json"
+hash = "1ce1810391752deae4ed596bbcb6bd686202da9f4f11a3491bc2bd640a466687"
+
+[[files]]
+file = "kubejs/data/c/tags/worldgen/biome/is_jungle.json"
+hash = "2e6ebd38c97dddf5ba4169b05f19e44efef94ad4949ab6c32ef762854f62326d"
+
+[[files]]
+file = "kubejs/data/c/tags/worldgen/biome/is_mountain.json"
+hash = "4ded6fb5ebc18c587da31dcd122aac758fb3cd09d79d910b5451e2ebe0be53ad"
+
+[[files]]
+file = "kubejs/data/c/tags/worldgen/biome/is_ocean.json"
+hash = "61b73a6ef5436fddf952cc04ccefbd4fb9d6807e62c9aa3c9aad08c867266465"
+
+[[files]]
+file = "kubejs/data/c/tags/worldgen/biome/is_overworld.json"
+hash = "50df0861ce65b7445d96f8240537dcaebe104d7b5d098115159accb1c9c30dff"
+
+[[files]]
+file = "kubejs/data/c/tags/worldgen/biome/is_plains.json"
+hash = "52085d7c6e4c5b4cbb1431b93cb80f095347f39f82f058d33f2e99351c6a2666"
+
+[[files]]
+file = "kubejs/data/c/tags/worldgen/biome/is_savanna.json"
+hash = "18a629c0fa1d59f597d53b50be95d13479ed4c3c1351d095d8a06f534a3d1e0d"
+
+[[files]]
+file = "kubejs/data/c/tags/worldgen/biome/is_swamp.json"
+hash = "5258a49ef1417df28be746de32d7d67dd59e31cc84f0eecb4a4d977696ef4f55"
+
+[[files]]
+file = "kubejs/data/c/tags/worldgen/biome/is_taiga.json"
+hash = "00ffdf4aec1f304857e98c4d12588bfb40c81720c915370bc9263e171552b601"
 
 [[files]]
 file = "kubejs/data/create_factory_logistics/recipe/barrel_packager.json"
@@ -247,6 +331,1078 @@ hash = "07cb4bcd012e22dd94b19fbbeb58ef10f487ceaed943716a729e9a01d8fa930c"
 [[files]]
 file = "kubejs/data/fowlplay/tfc/fauna/sparrow.json"
 hash = "8a40668bfaa6a4ee70b644bf5b681b836c0e4f48cf96d9537562329794c554b2"
+
+[[files]]
+file = "kubejs/data/gtceu/loot_table/chests/extra/abandoned_mineshaft.json"
+hash = "3e92eaba33a8c7fb36b9b4fecac1bc205c3d761e6f1798a90a3cb30ded3d9e83"
+
+[[files]]
+file = "kubejs/data/gtceu/loot_table/chests/extra/desert_pyramid.json"
+hash = "3e92eaba33a8c7fb36b9b4fecac1bc205c3d761e6f1798a90a3cb30ded3d9e83"
+
+[[files]]
+file = "kubejs/data/gtceu/loot_table/chests/extra/jungle_temple.json"
+hash = "3e92eaba33a8c7fb36b9b4fecac1bc205c3d761e6f1798a90a3cb30ded3d9e83"
+
+[[files]]
+file = "kubejs/data/gtceu/loot_table/chests/extra/jungle_temple_dispenser.json"
+hash = "3e92eaba33a8c7fb36b9b4fecac1bc205c3d761e6f1798a90a3cb30ded3d9e83"
+
+[[files]]
+file = "kubejs/data/gtceu/loot_table/chests/extra/simple_dungeon.json"
+hash = "3e92eaba33a8c7fb36b9b4fecac1bc205c3d761e6f1798a90a3cb30ded3d9e83"
+
+[[files]]
+file = "kubejs/data/gtceu/loot_table/chests/extra/spawn_bonus_chest.json"
+hash = "3e92eaba33a8c7fb36b9b4fecac1bc205c3d761e6f1798a90a3cb30ded3d9e83"
+
+[[files]]
+file = "kubejs/data/gtceu/loot_table/chests/extra/stronghold_corridor.json"
+hash = "3e92eaba33a8c7fb36b9b4fecac1bc205c3d761e6f1798a90a3cb30ded3d9e83"
+
+[[files]]
+file = "kubejs/data/gtceu/loot_table/chests/extra/stronghold_crossing.json"
+hash = "3e92eaba33a8c7fb36b9b4fecac1bc205c3d761e6f1798a90a3cb30ded3d9e83"
+
+[[files]]
+file = "kubejs/data/gtceu/loot_table/chests/extra/village_weaponsmith.json"
+hash = "3e92eaba33a8c7fb36b9b4fecac1bc205c3d761e6f1798a90a3cb30ded3d9e83"
+
+[[files]]
+file = "kubejs/data/kaisyn/loot_table/archeology/forest_ruins_common.json"
+hash = "af899a83f50a4e41a4ecab592c3b2effb7a0a252f714fe7cf6f6ae1ba0ac7351"
+
+[[files]]
+file = "kubejs/data/kaisyn/loot_table/archeology/forest_ruins_rare.json"
+hash = "d2ca2a06119861c9be6f73c41541fa3cf410f2cb88be784ee562925eb0adf8fe"
+
+[[files]]
+file = "kubejs/data/kaisyn/loot_table/outpost/common/armory.json"
+hash = "a447e201ae8db828c2d009120366bf29045fb4b791045e9ab6caf4d01e757327"
+
+[[files]]
+file = "kubejs/data/kaisyn/loot_table/outpost/common/food.json"
+hash = "8316ed9b455a697da4fb67823598f72f058c5d1a5cb2b5bae9a23dad8f3f91e6"
+
+[[files]]
+file = "kubejs/data/kaisyn/loot_table/outpost/exclusives/outpost_beach_barrel.json"
+hash = "c956eac19e759fd158e91bb5df463a22dddee656a29401841341e3355f02cefd"
+
+[[files]]
+file = "kubejs/data/kaisyn/loot_table/outpost/exclusives/outpost_mediterranean_barrel.json"
+hash = "aebd6abb080680400c3401253d5b460e34c08814ad087b952e71408db9824d7e"
+
+[[files]]
+file = "kubejs/data/kaisyn/loot_table/outpost/exclusives/outpost_rustic_barrel.json"
+hash = "4ad7a7cf67e73a39c9000a46ef746983dd73e282c9ce549514dc0a5bafc2762b"
+
+[[files]]
+file = "kubejs/data/kaisyn/loot_table/village/exclusives/village_classic_blacksmith.json"
+hash = "2ea9506814edb3aa0b3dbeb24530634bd681aec5bd2046e696b3750f0edf63f2"
+
+[[files]]
+file = "kubejs/data/kaisyn/loot_table/village/exclusives/village_mediterranean_house.json"
+hash = "1aea55b640944b7827c9afece183ef03028867071d94e14cee9b1223226bd03d"
+
+[[files]]
+file = "kubejs/data/kaisyn/loot_table/village/exclusives/village_piglin_barrel.json"
+hash = "dcae64deeb3b63da5384cce4565951e42d7876edfb2a8ecfc57fd0d33cb5e8e3"
+
+[[files]]
+file = "kubejs/data/kaisyn/loot_table/village/exclusives/village_piglin_house.json"
+hash = "bab7509d63dbbb1971399a36444ecc0fd96c82e49c428001917752bc8c0976f1"
+
+[[files]]
+file = "kubejs/data/kaisyn/loot_table/village/exclusives/village_wandering_trader_hut.json"
+hash = "a35f40d91dc32e5578ec328dbf205a361171ae84c535c3787476987f0a2e7547"
+
+[[files]]
+file = "kubejs/data/kaisyn/loot_table/village/village_badlands_house.json"
+hash = "a3ff77bf79eec69b8ba4feea1c20f22a5981830806f3cc9ad21ac4f56f72221b"
+
+[[files]]
+file = "kubejs/data/kaisyn/loot_table/village/village_birch_forest_house.json"
+hash = "212d1cc27c2cc1e18716c89da6f58430847c3d9c1a5e659e93d26e2c36c02c69"
+
+[[files]]
+file = "kubejs/data/kaisyn/loot_table/village/village_forest_ruins/forest_ruins_butcher.json"
+hash = "c4cdcd444fa884232da0ee7060a2a79aa8c3a7610ac01b59b9d8573b98d89fac"
+
+[[files]]
+file = "kubejs/data/kaisyn/loot_table/village/village_forest_ruins/forest_ruins_library.json"
+hash = "2c78872108d69b1f8c4731ba7fc616579a41509930885c4984fe4ad2f132192a"
+
+[[files]]
+file = "kubejs/data/kaisyn/loot_table/village/village_forest_ruins/forest_ruins_temple.json"
+hash = "6f4bbca229508ef3ddb7562c0786965351bf0675fe92da8338e8a7af700b30d6"
+
+[[files]]
+file = "kubejs/data/kaisyn/loot_table/village/village_jungle_house.json"
+hash = "4072e0a85b5d3ab26e242f1b5993c60d9e54f427718bc3c346b0c6fc3ba8113d"
+
+[[files]]
+file = "kubejs/data/kaisyn/loot_table/village/village_mushroom_house.json"
+hash = "31bc47630e1b0e31b45868fbd9e0cca163fed385a787b29faa10715db1f200de"
+
+[[files]]
+file = "kubejs/data/kaisyn/loot_table/village/village_swamp_house.json"
+hash = "e0bdd3ca88e8d974181311e1e17fdebfc3cc9588ce57cc41c141ca00bf45cd5b"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/archaeology/desert_pyramid.json"
+hash = "af899a83f50a4e41a4ecab592c3b2effb7a0a252f714fe7cf6f6ae1ba0ac7351"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/archaeology/desert_well.json"
+hash = "5aac8b6d4fc29ba8bc7a9191b3a6e887f9d1e6ec0b309c00fdb2f8694237a3ab"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/archaeology/ocean_ruin_cold.json"
+hash = "4eca742af4f8d2778dccbb49c7b5de13919373b9c34552a10974b9ae32dde50c"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/archaeology/ocean_ruin_warm.json"
+hash = "4eca742af4f8d2778dccbb49c7b5de13919373b9c34552a10974b9ae32dde50c"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/archaeology/trail_ruins_common.json"
+hash = "af899a83f50a4e41a4ecab592c3b2effb7a0a252f714fe7cf6f6ae1ba0ac7351"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/archaeology/trail_ruins_rare.json"
+hash = "e741a97f82e31c6f11af8a724071c6e99a9cc2161578c8fd55a32fb6d7962ce0"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/abandoned_mineshaft.json"
+hash = "d9f42eb4cb863d8f8880d40dfd02f004199bd456da1ffc73209ca3dc72679f46"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/buried_treasure.json"
+hash = "1b74473208ac3a44a7fd56cee85cc7c327715f73cc25a297d628305e8757df98"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/desert_pyramid.json"
+hash = "6bded9c124c936085b5b50cd9fba7b0557cd48b2fd37e51e6a422ec0a779e015"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/end_city_treasure.json"
+hash = "fcd4c7d49e50cf225e1c53230cb800037583d39a19e000fe13d9bf0cf824acf1"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/igloo_chest.json"
+hash = "26ca9252cb734d91d59c54220ee54a1c6b11bbd51ff330b55f73f1ccd2c6bd3f"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/jungle_temple.json"
+hash = "c0c4f39f012cd9236ed458dc6c74f68db5f42944d28845c89b1932d16e895955"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/pillager_outpost.json"
+hash = "925f62c02773d45820228c6e9473b228f5ca5a8b1905d2e61637c65e05e702cc"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/ruined_portal.json"
+hash = "0ea3de2bf6d503b68c3e669b23fbc42fc5b16889f24a659f73ef3c74837f64b0"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/shipwreck_map.json"
+hash = "c05ba539a4d7b29da619c713f09ea67f0130aeb8f1eb5e6c127444805e87900c"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/shipwreck_supply.json"
+hash = "e4e0c14d98cf3f9911ae3d8a17699363da2674ed4030679280e94662d64674d7"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/shipwreck_treasure.json"
+hash = "20e74b585f8923026be34d9854a63d673bc3271333f99cc2396ce3c1c3eb522b"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/simple_dungeon.json"
+hash = "01c2110ce5b473cab10c8ea0f8a283906119307a272a8400060405f7d7c98245"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/spawn_bonus_chest.json"
+hash = "dcaea0735f79ecd194efee7c1e28fa77524f5192ea4dfb6d6ec0e8d20d38a454"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/stronghold_corridor.json"
+hash = "85095793a972325c65d8639d8611dfa39cdd67f270008366f5fe07e159ac5ac8"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/stronghold_crossing.json"
+hash = "bebb169ad5632efce56254aa25d64243af14dc4d6c8fafe96242fbfe2d6ccf7c"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/stronghold_library.json"
+hash = "a27f8a640c78c0ce58ad677f68076f3f7f175216e11b50c8e2ff236a2e7c67f2"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/underwater_ruin_big.json"
+hash = "5a9e9643e0a9b5a848f8b936568a62cb529634349cf8a0e8863b06314aa44251"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/underwater_ruin_small.json"
+hash = "01aeeceef9edc5278a2d3a21ee4460ed99eb4ceb1de4b7f3807cab1969895f50"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/village/village_armorer.json"
+hash = "152e95068a05100191dbbea452ec6fd858899d59c168175bf3d264218b214336"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/village/village_butcher.json"
+hash = "b18e72e81e1cb786d9857faca0b33a6a994520c98343b86370779b9cfac7e649"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/village/village_cartographer.json"
+hash = "b97d48466244cac2c12dbfc9880b58731291cd707767e51fa9faefd00d402965"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/village/village_desert_house.json"
+hash = "1e857019d5ede169c8845e37cef9dfd6994bb1619eac453d8ee3be0045586998"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/village/village_fisher.json"
+hash = "a5ddc1c9d8f1d56f3eb95f2ae413b3030314961e330e0362ef1c283d01cb8b02"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/village/village_fletcher.json"
+hash = "30675d18ee50584998dad8b4d7267c288f9abf0239688e73aca161c4c1899377"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/village/village_leatherworker.json"
+hash = "36a5baecb4e3fde9ab58171177ea9bfefead8182ac87eeb2d3b82c4f99a39832"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/village/village_mason.json"
+hash = "c01b54efe1cd837191075b72c7472f4c9d90d3203118dfb360964671f4969afa"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/village/village_plains_house.json"
+hash = "f50e25e659dc0c41e3da6a6e6717b9752b61e5ff8eb09a3cc4780b994bf97399"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/village/village_savanna_house.json"
+hash = "09c7b665bf6ee74882c1d2757bcf571496d1ded3cdfaf24f5ce1f4271c46f54d"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/village/village_shepherd.json"
+hash = "49612da00092f6b1202e2039a9f123bc68f4990d099e0f0a4ef9050ac3f06090"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/village/village_snowy_house.json"
+hash = "f6d613cd3d7aee8f5ff8908d32dfaa5977d1888769cf10a49b3f67606f410512"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/village/village_taiga_house.json"
+hash = "59edc8f31f3eb338da2578996a64b47c14eda00d817c931a6693d3ae5f338720"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/village/village_tannery.json"
+hash = "ba103c7f2fcdb1c56922c307dcad96f9d2d4694c23401918cd837f63dbcc6486"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/village/village_temple.json"
+hash = "e78a61c8c9b2e9bf8f9a97c988593ed33ef22c58f260ad4304fafd41da44bdee"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/village/village_toolsmith.json"
+hash = "7c38481c8572e74eecb2b757473ace0c04a7f68b630227814a25bfcf21a393cb"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/village/village_weaponsmith.json"
+hash = "d8a6c755efceac759d0e9d3a3e81f24bd19924468d29820754df9aa443676cc0"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/chests/woodland_mansion.json"
+hash = "131e9e290384a27f37a9cb4e320149c13690fb09f57790cf501841c888f41736"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/entities/iron_golem.json"
+hash = "f8f1758a69ba66f83a744da1330107fc6fa08dc8163a77358ac92cd811b5517b"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/gameplay/hero_of_the_village/armorer_gift.json"
+hash = "8ae5a334869e51ef8dda0e4aae33db4b96d8cfbd7b083944a64b7d3a8a05a2f5"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/gameplay/hero_of_the_village/butcher_gift.json"
+hash = "2d17a9747b5e9431ffa6afec626cd4d9fa8cf41cf587fc4145b3c8c17af177e9"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/gameplay/hero_of_the_village/cartographer_gift.json"
+hash = "098460feedd777db6cdd5dfe45f19be2409c7d7011269e81ecce088c90542df7"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/gameplay/hero_of_the_village/cleric_gift.json"
+hash = "c27464674c3b6b868c7bd5a23c09e4a350d9343e1f43ca09b7ba401dbb979ea7"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/gameplay/hero_of_the_village/farmer_gift.json"
+hash = "3584018e9eb21baba2ca288f24a3268f03f6937a2ccc7f2552496509d6090e74"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/gameplay/hero_of_the_village/fisherman_gift.json"
+hash = "5d473739a05d7d35c66df1274a74075dd12d93b1ed27d6b2b7e5213b647c5f56"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/gameplay/hero_of_the_village/fletcher_gift.json"
+hash = "fbb5c8a394c695b8ab8f8820bbec0f7a188d8f9aacb6228cf9670d72dabcd8fb"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/gameplay/hero_of_the_village/leatherworker_gift.json"
+hash = "e6a69ef63b859cbf5295865774503b9e7b79d5b048d1f751588d5e06c82b078f"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/gameplay/hero_of_the_village/librarian_gift.json"
+hash = "098460feedd777db6cdd5dfe45f19be2409c7d7011269e81ecce088c90542df7"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/gameplay/hero_of_the_village/mason_gift.json"
+hash = "119797dd0259072ef7c244aaf33481300323faf9393c1604cd54516e4172e8b0"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/gameplay/hero_of_the_village/shepherd_gift.json"
+hash = "e24fb17422a3897023d51ce1c5375908a0c7da27143199e5f327d71fde525da1"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/gameplay/hero_of_the_village/toolsmith_gift.json"
+hash = "af959551fe94d1314dbac4c632a3e1d8a2b7d85ecee721f695726db1f133e7e1"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/gameplay/hero_of_the_village/weaponsmith_gift.json"
+hash = "113dd66b049b970d5dd91f6db087aaf02917b01637bc0b6bccbed8dbc0709638"
+
+[[files]]
+file = "kubejs/data/minecraft/loot_table/mvs/cathedral_common.json"
+hash = "6f4bbca229508ef3ddb7562c0786965351bf0675fe92da8338e8a7af700b30d6"
+
+[[files]]
+file = "kubejs/data/mmv/loot_table/village_dark_oak_archer.json"
+hash = "bc97cbec895b19031e76e44f4de0d5eb9f68849b577562cfe869ebb2ae1e0aff"
+
+[[files]]
+file = "kubejs/data/mmv/loot_table/village_dark_oak_blacksmith.json"
+hash = "2ea9506814edb3aa0b3dbeb24530634bd681aec5bd2046e696b3750f0edf63f2"
+
+[[files]]
+file = "kubejs/data/mmv/loot_table/village_dark_oak_cartographer.json"
+hash = "2c78872108d69b1f8c4731ba7fc616579a41509930885c4984fe4ad2f132192a"
+
+[[files]]
+file = "kubejs/data/mmv/loot_table/village_dark_oak_church.json"
+hash = "6f4bbca229508ef3ddb7562c0786965351bf0675fe92da8338e8a7af700b30d6"
+
+[[files]]
+file = "kubejs/data/mmv/loot_table/village_dark_oak_farm.json"
+hash = "b689965c5ab2931c928dd5177c25f22d06a5854b4e31f55ba865f3dded2fb7db"
+
+[[files]]
+file = "kubejs/data/mmv/loot_table/village_dark_oak_house.json"
+hash = "f50e25e659dc0c41e3da6a6e6717b9752b61e5ff8eb09a3cc4780b994bf97399"
+
+[[files]]
+file = "kubejs/data/mmv/loot_table/village_dark_oak_librarian.json"
+hash = "2c78872108d69b1f8c4731ba7fc616579a41509930885c4984fe4ad2f132192a"
+
+[[files]]
+file = "kubejs/data/mmv/loot_table/village_dark_oak_stonecutter.json"
+hash = "8efe32c7425f91ef4ce2420b3918d9da97be082e9320b86ba163c3db8556b2aa"
+
+[[files]]
+file = "kubejs/data/mmv/loot_table/village_jungle_house.json"
+hash = "539b2800e0d9b4d73525712483722af93dea7e41e5edf021f42699234c6b1a50"
+
+[[files]]
+file = "kubejs/data/mmv/loot_table/village_swamp_house.json"
+hash = "e0bdd3ca88e8d974181311e1e17fdebfc3cc9588ce57cc41c141ca00bf45cd5b"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/badlands_temple_common.json"
+hash = "d9c7c0f7fa205fed0e23d654befa192a29744b84b242ab6855ea94e70abd1c2d"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/badlands_temple_decorated_pot.json"
+hash = "d3e22681e97d454445b638eee6d1c7f0a01d465415f1d5aab4584143d2a37029"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/badlands_temple_rare.json"
+hash = "36e7811c0aa2bb73476ba6edc2742ceedeac2a74ac4cac84a296bcd2c4bc3cf5"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/desert_temple_crypt_chest.json"
+hash = "e0f16c33b5e3ec7091c1a77256e819c1be82b4a5b8a6efa5aae730f46e54f50e"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/desert_temple_decorated_pot.json"
+hash = "38ec0890b53670b965e04ceceb56925dadd862f0ef87ba6e1b3ada0dc191d9b7"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/desert_temple_lower_chamber.json"
+hash = "e11ed11e6a6bc7d7b2aab909bf6d8b74ec614483ae40944889f287130ea83454"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/desert_temple_pillar_chest.json"
+hash = "d1f5a52ef373f69a4147fbf9264e0511c0d95fbff4391ede3925f563ede45ba2"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/desert_temple_suspicious_sand.json"
+hash = "3cc5413c737af90996febc3ad8ac828ad69fd21ecf46db93b13ff046923890b9"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/desert_temple_wall_chest.json"
+hash = "a4a37404f090662ba959c8699452e4cf972254e3f5c0823498e3191c5be7eefb"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/empty.json"
+hash = "25a543e96bde4c45a637e96bb16d629dcb7ce3f3e26f6ed50bcbbc58d10f2fee"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/jungle_temple_corridor.json"
+hash = "fe8a6f537161aeb4f57d1f66b1c8d0b7f682b9ede59065653e0b5fa16777336a"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/jungle_temple_crypt_barrel_empty.json"
+hash = "25a543e96bde4c45a637e96bb16d629dcb7ce3f3e26f6ed50bcbbc58d10f2fee"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/jungle_temple_crypt_barrel_full.json"
+hash = "4ceec95e3bbdb39def80f295d4a57e388f0d98df8fddf5d36cd89bc245ac88d2"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/jungle_temple_crypt_chest.json"
+hash = "e0f16c33b5e3ec7091c1a77256e819c1be82b4a5b8a6efa5aae730f46e54f50e"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/jungle_temple_decorated_pot.json"
+hash = "f277c759bcb85672e45592723698736e1bf881cbf14d78e8339f6e378110173b"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/jungle_temple_lava_chamber.json"
+hash = "d18a4c2cf3f5dba39ef54e0aa5994947cf39d7258702fa641bf1a87c0949e013"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/jungle_temple_main_common.json"
+hash = "a202f8eaebb976c60ec69c5773d25967230d2ed2edee830fc2ea6fce69a32de2"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/jungle_temple_main_double.json"
+hash = "dc305a00c478ba54feeccb758ca1530a43969b994be99611e36efc46d61dd571"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/jungle_temple_puzzle_treasure.json"
+hash = "10781f615c01aa8906b2e15b909ca9fca427f9edc4e6e690f5c5b611fd4f9e48"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/jungle_temple_suspicious_gravel.json"
+hash = "1db1237d7c10986701082360809840394cd64b46ba69b93051fd7e2d9f202668"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/jungle_temple_upper_chest.json"
+hash = "a202f8eaebb976c60ec69c5773d25967230d2ed2edee830fc2ea6fce69a32de2"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/jungle_temple_upper_double.json"
+hash = "d1f5a52ef373f69a4147fbf9264e0511c0d95fbff4391ede3925f563ede45ba2"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/nether_temple_common.json"
+hash = "b7f61ec6da81a664e3744e06072a99b668ac5e642bad3574128dbbeaa1b044bf"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/nether_temple_rare.json"
+hash = "dc305a00c478ba54feeccb758ca1530a43969b994be99611e36efc46d61dd571"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/nether_temple_uncommon.json"
+hash = "6bded9c124c936085b5b50cd9fba7b0557cd48b2fd37e51e6a422ec0a779e015"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/ocean_temple_common.json"
+hash = "50a893e989a46966c3915bd9f8101dd958c96974fec142c4b4cc6d22d7adcd8e"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/ocean_temple_treasure.json"
+hash = "d997efbe846ee8e070d03110763a5383e5cf62df5ff082c3090b013d3990e480"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/stronghold_barracks_barrel.json"
+hash = "4ffff50e69be7705cd6805d34244d2470d5418bad36a799be4c4216af10f58f1"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/stronghold_barracks_chest.json"
+hash = "4614dba7f772c9610dc765e2ccf8c825f4461024ad6bb9b1edf8dfaef8d92597"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/stronghold_corridor_common.json"
+hash = "ff70d37fb93610f6f9d90f9363b2f631f3c087aea7b050125aaa7defb242278d"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/stronghold_corridor_empty.json"
+hash = "25a543e96bde4c45a637e96bb16d629dcb7ce3f3e26f6ed50bcbbc58d10f2fee"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/stronghold_corridor_rare.json"
+hash = "d8d46385e1642817bac5b33141d0a3da12f246b5b689c48ebdcf0f68f5611dce"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/stronghold_corridor_uncommon.json"
+hash = "a80a6ce01a5859a7ffe8a229faaec028ccf497e8757aba093414b97b2916667a"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/stronghold_decorated_pot.json"
+hash = "d3e22681e97d454445b638eee6d1c7f0a01d465415f1d5aab4584143d2a37029"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/stronghold_library_chest.json"
+hash = "a27f8a640c78c0ce58ad677f68076f3f7f175216e11b50c8e2ff236a2e7c67f2"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/stronghold_library_trapped_chest.json"
+hash = "e4352bbdef6e2a41f4e4fb2ec1cf40b06c667e139e8642ceb531631ad35d4e58"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/stronghold_mossy_special.json"
+hash = "4af47185e6636c329d55573d372fed319e8a600554f5bb2dac7d6a6f42c4381c"
+
+[[files]]
+file = "kubejs/data/mtr/loot_table/stronghold_suspicious_gravel.json"
+hash = "3791905fd2c02c299cfe963fa321a54de8d0405529ff6f4f502253061750f3ba"
+
+[[files]]
+file = "kubejs/data/mvs/loot_table/abandoned.json"
+hash = "209ebd384c33e8c9ea616f524098d5dd181941f328f9b2f7abca6f89dcea0a80"
+
+[[files]]
+file = "kubejs/data/mvs/loot_table/cart.json"
+hash = "abf66dfa0df78a7bbe6f452727efcc036b608d444cf2390acef60b1c8ff19a84"
+
+[[files]]
+file = "kubejs/data/mvs/loot_table/cartographer_tower.json"
+hash = "d4bd7c6f55ece0b1d6a685c03b7be4f86dbf9afc09fbc02807251235a32250c9"
+
+[[files]]
+file = "kubejs/data/mvs/loot_table/cathedral_base.json"
+hash = "d0a9d73a74bef2c027aa788fdcc373d757a8497f7d8325e402d608ad45d1d7a6"
+
+[[files]]
+file = "kubejs/data/mvs/loot_table/cathedral_common.json"
+hash = "6f4bbca229508ef3ddb7562c0786965351bf0675fe92da8338e8a7af700b30d6"
+
+[[files]]
+file = "kubejs/data/mvs/loot_table/cathedral_rare.json"
+hash = "479483368600945719074ec650db70234ae9dcd6790f38172e6c04245a5fc998"
+
+[[files]]
+file = "kubejs/data/mvs/loot_table/crystal.json"
+hash = "19ddc73550a7bb1cda55ce83747720174badcf1a4fd4c64917b59bf01e53e96e"
+
+[[files]]
+file = "kubejs/data/mvs/loot_table/empty.json"
+hash = "d032f58198f7fbbe3fb091d010888a94b44146ae2530af9662f9c4e24bfbbe98"
+
+[[files]]
+file = "kubejs/data/mvs/loot_table/end_scraps.json"
+hash = "ed355cf3ee829525dc73a70011e1eb2b03c272c941e0bcad0eff171690cc1fbc"
+
+[[files]]
+file = "kubejs/data/mvs/loot_table/floating_islands.json"
+hash = "caaefab3be67f818a1d008ec98bc206065af28c0ad7340f63a0db4f57afaca07"
+
+[[files]]
+file = "kubejs/data/mvs/loot_table/general.json"
+hash = "1e33ff10fa9b96080e1042ae8734067b452d23e9f598daf50ee73c0774a6e943"
+
+[[files]]
+file = "kubejs/data/mvs/loot_table/houses_books.json"
+hash = "a46d1fe485707c6cbfbb1217a6483a56e6d40f735ccbf296fd97df378e72227b"
+
+[[files]]
+file = "kubejs/data/mvs/loot_table/houses_common.json"
+hash = "212d1cc27c2cc1e18716c89da6f58430847c3d9c1a5e659e93d26e2c36c02c69"
+
+[[files]]
+file = "kubejs/data/mvs/loot_table/houses_desert.json"
+hash = "1e857019d5ede169c8845e37cef9dfd6994bb1619eac453d8ee3be0045586998"
+
+[[files]]
+file = "kubejs/data/mvs/loot_table/houses_flower.json"
+hash = "bd2f4a5220d5a034a1384bda950d004d61d49bb0b76e826c65c9334a7f4562c9"
+
+[[files]]
+file = "kubejs/data/mvs/loot_table/houses_rare.json"
+hash = "d07830d1d6c9208a9ce8dc8373b6658fff0ad80cdb6e5756e9158006dd2f2361"
+
+[[files]]
+file = "kubejs/data/mvs/loot_table/houses_uncommon.json"
+hash = "d2585112aebbf038419f1f3fa5a1c4cee732a1b9ad497c0abe441e5cb6830032"
+
+[[files]]
+file = "kubejs/data/mvs/loot_table/jungle_tower.json"
+hash = "a345348722d003fda11173990b0187d2a1d0eef84c410506e60c2801edbc7c4c"
+
+[[files]]
+file = "kubejs/data/mvs/loot_table/large_carts.json"
+hash = "0778a21626ed09b3482ed932b7f1bbb34102687a086217ec57d21b13ecffd7aa"
+
+[[files]]
+file = "kubejs/data/mvs/loot_table/large_carts_2.json"
+hash = "cd2fc95b74d1c710fb56d4b5a0ecf701d824c1c79f3c1a7574f43b7a1e394aa7"
+
+[[files]]
+file = "kubejs/data/mvs/loot_table/mineshaft/common.json"
+hash = "3f97de37482e5dd9097ae4054a58ab99a6d97c19f111811ec254ffea70453285"
+
+[[files]]
+file = "kubejs/data/mvs/loot_table/mineshaft/pot.json"
+hash = "4c3177bb3f9415ccc5437ad0ef0a767da01b02071e1eeb4f764d2e1920d13942"
+
+[[files]]
+file = "kubejs/data/mvs/loot_table/mineshaft/rare.json"
+hash = "965dcc0fe43e6ebe58b6c2943228aa3d954bd5afd013658d2e057440fe91f818"
+
+[[files]]
+file = "kubejs/data/mvs/loot_table/mineshaft/uncommon.json"
+hash = "6892a18db9293ff470ed87cfbce6abcfd84a1710546a396f54bbff9bc97970bc"
+
+[[files]]
+file = "kubejs/data/mvs/loot_table/mushroom_pond.json"
+hash = "d23c49943842c7a6abe802ece8efb8f50fca530e232c9d45e864e341c03de80c"
+
+[[files]]
+file = "kubejs/data/mvs/loot_table/pillager.json"
+hash = "925f62c02773d45820228c6e9473b228f5ca5a8b1905d2e61637c65e05e702cc"
+
+[[files]]
+file = "kubejs/data/mvs/loot_table/pond.json"
+hash = "7a9dca30a71151a636d0a6fe014f3698e34c5eb779e977c53e0beae9698ed778"
+
+[[files]]
+file = "kubejs/data/mvs/loot_table/rare.json"
+hash = "6888f7c2ef0c0e05343a76fc27705b4507410ec3d2621149704032d0fe8254b2"
+
+[[files]]
+file = "kubejs/data/mvs/loot_table/swamps.json"
+hash = "700f5bc43185587a085e33e5bf0ac9da9cf52a6bf5a862321b3905fd3440004f"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/acacia_log_pile.json"
+hash = "f3738f6f4cb0e2e358b74114bcaf922f8cbc65629eb7923e6185af28fdd2bc4a"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/acacia_tree.json"
+hash = "9af944273245e7c2bdbd0c5c3a230a21fd6d3d8a61a9ebfde8e2a55ea139c610"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/acacia_well.json"
+hash = "c91639b955c343994090bffc993fcb910f5fd3cec126c31331d49061d857abab"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/azelea_house.json"
+hash = "659f7fc07ace42f4a241e30e87c86afdb6669a733dc81695f43c0f84da252d6a"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/barn.json"
+hash = "2ed75cb569f8fd44f68af00c1cf24f145b1b4e324f493eae1f287a9a9ca6e916"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/beach_bar.json"
+hash = "3cdce200e5dcb13a43e708f4c250900aa865b6bf6f50dfb4fe606effa4c39d92"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/bee_dome.json"
+hash = "23bb8486ecca5741487fd1502a8b852d80e36ec38e53c87f1a93e20a6bd728ea"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/bench.json"
+hash = "fdf6377d15b44b2b1cd18eadb7d007daa9c1055d7e2a1bf176f0bdb53b6a2803"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/big_oak_tree.json"
+hash = "b4b94fadc92ff2c6626207148d3c4bff19fb7354c1a2e77ca8dcd1c803ad06e8"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/birch_log_pile.json"
+hash = "cc58c8029ae7f33b2e7d3cc213ab144226945db25c95c2913efc3f5c4f18b1e7"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/birch_tree.json"
+hash = "343a20024ec5adba67940627a28c3f4d284617ee21be47f7c1e9ffdf47078d92"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/birch_well.json"
+hash = "a1311b53280760654260f3dad3a90593ce40ee43eccfdbdab83115f7aa01a9e3"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/blue_stall.json"
+hash = "2e7da6df5c8f8aab22d34fc0e82f6a6f6b362007d256e8bef7a45fbce682f8b5"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/boulder.json"
+hash = "f28f584b242d6085e1395287b357e157b0677ff53858eb1c733fcfcd66a33aac"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/campsite.json"
+hash = "63d81b187fb94e9c83d49db8fd1604231778fe52145bec017e5a7dff3b46a430"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/cart.json"
+hash = "e20a891581449ac7ea779e5e8cf72ec37c21b850142b88777bb7df8e7c0fcda8"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/cartographer_tower.json"
+hash = "cfa99b0d0aa8c2e47396928267d1db8239d0c7a9d62107fa90d77dd10cdfb0fa"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/castle_ruins.json"
+hash = "9c5757070115ecf78880bdb8e11d3880deaf9101b1cb5a1c3ead0de96703507a"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/cathedral.json"
+hash = "fb2cdfe528c38edb7492b40d5d37383fd2b13d883b952425bc44748182c5a3b8"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/crystal.json"
+hash = "dc79ac1409a6bf49562055ea743aad5ef3dbbeafc3fb0763eb3a429f0da3fcc6"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/dead_tree_acacia.json"
+hash = "6addcacd07efacc87b58c05ac27a44daede66b61259e54a7193d26937e795deb"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/dead_tree_birch.json"
+hash = "7ac16d290738b5b695f58b8ac9eb517d3f270295ec9c8a873e67f0e4943cb1ba"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/dead_tree_jungle.json"
+hash = "d71f152f1e2d4203384f5f24ede2b9d7eb1be49ab905158c475a55264185747c"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/dead_tree_oak.json"
+hash = "52c99b53add6c5972fbd8af5be5ce5d0e4835bcd08712908538e85f0564168ab"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/dead_tree_spruce.json"
+hash = "e0103c549bfe4d4b0a6a8324b3ecfd280097dada3958722e28795ed73b6acdb0"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/deepslate_house.json"
+hash = "c58fcc257b4bfd2150c229c3c735d35285b2f9dde48acb3c788a14a7f964401e"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/desert_house.json"
+hash = "439c39d2db98f15ce1fe3170952550e9198dce983f740f98b836844f0ba3e57e"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/desert_pump.json"
+hash = "cee2883b7d71a2dc5dc702089dfa96569673ad4b11265f8ada34d8ad697d8c68"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/desert_well.json"
+hash = "8fafcc27c246a1c184eb2ffe59226d685fbad2df220b25de491a3add7e1cc323"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/duck.json"
+hash = "651009cbdaa05505bd16c129d28bfbb9dbd9d94550daebf2a9ec4672842e3ab0"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/fire_camp.json"
+hash = "dc28f6afc2206c1e5ef4d63093f6bf89b6602efa0008aa985e19e2581d4ecfe5"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/fox_hut.json"
+hash = "c6db9d530f8f82762e5f61be4ce0f4b40d81c7a7e6ef27448b224bf62ff6a3fb"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/gallows.json"
+hash = "a9adbf238f5de0efbdf00f8bd1223b0a54c578ab7292842eef56fec1a85feba0"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/haystack.json"
+hash = "db0c840516b278f574924011c49ebd4c9f658eacb5b853ed47a7e87862f06d46"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/horse_campsite.json"
+hash = "723590df4d772d2f8e62e8c4cdf5d3678d145849006579a88f4767323c19d684"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/horse_pen.json"
+hash = "dfc60b125a5594823412ed2fe7249dda99907ffe49dc780fad220e7f62ec5095"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/house.json"
+hash = "4fae967094c5daa538f0aeacda4eadad2ad5688a31cc83e36efbddd4742e4591"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/jungle_log_pile.json"
+hash = "5893c0aa711a880cf7cc285c5f204c8e699169f1d573e1b6aa17c173aa04f8a5"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/jungle_palm_tree.json"
+hash = "57e10f63927ee756c627993971b26555be4714a708bd441047b1251d9ccad3d7"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/jungle_tower.json"
+hash = "65d3ec1cadc6e1c359a96f5461e53893e5b34d87bfffc03f4871952dd3b4babd"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/jungle_tree.json"
+hash = "f0263ecb830c35cf35eb8016a76a0f11f7342bbd209ba4a2031efbdbca448fc3"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/jungle_well.json"
+hash = "5d209376748806db4f3ed4ed884417cc687afccbbc57f116eba8bd2bab69c6c2"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/lamp_chest.json"
+hash = "b8c416a035fde329418ac0231213a10e2e03629e03ae6e3e8d5389b85afdca49"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/large_cart_1.json"
+hash = "313e46d740c0009c49afbab388c413c17e6739df22e483af489aecfb1f609b59"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/large_cart_2.json"
+hash = "ad0af29a9f959883e8b6ad0ad866a649177bda50f4feb5e79476715e1edd9f31"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/large_warped_tower.json"
+hash = "82bf25198522c0786a07f4b78f095083ddc3d7b2507da2cbadc198f694f98000"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/lecturn_garden.json"
+hash = "f77ef5d5ec7ac103799acaada066b00b8838cb3246126ef10f1e0e9c6257a2a3"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/log_ruin.json"
+hash = "82b2bcb4f3afac1680d5e4769ce58b8785c4517337036e92e7745578d7bb6ed9"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/medium_bamboo_cart.json"
+hash = "f05d279cde0d43a5f04887b38c6e6dac1f41c81694148e4b296d3b5d57b1f2a2"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/medium_igloo_1.json"
+hash = "d692f87f6ec4e26d5264bd2ed911c4330717353a3f4a6f7a7f9f90cc305073b1"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/medium_oak_lantern.json"
+hash = "79251d21a966152136f0418b26d86ee8242e635370bdb8f48f3058b521f654d7"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/mine_with_campsite.json"
+hash = "2eba8a747e4c0b29759f2930a2c1dc9fe165e65ef4951f52dcb1089f4533ce19"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/mineshaft.json"
+hash = "1fbbe24748312764522e401df435def46693352264d4b650835785712a8bacfc"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/mushroom_pond.json"
+hash = "359aa5cbbe38d62d7201a08253ee943ee9338201e26b14e4ad8eca82bcb552e9"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/oak_log_pile.json"
+hash = "502006977835b767c709a25d29e2e45e0a3d5f6dcefb7f88c4dc30ba7e08a4d5"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/oak_tree.json"
+hash = "f369f5773b342ac8d53bdfb6e730177583e1f99a0a47fc0a1b5d4315639601b7"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/oak_well.json"
+hash = "ac939e10823e5d9cf2e786d2cdd1e3238371f8b1aa7678df43baf9521b40abfd"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/ocean_tower.json"
+hash = "808e4d2df63de4c0a8ed08a9b8f8e20c0da7c2e8cb4c1a9039983e4eac545ce1"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/orange_stall.json"
+hash = "86b4cad051bc03876804f61ae401cead80f25ef8c4139546859fc09a92226200"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/out_house.json"
+hash = "1a2e102edbd4242736e3437c933d119abc6e03289ae70776f7c9a1290a624c6c"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/paths.json"
+hash = "72a4940ee9180b1d92bbf08c270e466876ea23dd3eb86edeb1569b655c399252"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/pile.json"
+hash = "a559d2a3a6a5480e596ad259909716505243c9ad799b59649402786fc23a0d13"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/pink_stall.json"
+hash = "29a1e7a6c4d7bb8f00a64e06860fd126b04ec384df7fa07f7e76cf96e8c432da"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/railway.json"
+hash = "1afc1ecd9acad745496dc294ee0ca3ba69ffe857aad3151ed39ac4e7b6dcfb7d"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/rare_well.json"
+hash = "4c7aebfe567c98ecdeb08e269f6224b823799cacbaf82cd38a4501c3ea416621"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/red_stall.json"
+hash = "9f04af9c3a4d70e90a32ad268713d6ab0be7a88316a21cf335d49174bc8f5593"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/red_tower.json"
+hash = "a946c791c529fc89a6cd91e6b1b94d5effcc24427eede43b99e606dbcc2110f6"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/rocky_well.json"
+hash = "0185e642c93c1a57a6d3c51ef629378c65530189ae05df570caf0158db45f01d"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/ruined_beacon.json"
+hash = "c9cd18ab6beea250a15d2f5dbadcbde37fd6cb483e40e90959c995fba9871de0"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/shed.json"
+hash = "67482d593e5fd068e6a4ab3b8e828d7c55612aa56e13576f24832190348b9a94"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/small_acacia_lantern.json"
+hash = "c3aa18c384c327f8bf2f2c88660970f6e6df70b434ea8b9a1166298ac6a0e5b7"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/small_bamboo_lantern.json"
+hash = "352937ac15794de13fccb7a9d2da3d4f63817357e7dd2e8172b2f8e1080f919d"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/small_birch_lantern.json"
+hash = "9f308fa15051fe6186cbfcdd2c19d701de45718267d07e996c23bccd93db3d8f"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/small_campfire_lantern.json"
+hash = "ce58183c4e57648bbb004417628c027f546624a17cb1a835b2beb4946f27b779"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/small_copper_well.json"
+hash = "e86a4aed153f93c391d34da3b0b8b7301906ec8162626aaa17d04804bc488dd3"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/small_igloo.json"
+hash = "77c90891dd01be45a309f7f0d88ce429dace68e08d45c5b29600d4352dae8043"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/small_jungle_lantern.json"
+hash = "89d2a6c21bff2d7d23b6a7a1ecc037ae7e07459dff9edeb460eb7d2fa44f393e"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/small_oak_lantern.json"
+hash = "3dfb01fc66ec3655768b0ddfb5bb5d261660ce8cf2ec8fad5d816053bcfd8bf3"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/small_oak_pond.json"
+hash = "7404806d5a8a60cf44d1875b5cfb063518349f4ee7bbc8d9f6c113b8245013ba"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/small_pillager_tower.json"
+hash = "3d7a722285d157e05d8d8daf59014d5a51eb0d298d8ff7c1d5e6af2da956f157"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/small_ruin.json"
+hash = "d7b973f7171fceee1927519357b29935ab5997a699dc1caac9a093cf8ce88ec2"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/small_spruce_lantern.json"
+hash = "0c028126276f8fe3d7072db37a28ec2edd2a6f27a0b9758ae1f787ea5bbbb048"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/small_swamp_house.json"
+hash = "7144c5f627b3aefc3628013e3c8855c21785dfba435f7e0b1c63ccfc9e9ab28d"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/small_tower_well.json"
+hash = "003b48017369b310a797d118bc282acb68c508c3d8a38df81e6541cdb215c610"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/small_well.json"
+hash = "4e383544b24a2ee18e3dcbacf6cf5be8d4c49a64d389adb0688b08d51ca75c78"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/snowy_dog_hut.json"
+hash = "ade0ee12ce1074ecadd4fe077c8b63960ed9a25e8bc503f150f97715b01cb924"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/snowy_fossil.json"
+hash = "b291f46ac73a38520525fedb52a2335553e0d1546060047b76baf9cd6843a922"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/snowy_well.json"
+hash = "4b15f42b3c140a5377da2ec9c210587f38c480d66bc0724adf662b2458717476"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/spruce_log_pile.json"
+hash = "79e898883f56152ddc6aa773d8c165869d6a65679378710d51a2cade872a21d4"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/spruce_tree.json"
+hash = "636d3333fb1b987e07435629a02924d27119f7f73e53cbf9611293b0f15e6fc6"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/spruce_well.json"
+hash = "ea2d2b6e7d5d2a130ab81104a9149b13b5b35b22a5a5f81e98a1e6330d167fb6"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/statue_ruins.json"
+hash = "83b90529f70799d71e396d6954d0c9d54a4062246fae0d2dced51a18b054acdf"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/stone_fountain.json"
+hash = "1b0b9cfdd5425e8009b316980b6a02c30d3834357fcbc295f40573f8612b8f18"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/stone_pillars.json"
+hash = "cd3dae7c98a0142bb2e097c6bf94a3399f7a3f8891a7ac5b6c6fdf73d604c6de"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/stone_rock.json"
+hash = "cc0f3399c04866395eaa8dd1fdf4e991ec2ec46015783fb30134d617e862a197"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/sunzi_gate.json"
+hash = "cbfcd5d6fc1b9f7f8bb2b178609ef08a9dd4d9d1c382320f4f4d133f5c127217"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/tall_house.json"
+hash = "a1e3debde2ccf6f21a75df45a8f62c730fdee7b711146e7c12e9c26a9c2e0b4c"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/tree_monument.json"
+hash = "ed9431bc379fe15731b231c02690ef73bc0232a09ebfde9a62ffe9eaea9ce2cc"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/villager_statue.json"
+hash = "da48cd1824a83667e14a8e43ca5a5dcd7b85db72da77b531af51b53f5d434d2d"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/warped_house.json"
+hash = "dce343937509119c6d79aaafbaa50ed7edfe6f7247a11980130c573710116b64"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/well.json"
+hash = "eb55f268d809f442cbcd5053a8f7d0665757ad32bcded829c7a766295207640a"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/wheat_grain_bin.json"
+hash = "a7f63fcd9c392c5124ba139e19e038f5a6145692e4cf3cd46d6d82ae1b75faa6"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/windmill.json"
+hash = "67c58e55577bc5e925b05a8c2dafd0745c43048d1a21d53b388546608c3d4a09"
+
+[[files]]
+file = "kubejs/data/mvs/worldgen/structure/wooden_wheat_farm.json"
+hash = "e56dcc55cf74f982a845269a2fadbaee9e0fbcaae74a8d9a00475cccace5c29d"
+
+[[files]]
+file = "kubejs/data/neoforge/loot_modifiers/global_loot_modifiers.json"
+hash = "2d349a2dc03e3cbaa95723269b0f1d94b8b5a1ab12d10e020442337deb89802f"
 
 [[files]]
 file = "kubejs/data/pack/easy_npc/preset/humanoid/hermit.npc.snbt"
@@ -335,6 +1491,18 @@ hash = "3774f0a2f5ca0196de122dff1ade562e85a86eb3caa950f7e575d7e8a386ff1c"
 [[files]]
 file = "kubejs/data/pack/neoforge/biome_modifier/cave_carvers.json"
 hash = "19c04d22b638577af85a5b1b835739c6f748f8a4552a191bcbafe8c73b41bab6"
+
+[[files]]
+file = "kubejs/data/pack/pack_world/structure_skin/blocks.json"
+hash = "a6a3cb4d15bc8186827c979731af3f9d5461ebec387cfd9f0d6d46d618024fb3"
+
+[[files]]
+file = "kubejs/data/pack/pack_world/structure_skin/items.json"
+hash = "43d9993758b8410d6b5bc1bec6941ecb6ae988ec4244b154c0f5d434af462039"
+
+[[files]]
+file = "kubejs/data/pack/pack_world/structure_skin/structures.json"
+hash = "e38b745d6c63a19fedab8742cf46e1ebd738ddf686bb605dda804b3be0989d77"
 
 [[files]]
 file = "kubejs/data/pack/structure/barrow/graveyard_a.nbt"
@@ -491,6 +1659,58 @@ hash = "2029b254bb4903eee27ee5523fe148bbf47e98efd3d131ac00c6ff32bd13c1d5"
 [[files]]
 file = "kubejs/data/pack/tags/worldgen/biome/overworld.json"
 hash = "23447f4459de946dfba204ac79c65b62ab88c703791f8826bb8046a0606905bb"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/tfc_structures/beach.json"
+hash = "4b481d81236e9a5705ae738c7900c927bca7bcaa8f64d2bc48292239a024ab22"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/tfc_structures/birch_forest.json"
+hash = "2bb6a7ba64d5f067df0be82bc8ac9b2fa69ff6ad421122a23eefc1f0aabcb7d0"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/tfc_structures/deep_ocean.json"
+hash = "3978a58bff28e56394a2252eb3cf31dc8c2613fc34ec28d1b24b447244f156b6"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/tfc_structures/desert.json"
+hash = "0946c72ef4e959d76de29afa665e6919d20c6429c24784f7adc12d237945c584"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/tfc_structures/forest.json"
+hash = "ecb8d4d9073c669296db5872c34ae5004335b64499e019dbef7aaa675b28d6b1"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/tfc_structures/jungle.json"
+hash = "39c8e3ddc6469ceaf32e71b73e74bc3065a6236d17983b7dbe7ce5c631de693c"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/tfc_structures/mountain.json"
+hash = "cb54ac64658646a43eaba79a71cac2859067a3a4c1dcfdaea0d662628b86a842"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/tfc_structures/overworld.json"
+hash = "84538793f7a9fc25bb38f37dfc78a7f50920a1c4ecbf3a5eabeb2df5233e4545"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/tfc_structures/plains.json"
+hash = "e20955ad17b13468fd415495d9a8caea38a225b9948b41a98cfc6227885e305f"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/tfc_structures/savanna.json"
+hash = "e9c037e1b20ffc9cd6e184499b0e06837921aecf33c503d4d5f5014655127da3"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/tfc_structures/snowy.json"
+hash = "bec383659de0223c691f1cffc6e3ee30fdccda1a347159d3ba35b966f728f36e"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/tfc_structures/swamp.json"
+hash = "7120e7c55b779f59e00fcc6a930207176644f1c71fc664fe1b3648a2e0fd2f91"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/tfc_structures/taiga.json"
+hash = "b97cc14967f6c9348d37989396d0b26d9f08807c172b482193fef8a2480243e3"
 
 [[files]]
 file = "kubejs/data/pack/tfc/food/glow_berries.json"
@@ -761,6 +1981,270 @@ file = "kubejs/data/pack/worldgen/template_pool/wreck/start.json"
 hash = "9e5ac4d66f2b7ef200f974ea1c55f79e8423c6cce3c6ed36a1474fe87661cdaa"
 
 [[files]]
+file = "kubejs/data/pack_loot/loot_table/bells/copper.json"
+hash = "db5eda7f0550decb8f296a0e18ed4d711522ca7a470f6271ac38df782f5beb06"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/bones/bronze.json"
+hash = "d272017204caa958dbb589e11c62ed4b89bff08077e2c66d7cd29da5bccbbb02"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/bones/stone.json"
+hash = "71d41122764a4382eea5a9211206b47b8a4ec97653a0a36d4e0af9ddb7cd96a1"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/bows/bronze.json"
+hash = "c2414fa7312cd9de4133150ed4b7db64a1d86675e86dc7180aec132b7904ef16"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/bread/stone.json"
+hash = "6154aaf0b94357366d6639b097c51cf39a35929a42868848dd67d9886d0738fa"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/bronze_tools/copper.json"
+hash = "2d58b8dc836b16f3d3b0dc51b4e88b3f3f80cd870dfe71f7f83196335138fcfc"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/building/stone.json"
+hash = "33e0a504cff480b166d4a8d3b50afbfbda6cf776f2c693cc5f02b4d710347416"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/chain_armor/bronze.json"
+hash = "389ac20ee24da044b1fae1e38171e0cb9f232ae80dbfcfce296771a2e3396321"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/clay/stone.json"
+hash = "d076df3e579df5155334c4d8f4e5e4d82bab3b4494efc900ad3f50988ac192d5"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/cloth/bronze.json"
+hash = "6ff463a203d24b73048225f23ed5e8be605b83757cf2d225b444426618fce269"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/cloth/stone.json"
+hash = "9bff63bc399ec250e6ade8daab42fd8749ded743a6570e8d5b5ddb1ba9e9963c"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/coal/stone.json"
+hash = "565b9f8c1e012eb1e49eebfef2e2c997ebe880382f4a8a2c373f010f51068f54"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/copper_heads/stone.json"
+hash = "4f8219e74a010b826b51ef169141f7d2f256829d83c962efb2c50ec3d2449b51"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/copper_tools/copper.json"
+hash = "3a8ec7c0fbe09fe51d1cc3cd10c34628eb372de56b39beb3da504ef937bb5c65"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/farm_tools/bronze.json"
+hash = "8e50b40a61c74c4d9dcfd4dc29ea6504a74d3b10f33a5669945f20518b424af9"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/farm_tools/copper.json"
+hash = "d9f41b2517a72caa3bae1706a557f557d2868b4173cc92bc1f18cc9642b357cc"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/fish/stone.json"
+hash = "14a751252655457fd3a27dd6e91c7585c08492f91830c01efcaf8e04c7713fc0"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/fish_gear/bronze.json"
+hash = "b75e044769668a7402ff41b7471223fbdc8ec9c6860538234bb7eedcec4a84dc"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/fletching/stone.json"
+hash = "3191494af9dc3378e1d76c19cb48affe2a37aa94bf74bf09472496bb1929003f"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/flowers/stone.json"
+hash = "bd99933cba4305f0cf955ad00c16520c8cb666355e87a2be234194e6c9907f55"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/fruit/stone.json"
+hash = "887bb9410465b8567f76d5d0550c92d0c7e5aeb3ddc64962cdccebec6fdcb666"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/gems_major/stone.json"
+hash = "a7a958476b406e719841f0e52a4c83b2216f91df11e9118c327cc958e795a040"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/gems_minor/stone.json"
+hash = "4bdd2f740639dd5666aaff28ba0657dc8a1164fe90a392c7836b7f7e0de3faa4"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/grain/stone.json"
+hash = "ff0117dfae4aa343b86638a264d0aa4817f6f07b2aad19d8d7a62c703e325d5b"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/hides/bronze.json"
+hash = "f4f3ccfc501d222fa89fedc00b32983c04765dffa3103c3d3951a3a4eb369370"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/hides/stone.json"
+hash = "6cb36ec3af03bef95a629fb705d51df95369cf209cdd8bbd179f9adff584ccb3"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/ingots/copper.json"
+hash = "14fe08605a69acc462569f9bbb925788a750573ff635bdda3ce2179664711426"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/ingots/stone.json"
+hash = "5a4ac2ae3eff6af437c9ae09f097b7b8e93875f834611acaeb3e0afd4348cfe2"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/jars/stone.json"
+hash = "9f2db890b5870b2c82550622f7acfb37976f156a083d6856300122a5dc2e3553"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/junk/stone.json"
+hash = "7f962ffc94c4ba609c9dd6281f8f2b98c6752e05dc81843c77ca85851621036b"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/leather_armor/stone.json"
+hash = "e2c2456f3b12ca90cdb3d27808d640eb145dbf2e22f37eacbf3b5682701c8928"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/light/bronze.json"
+hash = "2dc5a8455644d066f5eeb840d037ef75a1277e4f58b1f494cb69fd8a19299857"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/light/stone.json"
+hash = "043359d935c25d982181f496159148be429bfce5360bcf69febf20478d26b6f6"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/marsh/stone.json"
+hash = "a0a5b79a96efcc17ae62d26f88a84cc71ce1809c95713fe13635d694268d9f25"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/meat_cooked/stone.json"
+hash = "431ced26d11fb06140593c57ed012c7998bc2b7ce1dfa34dbad78c7b47247f15"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/meat_raw/stone.json"
+hash = "64333e9dfd84ec79716d646c36fe0e231a3cc0b93b5c96d20b8fa8b86975f204"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/minerals/stone.json"
+hash = "b60514eb85ebed0be75d968046f3679669f52d8ab29a314d1ce11b2f80ca72d8"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/mining_tools/copper.json"
+hash = "686ebeb21c2f2f9e7e3df7496bd9b61f15f1bdf294e1a3c915c210574d9c1ffd"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/molds/stone.json"
+hash = "261596617116ade7e6cb26fa5d740945ca1802766cfc6a6a136721b7c36a27f7"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/old_food/stone.json"
+hash = "73ccc20e9e715359f9a637fa0194a8ce21e62d7b38e27f7a857a77879448c188"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/ore_copper/stone.json"
+hash = "c87284132ea863920fe883c698fac377433b13ce56483632d32571badf9ad234"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/ore_iron/stone.json"
+hash = "e0ee3dacd1e264a3987d428e94d29ca55dec73fd3551dea46b9ad93b9fbccffd"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/ore_precious/stone.json"
+hash = "842ed43e21bd23465f76c1acf9b0d750eae6a78ed51bcfeaaf0e99cd05c98206"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/ore_tin/stone.json"
+hash = "d15d6ba5a1b67393c4cb400b7e954ba8241b4c0266f040229827f4a74053873c"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/pottery/stone.json"
+hash = "a811057987a0ac96febd0ea998a00b810b67d572c56cbccb535a2bf889041fb0"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/precious/copper.json"
+hash = "2107f43ec110ccb0271803e9f6d4282330792512a82e94a4db8886635c68137a"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/saddlery/bronze.json"
+hash = "b4c8c5fc7f739f8b86976493dab2974ced6a3ef2e87aa253462f1666862ddc58"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/saddlery/stone.json"
+hash = "7f937397c90296c1b0dfe48f24b9c387ec4c65f7a0bb4b3665197661312b4680"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/salt_flux/bronze.json"
+hash = "2d7c180c30e45e5f9caf2967c5962665aebdfa3ddfbee9676d000ae6edf2e087"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/salt_flux/stone.json"
+hash = "3ef25bbae5355daa2902a7ede3ab3d8a9a426d8fe4422157b0350dcd5830801b"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/saplings/stone.json"
+hash = "d2727de91964ec29eeca22eef50282af8c82e02c30b6f7adc2c64935e2074ef9"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/seeds/stone.json"
+hash = "6dc6582c604b74f7cb2e41c77d570abb84a3795ddbeef4b58cd22f2c3b2a2ead"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/sheet_metal/bronze.json"
+hash = "c4a9a893b37f3770f75a40708900f971ecd386aa919078c473f21c0a6dfa018f"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/shells/stone.json"
+hash = "3b68a97cb637cadd2a30c22526c40443baee1e17520df1e5508803f8bae9ea58"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/smith_tools/bronze.json"
+hash = "8fc4437a0c041feb93a27d35968ff3c360f251a96f3c2e54523d067318bd7c2c"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/stationery/bronze.json"
+hash = "4b05ee8c1578f039b73c7ae662198b39078ff876ad35cd6afd4cc510efba973e"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/stationery/stone.json"
+hash = "d3271594488481cbafe7519732f020f443987d08e301f5c9b76b7114ffa9711b"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/stone_heads/stone.json"
+hash = "0c50c06142fa0f973a49e7701fb571db636443f0bac2ad44267a4c95522564ed"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/stone_tools/stone.json"
+hash = "36cfac16992f1aa75f59a75ebc0702a5898811adcaf32206606c2c648eaaf443"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/timber/bronze.json"
+hash = "e58d5910c2cf111dc60278d47bc52c760cc9ac80d2b3eae49001aec55e9b4a39"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/timber/copper.json"
+hash = "5b51c41d2db185230a11ce5ba2422126f807cadf8d1507723f183b864f76f8dc"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/timber/stone.json"
+hash = "8afd04d8040f662901497aa2e89ba3efb7fd22c5526c226013eb52a065e80e8f"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/veg/stone.json"
+hash = "e9d916d990cb8f0d27f2909f6422a877f87fd60fc5f6aa4bc1fb6137d389e50b"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/weapons/copper.json"
+hash = "26fe661af329f4923ac165923ac3a8f804dabf78f201acacd71b56a3a9fb37ed"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/webs/stone.json"
+hash = "8e7d0d54f416959cd9d41ed9936767188c0ebab102423975685e3857a853fb02"
+
+[[files]]
+file = "kubejs/data/pack_loot/loot_table/wool/stone.json"
+hash = "7e9e1bb26577814174153f41da3a81f21602e6d25d275c767cdf88ac550daf7c"
+
+[[files]]
 file = "kubejs/data/tfc/recipe/crafting/clay_ball_5.json"
 hash = "5f5056da3174f4bfd139698b2bc3b7a68b60856c9bef177423dd8ae5c44f8a85"
 
@@ -813,6 +2297,10 @@ file = "kubejs/data/tfc/worldgen/placed_feature/large_cave_spike.json"
 hash = "8784ba30f10d82b4ed0c8f20909e0b7960ac5efcc72d1153ef20e6d110873749"
 
 [[files]]
+file = "kubejs/data/tfchuts/tags/worldgen/biome/settlement.json"
+hash = "49982118b052ef50d0f2dc35eee1e8f30970ae5fccce157551ff4431c54edca7"
+
+[[files]]
 file = "kubejs/data/woodencog/recipe/cutting/slab/loam_brick_slab.json"
 hash = "ea5b609bf12c7743b53743361e44bdb613b51246aec5200bedf701bd071d38c6"
 
@@ -861,12 +2349,20 @@ file = "kubejs/data/woodencog/recipe/welding/redsteel_backtank.json"
 hash = "a9c47031f81f6cdac52adf84faa81257b2b7b480a090d426f8d26656ceb29b64"
 
 [[files]]
+file = "kubejs/data/wythers/loot_table/chests/village/forest_ruins_big_house.json"
+hash = "0449a7a161fa70cbd8199198492de0d78115d66b01748cb97fc22d290636267d"
+
+[[files]]
 file = "kubejs/server_scripts/aeronautics/airships.js"
 hash = "1e2a5a5e14b0b4beef928653a81b8e912119156980aeee224598e1d506d87e95"
 
 [[files]]
 file = "kubejs/server_scripts/bridges/create_gregtech.js"
 hash = "0126279db895129cb4db2f9977018789922f46131bbbc91776312f93800108ca"
+
+[[files]]
+file = "kubejs/server_scripts/compat/arborfirmacraft.js"
+hash = "cc5380304155cd7c4a6ea46c032ff0283b8f20a3ca487faa7429b908f3a942cd"
 
 [[files]]
 file = "kubejs/server_scripts/compat/create_addons.js"
@@ -909,6 +2405,10 @@ file = "kubejs/server_scripts/unification/gregtech.js"
 hash = "ad81406779d5b76b020828b91a92e4d95924e3ed4eabff72dbc73079de45f588"
 
 [[files]]
+file = "kubejs/server_scripts/villagers/baked_offers.js"
+hash = "dfd1a69f47ef0028971ee1316e03e6986a824a8b2f75adc3ea7554727a220b6d"
+
+[[files]]
 file = "kubejs/server_scripts/world/startat.js"
 hash = "c779bb7fb49e2fac86248087b74246bf29f4e4f66b6138f4ccdc22d8a0faefd3"
 
@@ -925,12 +2425,28 @@ file = "kubejs/startup_scripts/ore_byproducts.js"
 hash = "4d1af8b5de04d7df4f5f1e920346b4df4318f10145a3616d6c6d02a3ac6cf388"
 
 [[files]]
+file = "kubejs/startup_scripts/villager_trades.js"
+hash = "b062a95199b477ce1bb7631c9a74539f16a47255a09a60aba7b9e48bf17e949a"
+
+[[files]]
 file = "kubejs/startup_scripts/world_scale.js"
 hash = "52715da011296bd7cb1fb707166c3cdbbbb9e0ee6bfaf45dc4c131ecb7ba6bf7"
 
 [[files]]
+file = "licenses/TFC-Structure-Compat.txt"
+hash = "e23036734ff202925aee6703329775a860b0fac00497f4317c72808d446f772b"
+
+[[files]]
 file = "licenses/TerraFirmaGreg-quests.txt"
 hash = "39c67929ab5e24d94c68ea3c6424f49226c43e99f493a8979bdbdced12dd1b4b"
+
+[[files]]
+file = "licenses/TerraFirmaGreg-structures.txt"
+hash = "7d80f884a7f6278466e3af7b9a8a4bf18a36355d2509a06a92412f83bcd4874b"
+
+[[files]]
+file = "licenses/structure-mods.txt"
+hash = "bd095d57f84125d02438b94c4b13c1f82f89fae035dad5b29d8de5eaa2e0e283"
 
 [[files]]
 file = "mods/alltheleaks.pw.toml"
@@ -940,6 +2456,11 @@ metafile = true
 [[files]]
 file = "mods/almostunified.pw.toml"
 hash = "3805fe2877cffdae5e7bf74d85069a2535daa39a0f3ed766755be49294a07680"
+metafile = true
+
+[[files]]
+file = "mods/arborfirmacraft.pw.toml"
+hash = "c4bdfed4ca4d49307ee50d3ba7fff3d2a6b134914f03b70e99369ed2996db70f"
 metafile = true
 
 [[files]]
@@ -958,8 +2479,18 @@ hash = "03084ff4f74cedc1b8ac6c85a98842f75956fb4fa811d285d8ca7caa8d54da5d"
 metafile = true
 
 [[files]]
+file = "mods/block-runner.pw.toml"
+hash = "05884675211a3b35feddbdef24e8da4d970954a21e5e5586a9bf5a97a1103033"
+metafile = true
+
+[[files]]
 file = "mods/cacophony-tfc.pw.toml"
 hash = "63a52f0ebd78d546edf7a7921c0e158999207575a5890bc5a0a703b54bc67cf0"
+metafile = true
+
+[[files]]
+file = "mods/cloth-config.pw.toml"
+hash = "75181b55e0407d1fca1e2f346c6501f919f5109545990ddfb66db9cd1b771f8a"
 metafile = true
 
 [[files]]
@@ -1033,6 +2564,11 @@ hash = "b6a535a801939a78f255203f7b28319773becca20cc88348f8764f4078816300"
 metafile = true
 
 [[files]]
+file = "mods/cristel-lib.pw.toml"
+hash = "08a334ae5565e122d26b819cba16ce784776a10fe100ab2b22de72a5a2bac653"
+metafile = true
+
+[[files]]
 file = "mods/dynamic-fps.pw.toml"
 hash = "ae6fd52d8bdcbeca5bbe6db840f22f92c1928fe0fda22017b19612b9b00a245a"
 metafile = true
@@ -1070,6 +2606,11 @@ metafile = true
 [[files]]
 file = "mods/fowlplay.pw.toml"
 hash = "549e72a053da13a50404bd0901b75ce25c6045e778d5a89afcf58e9b5e1945f5"
+metafile = true
+
+[[files]]
+file = "mods/framedblocks.pw.toml"
+hash = "20eee73cffcd55bfe041b16bbc3adc64c38859bf928486bf1db1368b6dba2058"
 metafile = true
 
 [[files]]
@@ -1133,13 +2674,38 @@ hash = "51e129832b04acd57da470fc41725bad5e101b6a6b1d4901fd8ea7a92b14e13d"
 metafile = true
 
 [[files]]
+file = "mods/lootr.pw.toml"
+hash = "0d3683a8c533e1fb67bf0b1668089a322fc5f594f9610d441657378ab4f64383"
+metafile = true
+
+[[files]]
+file = "mods/mmv-moogs-missing-villages.pw.toml"
+hash = "4d9b690894d3bddf29fd1a10e8f324dc381793caff1591f2ad4201ac0c8e7b75"
+metafile = true
+
+[[files]]
 file = "mods/modernfix.pw.toml"
 hash = "c84140c66f233909b392bd7253ca33c59903ffda51beff558d9a2a4a8c6bc269"
 metafile = true
 
 [[files]]
-file = "mods/pack_world-1.0.0.jar"
-hash = "ec75983a1e03f04bab22e3390d170179e165f0be119f8b9ce2df2d9b8c1033e5"
+file = "mods/moogs-structure-lib.pw.toml"
+hash = "0856f0ead9a5035c74709a848b475e93de9f46bb65cca153bbed7371c3b9b074"
+metafile = true
+
+[[files]]
+file = "mods/moogs-voyager-structures.pw.toml"
+hash = "0ca71264326ed2531f94f3b4181de14a5e4aad8f13005c0ca926dfdf7c1e0af6"
+metafile = true
+
+[[files]]
+file = "mods/mtr-moogs-temples-reimagined.pw.toml"
+hash = "13227010564aa5ffe806ece39e8024efbf3ea5a55034e6216577d5027f1996c3"
+metafile = true
+
+[[files]]
+file = "mods/pack_world-1.1.0.jar"
+hash = "f6c390da61ae0d5995e5552364683f38c35d455190c7e9df303687c37513a7a4"
 
 [[files]]
 file = "mods/particular-reforged.pw.toml"
@@ -1157,8 +2723,18 @@ hash = "9ea823bd03ce9811c59d00646203f5cb8560a7dacd9352f4b5e6865f7d05fcfd"
 metafile = true
 
 [[files]]
+file = "mods/puzzles-lib.pw.toml"
+hash = "6b1ee632cee2d75301016eaac99a3446ad605f11fbfda631effac0eb7da59f6c"
+metafile = true
+
+[[files]]
 file = "mods/rhino.pw.toml"
 hash = "e55ca32b338a0e0540f4fec5170675d860566255ae0f45692a00cb4ebf2eb535"
+metafile = true
+
+[[files]]
+file = "mods/roads-and-roofs-tfc.pw.toml"
+hash = "b12960e45bf3d59e9aaae3873208bc1305f43e9b266182f2960edfc97e6d2a79"
 metafile = true
 
 [[files]]
@@ -1207,8 +2783,23 @@ hash = "120de879bd1e9e6f6395b1ccdef9cc58871a2d6c6f646ff29c32418fa429019c"
 metafile = true
 
 [[files]]
+file = "mods/tfc-huts-mod.pw.toml"
+hash = "b1978ae9fd4f5925a31b043aca6c82c68a772b15792065d09b648fba9dc3ccb1"
+metafile = true
+
+[[files]]
 file = "mods/tfc-real-world.pw.toml"
 hash = "30bfc00ad00d932df657ab769b43411a724f103648cd3d7de2decda5a8b74241"
+metafile = true
+
+[[files]]
+file = "mods/tfc-structure.pw.toml"
+hash = "6977177b10cdfa5336708f05ab2c5e4c4edc92572ed1d72fb3c035cafe28e65f"
+metafile = true
+
+[[files]]
+file = "mods/towns-and-towers.pw.toml"
+hash = "5518dd2f6a5d88e4affb9df628604737893025206d7149579e4c24f909b130a3"
 metafile = true
 
 [[files]]
@@ -1234,4 +2825,19 @@ metafile = true
 [[files]]
 file = "mods/yacl.pw.toml"
 hash = "539f362e9e192cf3b2813e0dfdfc51a5e6814129c6e82a9733842529beea6242"
+metafile = true
+
+[[files]]
+file = "mods/yungs-api.pw.toml"
+hash = "d9c0c9209bac0b693af2a7c1e47ffb28d366bad19c91df31dc6d345fa75250a1"
+metafile = true
+
+[[files]]
+file = "mods/yungs-better-dungeons.pw.toml"
+hash = "1496ffa30020676979e65921b91e583a2fdc77e50001e2ed55f99edf1a0ae880"
+metafile = true
+
+[[files]]
+file = "mods/yungs-better-mineshafts.pw.toml"
+hash = "e839608ebc974e9e7819adc7bf29132ea86fc41b46af540fe0fa39b2007b2439"
 metafile = true

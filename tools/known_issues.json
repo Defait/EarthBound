@@ -244,6 +244,26 @@
     {
       "pattern": "^Easy NPC(: Core|: Config UI)?: \\[Debug Manager\\] (Detected debug log level|Adjusting log level) for Easy NPC",
       "note": "Easy NPC notices its loggers default to ALL and turns them down to INFO itself; informational"
+    },
+    {
+      "pattern": "^(net\\.neoforged\\.fml\\.common\\.asm\\.RuntimeDistCleaner: Attempted to load class net/minecraft/client/gui/screens/inventory/HangingSignEditScreen for invalid dist DEDICATED_SERVER|mixin: (Error loading class: net/minecraft/client/gui/screens/inventory/HangingSignEditScreen|@Mixin target net\\.minecraft\\.client\\.gui\\.screens\\.inventory\\.HangingSignEditScreen was not found afc))",
+      "note": "ArborFirmaCraft lists its hanging-sign editor mixin (a client screen) in its common mixin config, so a dedicated server logs that it can't load the class; the mixin only matters on clients, where it applies"
+    },
+    {
+      "pattern": "^net\\.neoforged\\.fml\\.VersionChecker: Failed to process update information$",
+      "note": "a mod's update-check URL answered with something that isn't a JSON object (the check runs against the network at startup; the test server never acts on it)"
+    },
+    {
+      "pattern": "^net\\.minecraft\\.world\\.item\\.crafting\\.RecipeManager: Parsing error loading recipe (mca|comforts):",
+      "note": "TFC Huts ships recipes for Minecraft Comes Alive (mca:) and Comforts (comforts:), two mods that aren't in the pack, so their result items don't exist and the recipes are skipped; nothing in the pack uses them"
+    },
+    {
+      "pattern": "^KubeJS Server: \\w+\\.java#\\d+: Failed to parse recipe '(mca|comforts):",
+      "note": "the same TFC Huts recipes for mods that aren't in the pack, as KubeJS sees them (it falls back to vanilla's parser, which skips them)"
+    },
+    {
+      "pattern": "^net\\.minecraft\\.world\\.level\\.chunk\\.LevelChunk: Tried to load a block entity for block Block\\{tfc:thatch_bed\\}\\[.*part=foot\\] but failed at location",
+      "note": "TFC's thatch bed is an entity block whose foot half has no block entity; this is logged whenever a thatch bed is placed during world generation (the pack's structure skin turns villages' vanilla beds into thatch beds). The bed works"
     }
   ]
 }

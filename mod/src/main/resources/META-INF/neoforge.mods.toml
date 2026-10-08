@@ -10,9 +10,13 @@ displayName = "Pack World"
 authors = "jdreise"
 description = '''
 The pack's structure helpers: structures built from local TFC rock, wood and soil, Easy NPC data
-cleaned up when structures place NPCs, and ancient sites at their real latitude and longitude
-(TFC: Real World).
+cleaned up when structures place NPCs, ancient sites at their real latitude and longitude
+(TFC: Real World), and the structure skin that turns other mods' structures into local TFC
+materials after they are placed.
 '''
+
+[[mixins]]
+config = "pack_world.mixins.json"
 
 [[dependencies.pack_world]]
 modId = "neoforge"

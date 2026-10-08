@@ -26,9 +26,12 @@ DUMPS = os.path.join(DATA_DIR, "dumps")
 # Ingredient wrappers that constrain item state (freshness, traits), not identity.
 STATE_ONLY = {"tfc:not_rotten", "tfc:lacks_trait", "tfc:has_trait", "tfc:heatable", "tfc:hot", "tfc:heat", "tfc:fluid_item"}
 ITEM_INPUT_KEYS = ["ingredient", "ingredients", "input", "base", "template", "addition", "first_input", "second_input",
-                   "input_item", "catalyst", "mold"]
+                   "input_item", "catalyst", "mold",
+                   # block the recipe works on (ArborFirmaCraft tree tapping, Roads and Roofs block_mod) and Framed Blocks' extra parts
+                   "input_block", "additives"]
 FLUID_INPUT_KEYS = ["fluid", "input_fluid", "fluid_ingredient", "primary_fluid", "added_fluid", "contents"]
-ITEM_OUTPUT_KEYS = ["result", "results", "output", "item_output", "result_item", "output_item", "sealed_result", "unsealed_result"]
+ITEM_OUTPUT_KEYS = ["result", "results", "output", "item_output", "result_item", "output_item", "sealed_result", "unsealed_result",
+                    "output_block"]
 FLUID_OUTPUT_KEYS = ["result_fluid", "fluid_output", "output_fluid"]
 NOT_CONSUMED_KEYS = {"mold", "catalyst"}
 STRUCTURE_KEYS = {"type", "pattern", "key", "inputs", "outputs", "tickInputs", "tickOutputs", "sequence", "transitional_item",
@@ -284,7 +287,7 @@ class Dump:
             if key not in j or (key == "primary_ingredient"):
                 continue
             v = j[key]
-            if key == "ingredients" and isinstance(v, list):
+            if key in ("ingredients", "additives") and isinstance(v, list):
                 for ing in v:
                     is_fluid = isinstance(ing, dict) and ("amount" in ing or ing.get("type") in ("neoforge:single", "neoforge:tag", "tfc:fluid_content"))
                     r["slots"].append(self._slot(ing, key, fluid=is_fluid))

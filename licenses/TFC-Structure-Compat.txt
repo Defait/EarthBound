@@ -1,0 +1,44 @@
+Data adapted from TFC Structure Compat
+======================================
+
+Part of this pack's structure data is adapted from TFC Structure Compat by EasyShotzz (an expanded fork of
+claustra01's "TFC x YUNG's Better Series"; the mod's metadata declares the MIT license), which the pack also uses
+as a mod (mods/tfc-structure.pw.toml).
+
+What is adapted:
+
+- kubejs/data/mvs/worldgen/structure/*.json are the mod's overrides of Moog's Voyager Structures' structure
+  definitions (spawn rules for TFC), with one change each: the `biomes` field names a tag under
+  `pack:tfc_structures/` instead of one of the `c:is_*` tags, so that the pack can keep TFC's biomes out of those
+  shared tags (docs/design.md, "Structure mods"). They are written by tools/structure_mods/biome_tags.py from the
+  mod's own files.
+- kubejs/data/pack/tags/worldgen/biome/tfc_structures/*.json hold the biome lists the mod puts into the `c:is_*`
+  tags.
+
+The mod's idea of rewriting a structure's blocks to TFC blocks is the model for `pack_world`'s structure skin
+(mod/src/main/java/pack/world/skin/), which is the pack's own code. Dynamic TFC Structures (SH42913/tfc_structures,
+MIT) took the same route through a mixin into StructureStart.placeInChunk; no code was copied from either mod.
+
+The license of the adapted data follows (MIT).
+
+MIT License
+
+Copyright (c) the TFC Structure Compat authors (EasyShotzz; claustra01 for the original TFC x YUNG's Better Series)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

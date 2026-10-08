@@ -1,0 +1,22 @@
+{
+  "values": [],
+  "remove": [
+    "tfc:badlands",
+    "tfc:burren_badlands",
+    "tfc:burren_badlands_tall",
+    "tfc:buttes",
+    "tfc:canyons",
+    "tfc:cenote_canyons",
+    "tfc:doline_canyons",
+    "tfc:dune_sea",
+    "tfc:hoodoos",
+    "tfc:low_canyons",
+    "tfc:mesas",
+    "tfc:mud_flats",
+    "tfc:salt_flats",
+    "tfc:shilin_canyons",
+    "tfc:stair_step_canyons",
+    "tfc:tower_karst_canyons",
+    "tfc:whorled_canyons"
+  ]
+}

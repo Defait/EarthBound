@@ -1,0 +1,8 @@
+{
+  "values": [],
+  "remove": [
+    "tfc:ice_sheet_oceanic",
+    "tfc:ocean",
+    "tfc:ocean_reef"
+  ]
+}

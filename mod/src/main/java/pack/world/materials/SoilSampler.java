@@ -14,7 +14,7 @@ import org.jetbrains.annotations.Nullable;
  * columns inside the chunk being placed are read: reading outside the generating region can crash world generation.
  * Blocks outside it are placed by their own chunk's call, which samples them there.
  */
-final class SoilSampler
+public final class SoilSampler
 {
     private static final int DEPTH = 10;
 
@@ -25,14 +25,14 @@ final class SoilSampler
     @Nullable private String chunkSoil;
     private boolean chunkScanned;
 
-    SoilSampler(LevelReader level, @Nullable BoundingBox box, String fallback)
+    public SoilSampler(LevelReader level, @Nullable BoundingBox box, String fallback)
     {
         this.level = level;
         this.box = box;
         this.fallback = fallback;
     }
 
-    String at(BlockPos pos)
+    public String at(BlockPos pos)
     {
         if (box == null || !box.isInside(pos))
         {

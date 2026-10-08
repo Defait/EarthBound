@@ -1,0 +1,45 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/ingot/gold",
+          "weight": 27
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/ingot/silver",
+          "weight": 27
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/ingot/rose_gold",
+          "weight": 14
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/ingot/sterling_silver",
+          "weight": 14
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/double_ingot/copper",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/double_ingot/gold",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:metal/double_ingot/silver",
+          "weight": 6
+        }
+      ]
+    }
+  ]
+}

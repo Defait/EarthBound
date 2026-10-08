@@ -1,0 +1,130 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tfc:stone/axe_head/igneous_extrusive",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:stone/axe_head/igneous_intrusive",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:stone/axe_head/metamorphic",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:stone/axe_head/sedimentary",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:stone/hammer_head/igneous_extrusive",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:stone/hammer_head/igneous_intrusive",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:stone/hammer_head/metamorphic",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:stone/hammer_head/sedimentary",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:stone/hoe_head/igneous_extrusive",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:stone/hoe_head/igneous_intrusive",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:stone/hoe_head/metamorphic",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:stone/hoe_head/sedimentary",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:stone/javelin_head/igneous_extrusive",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:stone/javelin_head/igneous_intrusive",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:stone/javelin_head/metamorphic",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:stone/javelin_head/sedimentary",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:stone/knife_head/igneous_extrusive",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:stone/knife_head/igneous_intrusive",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:stone/knife_head/metamorphic",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:stone/knife_head/sedimentary",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:stone/shovel_head/igneous_extrusive",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:stone/shovel_head/igneous_intrusive",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:stone/shovel_head/metamorphic",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfc:stone/shovel_head/sedimentary",
+          "weight": 4
+        }
+      ]
+    }
+  ]
+}

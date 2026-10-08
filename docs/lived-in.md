@@ -21,7 +21,7 @@ marked *unverified*.
 
 | Part | Where | State |
 |---|---|---|
-| The mod, `pack_world` 1.0.0 | source in `mod/`, jar in `mods/pack_world-1.0.0.jar` (both sides) | `local_materials` and `npc_fixup` processors, `geographic` placement with `SiteGuard` and `/pack_world sites`, the `climate` loot condition, `PackWorldApi` for tests. About 1,500 lines, no mixins, no blocks or items; builds without warnings. |
+| The mod, `pack_world` 1.1.0 | source in `mod/`, jar in `mods/pack_world-1.1.0.jar` (both sides) | `local_materials` and `npc_fixup` processors, `geographic` placement with `SiteGuard` and `/pack_world sites`, the `climate` loot condition, `PackWorldApi` for tests, and (1.1.0) the structure skin for other mods' structures (below): one mixin, into `StructureStart.placeInChunk`. About 2,600 lines, no blocks or items. |
 | Generator | `tools/structures/` (`catalogue.json`, `build.py`, `shapes.py`, `nbt.py`) | 15 structures, 3 NPCs and 10 sites in the catalogue. 9 structures generate today, from 24 procedural variants; 6 structures and the 10 sites wait for hand-built templates. |
 | Generated data | `kubejs/data/pack/`: `worldgen/{structure,structure_set,template_pool,processor_list}/`, `structure/`, `loot_table/chests/`, `tags/worldgen/biome/has_structure/`, `tags/block/ruin_rottable.json`, `easy_npc/preset/humanoid/`; `config/tfc_real_world/geography/pack/waypoints/` | written by `build.py`; edit the catalogue, not these. The cave files in the same namespace are never touched. |
 | Easy NPC 7.14.0 | `mods/easy-npc-core.pw.toml`, `mods/easy-npc-config-ui.pw.toml` (both sides) | draft presets for the trader, smith and hermit, generated from the catalogue |
@@ -170,11 +170,121 @@ In a **new** single-player world (structures only generate in new chunks; cheats
    the trades make sense for the era, that it stays put, and how it behaves at night and after a
    restart. If you change it, export it into `tools/structures/npcs/` (step 3 above).
 
+### Other mods' structures: the structure skin (2026-10-08)
+
+The pack also generates other mods' structures, fitted to it (decision row *Structure mods* in `docs/design.md`): YUNG's Better
+Dungeons and Better Mineshafts (underground), Moog's Voyager Structures (MVS: small things, wells, houses, trees, carts), Moog's
+Missing Villages (MMV), Moog's Temples Reimagined (MTR), Towns and Towers (T&T: villages and pillager outposts) and TFC Huts (a
+Neolithic hut village). TFC Structure Compat lets them start in TFC biomes; everything else on this page is the pack's own fitting.
+Measured on four 2,064 × 2,064 block squares (Paris, the Mongolian steppe, Cairo, Stockholm: 6,816 km² at 20 m per block, the same
+areas and seed as the trial that preceded this): MVS 1,021 starts (one per 6.7 km², about 130 blocks apart: 60 per 1,000 × 1,000
+blocks), Better Dungeons 755 (one per 9.0 km², underground), Better Mineshafts 223 (one per 30.6 km², underground), T&T 22 villages
+and outposts, TFC Huts 25 settlements (13 at Paris, 11 at Stockholm, 1 at the steppe, none at Cairo: it needs plains, hills or
+plateau), MMV 3, MTR 2. The pack's own ruins stay as they were. Moog's density lives in `config/moogs_structures.json` (frequency
+multipliers: universal, per mod, per structure) and `config/cristellib/mvs/structure_placement_config.json5` (spacing and separation
+per structure; Cristel Lib writes the same file for every structure mod, TFC Huts' included); the pack ships neither, so the
+defaults apply, and neither was changed.
+
+**Where they start.** The compat mod's structure files name `#c:is_overworld` and thirteen other `c:is_*` biome tags and puts TFC's
+biomes into them. The pack keeps TFC biomes out of those shared tags (GregTech's swamp rubber trees spread from 5 to 17 TFC biomes
+through them), so `tools/structure_mods/biome_tags.py` undoes the additions (`kubejs/data/c/tags/worldgen/biome/`, `remove` lists
+that keep TFC's own entries; a tag file needs `values` even with only `remove`) and gives the compat's 104 MVS structure files a
+copy with `biomes` pointing at `#pack:tfc_structures/*` (the biomes each tag held with the compat). The rubber trees are back to 5
+biomes. MVS is pinned to 5.0.11 (`packwiz pin`): 5.0.14 and later drop six template pools the compat overrides, and the server then
+refuses to load. TFC Huts' own biome tag (plains, hills, rolling hills, plateau, low canyons) predates TFC 4.2's karst biomes, so
+`kubejs/data/tfchuts/tags/worldgen/biome/settlement.json` adds their plains, hills, rolling hills and plateau variants.
+
+**The skin (`pack_world` 1.1.0).** The compat rewrites vanilla blocks to TFC ones in the templates of nine namespaces, with the
+chunk's rock but no andesite-alloy rule, and not at all for T&T (its templates live in `kaisyn`) or for Better Mineshafts (its
+pieces are code). The skin works after the fact, on whatever a structure wrote, for the structure namespaces listed in
+`kubejs/data/pack/pack_world/structure_skin/structures.json` (`towns_and_towers`, `mvs`, `mmv`, `mtr`, `betterdungeons`,
+`bettermineshafts`, `tfchuts`):
+
+- **One mixin**, `StructureStartMixin`, into `StructureStart.placeInChunk`, which every structure goes through when it places its
+  pieces in a chunk. At the start it snapshots the pieces' area in that chunk; at the end it compares: whatever changed was written
+  by the structure, whoever built it (template, code, another mod's processor), and natural terrain never changes. (Dynamic TFC
+  Structures takes the same route with a second mixin into `ProtoChunk.setBlockState` to record writes; comparing needs none.)
+  Both injections are `required`, so a Minecraft or NeoForge update that moves the method stops the game from loading instead of
+  silently skipping the skin; failures inside them are logged once and the structure is left as generated. `worldgen_check.py`
+  lists the mixin among those into worldgen code. The rest is plain code: `skin/SkinConfig` (data and reload listener),
+  `skin/StructureSkin` (the pass), and the existing `materials/` classes.
+- **Materials.** `blocks.json` (generated by `tools/structure_mods/skin_table.py`, 1,060 vanilla blocks, plus TFC's iron-age and
+  precious metal blocks) maps each block to a TFC one; targets that are placeholders (granite, oak, spruce and acacia as wood ranks,
+  alfisol, yellow) become the surface rock at the structure's start, the climate's best-fitting trees (rank 0 the best fit, then the
+  next two; vanilla oak and birch take rank 0, spruce and dark oak rank 1, jungle, acacia, mangrove, crimson and warped rank 2), the
+  column's soil and the local sand, through the same code as `pack_world:local_materials`, with the same property copying (stairs,
+  slabs, walls, fences, doors, log axes, leaves) and the same andesite-alloy rule: raw, hardened, cobble, mossy and loose andesite,
+  basalt, dacite, rhyolite and diorite become smooth rock, cracked or mossy bricks, or nothing. Rough alloy rock another mod's
+  processor already placed gets the same treatment (TFC rock blocks are only touched when they are alloy rock and the structure
+  wrote them). Vanilla ores become the local raw rock; iron bars and doors become wooden fences and doors; iron, gold, emerald,
+  diamond, lapis and coal blocks become smooth rock or polished alabaster; anvils become rock anvils; beds become thatch beds;
+  hay becomes thatch; coloured terracotta becomes wattle, concrete alabaster; crops become TFC crops on TFC farmland (sown fresh: TFC's crop block entities start at no growth); water
+  becomes TFC river water; chests and signs keep their loot table and text (the block entity's data is carried over); TFC's own
+  wrought iron, steel and gold blocks that the compat writes become copper blocks or alabaster. Left alone by design: glass and
+  panes, torches, lanterns, chains, rails, ladders, cobwebs, vines, snow and ice, wool, carpets and banners, skulls, spawners,
+  redstone parts and similar decoration with no TFC counterpart (5% of the blocks the templates hold, see `skin_table.py --census`).
+  Job-site blocks (barrel, lectern, composter, smoker, blast furnace, smithing table ...) turn into TFC blocks that aren't
+  villager job sites, so structure villagers stay unemployed unless a player gives them a vanilla one.
+- **Items.** `items.json` maps what structures hand to armor stands, mobs, item frames, dropped items and chests with baked-in
+  contents (not loot tables) to copper and bronze gear: iron, gold and chainmail gear to copper, diamond and netherite to bronze,
+  raw and refined iron, gold, diamonds and emeralds to copper ore, copper ingots or flint, and the compat's wrought iron and steel
+  gear to copper.
+- **Foundations.** Surface structures get a foundation of local raw rock under footprint columns that hang above the ground: columns
+  whose lowest solid block (leaves and logs don't count: a canopy and its branches aren't a floor) is within three blocks of its
+  piece's bottom, so roofs, eaves and balconies don't get pillars, and two or more blocks above the terrain. The fill goes down to
+  8 blocks and stops at water; floating islands are excluded (`structures.json`).
+- **Cross-chunk consistency.** Materials come from the structure's start chunk (TFC's surface rock, forest and sand are pure
+  functions of the position) and soil from the column's own chunk, so every chunk of a structure agrees in any generation order.
+  Where a column has no soil under it the fallback is alfisol.
+- **Wood.** The climate's woods come from TFC's own forest entries by TFC's own distance rule. ArborFirmaCraft's forests replace
+  most of TFC's trees, but its species are not building materials in `pack_world`: a village in an araucaria forest is built of
+  the TFC wood that fits the climate best.
+- **Adding or changing a structure mod.** Add its structure namespace to `structures.json`, run `tools/structure_mods/census.py
+  --json` and `skin_table.py --check --census` (it lists vanilla ids with no rule and what stays vanilla), then `measure.py`.
+  Set `"dry_run": true` in a datapack file under `pack_world/structure_skin/` to make the skin only count (what `measure.py --mode
+  before` does).
+
+**Loot and trades.** Chests of these structures use era-capped TFC loot, 171 tables written by `tools/loot/` (stone, copper or
+bronze per structure, the original's size kept); GregTech's nine global loot modifiers (steel, damascus steel, silver, chromium and
+gems into vanilla dungeon, mineshaft, village and stronghold tables) are switched off by a higher-priority empty
+`neoforge/loot_modifiers/global_loot_modifiers.json`; `tools/loot/lint.py` rolls every chest, archaeology and gift table the pack
+knows 300 times against the deny-list and the caps. Lootr, which the pack carries for servers, converts every container with a loot
+table, TFC and AFC chests included, into its own per-player chest (it leaves TFC barrels, which have no loot table); to keep the
+pack's own TFC chests as they are, set `loot_modid_blacklist = ["pack"]` under `[whitelist]` in `config/lootr-common.toml`
+(not set). Villagers and wandering traders barter TFC goods under the same caps (`kubejs/config/villager_trades.json`, see the
+*Villagers* row in `docs/design.md`); TFC Huts' villagers, plains villagers from vanilla's pool `minecraft:village/plains/villagers`
+that its templates name, have no profession and trade nothing.
+
+**Measured** (same four areas and seed; `tools/structure_mods/measure.py`, `report.py`; "before" is what the structures wrote with
+the other mods' own processing (the compat's rewrite included) and before the skin, recorded in the same run, "after" what the skin
+left; "vanilla" counts the blocks structures wrote that are vanilla, without those TFC's own world also has: air, water, lava,
+bedrock, snow, ice, so the trial's shares, taken against a base world, differ in definition; floating columns are ground columns, in
+footprints of surface structures only, whose lowest solid block is two or more above the terrain, so underground structures show
+only incidental ones):
+
+| structures | blocks written | vanilla before | vanilla after | rough alloy rock before / after | iron-age metal blocks before / after | ground columns | floating before / after | foundation blocks |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| towns_and_towers | 87,654 | 99.6% | 4.0% | 0 / 0 | 0 / 0 | 33,978 | 585 / 53 | 2,958 |
+| mvs | 290,261 | 50.6% | 3.3% | 1,804 / 0 | 888 / 0 | 28,979 | 2,175 / 296 | 10,942 |
+| mmv | 11,251 | 33.3% | 3.9% | 0 / 0 | 16 / 0 | 1,619 | 21 / 0 | 74 |
+| mtr | 77,086 | 61.2% | 0.9% | 9,535 / 0 | 83 / 0 | 7,373 | 0 / 0 | 0 |
+| betterdungeons | 1,306,173 | 19.2% | 2.8% | 82,194 / 0 | 8,459 / 0 | 256,936 | 17 / 17 | 0 |
+| bettermineshafts | 2,578,101 | 89.2% | 8.2% | 0 / 0 | 0 / 0 | 628,366 | 67 / 67 | 0 |
+| tfchuts | 41,362 | 1.1% | 0.0% | 0 / 0 | 0 / 0 | 13,243 | 157 / 0 | 715 |
+
+**In game: what to look at.** In a new world: (1) a T&T village or an MVS house (`/locate structure towns_and_towers:village_grove`,
+`mvs:house`; TFC Huts: `tfchuts:settlement`): local rock and wood, soil under paths and farms, no cobble or raw rock of andesite,
+basalt, dacite, rhyolite or diorite (smooth rock and bricks instead), farms with TFC crops, beds as thatch beds, a foundation under
+houses on slopes; (2) open chests: TFC loot only (and Lootr's chest model); (3) a dungeon or mineshaft: local rock, no vanilla ores
+in the walls; (4) villagers: unemployed in the
+structures, trades in TFC goods once they have a vanilla job site block; wandering traders carry the pack's offers; (5) iron-age
+metal blocks (chains, bars) in structures should be copper.
+
 ---
 
 ## 0. Summary
 
-- **A small Java mod, `pack_world`** (code only, ~800 lines, no mixins, no blocks or items):
+- **A small Java mod, `pack_world`** (code only, ~800 lines at the time of this design; since then one mixin for the structure skin, see *Status*; no blocks or items):
   1. `pack_world:local_materials`, a structure processor that turns placeholder TFC blocks (granite,
      oak, alfisol, yellow sand) into the local surface rock, the climate's most typical tree and the
      column's soil, keeping every block property (stairs, slabs, walls, log axes, TFC's `fluid`).

@@ -17,6 +17,7 @@ import pack.world.materials.AlloyPolicy;
 import pack.world.materials.BlockFamilies;
 import pack.world.materials.LocalMaterialsProcessor;
 import pack.world.materials.Materials;
+import pack.world.skin.StructureSkin;
 
 /**
  * Static helpers for the pack's dev-only KubeJS scripts (tools/structures_test.js, tools/worldgen_check.js). Plain types in and
@@ -69,6 +70,44 @@ public final class PackWorldApi
         final Materials m = new Materials(effectiveRock, wood, sand, true);
         final BlockState state = LocalMaterialsProcessor.map(block.get().defaultBlockState(), id, parsed, m, soil, null, policy, "granite", new HashMap<>());
         return BuiltInRegistries.BLOCK.getKey(state.getBlock()).toString();
+    }
+
+    /** The structure skin's counters (changed, rewritten, mapped, removed, alloy, foundation; chunks:<namespace>). */
+    public static Map<String, Long> skinStats()
+    {
+        return StructureSkin.stats();
+    }
+
+    /** Blocks structures wrote that the skin has no rule for, with counts (vanilla ones are gaps in the table). */
+    public static Map<String, Long> skinUnmapped()
+    {
+        return StructureSkin.unmapped();
+    }
+
+    /** Per structure id: blocks written, ground columns and floating ones (before/after the foundation), block census before/after. */
+    public static Map<String, Map<String, Object>> skinMetrics()
+    {
+        return StructureSkin.metrics();
+    }
+
+    public static void skinCensus(boolean on)
+    {
+        StructureSkin.setCensus(on);
+    }
+
+    public static void skinReset()
+    {
+        StructureSkin.resetStats();
+    }
+
+    /** {rules, namespaces, unknown}: the loaded table's size, the structure namespaces it applies to, and unknown block ids. */
+    public static Map<String, String> skinConfig()
+    {
+        final Map<String, String> out = new LinkedHashMap<>();
+        out.put("rules", String.valueOf(StructureSkin.config().ruleCount()));
+        out.put("namespaces", String.valueOf(new java.util.TreeSet<>(StructureSkin.config().namespaces())));
+        out.put("unknown", String.valueOf(new java.util.TreeSet<>(StructureSkin.config().unknownBlocks())));
+        return out;
     }
 
     /** Every geographic site: {name: {chunkX, chunkZ, blockX, blockZ, enabled (0/1)}}; empty arrays without TFC: Real World. */
