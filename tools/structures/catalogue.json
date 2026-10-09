@@ -971,12 +971,13 @@
       "kind": "village",
       "set": {
         "regions": ["arab_world"],
-        "spacing": 96,
-        "separation": 64,
+        "spacing": 64,
+        "separation": 40,
         "salt": 2026101002,
         "spread_type": "linear",
         "landforms": ["lowland", "upland", "coast"],
-        "climate": {"min_temperature": 10, "max_temperature": 36, "min_groundwater": 30}
+        "biomes": ["grassy_dunes", "river_valley", "salt_marsh", "rift_valley", "mesas", "buttes"],
+        "climate": {"min_temperature": 10, "max_temperature": 36, "min_groundwater": 15}
       },
       "materials": {"sand": "local"},
       "guard": {"max_height_difference": 14},

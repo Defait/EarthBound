@@ -86,6 +86,16 @@ ServerEvents.loaded(event => {
 })
 
 // Every placeholder id of every template, through the processor's own mapping, for every rock, wood, soil and sand.
+// the boxes of the ruins this script placed by hand next to the places (/place style, nothing keeps them off a natural village that happens to stand there): their blocks are not the village's
+var STRUCT_TEST_COPIES = []
+function structTestInCopy(x, z) {
+  for (var i = 0; i < STRUCT_TEST_COPIES.length; i++) {
+    var b = STRUCT_TEST_COPIES[i]
+    if (x >= b[0] && x <= b[2] && z >= b[1] && z <= b[3]) return true
+  }
+  return false
+}
+
 function structTestPalette(job, check, blockExists) {
   var bad = []
   var n = 0
@@ -146,6 +156,7 @@ function structTestPlacements(server, level, job, results, check, idAt) {
       var rec = { kind: 'placed', place: place[0], structure: s.id, at: [x, z], placed: start.isValid() }
       if (rec.placed) {
         var box = start.getBoundingBox()
+        STRUCT_TEST_COPIES.push([box.minX(), box.minZ(), box.maxX(), box.maxZ()])
         for (var cx = box.minX() >> 4; cx <= box.maxX() >> 4; cx++) {
           for (var cz = box.minZ() >> 4; cz <= box.maxZ() >> 4; cz++) {
             level.getChunk(cx, cz)
@@ -220,8 +231,8 @@ function structTestStructure(reg, id) {
 // rock and wood other than the local ones, missing blocks (decay, rot), floating ground-layer blocks, chests.
 function structTestInspect(level, start, s, rec, idAt) {
   var pieces = start.getPieces()
-  var anchor = pieces.get(0).getPosition()
-  var mat = $StructTestApi.materialsAt(level, anchor.getX(), anchor.getY(), anchor.getZ())
+  var anchor = $StructTestApi.anchorOf(start)       // the centre of the start piece at its lowest y: where local_materials resolves for every piece
+  var mat = $StructTestApi.materialsAt(level, anchor[0], anchor[1], anchor[2])
   rec.expected = { rock: String(mat.get('rock')), wood: String(mat.get('wood')), sand: String(mat.get('sand')) }
   rec.leaks = []
   rec.vanilla = []
@@ -491,6 +502,7 @@ function structTestVillages(server, level, job, results, check, idAt) {
   results.villages = { regions: {}, guard: {}, found: [], placed: [] }
   $VtMaterials.setGuard(true)
   $VtMaterials.guardReset()
+  $VtMaterials.keepClearReset()
   // a stage that throws is a failure of its own and the others still run
   var stage = function (name, fn) {
     try { fn() } catch (e) { check('villages: ' + name, false, String(e) + (e && e.stack ? ' ' + String(e.stack).replace(/\s+/g, ' ') : '')) }
@@ -500,6 +512,7 @@ function structTestVillages(server, level, job, results, check, idAt) {
   stage('codecs', function () { vtCodec(level, vj, results, check) })
   stage('equivalence with tfc:climate', function () { vtEquivalence(level, vj, results, check) })
   stage('wood palette', function () { vtWoodPalette(vj, check) })
+  stage('keep clear', function () { vtKeepClear(level, results, check) })
   if (vj.acceptance) stage('acceptance census', function () { vtAcceptance(level, vj, results, check) })
   stage('locate', function () { vtLocate(level, vj, results, check) })
   stage('natural villages', function () { vtNatural(server, level, vj, results, check) })
@@ -508,8 +521,56 @@ function structTestVillages(server, level, job, results, check, idAt) {
   var s = {}
   stats.forEach(function (k, v) { s[String(k)] = Number(v) })
   results.villages.guardStats = s
+  var kc = {}
+  $VtMaterials.keepClearStats().forEach(function (k, v) { kc[String(k)] = Number(v) })
+  results.villages.keepClearStats = kc
+  console.info(`[structures-test] keep clear: ${JSON.stringify(kc)}`)
   console.info(`[structures-test] guard: ${s.attempts} attempts, ${s.passed} passed, ${s.refusedBiome} wrong biome, ${s.refusedWater} water, ${s.refusedSlope} slope; ` +
     `${s.attempts ? (s.nanos / s.attempts / 1e6).toFixed(1) : 0} ms per attempt`)
+}
+
+// ---- keep clear (docs/lived-in.md, *Keeping the land clear*): the data is loaded, says what it should about a few structures, and TFC's
+// boulders carry the filter. What it does in a world is read back from the natural villages below (leaves over their pieces).
+const $VtMutablePos = Java.loadClass('net.minecraft.core.BlockPos$MutableBlockPos')
+const $VtBlockTags = Java.loadClass('net.minecraft.tags.BlockTags')
+function vtKeepClear(level, results, check) {
+  var cfg = String($VtMaterials.keepClearConfig())
+  check('keep clear: data loaded', cfg.indexOf('DISABLED') < 0 && cfg.indexOf('holds Matcher[namespaces=[], ids=[], globs=[]]') < 0, cfg.slice(0, 160))
+  var want = [
+    ['pack:village/norse_living', 'trees=true holds=true yields=false'], ['pack:village/aqueduct_main', 'trees=true holds=true yields=false'],
+    ['pack:cairn', 'trees=true holds=false yields=true'], ['mvs:house', 'trees=true holds=false yields=true'], ['mvs:windmill', 'trees=true holds=false yields=true'],
+    ['mvs:oak_tree', 'trees=false holds=false yields=true'], ['mvs:boulder', 'trees=false holds=false yields=true'],
+    ['towns_and_towers:village_grove', 'trees=true holds=false yields=true'], ['tfchuts:settlement', 'trees=true holds=false yields=true'],
+    ['betterdungeons:small_dungeon', 'trees=false holds=false yields=true'], ['bettermineshafts:mineshaft_mesa', 'trees=false holds=false yields=true'],
+    ['minecraft:village_plains', 'trees=false holds=false yields=false']]
+  want.forEach(function (w) {
+    var got = String($VtMaterials.keepClearDescribe(w[0]))
+    results.villages.keepClear = results.villages.keepClear || {}
+    results.villages.keepClear[w[0]] = got
+    check('keep clear: ' + w[0], got === w[1], got + (got === w[1] ? '' : ', wanted ' + w[1]))
+  })
+  var placedReg = level.registryAccess().registryOrThrow($StructTestRegistries.PLACED_FEATURE)
+  ;['raw_boulder', 'cobble_boulder', 'mossy_boulder', 'raw_boulder_small', 'cobble_boulder_small', 'mossy_boulder_small'].forEach(function (name) {
+    var pf = placedReg.get($StructTestRL.parse('tfc:' + name))
+    var has = false
+    if (pf) pf.placement().forEach(function (m) { if (String(m).indexOf('KeepClearFilter') >= 0) has = true })
+    check('keep clear: tfc:' + name + ' has the pack_world:keep_clear filter', has, has ? 'present' : (pf ? 'placement without it' : 'no such placed feature'))
+  })
+}
+
+// leaves of trees that grew inside the pieces' boxes (TFC's and ArborFirmaCraft's)
+function vtLeaves(level, start) {
+  var mp = new $VtMutablePos()
+  var inBoxes = 0
+  start.getPieces().forEach(function (piece) {
+    var b = piece.getBoundingBox()
+    for (var x = b.minX(); x <= b.maxX(); x++) for (var z = b.minZ(); z <= b.maxZ(); z++) for (var y = b.minY(); y <= b.maxY(); y++) {
+      var bs = level.getBlockState(mp.set(x, y, z))
+      // a template's own leaves are persistent (an orchard tree): only trees that grew there count
+      if (bs['is(net.minecraft.tags.TagKey)']($VtBlockTags.LEAVES) && String(bs).indexOf('persistent=true') < 0) inBoxes++
+    }
+  })
+  return inBoxes
 }
 
 // ---- regions: loaded, projected as declared, reference points inside the right set and no other, blockOf equal to the Python projection
@@ -839,21 +900,22 @@ function vtPlaced(server, level, vj, results, check) {
 
 function vtOk(rec) {
   return rec.placed && !rec.leaks.length && !rec.vanilla.length && !rec.alloy.length && rec.npcExpected === rec.npcCount &&
-    rec.npcs.every(function (n) { return !n.owner && n.trades > 0 && n.drop === 0 }) &&
-    (rec.kind === 'placed' || rec.floatColumns <= Math.max(2, rec.columns * 0.02))
+    // an NPC whose floor is missing falls a block or two when it spawns (they are invulnerable): a few of those are the template's, not a finding
+    rec.npcs.every(function (n) { return !n.owner && n.trades > 0 && n.drop <= 3 }) && rec.npcs.filter(function (n) { return n.drop > 0 }).length <= Math.max(1, rec.npcs.length * 0.1) &&
+    !rec.mixed && (rec.kind === 'placed' || (rec.floatColumns <= Math.max(2, rec.columns * 0.02) && rec.leavesInBoxes <= 200))
 }
 
 function vtDetail(rec) {
   if (!rec.placed) return 'did not place'
   return `${rec.pieces} pieces (${rec.npcPieces} NPC), ${rec.templateBlocks} template blocks (${rec.missing} gone), NPCs ${rec.npcCount}/${rec.npcExpected} ${JSON.stringify(rec.npcNames)} (trades ${rec.npcs.map(function (n) { return n.trades }).join(',')}, ${rec.npcs.filter(function (n) { return n.invulnerable }).length} invulnerable, ${rec.npcs.filter(function (n) { return n.noGravity }).length} without gravity, ${rec.npcs.filter(function (n) { return n.drop > 0 }).length} above the floor), ` +
     `leaks [${rec.leaks}], vanilla [${rec.vanilla}], alloy [${rec.alloy}], other rocks [${rec.otherRock}], other woods [${rec.otherWood}], ` +
-    `rock ${rec.rockSet}, woods ${rec.woodSet}${rec.mixed ? ' MIXED' : ''}, chests ${rec.chests} (loot ${rec.lootChests}), framed ${rec.framed} (camo ${JSON.stringify(rec.camoTop)}), ` +
-    `floating ${rec.floatColumns}/${rec.columns} (max gap ${rec.maxGap}), ground offset ${JSON.stringify(rec.groundOffset)}, terrain pieces ${rec.terrainPieces || 0}, ${rec.genMs} ms` +
+    `rock ${rec.rockSet}, woods ${rec.woodSet}${rec.mixed ? ' MIXED (built of woods ' + Object.keys(rec.usedWoods) + ', rocks ' + Object.keys(rec.usedRocks) + ')' : ''}, chests ${rec.chests} (loot ${rec.lootChests}), framed ${rec.framed} (camo ${JSON.stringify(rec.camoTop)}), ` +
+    `${rec.leavesInBoxes >= 0 ? 'leaves in the boxes ' + rec.leavesInBoxes + ', ' : ''}floating ${rec.floatColumns}/${rec.columns} (max gap ${rec.maxGap}), ground offset ${JSON.stringify(rec.groundOffset)}, terrain pieces ${rec.terrainPieces || 0}, ${rec.genMs} ms` +
     (rec.details.length ? `; details: ${rec.details.slice(0, 4).join(' | ')}` : '')
 }
 
-// What a placed village holds, checked at exactly the spots its templates place blocks, per piece (each piece resolves its own materials
-// at its own position, so rock and wood are expected per piece). The wood a placeholder rank becomes is what the mod resolves for that piece.
+// What a placed village holds, checked at exactly the spots its templates place blocks, piece by piece. A village has one rock and one set of
+// three woods (the ones at its start piece's centre, PackWorldApi.anchorOf); a block of another wood or rock in any piece is a finding.
 function vtInspect(level, start, st, rec, vj) {
   var pieces = start.getPieces()
   var box = start.getBoundingBox()
@@ -871,6 +933,12 @@ function vtInspect(level, start, st, rec, vj) {
   rec.otherWood = []
   rec.rocks = {}
   rec.woods = {}
+  rec.usedWoods = {}
+  rec.usedRocks = {}
+  var anchor = $VtMaterials.anchorOf(start)
+  rec.anchor = [anchor[0], anchor[1], anchor[2]]
+  var anchorRock = String($VtMaterials.materialsAt(level, anchor[0], anchor[1], anchor[2]).get('rock'))
+  var anchorWoods = vtStrings($VtMaterials.woodsAt(level, anchor[0], anchor[1], anchor[2], 3, true))
   rec.chests = 0
   rec.lootChests = 0
   rec.lootTables = {}
@@ -904,15 +972,16 @@ function vtInspect(level, start, st, rec, vj) {
       return
     }
     var origin = piece.getPosition()
-    var mat = $VtMaterials.materialsAt(level, origin.getX(), origin.getY(), origin.getZ())
-    var rock = String(mat.get('rock'))
-    var woods = vtStrings($VtMaterials.woodsAt(level, origin.getX(), origin.getY(), origin.getZ(), 3, true))
+    // one choice per village: the rock and the three woods are those at the start piece's centre, whichever piece a block belongs to
+    var rock = anchorRock
+    var woods = anchorWoods
     rec.rocks[rock] = (rec.rocks[rock] || 0) + 1
     rec.woods[woods.join('/')] = (rec.woods[woods.join('/')] || 0) + 1
     var settings = new $StructTestPlaceSettings().setRotation(piece.getRotation())
     blocks.forEach(function (b) {
       var rel = $StructTestTemplate.calculateRelativePosition(settings, new $StructTestBlockPos(b[0], b[1], b[2]))
       var pos = rel.offset(origin)
+      if (structTestInCopy(pos.getX(), pos.getZ())) return
       var id = String($StructTestBuiltIn.BLOCK.getKey(level.getBlockState(pos).getBlock()))
       var want = vtWoodTarget(b[3], woods)
       rec.templateBlocks++
@@ -935,6 +1004,7 @@ function vtInspect(level, start, st, rec, vj) {
         if (rec.details.length < 20) rec.details.push(`rough ${id} where ${b[3]} should be, piece ${short} rock ${rock} at ${pos.getX()},${pos.getY()},${pos.getZ()}`)
       }
       var r = /^(?:tfc|rnr):rock\/(smooth|cobble|bricks|cracked_bricks|mossy_bricks|mossy_cobble|chiseled|raw|loose|mossy_loose|anvil|gravel_road|sett_road|cobbled_road)\/([a-z]+)/.exec(id)
+      if (r && /^(smooth|bricks|cracked_bricks|mossy_bricks|chiseled|gravel_road|sett_road|cobbled_road)$/.test(r[1])) rec.usedRocks[r[2]] = (rec.usedRocks[r[2]] || 0) + 1
       if (r && r[2] !== rock && !(r[1] === 'anvil' && STRUCT_TEST_ALLOY[rock])) {
         add(rec.otherRock, r[2])
         if (rec.details.length < 20) rec.details.push(`rock ${id} where ${b[3]} should be (${rock}), piece ${short} at ${pos.getX()},${pos.getY()},${pos.getZ()}`)
@@ -943,6 +1013,7 @@ function vtInspect(level, start, st, rec, vj) {
       var rs = /^rnr:wood\/shingles\/([a-z_]+?)(_stairs|_slab)?$/.exec(id)
       var wname = w ? w[2] : rs ? rs[1] : null
       if (wname && b[3].indexOf('palm_mosaic') < 0) {
+        if (!(w && w[1] === 'log')) rec.usedWoods[wname] = (rec.usedWoods[wname] || 0) + 1      // a natural trunk inside a piece's cells is not one of the village's woods
         var okWood = woods.some(function (x) { return x.replace('afc:', '') === wname })
         if (!okWood) {
           add(rec.otherWood, wname)
@@ -996,7 +1067,11 @@ function vtInspect(level, start, st, rec, vj) {
   rec.blocks = counts
   rec.rockSet = Object.keys(rec.rocks).join('/')
   rec.woodSet = Object.keys(rec.woods).join(' | ')
-  rec.mixed = Object.keys(rec.rocks).length > 1 || Object.keys(rec.woods).length > 1
+  rec.leavesInBoxes = rec.kind === 'natural' ? vtLeaves(level, start) : -1
+  // one rock and one set of woods per village: the built blocks (not the natural ground or trunks that show in a piece's cells) use no more
+  var anchorNames = {}
+  anchorWoods.forEach(function (x) { anchorNames[x.replace('afc:', '')] = true })
+  rec.mixed = Object.keys(rec.usedWoods).length > Object.keys(anchorNames).length || Object.keys(rec.usedRocks).length > 1
   rec.camoTop = {}
   Object.keys(rec.camo).sort(function (a, b) { return rec.camo[b] - rec.camo[a] }).slice(0, 4).forEach(function (k) { rec.camoTop[k] = rec.camo[k] })
   // Easy NPCs standing in the village
@@ -1041,9 +1116,10 @@ function vtWoodTarget(tid, woods) {
   return m[1] + w + shape
 }
 
-// ---- acceptance census (--acceptance): every placement cell of each village set across its regions that passes the region and climate
-// tests, with the biome at its centre and what a guard of radius 48 and of radius 24 sees (heights and wet columns), written to the results
-// so that tools can try other biome sets and guard limits without a server (docs/lived-in.md, *Tuning a village*)
+// ---- acceptance census (--acceptance): every placement cell of each village set across its regions (those that pass the climate test are
+// flagged), with the biome at its centre, what a guard of radius 48 and of radius 24 sees (heights and wet columns) and TFC's climate there,
+// written to the results so that tools can try other climate windows, biome sets and guard limits without a server (docs/lived-in.md,
+// *Tuning a village*)
 function vtAcceptance(level, vj, results, check) {
   var setReg = level.registryAccess().registryOrThrow($StructTestRegistries.STRUCTURE_SET)
   var state = level.getChunkSource().getGeneratorState()
@@ -1065,6 +1141,7 @@ function vtAcceptance(level, vj, results, check) {
     var stride = Math.max(1, Math.ceil(Math.sqrt(total / vj.acceptanceCells)))
     var recs = []
     var inRegion = 0
+    var climateOk = 0
     var considered = 0
     for (var a = ax0; a <= ax1; a += stride) {
       for (var b = az0; b <= az1; b += stride) {
@@ -1072,17 +1149,21 @@ function vtAcceptance(level, vj, results, check) {
         considered++
         if (!placement.regionContains(c.x, c.z)) continue
         inRegion++
-        if (!placement.isStructureChunk(state, c.x, c.z)) continue
+        var ok = placement.isStructureChunk(state, c.x, c.z)
         var bx = c.getMiddleBlockX()
         var bz = c.getMiddleBlockZ()
         var p48 = $VtMaterials.guardProbe(level, bx, bz, 48, 13)
         var p24 = $VtMaterials.guardProbe(level, bx, bz, 24, 13)
+        var cl = $VtMaterials.climateAt(level, c.x, c.z)
+        // every cell in a region, with whether the climate lets it through and the climate's numbers, so that tools can try other windows
         recs.push([c.x, c.z, String($VtMaterials.biomeAt(level, bx, bz)), Number(p48.get('min')), Number(p48.get('max')), Number(p48.get('wet')),
-          Number(p24.get('min')), Number(p24.get('max')), Number(p24.get('wet'))])
+          Number(p24.get('min')), Number(p24.get('max')), Number(p24.get('wet')), ok ? 1 : 0,
+          Math.round(Number(cl.get('temperature')) * 10) / 10, Math.round(Number(cl.get('rainfall'))), Math.round(Number(cl.get('groundwater'))), Number(cl.get('forest'))])
+        if (ok) climateOk++
       }
     }
-    results.villages.acceptance[s.id] = { spacing: spacing, stride: stride, considered: considered, inRegion: inRegion, climate: recs.length, cells: recs }
-    console.info(`[structures-test] NOTE acceptance ${s.id}: ${considered} cells sampled (stride ${stride}), ${inRegion} in region, ${recs.length} with climate`)
+    results.villages.acceptance[s.id] = { spacing: spacing, stride: stride, considered: considered, inRegion: inRegion, climate: climateOk, cells: recs }
+    console.info(`[structures-test] NOTE acceptance ${s.id}: ${considered} cells sampled (stride ${stride}), ${inRegion} in region, ${climateOk} with climate`)
   })
 }
 

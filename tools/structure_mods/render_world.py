@@ -1,11 +1,13 @@
 """Draw structures as they came out of a generated world, with tools/structures/render.py (read-only use).
 
 Usage (from the repo root):
-    tools/.venv/Scripts/python tools/structure_mods/render_world.py WORLD_DIR OUT_DIR ID [ID ...] [--n 1] [--views sw,ne]
+    tools/.venv/Scripts/python tools/structure_mods/render_world.py WORLD_DIR OUT_DIR ID [ID ...] [--n 1] [--views sw,ne] [--margin 3] [--above 3] [--below 6]
 
 ID is a structure id (towns_and_towers:village_grove, pack:village/norse_living) or a prefix followed by "*" (mvs:*, pack:village/*). For each, the first N starts found in
 the world (in region order; the same seed gives the same starts in a `before` and an `after` world, so the same call on both
-gives a before/after pair) are cut out of the world together with a margin and ground, and drawn from two corners.
+gives a before/after pair) are cut out of the world together with a margin and ground, and drawn from two corners. --margin is the ring of
+terrain kept around the structure's boxes, --above and --below the blocks kept over and under them (a forest around a village needs a margin of 12
+or so and --above 28 to show its trees whole).
 """
 import argparse
 import os
@@ -43,6 +45,9 @@ def main():
     ap.add_argument("--n", type=int, default=1)
     ap.add_argument("--views", default="sw,ne")
     ap.add_argument("--max-size", type=int, default=140, help="skip structures wider than this (a mineshaft's box is huge)")
+    ap.add_argument("--margin", type=int, default=3, help="blocks of terrain kept around the structure's boxes")
+    ap.add_argument("--above", type=int, default=3, help="blocks kept over the highest box")
+    ap.add_argument("--below", type=int, default=6, help="blocks kept under the lowest box")
     args = ap.parse_args()
     os.makedirs(args.out, exist_ok=True)
     world = L.WorldReader(args.world)
@@ -63,7 +68,7 @@ def main():
             a = np.array(boxes)
             if max(a[:, 3].max() - a[:, 0].min(), a[:, 5].max() - a[:, 2].min()) > args.max_size:
                 continue
-            tpl = cut_template(world, boxes)
+            tpl = cut_template(world, boxes, args.margin, args.below, args.above)
             stats, imgs = renderer.render(tpl, tuple(args.views.split(",")), 900, None, False, R.guess_tint(name))
             for view, im in imgs.items():
                 path = os.path.join(args.out, f"{os.path.basename(args.world)}_{name.replace(':', '_').replace('/', '_')}_{chunk[0]}_{chunk[1]}_{view}.png")

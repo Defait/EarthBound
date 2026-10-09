@@ -6,6 +6,9 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import net.dries007.tfc.util.EnvironmentHelpers;
+import net.dries007.tfc.world.ChunkGeneratorExtension;
+import net.dries007.tfc.world.chunkdata.ChunkData;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -15,12 +18,15 @@ import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.ChunkGenerator;
+import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructureSet;
+import net.minecraft.world.level.levelgen.structure.StructureStart;
 import pack.world.geo.GeographicPlacement;
 import pack.world.geo.RegionGeometry;
 import pack.world.geo.RegionPlacement;
 import pack.world.geo.SiteGuard;
+import pack.world.keepclear.KeepClear;
 import pack.world.structure.GuardedJigsawStructure;
 import pack.world.materials.AlloyPolicy;
 import pack.world.materials.BlockFamilies;
@@ -317,6 +323,68 @@ public final class PackWorldApi
         out.put("rules", String.valueOf(StructureSkin.config().ruleCount()));
         out.put("namespaces", String.valueOf(new java.util.TreeSet<>(StructureSkin.config().namespaces())));
         out.put("unknown", String.valueOf(new java.util.TreeSet<>(StructureSkin.config().unknownBlocks())));
+        return out;
+    }
+
+    /** The keep-clear counters: trees_blocked, logs_blocked, boulders_blocked, suppressed:&lt;structure id&gt;. */
+    public static Map<String, Long> keepClearStats()
+    {
+        return KeepClear.stats();
+    }
+
+    public static void keepClearReset()
+    {
+        KeepClear.resetStats();
+    }
+
+    /** What the loaded keep-clear data says about a structure id: {@code trees=.. holds=.. yields=..}. */
+    public static String keepClearDescribe(String structureId)
+    {
+        return KeepClear.describe(ResourceLocation.parse(structureId));
+    }
+
+    /** The loaded keep-clear data as text. */
+    public static String keepClearConfig()
+    {
+        return KeepClear.config().toString();
+    }
+
+    /**
+     * The anchor {@code pack_world:local_materials} uses for every piece of this structure: the centre of the start piece (its first piece)
+     * at that piece's lowest y; the rock, sand and woods of a structure are those at this position.
+     */
+    public static int[] anchorOf(StructureStart start)
+    {
+        final BoundingBox box = start.getPieces().get(0).getBoundingBox();
+        final BlockPos centre = box.getCenter();
+        return new int[] {centre.getX(), box.minY(), centre.getZ()};
+    }
+
+    /**
+     * TFC's climate at a chunk as a region-placed structure's climate test sees it (the chunk's minimum corner at y 0): {temperature,
+     * rainfall, groundwater, forest} (forest density 0 to 4); all zero without a TFC generator.
+     */
+    public static Map<String, Double> climateAt(ServerLevel level, int chunkX, int chunkZ)
+    {
+        final Map<String, Double> out = new LinkedHashMap<>();
+        final ChunkGenerator generator = level.getChunkSource().getGenerator();
+        if (generator instanceof ChunkGeneratorExtension ext)
+        {
+            final ChunkPos chunk = new ChunkPos(chunkX, chunkZ);
+            final BlockPos pos = new BlockPos(chunk.getMinBlockX(), 0, chunk.getMinBlockZ());
+            final ChunkData data = ext.chunkDataGenerator().createAndGenerate(chunk);
+            out.put("temperature", (double) EnvironmentHelpers.adjustAvgTempForElev(0, data.getAverageSeaLevelTemp(pos)));
+            out.put("rainfall", (double) data.getAverageRainfall(pos));
+            out.put("groundwater", (double) data.getAverageGroundwater(pos));
+            out.put("forest", (double) data.getForestType().getDensity());
+        }
+        else
+        {
+            out.put("temperature", 0.0);
+            out.put("rainfall", 0.0);
+            out.put("groundwater", 0.0);
+            out.put("forest", 0.0);
+        }
         return out;
     }
 

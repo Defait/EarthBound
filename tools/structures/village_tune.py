@@ -4,10 +4,14 @@ Usage (from the repo root):
     tools/.venv/Scripts/python tools/structures_test.py --villages --per-set 0 --acceptance        # records the census (no chunks, a few minutes)
     tools/.venv/Scripts/python tools/structures/village_tune.py [RESULTS.json] [--set norse] [--landforms +coast,-cold] [--biomes +tfc:x]
                                                                   [--max-diff 14] [--radius 24] [--water 0.2] [--show 12]
+                                                                  [--climate min_groundwater=10,max_temperature=40] [--spacing 64]
 
 The census (`tools/.data/reports/structures-*.json`, `villages.acceptance`) holds, for every placement cell of each village set across its
-regions that passes the region and climate tests, the biome at its centre and the heights a guard of radius 48 and of radius 24 sees.
-This applies the catalogue's biome groups and guard to it (or the overrides on the command line: they change nothing in the catalogue)
+regions (those the census' own climate lets through are flagged), the biome at its centre, TFC's climate there (temperature at y 0, rainfall,
+groundwater, forest density) and the heights a guard of radius 48 and of radius 24 sees. A census made before the climate was recorded holds
+only the cells that passed it. This applies the catalogue's biome groups and guard to it (or the overrides on the command line: they change
+nothing in the catalogue; `--climate` replaces the set's climate fields with the given ones and `--spacing` the spacing in chunks, so the
+density is the cells' count scaled by (census spacing / new spacing) squared)
 and prints per set the cells that survive each test, why the others do not, and the density: villages per million blocks squared of the
 regions' area and the mean distance between neighbours. To keep a change, edit `structures/catalogue.json` (`villages.<id>.set.landforms`,
 `.guard`) and rebuild.
@@ -54,6 +58,9 @@ def main():
     ap.add_argument("--radius", type=int, choices=(24, 48), help="the census holds radius 24 and 48; default the village's own")
     ap.add_argument("--water", type=float, help="override max_water_fraction")
     ap.add_argument("--show", type=int, default=8, help="reasons to list per village")
+    ap.add_argument("--climate", default="", help="climate fields to test instead of the catalogue's: min_temperature=10,max_temperature=36,min_groundwater=30 ... "
+                    "(rainfall is tested instead of groundwater for a set with ignore_rivers; min_forest, max_forest too)")
+    ap.add_argument("--spacing", type=int, help="spacing in chunks to assume (the census' cells scale with the square of the ratio)")
     args = ap.parse_args()
     cat = json.load(open(CATALOGUE, encoding="utf-8"))
     results = json.load(open(args.results or latest_results(), encoding="utf-8"))["villages"]
@@ -81,10 +88,27 @@ def main():
         samples = g.get("samples", 13)
         allowed_wet = math.floor(g.get("max_water_fraction", 0.1) * samples + 1e-9)
         members, groups = biome_set(cat, vsp["set"], add, drop, extra)
-        stride2 = row["stride"] ** 2
+        stride2 = row["stride"] ** 2 * ((row["spacing"] / args.spacing) ** 2 if args.spacing else 1)
         why = collections.Counter()
-        biome_ok = guard_ok = 0
-        for _cx, _cz, biome, mn48, mx48, wet48, mn24, mx24, wet24 in row["cells"]:
+        biome_ok = guard_ok = climate_ok = 0
+        climate = dict(vsp["set"].get("climate", {}))
+        if args.climate:
+            climate = dict((k, float(v)) for k, v in (kv.split("=") for kv in args.climate.split(",")))
+        for cell in row["cells"]:
+            _cx, _cz, biome, mn48, mx48, wet48, mn24, mx24, wet24 = cell[:9]
+            if len(cell) >= 14:
+                if args.climate:
+                    temp, rain, ground, forest = cell[10:14]
+                    water = rain if climate.get("ignore_rivers") else ground
+                    if not (climate.get("min_temperature", -99) <= temp <= climate.get("max_temperature", 99)
+                            and climate.get("min_groundwater", -1) <= water <= climate.get("max_groundwater", 9999)
+                            and climate.get("min_forest", 0) <= forest <= climate.get("max_forest", 4)):
+                        why["climate"] += 1
+                        continue
+                elif not cell[9]:
+                    why["climate"] += 1
+                    continue
+            climate_ok += 1
             mn, mx, wet = (mn48, mx48, wet48) if radius >= 48 else (mn24, mx24, wet24)
             if biome not in members:
                 why["biome " + biome] += 1
@@ -101,7 +125,7 @@ def main():
         villages = guard_ok * stride2
         density = villages / (area_blocks / 1e6) if area_blocks else 0
         gap = math.sqrt(1e6 / density) if density else float("inf")
-        print(f"{name:10} {row['considered']:>6} {len(row['cells']):>7} {biome_ok:>6} {guard_ok:>6}  {villages:>8} {density:>15.3f} {gap:>9.0f}   "
+        print(f"{name:10} {row['considered']:>6} {climate_ok:>7} {biome_ok:>6} {guard_ok:>6}  {villages:>8} {density:>15.3f} {gap:>9.0f}   "
               f"{','.join(groups)}{'+' + ','.join(extra) if extra else ''} / radius {radius}, difference {g.get('max_height_difference', 8)}, water {g.get('max_water_fraction', 0.1)}")
         for reason, n in why.most_common(args.show):
             print(f"{'':10} {n:>6}  {reason}")

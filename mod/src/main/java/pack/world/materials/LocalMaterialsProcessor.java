@@ -152,8 +152,10 @@ public final class LocalMaterialsProcessor extends StructureProcessor
     public List<StructureBlockInfo> finalizeProcessing(ServerLevelAccessor level, BlockPos offset, BlockPos pos, List<StructureBlockInfo> originals,
                                                        List<StructureBlockInfo> processed, StructurePlaceSettings settings)
     {
-        final Materials.Ranked ranked = woodRanks.isEmpty() ? null : ranked(level.getLevel(), offset);
-        final Materials materials = ranked != null ? ranked.at(0) : materials(level.getLevel(), offset);
+        // One choice per structure: the anchor is the pivot (pos), which StructureStart.placeInChunk passes to every piece of a jigsaw
+        // structure as the centre of the start piece at its lowest y, so all pieces (and every chunk they are placed in) agree.
+        final Materials.Ranked ranked = woodRanks.isEmpty() ? null : ranked(level.getLevel(), pos);
+        final Materials materials = ranked != null ? ranked.at(0) : materials(level.getLevel(), pos);
         final BoundingBox box = settings.getBoundingBox();
         final SoilSampler soils = new SoilSampler(level, box, soil.equals("local") ? placeholders.soil() : soil);
         final Map<ResourceLocation, Optional<Block>> blocks = new HashMap<>();

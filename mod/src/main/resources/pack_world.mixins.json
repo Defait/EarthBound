@@ -4,6 +4,7 @@
   "package": "pack.world.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "ForestFeatureMixin",
     "StructureStartMixin"
   ],
   "injectors": {

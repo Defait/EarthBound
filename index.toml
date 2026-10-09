@@ -1621,6 +1621,10 @@ file = "kubejs/data/pack/neoforge/biome_modifier/cave_carvers.json"
 hash = "19c04d22b638577af85a5b1b835739c6f748f8a4552a191bcbafe8c73b41bab6"
 
 [[files]]
+file = "kubejs/data/pack/pack_world/keep_clear/structures.json"
+hash = "59aa787949623b110960a0f3a4fe7d84358b51b4503d192f1a8a49d6642d524f"
+
+[[files]]
 file = "kubejs/data/pack/pack_world/structure_skin/blocks.json"
 hash = "a6a3cb4d15bc8186827c979731af3f9d5461ebec387cfd9f0d6d46d618024fb3"
 
@@ -2538,7 +2542,7 @@ hash = "6c65168a50acc1ab31d54b89ea246380a5447fcd5bbbc4acec208326ad43eb74"
 
 [[files]]
 file = "kubejs/data/pack/tags/worldgen/biome/has_structure/village/arabic.json"
-hash = "80b85a243c0152249ca1a4a29e2b5e344d19965ff03b4381f6ad1532b801d5ac"
+hash = "215c0ad40e794b82f8fd8c38a7e79241450a6f67b06db0c7f119c9b10b25ea72"
 
 [[files]]
 file = "kubejs/data/pack/tags/worldgen/biome/has_structure/village/malay.json"
@@ -2962,7 +2966,7 @@ hash = "b44f91cde8e0c7352a8fee87755de0d4f3f3ed282ac9f5b713123c4b6b3f2a0e"
 
 [[files]]
 file = "kubejs/data/pack/worldgen/structure_set/village/arabic.json"
-hash = "c19f470a91ac26c81cc6604acfce835084399610cd92a85335501263709a3ab6"
+hash = "c2741ca3fc5ca4ccbfd9ab791e6b80de67c1b744982a3bf0debacc8c03563dd3"
 
 [[files]]
 file = "kubejs/data/pack/worldgen/structure_set/village/malay.json"
@@ -3617,8 +3621,32 @@ file = "kubejs/data/tfc/worldgen/placed_feature/cave_spike.json"
 hash = "47d4eca4280dbe78dc06c26c6ea2f57b410b5771332828a8b21c7c30375a8a46"
 
 [[files]]
+file = "kubejs/data/tfc/worldgen/placed_feature/cobble_boulder.json"
+hash = "2a8e7f2fd084dacfbd6094ad031c957f6ffa8ea0d3c14bc15365faa9279143c8"
+
+[[files]]
+file = "kubejs/data/tfc/worldgen/placed_feature/cobble_boulder_small.json"
+hash = "d5839bb8046a3d725820d4e065d80d1c15d7aeb26b61b13bd8d448df44d5ade1"
+
+[[files]]
 file = "kubejs/data/tfc/worldgen/placed_feature/large_cave_spike.json"
 hash = "8784ba30f10d82b4ed0c8f20909e0b7960ac5efcc72d1153ef20e6d110873749"
+
+[[files]]
+file = "kubejs/data/tfc/worldgen/placed_feature/mossy_boulder.json"
+hash = "2b3585fcc12b4937e75c1dfd96f00713e8499d8695a14d00dc1a7926de0d4c52"
+
+[[files]]
+file = "kubejs/data/tfc/worldgen/placed_feature/mossy_boulder_small.json"
+hash = "d11acee7a7e756aa62af3aea23e85308c1ad141710cf3093d9f45de214913124"
+
+[[files]]
+file = "kubejs/data/tfc/worldgen/placed_feature/raw_boulder.json"
+hash = "2e10534d5fad66b7cbdd025bb0c366a00878b7e73b10b246ea54251c15d389b2"
+
+[[files]]
+file = "kubejs/data/tfc/worldgen/placed_feature/raw_boulder_small.json"
+hash = "2842f928fa6d83b75ca5dfedb180591951fcb3765aa2e486838daff8aba2a441"
 
 [[files]]
 file = "kubejs/data/tfchuts/tags/worldgen/biome/settlement.json"
@@ -4028,8 +4056,8 @@ hash = "13227010564aa5ffe806ece39e8024efbf3ea5a55034e6216577d5027f1996c3"
 metafile = true
 
 [[files]]
-file = "mods/pack_world-1.2.0.jar"
-hash = "818591df3ac3299c3edc98f6708800260556b404f38a7bdd9ec4a34311f47012"
+file = "mods/pack_world-1.3.0.jar"
+hash = "8fb792fbbc695524fd069bb762161567d1007d7a800303be537a83c2912b7a0b"
 
 [[files]]
 file = "mods/particular-reforged.pw.toml"

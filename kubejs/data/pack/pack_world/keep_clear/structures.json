@@ -1,0 +1,48 @@
+{
+  "_about": "Keeps the land around structures clear (docs/lived-in.md, 'Keeping the land clear'; mod/ keepclear). trees: structures whose pieces keep TFC's and ArborFirmaCraft's trees, bushes, fallen logs and boulders out (no trunk within 'solid' blocks of a piece's box, thinning out to 'margin'). holds: structures whose pieces keep the pieces of 'yields' structures out (a piece is not placed where its box, widened by hold_pad sideways, hold_depth below and hold_up above, meets a held piece). Natural things other mods place as 'structures' (trees, log piles, boulders) neither keep trees out nor hold.",
+  "trees": [
+    "pack",
+    "towns_and_towers",
+    "mmv",
+    "mtr",
+    "tfchuts",
+    "mvs"
+  ],
+  "exclude_trees": [
+    "mvs:*_tree",
+    "mvs:*_log_pile",
+    "mvs:*palm_tree",
+    "mvs:dead_tree_*",
+    "mvs:boulder",
+    "mvs:stone_rock",
+    "mvs:crystal",
+    "mvs:log_ruin",
+    "mvs:mushroom_pond",
+    "mvs:small_oak_pond",
+    "mvs:snowy_fossil",
+    "mvs:floating_islands",
+    "mvs:large_floating_island",
+    "mvs:paths",
+    "mvs:pile"
+  ],
+  "holds": [
+    "pack:village/*"
+  ],
+  "yields": [
+    "pack",
+    "towns_and_towers",
+    "mmv",
+    "mtr",
+    "tfchuts",
+    "mvs",
+    "betterdungeons",
+    "bettermineshafts"
+  ],
+  "solid": 3,
+  "margin": 7,
+  "below": 16,
+  "above": 12,
+  "hold_pad": 1,
+  "hold_depth": 10,
+  "hold_up": 3
+}
