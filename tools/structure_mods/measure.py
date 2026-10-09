@@ -3,6 +3,7 @@
 Usage (from the repo root):
     tools/.venv/Scripts/python tools/structure_mods/measure.py [--places paris=48.86,2.35 ...] [--radius 1024]
                                                                [--mode after|before] [--seed pregen] [--keep-world] [--no-sync]
+                                                               [--no-cache | --at REV]
 
 For each place: a fresh world `world-sm-<place>-<mode>` on the test server (Chunky added for the run only, like tools/pregen.py),
 a dev-only KubeJS script (measure.js) that switches the skin's measurements on, Chunky over a square of 2*radius blocks. Written to
@@ -11,8 +12,12 @@ structure the blocks written before/after the skin, ground columns and floating 
 second. `--mode before` adds a world datapack with `{"dry_run": true}`: the skin measures but rewrites nothing, which is the
 state without the skin (other mods' own processors still run). The default places are the structure trial's: Paris, the Mongolian
 steppe, Cairo and Stockholm. Uses the test server: take the lock first when other agents work (see the integration notes).
+
+Each place's report is cached (tools/worldcache.py): the same settings with the same pack copy it in without a server run, and
+`--at HEAD` fetches the reports made before your uncommitted change. --no-cache measures anyway; --no-sync and --keep-world skip the cache.
 """
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -25,6 +30,7 @@ sys.path.insert(0, TOOLS)
 from mclib.paths import DATA_DIR, utf8_console  # noqa: E402
 from mclib.server import DONE_RE, TestServer  # noqa: E402
 import pregen as PG  # noqa: E402
+import worldcache  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(DATA_DIR, "structure_mods")
@@ -92,13 +98,17 @@ def run_place(srv, name, lat, lon, radius, mode, seed, keep, timeout, suffix="")
     stats.update({"place": name, "lat": lat, "lon": lon, "center": [cx, cz], "radius": radius, "mode": mode, "seed": seed,
                   "chunks": chunks, "seconds": seconds, "chunks_per_second": round(chunks / max(seconds, 1), 1), "chunky": finished.split("]: ", 1)[-1]})
     os.makedirs(OUT, exist_ok=True)
-    dest = os.path.join(OUT, f"{name}-{mode}{suffix}.json")
+    dest = out_path(name, mode, suffix)
     with open(dest, "w") as f:
         json.dump(stats, f, indent=1)
     print(f"[{name}/{mode}] {chunks} chunks in {seconds}s = {stats['chunks_per_second']} chunks/s; stats {dest}")
     if not keep:
         shutil.rmtree(world_dir, ignore_errors=True)
     return stats
+
+
+def out_path(name, mode, suffix):
+    return os.path.join(OUT, f"{name}-{mode}{suffix}.json")
 
 
 def main():
@@ -112,6 +122,8 @@ def main():
     ap.add_argument("--keep-world", action="store_true")
     ap.add_argument("--no-sync", action="store_true")
     ap.add_argument("--timeout", type=int, default=3 * 3600)
+    ap.add_argument("--no-cache", action="store_true", help="measure even when a cached report matches (and refresh it)")
+    ap.add_argument("--at", metavar="REV", help="only fetch the cached reports for the pack as committed at REV (e.g. HEAD); never starts the server")
     args = ap.parse_args()
     places = dict(DEFAULT_PLACES)
     if args.places:
@@ -124,21 +136,46 @@ def main():
             else:
                 places[p] = DEFAULT_PLACES[p]
 
+    script = open(os.path.join(HERE, "measure.js"), encoding="utf-8").read()
+    script = re.sub(r"/\*CENSUS\*/.*?/\*END\*/", "/*CENSUS*/ " + ("false" if args.no_census else "true") + " /*END*/", script, flags=re.S)
+    suffix = "-nocensus" if args.no_census else ""
+    params = lambda name, lat, lon: {"place": name, "lat": lat, "lon": lon, "radius": args.radius, "mode": args.mode, "seed": args.seed,
+                                     "census": not args.no_census, "script": hashlib.sha256(script.encode()).hexdigest()}
+    pkey = None
+    if args.at:
+        pkey = worldcache.pack_key(args.at)
+    elif args.no_sync or args.keep_world:
+        print("--no-sync / --keep-world: the cache is not used.")
+    else:
+        pkey = worldcache.pack_key()
+    todo = {}
+    for name, (lat, lon) in places.items():
+        hit = worldcache.lookup("measure", params(name, lat, lon), pkey) if pkey and not args.no_cache else None
+        if hit:
+            worldcache.restore(hit, out_path(name, args.mode, suffix))
+            print(f"[{name}/{args.mode}] reused the cached report ({worldcache.describe(hit[1])}): {out_path(name, args.mode, suffix)}")
+        elif args.at:
+            print(f"[{name}/{args.mode}] no cached report with the pack at {args.at}")
+        else:
+            todo[name] = (lat, lon)
+    if not todo:
+        return
+
     srv = TestServer()
     srv.ensure_installed()
     if not args.no_sync:
         srv.sync_pack()
     srv.set_extra_mods([PG.chunky_jar(srv, srv.pack["versions"]["minecraft"], srv.loader)])
-    script = open(os.path.join(HERE, "measure.js"), encoding="utf-8").read()
-    script = re.sub(r"/\*CENSUS\*/.*?/\*END\*/", "/*CENSUS*/ " + ("false" if args.no_census else "true") + " /*END*/", script, flags=re.S)
     os.makedirs(OUT, exist_ok=True)
     script_path = os.path.join(OUT, "measure_run.js")
     with open(script_path, "w", encoding="utf-8") as f:
         f.write(script)
     srv.set_dev_scripts({"structure_mods_measure.js": script_path})
     try:
-        for name, (lat, lon) in places.items():
-            run_place(srv, name, lat, lon, args.radius, args.mode, args.seed, args.keep_world, args.timeout, "-nocensus" if args.no_census else "")
+        for name, (lat, lon) in todo.items():
+            run_place(srv, name, lat, lon, args.radius, args.mode, args.seed, args.keep_world, args.timeout, suffix)
+            if pkey:
+                worldcache.store("measure", params(name, lat, lon), pkey, out_path(name, args.mode, suffix))
     finally:
         srv.set_dev_scripts({})
         srv.set_extra_mods([])

@@ -3,12 +3,17 @@
 Usage (from the repo root):
     tools/.venv/Scripts/python tools/pregen.py [--radius 1024] [--place 41.89,12.51 | --center X,Z]
                                                [--seed pregen] [--world world-pregen] [--fresh] [--no-sync]
+                                               [--no-cache | --at REV]
 
 Chunky is added to the test server for this run only (never to the pack).
 The world lands in tools/.server/<world>; open it with the other tools:
     tools/.venv/Scripts/python tools/worldview/serve.py tools/.server/world-pregen
     tools/.venv/Scripts/python tools/recipes/serve.py --world tools/.server/world-pregen
 --place takes latitude,longitude for TFC: Real World worlds (Equal Earth map).
+
+A fresh world is cached (tools/worldcache.py): the same settings with the same pack copy the cached world in and
+skip the server, and `--at HEAD` fetches the world made before your uncommitted change without the server at all.
+--no-cache generates anyway; --no-sync never uses the cache (the server may not hold the pack).
 """
 import argparse
 import json
@@ -24,6 +29,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from mclib.paths import utf8_console  # noqa: E402
 from mclib.server import DONE_RE, TestServer, download  # noqa: E402
+import worldcache  # noqa: E402
 
 # Chunky formats numbers with the system locale, e.g. "17,84%" and "65,3 cps".
 PROGRESS_RE = re.compile(r"\[Chunky\] Task running .*?Processed: ([\d,.\s]+) chunks \(([\d.,]+)%\).*?Rate: ([\d.,]+) cps", re.I)
@@ -61,7 +67,29 @@ def main():
     ap.add_argument("--no-sync", action="store_true")
     ap.add_argument("--xmx", default="8G")
     ap.add_argument("--timeout", type=int, default=6 * 3600, help="seconds to allow for generation")
+    ap.add_argument("--no-cache", action="store_true", help="generate even when a cached world matches (and refresh it)")
+    ap.add_argument("--at", metavar="REV", help="only fetch the cached world for the pack as committed at REV (e.g. HEAD); never starts the server")
     args = ap.parse_args()
+
+    world_dir = os.path.join(worldcache.SERVER_DIR, args.world)
+    params = {"seed": args.seed, "radius": args.radius, "place": args.place, "center": args.center}
+    fresh = args.fresh or not os.path.exists(world_dir)
+    pkey = None
+    if args.at:
+        hit = worldcache.lookup("pregen", params, worldcache.pack_key(args.at))
+        if not hit:
+            raise SystemExit(f"No cached world for these settings with the pack at {args.at}. It is cached when generated "
+                             f"with the pack in that state (e.g. before changing it), or see: tools/worldcache.py list")
+        return reuse(hit, world_dir)
+    if not fresh:
+        print("Adding to the existing world, so the cache is not used (--fresh starts over).")
+    elif args.no_sync:
+        print("--no-sync: the cache is not used (the server may not hold the pack).")
+    else:
+        pkey = worldcache.pack_key()
+        hit = None if args.no_cache else worldcache.lookup("pregen", params, pkey)
+        if hit:
+            return reuse(hit, world_dir)
 
     srv = TestServer()
     srv.ensure_installed()
@@ -69,7 +97,6 @@ def main():
         srv.sync_pack()
     srv.set_extra_mods([chunky_jar(srv, srv.pack["versions"]["minecraft"], srv.loader)])
     srv.set_dev_scripts({})
-    world_dir = srv.path(args.world)
     if args.fresh:
         shutil.rmtree(world_dir, ignore_errors=True)
     srv.write_properties(args.world, args.seed)
@@ -127,6 +154,22 @@ def main():
         raise SystemExit("Generation did not finish (timed out or the server stopped); see tools/.server/logs/latest.log")
     print(finished.split("]: ", 1)[-1])
     print(f"Done in {elapsed:.0f}s (~{chunks_expected / max(elapsed, 1):.1f} chunks/s overall).")
+    if pkey:
+        worldcache.store("pregen", params, pkey, world_dir, {"seconds": round(elapsed), "center": center,
+                                                             "chunky": finished.split("]: ", 1)[-1]})
+    report(world_dir)
+
+
+def reuse(hit, world_dir):
+    worldcache.restore(hit, world_dir)
+    meta = hit[1]
+    print(f"Reused the cached world ({worldcache.describe(meta)}, generated in {meta.get('seconds', '?')}s); "
+          "no server run. --no-cache generates it again.")
+    print("Done in 0s (cached).")
+    report(world_dir)
+
+
+def report(world_dir):
     print(f"World: {world_dir}")
     print(f"  View it:  tools/.venv/Scripts/python tools/worldview/serve.py {os.path.relpath(world_dir)}")
     print(f"  Seed the progression checker with it:  tools/.venv/Scripts/python tools/recipes/serve.py --world {os.path.relpath(world_dir)}")
