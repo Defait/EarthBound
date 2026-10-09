@@ -4,7 +4,10 @@
   "package": "pack.world.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "AtollFootMixin",
     "ForestFeatureMixin",
+    "OceanDepthMixin",
+    "StratovolcanoFootMixin",
     "StructureStartMixin"
   ],
   "injectors": {

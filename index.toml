@@ -4056,8 +4056,8 @@ hash = "13227010564aa5ffe806ece39e8024efbf3ea5a55034e6216577d5027f1996c3"
 metafile = true
 
 [[files]]
-file = "mods/pack_world-1.3.0.jar"
-hash = "8fb792fbbc695524fd069bb762161567d1007d7a800303be537a83c2912b7a0b"
+file = "mods/pack_world-1.4.0.jar"
+hash = "bd1cb2d9cf00b60398cda3eae13a338493c0c81891eeaaaaf438b35dc1c16b3a"
 
 [[files]]
 file = "mods/particular-reforged.pw.toml"
