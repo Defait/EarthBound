@@ -1,6 +1,10 @@
 hash-format = "sha256"
 
 [[files]]
+file = "config/ae2-common.toml"
+hash = "0b66159837d52e889b4e46a4a6ffa5084272de9d209b4cd7c8ed8b917ea21583"
+
+[[files]]
 file = "config/almostunified/placeholders.json"
 hash = "631a901a9341a12ec937f70f48259a2bbbcf04fe7b794cfc936b2827d274b20d"
 
@@ -190,11 +194,15 @@ hash = "e00a67922942660d77c213379b5128a46c5abc894178b0be04006d325ff5f6b3"
 
 [[files]]
 file = "kubejs/config/villager_trades.json"
-hash = "07146d7055461e91d4544e83bf748619203bf28315025534dfe9f6ddef2e8ca1"
+hash = "893ac35fcb65199c36af92245f0cdf59b9064913a4aab6588f4edd9d54742037"
 
 [[files]]
 file = "kubejs/config/web_server.json"
 hash = "74f01c3b886aa9dd2ebc49781ddb0541b974ad34e2f41e7a566b98d9182abd48"
+
+[[files]]
+file = "kubejs/data/ae2/loot_table/gameplay/hero_of_the_village/fluix_researcher_gifts.json"
+hash = "0e762d36902bdd0b6d2c27548e9b0a8112a1ac384d7c19e99dcbd7adc3361755"
 
 [[files]]
 file = "kubejs/data/betterdungeons/loot_table/skeleton_dungeon/chests/common.json"
@@ -1402,7 +1410,7 @@ hash = "e56dcc55cf74f982a845269a2fadbaee9e0fbcaae74a8d9a00475cccace5c29d"
 
 [[files]]
 file = "kubejs/data/neoforge/loot_modifiers/global_loot_modifiers.json"
-hash = "2d349a2dc03e3cbaa95723269b0f1d94b8b5a1ab12d10e020442337deb89802f"
+hash = "31ca5e8e38eb65001dace1ebbd189a49ffe6dbc963d10a429ebdc6299f23a261"
 
 [[files]]
 file = "kubejs/data/pack/easy_npc/preset/humanoid/arabic_dyer.npc.snbt"
@@ -3713,12 +3721,16 @@ file = "kubejs/server_scripts/bridges/create_gregtech.js"
 hash = "0126279db895129cb4db2f9977018789922f46131bbbc91776312f93800108ca"
 
 [[files]]
+file = "kubejs/server_scripts/compat/ae2.js"
+hash = "83c5eca82d28c26d25827e2dd9c16b9f6b88338ec489796389aba8e6307cebd9"
+
+[[files]]
 file = "kubejs/server_scripts/compat/arborfirmacraft.js"
 hash = "cc5380304155cd7c4a6ea46c032ff0283b8f20a3ca487faa7429b908f3a942cd"
 
 [[files]]
 file = "kubejs/server_scripts/compat/create_addons.js"
-hash = "a08f4b5f928065798152638c212ea647f8326a345a1d1504b5b8727dd787febd"
+hash = "aa40d669ac69f16cf1a16dc6e04e35655b7c45b85bb381ff4f08d9324be90e46"
 
 [[files]]
 file = "kubejs/server_scripts/compat/fowl_play.js"
@@ -3727,6 +3739,10 @@ hash = "393cde9bd750e38c5797c4dc4028e5cca66304929e58c1345defafe1e11a0830"
 [[files]]
 file = "kubejs/server_scripts/compat/metal_gates.js"
 hash = "3f6ab58a5f1007cc2deaa309a72cf3e3b43c591591200084a80083b6637f693b"
+
+[[files]]
+file = "kubejs/server_scripts/compat/sophisticated_storage.js"
+hash = "a9016c7e19bcfe1eda30e0335e9fb4fdf8f76c1745c6f01cd4ade4c3a09bf7ed"
 
 [[files]]
 file = "kubejs/server_scripts/compat/vanilla_substitutes.js"
@@ -3801,6 +3817,11 @@ file = "licenses/structure-mods.txt"
 hash = "bd095d57f84125d02438b94c4b13c1f82f89fae035dad5b29d8de5eaa2e0e283"
 
 [[files]]
+file = "mods/ae2.pw.toml"
+hash = "bcc34f607a107a148928c80c8fdef326170975df392ce7f476a47df956b1fc5c"
+metafile = true
+
+[[files]]
 file = "mods/alltheleaks.pw.toml"
 hash = "c71a37f05849d41b3b2a883c55afc4d32de7e05beff02b6f94a833be0c59635c"
 metafile = true
@@ -3823,6 +3844,16 @@ metafile = true
 [[files]]
 file = "mods/auroras.pw.toml"
 hash = "ed60e047a5a85492c3d761238524888dca729e923b6753e060fd3dc986a8e54c"
+metafile = true
+
+[[files]]
+file = "mods/azimuth-api.pw.toml"
+hash = "a14aa30b199bcc4fb3b382327be7cabb22ce03d8e780f68c3b8307136f0589d7"
+metafile = true
+
+[[files]]
+file = "mods/bellsandwhistles.pw.toml"
+hash = "e1f4a53e3e52b534add5dd018597fefd345d9bd6350b9c46ef0ec281fc62af8e"
 metafile = true
 
 [[files]]
@@ -3861,6 +3892,16 @@ hash = "4892513825f87217b6cc3f4d3ec4dcd3965b96dede8cc10d6578c4769102ae8e"
 metafile = true
 
 [[files]]
+file = "mods/create-aeronautics-delivery-required.pw.toml"
+hash = "3249678012dd5bc27af549464569253986c315dcf8d9a10d1924ca053e61e2c4"
+metafile = true
+
+[[files]]
+file = "mods/create-aeronautics-gadgets-and-gizmos.pw.toml"
+hash = "96cb870bf06e1efb96addcf1b0e145c707fba999352dfa9098558d8b98d19264"
+metafile = true
+
+[[files]]
 file = "mods/create-aeronautics.pw.toml"
 hash = "3b8895369640b2a52d3e05f7186185ba6798e44d513f11c5427a0fe9c16769e9"
 metafile = true
@@ -3871,8 +3912,23 @@ hash = "210419599e24212d879f58d0b3bacb74dec6d64703f49f1c547440bf7705e942"
 metafile = true
 
 [[files]]
+file = "mods/create-aquatic-ambitions.pw.toml"
+hash = "ad732ada7e42c44f0d5eaf45f5edfb7e90bc615ba6e50a3bb974250dfb36e83f"
+metafile = true
+
+[[files]]
 file = "mods/create-big-cannons.pw.toml"
 hash = "a0e9ff95570cd9af3374ca8b44aa095447baf94e565f46ae99819d52a9b48dc1"
+metafile = true
+
+[[files]]
+file = "mods/create-bits-n-bobs.pw.toml"
+hash = "2aa588c0760e81c40fae4df29e14643ddb19d40474bf177206a8f687e70b953e"
+metafile = true
+
+[[files]]
+file = "mods/create-coasters-simulated.pw.toml"
+hash = "d5aad6415413aa777ed89ae55912f33c86757321c7c16c8392ce2e1429b920d5"
 metafile = true
 
 [[files]]
@@ -3891,13 +3947,33 @@ hash = "e05bc0c3ee97da0dfcf9dabd3c3eaee0e90819091ead3f500ddc3b1caf77fe54"
 metafile = true
 
 [[files]]
+file = "mods/create-dragons-plus.pw.toml"
+hash = "dcbb37e828a2f915e64a2ef839a742761a553a2e3b923b000ffba95db7503ac3"
+metafile = true
+
+[[files]]
+file = "mods/create-enchantment-industry.pw.toml"
+hash = "5f76bdf0fe120e62cc3ae298e911727fa45c70dd191fd9c2b213029c7601576c"
+metafile = true
+
+[[files]]
 file = "mods/create-power-loader.pw.toml"
 hash = "d1a7402cc94a8a857d380f68bb9a19d8981a2b3223068a53d9054e97232f4167"
 metafile = true
 
 [[files]]
+file = "mods/create-propulsion-simulated.pw.toml"
+hash = "f82cdd570cb4f6bd9b87a6a30c5e5ecc23125dfcecc715d4950a17301de8c58a"
+metafile = true
+
+[[files]]
 file = "mods/create-steam-n-rails-1.21.1.pw.toml"
 hash = "80332cead695f1e3c27e99133a48709767d1106f836792bb2fc4d594b88f1a68"
+metafile = true
+
+[[files]]
+file = "mods/create-stock-bridge.pw.toml"
+hash = "e04ae91b53c33f6a4dea9ebc82be4255a56460a9e095a3a1fd748434e5dfb3bb"
 metafile = true
 
 [[files]]
@@ -3991,6 +4067,11 @@ hash = "bf23c619eaf86d4deb0fdc55d2e4f61b0edabec28ff64eeac715eb1c014b4bbe"
 metafile = true
 
 [[files]]
+file = "mods/guideme.pw.toml"
+hash = "bc3920a3fb291a8bc8df9717233e54dd1c909b65528afbe1b617373c7b4b38c0"
+metafile = true
+
+[[files]]
 file = "mods/immediatelyfast.pw.toml"
 hash = "2863a3b187723e1f69ed2ad2b2c3d834e8442468a1347c80df5b310e243c8753"
 metafile = true
@@ -4018,6 +4099,11 @@ metafile = true
 [[files]]
 file = "mods/kubejs.pw.toml"
 hash = "7e0eca275f27b6543f06c36dec433851a956960cbedd2be57d19e159d636bfc1"
+metafile = true
+
+[[files]]
+file = "mods/ldlib.pw.toml"
+hash = "2a4a77b86389c4319e38f1738162ead13b7b2646f3381948de06042a7429f5b9"
 metafile = true
 
 [[files]]
@@ -4056,6 +4142,11 @@ hash = "13227010564aa5ffe806ece39e8024efbf3ea5a55034e6216577d5027f1996c3"
 metafile = true
 
 [[files]]
+file = "mods/numismatics.pw.toml"
+hash = "840eb517a83c586b9f543ab9781d4c8529b6fedf2d679f411577c7a583e50fe5"
+metafile = true
+
+[[files]]
 file = "mods/pack_world-1.4.0.jar"
 hash = "bd1cb2d9cf00b60398cda3eae13a338493c0c81891eeaaaaf438b35dc1c16b3a"
 
@@ -4067,6 +4158,11 @@ metafile = true
 [[files]]
 file = "mods/patchouli.pw.toml"
 hash = "d7f360ebb9f009d6dc0b368cd8fa399bdff70c0f6ef931687b2a35137f72715d"
+metafile = true
+
+[[files]]
+file = "mods/ponder.pw.toml"
+hash = "279fac60372d5c4ca8b94727f744946fcda6a677f7cebd5afac5e58ddd08bc9a"
 metafile = true
 
 [[files]]
@@ -4115,6 +4211,21 @@ hash = "2a001cdb3d5ac4970d422914083c27380eba8ebd40dfd435754fe6566ba78beb"
 metafile = true
 
 [[files]]
+file = "mods/sophisticated-core.pw.toml"
+hash = "7225aa153f0c2b765736adf1e91776af1aa95cd1e545e66a2b9d46f97aa7c7ac"
+metafile = true
+
+[[files]]
+file = "mods/sophisticated-storage-create-integration.pw.toml"
+hash = "6dc3970068b20fae43c4b8fe35566efda3e663b1eedd303834b8159019eb48f7"
+metafile = true
+
+[[files]]
+file = "mods/sophisticated-storage.pw.toml"
+hash = "492c4362d7e8e0b5a1ad7c67e6b6e9138f4e4c9b0571a4ec9049d3f85e1013f0"
+metafile = true
+
+[[files]]
 file = "mods/sound-physics-aeronautics.pw.toml"
 hash = "e76d9cd75c2ec1cbc520061c029d8468aaee62b58e7f0698b4094a2c56cf4b9d"
 metafile = true
@@ -4127,6 +4238,11 @@ metafile = true
 [[files]]
 file = "mods/ssrd.pw.toml"
 hash = "4a4c0c54b3b38ac660b9c06d8dc8e51ed3e2efc6dd94ad3e807a48146a420873"
+metafile = true
+
+[[files]]
+file = "mods/strut-your-stuff.pw.toml"
+hash = "aa89e067824ca42d818a81a6d02ce5296ce662d834c35dd2ff0d81189d3bc3f9"
 metafile = true
 
 [[files]]

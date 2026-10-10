@@ -1010,6 +1010,10 @@ def classify_registries(cur, base, f, ctx):
             if verb == "removed":
                 f.add("info", f"{short_name} {i} removed ({where})", tier=1)
                 continue
+            if verb == "added" and name in ("minecraft:dimension_type", "minecraft:worldgen/world_preset") and ns != "minecraft" and ns not in TERRAIN_MODS:
+                # a new dimension type (AE2's spatial storage) or world preset (Bits 'n' Bobs') alters no dimension that exists
+                f.add("info", f"{short_name} {i} {verb} ({where}); a new entry changes no existing dimension or preset", tier=1)
+                continue
             live = (kind, i) in reach
             if default == "continuity" and (live or kind is None):
                 f.add("continuity", f"{short_name} {i} {verb} ({where})", ["it is part of what the overworld generates with"] if live else [], tier=1, culprit=where)

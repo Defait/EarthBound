@@ -5,6 +5,9 @@
   "xp": {"1": 2, "2": 8, "3": 15, "4": 20, "5": 30},
   "price_multiplier": 0.05,
   "professions": {
+    "ae2:fluix_researcher": {
+      "note": "AE2's villager (job site: the charger). No trades: its vanilla ones sell certus quartz, fluix and sky stone for emeralds, and the pack's AE2 material is GregTech's (kubejs/server_scripts/compat/ae2.js)."
+    },
     "minecraft:armorer": {
       "note": "Leather and sheet metal. Armour proper (copper armour is step 15, a shield 14) is above the bronze cap, so the armorer sells padding, horse armour and the stock a smith turns into plate.",
       "1": [

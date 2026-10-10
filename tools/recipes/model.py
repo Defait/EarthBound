@@ -287,7 +287,11 @@ class Dump:
             if key not in j or (key == "primary_ingredient"):
                 continue
             v = j[key]
-            if key in ("ingredients", "additives") and isinstance(v, list):
+            if key == "ingredients" and isinstance(v, dict) and set(v) <= {"top", "middle", "bottom"}:
+                # AE2's inscriber: top/bottom are presses that inscribing leaves in place, 'press' mode uses everything up
+                for part, ing in v.items():
+                    r["slots"].append(self._slot(ing, part, consumed=j.get("mode") == "press" or part == "middle"))
+            elif key in ("ingredients", "additives") and isinstance(v, list):
                 for ing in v:
                     is_fluid = isinstance(ing, dict) and ("amount" in ing or ing.get("type") in ("neoforge:single", "neoforge:tag", "tfc:fluid_content"))
                     r["slots"].append(self._slot(ing, key, fluid=is_fluid))

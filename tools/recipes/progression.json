@@ -19,6 +19,7 @@
       "minecraft:rotten_flesh",
       "minecraft:gunpowder",
       "minecraft:spider_eye",
+      "minecraft:ink_sac",
       "afc:wood/log/*",
       "afc:wood/leaves/*",
       "afc:wood/fallen_leaves/*",
@@ -289,6 +290,32 @@
       "create:mechanical_crafter",
       "@create_power"
     ],
+    "create_aquatic_ambitions:channeling": [
+      "create_aquatic_ambitions:mechanical_conduit"
+    ],
+    "create_dragons_plus:ending": [
+      "create:encased_fan",
+      [
+        "create_connected:fan_ending_catalyst_dragons_breath",
+        "create_connected:fan_ending_catalyst_dragon_head"
+      ]
+    ],
+    "create_dragons_plus:freezing": [
+      "create:encased_fan",
+      "create_connected:fan_freezing_catalyst"
+    ],
+    "create_enchantment_industry:grinding": [
+      "create_enchantment_industry:mechanical_grindstone",
+      "@create_power"
+    ],
+    "ae2:inscriber": [
+      "ae2:inscriber",
+      "world:power/electric"
+    ],
+    "ae2:charger": [
+      "ae2:charger",
+      "world:power/electric"
+    ],
     "create:item_application": [],
     "create:sandpaper_polishing": [],
     "create:sequenced_assembly": {
@@ -510,7 +537,11 @@
       "aeronautics:andesite_propeller",
       "aeronautics:wooden_propeller",
       "aeronautics:smart_propeller",
-      "aeronautics:gyroscopic_propeller_bearing"
+      "aeronautics:gyroscopic_propeller_bearing",
+      "createpropulsion:*thruster",
+      "createthrusters:thruster",
+      "createthrusters:small_thruster",
+      "createthrusters:rcs_thruster"
     ]
   },
   "gregtech": {
@@ -755,6 +786,49 @@
         "@brass"
       ],
       "why": "design: airships unlock with brass: thrust (every propeller)"
+    },
+    {
+      "item": "i:ae2:printed_silicon",
+      "requires": [
+        "#i:c:ingots/silicon"
+      ],
+      "why": "design: AE2's silicon is GregTech's silicon ingot, so processors sit behind GregTech's electric blast furnace"
+    },
+    {
+      "item": "i:ae2:calculation_processor_press",
+      "requires": [
+        "#i:c:plates/steel"
+      ],
+      "why": "design: with no meteorites in TFC worlds AE2's presses are crafted from TFC steel plates (kubejs/server_scripts/compat/ae2.js)"
+    },
+    {
+      "item": "i:ae2:charged_certus_quartz_crystal",
+      "requires": [
+        "world:power/electric"
+      ],
+      "why": "design: AE2 runs on GregTech electricity (native EU to FE on GregTech cables, no converters, no vibration chamber)"
+    },
+    {
+      "item": "i:ae2:singularity",
+      "requires": [
+        "i:ae2:controller",
+        "#i:c:plates/titanium"
+      ],
+      "why": "design: with no meteorites the quantum bridge's singularity is an endgame GregTech assembler recipe after the ME controller"
+    },
+    {
+      "item": "i:sophisticatedstorage:stack_upgrade_tier_1",
+      "requires": [
+        "#i:c:ingots/steel"
+      ],
+      "why": "design: stack upgrades multiply stack limits, so TFC's item size limits hold until steel (tier 1 steel, tier 3 titanium, tier 5 iridium)"
+    },
+    {
+      "item": "i:sophisticatedstorage:stack_upgrade_tier_3",
+      "requires": [
+        "#i:c:ingots/titanium"
+      ],
+      "why": "design: stack upgrades multiply stack limits, so the larger multipliers sit at GregTech's mid and late tiers"
     },
     {
       "item": "aeronautics:*_envelope",

@@ -1,0 +1,5 @@
+# Pinned by the pack (docs/design.md, "AE2"): only this key. AE2 writes every other key back with its own defaults.
+[crafting]
+	#If enabled, an annihilation plane placed face up at the maximum world height will generate sky stone passively.
+	#The pack makes sky dust in a GregTech mixer instead (kubejs/server_scripts/compat/ae2.js).
+	annihilationPlaneSkyDustGeneration = false

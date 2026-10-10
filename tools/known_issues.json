@@ -264,6 +264,50 @@
     {
       "pattern": "^net\\.minecraft\\.world\\.level\\.chunk\\.LevelChunk: Tried to load a block entity for block Block\\{tfc:thatch_bed\\}\\[.*part=foot\\] but failed at location",
       "note": "TFC's thatch bed is an entity block whose foot half has no block entity; this is logged whenever a thatch bed is placed during world generation (the pack's structure skin turns villages' vanilla beds into thatch beds). The bed works"
+    },
+    {
+      "pattern": "^net\\.neoforged\\.fml\\.common\\.asm\\.RuntimeDistCleaner: Attempted to load class (com/mojang/blaze3d/systems/RenderSystem|com/lowdragmc/lowdraglib2/gui/ui/ModularUI\\$ModularUIWidget) for invalid dist DEDICATED_SERVER",
+      "note": "client-only classes that a mixin of Strut Your Stuff (a RenderSystem accessor) and of LDLib2 (a ModularUI widget) name; both mods ship the mixin on both sides and it simply doesn't apply on a dedicated server"
+    },
+    {
+      "pattern": "^mixin: (Error loading class: (com/mojang/blaze3d/systems/RenderSystem|com/lowdragmc/lowdraglib2/gui/ui/ModularUI\\$ModularUIWidget) |@Mixin target com\\.mojang\\.blaze3d\\.systems\\.RenderSystem was not found struts)",
+      "note": "the same client-only mixin targets of Strut Your Stuff and LDLib2, seen from the mixin side; skipped on a dedicated server"
+    },
+    {
+      "pattern": "^dev\\.ryanhcode\\.sable\\.Sable: Error while loading physics block properties entry: .*\"elasticity\"",
+      "note": "one file under data/createthrusters/physics_block_properties/ in Create Aeronautics: Gadgets & Gizmos 2.0.0-Beta-2 ({mass, friction, elasticity} with no selector, a beta bug) doesn't parse; Sable skips it and the other 120 or so entries load; the listing needs the file name to say which block loses its mass"
+    },
+    {
+      "pattern": "^mixin: Error loading class: (com/verr1/synaxis/|de/mrjulsen/crn/|dev/propulsionteam/propulsionsimulated/content/thruster/(liquid_vector|creative)_thruster/)",
+      "note": "Gadgets & Gizmos 2.0.0-Beta-2's optional compat mixins name classes of Synaxis, Create Railways Navigator and of Create Propulsion builds with other class names than 1.1.5; they are conditional and skipped, which only leaves those compatibilities off"
+    },
+    {
+      "pattern": "^com\\.rieno\\.gadgetsandgizmos\\.mixin\\.CTMixinConfigPlugin: \\[G&G\\]\\[Compat\\]",
+      "note": "Gadgets & Gizmos telling which of its optional compat mixins it applied at early bootstrap"
+    },
+    {
+      "pattern": "^com\\.cake\\.azimuth\\.Azimuth: Azimuth is present!",
+      "note": "a notice about Tracks+ (a Create trains fork the pack doesn't have)"
+    },
+    {
+      "pattern": "^com\\.kipti\\.bnb\\.CreateBitsnBobs: Bits 'n' bobs is replacing cogwheel assets inside Create: Connected",
+      "note": "an informational line: Bits 'n' Bobs remaps Create: Connected's cogwheel models to wooden materials"
+    },
+    {
+      "pattern": "^KubeJS Server: RecipeComponent\\.java#160: Failed to read component 'category: crafting_book_category\\?' from recipe createthrusters:",
+      "note": "three Gadgets & Gizmos shapeless recipes name a recipe-book category this Minecraft doesn't have; KubeJS falls back to the default one, the recipes load"
+    },
+    {
+      "pattern": "^KubeJS Server: RecipeComponentValue\\.java#102: Failed to parse recipe 'bellsandwhistles:metro/metro_window",
+      "note": "Bells & Whistles' metro window asks for the empty tag c:glass; compat/create_addons.js replaces the recipe with c:glass_blocks"
+    },
+    {
+      "pattern": "^dev\\.propulsionteam\\.propulsionsimulated\\.content\\.thruster\\.ThrusterFuelManager: \\[createpropulsion\\] Ignoring fuel config override for '.*': fluid is not registered",
+      "note": "Create Propulsion's default fuel list names fluids of mods that aren't in the pack (TFMG, Mekanism, Immersive Engineering, Northstar ...)"
+    },
+    {
+      "pattern": "^mixin: Method overwrite conflict for (getTemperature|removeIf) in lithium\\.mixins\\.json:",
+      "note": "Lithium and ModernFix overlap on these fixes and Lithium's copy applies (docs/design.md, Performance)"
     }
   ]
 }
