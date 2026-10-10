@@ -1,0 +1,8 @@
+{
+  "type": "computercraft:tool",
+  "adjective": {
+    "text": "Aluminium"
+  },
+  "breakable": "computercraft:turtle_shovel_harvestable",
+  "item": "gtceu:aluminium_shovel"
+}

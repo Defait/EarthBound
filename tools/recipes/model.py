@@ -28,9 +28,11 @@ STATE_ONLY = {"tfc:not_rotten", "tfc:lacks_trait", "tfc:has_trait", "tfc:heatabl
 ITEM_INPUT_KEYS = ["ingredient", "ingredients", "input", "base", "template", "addition", "first_input", "second_input",
                    "input_item", "catalyst", "mold",
                    # block the recipe works on (ArborFirmaCraft tree tapping, Roads and Roofs block_mod) and Framed Blocks' extra parts
-                   "input_block", "additives"]
+                   "input_block", "additives",
+                   # ExtendedAE's crystal assembler (a list of {ingredient, amount}) and crystal fixer (the dust it burns)
+                   "input_items", "fuel"]
 FLUID_INPUT_KEYS = ["fluid", "input_fluid", "fluid_ingredient", "primary_fluid", "added_fluid", "contents"]
-ITEM_OUTPUT_KEYS = ["result", "results", "output", "item_output", "result_item", "output_item", "sealed_result", "unsealed_result",
+ITEM_OUTPUT_KEYS = ["result", "results", "output", "outputs", "item_output", "result_item", "output_item", "sealed_result", "unsealed_result",
                     "output_block"]
 FLUID_OUTPUT_KEYS = ["result_fluid", "fluid_output", "output_fluid"]
 NOT_CONSUMED_KEYS = {"mold", "catalyst"}
@@ -244,7 +246,8 @@ class Dump:
         if kind.startswith("minecraft:crafting_special") or kind in ("minecraft:crafting_decorated_pot",):
             r["skip"] = "special (dynamic) crafting"
             return r
-        if "inputs" in j or "outputs" in j or "tickInputs" in j:
+        # GregTech's capability maps are dicts; other mods' "outputs" are plain lists (Complicated Bees' centrifuge)
+        if isinstance(j.get("inputs"), dict) or isinstance(j.get("outputs"), dict) or "tickInputs" in j:
             self._parse_gt(j, r)
         else:
             self._parse_generic(j, r)
@@ -291,9 +294,9 @@ class Dump:
                 # AE2's inscriber: top/bottom are presses that inscribing leaves in place, 'press' mode uses everything up
                 for part, ing in v.items():
                     r["slots"].append(self._slot(ing, part, consumed=j.get("mode") == "press" or part == "middle"))
-            elif key in ("ingredients", "additives") and isinstance(v, list):
+            elif key in ("ingredients", "additives", "input_items") and isinstance(v, list):
                 for ing in v:
-                    is_fluid = isinstance(ing, dict) and ("amount" in ing or ing.get("type") in ("neoforge:single", "neoforge:tag", "tfc:fluid_content"))
+                    is_fluid = key != "input_items" and isinstance(ing, dict) and ("amount" in ing or ing.get("type") in ("neoforge:single", "neoforge:tag", "tfc:fluid_content"))
                     r["slots"].append(self._slot(ing, key, fluid=is_fluid))
             else:
                 r["slots"].append(self._slot(v, key, consumed=key not in NOT_CONSUMED_KEYS))

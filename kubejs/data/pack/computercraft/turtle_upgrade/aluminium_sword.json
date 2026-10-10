@@ -1,0 +1,9 @@
+{
+  "type": "computercraft:tool",
+  "adjective": {
+    "text": "Aluminium"
+  },
+  "breakable": "computercraft:turtle_sword_harvestable",
+  "damageMultiplier": 9.0,
+  "item": "gtceu:aluminium_sword"
+}

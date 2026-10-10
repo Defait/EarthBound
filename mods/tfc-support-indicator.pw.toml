@@ -1,0 +1,13 @@
+name = "TFC Support Indicator"
+filename = "tfc_support_indicator-1.0.7+mc1.21.1.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/RL8eBaUL/versions/MqLGbPEr/tfc_support_indicator-1.0.7%2Bmc1.21.1.jar"
+hash-format = "sha512"
+hash = "a48ca5969b5a46f8618590ed540938ca043b0b960eb264fc4ce156e1d1f537274a15837277fd74c48111e89b11ee8528188d4f851892105e657ed215880ef1c9"
+
+[update]
+[update.modrinth]
+mod-id = "RL8eBaUL"
+version = "MqLGbPEr"

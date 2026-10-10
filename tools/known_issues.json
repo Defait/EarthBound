@@ -308,6 +308,18 @@
     {
       "pattern": "^mixin: Method overwrite conflict for (getTemperature|removeIf) in lithium\\.mixins\\.json:",
       "note": "Lithium and ModernFix overlap on these fixes and Lithium's copy applies (docs/design.md, Performance)"
+    },
+    {
+      "pattern": "^(net\\.neoforged\\.fml\\.common\\.asm\\.RuntimeDistCleaner: Attempted to load class net/minecraft/client/gui/screens/inventory/AbstractContainerScreen for invalid dist DEDICATED_SERVER|mixin: (Error loading class: net/minecraft/client/gui/screens/inventory/AbstractContainerScreen|@Mixin target net\\.minecraft\\.client\\.gui\\.screens\\.inventory\\.AbstractContainerScreen was not found ae2importexportcard))",
+      "note": "AE2 Import Export Card lists an accessor mixin into a client screen in its common mixin config, so a dedicated server logs that it can't load the class; the accessor only matters on clients, where it applies"
+    },
+    {
+      "pattern": "^mixin: (Error loading class: com/buuz135/functionalstorage/world/EnderSavedData|@Mixin target com\\.buuz135\\.functionalstorage\\.world\\.EnderSavedData was not found mixins\\.extendedae)",
+      "note": "ExtendedAE's optional compat mixin into Functional Storage's ender storage, a mod that isn't in the pack; conditional, so the compat is simply off"
+    },
+    {
+      "pattern": "^net\\.minecraft\\.world\\.level\\.storage\\.loot\\.LootDataType: Couldn't parse element ResourceKey\\[minecraft:root / minecraft:loot_table\\]:extendedae:blocks/ex_emc_interface - Unknown registry key in ResourceKey\\[minecraft:root / minecraft:item\\]: extendedae:ex_emc_interface$",
+      "note": "ExtendedAE ships a block loot table for its EMC interface, a block it registers only with ProjectE and AppliedE installed (neither is in the pack); no block, nothing drops it"
     }
   ]
 }

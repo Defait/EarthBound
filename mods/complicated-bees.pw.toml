@@ -1,0 +1,13 @@
+name = "Complicated Bees"
+filename = "complicated_bees-1.21.1-3.6.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/uhqEKIQS/versions/mgIcHfld/complicated_bees-1.21.1-3.6.2.jar"
+hash-format = "sha512"
+hash = "2054964f8a52a15ace2bdeda839fd20f2a7f72b005557405aa1e46394bdcc7dc7f88852c03ad72cc42deec0c5b71d3acbb419a86909ed2185fad8fd0bca88b03"
+
+[update]
+[update.modrinth]
+mod-id = "uhqEKIQS"
+version = "mgIcHfld"

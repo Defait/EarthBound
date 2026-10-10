@@ -60,6 +60,10 @@ ALLOWED = [
     (r"^lootr:chests/elytra$", "Lootr's End-ship elytra chest; there is no End", ["lootr"]),
     (r"^lootr:reward/trophy$", "Lootr's cosmetic trophy block (an advancement reward); not a resource", ["lootr"]),
     (r"^lootr:entity/item_frame_empty$", "an empty table (Lootr item frames)", ["lootr"]),
+    (r"^sophisticatedbackpacks:inject/chests/",
+     "Sophisticated Backpacks' chest injections (backpacks and upgrades in dungeon, mansion and shipwreck chests): tables its global loot modifiers "
+     "add to vanilla chests, and the pack's global_loot_modifiers.json replaces that list and keeps none of them; chestLootEnabled is off as well "
+     "(config/sophisticatedbackpacks-common.toml)", ["sophisticatedbackpacks"]),
 ]
 
 

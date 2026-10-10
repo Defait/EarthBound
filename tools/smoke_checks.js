@@ -83,3 +83,25 @@ ServerEvents.loaded(event => {
   birdErrors.forEach(e => console.error(`[smoke-checks] Fowl Play: ${e}`))
   if (birdErrors.length) throw new Error(`[smoke-checks] Fowl Play: ${birdErrors.length} bird(s) don't spawn by TFC's climate rule`)
 })
+
+// Complicated Bees' crafted nests (kubejs/server_scripts/compat/complicated_bees.js): a nest item carries its
+// species in the block entity data the mod's own item and block read (BeeNestBlockItem, BeeNestBlock). A
+// nest without it would place a speciesless nest, so check each recipe's result.
+ServerEvents.loaded(event => {
+  var $ResourceLocation2 = Java.loadClass('net.minecraft.resources.ResourceLocation')
+  var $DataComponents = Java.loadClass('net.minecraft.core.component.DataComponents')
+  var recipes = event.server.getRecipeManager()
+  var bad = []
+  ;['forest', 'plains', 'desert', 'jungle'].forEach(species => {
+    var holder = recipes.byKey($ResourceLocation2.parse(`pack:complicated_bees/${species}_nest`))
+    if (!holder.isPresent()) { bad.push(`${species}: recipe missing`); return }
+    var out = holder.get().value().getResultItem(event.server.registryAccess())
+    var data = out.get($DataComponents.BLOCK_ENTITY_DATA)
+    var tag = data ? data.copyTag() : null
+    var found = tag ? String(tag.getString('species')) : ''
+    console.info(`[smoke-checks] bee nest ${species}: ${out.getHoverName().getString()} species=${found}`)
+    if (found !== `complicated_bees:${species}`) bad.push(`${species}: block entity data ${tag}`)
+  })
+  bad.forEach(b => console.error(`[smoke-checks] bee nest: ${b}`))
+  if (bad.length) throw new Error(`[smoke-checks] bee nest: ${bad.length} wrong`)
+})

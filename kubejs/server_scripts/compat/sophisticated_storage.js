@@ -21,6 +21,8 @@
 //   containers) ask for #c:barrels/wooden, which held only the vanilla barrel (a GregTech assembler part,
 //   step 38): Sophisticated Storage adds its plain barrel to the tag, planks and a lever, and those
 //   recipes dropped by 25 steps. The barrel is taken out of the tag again, so they sit where they did.
+// - Sophisticated Backpacks' stack upgrades convert into these and back through the mod's own recipes, so they
+//   sit on the same rungs (compat/sophisticated_backpacks.js).
 // - Left as they are, unreachable on purpose: shulker boxes (the shell is End-only), the alchemy and
 //   feeding upgrades (ghast tear, fermented spider eye, golden apple, glistering melon: Nether) and the
 //   ender linker (blaze rods).

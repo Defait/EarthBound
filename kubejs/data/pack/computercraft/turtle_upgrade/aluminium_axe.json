@@ -1,0 +1,8 @@
+{
+  "type": "computercraft:tool",
+  "adjective": {
+    "text": "Aluminium"
+  },
+  "damageMultiplier": 6.0,
+  "item": "gtceu:aluminium_axe"
+}

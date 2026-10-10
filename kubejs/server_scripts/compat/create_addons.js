@@ -39,6 +39,15 @@
 // - Create: Enchantment Industry: vanilla enchanting is not a gate here (design.md, "Villagers"), so the
 //   mod is left as it is: its grindstone, printer, experience fluid and bottles work; the blaze enchanter
 //   and forger need a blaze burner and stay unreachable.
+// - Create Horse Power: a crank turned by a wolf, cow or horse walking in a circle (128, 256 and 512 stress
+//   units at 4 RPM, the server config's defaults). The mod's own recipe sits in a data folder 1.21 does not
+//   read ("recipes", not "recipe"), so the crank had no recipe at all; it is added here with its ingredients
+//   in the pack's terms: any wooden fence, a Create cogwheel and three stones (any rock, TFC's included).
+//   The cogwheel is andesite alloy (step 7), so the crank sits level with the water wheel (11), after
+//   Create's own gate and not before it: nothing a crank drives (shafts, cogwheels, millstones, presses)
+//   can be built without andesite alloy either, and the crank itself needs the cogwheel. It is not a way
+//   round the nugget gate, only a second early source of rotation; a wolf or cow needs a lead and a path of
+//   dirt or gravel. No animal power is faster than the water wheel's.
 
 ServerEvents.recipes(event => {
   event.remove({ mod: 'woodencog', output: 'create:andesite_alloy' })
@@ -74,6 +83,11 @@ ServerEvents.recipes(event => {
   // Bells & Whistles' metro window asks for the glass tag that is empty; the blocks tag is the one with glass
   event.remove({ id: 'bellsandwhistles:metro/metro_window' })
   event.shapeless('6x bellsandwhistles:metro_window', ['bellsandwhistles:metro_casing', '#c:glass_blocks']).id('pack:bellsandwhistles/metro_window')
+
+  // Create Horse Power: the crank's recipe (the mod's file is in a folder 1.21 does not load)
+  event.shaped('createhorsepower:horse_crank', [' F ', ' C ', 'SSS'], {
+    F: '#c:fences/wooden', C: 'create:cogwheel', S: '#c:stones'
+  }).id('pack:createhorsepower/horse_crank')
 
   // coin mint: one ingot, one coin (spur, bevel, sprocket)
   var coins = { spur: 'copper', bevel: 'bronze', sprocket: 'brass' }

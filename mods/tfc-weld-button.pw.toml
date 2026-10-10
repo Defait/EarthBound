@@ -1,0 +1,13 @@
+name = "TFC Weld Button"
+filename = "TFCWeldButton-NeoForge-1.21.1-2.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/K9CZ9PGx/versions/38S6qrZk/TFCWeldButton-NeoForge-1.21.1-2.0.jar"
+hash-format = "sha512"
+hash = "a9cf55586f0462fbb8545e1a5693cac387afb53c298348fa6558d588b6aa22deaa225f41727ca8aa7a2fee9b77ac38d2112f6c7526f26fa5f13aadbf7c577630"
+
+[update]
+[update.modrinth]
+mod-id = "K9CZ9PGx"
+version = "38S6qrZk"

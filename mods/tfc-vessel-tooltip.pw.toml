@@ -1,0 +1,13 @@
+name = "TFC Vessel Tooltip"
+filename = "TFCVesselTooltip-NeoForge-1.21.1-2.0.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/Xve2AFV9/versions/O3aknHl9/TFCVesselTooltip-NeoForge-1.21.1-2.0.jar"
+hash-format = "sha512"
+hash = "51622133939895584c7b03ed94c612e2603905d1c7b673f75af67e4ba2f0974d72d18d0ea0fdbd51ed08bdd1eeec67b3915571be2546cbc03812c36148c151cc"
+
+[update]
+[update.modrinth]
+mod-id = "Xve2AFV9"
+version = "O3aknHl9"

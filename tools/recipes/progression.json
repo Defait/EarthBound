@@ -320,7 +320,34 @@
     "create:sandpaper_polishing": [],
     "create:sequenced_assembly": {
       "steps": true
-    }
+    },
+    "extendedae:crystal_assembler": [
+      "extendedae:crystal_assembler",
+      "world:power/electric"
+    ],
+    "extendedae:circuit_cutter": [
+      "extendedae:circuit_cutter",
+      "world:power/electric"
+    ],
+    "extendedae:crystal_fixer": [
+      "extendedae:crystal_fixer",
+      "world:power/electric"
+    ],
+    "complicated_bees:centrifuge": [
+      "complicated_bees:centrifuge"
+    ],
+    "complicated_bees:hydroregulator": [
+      "complicated_bees:mellarium_hydroregulator"
+    ],
+    "complicated_bees:temp_unit": [
+      "complicated_bees:mellarium_temp_unit"
+    ],
+    "complicated_bees:mutator": [
+      "complicated_bees:mellarium_mutator"
+    ],
+    "complicated_bees:honey_generator": [
+      "complicated_bees:honey_generator"
+    ]
   },
   "actions": [
     {
@@ -465,6 +492,69 @@
         "f:gtceu:steam"
       ],
       "why": "a GregTech solid boiler burning logs or charcoal, or a solar boiler in the sun, makes steam"
+    },
+    {
+      "id": "entroize_fluix",
+      "inputs": [
+        [
+          "extendedae:entro_seed"
+        ],
+        [
+          "ae2:fluix_block"
+        ]
+      ],
+      "outputs": [
+        "extendedae:entro_budding_mostly"
+      ],
+      "why": "ExtendedAE's guide: right-click a fluix block with an entro seed to make entroized fluix budding (its crystal assembler makes a lower grade)"
+    },
+    {
+      "id": "grow_entro",
+      "inputs": [
+        [
+          "extendedae:entro_budding_*"
+        ]
+      ],
+      "outputs": [
+        "extendedae:entro_shard",
+        "extendedae:entro_dust"
+      ],
+      "why": "entroized budding grows entro clusters on its faces (like AE2's certus budding); a large cluster drops shards, the budding block itself dust"
+    },
+    {
+      "id": "break_bee_nest",
+      "inputs": [
+        [
+          "complicated_bees:bee_nest"
+        ]
+      ],
+      "outputs": [
+        "complicated_bees:princess",
+        "complicated_bees:drone",
+        "complicated_bees:comb"
+      ],
+      "why": "breaking a wild nest (the pack's crafted ones too) without silk touch drops a princess, drones and combs (its loot table)"
+    },
+    {
+      "id": "keep_bees",
+      "inputs": [
+        [
+          "complicated_bees:apiary"
+        ],
+        [
+          "complicated_bees:princess"
+        ],
+        [
+          "complicated_bees:drone"
+        ]
+      ],
+      "outputs": [
+        "complicated_bees:queen",
+        "complicated_bees:comb",
+        "complicated_bees:propolis",
+        "complicated_bees:pollen"
+      ],
+      "why": "a princess and a drone in an apiary make a queen, which produces combs and propolis in time (genetics and the other products aren't modelled)"
     }
   ],
   "heat": {
@@ -871,6 +961,147 @@
         "#i:c:ingots/steel"
       ],
       "why": "design: Roads and Roofs mattocks follow TFC's tool tiers (steel mattock needs TFC steel)"
+    },
+    {
+      "item": "i:sophisticatedbackpacks:stack_upgrade_starter_tier",
+      "requires": [
+        "#i:c:ingots/aluminium"
+      ],
+      "why": "design: backpack stack upgrades sit on Sophisticated Storage's GregTech ladder (rung for rung, starter (x2) aluminium), so TFC's item size limits hold and its conversion recipes undercut nothing"
+    },
+    {
+      "item": "i:sophisticatedbackpacks:stack_upgrade_tier_1",
+      "requires": [
+        "#i:c:ingots/stainless_steel"
+      ],
+      "why": "design: backpack stack upgrades sit on Sophisticated Storage's GregTech ladder (rung for rung, tier 1 stainless steel), so TFC's item size limits hold and its conversion recipes undercut nothing"
+    },
+    {
+      "item": "i:sophisticatedbackpacks:stack_upgrade_tier_2",
+      "requires": [
+        "#i:c:ingots/titanium"
+      ],
+      "why": "design: backpack stack upgrades sit on Sophisticated Storage's GregTech ladder (rung for rung, tier 2 titanium), so TFC's item size limits hold and its conversion recipes undercut nothing"
+    },
+    {
+      "item": "i:sophisticatedbackpacks:stack_upgrade_tier_3",
+      "requires": [
+        "#i:c:ingots/tungsten_steel"
+      ],
+      "why": "design: backpack stack upgrades sit on Sophisticated Storage's GregTech ladder (rung for rung, tier 3 tungsten steel), so TFC's item size limits hold and its conversion recipes undercut nothing"
+    },
+    {
+      "item": "i:sophisticatedbackpacks:stack_upgrade_tier_4",
+      "requires": [
+        "#i:c:ingots/iridium"
+      ],
+      "why": "design: backpack stack upgrades sit on Sophisticated Storage's GregTech ladder (rung for rung, tier 4 iridium), so TFC's item size limits hold and its conversion recipes undercut nothing"
+    },
+    {
+      "item": "i:sophisticatedbackpacks:netherite_backpack",
+      "requires": [
+        "#i:c:ingots/red_steel"
+      ],
+      "why": "design: no netherite here; the top backpack takes red steel as Sophisticated Storage's netherite chest does"
+    },
+    {
+      "item": "i:megacells:item_storage_cell_1m",
+      "requires": [
+        "i:ae2:cell_component_256k"
+      ],
+      "why": "design: MEGA cells come after the AE2 cells they supersede (256k components); the accumulation press needs the singularity, ExtendedAE's circuit cutter prints without it"
+    },
+    {
+      "item": "i:ae2wtlib:quantum_bridge_card",
+      "requires": [
+        "i:ae2:singularity"
+      ],
+      "why": "design: the quantum bridge card takes an entangled singularity, so it comes after the singularity (EV assembler)"
+    },
+    {
+      "item": "i:computercraft:computer_normal",
+      "requires": [
+        "i:gtceu:basic_electronic_circuit"
+      ],
+      "why": "design: computers are electronics, a GregTech circuit in the middle (compat/computercraft.js)"
+    },
+    {
+      "item": "i:computercraft:turtle_normal",
+      "requires": [
+        "#i:c:plates/steel"
+      ],
+      "why": "design: turtles are a computer in a steel casing (compat/computercraft.js)"
+    },
+    {
+      "item": "i:complicated_bees:apiary",
+      "requires": [
+        "#i:c:ingots/wrought_iron"
+      ],
+      "why": "design: bees start in the iron age (an apiary takes an iron ingot; the nest is crafted with hide glue, compat/complicated_bees.js)"
+    },
+    {
+      "item": "i:createhorsepower:horse_crank",
+      "requires": [
+        "i:create:andesite_alloy"
+      ],
+      "why": "design: Create's gate is andesite alloy; the horse crank is built on a cogwheel, so it opens nothing sooner"
+    },
+    {
+      "item": "i:sophisticatedbackpacks:backpack",
+      "requires": [
+        "#i:c:ingots/wrought_iron"
+      ],
+      "why": "design: the base backpack is an iron-age good (two wrought iron ingots), so stone, copper and bronze keep TFC's carrying limits"
+    },
+    {
+      "item": "i:megacells:accumulation_processor",
+      "requires": [
+        "i:megacells:accumulation_processor_press",
+        "i:ae2:singularity"
+      ],
+      "why": "design: MEGA cells start at their own press, a singularity between two of AE2's presses; ExtendedAE's circuit cutter recipe for the processor is removed"
+    },
+    {
+      "item": "i:gtceu:aluminium_pickaxe",
+      "requires": [
+        "#i:c:ingots/aluminium"
+      ],
+      "why": "design: turtle tool upgrades are GregTech aluminium tools (compat/computercraft.js), so a mining or farming turtle comes at MV, after electricity and Create's automation"
+    },
+    {
+      "item": "i:gtceu:aluminium_axe",
+      "requires": [
+        "#i:c:ingots/aluminium"
+      ],
+      "why": "design: turtle tool upgrades are GregTech aluminium tools (compat/computercraft.js), so a mining or farming turtle comes at MV, after electricity and Create's automation"
+    },
+    {
+      "item": "i:gtceu:aluminium_shovel",
+      "requires": [
+        "#i:c:ingots/aluminium"
+      ],
+      "why": "design: turtle tool upgrades are GregTech aluminium tools (compat/computercraft.js), so a mining or farming turtle comes at MV, after electricity and Create's automation"
+    },
+    {
+      "item": "i:gtceu:aluminium_hoe",
+      "requires": [
+        "#i:c:ingots/aluminium"
+      ],
+      "why": "design: turtle tool upgrades are GregTech aluminium tools (compat/computercraft.js), so a mining or farming turtle comes at MV, after electricity and Create's automation"
+    },
+    {
+      "item": "i:gtceu:aluminium_sword",
+      "requires": [
+        "#i:c:ingots/aluminium"
+      ],
+      "why": "design: turtle tool upgrades are GregTech aluminium tools (compat/computercraft.js), so a mining or farming turtle comes at MV, after electricity and Create's automation"
+    },
+    {
+      "item": "i:complicated_bees:beeswax",
+      "requires": [
+        "i:complicated_bees:centrifuge"
+      ],
+      "why": "design: the mod's centrifuge gives only wax and honey from a comb; resources come from GregTech macerator recipes of the comb's tier (compat/complicated_bees.js)"
     }
   ],
   "milestones": [

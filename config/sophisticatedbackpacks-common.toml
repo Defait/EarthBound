@@ -1,0 +1,4 @@
+# Sophisticated Backpacks: no backpacks or upgrades in structure chests (docs/design.md, "Sophisticated Backpacks"; the pack's loot lane replaces the
+# global loot modifiers that inject them as well, kubejs/data/neoforge/loot_modifiers/global_loot_modifiers.json).
+[common]
+	chestLootEnabled = false
