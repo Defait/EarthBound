@@ -20,15 +20,19 @@
 //   tier 4 iridium (80), omega nine of those (81). The conversions between tiers use the same ingredients,
 //   so they follow; if they did not, the cheap backpack route would undercut the storage one through the
 //   mod's own conversion recipes. Up to three stack upgrades per backpack (server config).
-// - TFC's size and weight rules: a TFC chest takes nothing larger than "large" (tfc-server.toml,
-//   chestMaximumItemSize), and carrying many very heavy things overburdens a player, counting the player's
-//   own inventory only. A backpack on the back is neither. config/sophisticatedbackpacks-server.toml lists
-//   every TFC item larger than "large" that is not a tool (anvils, large vessels, mold tables, water wheels,
-//   windmill blades, looms, sluices, minecarts and so on) as not allowed in a backpack, so the one thing a
-//   chest refuses it refuses too. Tools stay allowed (TFC's size for them is "very large", but spare tools
-//   are what a backpack is for); the overburden rule still counts the tools and heavy items a player holds
-//   directly. Sophisticated Storage's chests, barrels and limited barrels cannot be given the same rule: its
-//   server config has a disallowed-items list for shulker boxes only (see design.md, "Open questions"). Delete the list to drop the rule here.
+// - TFC's size and weight rules: a TFC chest refuses every item larger than the server config's
+//   chestMaximumItemSize ("large": no log, door, boat, barrel, anvil, large vessel, and no tool but the knife and
+//   chisel), and carrying many very heavy things overburdens a player, counting the player's own inventory only.
+//   A backpack on the back is neither. The pack's own mod (mod/, pack_world 1.5.0, StorageSizeMixin) makes the
+//   inventory under every Sophisticated Backpack and every Sophisticated Storage block refuse what TFC's chest
+//   refuses, by calling TFC's own check (TFCChestBlockEntity.isValid: ItemSizeManager's size of the stack against
+//   that config value), so there is no list and the rule follows TFC's config and any item TFC sizes. Taking
+//   things out is unaffected, so what a storage already held stays retrievable. The overburden rule still
+//   counts what the player carries directly. An earlier hand-kept list of 599 ids is gone.
+//   Tools and weapons are the exception, for backpacks only (the mixin matches the handler's class by name): the c:tools
+//   item tag (TFC's, GregTech's, vanilla-style and AE2's tools, shields and bows; no buckets, anvils or machines) goes in a
+//   backpack although TFC sizes them "very large" and a chest refuses them, since spares are what a backpack is for and the
+//   tool swapper upgrade swaps from them. Sophisticated Storage's blocks keep matching a TFC chest exactly.
 // - Tool swapper: wooden tools in its recipe are the vanilla ones, which TFC worlds lack; any tool of the
 //   kind does.
 // - Left as they are, unreachable on purpose: the feeding upgrades (golden apple, golden carrot and

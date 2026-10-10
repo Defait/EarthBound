@@ -21,6 +21,8 @@
 //   containers) ask for #c:barrels/wooden, which held only the vanilla barrel (a GregTech assembler part,
 //   step 38): Sophisticated Storage adds its plain barrel to the tag, planks and a lever, and those
 //   recipes dropped by 25 steps. The barrel is taken out of the tag again, so they sit where they did.
+// - TFC's chest size rule applies to the storage blocks too (pack_world's StorageSizeMixin, see
+//   compat/sophisticated_backpacks.js): nothing a TFC chest refuses goes in a chest, barrel, limited barrel or shulker box.
 // - Sophisticated Backpacks' stack upgrades convert into these and back through the mod's own recipes, so they
 //   sit on the same rungs (compat/sophisticated_backpacks.js).
 // - Left as they are, unreachable on purpose: shulker boxes (the shell is End-only), the alchemy and

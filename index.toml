@@ -121,10 +121,6 @@ file = "config/sophisticatedbackpacks-common.toml"
 hash = "644fe65e270fa270b386f8a67600d44b31f87e18dd4da508baafb40f74391faf"
 
 [[files]]
-file = "config/sophisticatedbackpacks-server.toml"
-hash = "31c3592c2fab733a712f020bdca1eac5be40f8546cedfb02c44ecffbb361c1d6"
-
-[[files]]
 file = "config/tfc-common.toml"
 hash = "3729ca58516f4114b8f8929a89bdcfcd2f1397ac646e7da291361276a0880401"
 
@@ -3790,11 +3786,11 @@ hash = "3f6ab58a5f1007cc2deaa309a72cf3e3b43c591591200084a80083b6637f693b"
 
 [[files]]
 file = "kubejs/server_scripts/compat/sophisticated_backpacks.js"
-hash = "33edff9678dac820ec8f7e8c1a10d96098f55c8064842909f88bf68bfde3118a"
+hash = "f54085af3acc8dd945796ff37fa27a281646dd77adf800220289384b602bc7b1"
 
 [[files]]
 file = "kubejs/server_scripts/compat/sophisticated_storage.js"
-hash = "4792d9ed9848a3d37db53cb580697a32357ccc24ed6e47bf29d0b24628ccc720"
+hash = "d87786d085c0d38e08f5536d800d9159938f86569352397a54625fcf3f038087"
 
 [[files]]
 file = "kubejs/server_scripts/compat/vanilla_substitutes.js"
@@ -4314,8 +4310,8 @@ hash = "840eb517a83c586b9f543ab9781d4c8529b6fedf2d679f411577c7a583e50fe5"
 metafile = true
 
 [[files]]
-file = "mods/pack_world-1.4.0.jar"
-hash = "bd1cb2d9cf00b60398cda3eae13a338493c0c81891eeaaaaf438b35dc1c16b3a"
+file = "mods/pack_world-1.5.0.jar"
+hash = "a42de04b33de1288c338a9428df8f2c602fe2a46d39127cce75715707c111ca2"
 
 [[files]]
 file = "mods/particular-reforged.pw.toml"

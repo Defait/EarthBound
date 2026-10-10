@@ -12,7 +12,8 @@ description = '''
 The pack's structure helpers: structures built from local TFC rock, wood and soil, Easy NPC data
 cleaned up when structures place NPCs, ancient sites at their real latitude and longitude
 (TFC: Real World), the structure skin that turns other mods' structures into local TFC
-materials after they are placed, and TFC's oceans made deeper inside the world's height.
+materials after they are placed, TFC's oceans made deeper inside the world's height, and Sophisticated
+Storage's and Backpacks' storage refusing what a TFC chest refuses.
 '''
 
 [[mixins]]
@@ -36,5 +37,12 @@ side = "BOTH"
 modId = "tfc_real_world"
 type = "optional"
 versionRange = "[4.2.0,4.3)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.pack_world]]
+modId = "sophisticatedcore"
+type = "optional"
+versionRange = "[1.5.0,)"
 ordering = "AFTER"
 side = "BOTH"

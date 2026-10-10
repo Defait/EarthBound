@@ -105,3 +105,61 @@ ServerEvents.loaded(event => {
   bad.forEach(b => console.error(`[smoke-checks] bee nest: ${b}`))
   if (bad.length) throw new Error(`[smoke-checks] bee nest: ${bad.length} wrong`)
 })
+
+// Sophisticated Storage and Backpacks refuse what a TFC chest refuses (mod/ pack_world, StorageSizeMixin; docs/design.md,
+// "Sophisticated Backpacks"). Through the item handler a hopper, a Create funnel or AE2 would use: oversized TFC items (a log, an
+// anvil, a large vessel) are refused by a chest, a barrel, a limited barrel, a shulker box and a backpack's inventory, ordinary ones
+// are taken, and an oversized item a storage already holds can be taken out.
+ServerEvents.loaded(event => {
+  event.server.scheduleInTicks(5, () => {
+    try {
+      var $Cap = Java.loadClass('net.neoforged.neoforge.capabilities.Capabilities$ItemHandler')
+      var $RL = Java.loadClass('net.minecraft.resources.ResourceLocation')
+      var $Reg = Java.loadClass('net.minecraft.core.registries.BuiltInRegistries')
+      var level = event.server.overworld()
+      var base = level.getSharedSpawnPos().above(60)
+      level.getChunk(base)
+      var bad = []
+      var refuse = ['tfc:wood/log/oak', 'tfc:metal/anvil/bronze', 'tfc:ceramic/large_vessel']
+      var accept = ['tfc:metal/ingot/copper', 'tfc:ore/small_native_copper', 'tfc:powder/saltpeter']
+      var tools = ['tfc:metal/pickaxe/copper', 'gtceu:bronze_hammer', 'tfc:metal/sword/copper']
+      var probe = function (label, handler, inner, toolsOk) {
+        if (!handler) { bad.push(`${label}: no item handler`); return }
+        refuse.forEach(id => {
+          if (handler.insertItem(0, Item.of(id), true).getCount() !== 1) bad.push(`${label}: took ${id}`)
+          if (handler.isItemValid(0, Item.of(id))) bad.push(`${label}: isItemValid says yes for ${id}`)
+        })
+        accept.forEach(id => {
+          if (handler.insertItem(0, Item.of(id), true).getCount() !== 0) bad.push(`${label}: refused ${id}`)
+        })
+        tools.forEach(id => {
+          var left = handler.insertItem(0, Item.of(id), true).getCount()
+          if (toolsOk && left !== 0) bad.push(`${label}: refused the tool ${id}`)
+          if (!toolsOk && left !== 1) bad.push(`${label}: took the tool ${id}`)
+        })
+        // already inside: setStackInSlot is what loading a save does; taking it out must work
+        inner.setStackInSlot(0, Item.of('tfc:wood/log/oak'))
+        var out = handler.extractItem(0, 1, false)
+        if (out.isEmpty() || out.getItem().toString().indexOf('log') < 0) bad.push(`${label}: could not take out a log that was already inside`)
+      }
+      ;['sophisticatedstorage:chest', 'sophisticatedstorage:barrel', 'sophisticatedstorage:limited_barrel_1', 'sophisticatedstorage:shulker_box'].forEach((id, i) => {
+        var pos = base.offset(i * 3, 0, 0)
+        level.getChunk(pos)
+        level.setBlock(pos, $Reg.BLOCK.get($RL.parse(id)).defaultBlockState(), 3)
+        var h = level.getCapability($Cap.BLOCK, pos, null)
+        probe(id, h, level.getBlockEntity(pos).getStorageWrapper().getInventoryHandler(), false)
+        level.setBlock(pos, Block.getBlock('minecraft:air').defaultBlockState(), 3)
+      })
+      // a plain backpack stack has no item handler capability; its inventory handler is what pickup and magnet upgrades insert into
+      var pack = Item.of('sophisticatedbackpacks:backpack')
+      var packHandler = Java.loadClass('net.p3pp3rf1y.sophisticatedbackpacks.backpack.wrapper.BackpackWrapper').fromStack(pack).getInventoryHandler()
+      probe('sophisticatedbackpacks:backpack', packHandler, packHandler, true)
+      bad.forEach(b => console.error(`[smoke-checks] storage size: ${b}`))
+      console.info(`[smoke-checks] storage size: chest, barrel, limited barrel, shulker box and backpack checked, ${bad.length} wrong`)
+      if (bad.length) throw new Error(`[smoke-checks] storage size: ${bad.length} wrong`)
+    } catch (e) {
+      console.error(`[smoke-checks] storage size: check failed to run: ${e}`)
+      throw e
+    }
+  })
+})
