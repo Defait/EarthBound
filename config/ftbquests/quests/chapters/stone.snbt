@@ -181,6 +181,10 @@
 			dependencies: [
 				"4CCDA49060A81CA3"
 			]
+			icon: {
+				count: 1
+				id: "tfc:rock/loose/granite"
+			}
 			id: "36949F536D7AB789"
 			tasks: [
 				{
@@ -223,6 +227,10 @@
 				"4CCDA49060A81CA3"
 			]
 			hide_dependency_lines: true
+			icon: {
+				count: 1
+				id: "minecraft:stick"
+			}
 			id: "2BA6F65143A5B353"
 			tasks: [
 				{
@@ -372,6 +380,10 @@
 			dependencies: [
 				"713241BB5FF5A95F"
 			]
+			icon: {
+				count: 1
+				id: "tfc:wood/log/oak"
+			}
 			id: "4639037DE458ADC1"
 			tasks: [
 				{
@@ -417,6 +429,10 @@
 			dependencies: [
 				"4CCDA49060A81CA3"
 			]
+			icon: {
+				count: 1
+				id: "tfc:food/blueberry"
+			}
 			id: "5292CA411DA7DB85"
 			tasks: [
 				{
@@ -440,6 +456,10 @@
 				"4B98A0DD1B3B274A"
 				"5292CA411DA7DB85"
 			]
+			icon: {
+				count: 1
+				id: "tfc:food/cooked_beef"
+			}
 			id: "138251FC5C8DD73E"
 			tasks: [
 				{
@@ -478,7 +498,7 @@
 			]
 			icon: {
 				count: 1
-				id: "tfc:ceramic/pot"
+				id: "tfc:food/vegetables_soup"
 			}
 			id: "4FD6437348156D90"
 			tasks: [
@@ -513,7 +533,7 @@
 			]
 			icon: {
 				count: 1
-				id: "minecraft:apple"
+				id: "tfc:food/red_apple"
 			}
 			id: "5F4E5DDB4D7DEC95"
 			shape: "circle"
@@ -585,6 +605,11 @@
 				"1952386A42CCD531"
 			]
 			icon: {
+				components: {
+					"minecraft:potion_contents": {
+						potion: "minecraft:water"
+					}
+				}
 				count: 1
 				id: "minecraft:potion"
 			}
@@ -656,6 +681,10 @@
 			dependencies: [
 				"4CCDA49060A81CA3"
 			]
+			icon: {
+				count: 1
+				id: "tfc:thermometer"
+			}
 			id: "1E1EE320E78FF5A1"
 			shape: "none"
 			tasks: [
@@ -672,6 +701,10 @@
 				"4CCDA49060A81CA3"
 			]
 			hide_dependency_lines: true
+			icon: {
+				count: 1
+				id: "tfc:clay/alfisol"
+			}
 			id: "52FC4E64963DC8F0"
 			shape: "diamond"
 			tasks: [
@@ -722,6 +755,10 @@
 				"4639037DE458ADC1"
 				"06941934630BB12E"
 			]
+			icon: {
+				count: 1
+				id: "tfc:ceramic/unfired_vessel"
+			}
 			id: "7A1B344475D8B5C7"
 			size: 2.0d
 			tasks: [
@@ -767,7 +804,7 @@
 			]
 			icon: {
 				count: 1
-				id: "tfc:ceramic/jug"
+				id: "tfc:ceramic/bowl"
 			}
 			id: "7A9A9812D7E48A40"
 			optional: true
@@ -887,6 +924,10 @@
 				"4CCDA49060A81CA3"
 			]
 			hide_dependency_lines: true
+			icon: {
+				count: 1
+				id: "tfc:ore/small_native_copper"
+			}
 			id: "22B7A03791E961C1"
 			tasks: [
 				{
@@ -939,6 +980,10 @@
 			dependencies: [
 				"193640A1B80EB4C3"
 			]
+			icon: {
+				count: 1
+				id: "tfc:wood/lumber/oak"
+			}
 			id: "1D7F91FACA33E551"
 			tasks: [
 				{
@@ -973,6 +1018,10 @@
 			dependencies: [
 				"1D7F91FACA33E551"
 			]
+			icon: {
+				count: 1
+				id: "tfc:wood/workbench/oak"
+			}
 			id: "25B7ECAFDADE0A45"
 			shape: "octagon"
 			size: 3.0d
@@ -1000,7 +1049,7 @@
 			dependency_requirement: "one_completed"
 			icon: {
 				count: 1
-				id: "tfc:wood/crate/acacia"
+				id: "tfc:wood/chest/oak"
 			}
 			id: "1B850FA897BE6912"
 			tasks: [
@@ -1050,6 +1099,10 @@
 			dependencies: [
 				"25B7ECAFDADE0A45"
 			]
+			icon: {
+				count: 1
+				id: "tfc:wood/barrel/oak"
+			}
 			id: "0B98DB7D47E4C852"
 			tasks: [
 				{
@@ -1098,6 +1151,10 @@
 				"39F059704DE0FE03"
 			]
 			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "minecraft:leather"
+			}
 			id: "791962DF1FC6FD5D"
 			tasks: [
 				{
@@ -1175,7 +1232,7 @@
 			dependency_requirement: "one_completed"
 			icon: {
 				count: 1
-				id: "tfc:thatch"
+				id: "tfc:thatch_bed"
 			}
 			id: "78ECD5A5FFE1D5DC"
 			tasks: [
@@ -1213,6 +1270,10 @@
 				"25B7ECAFDADE0A45"
 			]
 			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "tfc:wood/loom/oak"
+			}
 			id: "39F059704DE0FE03"
 			tasks: [
 				{
@@ -1335,6 +1396,10 @@
 				"39F059704DE0FE03"
 			]
 			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "minecraft:white_bed"
+			}
 			id: "3D682B481D907011"
 			shape: "octagon"
 			size: 1.5d
@@ -1474,6 +1539,10 @@
 			dependencies: [
 				"616329CB5D11DA43"
 			]
+			icon: {
+				count: 1
+				id: "tfc:wood/sluice/oak"
+			}
 			id: "2942B4128DBF45CA"
 			tasks: [
 				{
@@ -1498,6 +1567,10 @@
 				"5411253EA7898A26"
 			]
 			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "tfc:metal/tuyere/copper"
+			}
 			id: "33BA9B2114A4B57C"
 			size: 2.0d
 			tasks: [
@@ -1543,6 +1616,10 @@
 			dependencies: [
 				"29109E15AE724F8D"
 			]
+			icon: {
+				count: 1
+				id: "tfc:rock/anvil/granite"
+			}
 			id: "4AFA6ED4A5A1FE79"
 			tasks: [
 				{

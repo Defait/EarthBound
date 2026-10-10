@@ -676,6 +676,10 @@
 				"012DC6D84EA3796D"
 				"34D2518FB05ACB0A"
 			]
+			icon: {
+				count: 1
+				id: "gtceu:lv_sodium_battery"
+			}
 			id: "0D701D3F51BCC0AF"
 			tasks: [
 				{

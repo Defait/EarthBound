@@ -34,11 +34,11 @@ hash = "2e3ae39533d6a586e6aaf39e14187c53ffdc514725dd3b3110029093b880318f"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/bronze.snbt"
-hash = "9b0b13aa5900ca61b41ec0c3fb52e6b298c37c8453b03bc10f4fbac9201061b3"
+hash = "b36404e3fbad91abbadc4be357adbc6fd2cb1b99083b9e7700c71c1550bfa22a"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/combat_tips.snbt"
-hash = "fd78715f15347dbf5cda7ef1572cd9e9f2fe0cb157ff7a382da9012d84561c6f"
+hash = "7fad3ae4ea8c8591015c36786097c818922e1978fbe26990ff9d1f9083533e60"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/create.snbt"
@@ -58,11 +58,11 @@ hash = "f0d266e4d701a918094d6748399b29d60bbf0733a7b9049dbaa0597855349d72"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/iron.snbt"
-hash = "3960092e04faf5ab78075b091036e0204731623b94c3f8bfa2ff0ebd8ddbe8ed"
+hash = "62f1d2378b460575a1ae9ee64d6cd23abc27d1ac9bb3921a7d8f744d2a8a3087"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/lv.snbt"
-hash = "1e2686bf9c914e6d7b8f4bf53ef037843c6942132813dea303d6e8cee79b9017"
+hash = "3fd663d0d631c109cf3052a9f9f8b85acef71d770bb4089cd4d8f5d6cef0021b"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/mv.snbt"
@@ -70,7 +70,7 @@ hash = "e27ee7a83cb7d519ff13e29335ef589735d78537e56c712d4e8c0b68ad0f5972"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/ore_processing.snbt"
-hash = "5d798062f52a7207636922a22d72feaaa17d16fc835bc755656231ede57676e6"
+hash = "2623a584e049937c3034a591b67d0d4481bbd0999031ed43585d5ff2c5b88914"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/power.snbt"
@@ -82,11 +82,11 @@ hash = "49255d8c26def33248563ec36aea77503422fa1fdcba385ef454cd0a51518f37"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/stone.snbt"
-hash = "e9a1bfb742895c93724ecded7934f365a3eb2dfb729ad19d0e1e43632e9a72dd"
+hash = "785ff559971d81495c0fb3f5fa94f984bbbb9c537835fd58bcd529f489717da1"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/tools_tips.snbt"
-hash = "6eb091bd3a0c9bc1882b5bd224f359109ce798144b2a598a2eaf56f671727426"
+hash = "ab000e61f1b1416a9f8d359d81878a0898c75dfcd73405530d0de106981432bb"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/welcome.snbt"

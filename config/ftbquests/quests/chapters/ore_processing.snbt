@@ -15,6 +15,10 @@
 			dependencies: [
 				"2B9F4179B0245299"
 			]
+			icon: {
+				count: 1
+				id: "gtceu:impure_copper_dust"
+			}
 			id: "03C6FC1FF3C91355"
 			tasks: [
 				{
@@ -268,6 +272,10 @@
 		}
 		{
 			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:basic_electronic_circuit"
+			}
 			id: "705F6537521D0CED"
 			shape: "none"
 			size: 2.0d
@@ -290,6 +298,10 @@
 		}
 		{
 			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:good_electronic_circuit"
+			}
 			id: "4CFECFD85067967E"
 			shape: "none"
 			size: 2.0d
@@ -312,6 +324,10 @@
 		}
 		{
 			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:advanced_integrated_circuit"
+			}
 			id: "27A80F0C09BF21BA"
 			shape: "none"
 			size: 2.0d
@@ -334,6 +350,10 @@
 		}
 		{
 			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:micro_processor_computer"
+			}
 			id: "76EABECEE5D8A053"
 			shape: "none"
 			size: 2.0d
@@ -356,6 +376,10 @@
 		}
 		{
 			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "gtceu:micro_processor_mainframe"
+			}
 			id: "6CE745CFBA9F7B1F"
 			shape: "none"
 			size: 2.0d

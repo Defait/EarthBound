@@ -39,6 +39,10 @@
 		}
 		{
 			dependencies: [ ]
+			icon: {
+				count: 1
+				id: "tfc:metal/shovel/copper"
+			}
 			id: "6E9EB0291CCDFE0D"
 			shape: "gear"
 			size: 3.0d
@@ -56,6 +60,10 @@
 			dependencies: [
 				"3301BC2AB9D9FDFA"
 			]
+			icon: {
+				count: 1
+				id: "tfc:ceramic/large_vessel"
+			}
 			id: "050720D08A515699"
 			tasks: [
 				{
@@ -90,6 +98,10 @@
 			dependencies: [
 				"6E9EB0291CCDFE0D"
 			]
+			icon: {
+				count: 1
+				id: "tfc:ceramic/vessel"
+			}
 			id: "3301BC2AB9D9FDFA"
 			shape: "octagon"
 			size: 2.0d
@@ -755,6 +767,10 @@
 			dependencies: [
 				"17AB09C31FC6A067"
 			]
+			icon: {
+				count: 1
+				id: "tfc:ceramic_blowpipe"
+			}
 			id: "3FFCD30F9F072365"
 			tasks: [
 				{
@@ -816,6 +832,10 @@
 				"58737E4CE402E036"
 			]
 			dependency_requirement: "one_completed"
+			icon: {
+				count: 1
+				id: "tfc:metal/fishing_rod/copper"
+			}
 			id: "4E7CE1039CEF5852"
 			tasks: [
 				{

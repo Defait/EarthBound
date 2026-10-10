@@ -71,7 +71,15 @@ def snbt(value, indent=0):
 
 
 def stack(item):
-    return {"count": 1, "id": item}
+    """An item id, or {id, components} for an icon that needs them (a water bottle is a potion with contents)."""
+    return {"count": 1, **item} if isinstance(item, dict) else {"count": 1, "id": item}
+
+
+def quest_icon(q):
+    """A quest's fixed icon: its own, or the first plain item its tasks ask for. Without one FTB Quests
+    draws the first task's own icon, which for a tag filter cycles through everything in the tag
+    (vanilla logs, every food), so check() wants every quest to have one."""
+    return q.get("icon") or next((i for _, t in quest_tasks(q) for i in task_items(t) if not i.startswith(("#", "@"))), None)
 
 
 def filter_stack(expr):
@@ -183,8 +191,7 @@ def build(route):
             x, y = pos[q["key"]]
             entry = {"id": qid, "x": x, "y": y, "tasks": tasks,
                      "dependencies": [code("quest", d) for d in q.get("deps", [])]}
-            first_item = next((i for _, t in quest_tasks(q) for i in task_items(t) if not i.startswith(("#", "@"))), None)
-            icon = q.get("icon") or first_item
+            icon = quest_icon(q)
             if icon:
                 entry["icon"] = stack(icon)
             if q.get("big"):
@@ -247,6 +254,14 @@ def check(route, dump_name, world):
     unchecked = 0
     pacing = 0
     for key, q in quests.items():
+        icon = quest_icon(q)
+        icon_id = icon["id"] if isinstance(icon, dict) else icon
+        if not icon:
+            print(f"  ! {key}: no icon (its tasks name no single item; set \"icon\")")
+            problems += 1
+        elif icon_id not in d.items:
+            print(f"  ! {key}: icon {icon_id} doesn't exist")
+            problems += 1
         depths = []
         for _, t in quest_tasks(q):
             pats = task_items(t)

@@ -400,6 +400,10 @@
 			dependencies: [
 				"447F14001EAF97A0"
 			]
+			icon: {
+				count: 1
+				id: "tfc:metal/sheet/red_steel"
+			}
 			id: "6F9840D28A7DDD2A"
 			shape: "circle"
 			tasks: [

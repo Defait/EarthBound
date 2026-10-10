@@ -88,6 +88,10 @@
 			dependencies: [
 				"0959F5B3F2214E58"
 			]
+			icon: {
+				count: 1
+				id: "gtceu:basic_electronic_circuit"
+			}
 			id: "7D3CA6CE28AD8FE3"
 			shape: "octagon"
 			size: 1.5d
@@ -158,6 +162,10 @@
 			dependencies: [
 				"04462F0277710661"
 			]
+			icon: {
+				count: 1
+				id: "tfc:metal/knife/copper"
+			}
 			id: "11EC1AB24A424C40"
 			tasks: [
 				{
@@ -346,6 +354,10 @@
 			dependencies: [
 				"04462F0277710661"
 			]
+			icon: {
+				count: 1
+				id: "tfc:metal/axe/copper"
+			}
 			id: "7240010A1012782E"
 			tasks: [
 				{
@@ -432,6 +444,10 @@
 			dependencies: [
 				"04462F0277710661"
 			]
+			icon: {
+				count: 1
+				id: "tfc:metal/hammer/copper"
+			}
 			id: "440CA363F5E74068"
 			tasks: [
 				{
@@ -454,6 +470,10 @@
 			dependencies: [
 				"5647CFCF82DC5C51"
 			]
+			icon: {
+				count: 1
+				id: "tfc:metal/sword/copper"
+			}
 			id: "23B41740510DCA4B"
 			tasks: [
 				{
@@ -573,6 +593,10 @@
 			dependencies: [
 				"7D3CA6CE28AD8FE3"
 			]
+			icon: {
+				count: 1
+				id: "gtceu:advanced_integrated_circuit"
+			}
 			id: "0C7E965D4E868A3F"
 			shape: "octagon"
 			size: 1.5d

@@ -92,6 +92,10 @@
 				"1952386A42CCD531"
 				"542F4F6916343D21"
 			]
+			icon: {
+				count: 1
+				id: "tfc:silica_glass_bottle"
+			}
 			id: "0D71EEE3AFA68254"
 			optional: true
 			tasks: [
@@ -377,6 +381,10 @@
 			dependencies: [
 				"26CB1992A45CFEF6"
 			]
+			icon: {
+				count: 1
+				id: "gtceu:bronze_mining_hammer"
+			}
 			id: "49433FB7142A4A72"
 			tasks: [
 				{
