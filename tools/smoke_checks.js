@@ -274,3 +274,49 @@ ServerEvents.loaded(event => {
     if (bad.length) throw new Error(`[smoke-checks] exploration: ${bad.length} wrong`)
   })
 })
+
+// Sea-floor deposits (kubejs/startup_scripts/sea_floor.js, kubejs/data/pack/worldgen/*/ocean/; docs/design.md, "Deep sea"): the six
+// blocks exist, none of the five cubes can be waterlogged (vanilla water in a TFC ocean), the loose nodule is TFC's ground cover and
+// can hold TFC salt water, every block drops a GregTech raw ore through its data loot table (not KubeJS's default of itself), and
+// the nodule features loaded.
+ServerEvents.loaded(event => {
+  event.server.scheduleInTicks(10, () => {
+    var bad = []
+    try {
+      var $RL4 = Java.loadClass('net.minecraft.resources.ResourceLocation')
+      var $BuiltIn = Java.loadClass('net.minecraft.core.registries.BuiltInRegistries')
+      var $Reg4 = Java.loadClass('net.minecraft.core.registries.Registries')
+      var $Ground = Java.loadClass('net.dries007.tfc.common.blocks.GroundcoverBlock')
+      var $Props = Java.loadClass('net.minecraft.world.level.block.state.properties.BlockStateProperties')
+      var $BlockCls = Java.loadClass('net.minecraft.world.level.block.Block')
+      var $BP = Java.loadClass('net.minecraft.core.BlockPos')
+      var rl = function (id) { return $RL4.parse(id) }
+      var level = event.server.overworld()
+      ;['sulfide_chimney', 'sulfide_mound', 'anhydrite_chimney', 'nodule_bed', 'mn_crust', 'nodule'].forEach(n => {
+        if (!$BuiltIn.BLOCK.containsKey(rl('pack:' + n))) { bad.push(`block pack:${n} is missing`); return }
+        var b = $BuiltIn.BLOCK.get(rl('pack:' + n))
+        var st = b.defaultBlockState()
+        if (n != 'nodule' && st.hasProperty($Props.WATERLOGGED)) bad.push(`pack:${n} is waterloggable`)
+        var drops = $BlockCls.getDrops(st, level, new $BP(0, 0, 0), null)
+        var ids = []
+        for (var i = 0; i < drops.size(); i++) ids.push(String(drops.get(i).getItem().builtInRegistryHolder().key().location()))
+        if (!ids.some(i => i.indexOf('gtceu:raw_') == 0)) bad.push(`pack:${n} drops [${ids}], no GregTech raw ore: the loot table did not override`)
+        if (n == 'nodule') {
+          if (!(b instanceof $Ground)) bad.push('pack:nodule is not a TFC GroundcoverBlock')
+          else if (!b.getFluidProperty().canContain($BuiltIn.FLUID.get(rl('tfc:salt_water')))) bad.push('pack:nodule cannot hold TFC salt water')
+        }
+      })
+      var access = event.server.registryAccess()
+      var cf = access.registryOrThrow($Reg4.CONFIGURED_FEATURE), pf = access.registryOrThrow($Reg4.PLACED_FEATURE)
+      ;['nodule_field', 'nodule_bed_disc', 'nodule_scatter', 'nodule_lump'].forEach(n => {
+        if (!cf.containsKey(rl('pack:ocean/' + n))) bad.push(`configured feature pack:ocean/${n} did not load`)
+        if (!pf.containsKey(rl('pack:ocean/' + n))) bad.push(`placed feature pack:ocean/${n} did not load`)
+      })
+    } catch (e) {
+      bad.push(`check failed to run: ${e}`)
+    }
+    bad.forEach(b => console.error(`[smoke-checks] sea floor: ${b}`))
+    console.info(`[smoke-checks] sea floor: blocks, drops, groundcover and nodule features checked, ${bad.length} wrong`)
+    if (bad.length) throw new Error(`[smoke-checks] sea floor: ${bad.length} wrong`)
+  })
+})

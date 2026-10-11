@@ -39,8 +39,16 @@ Tiers:
                structure or entity outside TFC's own appears (the baseline records what was accepted). Chunks that a structure
                reaches in either run (its references, which include its terrain adaptation's margin) are left out of the census,
                since a structure's blocks and beard aren't terrain drift; their biomes and tfc:chunk_data are still compared. This is the only tier
-               that sees code-level changes. Surface decoration is never compared: trees, grass and cave decoration differ
-               run to run. A golden run keeps its census in tools/.data/worldgen/last-golden.json.
+               that sees code-level changes. Surface decoration is never compared block by block: grass and cave decoration differ
+               run to run, and so do trees, because where they land depends on the order neighbouring chunks finish in (a
+               tree clipped by a neighbour's blocks also shifts the rest of that chunk's random draws). Trees (afc/tfc
+               wood/{log,wood,leaves,fallen_leaves,twig}/*, GregTech's rubber) are compared as per-area totals instead:
+               logs, leaves and twigs within 25% of the baseline (floors 60, 500 and 60 blocks), and any species holding
+               15% or more of an area's logs within a factor of 1.7. The tolerance is set from the measured run-to-run
+               noise (0.4% on the large areas, up to 18% of 176 logs on the coast), so half or double the density, a main
+               species gone or trees where there were none fail, while a species appearing or vanishing is information
+               only. The baseline's area "trees" holds the totals, logs per species and the tree block ids (an old baseline
+               without it gives an info line until --update --golden records it). A golden run keeps its census in tools/.data/worldgen/last-golden.json.
 
 Policy: continuity-breaking changes are always refused; new-chunks-only additions (a new plant, a small structure, fauna)
 can be accepted case by case, or stripped. So the baseline only moves through these:
@@ -105,6 +113,23 @@ GOLDEN_RADIUS = 64              # blocks: a square of 9 x 9 chunks
 CENSUS_HOST = 0.0004            # share of the area's cells that may move between host rocks
 CENSUS_REL, CENSUS_FLOOR = 0.03, 300   # per ore mineral, air and fluid: relative change allowed, plus this many cells
 ALLOWED_FOREIGN_BLOCKS = {"gtceu:rubber_log", "gtceu:rubber_leaves"}   # the accepted baseline: GregTech's rubber trees
+# Trees are judged by totals, not block by block. Where trees land depends on the order neighbouring chunks finish in (a tree
+# clipped or refused by a neighbour's blocks also shifts the rest of that chunk's random draws), so the same pack gives
+# different forests from run to run. Measured on this pack: four runs of the golden areas, and serial single-chunk runs in
+# one order (21 and 22 of 81 chunks differing in karst and mountain) against the reverse order (78 and 80 of 81).
+# A tree block is one the forest features place: ArborFirmaCraft's and TFC's wood/{log,wood,leaves,fallen_leaves,twig}/<species>
+# (wood = the bush and trunk-bark block) and GregTech's rubber trees. Chests, planks and the rest of wood/ are not trees.
+TREE_RE = re.compile(r"^(?:afc|tfc):wood/(log|wood|leaves|fallen_leaves|twig)/([a-z_]+)$")
+TREE_CLASS = {"log": "logs", "wood": "logs", "leaves": "leaves", "fallen_leaves": "leaves", "twig": "twigs"}
+# Per area and class (logs, leaves, twigs) the totals may move by max(floor, REL x the larger total). Measured run to run:
+# 0.0 to 0.4% in karst, mountain, swamp and volcanic (16,600 logs, 107,000 leaves), up to 18% of 176 logs and 3% of 1,500 leaves
+# on the coast, whose few trees are the noisiest. REL 25% is 60 times the large areas' noise, so half or double the density,
+# a family gone or trees where there were none (above the floor) still fail; the floors cover the coast's 32 logs of noise.
+TREE_REL = 0.25
+TREE_FLOOR = {"logs": 60, "leaves": 500, "twigs": 60}
+# A species holding at least this share of an area's logs (in either run) must keep within a factor of TREE_SPECIES_RATIO
+# (the dominant ones moved by under 5% between runs; rarer species by up to 46%, so they are information only).
+TREE_DOMINANT, TREE_SPECIES_RATIO, TREE_SPECIES_FLOOR = 0.15, 1.7, 100
 # The audit of 83,000 chunks saw eight vanilla blocks; the golden areas add TFC's own glacier ice and snow and its reef coral.
 ALLOWED_MINECRAFT_BLOCKS = {"minecraft:air", "minecraft:cave_air", "minecraft:bedrock", "minecraft:water", "minecraft:lava",
                             "minecraft:cobweb", "minecraft:hanging_roots", "minecraft:obsidian",
@@ -570,6 +595,35 @@ def golden_fingerprint(world_dir):
     return areas
 
 
+def tree_block(blk):
+    """(class, species) of a tree block (see TREE_RE), or None. GregTech's rubber trees count as species 'rubber'."""
+    m = TREE_RE.match(blk)
+    if m:
+        return TREE_CLASS[m.group(1)], m.group(2), m.group(1) in ("log", "wood")
+    if blk == "gtceu:rubber_log":
+        return "logs", "rubber", True
+    if blk == "gtceu:rubber_leaves":
+        return "leaves", "rubber", False
+    return None
+
+
+def tree_totals(blocks):
+    """An area's tree blocks: totals per class (logs, leaves, twigs), logs per species, and every tree block id (information only)."""
+    out = {"logs": 0, "leaves": 0, "twigs": 0}
+    species, ids = {}, []
+    for blk, n in blocks.items():
+        t = tree_block(blk)
+        if t is None:
+            continue
+        out[t[0]] += n
+        ids.append(blk)
+        if t[2] and t[1] != "rubber":
+            species[t[1]] = species.get(t[1], 0) + n
+    out["species"] = dict(sorted(species.items(), key=lambda kv: -kv[1]))
+    out["ids"] = sorted(ids)
+    return out
+
+
 def golden_record(areas):
     """What the baseline keeps of each area: hashes per chunk, the census, and what a policy check needs."""
     out = {}
@@ -578,11 +632,12 @@ def golden_record(areas):
         out[name] = {
             "chunks": a["chunks"], "cells": a["cells"], "biomes": dict(sorted(a["biomes"].items(), key=lambda kv: -kv[1])),
             "census": dict(sorted(a["census"].items(), key=lambda kv: -kv[1])),
-            "foreignBlocks": sorted([b for b in a["blocks"] if ns_of(b) not in ("tfc", "minecraft")]
+            "foreignBlocks": sorted([b for b in a["blocks"] if ns_of(b) not in ("tfc", "minecraft") and not tree_block(b)]
                                     + [f"block entity {b}" for b in a["blockEntities"] if ns_of(b) not in ("tfc", "minecraft")]),
             "minecraftBlocks": sorted(b for b in a["blocks"] if b.startswith("minecraft:")),
             "structureStarts": a["starts"], "entities": dict(sorted(a["entities"].items())), "full": full,
             "touched": dict(sorted(a["touched"].items())), "chunkCensus": dict(sorted(a["chunkCensus"].items())),
+            "trees": tree_totals(a["blocks"]),
         }
     return out
 
@@ -1137,6 +1192,33 @@ def golden_violations(area, known):
             [s for s in area["structureStarts"] if s not in known["starts"]], [e for e in area["entities"] if ns_of(e) != "tfc" and e not in known["entities"]])
 
 
+def diff_trees(name, c, b, f):
+    """Trees are compared as totals (see TREE_REL): never block by block, so a species coming or going is not a finding."""
+    if not c:
+        return
+    if not b:
+        f.add("info", f"golden area {name}: the baseline has no tree totals (run --update --golden once to record them)", tier=3)
+        return
+    bad = []
+    for cls in ("logs", "leaves", "twigs"):
+        x, y = c[cls], b[cls]
+        if abs(x - y) > max(TREE_FLOOR[cls], TREE_REL * max(x, y)):
+            bad.append(f"{cls} {y:,} -> {x:,}")
+    sp_c, sp_b = c.get("species", {}), b.get("species", {})
+    for sp in sorted(set(sp_c) | set(sp_b)):
+        x, y = sp_c.get(sp, 0), sp_b.get(sp, 0)
+        if max(x / max(1, c["logs"]), y / max(1, b["logs"])) >= TREE_DOMINANT and max(x, y) >= TREE_SPECIES_FLOOR                 and max(x, y) > TREE_SPECIES_RATIO * max(1, min(x, y)):
+            bad.append(f"{sp} logs {y:,} -> {x:,}")
+    if bad:
+        f.add("new", f"{name}: forests changed ({short(bad, 4, '; ')})",
+              [f"tree totals may move by max(floor, {TREE_REL:.0%}) between same-pack runs (floors {TREE_FLOOR}); this is beyond that",
+               "a biome modifier, a tag (#tfc:forest_trees), a tree feature or the climate of the trees changed"], tier=3)
+    sc, sb = set(c.get("ids", [])), set(b.get("ids", []))
+    if sc != sb:
+        f.stats.append(f"golden {name}: tree block ids +{len(sc - sb)} -{len(sb - sc)} against the baseline (information only; trees differ run to run)")
+    f.stats.append(f"golden {name}: trees {c['logs']:,} logs, {c['leaves']:,} leaves, {c['twigs']:,} twigs (baseline {b['logs']:,}, {b['leaves']:,}, {b['twigs']:,})")
+
+
 def diff_golden(cur, base, f, ctx):
     mods = ctx["mods"]
     known = golden_known(base)
@@ -1162,6 +1244,7 @@ def diff_golden(cur, base, f, ctx):
         if b is None:
             f.add("info", f"golden area {name} is not in the baseline (run --update --golden)", tier=3)
             continue
+        diff_trees(name, c.get("trees"), b.get("trees"), f)
         if set(c["chunks"]) != set(b["chunks"]):
             f.add("info", f"golden area {name}: {len(c['chunks'])} chunks generated, the baseline has {len(b['chunks'])}", tier=3)
         diff_biome = [k for k in c["chunks"] if k in b["chunks"] and c["chunks"][k][0] != b["chunks"][k][0]]

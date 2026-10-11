@@ -603,6 +603,28 @@
       "why": "dive to the deep ocean floor and dig a manganese nodule bed (pack:nodule_bed) with a shovel"
     },
     {
+      "id": "pick_loose_nodule",
+      "inputs": [
+        [
+          "create:copper_diving_helmet",
+          "create:netherite_diving_helmet"
+        ],
+        [
+          "create:copper_diving_boots",
+          "create:netherite_diving_boots"
+        ],
+        [
+          "create:copper_backtank",
+          "create:netherite_backtank"
+        ]
+      ],
+      "outputs": [
+        "gtceu:raw_pyrolusite",
+        "gtceu:raw_cobaltite"
+      ],
+      "why": "dive to the deep ocean floor and pick a loose manganese nodule (pack:nodule) up by hand, no tool"
+    },
+    {
       "id": "mine_mn_crust",
       "inputs": [
         [

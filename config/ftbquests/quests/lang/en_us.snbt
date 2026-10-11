@@ -793,7 +793,7 @@
 	quest.138251FC5C8DD73E.quest_subtitle: "You don't want to die from eating raw meat, do you?"
 	quest.138251FC5C8DD73E.title: "Basic Cooking"
 	quest.13BE6FB3D56F1F93.quest_desc: [
-		"On the deep ocean floor, discs of mud turn to nodule beds: about one block in eight of the abyssal plain. A shovel sweeps them and each block gives raw pyrolusite (manganese), now and then cobaltite."
+		"On the deep ocean floor, nodules lie loose on the mud in broad fields around small cores of nodule bed. Pick a loose one up by hand, or sweep the bed blocks with a shovel: each gives raw pyrolusite (manganese), now and then cobaltite."
 		""
 		"Macerate it for crushed pyrolusite, wash it, spin it in a thermal centrifuge and macerate the refined ore: the dust comes with a little niobium. Manganese arrives with the macerator too (step 19), so stainless steel does not wait for anything else."
 	]

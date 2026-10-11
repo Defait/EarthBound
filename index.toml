@@ -110,7 +110,7 @@ hash = "92909a371debd092a96b182bb9c9a79a6b9aed8ef116c34b79bd1d573b440063"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "90fd818592ccbd9fbec7aadcb36e6f45d81581aa0611f79bcf7f53b6508d8078"
+hash = "a0b62cc884fa6f3ef8e7601d1cc94636714467a5469edb7e84e398f22a757bc7"
 
 [[files]]
 file = "config/gtceu.yaml"
@@ -201,8 +201,64 @@ file = "kubejs/assets/pack/lang/en_us.json"
 hash = "228280dcb9610dcc0cd8f9fcb40e77f8be3092f116edc64621ffe47ab747991f"
 
 [[files]]
+file = "kubejs/assets/pack/models/block/anhydrite_chimney_shape.json"
+hash = "230381669983dbe9aa8386b18acc7ad7133acbf178c7540a310bb9f571a6f6e6"
+
+[[files]]
+file = "kubejs/assets/pack/models/block/nodule_shape.json"
+hash = "8c246448879d462e7b2aaa2a7be5169ad15dbc9793a2359706f874e0174e9b9c"
+
+[[files]]
+file = "kubejs/assets/pack/models/block/sulfide_chimney_shape.json"
+hash = "230381669983dbe9aa8386b18acc7ad7133acbf178c7540a310bb9f571a6f6e6"
+
+[[files]]
+file = "kubejs/assets/pack/textures/block/anhydrite_chimney.png"
+hash = "021717c049e4b3e8d89fdf2223b59555fce3cd7305f3c8954d902b29a33b2983"
+
+[[files]]
+file = "kubejs/assets/pack/textures/block/anhydrite_chimney_top.png"
+hash = "8b47149771e96bd6176b7e520085c2aab873314afccd81f545df59aac98e1150"
+
+[[files]]
+file = "kubejs/assets/pack/textures/block/mn_crust.png"
+hash = "e41c839bbf7f1c6c2c7917e00b2939dedae4b7fa8b3c0f92d70b1ee0508a2021"
+
+[[files]]
+file = "kubejs/assets/pack/textures/block/nodule.png"
+hash = "44c28fa7ae0073010ad7859904ed8df278e83e6fce6ac9889a3fee9a597be4d2"
+
+[[files]]
+file = "kubejs/assets/pack/textures/block/nodule_bed.png"
+hash = "e13f8cd2583d7cfd17b4db7ac425ad34ee981f577d304c933feb175ab980cb79"
+
+[[files]]
+file = "kubejs/assets/pack/textures/block/nodule_bed_bottom.png"
+hash = "639fc04b8f09173ee0e3cd30cf8cd928a1500233c4eb4790c30860654213b47c"
+
+[[files]]
+file = "kubejs/assets/pack/textures/block/nodule_bed_side.png"
+hash = "0e20335719dc6a53fe8a8e567f28f9488e4246535cd46c13ef380733cd9909c8"
+
+[[files]]
+file = "kubejs/assets/pack/textures/block/sulfide_chimney.png"
+hash = "963de0e297b674d7e589a78f2f85fe7f9865f7f8244091efe42e769bb6edaa24"
+
+[[files]]
+file = "kubejs/assets/pack/textures/block/sulfide_chimney_top.png"
+hash = "2a06820f441e846648d9c17a6972c78ce5d6f8b4e00fa082d36d9021750ccef7"
+
+[[files]]
+file = "kubejs/assets/pack/textures/block/sulfide_mound.png"
+hash = "d59dde97a9c665c7adfa6b5017ca1d45e41c7cb3e62ec4f4e047c7d2a43c5a74"
+
+[[files]]
 file = "kubejs/client_scripts/main.js"
 hash = "3df46f0add819bf2602642215b5c62f0581ffdaaf97e77c80a8c4d966e05adcf"
+
+[[files]]
+file = "kubejs/client_scripts/sea_vents.js"
+hash = "7d58f792ad252d1eedec449088d086595d7b1cbcb9407feba2ffcaa8ae353ba8"
 
 [[files]]
 file = "kubejs/config/client.json"
@@ -1865,6 +1921,10 @@ file = "kubejs/data/pack/loot_table/blocks/mn_crust.json"
 hash = "e65289bec8d13a997980c579e01848cd06ce8062dcd20426de67d80b172bd897"
 
 [[files]]
+file = "kubejs/data/pack/loot_table/blocks/nodule.json"
+hash = "b59b7b2ae87191857282715bf4821448f492a24cf67a5ff41f967866bcc5cf1b"
+
+[[files]]
 file = "kubejs/data/pack/loot_table/blocks/nodule_bed.json"
 hash = "2aea0f0da3b17bfe1bd1f574a9047ba2a3c01557fec266d9e610af9a943b46ac"
 
@@ -3085,8 +3145,20 @@ file = "kubejs/data/pack/worldgen/configured_feature/ocean/crust_patch.json"
 hash = "9acf755d42874730cf3224d0715b0b8ea5aa79f32989f016f7f6625b843b1849"
 
 [[files]]
+file = "kubejs/data/pack/worldgen/configured_feature/ocean/nodule_bed_disc.json"
+hash = "788333d8cb9948dd4de002cc2f877ac45ef6c858beb55bbe5a7f09f8c637e687"
+
+[[files]]
 file = "kubejs/data/pack/worldgen/configured_feature/ocean/nodule_field.json"
-hash = "e82d103d11d939172e2e29da4fcd2c0fc6405f797b262bf29c56466e0cd716ca"
+hash = "16f1ffcf8bdbd1509e2a3460a19dc455d1ad3bfd477e752ba1439205eacc48b2"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/configured_feature/ocean/nodule_lump.json"
+hash = "599a7280ca7246147e4e9edc77090e0f6ca13a46cece4d9f635616ad5b64e560"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/configured_feature/ocean/nodule_scatter.json"
+hash = "5215fb56d5e527ddbeb67dbdc142c1f906c102a0b593630ab34507275bb518a0"
 
 [[files]]
 file = "kubejs/data/pack/worldgen/configured_feature/ocean/sulfide_mound.json"
@@ -3197,12 +3269,24 @@ file = "kubejs/data/pack/worldgen/placed_feature/ocean/crust_patch.json"
 hash = "86743f371e3d02c0a182964799644648ccb1c0cc36d5ea907293951792d5f14e"
 
 [[files]]
+file = "kubejs/data/pack/worldgen/placed_feature/ocean/nodule_bed_disc.json"
+hash = "49bc4002c48d7442e4b45b7188f4278f19f8f60f772fa46555802d611c0a5814"
+
+[[files]]
 file = "kubejs/data/pack/worldgen/placed_feature/ocean/nodule_field.json"
 hash = "927982262ae90a6f2cd971d9d9a9028e799455fb73e0cadbbbfadc340afe9ecd"
 
 [[files]]
 file = "kubejs/data/pack/worldgen/placed_feature/ocean/nodule_field_flank.json"
 hash = "cf91dd9a4e42b1db610efe7084b7760559ee58a08c4104ba786264071a6debbe"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/placed_feature/ocean/nodule_lump.json"
+hash = "5a408cfa978a04b19ae2353034b505f1a7f35ec7dd920eb65cb93fd4ffbbf31c"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/placed_feature/ocean/nodule_scatter.json"
+hash = "1f76594edeea5f3bb49618268cbb0171dc9baeb8f2ea091f42d67e1d72e5243a"
 
 [[files]]
 file = "kubejs/data/pack/worldgen/placed_feature/ocean/vent_chimneys.json"
@@ -4486,7 +4570,7 @@ hash = "4d1af8b5de04d7df4f5f1e920346b4df4318f10145a3616d6c6d02a3ac6cf388"
 
 [[files]]
 file = "kubejs/startup_scripts/sea_floor.js"
-hash = "44b3538e48d4923a5a4f02a94cdb3dadd4329176e0d619bf3edefbc5a6e94e2b"
+hash = "25318a26619d14604a8e1b2344071719dba064cfb3aa1635c4a19e0a402e8a5c"
 
 [[files]]
 file = "kubejs/startup_scripts/villager_trades.js"
