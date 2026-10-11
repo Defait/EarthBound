@@ -24,8 +24,9 @@ tools/.venv/
 tools/**/.cache/
 __pycache__/
 
-# Dev tool state: test server, reports, dumps
+# Dev tool state: test server, worldgen feature lab, reports, dumps
 tools/.server/
+tools/.lab/
 tools/.data/
 
 # The pack's own mod (mod/): Gradle and ModDevGradle build outputs and caches

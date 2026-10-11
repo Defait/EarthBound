@@ -40,12 +40,18 @@ class PackServer:
 
     Reuses a `packwiz serve` already running on :8080 when it serves this
     repo's pack.toml; otherwise starts one on :8199 for the duration.
+
+    `root` serves another folder holding a pack (a snapshot, so the serve's index refresh writes there and
+    not into the repo), on `port`; `reuse=False` never uses the :8080 serve (tools/lab.py does both).
     """
 
-    def __init__(self, log=print):
+    def __init__(self, log=print, port=OWN_PACKWIZ_PORT, root=None, reuse=True):
         self.log = log
         self.proc = None
         self.url = None
+        self.port = port
+        self.root = root or REPO
+        self.reuse = reuse
 
     def _get(self, url):
         try:
@@ -55,19 +61,20 @@ class PackServer:
             return None
 
     def __enter__(self):
-        with open(os.path.join(REPO, "pack.toml"), "rb") as f:
-            ours = f.read().replace(b"\r\n", b"\n")
-        existing = self._get(f"http://127.0.0.1:{USER_PACKWIZ_PORT}/pack.toml")
-        # The served pack.toml may have a fresher index hash than the file on disk,
-        # so compare everything except the hash line.
-        strip = lambda b: re.sub(rb"(?m)^hash = .*$", b"", b.replace(b"\r\n", b"\n"))
-        if existing is not None and strip(existing) == strip(ours):
-            self.url = f"http://127.0.0.1:{USER_PACKWIZ_PORT}/pack.toml"
-            self.log(f"Using the running packwiz serve at {self.url}")
-            return self.url
-        self.proc = subprocess.Popen(["packwiz", "serve", "--port", str(OWN_PACKWIZ_PORT)], cwd=REPO,
+        if self.reuse:
+            with open(os.path.join(self.root, "pack.toml"), "rb") as f:
+                ours = f.read().replace(b"\r\n", b"\n")
+            existing = self._get(f"http://127.0.0.1:{USER_PACKWIZ_PORT}/pack.toml")
+            # The served pack.toml may have a fresher index hash than the file on disk,
+            # so compare everything except the hash line.
+            strip = lambda b: re.sub(rb"(?m)^hash = .*$", b"", b.replace(b"\r\n", b"\n"))
+            if existing is not None and strip(existing) == strip(ours):
+                self.url = f"http://127.0.0.1:{USER_PACKWIZ_PORT}/pack.toml"
+                self.log(f"Using the running packwiz serve at {self.url}")
+                return self.url
+        self.proc = subprocess.Popen(["packwiz", "serve", "--port", str(self.port)], cwd=self.root,
                                      stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        self.url = f"http://127.0.0.1:{OWN_PACKWIZ_PORT}/pack.toml"
+        self.url = f"http://127.0.0.1:{self.port}/pack.toml"
         for _ in range(100):
             if self._get(self.url):
                 self.log(f"Started packwiz serve at {self.url}")
@@ -123,7 +130,8 @@ class TestServer:
         with open(self.path("eula.txt"), "w") as f:
             f.write("# Accepted by the pack owner for the local test server: https://aka.ms/MinecraftEULA\neula=true\n")
 
-    def sync_pack(self):
+    def sync_pack(self, pack_root=None, port=None):
+        """Bring the server folder up to date with the pack (the repo's, or the snapshot folder pack_root served on port)."""
         boot = self.path("packwiz-installer-bootstrap.jar")
         if not os.path.exists(boot):
             local = os.path.join(REPO, "packwiz-installer-bootstrap.jar")
@@ -131,7 +139,8 @@ class TestServer:
                 shutil.copy2(local, boot)
             else:
                 download(BOOTSTRAP_URL, boot, self.log)
-        with PackServer(self.log) as url:
+        serve = PackServer(self.log, port=port or OWN_PACKWIZ_PORT, root=pack_root, reuse=False) if pack_root else PackServer(self.log)
+        with serve as url:
             self.log("Syncing pack (server side)...")
             r = subprocess.run([self.java, "-jar", boot, "-g", "-s", "server", url], cwd=self.root,
                                capture_output=True, text=True, encoding="utf-8", errors="replace")
