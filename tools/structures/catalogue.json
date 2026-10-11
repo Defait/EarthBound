@@ -16,7 +16,7 @@
     "stone": 6, "copper": 8, "bronze": 13,
     "deny": ["^tfc:metal/[a-z_]+/(wrought_iron|cast_iron|pig_iron|steel|black_steel|red_steel|blue_steel|weak_steel|weak_blue_steel|weak_red_steel|high_carbon_.*)$",
              "^tfc:(raw|refined)_iron_bloom$", "^tfc:bloomery$", "^tfc:blast_furnace$", "^create:", "^gtceu:", "^minecraft:iron_", "^minecraft:.*_iron$"],
-    "allow_unreachable": ["^tfc:seeds/", "^tfc:flower_cutting$", "^tfc:[a-z]+_(raw|sheepskin)_hide$", "^tfc:plant/.*_sapling$", "^tfc:wood/sapling/", "^tfc:jar/", "^tfc:wool", "^tfc:food/", "^tfc:candle$", "^tfc:ore/(amethyst|opal|lapis_lazuli)$", "^createthrusters:music_disc_", "^artifacts:(anglers_hat|antidote_vessel|aqua_dashers|bunny_hoppers|charm_of_shrinking|charm_of_sinking|chorus_totem|cloud_in_a_bottle|cowboy_hat|cross_necklace|crystal_heart|feral_claws|fire_gauntlet|flame_pendant|flippers|golden_hook|kitty_slippers|lucky_scarf|night_vision_goggles|obsidian_skull|onion_ring|panic_necklace|pocket_piston|power_glove|running_shoes|scarf_of_invisibility|shock_pendant|snorkel|snowshoes|steadfast_spikes|strider_shoes|superstitious_hat|thorn_pendant|umbrella|vampiric_glove|villager_hat|warp_drive|whoopee_cushion|withered_bracelet|plastic_drinking_hat|novelty_drinking_hat)$"]
+    "allow_unreachable": ["^tfc:seeds/", "^tfc:flower_cutting$", "^tfc:[a-z]+_(raw|sheepskin)_hide$", "^tfc:plant/.*_sapling$", "^tfc:wood/sapling/", "^tfc:jar/", "^tfc:wool", "^tfc:food/", "^tfc:candle$", "^tfc:ore/(amethyst|opal|lapis_lazuli)$", "^createthrusters:music_disc_", "^paraglider:spirit_orb$", "^artifacts:(anglers_hat|antidote_vessel|aqua_dashers|bunny_hoppers|charm_of_shrinking|charm_of_sinking|chorus_totem|cloud_in_a_bottle|cowboy_hat|cross_necklace|crystal_heart|feral_claws|fire_gauntlet|flame_pendant|flippers|golden_hook|kitty_slippers|lucky_scarf|night_vision_goggles|obsidian_skull|onion_ring|panic_necklace|pocket_piston|power_glove|running_shoes|scarf_of_invisibility|shock_pendant|snorkel|snowshoes|steadfast_spikes|strider_shoes|superstitious_hat|thorn_pendant|umbrella|vampiric_glove|villager_hat|warp_drive|whoopee_cushion|withered_bracelet|plastic_drinking_hat|novelty_drinking_hat)$"]
   },
 
   "structures": {
@@ -143,6 +143,7 @@
         {"name": "cist_b", "builder": "cairn", "seed": 54, "args": {"cist": true}, "weight": 1}
       ],
       "loot": {"rolls": [1, 2], "entries": [
+        {"item": "paraglider:spirit_orb", "weight": 2},
         {"item": "minecraft:bone", "weight": 10, "count": [1, 3]},
         {"item": "tfc:stone/axe_head/metamorphic", "weight": 6},
         {"item": "tfc:stone/knife_head/igneous_intrusive", "weight": 6},
@@ -169,6 +170,7 @@
       ],
       "loot_table": "standing_stones_offering",
       "loot": {"rolls": [1, 2], "entries": [
+        {"item": "paraglider:spirit_orb", "weight": 1},
         {"item": "tfc:ceramic/bowl", "weight": 6},
         {"item": "tfc:seeds/barley", "weight": 4, "count": [1, 3]},
         {"item": "tfc:seeds/oat", "weight": 4, "count": [1, 3]},
@@ -189,6 +191,7 @@
         {"name": "offering_box", "builder": "wayside_shrine", "seed": 73, "args": {"with_chest": true}, "weight": 1}
       ],
       "loot": {"rolls": [1, 2], "entries": [
+        {"item": "paraglider:spirit_orb", "weight": 2},
         {"item": "tfc:candle", "weight": 6, "count": [1, 2]},
         {"item": "tfc:powder/salt", "weight": 6, "count": [1, 2]},
         {"item": "tfc:seeds/barley", "weight": 4, "count": [1, 3]},
@@ -211,6 +214,7 @@
         {"name": "graveyard_b", "builder": "graveyard", "seed": 83, "weight": 1}
       ],
       "loot": {"rolls": [2, 3], "entries": [
+        {"item": "paraglider:spirit_orb", "weight": 2},
         {"item": "minecraft:bone", "weight": 10, "count": [1, 4]},
         {"item": "tfc:ceramic/jug", "weight": 6},
         {"item": "tfc:ceramic/bowl", "weight": 6},

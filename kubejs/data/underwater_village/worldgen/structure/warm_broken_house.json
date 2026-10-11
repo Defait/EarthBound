@@ -10,6 +10,6 @@
     "absolute": 0
   },
   "project_start_to_heightmap": "OCEAN_FLOOR_WG",
-  "biomes": "#pack:has_structure/ocean_ruins_any",
+  "biomes": "#pack:ocean_ruins/any",
   "use_expansion_hack": false
 }

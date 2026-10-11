@@ -117,6 +117,10 @@ file = "config/gtceu.yaml"
 hash = "f286e355d372f1801cb19e5bdefce139904fbad36725d16b315279e110c6f36d"
 
 [[files]]
+file = "config/paraglider-server.toml"
+hash = "fa5e0e0509c8512cb8a72976a04bb10cd58b795c465be7dc372803b78896b5da"
+
+[[files]]
 file = "config/particular-common.toml"
 hash = "b75e52fcf4c8b1f705079f3a24db575efa6b34088bb11775ed1e4c2d32fd2497"
 
@@ -270,7 +274,7 @@ hash = "1e1f5bfc35e5cfa3e8348abd6343c265ab97ca08125315b98dae0208559c0d77"
 
 [[files]]
 file = "kubejs/data/artifacts/loot_table/chests/campsite_chest.json"
-hash = "0da18558274fab05abc0766885694e36783fbe96397eb1e18821a67b5e50d57e"
+hash = "65da241bef2d8ebc35774c0a7f25d8e86ea008f1d8cd0f157f36e5973d005b95"
 
 [[files]]
 file = "kubejs/data/artifacts/loot_table/entity_equipment/bogged.json"
@@ -326,11 +330,11 @@ hash = "b50cd5d310d4f2df6c0da8a5a454475c9c83f4fc2c4a2190c6a1bb259c1dd9e8"
 
 [[files]]
 file = "kubejs/data/betterdungeons/loot_table/skeleton_dungeon/chests/common.json"
-hash = "c4e7d379cc61556f0e1940cde3353673ccc29200d3dffb0b5651f1b093f1dd0a"
+hash = "f46737794c1bed512d0a14982c8b1b5d67c81e0f473c95d551776901cdd34cad"
 
 [[files]]
 file = "kubejs/data/betterdungeons/loot_table/skeleton_dungeon/chests/middle.json"
-hash = "1b1fd2ab359463be57b8c65022c41d4300499eef8dca7f8528ea20a3d1d7229b"
+hash = "5e07267f35347a658009e8f751e5adf0fe58104288ec5c2611b9fcd46e45fc7f"
 
 [[files]]
 file = "kubejs/data/betterdungeons/loot_table/small_dungeon/chests/loot_piles.json"
@@ -342,19 +346,19 @@ hash = "cd6f7c59891656b83f261409fccd44afd6d9ac4533f599289b057f973625b301"
 
 [[files]]
 file = "kubejs/data/betterdungeons/loot_table/spider_dungeon/chests/egg_room.json"
-hash = "a8ffee3e03debc0850f4eeb694084f4942a9e513a88d99bd3cce42edc07d42db"
+hash = "d50f99989b6b5f0a9fbded7bec5e96bb0b25a0ad5cdc2a35942f0d1de8cf5bfb"
 
 [[files]]
 file = "kubejs/data/betterdungeons/loot_table/zombie_dungeon/chests/common.json"
-hash = "814b3f4480ba5517c81974b85be7706e67a83e2829c3f835fa7422b37fae2ef9"
+hash = "8b27ee7dec10954e36df613ecf807f6b868f156a60746a92318ffd21605086eb"
 
 [[files]]
 file = "kubejs/data/betterdungeons/loot_table/zombie_dungeon/chests/special.json"
-hash = "6298561e8b8598ed34cc087d283a40feb67a9b9ff6ee339cf0137b922f7a8251"
+hash = "b949a64b5f7dc6e066757f6480694efdb6e3fbc4ae057ec1f18a00ba56fa00f3"
 
 [[files]]
 file = "kubejs/data/betterdungeons/loot_table/zombie_dungeon/chests/tombstone.json"
-hash = "c56086ed370e05a2fa33142a6c51cac3eab31e5966ee44b31d41525cd0351845"
+hash = "b15938a7c3ed68f6298d91f06fb2c3bd3d703175141ee1e3cfa0c421fa58d2b0"
 
 [[files]]
 file = "kubejs/data/c/tags/worldgen/biome/is_birch_forest.json"
@@ -506,31 +510,31 @@ hash = "4eca742af4f8d2778dccbb49c7b5de13919373b9c34552a10974b9ae32dde50c"
 
 [[files]]
 file = "kubejs/data/hopo/loot_table/chests/copper.json"
-hash = "66de01a3c41b44abd527aecd8f808d959d14c8e19a3d8d70e0f0cbc9bb257695"
+hash = "def0f9ea088139db9591890e8339e98fb848f5051ce58ec59e43bddde59cf717"
 
 [[files]]
 file = "kubejs/data/hopo/loot_table/chests/coral.json"
-hash = "69191b80ede31fe33b11d1113a8c6d47c4c716d5d70b1fbf3179f2a548686b03"
+hash = "713e23220cb10c99213e20bee6d709d6fe02f892608707c9a46c78ca52f5c7f6"
 
 [[files]]
 file = "kubejs/data/hopo/loot_table/chests/food.json"
-hash = "54eeb998f22909f8c6e4fce3ac0ba3468dd65e28f51bf9be8022366103f459dc"
+hash = "0099322ed5f983632947fdd49ad379e2620ea6894b2978cc0e50b0fb39f922c5"
 
 [[files]]
 file = "kubejs/data/hopo/loot_table/chests/materials.json"
-hash = "9ae0d1b091d929e9556fd7e2fb0dd880c3129c5ea3d3531cb47c149b6ef86467"
+hash = "0723a26bd3fb6ed9e7a8350487f407835d8922b42bf219882ae3f8839d34fbf4"
 
 [[files]]
 file = "kubejs/data/hopo/loot_table/chests/prismarine.json"
-hash = "233f585715079c3b44d076e3aff4451eb7eee5abbdc1d6bd8d805a388c3ff87e"
+hash = "e26d4ceb622c105928aa7fe8f7cdb41907091b24eb67d5e13bec0c72c85fb53d"
 
 [[files]]
 file = "kubejs/data/hopo/loot_table/chests/small_ruin_cold.json"
-hash = "6df49472179da2731918434597b1b660c8255ab74866da87c28487ba3d44f797"
+hash = "e99d20ce51630b76db6c06b23f86237e8a165fefc309fb6a35936faf4ab1c27e"
 
 [[files]]
 file = "kubejs/data/hopo/loot_table/chests/small_ruin_warm.json"
-hash = "6df49472179da2731918434597b1b660c8255ab74866da87c28487ba3d44f797"
+hash = "e99d20ce51630b76db6c06b23f86237e8a165fefc309fb6a35936faf4ab1c27e"
 
 [[files]]
 file = "kubejs/data/hopo/loot_table/entities/golddrowned.json"
@@ -574,7 +578,7 @@ hash = "d2ca2a06119861c9be6f73c41541fa3cf410f2cb88be784ee562925eb0adf8fe"
 
 [[files]]
 file = "kubejs/data/kaisyn/loot_table/outpost/common/armory.json"
-hash = "a447e201ae8db828c2d009120366bf29045fb4b791045e9ab6caf4d01e757327"
+hash = "0fe8fd72a05f48e518982edf7ef826a92f85dd2658d013e8882929cf8013eb8c"
 
 [[files]]
 file = "kubejs/data/kaisyn/loot_table/outpost/common/food.json"
@@ -646,107 +650,107 @@ hash = "e0bdd3ca88e8d974181311e1e17fdebfc3cc9588ce57cc41c141ca00bf45cd5b"
 
 [[files]]
 file = "kubejs/data/littlejoys/loot_table/dig_spot/basalt.json"
-hash = "f84141da30fdb24af7c8d9e0c4d5f171be436324c8a611d0817f3d71c1b1189b"
+hash = "a3d78e18885f6154a0427d301ce89321b75a4fefee82d5a5fcd4322e46cf9093"
 
 [[files]]
 file = "kubejs/data/littlejoys/loot_table/dig_spot/blackstone.json"
-hash = "f84141da30fdb24af7c8d9e0c4d5f171be436324c8a611d0817f3d71c1b1189b"
+hash = "a3d78e18885f6154a0427d301ce89321b75a4fefee82d5a5fcd4322e46cf9093"
 
 [[files]]
 file = "kubejs/data/littlejoys/loot_table/dig_spot/bone_block.json"
-hash = "6f93545297921f63ec2a050aa5301f52044103b56ee9a5c447d03862ec5c04f0"
+hash = "8250e3e89f3cc4c790209d2a992d5c46f9147192835fdca8babc955af98a2fd6"
 
 [[files]]
 file = "kubejs/data/littlejoys/loot_table/dig_spot/clay.json"
-hash = "b1d4418514f1e0851339bfdd590eb00a079a2896029e4f0187b30be33f3b75ad"
+hash = "f6fbcc42aec55e1451181265bb6b66412fc4d9d4d8da5a40041df9147a78fdb7"
 
 [[files]]
 file = "kubejs/data/littlejoys/loot_table/dig_spot/crimson_nylium.json"
-hash = "f84141da30fdb24af7c8d9e0c4d5f171be436324c8a611d0817f3d71c1b1189b"
+hash = "a3d78e18885f6154a0427d301ce89321b75a4fefee82d5a5fcd4322e46cf9093"
 
 [[files]]
 file = "kubejs/data/littlejoys/loot_table/dig_spot/dirt.json"
-hash = "6f93545297921f63ec2a050aa5301f52044103b56ee9a5c447d03862ec5c04f0"
+hash = "8250e3e89f3cc4c790209d2a992d5c46f9147192835fdca8babc955af98a2fd6"
 
 [[files]]
 file = "kubejs/data/littlejoys/loot_table/dig_spot/end_stone.json"
-hash = "f84141da30fdb24af7c8d9e0c4d5f171be436324c8a611d0817f3d71c1b1189b"
+hash = "a3d78e18885f6154a0427d301ce89321b75a4fefee82d5a5fcd4322e46cf9093"
 
 [[files]]
 file = "kubejs/data/littlejoys/loot_table/dig_spot/grass_block.json"
-hash = "a9e46dc700a18d25430a5a00563856f5d17d5f6447a07d204108dceb0608f2ae"
+hash = "f218655cedd58ebd4efbc62c3792bc29f9216ec24ab309896efbdc9f817fe63b"
 
 [[files]]
 file = "kubejs/data/littlejoys/loot_table/dig_spot/gravel.json"
-hash = "753f3cff3fe6d15f79a0f54d6305614db89403cd4c8851b66cc97ca76b9ae6c4"
+hash = "6b8ae8de357cfbacb11a5304eb30a846ead88c85a53b0d9f1be5a71a42238c09"
 
 [[files]]
 file = "kubejs/data/littlejoys/loot_table/dig_spot/ice.json"
-hash = "f84141da30fdb24af7c8d9e0c4d5f171be436324c8a611d0817f3d71c1b1189b"
+hash = "a3d78e18885f6154a0427d301ce89321b75a4fefee82d5a5fcd4322e46cf9093"
 
 [[files]]
 file = "kubejs/data/littlejoys/loot_table/dig_spot/magma_block.json"
-hash = "f84141da30fdb24af7c8d9e0c4d5f171be436324c8a611d0817f3d71c1b1189b"
+hash = "a3d78e18885f6154a0427d301ce89321b75a4fefee82d5a5fcd4322e46cf9093"
 
 [[files]]
 file = "kubejs/data/littlejoys/loot_table/dig_spot/moss_block.json"
-hash = "a9e46dc700a18d25430a5a00563856f5d17d5f6447a07d204108dceb0608f2ae"
+hash = "f218655cedd58ebd4efbc62c3792bc29f9216ec24ab309896efbdc9f817fe63b"
 
 [[files]]
 file = "kubejs/data/littlejoys/loot_table/dig_spot/mud.json"
-hash = "e50c32910c23e07aa5937377ffe8294478897152740fbdf2ff19717f3eabb8cf"
+hash = "c2a931f810e08624eb460e24cc5d8eab8abf19d805c00676e2a1a7842a4e1921"
 
 [[files]]
 file = "kubejs/data/littlejoys/loot_table/dig_spot/mycelium.json"
-hash = "6f93545297921f63ec2a050aa5301f52044103b56ee9a5c447d03862ec5c04f0"
+hash = "8250e3e89f3cc4c790209d2a992d5c46f9147192835fdca8babc955af98a2fd6"
 
 [[files]]
 file = "kubejs/data/littlejoys/loot_table/dig_spot/netherrack.json"
-hash = "f84141da30fdb24af7c8d9e0c4d5f171be436324c8a611d0817f3d71c1b1189b"
+hash = "a3d78e18885f6154a0427d301ce89321b75a4fefee82d5a5fcd4322e46cf9093"
 
 [[files]]
 file = "kubejs/data/littlejoys/loot_table/dig_spot/podzol.json"
-hash = "6f93545297921f63ec2a050aa5301f52044103b56ee9a5c447d03862ec5c04f0"
+hash = "8250e3e89f3cc4c790209d2a992d5c46f9147192835fdca8babc955af98a2fd6"
 
 [[files]]
 file = "kubejs/data/littlejoys/loot_table/dig_spot/red_sand.json"
-hash = "3167b71c01654fd77d4cf83062ecce9de1092ae3598d90c4cb7b4933af6e6634"
+hash = "7c178e6590197136da3a22f2d11aa7b7affa002509559c9ee797edd2579f973d"
 
 [[files]]
 file = "kubejs/data/littlejoys/loot_table/dig_spot/red_sandstone.json"
-hash = "3167b71c01654fd77d4cf83062ecce9de1092ae3598d90c4cb7b4933af6e6634"
+hash = "7c178e6590197136da3a22f2d11aa7b7affa002509559c9ee797edd2579f973d"
 
 [[files]]
 file = "kubejs/data/littlejoys/loot_table/dig_spot/sand.json"
-hash = "3167b71c01654fd77d4cf83062ecce9de1092ae3598d90c4cb7b4933af6e6634"
+hash = "7c178e6590197136da3a22f2d11aa7b7affa002509559c9ee797edd2579f973d"
 
 [[files]]
 file = "kubejs/data/littlejoys/loot_table/dig_spot/sandstone.json"
-hash = "3167b71c01654fd77d4cf83062ecce9de1092ae3598d90c4cb7b4933af6e6634"
+hash = "7c178e6590197136da3a22f2d11aa7b7affa002509559c9ee797edd2579f973d"
 
 [[files]]
 file = "kubejs/data/littlejoys/loot_table/dig_spot/snow_block.json"
-hash = "6f93545297921f63ec2a050aa5301f52044103b56ee9a5c447d03862ec5c04f0"
+hash = "8250e3e89f3cc4c790209d2a992d5c46f9147192835fdca8babc955af98a2fd6"
 
 [[files]]
 file = "kubejs/data/littlejoys/loot_table/dig_spot/soul_sand.json"
-hash = "f84141da30fdb24af7c8d9e0c4d5f171be436324c8a611d0817f3d71c1b1189b"
+hash = "a3d78e18885f6154a0427d301ce89321b75a4fefee82d5a5fcd4322e46cf9093"
 
 [[files]]
 file = "kubejs/data/littlejoys/loot_table/dig_spot/soul_soil.json"
-hash = "f84141da30fdb24af7c8d9e0c4d5f171be436324c8a611d0817f3d71c1b1189b"
+hash = "a3d78e18885f6154a0427d301ce89321b75a4fefee82d5a5fcd4322e46cf9093"
 
 [[files]]
 file = "kubejs/data/littlejoys/loot_table/dig_spot/stone.json"
-hash = "f84141da30fdb24af7c8d9e0c4d5f171be436324c8a611d0817f3d71c1b1189b"
+hash = "a3d78e18885f6154a0427d301ce89321b75a4fefee82d5a5fcd4322e46cf9093"
 
 [[files]]
 file = "kubejs/data/littlejoys/loot_table/dig_spot/terracotta.json"
-hash = "b1d4418514f1e0851339bfdd590eb00a079a2896029e4f0187b30be33f3b75ad"
+hash = "f6fbcc42aec55e1451181265bb6b66412fc4d9d4d8da5a40041df9147a78fdb7"
 
 [[files]]
 file = "kubejs/data/littlejoys/loot_table/dig_spot/warped_nylium.json"
-hash = "f84141da30fdb24af7c8d9e0c4d5f171be436324c8a611d0817f3d71c1b1189b"
+hash = "a3d78e18885f6154a0427d301ce89321b75a4fefee82d5a5fcd4322e46cf9093"
 
 [[files]]
 file = "kubejs/data/littlejoys/loot_table/drop_rush/sweet_berry_bush.json"
@@ -754,7 +758,7 @@ hash = "0f3ad1bd504a17be73c27bdb6b5e9d0f753a63097c7611968e01f27df6d657f9"
 
 [[files]]
 file = "kubejs/data/littlejoys/loot_table/fishing_spot/water.json"
-hash = "b623f8aaec71b22f93c64bf45a1ddb7395f752f4f71b10f725efd70fa44dcc73"
+hash = "d8c10716e825a798640d898952a02c46e5afcc45a17c3f1aab6803409fdf1001"
 
 [[files]]
 file = "kubejs/data/littlejoys/recipe/dig_spot/tfc_clay.json"
@@ -814,15 +818,15 @@ hash = "d9f42eb4cb863d8f8880d40dfd02f004199bd456da1ffc73209ca3dc72679f46"
 
 [[files]]
 file = "kubejs/data/minecraft/loot_table/chests/buried_treasure.json"
-hash = "1b74473208ac3a44a7fd56cee85cc7c327715f73cc25a297d628305e8757df98"
+hash = "f1ba6a47181a06e55db94511f8eb34d4637648c95c98aeb0c6e1df992bf1472e"
 
 [[files]]
 file = "kubejs/data/minecraft/loot_table/chests/desert_pyramid.json"
-hash = "6bded9c124c936085b5b50cd9fba7b0557cd48b2fd37e51e6a422ec0a779e015"
+hash = "f1e5d7ca856240801c061ddb63d641034ff4bb363996f72a48cb48dd21e8177d"
 
 [[files]]
 file = "kubejs/data/minecraft/loot_table/chests/end_city_treasure.json"
-hash = "fcd4c7d49e50cf225e1c53230cb800037583d39a19e000fe13d9bf0cf824acf1"
+hash = "0683bd45fd2d107b4599f330f55085e37e2232ac02b69c306f54701fa6e93dc5"
 
 [[files]]
 file = "kubejs/data/minecraft/loot_table/chests/igloo_chest.json"
@@ -830,15 +834,15 @@ hash = "26ca9252cb734d91d59c54220ee54a1c6b11bbd51ff330b55f73f1ccd2c6bd3f"
 
 [[files]]
 file = "kubejs/data/minecraft/loot_table/chests/jungle_temple.json"
-hash = "c0c4f39f012cd9236ed458dc6c74f68db5f42944d28845c89b1932d16e895955"
+hash = "7d5d370780412f364fba2cd674415f5e379260335ad95e1dda94a8173e0e8d53"
 
 [[files]]
 file = "kubejs/data/minecraft/loot_table/chests/pillager_outpost.json"
-hash = "925f62c02773d45820228c6e9473b228f5ca5a8b1905d2e61637c65e05e702cc"
+hash = "bdb2d58393bb22ecaf3ab27b27696aaa6755a611b5a615090b2abb50b19aed18"
 
 [[files]]
 file = "kubejs/data/minecraft/loot_table/chests/ruined_portal.json"
-hash = "0ea3de2bf6d503b68c3e669b23fbc42fc5b16889f24a659f73ef3c74837f64b0"
+hash = "a56ca414790bdc565b1bc6b31b53bf051a874de882b01002c6d99d43d1ae5336"
 
 [[files]]
 file = "kubejs/data/minecraft/loot_table/chests/shipwreck_map.json"
@@ -846,15 +850,15 @@ hash = "c05ba539a4d7b29da619c713f09ea67f0130aeb8f1eb5e6c127444805e87900c"
 
 [[files]]
 file = "kubejs/data/minecraft/loot_table/chests/shipwreck_supply.json"
-hash = "e4e0c14d98cf3f9911ae3d8a17699363da2674ed4030679280e94662d64674d7"
+hash = "737177f10322123b97c564197e494c950da4928e10ebc949d046db4dd1278dbe"
 
 [[files]]
 file = "kubejs/data/minecraft/loot_table/chests/shipwreck_treasure.json"
-hash = "20e74b585f8923026be34d9854a63d673bc3271333f99cc2396ce3c1c3eb522b"
+hash = "67277ab65ce3695274b39283831023bb6ae79c1e5cfbe168a665d389b9cdf2c1"
 
 [[files]]
 file = "kubejs/data/minecraft/loot_table/chests/simple_dungeon.json"
-hash = "01c2110ce5b473cab10c8ea0f8a283906119307a272a8400060405f7d7c98245"
+hash = "73d090115c88dff0b928aa26341ff415f210b9abd27e642af37d50f60ba4d6d9"
 
 [[files]]
 file = "kubejs/data/minecraft/loot_table/chests/spawn_bonus_chest.json"
@@ -862,11 +866,11 @@ hash = "dcaea0735f79ecd194efee7c1e28fa77524f5192ea4dfb6d6ec0e8d20d38a454"
 
 [[files]]
 file = "kubejs/data/minecraft/loot_table/chests/stronghold_corridor.json"
-hash = "85095793a972325c65d8639d8611dfa39cdd67f270008366f5fe07e159ac5ac8"
+hash = "399a21e9b6fdff344a4e09dded22646bd0609a5338ebfd4d58018a45f3750056"
 
 [[files]]
 file = "kubejs/data/minecraft/loot_table/chests/stronghold_crossing.json"
-hash = "bebb169ad5632efce56254aa25d64243af14dc4d6c8fafe96242fbfe2d6ccf7c"
+hash = "a5bdc5b0b6f4e8c7555efcaef16a0c52badc488cabf9efc51622149dc74fa36c"
 
 [[files]]
 file = "kubejs/data/minecraft/loot_table/chests/stronghold_library.json"
@@ -874,11 +878,11 @@ hash = "a27f8a640c78c0ce58ad677f68076f3f7f175216e11b50c8e2ff236a2e7c67f2"
 
 [[files]]
 file = "kubejs/data/minecraft/loot_table/chests/underwater_ruin_big.json"
-hash = "5a9e9643e0a9b5a848f8b936568a62cb529634349cf8a0e8863b06314aa44251"
+hash = "5e06cf18321e2dfdbe610cc880dd322dba9c54a14132e72211ea871d7e6a3563"
 
 [[files]]
 file = "kubejs/data/minecraft/loot_table/chests/underwater_ruin_small.json"
-hash = "01aeeceef9edc5278a2d3a21ee4460ed99eb4ceb1de4b7f3807cab1969895f50"
+hash = "cb306fbdf83dd6cda632432e2932b5dbab3cef4f3f9c33b1ed96297f4317ab1f"
 
 [[files]]
 file = "kubejs/data/minecraft/loot_table/chests/village/village_armorer.json"
@@ -950,7 +954,7 @@ hash = "d8a6c755efceac759d0e9d3a3e81f24bd19924468d29820754df9aa443676cc0"
 
 [[files]]
 file = "kubejs/data/minecraft/loot_table/chests/woodland_mansion.json"
-hash = "131e9e290384a27f37a9cb4e320149c13690fb09f57790cf501841c888f41736"
+hash = "b9939d4734551c45f4d41251ce5d59a0578faf42a67eca79e9d84499a4352e5d"
 
 [[files]]
 file = "kubejs/data/minecraft/loot_table/entities/iron_golem.json"
@@ -1054,7 +1058,7 @@ hash = "e0bdd3ca88e8d974181311e1e17fdebfc3cc9588ce57cc41c141ca00bf45cd5b"
 
 [[files]]
 file = "kubejs/data/mtr/loot_table/badlands_temple_common.json"
-hash = "d9c7c0f7fa205fed0e23d654befa192a29744b84b242ab6855ea94e70abd1c2d"
+hash = "0e369bb7246f68620705815713b9609a8a8222de9a6860bd521eb734ec387fe2"
 
 [[files]]
 file = "kubejs/data/mtr/loot_table/badlands_temple_decorated_pot.json"
@@ -1062,11 +1066,11 @@ hash = "d3e22681e97d454445b638eee6d1c7f0a01d465415f1d5aab4584143d2a37029"
 
 [[files]]
 file = "kubejs/data/mtr/loot_table/badlands_temple_rare.json"
-hash = "36e7811c0aa2bb73476ba6edc2742ceedeac2a74ac4cac84a296bcd2c4bc3cf5"
+hash = "52cd622d63ac4b7813bfeaf41f73a295520c9a2cc4fa0df1d468e9d299053d6c"
 
 [[files]]
 file = "kubejs/data/mtr/loot_table/desert_temple_crypt_chest.json"
-hash = "e0f16c33b5e3ec7091c1a77256e819c1be82b4a5b8a6efa5aae730f46e54f50e"
+hash = "dfd14e0de16755ea0d6464ccf8ed19933419da6c2173c72a7248d5ef44a3045b"
 
 [[files]]
 file = "kubejs/data/mtr/loot_table/desert_temple_decorated_pot.json"
@@ -1074,11 +1078,11 @@ hash = "38ec0890b53670b965e04ceceb56925dadd862f0ef87ba6e1b3ada0dc191d9b7"
 
 [[files]]
 file = "kubejs/data/mtr/loot_table/desert_temple_lower_chamber.json"
-hash = "e11ed11e6a6bc7d7b2aab909bf6d8b74ec614483ae40944889f287130ea83454"
+hash = "7317e0de067afffc21e807c33ed5aa840373e2821b6faa8d16625867deb42fee"
 
 [[files]]
 file = "kubejs/data/mtr/loot_table/desert_temple_pillar_chest.json"
-hash = "d1f5a52ef373f69a4147fbf9264e0511c0d95fbff4391ede3925f563ede45ba2"
+hash = "573c533c289a8baacfc1cb74ac6546391030c831a42aa9bf04bb63f87a081278"
 
 [[files]]
 file = "kubejs/data/mtr/loot_table/desert_temple_suspicious_sand.json"
@@ -1086,7 +1090,7 @@ hash = "3cc5413c737af90996febc3ad8ac828ad69fd21ecf46db93b13ff046923890b9"
 
 [[files]]
 file = "kubejs/data/mtr/loot_table/desert_temple_wall_chest.json"
-hash = "a4a37404f090662ba959c8699452e4cf972254e3f5c0823498e3191c5be7eefb"
+hash = "ac627f85a9cdd0ea371d57d31655e28ad61a4d4b0feb8291ec3b5a7e561751ce"
 
 [[files]]
 file = "kubejs/data/mtr/loot_table/empty.json"
@@ -1094,7 +1098,7 @@ hash = "25a543e96bde4c45a637e96bb16d629dcb7ce3f3e26f6ed50bcbbc58d10f2fee"
 
 [[files]]
 file = "kubejs/data/mtr/loot_table/jungle_temple_corridor.json"
-hash = "fe8a6f537161aeb4f57d1f66b1c8d0b7f682b9ede59065653e0b5fa16777336a"
+hash = "b670e57d1700907c249505f36568aa7241d24f4647b70685b9f0cec6480d3652"
 
 [[files]]
 file = "kubejs/data/mtr/loot_table/jungle_temple_crypt_barrel_empty.json"
@@ -1106,7 +1110,7 @@ hash = "4ceec95e3bbdb39def80f295d4a57e388f0d98df8fddf5d36cd89bc245ac88d2"
 
 [[files]]
 file = "kubejs/data/mtr/loot_table/jungle_temple_crypt_chest.json"
-hash = "e0f16c33b5e3ec7091c1a77256e819c1be82b4a5b8a6efa5aae730f46e54f50e"
+hash = "dfd14e0de16755ea0d6464ccf8ed19933419da6c2173c72a7248d5ef44a3045b"
 
 [[files]]
 file = "kubejs/data/mtr/loot_table/jungle_temple_decorated_pot.json"
@@ -1114,19 +1118,19 @@ hash = "f277c759bcb85672e45592723698736e1bf881cbf14d78e8339f6e378110173b"
 
 [[files]]
 file = "kubejs/data/mtr/loot_table/jungle_temple_lava_chamber.json"
-hash = "d18a4c2cf3f5dba39ef54e0aa5994947cf39d7258702fa641bf1a87c0949e013"
+hash = "3fc8108bcc4587ba8d5fa942349ca1b312f947d78688ef1a3e90bb9e853da032"
 
 [[files]]
 file = "kubejs/data/mtr/loot_table/jungle_temple_main_common.json"
-hash = "a202f8eaebb976c60ec69c5773d25967230d2ed2edee830fc2ea6fce69a32de2"
+hash = "2ba121b1aca488e40d99aa9dab18e21dde71b9b63fff9c189da2e2b020a2ec65"
 
 [[files]]
 file = "kubejs/data/mtr/loot_table/jungle_temple_main_double.json"
-hash = "dc305a00c478ba54feeccb758ca1530a43969b994be99611e36efc46d61dd571"
+hash = "54edf1298b9dc580251bd9edfc9cbe2e760e2a3afbbb36c57f3c5fc5d964dfab"
 
 [[files]]
 file = "kubejs/data/mtr/loot_table/jungle_temple_puzzle_treasure.json"
-hash = "10781f615c01aa8906b2e15b909ca9fca427f9edc4e6e690f5c5b611fd4f9e48"
+hash = "b272520c1cefe01f805f6301c7fc195951ade79b69ac0cff99d08cae3022de93"
 
 [[files]]
 file = "kubejs/data/mtr/loot_table/jungle_temple_suspicious_gravel.json"
@@ -1134,11 +1138,11 @@ hash = "1db1237d7c10986701082360809840394cd64b46ba69b93051fd7e2d9f202668"
 
 [[files]]
 file = "kubejs/data/mtr/loot_table/jungle_temple_upper_chest.json"
-hash = "a202f8eaebb976c60ec69c5773d25967230d2ed2edee830fc2ea6fce69a32de2"
+hash = "2ba121b1aca488e40d99aa9dab18e21dde71b9b63fff9c189da2e2b020a2ec65"
 
 [[files]]
 file = "kubejs/data/mtr/loot_table/jungle_temple_upper_double.json"
-hash = "d1f5a52ef373f69a4147fbf9264e0511c0d95fbff4391ede3925f563ede45ba2"
+hash = "573c533c289a8baacfc1cb74ac6546391030c831a42aa9bf04bb63f87a081278"
 
 [[files]]
 file = "kubejs/data/mtr/loot_table/nether_temple_common.json"
@@ -1154,11 +1158,11 @@ hash = "6bded9c124c936085b5b50cd9fba7b0557cd48b2fd37e51e6a422ec0a779e015"
 
 [[files]]
 file = "kubejs/data/mtr/loot_table/ocean_temple_common.json"
-hash = "50a893e989a46966c3915bd9f8101dd958c96974fec142c4b4cc6d22d7adcd8e"
+hash = "344ddc83226e03dc2c4d28a50fc4c810aed61f73d0bbefca4a75df6a7ea05deb"
 
 [[files]]
 file = "kubejs/data/mtr/loot_table/ocean_temple_treasure.json"
-hash = "d997efbe846ee8e070d03110763a5383e5cf62df5ff082c3090b013d3990e480"
+hash = "1bdfd085b1ac8a8ba1cd93f8c1118421cc856fff5f4fee2add8e029aba4f021c"
 
 [[files]]
 file = "kubejs/data/mtr/loot_table/stronghold_barracks_barrel.json"
@@ -1166,11 +1170,11 @@ hash = "4ffff50e69be7705cd6805d34244d2470d5418bad36a799be4c4216af10f58f1"
 
 [[files]]
 file = "kubejs/data/mtr/loot_table/stronghold_barracks_chest.json"
-hash = "4614dba7f772c9610dc765e2ccf8c825f4461024ad6bb9b1edf8dfaef8d92597"
+hash = "8175a9d0b5f78716e9b8c1d99c3bf970ed3947d4ef78ae9078f6a0b93e2fda9f"
 
 [[files]]
 file = "kubejs/data/mtr/loot_table/stronghold_corridor_common.json"
-hash = "ff70d37fb93610f6f9d90f9363b2f631f3c087aea7b050125aaa7defb242278d"
+hash = "aaeabf5aec0ec9a980f788c0a0a4e8d28693205b380a436b6593959f6cf61dc6"
 
 [[files]]
 file = "kubejs/data/mtr/loot_table/stronghold_corridor_empty.json"
@@ -1178,11 +1182,11 @@ hash = "25a543e96bde4c45a637e96bb16d629dcb7ce3f3e26f6ed50bcbbc58d10f2fee"
 
 [[files]]
 file = "kubejs/data/mtr/loot_table/stronghold_corridor_rare.json"
-hash = "d8d46385e1642817bac5b33141d0a3da12f246b5b689c48ebdcf0f68f5611dce"
+hash = "5a94babf94ea66d8cb292fc3809089b7823001590cc389378fca5da95984df38"
 
 [[files]]
 file = "kubejs/data/mtr/loot_table/stronghold_corridor_uncommon.json"
-hash = "a80a6ce01a5859a7ffe8a229faaec028ccf497e8757aba093414b97b2916667a"
+hash = "7721ad94e7f3e8b720ca3b0a6dd5bacf00c362755b63920421e488be662f64f3"
 
 [[files]]
 file = "kubejs/data/mtr/loot_table/stronghold_decorated_pot.json"
@@ -1230,7 +1234,7 @@ hash = "479483368600945719074ec650db70234ae9dcd6790f38172e6c04245a5fc998"
 
 [[files]]
 file = "kubejs/data/mvs/loot_table/crystal.json"
-hash = "19ddc73550a7bb1cda55ce83747720174badcf1a4fd4c64917b59bf01e53e96e"
+hash = "83f4bc4c463987226ad19e75e7668de9293ebe7f1c2e46116223449a023604ca"
 
 [[files]]
 file = "kubejs/data/mvs/loot_table/empty.json"
@@ -1238,7 +1242,7 @@ hash = "d032f58198f7fbbe3fb091d010888a94b44146ae2530af9662f9c4e24bfbbe98"
 
 [[files]]
 file = "kubejs/data/mvs/loot_table/end_scraps.json"
-hash = "ed355cf3ee829525dc73a70011e1eb2b03c272c941e0bcad0eff171690cc1fbc"
+hash = "4ba64129bb8fabd29300cbcd5d568ac86ef3508ff61030ff69ef60903cf49f2b"
 
 [[files]]
 file = "kubejs/data/mvs/loot_table/floating_islands.json"
@@ -1266,7 +1270,7 @@ hash = "bd2f4a5220d5a034a1384bda950d004d61d49bb0b76e826c65c9334a7f4562c9"
 
 [[files]]
 file = "kubejs/data/mvs/loot_table/houses_rare.json"
-hash = "d07830d1d6c9208a9ce8dc8373b6658fff0ad80cdb6e5756e9158006dd2f2361"
+hash = "41caf8247287794b30f4511ba72e758db359e6ba1eba4279e57b18755e2bf089"
 
 [[files]]
 file = "kubejs/data/mvs/loot_table/houses_uncommon.json"
@@ -1274,7 +1278,7 @@ hash = "d2585112aebbf038419f1f3fa5a1c4cee732a1b9ad497c0abe441e5cb6830032"
 
 [[files]]
 file = "kubejs/data/mvs/loot_table/jungle_tower.json"
-hash = "a345348722d003fda11173990b0187d2a1d0eef84c410506e60c2801edbc7c4c"
+hash = "5db9821d9b6a4c727daf31722d177dd06966e361291acb0c52874328179082db"
 
 [[files]]
 file = "kubejs/data/mvs/loot_table/large_carts.json"
@@ -1294,7 +1298,7 @@ hash = "4c3177bb3f9415ccc5437ad0ef0a767da01b02071e1eeb4f764d2e1920d13942"
 
 [[files]]
 file = "kubejs/data/mvs/loot_table/mineshaft/rare.json"
-hash = "965dcc0fe43e6ebe58b6c2943228aa3d954bd5afd013658d2e057440fe91f818"
+hash = "784b256e01c04089dda627a88ec224912e1a22071325986923332bf90f2d7ddb"
 
 [[files]]
 file = "kubejs/data/mvs/loot_table/mineshaft/uncommon.json"
@@ -1306,7 +1310,7 @@ hash = "d23c49943842c7a6abe802ece8efb8f50fca530e232c9d45e864e341c03de80c"
 
 [[files]]
 file = "kubejs/data/mvs/loot_table/pillager.json"
-hash = "925f62c02773d45820228c6e9473b228f5ca5a8b1905d2e61637c65e05e702cc"
+hash = "bdb2d58393bb22ecaf3ab27b27696aaa6755a611b5a615090b2abb50b19aed18"
 
 [[files]]
 file = "kubejs/data/mvs/loot_table/pond.json"
@@ -1314,7 +1318,7 @@ hash = "7a9dca30a71151a636d0a6fe014f3698e34c5eb779e977c53e0beae9698ed778"
 
 [[files]]
 file = "kubejs/data/mvs/loot_table/rare.json"
-hash = "6888f7c2ef0c0e05343a76fc27705b4507410ec3d2621149704032d0fe8254b2"
+hash = "7f503202c0d193b7153f19a1ce1fc5cb09cde7599d4c19e268bcda2148b46c41"
 
 [[files]]
 file = "kubejs/data/mvs/loot_table/swamps.json"
@@ -1874,7 +1878,7 @@ hash = "f21e2a57b54ba99f608da2bf1a13a550f75824d99b6205f3aa863770b6656320"
 
 [[files]]
 file = "kubejs/data/pack/loot_table/chests/barrow.json"
-hash = "ab60dac90e5925e84a7ede5b7219156f84e3916a980cf481902b433347a633e5"
+hash = "87217b7e344319446337ef55f119b030574e7f3f5e5a964180172e978d7800b9"
 
 [[files]]
 file = "kubejs/data/pack/loot_table/chests/bloomery_ruin.json"
@@ -1882,7 +1886,7 @@ hash = "901cbba50aa2f408ddcc23fcedcf91225c3f38039bc720d87b862f79d509116b"
 
 [[files]]
 file = "kubejs/data/pack/loot_table/chests/cairn.json"
-hash = "6e986c887bff001a0df6a144c9f7ae386c2acfa47e0fe275a8b87a631b472b47"
+hash = "000e0a6db25e210253e3cd8b5d32f9695fb56794cff9ff1e9556b9efe95e2eb7"
 
 [[files]]
 file = "kubejs/data/pack/loot_table/chests/hermit.json"
@@ -1926,7 +1930,7 @@ hash = "39a22e8f7330a2c27520753279958c8a5b5c1805d9a8fc11b913a5fdfd8b20a1"
 
 [[files]]
 file = "kubejs/data/pack/loot_table/chests/standing_stones_offering.json"
-hash = "b04e9c008aaad5ba2e53ce65f677882aa2f194e113af92007e1d059348e0ec11"
+hash = "b615912298cec28b218cec930dd4613d7e71934afe1723d23a0f8066cbc34531"
 
 [[files]]
 file = "kubejs/data/pack/loot_table/chests/trading_post.json"
@@ -1986,7 +1990,7 @@ hash = "e0cf986edd4f0acbcc351e74a9fabb512eb2cf4eebbd888194e019be2b6d5103"
 
 [[files]]
 file = "kubejs/data/pack/loot_table/chests/wayside_shrine.json"
-hash = "da826a2e07e4b5f786830c2d56d6ee848d2b5c25db03f7b8d2a061e5be555457"
+hash = "dfa051d0f745379f1802f8bd41e4a08753ad195581278e2eecdbac47e0d0c9f3"
 
 [[files]]
 file = "kubejs/data/pack/loot_table/chests/wreck.json"
@@ -2913,18 +2917,6 @@ file = "kubejs/data/pack/tags/worldgen/biome/has_structure/mine_adit.json"
 hash = "b41b233b1846d5bea3c089b0545925adbb23297c8acf8cda8c792d651bf22e7b"
 
 [[files]]
-file = "kubejs/data/pack/tags/worldgen/biome/has_structure/ocean_ruins_any.json"
-hash = "b6a570f99c8ddd4a5240f4198b61b93ac0b7a2f8c07cbf88051b898339118cd4"
-
-[[files]]
-file = "kubejs/data/pack/tags/worldgen/biome/has_structure/ocean_ruins_deep.json"
-hash = "360319c24f2a861afe1e1e7e4acbddae71103dc3f40450402190177c22e30495"
-
-[[files]]
-file = "kubejs/data/pack/tags/worldgen/biome/has_structure/ocean_ruins_shelf.json"
-hash = "c1bca72de5cad27fd7014c58939d188969cdd08aa573043708b7712c02544e0a"
-
-[[files]]
 file = "kubejs/data/pack/tags/worldgen/biome/has_structure/prospector_camp.json"
 hash = "b41b233b1846d5bea3c089b0545925adbb23297c8acf8cda8c792d651bf22e7b"
 
@@ -2967,6 +2959,18 @@ hash = "6c65168a50acc1ab31d54b89ea246380a5447fcd5bbbc4acec208326ad43eb74"
 [[files]]
 file = "kubejs/data/pack/tags/worldgen/biome/has_structure/wreck.json"
 hash = "2029b254bb4903eee27ee5523fe148bbf47e98efd3d131ac00c6ff32bd13c1d5"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/ocean_ruins/any.json"
+hash = "998118e6b7cac19cd6ae5fba49f2178e1f3d5b47a519689ebec9cefbd259f2bd"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/ocean_ruins/deep.json"
+hash = "360319c24f2a861afe1e1e7e4acbddae71103dc3f40450402190177c22e30495"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/ocean_ruins/shelf.json"
+hash = "c1bca72de5cad27fd7014c58939d188969cdd08aa573043708b7712c02544e0a"
 
 [[files]]
 file = "kubejs/data/pack/tags/worldgen/biome/overworld.json"
@@ -4001,6 +4005,10 @@ file = "kubejs/data/pack_loot/loot_table/smith_tools/bronze.json"
 hash = "8fc4437a0c041feb93a27d35968ff3c360f251a96f3c2e54523d067318bd7c2c"
 
 [[files]]
+file = "kubejs/data/pack_loot/loot_table/spirit_orb/stone.json"
+hash = "616975e20aab6ead8d0882a186547e2843477dbf3322b013787ffdb95bdcefa5"
+
+[[files]]
 file = "kubejs/data/pack_loot/loot_table/stationery/bronze.json"
 hash = "4b05ee8c1578f039b73c7ae662198b39078ff876ad35cd6afd4cc510efba973e"
 
@@ -4154,7 +4162,7 @@ hash = "49982118b052ef50d0f2dc35eee1e8f30970ae5fccce157551ff4431c54edca7"
 
 [[files]]
 file = "kubejs/data/underwater_village/loot_table/chests/underwatervillage_loot_common.json"
-hash = "41cc1f89b0831fb4dfe9c6c80b6e3efefc25bb03ec1bf8ed875097e3849f2e7e"
+hash = "df93ec96184595f7e9ae18a85a530041dbfea4e91bb76d2eef41735aee014c8b"
 
 [[files]]
 file = "kubejs/data/underwater_village/loot_table/lib.json"
@@ -4162,71 +4170,71 @@ hash = "d9a68ce3bbd51ec2a11e63b1e7478984448f7d3d7d8ff9b0c802bdc4433ad25e"
 
 [[files]]
 file = "kubejs/data/underwater_village/worldgen/structure/cold_big_gate.json"
-hash = "fda90c9011e5bd00e9cc6ae7d311c3ac28095b610e84238a8cef0eed07d58cf5"
+hash = "3597d516d0c55e7517c9ee49b74cada2523252e5fecb21c035b4376ff1caa500"
 
 [[files]]
 file = "kubejs/data/underwater_village/worldgen/structure/cold_broken_house.json"
-hash = "9bc4078075ab6547bea76fd4822aa3563293e06fdd653a085831f86e62b53515"
+hash = "00989c4632734869e2670d7cc7a454f386cee9d10be46c7a2d177bbd5747e633"
 
 [[files]]
 file = "kubejs/data/underwater_village/worldgen/structure/cold_fountain.json"
-hash = "2b48a70ea830a95cb64974880bc01d8f38914d05d27108f9b4bd8c43d6b849b4"
+hash = "7f1c05f3f6406c9229a808c57510555910cce00f26e74e58b1861e109c4cddc8"
 
 [[files]]
 file = "kubejs/data/underwater_village/worldgen/structure/cold_gate.json"
-hash = "0926e7b0e6628489127993c0616f0df15bee8f528b5dea500c9b5a2153028fd4"
+hash = "d51dfc0c4cf63f56b447a06c0520bc39f08e6cb88b6c04c340424cf809255797"
 
 [[files]]
 file = "kubejs/data/underwater_village/worldgen/structure/dungeon.json"
-hash = "19ddc9898c4e4391022f59f8601609ef35432960bad9453700a9be18817a7c77"
+hash = "a0bfe68f97b0ffef8289d9bcb6d0d634141996b75736de26422ecb20b407b80a"
 
 [[files]]
 file = "kubejs/data/underwater_village/worldgen/structure/library.json"
-hash = "7b4da1859c5d61420d1db6ee660554e93302e34908d417a5256d018221f81738"
+hash = "21e8fb97660b00e51f262262c5531d4f50e13b0cbc083b99fbe4e0598582c05a"
 
 [[files]]
 file = "kubejs/data/underwater_village/worldgen/structure/ruins.json"
-hash = "14a468864f50462ecfcf02c6009f3ff19597396ceb8735ff40a806fc7350fdd5"
+hash = "08d4cb98bfa00b225a59ef663fb91081a50157c07519148fb5bc2e73b6004cb4"
 
 [[files]]
 file = "kubejs/data/underwater_village/worldgen/structure/shrine.json"
-hash = "cc93387911dfeb7657c39c60ad6baf123f87915153bc83148d5b3ed75471fd63"
+hash = "ae343e15dae54f9be8144fe4398d2d3464db98fb7fb34144fa0db8bb149349f6"
 
 [[files]]
 file = "kubejs/data/underwater_village/worldgen/structure/small_gate.json"
-hash = "0339ed501a3adbaa7a204caa0daa37c86e8d8581a1bfc3abfdf6df94423b1c79"
+hash = "ba2308aab718174857a36c984953cb97e557f74239f49fba8274251d67068fe0"
 
 [[files]]
 file = "kubejs/data/underwater_village/worldgen/structure/temple.json"
-hash = "5f60fc6bd84c494a122f2267f2716fffa74cb611d3bf350d8956baa888f6e528"
+hash = "b05b069b77b49ca9bd8211a71a8ee687241360f2757ab8daababb673da3545d6"
 
 [[files]]
 file = "kubejs/data/underwater_village/worldgen/structure/temple_broken.json"
-hash = "c023a55411e5a2b6b194140d8724da9f7d78ea38df5211f903e08a61ba4fde17"
+hash = "e7e712b6a7321b08fb7d6c492abd303c82100fc76ad9cff21fb526e225ebccbe"
 
 [[files]]
 file = "kubejs/data/underwater_village/worldgen/structure/temple_ruins.json"
-hash = "6319c89d0c525a32db6693debeb79ddb50620ab81303f56090f279ff1c763178"
+hash = "85c09bc8be4f8aec682074db8146d8de5fb6de18ca9f33ee95b8b4bd891c3fbb"
 
 [[files]]
 file = "kubejs/data/underwater_village/worldgen/structure/tower.json"
-hash = "c4365e64875e08cde341415506a7aae8fe2a9576372e8bdf91d8c5a13836f033"
+hash = "c0add660be03a34bfdf9e37a3958f8475ec15c5a3cbdbc9a633f035fe245c303"
 
 [[files]]
 file = "kubejs/data/underwater_village/worldgen/structure/warm_big_gate.json"
-hash = "7beddc7a647eeec968ad3531fc1ad2f22c1095eca45616e1e65e6511cd968465"
+hash = "c1bcfefc89320d16ff0f4f9440742bf6ba05bec41a1f91c81a75a99d4d4ac8c6"
 
 [[files]]
 file = "kubejs/data/underwater_village/worldgen/structure/warm_broken_house.json"
-hash = "eeba865bb31ef6d2fac1e9626593465cb1f6bd3e31e07af2ce8c57135ad5288f"
+hash = "f7a9648aec40a483c842991dbf98fe0ef55f7a3904ece5402ddf555c86499c21"
 
 [[files]]
 file = "kubejs/data/underwater_village/worldgen/structure/warm_fountain.json"
-hash = "09f654120702cd86e02e45db2e4025a93fca3035c5b8789bbf3e5ba5396585fe"
+hash = "e351a85229cd0f66bbcd35b7473cedee8705bac8a6f67da4a475def4445e9792"
 
 [[files]]
 file = "kubejs/data/underwater_village/worldgen/structure/warm_gate.json"
-hash = "095b473500a449e150ca9aa5c89f7e4d2e2303c20f30c4eacf9984d91fab8bc5"
+hash = "17d93d5d2c2f45777d2fc6c9c6fcddac38fa0b1d02d51bfcc2ee6926fc5d5d6e"
 
 [[files]]
 file = "kubejs/data/underwater_village/worldgen/structure_set/cold_big_gate.json"
@@ -4346,23 +4354,23 @@ hash = "a9c47031f81f6cdac52adf84faa81257b2b7b480a090d426f8d26656ceb29b64"
 
 [[files]]
 file = "kubejs/data/wythers/loot_table/chests/village/forest_ruins_big_house.json"
-hash = "0449a7a161fa70cbd8199198492de0d78115d66b01748cb97fc22d290636267d"
+hash = "94396e8e688409d74c561624d2108ca9bdd86a7fa4da4eb6bed633c60024e118"
 
 [[files]]
 file = "kubejs/data/zhopo/tags/worldgen/biome/has_structure/underwater_city.json"
-hash = "7860616d67c1698d504c2e7d95acc61f567ec3ccaa59de91744308568dac319a"
+hash = "207b964e256f9694366d566db6c427f0aa56d44d57b2d62148084b3e74f86a9f"
 
 [[files]]
 file = "kubejs/data/zhopo/tags/worldgen/biome/has_structure/underwater_fossils.json"
-hash = "9f4cef670f15efaf4e609a07b134d3e1736e47a7924acf05d98c360aafe11611"
+hash = "029a1f60762ca3a09b29a4ecf1290ddd926c9404d7c95f70aee3872bbc07c9c6"
 
 [[files]]
 file = "kubejs/data/zhopo/tags/worldgen/biome/has_structure/underwater_small_ruins.json"
-hash = "9f4cef670f15efaf4e609a07b134d3e1736e47a7924acf05d98c360aafe11611"
+hash = "029a1f60762ca3a09b29a4ecf1290ddd926c9404d7c95f70aee3872bbc07c9c6"
 
 [[files]]
 file = "kubejs/data/zhopo/tags/worldgen/biome/has_structure/underwater_warm_small_ruins.json"
-hash = "9f4cef670f15efaf4e609a07b134d3e1736e47a7924acf05d98c360aafe11611"
+hash = "029a1f60762ca3a09b29a4ecf1290ddd926c9404d7c95f70aee3872bbc07c9c6"
 
 [[files]]
 file = "kubejs/server_scripts/aeronautics/airships.js"
@@ -4402,7 +4410,7 @@ hash = "590874cb910f726cb130b89b5fa4413b5f71ef72ec3ac4cfdf08edfa6bbe0ef3"
 
 [[files]]
 file = "kubejs/server_scripts/compat/exploration.js"
-hash = "f96c718bc46779c3492860d82d5307c9e6fad28a1b3e9e173d8bf9be25bd26e3"
+hash = "097736b56ad1d1ab6d3cc04a3ba9c563e59ff0a2c476528207f81acc358c1847"
 
 [[files]]
 file = "kubejs/server_scripts/compat/fowl_play.js"

@@ -12,10 +12,13 @@
 // - Paragliders: the glider is sticks and leather (a wooden-rod and leather recipe, copper age) and slows a fall or
 //   glides on stamina, so it opens no gate (flight proper is Create Aeronautics' and needs brass). Its energizing
 //   mixture asks for a vanilla carrot, which TFC worlds lack, so it takes TFC's carrot; the enduring mixture needs a
-//   golden carrot and stays out of reach. Spirit orbs, stamina vessels and heart containers come from loot
-//   modifiers (switched off with the other mods' by global_loot_modifiers.json) and from goddess and horned statues
-//   (structures keyed on vanilla biomes, stripped by kubejs/data/paraglider/tags/worldgen/biome/has_structure/),
-//   so neither exists in this pack: more hearts and stamina would be a design call of their own.
+//   golden carrot and stays out of reach. Hearts and stamina: a goddess statue turns 4 spirit orbs into a heart
+//   container or a stamina vessel (the mod's own bargains, kept; config/paraglider-server.toml caps them at 10
+//   hearts and 10 vessels, so 80 orbs for everything). Orbs are exploration loot placed by tools/loot/loot.json
+//   (the mod's loot modifiers are switched off). The statue is not generated (the mod's structures name vanilla
+//   biomes and are stripped in kubejs/data/paraglider/tags/worldgen/biome/has_structure/); it is crafted: a gold
+//   ingot and six cobbles, so the orbs are the gate. The horned statue (trades hearts for emeralds) and the
+//   Nether statue are not available.
 // - Little Joys: dig spots and fishing spots appear near the player on matching ground and give a loot table; the
 //   dig spot recipes (kubejs/data/littlejoys/recipe/dig_spot/tfc_*.json) name TFC's grass, dirt, clay, mud, sand
 //   and gravel, and every table is the loot lane's (era capped, TFC goods). Its gold rush (mining a vanilla ore
@@ -46,6 +49,9 @@ ServerEvents.recipes(event => {
     ingredients: [{ type: 'paraglider:water_bottle' }, { item: 'tfc:food/carrot' }],
     result: { id: 'paraglider:energizing_mixture', count: 1 }
   }).id('paraglider:energizing_mixture')
+
+  // Paragliders: the goddess statue (bargains of the mod: 4 orbs for a heart container or a stamina vessel)
+  event.shaped('paraglider:goddess_statue', [' G ', 'CCC', 'CCC'], { G: '#c:ingots/gold', C: '#c:cobblestones' }).id('pack:paraglider/goddess_statue')
 
   // Artifacts: the eternal steak is cooked from the everlasting beef, which is not in the loot
   event.remove({ id: /^artifacts:eternal_steak/ })

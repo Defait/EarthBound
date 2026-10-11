@@ -54,6 +54,20 @@
           "weight": 5
         }
       ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:spirit_orb/stone",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:empty",
+          "weight": 150
+        }
+      ]
     }
   ]
 }

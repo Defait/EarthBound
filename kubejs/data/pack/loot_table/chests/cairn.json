@@ -10,6 +10,11 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "name": "paraglider:spirit_orb",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
           "name": "minecraft:bone",
           "weight": 10,
           "functions": [

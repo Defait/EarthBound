@@ -10,6 +10,11 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "name": "paraglider:spirit_orb",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
           "name": "tfc:candle",
           "weight": 6,
           "functions": [

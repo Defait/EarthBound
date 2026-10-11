@@ -184,7 +184,7 @@ ServerEvents.loaded(event => {
       }
       ;['comforts:rope_and_nail_shapeless_tfc', 'comforts:sleeping_bag_white', 'comforts:hammock_white', 'paraglider:paraglider',
         'paraglider:energizing_mixture', 'constructionstick:copper_stick', 'constructionstick:iron_stick', 'constructionstick:diamond_stick',
-        'constructionstick:netherite_stick', 'constructionstick:template_angel', 'constructionstick:template_battery', 'measurements:tape_measure',
+        'constructionstick:netherite_stick', 'constructionstick:template_angel', 'constructionstick:template_battery', 'measurements:tape_measure', 'pack:paraglider/goddess_statue', 'paraglider:goddess_statue/heart_container', 'paraglider:goddess_statue/stamina_vessel',
         'littlejoys:dig_spot/tfc_grass', 'littlejoys:dig_spot/tfc_dirt', 'littlejoys:dig_spot/tfc_clay', 'littlejoys:dig_spot/tfc_mud',
         'littlejoys:dig_spot/tfc_sand', 'littlejoys:dig_spot/tfc_gravel', 'littlejoys:fishing_spot/water', 'littlejoys:fishing_spot/tfc_salt_water'].forEach(id => {
         if (!recipe(id)) bad.push(`recipe ${id} is missing`)
@@ -208,6 +208,9 @@ ServerEvents.loaded(event => {
       if (!takes('paraglider:energizing_mixture', 'tfc:food/carrot')) bad.push('energizing mixture does not take a TFC carrot')
       if (takes('paraglider:energizing_mixture', 'minecraft:carrot')) bad.push('energizing mixture still takes a vanilla carrot')
       if (!takes('constructionstick:template_battery', 'tfc:food/potato')) bad.push('battery template does not take a TFC potato')
+
+      if (recipe('paraglider:horned_statue/buy_heart_container') && !recipe('paraglider:goddess_statue/heart_container')) bad.push('statue bargains missing')
+      if (!takes('pack:paraglider/goddess_statue', 'tfc:metal/ingot/gold')) bad.push('goddess statue does not take a gold ingot')
 
       // the campsite: in TFC's land biomes, a single chest, TFC chests
       var biomes = access.registryOrThrow($Registries.BIOME)
