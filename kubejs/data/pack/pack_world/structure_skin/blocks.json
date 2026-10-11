@@ -214,7 +214,7 @@
   "minecraft:command_block": "@air",
   "minecraft:comparator": "@keep",
   "minecraft:composter": "tfc:composter",
-  "minecraft:conduit": "@keep",
+  "minecraft:conduit": "@air",
   "minecraft:copper_block": "tfc:alabaster/polished/orange",
   "minecraft:copper_bulb": "tfc:alabaster/polished/orange",
   "minecraft:copper_door": "tfc:wood/door/oak",

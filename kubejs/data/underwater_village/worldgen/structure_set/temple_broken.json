@@ -1,0 +1,18 @@
+{
+  "structures": [
+    {
+      "structure": "underwater_village:temple_broken",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "tfc:climate",
+    "salt": 317067579,
+    "spacing": 80,
+    "separation": 40,
+    "climate": {
+      "min_temperature": -40,
+      "max_temperature": 40
+    }
+  }
+}

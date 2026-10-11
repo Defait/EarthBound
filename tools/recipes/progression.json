@@ -522,6 +522,114 @@
       "why": "entroized budding grows entro clusters on its faces (like AE2's certus budding); a large cluster drops shards, the budding block itself dust"
     },
     {
+      "id": "mine_vent_chimney",
+      "inputs": [
+        [
+          "create:copper_diving_helmet",
+          "create:netherite_diving_helmet"
+        ],
+        [
+          "create:copper_diving_boots",
+          "create:netherite_diving_boots"
+        ],
+        [
+          "create:copper_backtank",
+          "create:netherite_backtank"
+        ],
+        [
+          "#i:minecraft:pickaxes",
+          "tfc:metal/pickaxe/*"
+        ]
+      ],
+      "outputs": [
+        "gtceu:raw_chalcopyrite",
+        "gtceu:raw_pyrite",
+        "gtceu:raw_sphalerite",
+        "gtceu:raw_galena"
+      ],
+      "why": "dive to a sulfide chimney on the mid-ocean ridge's axis (pack:sulfide_chimney, pack:sulfide_mound) and mine it with a pickaxe; copper diving gear and a backtank are enough"
+    },
+    {
+      "id": "mine_anhydrite_chimney",
+      "inputs": [
+        [
+          "create:copper_diving_helmet",
+          "create:netherite_diving_helmet"
+        ],
+        [
+          "create:copper_diving_boots",
+          "create:netherite_diving_boots"
+        ],
+        [
+          "create:copper_backtank",
+          "create:netherite_backtank"
+        ],
+        [
+          "#i:minecraft:pickaxes",
+          "tfc:metal/pickaxe/*"
+        ]
+      ],
+      "outputs": [
+        "gtceu:raw_gypsum",
+        "gtceu:raw_sphalerite",
+        "gtceu:raw_pollucite"
+      ],
+      "why": "dive to an anhydrite chimney on the volcanic arc (pack:anhydrite_chimney) and mine it with a pickaxe"
+    },
+    {
+      "id": "sweep_nodule_bed",
+      "inputs": [
+        [
+          "create:copper_diving_helmet",
+          "create:netherite_diving_helmet"
+        ],
+        [
+          "create:copper_diving_boots",
+          "create:netherite_diving_boots"
+        ],
+        [
+          "create:copper_backtank",
+          "create:netherite_backtank"
+        ],
+        [
+          "#i:minecraft:shovels",
+          "tfc:metal/shovel/*"
+        ]
+      ],
+      "outputs": [
+        "gtceu:raw_pyrolusite",
+        "gtceu:raw_cobaltite"
+      ],
+      "why": "dive to the deep ocean floor and dig a manganese nodule bed (pack:nodule_bed) with a shovel"
+    },
+    {
+      "id": "mine_mn_crust",
+      "inputs": [
+        [
+          "create:copper_diving_helmet",
+          "create:netherite_diving_helmet"
+        ],
+        [
+          "create:copper_diving_boots",
+          "create:netherite_diving_boots"
+        ],
+        [
+          "create:copper_backtank",
+          "create:netherite_backtank"
+        ],
+        [
+          "#i:minecraft:pickaxes",
+          "tfc:metal/pickaxe/*"
+        ]
+      ],
+      "outputs": [
+        "gtceu:raw_pyrolusite",
+        "gtceu:raw_cobaltite",
+        "gtceu:raw_pitchblende"
+      ],
+      "why": "dive to bare ridge or arc rock and mine its manganese crust (pack:mn_crust) with a pickaxe"
+    },
+    {
       "id": "break_bee_nest",
       "inputs": [
         [

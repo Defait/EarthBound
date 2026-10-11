@@ -1,0 +1,18 @@
+{
+  "structures": [
+    {
+      "structure": "underwater_village:cold_fountain",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "tfc:climate",
+    "salt": 430765125,
+    "spacing": 80,
+    "separation": 40,
+    "climate": {
+      "min_temperature": -40,
+      "max_temperature": 14
+    }
+  }
+}

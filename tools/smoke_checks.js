@@ -163,3 +163,111 @@ ServerEvents.loaded(event => {
     }
   })
 })
+
+// Exploration rewards and building helpers (kubejs/server_scripts/compat/exploration.js, building_helpers.js, world/place_titles.js,
+// kubejs/data/artifacts, kubejs/data/littlejoys, kubejs/data/paraglider; docs/design.md, "Exploration rewards"): the recipes are
+// the pack's (Comforts' rope and nail from TFC Huts, the TFC carrot, the stick tiers), the campsite (single chest, TFC chests) is
+// added to TFC's biomes and the statues of Paragliders are in none, the dig spot recipes load, and the place titles find the
+// places they should.
+ServerEvents.loaded(event => {
+  event.server.scheduleInTicks(10, () => {
+    var bad = []
+    try {
+      var $RL3 = Java.loadClass('net.minecraft.resources.ResourceLocation')
+      var $Registries = Java.loadClass('net.minecraft.core.registries.Registries')
+      var $TagKey = Java.loadClass('net.minecraft.tags.TagKey')
+      var access = event.server.registryAccess()
+      var recipes = event.server.getRecipeManager()
+      var recipe = function (id) {
+        var h = recipes.byKey($RL3.parse(id))
+        return h.isPresent() ? h.get().value() : null
+      }
+      ;['comforts:rope_and_nail_shapeless_tfc', 'comforts:sleeping_bag_white', 'comforts:hammock_white', 'paraglider:paraglider',
+        'paraglider:energizing_mixture', 'constructionstick:copper_stick', 'constructionstick:iron_stick', 'constructionstick:diamond_stick',
+        'constructionstick:netherite_stick', 'constructionstick:template_angel', 'constructionstick:template_battery', 'measurements:tape_measure',
+        'littlejoys:dig_spot/tfc_grass', 'littlejoys:dig_spot/tfc_dirt', 'littlejoys:dig_spot/tfc_clay', 'littlejoys:dig_spot/tfc_mud',
+        'littlejoys:dig_spot/tfc_sand', 'littlejoys:dig_spot/tfc_gravel', 'littlejoys:fishing_spot/water', 'littlejoys:fishing_spot/tfc_salt_water'].forEach(id => {
+        if (!recipe(id)) bad.push(`recipe ${id} is missing`)
+      })
+      ;['comforts:rope_and_nail', 'comforts:shapeless_rope_and_nail', 'constructionstick:template_destruction', 'artifacts:eternal_steak_furnace'].forEach(id => {
+        if (recipe(id)) bad.push(`recipe ${id} should be gone`)
+      })
+      // stick tiers: what each takes in the ingot's place
+      var takes = function (id, item) {
+        var r = recipe(id)
+        if (!r) return false
+        var ings = r.getIngredients()
+        for (var i = 0; i < ings.size(); i++) if (ings.get(i).test(Item.of(item))) return true
+        return false
+      }
+      if (!takes('constructionstick:iron_stick', 'tfc:metal/ingot/wrought_iron')) bad.push('iron stick does not take a wrought iron ingot')
+      if (takes('constructionstick:iron_stick', 'tfc:gem/diamond')) bad.push('iron stick takes a diamond')
+      if (!takes('constructionstick:diamond_stick', 'tfc:metal/ingot/steel')) bad.push('diamond stick does not take a steel ingot')
+      if (takes('constructionstick:diamond_stick', 'tfc:gem/diamond')) bad.push('diamond stick still takes a diamond')
+      if (!takes('constructionstick:netherite_stick', 'tfc:metal/ingot/red_steel')) bad.push('netherite stick does not take a red steel ingot')
+      if (!takes('paraglider:energizing_mixture', 'tfc:food/carrot')) bad.push('energizing mixture does not take a TFC carrot')
+      if (takes('paraglider:energizing_mixture', 'minecraft:carrot')) bad.push('energizing mixture still takes a vanilla carrot')
+      if (!takes('constructionstick:template_battery', 'tfc:food/potato')) bad.push('battery template does not take a TFC potato')
+
+      // the campsite: in TFC's land biomes, a single chest, TFC chests
+      var biomes = access.registryOrThrow($Registries.BIOME)
+      var hasCampsite = function (biomeId) {
+        var b = biomes.get($RL3.parse(biomeId))
+        if (!b) return null
+        var steps = b.getGenerationSettings().features()
+        for (var s = 0; s < steps.size(); s++) {
+          var step = steps.get(s)
+          for (var f = 0; f < step.size(); f++) {
+            var key = step.get(f).unwrapKey()
+            if (key.isPresent() && String(key.get().location()).indexOf('artifacts:') === 0) return String(key.get().location())
+          }
+        }
+        return ''
+      }
+      ;['tfc:plains', 'tfc:hills', 'tfc:mountains', 'tfc:ocean'].forEach(b => {
+        var got = hasCampsite(b)
+        if (got !== 'artifacts:underground_minimalist_campsite') bad.push(`${b} has campsite feature ${got}`)
+      })
+      var placed = access.registryOrThrow($Registries.PLACED_FEATURE).get($RL3.parse('artifacts:underground_minimalist_campsite'))
+      if (!placed) bad.push('placed feature artifacts:underground_minimalist_campsite is missing')
+      else {
+        var mods = placed.placement()
+        for (var m = 0; m < mods.size(); m++) {
+          if (String(mods.get(m)).toLowerCase().indexOf('configvaluefilter') >= 0) bad.push('the minimalist campsite still checks the mod config')
+        }
+      }
+      var chestTag = $TagKey.create($Registries.BLOCK, $RL3.parse('artifacts:campsite_chests'))
+      var chestIds = []
+      var chests = Java.loadClass('net.minecraft.core.registries.BuiltInRegistries').BLOCK.getTagOrEmpty(chestTag).iterator()
+      while (chests.hasNext()) chestIds.push(String(chests.next().unwrapKey().get().location()))
+      if (chestIds.indexOf('tfc:wood/chest/oak') < 0) bad.push('campsite chests do not include a TFC chest')
+      if (chestIds.indexOf('minecraft:chest') >= 0) bad.push('campsite chests still include the vanilla chest')
+
+      // the statues of Paragliders generate nowhere
+      var structures = access.registryOrThrow($Registries.STRUCTURE)
+      ;['underground_horned_statue', 'tarrey_town_goddess_statue', 'nether_horned_statue'].forEach(n => {
+        var st = structures.get($RL3.parse(`paraglider:${n}`))
+        if (!st) { bad.push(`structure paraglider:${n} is missing`); return }
+        if (st.biomes().size() !== 0) bad.push(`structure paraglider:${n} is in ${st.biomes().size()} biomes`)
+      })
+
+      // place titles: real places from their coordinates, the list as the mod has it
+      var $Projection = Java.loadClass('net.yazloysasha.tfcrealworld.util.projection.ProjectionManager')
+      var all = placesLoad()
+      if (all.length < 400) bad.push(`place titles know only ${all.length} places`)
+      ;[['Rome', 41.89, 12.50], ['Paris', 48.86, 2.35], ['Hobart', -42.88, 147.33], ['Stonehenge', 51.1789, -1.8262]].forEach(p => {
+        var xz = $Projection.geographicToClassic(p[2], p[1])
+        var w = placesNearest(Math.round(xz[0]), Math.round(xz[1]), null)
+        console.info(`[smoke-checks] place titles: ${p[0]} at ${Math.round(xz[0])},${Math.round(xz[1])} -> ${w ? w.title + ' / ' + w.subtitle : 'nothing'}`)
+        if (!w || w.title.indexOf(p[0]) < 0) bad.push(`place titles: ${p[0]} found ${w ? w.title : 'nothing'}`)
+      })
+      var mid = $Projection.geographicToClassic(-40.0, 30.0)
+      if (placesNearest(Math.round(mid[0]), Math.round(mid[1]), null)) bad.push('place titles: a title in the middle of the Atlantic')
+    } catch (e) {
+      bad.push(`check failed to run: ${e}`)
+    }
+    bad.forEach(b => console.error(`[smoke-checks] exploration: ${b}`))
+    console.info(`[smoke-checks] exploration: recipes, campsite, statues and place titles checked, ${bad.length} wrong`)
+    if (bad.length) throw new Error(`[smoke-checks] exploration: ${bad.length} wrong`)
+  })
+})

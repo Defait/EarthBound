@@ -1,0 +1,30 @@
+{
+  "feature": "pack:ocean/nodule_field",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 3
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "tfc:ocean_ridge",
+      "min_distance": 400,
+      "max_distance": 1000000
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR_WG"
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:matching_fluids",
+        "fluids": [
+          "tfc:salt_water"
+        ]
+      }
+    }
+  ]
+}

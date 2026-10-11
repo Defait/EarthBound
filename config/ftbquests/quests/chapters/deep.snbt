@@ -1,0 +1,174 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "deep"
+	group: ""
+	icon: {
+		count: 1
+		id: "create:copper_diving_helmet"
+	}
+	id: "2944E80D2452A18F"
+	order_index: 13
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"5C30AD6D9656C52C"
+			]
+			icon: {
+				count: 1
+				id: "create:copper_diving_helmet"
+			}
+			id: "4C5A3B14C4AED0B7"
+			tasks: [
+				{
+					count: 1
+					id: "6B71C261CFEA028B"
+					item: {
+						count: 1
+						id: "create:copper_diving_helmet"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "6F2FAFDD6FBE7A53"
+					item: {
+						count: 1
+						id: "create:copper_diving_boots"
+					}
+					type: "item"
+				}
+				{
+					count: 1
+					id: "00BAB3B7DAA366ED"
+					item: {
+						count: 1
+						id: "create:copper_backtank"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"4C5A3B14C4AED0B7"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:raw_pyrolusite"
+			}
+			id: "13BE6FB3D56F1F93"
+			tasks: [
+				{
+					count: 1
+					id: "429AE6180FFB1A50"
+					item: {
+						count: 1
+						id: "gtceu:raw_pyrolusite"
+					}
+					type: "item"
+				}
+			]
+			x: 2.0d
+			y: -1.75d
+		}
+		{
+			dependencies: [
+				"4C5A3B14C4AED0B7"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:raw_pitchblende"
+			}
+			id: "6E861EE7844116EA"
+			optional: true
+			tasks: [
+				{
+					count: 1
+					id: "64DF129ED1973836"
+					item: {
+						count: 1
+						id: "gtceu:raw_pitchblende"
+					}
+					type: "item"
+				}
+			]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"4C5A3B14C4AED0B7"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:raw_galena"
+			}
+			id: "1FB8988A3629E12E"
+			tasks: [
+				{
+					count: 1
+					id: "5D1E726D4A297151"
+					item: {
+						count: 1
+						id: "gtceu:raw_galena"
+					}
+					type: "item"
+				}
+			]
+			x: 2.0d
+			y: 1.75d
+		}
+		{
+			dependencies: [
+				"13BE6FB3D56F1F93"
+				"150A550D8C7F2163"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:niobium_dust"
+			}
+			id: "438BDE947E1F9FD5"
+			tasks: [
+				{
+					count: 1
+					id: "4CB3514D8DDFA4EF"
+					item: {
+						count: 1
+						id: "gtceu:niobium_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: -0.875d
+		}
+		{
+			dependencies: [
+				"1FB8988A3629E12E"
+				"5B285FE05C376C82"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:indium_dust"
+			}
+			id: "015E23526315B229"
+			tasks: [
+				{
+					count: 1
+					id: "043F54BF50C1170B"
+					item: {
+						count: 1
+						id: "gtceu:indium_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: 0.875d
+		}
+	]
+}

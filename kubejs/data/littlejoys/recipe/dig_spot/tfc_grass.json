@@ -1,0 +1,57 @@
+{
+  "type": "littlejoys:dig_spot",
+  "eventCondition": {
+    "type": "any",
+    "conditions": [
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:grass/alfisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:grass/andisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:grass/aridisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:grass/entisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:grass/fluvisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:grass/mollisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:grass/oxisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:grass/podzol"
+        }
+      }
+    ]
+  },
+  "lootTable": "littlejoys:dig_spot/grass_block"
+}

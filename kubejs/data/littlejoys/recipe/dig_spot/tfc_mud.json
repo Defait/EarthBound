@@ -1,0 +1,57 @@
+{
+  "type": "littlejoys:dig_spot",
+  "eventCondition": {
+    "type": "any",
+    "conditions": [
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:mud/alfisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:mud/andisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:mud/aridisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:mud/entisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:mud/fluvisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:mud/mollisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:mud/oxisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:mud/podzol"
+        }
+      }
+    ]
+  },
+  "lootTable": "littlejoys:dig_spot/mud"
+}

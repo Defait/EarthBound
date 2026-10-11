@@ -265,6 +265,8 @@ def scan(mods_dir=MODS_DIR, used_file=None):
         for n in zf.namelist():
             if re.match(r"^data/[^/]+/loot_modifiers/chests/.+\.json$", n):
                 doc = json.loads(zf.read(n))
+                if "table" not in doc:  # another mod's format (Sophisticated Backpacks' injections name loot_table_to_inject_into): not GregTech's
+                    continue
                 for c in doc.get("conditions", []):
                     if c.get("condition") == "neoforge:loot_table_id":
                         entry(c["loot_table_id"])["gregtech_adds_to"].append(doc.get("table"))

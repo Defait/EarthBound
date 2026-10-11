@@ -18,6 +18,8 @@ import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.Container;
 import net.minecraft.world.RandomizableContainer;
@@ -295,6 +297,7 @@ public final class StructureSkin
         final BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
         final Metrics metrics = census ? METRICS.computeIfAbsent(snap.id, k -> new Metrics()) : null;
         final boolean foundationWanted = !dry && cfg.foundation() != null && foundationApplies(cfg, start, snap.id);
+        final boolean sea = !dry && cfg.seaWater(snap.id) && inOcean(level, box) && SeaWater.source() != null;
         final long[] lowest = foundationWanted || metrics != null ? new long[snap.dx * snap.dz] : null;
         if (lowest != null)
         {
@@ -311,7 +314,11 @@ public final class StructureSkin
                     final BlockState was = snap.before[i];
                     pos.set(snap.minX + x, snap.minY + y, snap.minZ + z);
                     BlockState now = level.getBlockState(pos);
-                    if (now == was || now.isAir())
+                    if (now == was)
+                    {
+                        continue;
+                    }
+                    if (now.isAir())
                     {
                         continue;
                     }
@@ -320,14 +327,36 @@ public final class StructureSkin
                     {
                         metrics.before.computeIfAbsent(now.getBlock(), k -> new LongAdder()).increment();
                     }
-                    final SkinConfig.Rule rule = cfg.rule(now.getBlock(), placeholders);
-                    if (rule == null)
+                    final boolean wet = sea && SeaWater.wet(now);
+                    final SkinConfig.Rule rule = wet && now.is(Blocks.WATER) ? null : cfg.rule(now.getBlock(), placeholders);
+                    if (wet && now.is(Blocks.WATER))
+                    {
+                        final BlockState salt = SeaWater.salted(now);
+                        if (salt != null)
+                        {
+                            replace(level, pos.immutable(), now, salt);
+                            rewritten++;
+                            count("sea_water", 1);
+                            now = salt;
+                        }
+                    }
+                    else if (rule == null)
                     {
                         noteUnmapped(now.getBlock());
                     }
                     else if (rule.action() != SkinConfig.Action.KEEP && !dry)
                     {
-                        final BlockState replacement = replacement(rule, now, pos, ranked, soils, blockCache);
+                        BlockState replacement = replacement(rule, now, pos, ranked, soils, blockCache);
+                        if (wet && replacement != null && replacement != now)
+                        {
+                            // the cell was under water: the replacement must keep it under (salt) water
+                            final BlockState kept = SeaWater.keepWet(replacement, level, pos);
+                            if (kept == null)
+                            {
+                                count("sea_kept_dry_risk", 1);
+                            }
+                            replacement = kept;
+                        }
                         if (replacement != null && replacement != now)
                         {
                             replace(level, pos.immutable(), now, replacement);
@@ -350,6 +379,10 @@ public final class StructureSkin
                     }
                 }
             }
+        }
+        if (sea && cfg.seaFillAir())
+        {
+            fillSeaAir(snap, level);
         }
         count("changed", changed);
         count("rewritten", rewritten);
@@ -399,6 +432,105 @@ public final class StructureSkin
             metrics.foundation.add(filled);
         }
     }
+
+    /**
+     * Air a sea structure's templates wrote is padding where it is open to the sea (the template was saved in air) and a dry room where
+     * it is closed. Air cells are grouped into connected groups (six neighbours) inside the snapshot; a group that touches the snapshot's
+     * faces or a water cell is open and becomes sea water, a group inside walls stays air. A room that crosses a chunk border counts as
+     * open in the chunk where it reaches the border, so it is flooded; closed rooms inside one chunk stay dry.
+     */
+    private static void fillSeaAir(Snapshot snap, WorldGenLevel level)
+    {
+        final BlockState sea = SeaWater.source();
+        if (sea == null)
+        {
+            return;
+        }
+        final int dx = snap.dx, dy = snap.dy, dz = snap.dz, n = dx * dy * dz;
+        final boolean[] air = new boolean[n], wet = new boolean[n], seen = new boolean[n];
+        final BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
+        int i = 0;
+        for (int x = 0; x < dx; x++)
+        {
+            for (int z = 0; z < dz; z++)
+            {
+                for (int y = 0; y < dy; y++, i++)
+                {
+                    final BlockState state = level.getBlockState(pos.set(snap.minX + x, snap.minY + y, snap.minZ + z));
+                    air[i] = state.isAir();
+                    wet[i] = !air[i] && SeaWater.wet(state);
+                }
+            }
+        }
+        final int[] stack = new int[n];
+        final int[] group = new int[n];
+        long filled = 0, kept = 0;
+        for (int start = 0; start < n; start++)
+        {
+            if (!air[start] || seen[start])
+            {
+                continue;
+            }
+            int top = 0, size = 0;
+            boolean open = false;
+            stack[top++] = start;
+            seen[start] = true;
+            while (top > 0)
+            {
+                final int c = stack[--top];
+                group[size++] = c;
+                final int y = c % dy, z = (c / dy) % dz, x = c / (dy * dz);
+                if (x == 0 || x == dx - 1 || z == 0 || z == dz - 1 || y == 0 || y == dy - 1)
+                {
+                    open = true;
+                }
+                final int[] next = {x > 0 ? c - dy * dz : -1, x < dx - 1 ? c + dy * dz : -1, z > 0 ? c - dy : -1, z < dz - 1 ? c + dy : -1,
+                    y > 0 ? c - 1 : -1, y < dy - 1 ? c + 1 : -1};
+                for (int q : next)
+                {
+                    if (q < 0)
+                    {
+                        continue;
+                    }
+                    if (wet[q])
+                    {
+                        open = true;
+                    }
+                    else if (air[q] && !seen[q])
+                    {
+                        seen[q] = true;
+                        stack[top++] = q;
+                    }
+                }
+            }
+            if (open)
+            {
+                for (int k = 0; k < size; k++)
+                {
+                    final int c = group[k];
+                    final int y = c % dy, z = (c / dy) % dz, x = c / (dy * dz);
+                    level.setBlock(pos.set(snap.minX + x, snap.minY + y, snap.minZ + z), sea, 2 | 16);
+                }
+                filled += size;
+            }
+            else
+            {
+                kept += size;
+            }
+        }
+        count("sea_air_filled", filled);
+        count("sea_air_kept_dry", kept);
+    }
+
+    /** Whether this chunk of the structure stands in an ocean biome of TFC (a ruin in a lake or river keeps river water). */
+    private static boolean inOcean(WorldGenLevel level, BoundingBox box)
+    {
+        // the biome at the middle of the chunk's part of the structure: a position outside the chunk's generation region would try to load a chunk
+        final BlockPos middle = new BlockPos((box.minX() + box.maxX()) / 2, box.minY(), (box.minZ() + box.maxZ()) / 2);
+        return level.getBiome(middle).is(OCEAN);
+    }
+
+    private static final TagKey<Biome> OCEAN = TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath("tfc", "is_ocean"));
 
     /**
      * Items baked into containers (chests, barrels, hoppers ...) that structures placed: diamonds in a treasure chest, iron tools in a

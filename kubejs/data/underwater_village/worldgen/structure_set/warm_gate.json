@@ -1,0 +1,18 @@
+{
+  "structures": [
+    {
+      "structure": "underwater_village:warm_gate",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "tfc:climate",
+    "salt": 1684271873,
+    "spacing": 80,
+    "separation": 40,
+    "climate": {
+      "min_temperature": 14,
+      "max_temperature": 40
+    }
+  }
+}

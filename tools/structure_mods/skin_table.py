@@ -121,7 +121,7 @@ EXACT = {
     "air": KEEP, "cave_air": KEEP, "void_air": KEEP, "bedrock": KEEP, "barrier": KEEP, "light": KEEP, "structure_void": KEEP,
     "structure_block": KEEP, "jigsaw": KEEP, "command_block": AIR, "chain_command_block": AIR, "repeating_command_block": AIR,
     "end_portal": KEEP, "end_portal_frame": KEEP, "end_gateway": KEEP, "nether_portal": KEEP, "dragon_egg": KEEP, "beacon": KEEP,
-    "conduit": KEEP, "respawn_anchor": KEEP, "fire": KEEP, "soul_fire": KEEP,
+    "conduit": AIR, "respawn_anchor": KEEP, "fire": KEEP, "soul_fire": KEEP,
 }
 
 REGEX = []   # (compiled regex, function(match) -> target)
@@ -343,7 +343,11 @@ def item_table(items):
                      "minecraft:diamond_ore": "minecraft:flint", "minecraft:emerald_ore": "minecraft:flint",
                      "minecraft:diamond_block": "minecraft:flint", "minecraft:emerald_block": "minecraft:flint",
                      "minecraft:netherite_ingot": "tfc:metal/ingot/bronze", "minecraft:netherite_scrap": "minecraft:flint",
-                     "minecraft:iron_horse_armor_x": "tfc:metal/horse_armor/copper"}.items():
+                     "minecraft:iron_horse_armor_x": "tfc:metal/horse_armor/copper",
+                     # the sea ruins (design.md, "Deep sea"): the heart of the sea, conduit, trident and nautilus shell stay unreachable
+                     "minecraft:heart_of_the_sea": "tfc:groundcover/clam", "minecraft:conduit": "tfc:groundcover/clam",
+                     "minecraft:nautilus_shell": "tfc:groundcover/mollusk", "minecraft:trident": "tfc:metal/javelin/copper",
+                     "minecraft:enchanted_book": "tfc:unrefined_paper"}.items():
         if src in items and dst in items:
             out[src] = dst
     # TFC's own iron-age gear (the compat dresses armor stands in wrought iron armor)

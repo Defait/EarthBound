@@ -46,15 +46,19 @@ hash = "b36404e3fbad91abbadc4be357adbc6fd2cb1b99083b9e7700c71c1550bfa22a"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/combat_tips.snbt"
-hash = "7fad3ae4ea8c8591015c36786097c818922e1978fbe26990ff9d1f9083533e60"
+hash = "e9c22a0f29412de33d945ad9a2a81d788188452925c4800d60630f504460bad6"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/create.snbt"
 hash = "ed3f2f9741cbb744fac2a6ae6cdf907bbb7d5d36e6124aa9c816c74252b57e32"
 
 [[files]]
+file = "config/ftbquests/quests/chapters/deep.snbt"
+hash = "d36b5d54f8868aef044df1917950fee9571443317d75bd345c9270bc69e5a27e"
+
+[[files]]
 file = "config/ftbquests/quests/chapters/elements.snbt"
-hash = "62c51772579a4b16766d2f1ab003af55bb37aafcec98038d2c6429904241ce0b"
+hash = "04e66ed5b7c31fd3442dc8804b3a25c83af3a41c3f7225b27c474daeedf48314"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/ev.snbt"
@@ -94,7 +98,7 @@ hash = "785ff559971d81495c0fb3f5fa94f984bbbb9c537835fd58bcd529f489717da1"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/tools_tips.snbt"
-hash = "ab000e61f1b1416a9f8d359d81878a0898c75dfcd73405530d0de106981432bb"
+hash = "c61b2d25ddf9371a584a8eb7b7398b0d8bb7c806eac3b97e27ae9ad67a8332a0"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/welcome.snbt"
@@ -106,7 +110,7 @@ hash = "92909a371debd092a96b182bb9c9a79a6b9aed8ef116c34b79bd1d573b440063"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "fd6b5fe6594033d29e7686fc6bf30b9d29566a9ea9e064980c0d9e2cfc2ae81d"
+hash = "90fd818592ccbd9fbec7aadcb36e6f45d81581aa0611f79bcf7f53b6508d8078"
 
 [[files]]
 file = "config/gtceu.yaml"
@@ -215,6 +219,110 @@ hash = "74f01c3b886aa9dd2ebc49781ddb0541b974ad34e2f41e7a566b98d9182abd48"
 [[files]]
 file = "kubejs/data/ae2/loot_table/gameplay/hero_of_the_village/fluix_researcher_gifts.json"
 hash = "0e762d36902bdd0b6d2c27548e9b0a8112a1ac384d7c19e99dcbd7adc3361755"
+
+[[files]]
+file = "kubejs/data/artifacts/loot_table/artifact.json"
+hash = "728a3442dad5883e194368a6fceb8600486b9e775084119f09ddd42f813780ac"
+
+[[files]]
+file = "kubejs/data/artifacts/loot_table/chests/campsite_barrel.json"
+hash = "1e1f5bfc35e5cfa3e8348abd6343c265ab97ca08125315b98dae0208559c0d77"
+
+[[files]]
+file = "kubejs/data/artifacts/loot_table/chests/campsite_barrel/cobblestone.json"
+hash = "1e1f5bfc35e5cfa3e8348abd6343c265ab97ca08125315b98dae0208559c0d77"
+
+[[files]]
+file = "kubejs/data/artifacts/loot_table/chests/campsite_barrel/cobwebs.json"
+hash = "1e1f5bfc35e5cfa3e8348abd6343c265ab97ca08125315b98dae0208559c0d77"
+
+[[files]]
+file = "kubejs/data/artifacts/loot_table/chests/campsite_barrel/crops.json"
+hash = "1e1f5bfc35e5cfa3e8348abd6343c265ab97ca08125315b98dae0208559c0d77"
+
+[[files]]
+file = "kubejs/data/artifacts/loot_table/chests/campsite_barrel/food.json"
+hash = "1e1f5bfc35e5cfa3e8348abd6343c265ab97ca08125315b98dae0208559c0d77"
+
+[[files]]
+file = "kubejs/data/artifacts/loot_table/chests/campsite_barrel/gems.json"
+hash = "1e1f5bfc35e5cfa3e8348abd6343c265ab97ca08125315b98dae0208559c0d77"
+
+[[files]]
+file = "kubejs/data/artifacts/loot_table/chests/campsite_barrel/ingots.json"
+hash = "1e1f5bfc35e5cfa3e8348abd6343c265ab97ca08125315b98dae0208559c0d77"
+
+[[files]]
+file = "kubejs/data/artifacts/loot_table/chests/campsite_barrel/minecarts.json"
+hash = "1e1f5bfc35e5cfa3e8348abd6343c265ab97ca08125315b98dae0208559c0d77"
+
+[[files]]
+file = "kubejs/data/artifacts/loot_table/chests/campsite_barrel/ores.json"
+hash = "1e1f5bfc35e5cfa3e8348abd6343c265ab97ca08125315b98dae0208559c0d77"
+
+[[files]]
+file = "kubejs/data/artifacts/loot_table/chests/campsite_barrel/rails.json"
+hash = "1e1f5bfc35e5cfa3e8348abd6343c265ab97ca08125315b98dae0208559c0d77"
+
+[[files]]
+file = "kubejs/data/artifacts/loot_table/chests/campsite_barrel/tnt.json"
+hash = "1e1f5bfc35e5cfa3e8348abd6343c265ab97ca08125315b98dae0208559c0d77"
+
+[[files]]
+file = "kubejs/data/artifacts/loot_table/chests/campsite_chest.json"
+hash = "0da18558274fab05abc0766885694e36783fbe96397eb1e18821a67b5e50d57e"
+
+[[files]]
+file = "kubejs/data/artifacts/loot_table/entity_equipment/bogged.json"
+hash = "2e39b999b690d3700a3967843395f41de4a86f6ea873ca3f6f13ed8117db0911"
+
+[[files]]
+file = "kubejs/data/artifacts/loot_table/entity_equipment/drowned.json"
+hash = "2e39b999b690d3700a3967843395f41de4a86f6ea873ca3f6f13ed8117db0911"
+
+[[files]]
+file = "kubejs/data/artifacts/loot_table/entity_equipment/ghast.json"
+hash = "2e39b999b690d3700a3967843395f41de4a86f6ea873ca3f6f13ed8117db0911"
+
+[[files]]
+file = "kubejs/data/artifacts/loot_table/entity_equipment/husk.json"
+hash = "2e39b999b690d3700a3967843395f41de4a86f6ea873ca3f6f13ed8117db0911"
+
+[[files]]
+file = "kubejs/data/artifacts/loot_table/entity_equipment/piglin.json"
+hash = "2e39b999b690d3700a3967843395f41de4a86f6ea873ca3f6f13ed8117db0911"
+
+[[files]]
+file = "kubejs/data/artifacts/loot_table/entity_equipment/piglin_brute.json"
+hash = "2e39b999b690d3700a3967843395f41de4a86f6ea873ca3f6f13ed8117db0911"
+
+[[files]]
+file = "kubejs/data/artifacts/loot_table/entity_equipment/skeleton.json"
+hash = "2e39b999b690d3700a3967843395f41de4a86f6ea873ca3f6f13ed8117db0911"
+
+[[files]]
+file = "kubejs/data/artifacts/loot_table/entity_equipment/stray.json"
+hash = "2e39b999b690d3700a3967843395f41de4a86f6ea873ca3f6f13ed8117db0911"
+
+[[files]]
+file = "kubejs/data/artifacts/loot_table/entity_equipment/wither_skeleton.json"
+hash = "2e39b999b690d3700a3967843395f41de4a86f6ea873ca3f6f13ed8117db0911"
+
+[[files]]
+file = "kubejs/data/artifacts/loot_table/entity_equipment/zombie.json"
+hash = "2e39b999b690d3700a3967843395f41de4a86f6ea873ca3f6f13ed8117db0911"
+
+[[files]]
+file = "kubejs/data/artifacts/loot_table/entity_equipment/zombified_piglin.json"
+hash = "2e39b999b690d3700a3967843395f41de4a86f6ea873ca3f6f13ed8117db0911"
+
+[[files]]
+file = "kubejs/data/artifacts/tags/block/campsite_chests.json"
+hash = "6eede27cb4f0f1085d23608803d572820ede4c045a6843c75e55db9bf2cab047"
+
+[[files]]
+file = "kubejs/data/artifacts/worldgen/placed_feature/underground_minimalist_campsite.json"
+hash = "b50cd5d310d4f2df6c0da8a5a454475c9c83f4fc2c4a2190c6a1bb259c1dd9e8"
 
 [[files]]
 file = "kubejs/data/betterdungeons/loot_table/skeleton_dungeon/chests/common.json"
@@ -389,6 +497,74 @@ file = "kubejs/data/gtceu/loot_table/chests/extra/village_weaponsmith.json"
 hash = "3e92eaba33a8c7fb36b9b4fecac1bc205c3d761e6f1798a90a3cb30ded3d9e83"
 
 [[files]]
+file = "kubejs/data/hopo/loot_table/archaeology/small_ruins.json"
+hash = "4eca742af4f8d2778dccbb49c7b5de13919373b9c34552a10974b9ae32dde50c"
+
+[[files]]
+file = "kubejs/data/hopo/loot_table/archaeology/warm_small_ruins.json"
+hash = "4eca742af4f8d2778dccbb49c7b5de13919373b9c34552a10974b9ae32dde50c"
+
+[[files]]
+file = "kubejs/data/hopo/loot_table/chests/copper.json"
+hash = "66de01a3c41b44abd527aecd8f808d959d14c8e19a3d8d70e0f0cbc9bb257695"
+
+[[files]]
+file = "kubejs/data/hopo/loot_table/chests/coral.json"
+hash = "69191b80ede31fe33b11d1113a8c6d47c4c716d5d70b1fbf3179f2a548686b03"
+
+[[files]]
+file = "kubejs/data/hopo/loot_table/chests/food.json"
+hash = "54eeb998f22909f8c6e4fce3ac0ba3468dd65e28f51bf9be8022366103f459dc"
+
+[[files]]
+file = "kubejs/data/hopo/loot_table/chests/materials.json"
+hash = "9ae0d1b091d929e9556fd7e2fb0dd880c3129c5ea3d3531cb47c149b6ef86467"
+
+[[files]]
+file = "kubejs/data/hopo/loot_table/chests/prismarine.json"
+hash = "233f585715079c3b44d076e3aff4451eb7eee5abbdc1d6bd8d805a388c3ff87e"
+
+[[files]]
+file = "kubejs/data/hopo/loot_table/chests/small_ruin_cold.json"
+hash = "6df49472179da2731918434597b1b660c8255ab74866da87c28487ba3d44f797"
+
+[[files]]
+file = "kubejs/data/hopo/loot_table/chests/small_ruin_warm.json"
+hash = "6df49472179da2731918434597b1b660c8255ab74866da87c28487ba3d44f797"
+
+[[files]]
+file = "kubejs/data/hopo/loot_table/entities/golddrowned.json"
+hash = "a8e59ad8430fcf8baa5ff1d324a07615b98769f1f224b4f7a6097a6156dad3c2"
+
+[[files]]
+file = "kubejs/data/hopo/loot_table/entities/skeletondrowned.json"
+hash = "04cff457a89bc6506cc06fcf8941070c09ca11d39577cf7ea57c7f2ba6286384"
+
+[[files]]
+file = "kubejs/data/hopo/loot_table/entities/swordmandrowned.json"
+hash = "f308b13da555cfee146feb8680859c05f67cc6da92905f2b4dee26ba9715bb4e"
+
+[[files]]
+file = "kubejs/data/hopo/loot_table/pots/underwater_ruins/small_ruins.json"
+hash = "b9a8fee60980916642e70ac541c283a5a8bbc9fa7720558de9922fcd1a914622"
+
+[[files]]
+file = "kubejs/data/hopo/worldgen/structure_set/underwater_city.json"
+hash = "d1666b98a65438fa8f251a9e863c00e9fa6cf827f1b9a48a54a496a535f5af9d"
+
+[[files]]
+file = "kubejs/data/hopo/worldgen/structure_set/underwater_fossils.json"
+hash = "bb80d77ae82743dc8b377463dd4ac56e8f556942d323750c3ac529971717671b"
+
+[[files]]
+file = "kubejs/data/hopo/worldgen/structure_set/underwater_small_ruins.json"
+hash = "c10b80f8f205f3d4968132eb1c2aed2eb1495bb2c6d6b41b8546316547006313"
+
+[[files]]
+file = "kubejs/data/hopo/worldgen/structure_set/underwater_warm_small_ruins.json"
+hash = "22a9d2dff4b121fff7b5d0199db4ff63b339905c5c876fd69724cc1f3cfcbee8"
+
+[[files]]
 file = "kubejs/data/kaisyn/loot_table/archeology/forest_ruins_common.json"
 hash = "af899a83f50a4e41a4ecab592c3b2effb7a0a252f714fe7cf6f6ae1ba0ac7351"
 
@@ -467,6 +643,146 @@ hash = "31bc47630e1b0e31b45868fbd9e0cca163fed385a787b29faa10715db1f200de"
 [[files]]
 file = "kubejs/data/kaisyn/loot_table/village/village_swamp_house.json"
 hash = "e0bdd3ca88e8d974181311e1e17fdebfc3cc9588ce57cc41c141ca00bf45cd5b"
+
+[[files]]
+file = "kubejs/data/littlejoys/loot_table/dig_spot/basalt.json"
+hash = "f84141da30fdb24af7c8d9e0c4d5f171be436324c8a611d0817f3d71c1b1189b"
+
+[[files]]
+file = "kubejs/data/littlejoys/loot_table/dig_spot/blackstone.json"
+hash = "f84141da30fdb24af7c8d9e0c4d5f171be436324c8a611d0817f3d71c1b1189b"
+
+[[files]]
+file = "kubejs/data/littlejoys/loot_table/dig_spot/bone_block.json"
+hash = "6f93545297921f63ec2a050aa5301f52044103b56ee9a5c447d03862ec5c04f0"
+
+[[files]]
+file = "kubejs/data/littlejoys/loot_table/dig_spot/clay.json"
+hash = "b1d4418514f1e0851339bfdd590eb00a079a2896029e4f0187b30be33f3b75ad"
+
+[[files]]
+file = "kubejs/data/littlejoys/loot_table/dig_spot/crimson_nylium.json"
+hash = "f84141da30fdb24af7c8d9e0c4d5f171be436324c8a611d0817f3d71c1b1189b"
+
+[[files]]
+file = "kubejs/data/littlejoys/loot_table/dig_spot/dirt.json"
+hash = "6f93545297921f63ec2a050aa5301f52044103b56ee9a5c447d03862ec5c04f0"
+
+[[files]]
+file = "kubejs/data/littlejoys/loot_table/dig_spot/end_stone.json"
+hash = "f84141da30fdb24af7c8d9e0c4d5f171be436324c8a611d0817f3d71c1b1189b"
+
+[[files]]
+file = "kubejs/data/littlejoys/loot_table/dig_spot/grass_block.json"
+hash = "a9e46dc700a18d25430a5a00563856f5d17d5f6447a07d204108dceb0608f2ae"
+
+[[files]]
+file = "kubejs/data/littlejoys/loot_table/dig_spot/gravel.json"
+hash = "753f3cff3fe6d15f79a0f54d6305614db89403cd4c8851b66cc97ca76b9ae6c4"
+
+[[files]]
+file = "kubejs/data/littlejoys/loot_table/dig_spot/ice.json"
+hash = "f84141da30fdb24af7c8d9e0c4d5f171be436324c8a611d0817f3d71c1b1189b"
+
+[[files]]
+file = "kubejs/data/littlejoys/loot_table/dig_spot/magma_block.json"
+hash = "f84141da30fdb24af7c8d9e0c4d5f171be436324c8a611d0817f3d71c1b1189b"
+
+[[files]]
+file = "kubejs/data/littlejoys/loot_table/dig_spot/moss_block.json"
+hash = "a9e46dc700a18d25430a5a00563856f5d17d5f6447a07d204108dceb0608f2ae"
+
+[[files]]
+file = "kubejs/data/littlejoys/loot_table/dig_spot/mud.json"
+hash = "e50c32910c23e07aa5937377ffe8294478897152740fbdf2ff19717f3eabb8cf"
+
+[[files]]
+file = "kubejs/data/littlejoys/loot_table/dig_spot/mycelium.json"
+hash = "6f93545297921f63ec2a050aa5301f52044103b56ee9a5c447d03862ec5c04f0"
+
+[[files]]
+file = "kubejs/data/littlejoys/loot_table/dig_spot/netherrack.json"
+hash = "f84141da30fdb24af7c8d9e0c4d5f171be436324c8a611d0817f3d71c1b1189b"
+
+[[files]]
+file = "kubejs/data/littlejoys/loot_table/dig_spot/podzol.json"
+hash = "6f93545297921f63ec2a050aa5301f52044103b56ee9a5c447d03862ec5c04f0"
+
+[[files]]
+file = "kubejs/data/littlejoys/loot_table/dig_spot/red_sand.json"
+hash = "3167b71c01654fd77d4cf83062ecce9de1092ae3598d90c4cb7b4933af6e6634"
+
+[[files]]
+file = "kubejs/data/littlejoys/loot_table/dig_spot/red_sandstone.json"
+hash = "3167b71c01654fd77d4cf83062ecce9de1092ae3598d90c4cb7b4933af6e6634"
+
+[[files]]
+file = "kubejs/data/littlejoys/loot_table/dig_spot/sand.json"
+hash = "3167b71c01654fd77d4cf83062ecce9de1092ae3598d90c4cb7b4933af6e6634"
+
+[[files]]
+file = "kubejs/data/littlejoys/loot_table/dig_spot/sandstone.json"
+hash = "3167b71c01654fd77d4cf83062ecce9de1092ae3598d90c4cb7b4933af6e6634"
+
+[[files]]
+file = "kubejs/data/littlejoys/loot_table/dig_spot/snow_block.json"
+hash = "6f93545297921f63ec2a050aa5301f52044103b56ee9a5c447d03862ec5c04f0"
+
+[[files]]
+file = "kubejs/data/littlejoys/loot_table/dig_spot/soul_sand.json"
+hash = "f84141da30fdb24af7c8d9e0c4d5f171be436324c8a611d0817f3d71c1b1189b"
+
+[[files]]
+file = "kubejs/data/littlejoys/loot_table/dig_spot/soul_soil.json"
+hash = "f84141da30fdb24af7c8d9e0c4d5f171be436324c8a611d0817f3d71c1b1189b"
+
+[[files]]
+file = "kubejs/data/littlejoys/loot_table/dig_spot/stone.json"
+hash = "f84141da30fdb24af7c8d9e0c4d5f171be436324c8a611d0817f3d71c1b1189b"
+
+[[files]]
+file = "kubejs/data/littlejoys/loot_table/dig_spot/terracotta.json"
+hash = "b1d4418514f1e0851339bfdd590eb00a079a2896029e4f0187b30be33f3b75ad"
+
+[[files]]
+file = "kubejs/data/littlejoys/loot_table/dig_spot/warped_nylium.json"
+hash = "f84141da30fdb24af7c8d9e0c4d5f171be436324c8a611d0817f3d71c1b1189b"
+
+[[files]]
+file = "kubejs/data/littlejoys/loot_table/drop_rush/sweet_berry_bush.json"
+hash = "0f3ad1bd504a17be73c27bdb6b5e9d0f753a63097c7611968e01f27df6d657f9"
+
+[[files]]
+file = "kubejs/data/littlejoys/loot_table/fishing_spot/water.json"
+hash = "b623f8aaec71b22f93c64bf45a1ddb7395f752f4f71b10f725efd70fa44dcc73"
+
+[[files]]
+file = "kubejs/data/littlejoys/recipe/dig_spot/tfc_clay.json"
+hash = "44816482fde33141208a5609fe9444bf3806a0e101a2b1dcbe2e01b9585dd5f3"
+
+[[files]]
+file = "kubejs/data/littlejoys/recipe/dig_spot/tfc_dirt.json"
+hash = "034c3aeeb00aee05b5fdd5065b784608ebcfa3cd133cffd0a7b63febda086f59"
+
+[[files]]
+file = "kubejs/data/littlejoys/recipe/dig_spot/tfc_grass.json"
+hash = "6540176702fa834538f4f6e8f749ec0aa1a4d37ecfd593fb326d79165d43f04e"
+
+[[files]]
+file = "kubejs/data/littlejoys/recipe/dig_spot/tfc_gravel.json"
+hash = "55746f7806833cc889fd3f19ef7311aeac1ed4aaaf8dd1da71f9b7f6c89e01d1"
+
+[[files]]
+file = "kubejs/data/littlejoys/recipe/dig_spot/tfc_mud.json"
+hash = "e56a6e0e77724a74ac8959da1c828391692255acf3cc09360b1e2b27a049a9ae"
+
+[[files]]
+file = "kubejs/data/littlejoys/recipe/dig_spot/tfc_sand.json"
+hash = "ecbcfe9048c9d0f386dbf3c180aa5808b849c569c651d2cee859bc563cb3253e"
+
+[[files]]
+file = "kubejs/data/littlejoys/recipe/fishing_spot/tfc_salt_water.json"
+hash = "821f83b21b192fa7c15471a905a4f2f36674dd57885184994c038984e15d6848"
 
 [[files]]
 file = "kubejs/data/minecraft/loot_table/archaeology/desert_pyramid.json"
@@ -1537,6 +1853,26 @@ file = "kubejs/data/pack/easy_npc/preset/humanoid/trader.npc.snbt"
 hash = "eb88f4be99848de1476c18aa63993ec77ce66977d97b7316593f0b95fb2b45ce"
 
 [[files]]
+file = "kubejs/data/pack/loot_table/blocks/anhydrite_chimney.json"
+hash = "a9c4f1c20187a54fc7acd37311347d6bf59b8c0af602fe4f8b251a76019edfff"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/blocks/mn_crust.json"
+hash = "e65289bec8d13a997980c579e01848cd06ce8062dcd20426de67d80b172bd897"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/blocks/nodule_bed.json"
+hash = "2aea0f0da3b17bfe1bd1f574a9047ba2a3c01557fec266d9e610af9a943b46ac"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/blocks/sulfide_chimney.json"
+hash = "b8313b40c420c1d8fe95d910902e6f6bffc67068313087a3cfab5fe5fec6fca1"
+
+[[files]]
+file = "kubejs/data/pack/loot_table/blocks/sulfide_mound.json"
+hash = "f21e2a57b54ba99f608da2bf1a13a550f75824d99b6205f3aa863770b6656320"
+
+[[files]]
 file = "kubejs/data/pack/loot_table/chests/barrow.json"
 hash = "ab60dac90e5925e84a7ede5b7219156f84e3916a980cf481902b433347a633e5"
 
@@ -1657,6 +1993,10 @@ file = "kubejs/data/pack/loot_table/chests/wreck.json"
 hash = "3774f0a2f5ca0196de122dff1ade562e85a86eb3caa950f7e575d7e8a386ff1c"
 
 [[files]]
+file = "kubejs/data/pack/neoforge/biome_modifier/artifacts_campsite.json"
+hash = "49425a007f874ef80ec9110bc4d938ce055c0c9f8b8b63cf35a21527d978ad7e"
+
+[[files]]
 file = "kubejs/data/pack/neoforge/biome_modifier/cave_carvers.json"
 hash = "19c04d22b638577af85a5b1b835739c6f748f8a4552a191bcbafe8c73b41bab6"
 
@@ -1666,11 +2006,15 @@ hash = "59aa787949623b110960a0f3a4fe7d84358b51b4503d192f1a8a49d6642d524f"
 
 [[files]]
 file = "kubejs/data/pack/pack_world/structure_skin/blocks.json"
-hash = "a6a3cb4d15bc8186827c979731af3f9d5461ebec387cfd9f0d6d46d618024fb3"
+hash = "576143129086bdf25d056650fc3e5dc1966f879ba958cd03e862a8161ca6527b"
 
 [[files]]
 file = "kubejs/data/pack/pack_world/structure_skin/items.json"
-hash = "43d9993758b8410d6b5bc1bec6941ecb6ae988ec4244b154c0f5d434af462039"
+hash = "c385553a477fc7b60006bba27391245d7c188a560015fb006b3ad6b70fa671a4"
+
+[[files]]
+file = "kubejs/data/pack/pack_world/structure_skin/sea_water.json"
+hash = "b0f28342cbe0993bb1eb66ee9ae1689dbcabc6d04fbf0fd68089f55efc6d1c53"
 
 [[files]]
 file = "kubejs/data/pack/pack_world/structure_skin/structures.json"
@@ -2569,6 +2913,18 @@ file = "kubejs/data/pack/tags/worldgen/biome/has_structure/mine_adit.json"
 hash = "b41b233b1846d5bea3c089b0545925adbb23297c8acf8cda8c792d651bf22e7b"
 
 [[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/has_structure/ocean_ruins_any.json"
+hash = "b6a570f99c8ddd4a5240f4198b61b93ac0b7a2f8c07cbf88051b898339118cd4"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/has_structure/ocean_ruins_deep.json"
+hash = "360319c24f2a861afe1e1e7e4acbddae71103dc3f40450402190177c22e30495"
+
+[[files]]
+file = "kubejs/data/pack/tags/worldgen/biome/has_structure/ocean_ruins_shelf.json"
+hash = "c1bca72de5cad27fd7014c58939d188969cdd08aa573043708b7712c02544e0a"
+
+[[files]]
 file = "kubejs/data/pack/tags/worldgen/biome/has_structure/prospector_camp.json"
 hash = "b41b233b1846d5bea3c089b0545925adbb23297c8acf8cda8c792d651bf22e7b"
 
@@ -2713,6 +3069,38 @@ file = "kubejs/data/pack/worldgen/configured_feature/caves/mossy_rock.json"
 hash = "4f7b2f4fc4ad03983abaa46d557948fbed7df8dce3c6abfeb34de9db70881816"
 
 [[files]]
+file = "kubejs/data/pack/worldgen/configured_feature/ocean/arc_vent_field.json"
+hash = "d5f72cc1b05bd1453ec136a3a88dd5ed531233ea9a09d95fb0a4d989f9e3d7cd"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/configured_feature/ocean/black_chimney.json"
+hash = "42962020cf4657597a97b7194632cebaf93f5e4f4613d3bdf1638d5699f98539"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/configured_feature/ocean/crust_patch.json"
+hash = "9acf755d42874730cf3224d0715b0b8ea5aa79f32989f016f7f6625b843b1849"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/configured_feature/ocean/nodule_field.json"
+hash = "e82d103d11d939172e2e29da4fcd2c0fc6405f797b262bf29c56466e0cd716ca"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/configured_feature/ocean/sulfide_mound.json"
+hash = "59d20836450a0a1ea877027c79b782d6af66941f7a7427c75d858690f4d1211f"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/configured_feature/ocean/vent_chimneys.json"
+hash = "7af546e0487220fc1a5dd0f3438f57a0879d2b4b99e17e0367c7f32105f05137"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/configured_feature/ocean/vent_field.json"
+hash = "8e271da050f9a9f4e271f91975d5106a38b5de238886dd8b19c68640e52c89e5"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/configured_feature/ocean/white_chimney.json"
+hash = "7b513730b350268a59d24fb00fc54b07e33df98b6670747009a028b1829769bd"
+
+[[files]]
 file = "kubejs/data/pack/worldgen/density_function/caves/caverns.json"
 hash = "6e86aeec1e3b70f4ec01210d8623c6989adfe07fc26d2bb2499460149e295565"
 
@@ -2791,6 +3179,42 @@ hash = "28c3c0c58aef77cf15227fcc042f77c687ab808885e7e5c37384d6111fa800db"
 [[files]]
 file = "kubejs/data/pack/worldgen/placed_feature/caves/mossy_rock.json"
 hash = "c62da56fa27bc2d66efa06a4784a3c004233a383e6f145fd2e7bfcccc51d92ba"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/placed_feature/ocean/arc_vent_field.json"
+hash = "774e1fe5df5e8d80369ba65a209ef9cdb533651c83cc769e59fd8b161cee0b7c"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/placed_feature/ocean/black_chimney.json"
+hash = "fa2554f0c3573944ffe211ceeaab4337b929821684c8412834146f889e02ef57"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/placed_feature/ocean/crust_patch.json"
+hash = "86743f371e3d02c0a182964799644648ccb1c0cc36d5ea907293951792d5f14e"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/placed_feature/ocean/nodule_field.json"
+hash = "927982262ae90a6f2cd971d9d9a9028e799455fb73e0cadbbbfadc340afe9ecd"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/placed_feature/ocean/nodule_field_flank.json"
+hash = "cf91dd9a4e42b1db610efe7084b7760559ee58a08c4104ba786264071a6debbe"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/placed_feature/ocean/vent_chimneys.json"
+hash = "1fb9dfb6d3916d6d9c684ddde0338a1956a70da5482bf74f222337ab4a24ac39"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/placed_feature/ocean/vent_field.json"
+hash = "a06896a1d60ae2151cfaddfd53e461ade8f7734414cca5cf75ebaf1da322a9ee"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/placed_feature/ocean/vent_mound_core.json"
+hash = "4e94a3fedcc608750f07cc4ccc5a59e11c0ea5bbb57e5448b686a27af5affc15"
+
+[[files]]
+file = "kubejs/data/pack/worldgen/placed_feature/ocean/white_chimney.json"
+hash = "3025ba3b744b6993e0d21aa0d07c3399d51c9bb2dc29c8ae9ab4a48ac4ad6a1e"
 
 [[files]]
 file = "kubejs/data/pack/worldgen/processor_list/barrow.json"
@@ -3349,6 +3773,10 @@ file = "kubejs/data/pack/worldgen/template_pool/wreck/start.json"
 hash = "9e5ac4d66f2b7ef200f974ea1c55f79e8423c6cce3c6ed36a1474fe87661cdaa"
 
 [[files]]
+file = "kubejs/data/pack_loot/loot_table/artifacts/stone.json"
+hash = "0bea34a46806b6012b9cc84fe50a33afa0c2603a2484f923ca7640b9a1bb499a"
+
+[[files]]
 file = "kubejs/data/pack_loot/loot_table/bells/copper.json"
 hash = "db5eda7f0550decb8f296a0e18ed4d711522ca7a470f6271ac38df782f5beb06"
 
@@ -3553,6 +3981,10 @@ file = "kubejs/data/pack_loot/loot_table/saplings/stone.json"
 hash = "d2727de91964ec29eeca22eef50282af8c82e02c30b6f7adc2c64935e2074ef9"
 
 [[files]]
+file = "kubejs/data/pack_loot/loot_table/seafloor/stone.json"
+hash = "628c66d15d62436b7b36a2d22730d39bb562fb57fb4bf3207efd7d2dc5012335"
+
+[[files]]
 file = "kubejs/data/pack_loot/loot_table/seeds/stone.json"
 hash = "6dc6582c604b74f7cb2e41c77d570abb84a3795ddbeef4b58cd22f2c3b2a2ead"
 
@@ -3613,6 +4045,18 @@ file = "kubejs/data/pack_loot/loot_table/wool/stone.json"
 hash = "7e9e1bb26577814174153f41da3a81f21602e6d25d275c767cdf88ac550daf7c"
 
 [[files]]
+file = "kubejs/data/paraglider/tags/worldgen/biome/has_structure/nether_horned_statue.json"
+hash = "bef4d172fc1bfb34d342e79090726c4a0c272dd404783c3ea022b992e0e0415e"
+
+[[files]]
+file = "kubejs/data/paraglider/tags/worldgen/biome/has_structure/tarrey_town_goddess_statue.json"
+hash = "bef4d172fc1bfb34d342e79090726c4a0c272dd404783c3ea022b992e0e0415e"
+
+[[files]]
+file = "kubejs/data/paraglider/tags/worldgen/biome/has_structure/underground_horned_statue.json"
+hash = "bef4d172fc1bfb34d342e79090726c4a0c272dd404783c3ea022b992e0e0415e"
+
+[[files]]
 file = "kubejs/data/tfc/recipe/crafting/clay_ball_5.json"
 hash = "5f5056da3174f4bfd139698b2bc3b7a68b60856c9bef177423dd8ae5c44f8a85"
 
@@ -3627,6 +4071,22 @@ hash = "5f5056da3174f4bfd139698b2bc3b7a68b60856c9bef177423dd8ae5c44f8a85"
 [[files]]
 file = "kubejs/data/tfc/recipe/crafting/clay_ball_8.json"
 hash = "5f5056da3174f4bfd139698b2bc3b7a68b60856c9bef177423dd8ae5c44f8a85"
+
+[[files]]
+file = "kubejs/data/tfc/tags/worldgen/placed_feature/in_biome/large_features/deep_ocean.json"
+hash = "e09dd7184d5680ba75549d14eca814d8260c2a42859b302a8155a810f8a8c382"
+
+[[files]]
+file = "kubejs/data/tfc/tags/worldgen/placed_feature/in_biome/large_features/deep_ocean_atolls.json"
+hash = "e09dd7184d5680ba75549d14eca814d8260c2a42859b302a8155a810f8a8c382"
+
+[[files]]
+file = "kubejs/data/tfc/tags/worldgen/placed_feature/in_biome/large_features/ocean_ridge.json"
+hash = "5581af03ff93a16f49ae50f94ebf6065ed391dff6f0462c3a5992883f731c09e"
+
+[[files]]
+file = "kubejs/data/tfc/tags/worldgen/placed_feature/in_biome/large_features/oceanic_volcanic_arc.json"
+hash = "e2e9aaea8ff62c8151c258d8cab074aa0bd1e9d6274b6c90905b6f769dc5a9c2"
 
 [[files]]
 file = "kubejs/data/tfc/tags/worldgen/placed_feature/in_biome/underground_decoration.json"
@@ -3693,6 +4153,150 @@ file = "kubejs/data/tfchuts/tags/worldgen/biome/settlement.json"
 hash = "49982118b052ef50d0f2dc35eee1e8f30970ae5fccce157551ff4431c54edca7"
 
 [[files]]
+file = "kubejs/data/underwater_village/loot_table/chests/underwatervillage_loot_common.json"
+hash = "41cc1f89b0831fb4dfe9c6c80b6e3efefc25bb03ec1bf8ed875097e3849f2e7e"
+
+[[files]]
+file = "kubejs/data/underwater_village/loot_table/lib.json"
+hash = "d9a68ce3bbd51ec2a11e63b1e7478984448f7d3d7d8ff9b0c802bdc4433ad25e"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure/cold_big_gate.json"
+hash = "fda90c9011e5bd00e9cc6ae7d311c3ac28095b610e84238a8cef0eed07d58cf5"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure/cold_broken_house.json"
+hash = "9bc4078075ab6547bea76fd4822aa3563293e06fdd653a085831f86e62b53515"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure/cold_fountain.json"
+hash = "2b48a70ea830a95cb64974880bc01d8f38914d05d27108f9b4bd8c43d6b849b4"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure/cold_gate.json"
+hash = "0926e7b0e6628489127993c0616f0df15bee8f528b5dea500c9b5a2153028fd4"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure/dungeon.json"
+hash = "19ddc9898c4e4391022f59f8601609ef35432960bad9453700a9be18817a7c77"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure/library.json"
+hash = "7b4da1859c5d61420d1db6ee660554e93302e34908d417a5256d018221f81738"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure/ruins.json"
+hash = "14a468864f50462ecfcf02c6009f3ff19597396ceb8735ff40a806fc7350fdd5"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure/shrine.json"
+hash = "cc93387911dfeb7657c39c60ad6baf123f87915153bc83148d5b3ed75471fd63"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure/small_gate.json"
+hash = "0339ed501a3adbaa7a204caa0daa37c86e8d8581a1bfc3abfdf6df94423b1c79"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure/temple.json"
+hash = "5f60fc6bd84c494a122f2267f2716fffa74cb611d3bf350d8956baa888f6e528"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure/temple_broken.json"
+hash = "c023a55411e5a2b6b194140d8724da9f7d78ea38df5211f903e08a61ba4fde17"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure/temple_ruins.json"
+hash = "6319c89d0c525a32db6693debeb79ddb50620ab81303f56090f279ff1c763178"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure/tower.json"
+hash = "c4365e64875e08cde341415506a7aae8fe2a9576372e8bdf91d8c5a13836f033"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure/warm_big_gate.json"
+hash = "7beddc7a647eeec968ad3531fc1ad2f22c1095eca45616e1e65e6511cd968465"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure/warm_broken_house.json"
+hash = "eeba865bb31ef6d2fac1e9626593465cb1f6bd3e31e07af2ce8c57135ad5288f"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure/warm_fountain.json"
+hash = "09f654120702cd86e02e45db2e4025a93fca3035c5b8789bbf3e5ba5396585fe"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure/warm_gate.json"
+hash = "095b473500a449e150ca9aa5c89f7e4d2e2303c20f30c4eacf9984d91fab8bc5"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure_set/cold_big_gate.json"
+hash = "cc1a1184f78c0cbc9708bbda9acd9d8d6bd4a2bed05927905da52ab5a5ca75f5"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure_set/cold_broken_house.json"
+hash = "80f3aa38599754aef737afaf48dfafe98474d05897b0b7df87a7495ad43f5b4c"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure_set/cold_fountain.json"
+hash = "80443c3b17e3a592a1b6fd800704d498485de76bdc8a8768bad9cebccb67a2b9"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure_set/cold_gate.json"
+hash = "820cead2bb1a7331a3763d236f6ce3e651f53b8e60db6a220f22dfc720ec7df3"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure_set/dungeon.json"
+hash = "2c74219cc22bab909a0540acb1df3da6ea01ffe3c83b2c3c86a4df26794f98a5"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure_set/library.json"
+hash = "90b7c135829142480785d3dd26370655b9dd3e05ad518ce7f0f3a74a6fd2812d"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure_set/ruins.json"
+hash = "5e0f3aa87c692c1978736d273e91367568e55405c383dd5ff1cace209adcd311"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure_set/shrine.json"
+hash = "91a3cb69e7ed6b44ac37f2e8fad8ffb7bfe7f6b76bf1e6141d6c2b2146fcfc5b"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure_set/small_gate.json"
+hash = "89300763a6f75897323ad580c84342f6db1aa314001bfb2369e724b54a58612c"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure_set/temple.json"
+hash = "c8c143c7236b5d56e02ec0b40817113a2004454e8d1b905e5c0dd3596055bb14"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure_set/temple_broken.json"
+hash = "a9793d838c5db49245c69f0007a341a1d388182187dc740c1cd32b20b0a5b718"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure_set/temple_ruins.json"
+hash = "2853ef8d31bace4e3829339b0e83db0364ec23e6376b68f1cd6955411f0c4600"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure_set/tower.json"
+hash = "b822dff4d68405daa781a11e30663e1e0a8aceee0015d4291046cc899f2e8425"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure_set/warm_big_gate.json"
+hash = "8e108f41e70b438db2a3ee6b4d97b21779889db6b195c760cb0dbe8c22e0ae3f"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure_set/warm_broken_house.json"
+hash = "58592c9980711f8ae0597d8205d7d628a1eb332e1641d0c239d61ef7699a7312"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure_set/warm_fountain.json"
+hash = "734f2b38cea2dd2db62637cd828914f8d94c27995caa9f53336553b089cae0ff"
+
+[[files]]
+file = "kubejs/data/underwater_village/worldgen/structure_set/warm_gate.json"
+hash = "f612520939049949aa49813be95f0733174d72982130cd44de015d819e36d41f"
+
+[[files]]
 file = "kubejs/data/woodencog/recipe/cutting/slab/loam_brick_slab.json"
 hash = "ea5b609bf12c7743b53743361e44bdb613b51246aec5200bedf701bd071d38c6"
 
@@ -3745,6 +4349,22 @@ file = "kubejs/data/wythers/loot_table/chests/village/forest_ruins_big_house.jso
 hash = "0449a7a161fa70cbd8199198492de0d78115d66b01748cb97fc22d290636267d"
 
 [[files]]
+file = "kubejs/data/zhopo/tags/worldgen/biome/has_structure/underwater_city.json"
+hash = "7860616d67c1698d504c2e7d95acc61f567ec3ccaa59de91744308568dac319a"
+
+[[files]]
+file = "kubejs/data/zhopo/tags/worldgen/biome/has_structure/underwater_fossils.json"
+hash = "9f4cef670f15efaf4e609a07b134d3e1736e47a7924acf05d98c360aafe11611"
+
+[[files]]
+file = "kubejs/data/zhopo/tags/worldgen/biome/has_structure/underwater_small_ruins.json"
+hash = "9f4cef670f15efaf4e609a07b134d3e1736e47a7924acf05d98c360aafe11611"
+
+[[files]]
+file = "kubejs/data/zhopo/tags/worldgen/biome/has_structure/underwater_warm_small_ruins.json"
+hash = "9f4cef670f15efaf4e609a07b134d3e1736e47a7924acf05d98c360aafe11611"
+
+[[files]]
 file = "kubejs/server_scripts/aeronautics/airships.js"
 hash = "1e2a5a5e14b0b4beef928653a81b8e912119156980aeee224598e1d506d87e95"
 
@@ -3765,6 +4385,10 @@ file = "kubejs/server_scripts/compat/arborfirmacraft.js"
 hash = "cc5380304155cd7c4a6ea46c032ff0283b8f20a3ca487faa7429b908f3a942cd"
 
 [[files]]
+file = "kubejs/server_scripts/compat/building_helpers.js"
+hash = "5d5966bc03252aedf487c300a03703f39bc3a816ebb43e9d86edf4acff97faf2"
+
+[[files]]
 file = "kubejs/server_scripts/compat/complicated_bees.js"
 hash = "596144459e2eac404562b0a3f1c30d5773a240532f061876dc692f9208e9a5a6"
 
@@ -3777,12 +4401,20 @@ file = "kubejs/server_scripts/compat/create_addons.js"
 hash = "590874cb910f726cb130b89b5fa4413b5f71ef72ec3ac4cfdf08edfa6bbe0ef3"
 
 [[files]]
+file = "kubejs/server_scripts/compat/exploration.js"
+hash = "f96c718bc46779c3492860d82d5307c9e6fad28a1b3e9e173d8bf9be25bd26e3"
+
+[[files]]
 file = "kubejs/server_scripts/compat/fowl_play.js"
 hash = "393cde9bd750e38c5797c4dc4028e5cca66304929e58c1345defafe1e11a0830"
 
 [[files]]
 file = "kubejs/server_scripts/compat/metal_gates.js"
 hash = "3f6ab58a5f1007cc2deaa309a72cf3e3b43c591591200084a80083b6637f693b"
+
+[[files]]
+file = "kubejs/server_scripts/compat/sea_ores.js"
+hash = "fafd1a1a41bda2da0439ad8c11610c5e8a7fa242109a436a77a58f8030486553"
 
 [[files]]
 file = "kubejs/server_scripts/compat/sophisticated_backpacks.js"
@@ -3825,6 +4457,10 @@ file = "kubejs/server_scripts/villagers/baked_offers.js"
 hash = "dfd1a69f47ef0028971ee1316e03e6986a824a8b2f75adc3ea7554727a220b6d"
 
 [[files]]
+file = "kubejs/server_scripts/world/place_titles.js"
+hash = "5729988bd64c0219311a6c9f6d48372070f9494ceea14552adb4dd7efb1cc40f"
+
+[[files]]
 file = "kubejs/server_scripts/world/startat.js"
 hash = "c779bb7fb49e2fac86248087b74246bf29f4e4f66b6138f4ccdc22d8a0faefd3"
 
@@ -3839,6 +4475,10 @@ hash = "5c4659e7bb368960801ccfce24ac3493fa14aae88a7e17b2a9cdfe1931985ffe"
 [[files]]
 file = "kubejs/startup_scripts/ore_byproducts.js"
 hash = "4d1af8b5de04d7df4f5f1e920346b4df4318f10145a3616d6c6d02a3ac6cf388"
+
+[[files]]
+file = "kubejs/startup_scripts/sea_floor.js"
+hash = "44b3538e48d4923a5a4f02a94cdb3dadd4329176e0d619bf3edefbc5a6e94e2b"
 
 [[files]]
 file = "kubejs/startup_scripts/villager_trades.js"
@@ -3900,6 +4540,16 @@ hash = "657a01a86bbf8617e4726c77df08f708e43a3db12db74b837eebd8eb1d93faae"
 metafile = true
 
 [[files]]
+file = "mods/armor-poser.pw.toml"
+hash = "dd53b3b5adefe064039249ceeb51f820d102dfdf8a157974ee462d066a30ef5f"
+metafile = true
+
+[[files]]
+file = "mods/artifacts.pw.toml"
+hash = "416b7f130791397fb2ceb9e89ce3fd0e870f207c8e40b759c069cb58b7544314"
+metafile = true
+
+[[files]]
 file = "mods/auroras.pw.toml"
 hash = "ed60e047a5a85492c3d761238524888dca729e923b6753e060fd3dc986a8e54c"
 metafile = true
@@ -3907,6 +4557,11 @@ metafile = true
 [[files]]
 file = "mods/azimuth-api.pw.toml"
 hash = "a14aa30b199bcc4fb3b382327be7cabb22ce03d8e780f68c3b8307136f0589d7"
+metafile = true
+
+[[files]]
+file = "mods/balm.pw.toml"
+hash = "603cdc47142b5aa5729cbbf265a473574c9e2b55561de4318e9842d3d4b3b995"
 metafile = true
 
 [[files]]
@@ -3922,6 +4577,11 @@ metafile = true
 [[files]]
 file = "mods/block-runner.pw.toml"
 hash = "05884675211a3b35feddbdef24e8da4d970954a21e5e5586a9bf5a97a1103033"
+metafile = true
+
+[[files]]
+file = "mods/build-guide.pw.toml"
+hash = "f2c28a5dbf26bcae8c273cea3581c2375366319662d742f8cbc5398928d904c5"
 metafile = true
 
 [[files]]
@@ -3955,6 +4615,11 @@ hash = "2acaff560bbda5741538528a2967355ec86a8f7564adba0b2316989c66892374"
 metafile = true
 
 [[files]]
+file = "mods/comforts.pw.toml"
+hash = "36f2f6e74b7dbeccb504572d47006582207544fa234a095093b97adfc7ecd5ac"
+metafile = true
+
+[[files]]
 file = "mods/complicated-bees.pw.toml"
 hash = "1ca9fef9210fb4eec4e4203ccb531a4e9821e067e52767beee139e519a72e551"
 metafile = true
@@ -3962,6 +4627,11 @@ metafile = true
 [[files]]
 file = "mods/configuration.pw.toml"
 hash = "1a3eaa6747c1467a235ee17c29c5e0b264ecb3ac1108d2f794d803b95be92660"
+metafile = true
+
+[[files]]
+file = "mods/construction-sticks.pw.toml"
+hash = "bbaa507f7bf75d33bf14b6bbfd62a58590ff47eef12060b635d87635d9f8cec4"
 metafile = true
 
 [[files]]
@@ -4095,6 +4765,11 @@ hash = "08a334ae5565e122d26b819cba16ce784776a10fe100ab2b22de72a5a2bac653"
 metafile = true
 
 [[files]]
+file = "mods/curios.pw.toml"
+hash = "36debf7653e95a855b4fedacc19027cf2e01960fc0b6d55ef2ffbffbcb455690"
+metafile = true
+
+[[files]]
 file = "mods/dynamic-fps.pw.toml"
 hash = "ae6fd52d8bdcbeca5bbe6db840f22f92c1928fe0fda22017b19612b9b00a245a"
 metafile = true
@@ -4195,6 +4870,11 @@ hash = "bc3920a3fb291a8bc8df9717233e54dd1c909b65528afbe1b617373c7b4b38c0"
 metafile = true
 
 [[files]]
+file = "mods/hopo-better-underwater-ruins.pw.toml"
+hash = "be75fa97845b24c102d33441e3f1e9a24d0ab622d57b031c0d0f6888ce5927a5"
+metafile = true
+
+[[files]]
 file = "mods/immediatelyfast.pw.toml"
 hash = "2863a3b187723e1f69ed2ad2b2c3d834e8442468a1347c80df5b310e243c8753"
 metafile = true
@@ -4260,8 +4940,18 @@ hash = "51e129832b04acd57da470fc41725bad5e101b6a6b1d4901fd8ea7a92b14e13d"
 metafile = true
 
 [[files]]
+file = "mods/little-joys.pw.toml"
+hash = "5bea330c4f1bf5ecd1c4c9263047952476953ace62313ce0f3759796b08c79d3"
+metafile = true
+
+[[files]]
 file = "mods/lootr.pw.toml"
 hash = "0d3683a8c533e1fb67bf0b1668089a322fc5f594f9610d441657378ab4f64383"
+metafile = true
+
+[[files]]
+file = "mods/measurements.pw.toml"
+hash = "fc40fbc023c67db016e4c0d72f25fcabb708bb17b0749254c00f9b260467ec3f"
 metafile = true
 
 [[files]]
@@ -4310,8 +5000,13 @@ hash = "840eb517a83c586b9f543ab9781d4c8529b6fedf2d679f411577c7a583e50fe5"
 metafile = true
 
 [[files]]
-file = "mods/pack_world-1.5.0.jar"
-hash = "a42de04b33de1288c338a9428df8f2c602fe2a46d39127cce75715707c111ca2"
+file = "mods/pack_world-1.6.0.jar"
+hash = "a758e7384dfa48116be39170785abb38f737dea449d3d30e85689e4d1b80a452"
+
+[[files]]
+file = "mods/paragliders.pw.toml"
+hash = "c323e7a690fc87db51353a7106e275d89e3947826070c0b02c3a4717361dde63"
+metafile = true
 
 [[files]]
 file = "mods/particular-reforged.pw.toml"
@@ -4466,6 +5161,11 @@ metafile = true
 [[files]]
 file = "mods/towns-and-towers.pw.toml"
 hash = "5518dd2f6a5d88e4affb9df628604737893025206d7149579e4c24f909b130a3"
+metafile = true
+
+[[files]]
+file = "mods/underwater-village.pw.toml"
+hash = "183b6911813421c59df2de77ae810a0c188ea8d6b5d4e465ff19859b900ebbf5"
 metafile = true
 
 [[files]]

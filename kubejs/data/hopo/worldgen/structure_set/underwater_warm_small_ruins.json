@@ -1,0 +1,18 @@
+{
+  "structures": [
+    {
+      "structure": "hopo:underwater/underwater_warm_small_ruins",
+      "weight": 10
+    }
+  ],
+  "placement": {
+    "type": "tfc:climate",
+    "salt": 44332211,
+    "spacing": 24,
+    "separation": 6,
+    "climate": {
+      "min_temperature": 14,
+      "max_temperature": 40
+    }
+  }
+}

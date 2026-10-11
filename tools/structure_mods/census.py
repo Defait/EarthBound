@@ -21,7 +21,7 @@ import nbt  # noqa: E402  (read-only use of the structure generator's NBT reader
 REPO = os.path.dirname(os.path.dirname(HERE))
 MODS = os.path.join(REPO, "tools", ".server", "mods")
 JARS = ["MoogsVoyagerStructures", "MoogsMissingVillages", "MoogsTemplesReimagined", "t_and_t", "YungsBetterDungeons",
-        "YungsBetterMineshafts", "TFCHuts", "tfc_str_compat"]
+        "YungsBetterMineshafts", "TFCHuts", "tfc_str_compat", "HopoBetterUnderwaterRuins", "underwater_village"]
 
 
 def census(jar):

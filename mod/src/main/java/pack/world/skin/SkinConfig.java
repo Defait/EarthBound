@@ -27,6 +27,9 @@ import pack.world.materials.BlockFamilies;
  *                                                       are made local too
  * "woods":          ["oak", "spruce", "acacia"]         wood placeholders in rank order: rank 0 is the climate's best-fitting tree
  * "dry_run":        false                               true: count what structures write, rewrite nothing (tests)
+ * "sea_water":      ["hopo", "underwater_village:ruins"] namespaces or structure ids whose water is TFC salt water (see {@link SeaWater}),
+ *                                                       when the structure stands in a biome of {@code #tfc:is_ocean}; elsewhere river water
+ * "sea_water_fill_air": true                            in those, air a structure wrote where the sea was becomes sea again
  * "foundation":     {"max_depth": 8, "variant": "raw", "steps": ["surface_structures"], "exclude": ["mvs:floating_islands"]}
  * "items":          {"minecraft:iron_helmet": "tfc:metal/helmet/copper"}   item ids on armor stands, mobs, frames, dropped items
  * "blocks":         {"minecraft:cobblestone": "tfc:rock/cobble/granite", "minecraft:snow": "@keep", "minecraft:wheat": "@air"}
@@ -37,7 +40,7 @@ import pack.world.materials.BlockFamilies;
  */
 public final class SkinConfig
 {
-    public static final SkinConfig EMPTY = new SkinConfig(Set.of(), Set.of(), Set.of(), Set.of(), List.of("oak"), Map.of(), null, Set.of(), false, Map.of());
+    public static final SkinConfig EMPTY = new SkinConfig(Set.of(), Set.of(), Set.of(), Set.of(), List.of("oak"), Map.of(), null, Set.of(), false, Map.of(), Set.of(), Set.of(), true);
 
     public enum Action { KEEP, REMOVE, MAP, ALLOY }
 
@@ -59,10 +62,13 @@ public final class SkinConfig
     private final Set<String> unknownBlocks;
     private final boolean dryRun;
     private final Map<String, String> items;
+    private final Set<String> seaNamespaces;
+    private final Set<ResourceLocation> seaIds;
+    private final boolean seaFillAir;
 
     SkinConfig(Set<String> namespaces, Set<ResourceLocation> ids, Set<ResourceLocation> exclude, Set<String> placeholderNamespaces,
                List<String> woods, Map<Block, Rule> rules, @Nullable Foundation foundation, Set<String> unknownBlocks, boolean dryRun,
-               Map<String, String> items)
+               Map<String, String> items, Set<String> seaNamespaces, Set<ResourceLocation> seaIds, boolean seaFillAir)
     {
         this.namespaces = namespaces;
         this.ids = ids;
@@ -74,6 +80,21 @@ public final class SkinConfig
         this.unknownBlocks = unknownBlocks;
         this.dryRun = dryRun;
         this.items = items;
+        this.seaNamespaces = seaNamespaces;
+        this.seaIds = seaIds;
+        this.seaFillAir = seaFillAir;
+    }
+
+    /** Whether this structure's water is salt water (when it stands in an ocean biome: the caller checks that). */
+    public boolean seaWater(ResourceLocation structure)
+    {
+        return seaIds.contains(structure) || seaNamespaces.contains(structure.getNamespace());
+    }
+
+    /** Whether air a sea structure wrote over sea water is turned back into sea water. */
+    public boolean seaFillAir()
+    {
+        return seaFillAir;
     }
 
     /** Item id -> item id for what structures put on armor stands, mobs, in frames and on the ground (iron gear becomes copper ...). */
@@ -181,6 +202,9 @@ public final class SkinConfig
         List<String> woods = List.of("oak", "spruce", "acacia");
         Foundation foundation = null;
         boolean dryRun = false;
+        final Set<String> seaNamespaces = new HashSet<>();
+        final Set<ResourceLocation> seaIds = new HashSet<>();
+        boolean seaFillAir = true;
 
         for (Map.Entry<ResourceLocation, JsonElement> file : new java.util.TreeMap<>(files).entrySet())
         {
@@ -206,6 +230,21 @@ public final class SkinConfig
                 exclude.add(ResourceLocation.parse(s));
             }
             placeholders.addAll(strings(json, "placeholders"));
+            for (String s : strings(json, "sea_water"))
+            {
+                if (s.contains(":"))
+                {
+                    seaIds.add(ResourceLocation.parse(s));
+                }
+                else
+                {
+                    seaNamespaces.add(s);
+                }
+            }
+            if (json.has("sea_water_fill_air"))
+            {
+                seaFillAir = json.get("sea_water_fill_air").getAsBoolean();
+            }
             if (json.has("dry_run"))
             {
                 dryRun = json.get("dry_run").getAsBoolean();
@@ -273,7 +312,7 @@ public final class SkinConfig
                 rules.put(from.get(), new Rule(Action.MAP, to.get(), id, placeholderParse(id, woods), woodRank(id, woods)));
             }
         }
-        return new SkinConfig(namespaces, ids, exclude, placeholders, woods, rules, foundation, unknown, dryRun, Map.copyOf(items));
+        return new SkinConfig(namespaces, ids, exclude, placeholders, woods, rules, foundation, unknown, dryRun, Map.copyOf(items), seaNamespaces, seaIds, seaFillAir);
     }
 
     /** The parse of a table target when its material is a placeholder, else null (placed as is). */

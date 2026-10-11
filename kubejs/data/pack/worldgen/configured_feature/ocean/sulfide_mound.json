@@ -1,0 +1,43 @@
+{
+  "type": "minecraft:disk",
+  "config": {
+    "state_provider": {
+      "fallback": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "pack:sulfide_mound"
+        }
+      },
+      "rules": []
+    },
+    "target": {
+      "type": "minecraft:matching_blocks",
+      "blocks": [
+        "tfc:mud/podzol",
+        "tfc:mud/andisol",
+        "tfc:mud/alfisol",
+        "tfc:mud/oxisol",
+        "tfc:mud/aridisol",
+        "tfc:mud/fluvisol",
+        "tfc:mud/mollisol",
+        "tfc:mud/entisol",
+        "tfc:rock/raw/rhyolite",
+        "tfc:rock/raw/andesite",
+        "tfc:rock/raw/dacite",
+        "tfc:rock/raw/basalt",
+        "tfc:rock/raw/gabbro",
+        "tfc:rock/hardened/rhyolite",
+        "tfc:rock/hardened/andesite",
+        "tfc:rock/hardened/dacite",
+        "tfc:rock/hardened/basalt",
+        "tfc:rock/gravel/rhyolite"
+      ]
+    },
+    "radius": {
+      "type": "minecraft:uniform",
+      "min_inclusive": 3,
+      "max_inclusive": 6
+    },
+    "half_height": 1
+  }
+}

@@ -1,0 +1,13 @@
+name = "Armor Poser"
+filename = "ArmorPoser-neoforge-1.21.1-6.2.4.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/PFwYNrHb/versions/KlLmtvb1/ArmorPoser-neoforge-1.21.1-6.2.4.jar"
+hash-format = "sha512"
+hash = "7ec92a95f818795f515b8ff8b41fba670936a5b420c72b5d7eb74a8879d0afc805c54c57c9a22dc5fc053b4f898231724df443c93d22cfd85cfcf4133a11ee6c"
+
+[update]
+[update.modrinth]
+mod-id = "PFwYNrHb"
+version = "KlLmtvb1"

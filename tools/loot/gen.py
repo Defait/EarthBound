@@ -42,7 +42,7 @@ import lib  # noqa: E402
 
 MANIFEST = os.path.join(HERE, "generated.json")
 GLM_PATH = "kubejs/data/neoforge/loot_modifiers/global_loot_modifiers.json"
-KINDS = {"chest": "minecraft:chest", "archaeology": "minecraft:archaeology", "gift": "minecraft:gift"}
+KINDS = {"chest": "minecraft:chest", "archaeology": "minecraft:archaeology", "gift": "minecraft:gift", "equipment": "minecraft:equipment"}
 RESERVED_NS = {"pack", "pack_loot"}  # tools/structures/build.py owns kubejs/data/pack/loot_table; pack_loot holds the shared theme tables
 THEME_NS = "pack_loot"
 

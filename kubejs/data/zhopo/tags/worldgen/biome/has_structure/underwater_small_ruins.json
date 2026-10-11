@@ -1,0 +1,6 @@
+{
+  "replace": true,
+  "values": [
+    "#pack:has_structure/ocean_ruins_any"
+  ]
+}

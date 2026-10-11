@@ -1,0 +1,123 @@
+{
+  "type": "littlejoys:dig_spot",
+  "eventCondition": {
+    "type": "any",
+    "conditions": [
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:clay/alfisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:clay/andisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:clay/aridisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:clay/entisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:clay/fluvisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:clay/mollisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:clay/oxisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:clay/podzol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:clay_grass/alfisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:clay_grass/andisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:clay_grass/aridisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:clay_grass/entisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:clay_grass/fluvisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:clay_grass/mollisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:clay_grass/oxisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:clay_grass/podzol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:white_kaolin_clay"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:pink_kaolin_clay"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:red_kaolin_clay"
+        }
+      }
+    ]
+  },
+  "lootTable": "littlejoys:dig_spot/clay"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:random_patch",
+  "config": {
+    "tries": 14,
+    "xz_spread": 9,
+    "y_spread": 3,
+    "feature": "pack:ocean/black_chimney"
+  }
+}

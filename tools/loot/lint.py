@@ -64,6 +64,13 @@ ALLOWED = [
      "Sophisticated Backpacks' chest injections (backpacks and upgrades in dungeon, mansion and shipwreck chests): tables its global loot modifiers "
      "add to vanilla chests, and the pack's global_loot_modifiers.json replaces that list and keeps none of them; chestLootEnabled is off as well "
      "(config/sophisticatedbackpacks-common.toml)", ["sophisticatedbackpacks"]),
+    (r"^artifacts:inject/",
+     "Artifacts' injections into vanilla chests, archaeology and cows (artifacts of every kind, vanilla iron and diamonds): tables its global loot modifiers "
+     "add to vanilla tables, and the pack's global_loot_modifiers.json replaces that list and keeps none of them; its artifacts come from the campsite "
+     "chest and mimics (loot.json)", ["artifacts"]),
+    (r"^artifacts:items/",
+     "the per-artifact tables artifacts:artifact is built from in the mod (with config conditions, and six artifacts the pack leaves out); the pack replaces "
+     "artifacts:artifact with plain entries for the artifacts it allows (loot.json), so nothing points at these", ["artifacts"]),
 ]
 
 
@@ -186,6 +193,7 @@ def closure(tid, tables, tags, seen=None, path=()):
 
 
 def analyze(results, rules, spec, inv=None, keep_glm=()):
+    dropped_glm = spec.get("dropped_global_loot_modifiers", {})  # prefix -> reason: modifiers the override drops on purpose
     rep = Report()
     eras = table_eras(spec)
     tables = results["tables"]
@@ -290,7 +298,7 @@ def analyze(results, rules, spec, inv=None, keep_glm=()):
         for label, doc in inv.get("global_loot_modifiers", {}).items():
             keep = [x for x in doc["entries"] if not x.startswith("gtceu:chests/extra/")]
             for x in keep:
-                if x not in keep_glm:
+                if x not in keep_glm and not any(x.startswith(pre) for pre in dropped_glm):
                     rep.add("global loot modifiers", f"{label} lists {x}, which loot.json's override would drop (add it to keep_global_loot_modifiers)")
     return rep
 

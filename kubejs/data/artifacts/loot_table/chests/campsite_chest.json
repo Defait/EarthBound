@@ -1,0 +1,98 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 4,
+        "max": 6
+      },
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:coal/stone",
+          "weight": 40
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:light/stone",
+          "weight": 40
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:minerals/stone",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:ore_copper/stone",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:gems_minor/stone",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:junk/stone",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:ore_tin/stone",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:gems_major/stone",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 2
+      },
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:copper_tools/copper",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:stone_tools/stone",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:leather_armor/stone",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:mining_tools/copper",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:saddlery/stone",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:artifacts/stone",
+          "weight": 10
+        }
+      ]
+    }
+  ]
+}

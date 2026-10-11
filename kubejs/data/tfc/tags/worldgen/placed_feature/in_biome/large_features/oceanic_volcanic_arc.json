@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "pack:ocean/arc_vent_field",
+    "pack:ocean/crust_patch"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "feature": "pack:ocean/white_chimney",
+  "placement": [
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR_WG"
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:matching_fluids",
+        "fluids": [
+          "tfc:salt_water"
+        ]
+      }
+    }
+  ]
+}

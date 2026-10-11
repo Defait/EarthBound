@@ -4,6 +4,7 @@
 	chapter.1B35DA1A0F81CE6B.title: "Bronze and Brass"
 	chapter.1C6E26542D7508E5.title: "GregTech Power"
 	chapter.291C5D019710D23E.title: "Stone and Copper"
+	chapter.2944E80D2452A18F.title: "The Deep Sea"
 	chapter.295D2DEF23052519.title: "Tips: Combat"
 	chapter.385C3F6E218ADDC3.title: "Iron and Steel"
 	chapter.42FB8D81B966DA61.title: "HV: High Voltage"
@@ -63,6 +64,13 @@
 	]
 	quest.012DC6D84EA3796D.quest_subtitle: "This machine does nothing exciting"
 	quest.012DC6D84EA3796D.title: "Basic Canner"
+	quest.015E23526315B229.quest_desc: [
+		"Purified sphalerite and purified galena, with sulfuric acid in a mixer, give indium concentrate; an EV chemical reactor with aluminium turns the concentrate into indium dust. Galena only comes from the vents."
+		""
+		"Indium makes indium gallium phosphide, and the IV circuits and wafers that use it."
+	]
+	quest.015E23526315B229.quest_subtitle: "Zinc and lead, together"
+	quest.015E23526315B229.title: "Indium"
 	quest.01660AE825F50880.quest_desc: [
 		"Neodymium makes the magnetic rods of &5EV&r and &9IV&r electric motors."
 		""
@@ -784,6 +792,13 @@
 	]
 	quest.138251FC5C8DD73E.quest_subtitle: "You don't want to die from eating raw meat, do you?"
 	quest.138251FC5C8DD73E.title: "Basic Cooking"
+	quest.13BE6FB3D56F1F93.quest_desc: [
+		"On the deep ocean floor, discs of mud turn to nodule beds: about one block in eight of the abyssal plain. A shovel sweeps them and each block gives raw pyrolusite (manganese), now and then cobaltite."
+		""
+		"Macerate it for crushed pyrolusite, wash it, spin it in a thermal centrifuge and macerate the refined ore: the dust comes with a little niobium. Manganese arrives with the macerator too (step 19), so stainless steel does not wait for anything else."
+	]
+	quest.13BE6FB3D56F1F93.quest_subtitle: "Broad and thin"
+	quest.13BE6FB3D56F1F93.title: "Manganese Nodules"
 	quest.13CD47440020B7C8.quest_desc: [
 		"Gallium is used to make gallium arsenide for silicon boules and diodes."
 		""
@@ -1182,6 +1197,15 @@
 	]
 	quest.1F6D4A7FD8AED990.quest_subtitle: "Not as cool as Item Conduits"
 	quest.1F6D4A7FD8AED990.title: "Item Pipes"
+	quest.1FB8988A3629E12E.quest_desc: [
+		"Along the mid-ocean ridge's axis, a field of sulfide chimneys stands on a mound about every thirty kilometres. They glow faintly and puff dark water from the tip. A pickaxe gives raw chalcopyrite, pyrite, sphalerite and galena."
+		""
+		"Arc vents are white smokers: anhydrite, some zinc sulfide and, once in a while, pollucite (caesium)."
+		""
+		"The ridge is far from the coast: ocean floor 3,000 blocks across, with the axis a thin band in the middle. Magma rock and rising bubbles mark it."
+	]
+	quest.1FB8988A3629E12E.quest_subtitle: "Black smokers on the ridge"
+	quest.1FB8988A3629E12E.title: "A Vent Field"
 	quest.1FEA76E5FEB963DD.quest_desc: [
 		"The &6Rubber Gloves&r will obviously protect you from &cskin contact hazards&r. Two &7Rubber Plates&r on the crafting grid is all they take."
 	]
@@ -2549,6 +2573,11 @@
 	]
 	quest.432641555426039E.quest_subtitle: "Ultimet is the ultimate"
 	quest.432641555426039E.title: "Ultimet"
+	quest.438BDE947E1F9FD5.quest_desc: [
+		"Niobium dust is a by-product of refined pyrolusite when it is macerated (14%). It makes niobium nitride (HV chemistry) and, with titanium, the superconductor wire of IV and above."
+	]
+	quest.438BDE947E1F9FD5.quest_subtitle: "Superconductors start here"
+	quest.438BDE947E1F9FD5.title: "Niobium"
 	quest.440CA363F5E74068.quest_desc: [
 		"While combat may not be the first thing you think to do with your hammer, it can be surprisingly effective. Hammers deal &2Crushing&r damage which can help you against Skeletons. "
 		""
@@ -2790,6 +2819,13 @@
 	]
 	quest.4C2F42149272CA77.quest_subtitle: "It's over"
 	quest.4C2F42149272CA77.title: "T6 Anvil: Red or Blue Steel"
+	quest.4C5A3B14C4AED0B7.quest_desc: [
+		"The sea floor holds ores that no land vein has. Copper diving gear is enough to reach all of it: there is no pressure or depth limit, only air. A full backtank is fifteen minutes; place it, give it rotation and it fills again."
+		""
+		"Deep ocean floors lie at about y -17 and the trenches at -48, and lava starts at -54: red steel diving gear does not make lava safe (see the Tips). Mining under water is slow without Aqua Affinity."
+	]
+	quest.4C5A3B14C4AED0B7.quest_subtitle: "The ocean is open at copper"
+	quest.4C5A3B14C4AED0B7.title: "Down to the Floor"
 	quest.4CBBBA90E6A30001.quest_desc: [
 		"Steel boilers make steam faster; high-pressure steam machines run at full speed."
 	]
@@ -4131,6 +4167,13 @@
 	]
 	quest.6E03414E198D6F06.quest_subtitle: "Swimsuit not included"
 	quest.6E03414E198D6F06.title: "Diving Gear"
+	quest.6E861EE7844116EA.quest_desc: [
+		"Bare ridge and arc rock is coated in ferromanganese crust. A pickaxe gives raw pyrolusite, cobaltite and, rarely (one block in 25), pitchblende: the pack's stand-in for the uranium that crusts really do adsorb."
+		""
+		"Pitchblende goes the usual way (crush, wash, thermal centrifuge) to uraninite, then hydrofluoric acid and fluorine make uranium hexafluoride, and an electrolyzer separates uranium 235 and 238. The fluorine is the slow part: biotite is the pack's source."
+	]
+	quest.6E861EE7844116EA.quest_subtitle: "Rock with a skin"
+	quest.6E861EE7844116EA.title: "Manganese Crust"
 	quest.6E9EB0291CCDFE0D.quest_desc: [
 		"The only thing separating man from animal is our use of &l&bTools&r&r. &7&oExcept for apes, monkeys, dolphins, crows, otters, octo.......&r&r Use your skills and tools to make the most of this world, and &5save yourself&r some effort."
 	]

@@ -1,0 +1,153 @@
+{
+  "type": "littlejoys:dig_spot",
+  "eventCondition": {
+    "type": "any",
+    "conditions": [
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:coarse_dirt/alfisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:coarse_dirt/andisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:coarse_dirt/aridisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:coarse_dirt/entisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:coarse_dirt/fluvisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:coarse_dirt/mollisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:coarse_dirt/oxisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:coarse_dirt/podzol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:dirt/alfisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:dirt/andisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:dirt/aridisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:dirt/entisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:dirt/fluvisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:dirt/mollisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:dirt/oxisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:dirt/podzol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:rooted_dirt/alfisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:rooted_dirt/andisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:rooted_dirt/aridisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:rooted_dirt/entisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:rooted_dirt/fluvisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:rooted_dirt/mollisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:rooted_dirt/oxisol"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:rooted_dirt/podzol"
+        }
+      }
+    ]
+  },
+  "lootTable": "littlejoys:dig_spot/dirt"
+}

@@ -1,0 +1,51 @@
+{
+  "type": "littlejoys:dig_spot",
+  "eventCondition": {
+    "type": "any",
+    "conditions": [
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:sand/black"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:sand/brown"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:sand/green"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:sand/pink"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:sand/red"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:sand/white"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:sand/yellow"
+        }
+      }
+    ]
+  },
+  "lootTable": "littlejoys:dig_spot/sand"
+}

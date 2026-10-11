@@ -1,0 +1,6 @@
+{
+  "_about": "UNTESTED, goes with pack_world 1.6.0. Merged with structures.json by the skin (files in id order). The two underwater ruin mods are skinned like the other structure mods, but their water is TFC salt water (only where they stand in a #tfc:is_ocean biome), and air their templates wrote over the sea becomes sea again. Do not add this file before the 1.6.0 jar is in mods/.",
+  "structures": ["hopo", "underwater_village"],
+  "sea_water": ["hopo", "underwater_village"],
+  "sea_water_fill_air": true
+}

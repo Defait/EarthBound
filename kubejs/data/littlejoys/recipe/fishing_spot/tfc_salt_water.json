@@ -1,0 +1,18 @@
+{
+  "type": "littlejoys:fishing_spot",
+  "eventCondition": {
+    "type": "all",
+    "conditions": [
+      {
+        "type": "above_fluid_source",
+        "fluid": {
+          "tag": "tfc:salt_water"
+        }
+      },
+      {
+        "type": "can_see_sky"
+      }
+    ]
+  },
+  "lootTable": "littlejoys:fishing_spot/water"
+}

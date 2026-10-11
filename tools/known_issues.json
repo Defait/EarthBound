@@ -138,6 +138,14 @@
       "note": "loot tables for compat blocks that only register with mods not in the pack (Design n Decor's and Create Connected's Dye Depot colours, Steam 'n' Rails tracks for other mods' woods, Factory Logistics' Mekanism gauge)"
     },
     {
+      "pattern": "^mixin: (Error loading class: (com/teammetallurgy/aquaculture|com/li64/tide)/|@Mixin target com\\.(teammetallurgy\\.aquaculture|li64\\.tide)\\.\\S+ was not found littlejoys\\.)",
+      "note": "Little Joys' optional fishing compat mixins for Aquaculture 2 and Tide, two mods that are not in the pack"
+    },
+    {
+      "pattern": "^artifacts\\.Artifacts: Tag entries for artifacts:tags/block/campsite_chests\\.json cleared by KubeJS",
+      "note": "on purpose: kubejs/data/artifacts/tags/block/campsite_chests.json replaces the campsite's chest tag with TFC's chests (the vanilla chest is a normal craft, but the pack wants TFC's in its campsites); the mod's warning is about equipment tags"
+    },
+    {
       "pattern": "^mixin: Discarding @Unique public method \\w+ in copycats-(neoforge|common)\\.mixins\\.json:",
       "note": "Copycats+ mixes methods into its own copycat classes that already define them; Mixin keeps the class's own"
     },
@@ -254,12 +262,12 @@
       "note": "a mod's update-check URL answered with something that isn't a JSON object (the check runs against the network at startup; the test server never acts on it)"
     },
     {
-      "pattern": "^net\\.minecraft\\.world\\.item\\.crafting\\.RecipeManager: Parsing error loading recipe (mca|comforts):",
-      "note": "TFC Huts ships recipes for Minecraft Comes Alive (mca:) and Comforts (comforts:), two mods that aren't in the pack, so their result items don't exist and the recipes are skipped; nothing in the pack uses them"
+      "pattern": "^net\\.minecraft\\.world\\.item\\.crafting\\.RecipeManager: Parsing error loading recipe mca:",
+      "note": "TFC Huts ships recipes for Minecraft Comes Alive (mca:), a mod that isn't in the pack, so their result items don't exist and the recipes are skipped; nothing in the pack uses them (its Comforts recipes load now that Comforts is installed)"
     },
     {
-      "pattern": "^KubeJS Server: \\w+\\.java#\\d+: Failed to parse recipe '(mca|comforts):",
-      "note": "the same TFC Huts recipes for mods that aren't in the pack, as KubeJS sees them (it falls back to vanilla's parser, which skips them)"
+      "pattern": "^KubeJS Server: \\w+\\.java#\\d+: Failed to parse recipe 'mca:",
+      "note": "the same TFC Huts recipes for a mod that isn't in the pack, as KubeJS sees them (it falls back to vanilla's parser, which skips them)"
     },
     {
       "pattern": "^net\\.minecraft\\.world\\.level\\.chunk\\.LevelChunk: Tried to load a block entity for block Block\\{tfc:thatch_bed\\}\\[.*part=foot\\] but failed at location",

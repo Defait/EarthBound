@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:disk",
+  "config": {
+    "state_provider": {
+      "fallback": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "pack:nodule_bed"
+        }
+      },
+      "rules": []
+    },
+    "target": {
+      "type": "minecraft:matching_blocks",
+      "blocks": [
+        "tfc:mud/podzol",
+        "tfc:mud/andisol",
+        "tfc:mud/alfisol",
+        "tfc:mud/oxisol",
+        "tfc:mud/aridisol",
+        "tfc:mud/fluvisol",
+        "tfc:mud/mollisol",
+        "tfc:mud/entisol"
+      ]
+    },
+    "radius": {
+      "type": "minecraft:uniform",
+      "min_inclusive": 4,
+      "max_inclusive": 8
+    },
+    "half_height": 2
+  }
+}

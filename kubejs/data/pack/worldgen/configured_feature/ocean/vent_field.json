@@ -1,0 +1,7 @@
+{
+  "type": "tfc:if_then",
+  "config": {
+    "if": "pack:ocean/vent_mound_core",
+    "then": "pack:ocean/vent_chimneys"
+  }
+}

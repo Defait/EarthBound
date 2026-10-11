@@ -1,0 +1,8 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#pack:overworld",
+  "features": [
+    "artifacts:underground_minimalist_campsite"
+  ],
+  "step": "underground_structures"
+}

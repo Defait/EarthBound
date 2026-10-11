@@ -1,0 +1,50 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 2,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:clay/stone",
+          "weight": 60
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:bones/stone",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:pottery/stone",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:stone_heads/stone",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:copper_heads/stone",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:gems_minor/stone",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:ingots/stone",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pack_loot:ore_copper/stone",
+          "weight": 10
+        }
+      ]
+    }
+  ]
+}

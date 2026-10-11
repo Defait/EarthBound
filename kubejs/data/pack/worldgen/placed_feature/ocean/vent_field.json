@@ -1,0 +1,21 @@
+{
+  "feature": "pack:ocean/vent_field",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 300
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "tfc:ocean_ridge",
+      "min_distance": 0,
+      "max_distance": 24
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR_WG"
+    }
+  ]
+}

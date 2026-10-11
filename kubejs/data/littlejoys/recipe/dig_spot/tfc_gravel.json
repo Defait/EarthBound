@@ -1,0 +1,135 @@
+{
+  "type": "littlejoys:dig_spot",
+  "eventCondition": {
+    "type": "any",
+    "conditions": [
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:rock/gravel/andesite"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:rock/gravel/basalt"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:rock/gravel/chalk"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:rock/gravel/chert"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:rock/gravel/claystone"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:rock/gravel/conglomerate"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:rock/gravel/dacite"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:rock/gravel/diorite"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:rock/gravel/dolomite"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:rock/gravel/gabbro"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:rock/gravel/gneiss"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:rock/gravel/granite"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:rock/gravel/limestone"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:rock/gravel/marble"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:rock/gravel/phyllite"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:rock/gravel/quartzite"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:rock/gravel/rhyolite"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:rock/gravel/schist"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:rock/gravel/shale"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:rock/gravel/slate"
+        }
+      },
+      {
+        "type": "above_state",
+        "state": {
+          "Name": "tfc:rock/gravel/tuff"
+        }
+      }
+    ]
+  },
+  "lootTable": "littlejoys:dig_spot/gravel"
+}
